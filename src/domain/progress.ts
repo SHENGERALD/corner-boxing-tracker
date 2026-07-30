@@ -9,12 +9,13 @@ export function isTrainingItemComplete(record: Pick<TrainingRecord, "completedIt
 
 export function getRecordCompletion(
   plan: DayPlan,
-  record?: Pick<TrainingRecord, "completedItemIds" | "customItems" | "itemSetLogs">
+  record?: Pick<TrainingRecord, "completedItemIds" | "removedItemIds" | "customItems" | "itemSetLogs">
 ) {
-  const completedPlanned = plan.items.filter((item) => isTrainingItemComplete(record, item.id)).length;
+  const visiblePlanItems = plan.items.filter((item) => !record?.removedItemIds?.includes(item.id));
+  const completedPlanned = visiblePlanItems.filter((item) => isTrainingItemComplete(record, item.id)).length;
   const customItems = record?.customItems ?? [];
   const completedCustom = customItems.filter((item) => item.completed || isTrainingItemComplete(record, item.id)).length;
-  const total = plan.items.length + customItems.length;
+  const total = visiblePlanItems.length + customItems.length;
   const completed = completedPlanned + completedCustom;
 
   return {

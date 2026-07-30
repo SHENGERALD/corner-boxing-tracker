@@ -29,7 +29,7 @@ const translations = {
   "log.title": { zhTW: "訓練紀錄", en: "Training log" },
   "log.subtitle": { zhTW: "每次只留下一個真正有用的線索。", en: "Keep one useful signal from every session." },
   "log.empty": { zhTW: "完成第一次訓練後，紀錄會出現在這裡。", en: "Your first saved session will appear here." },
-  "backup.title": { zhTW: "你的資料，由你保管。", en: "Your data, in your hands." },
+  "backup.title": { zhTW: "你的資料由你保管", en: "Your data in your hands" },
   "backup.local": { zhTW: "所有資料只存在這台裝置。", en: "Your data stays on this device." },
   "backup.language": { zhTW: "介面語言", en: "Interface language" },
   "backup.data": { zhTW: "資料備份", en: "Data backup" },

@@ -55,6 +55,7 @@ function isTrainingRecord(value: unknown): value is TrainingRecord {
   return (
     Array.isArray(record.completedItemIds) &&
     record.completedItemIds.every((item) => typeof item === "string") &&
+    (record.removedItemIds === undefined || (Array.isArray(record.removedItemIds) && record.removedItemIds.every((item) => typeof item === "string"))) &&
     (customItems === undefined ||
       (Array.isArray(customItems) && customItems.every(isCustomTrainingItem))) &&
     (itemSetLogs === undefined || isItemSetLogs(itemSetLogs))
@@ -97,7 +98,7 @@ function isCustomTrainingItem(value: unknown): value is CustomTrainingItem {
 }
 
 function normalizeRecord(record: TrainingRecord): TrainingRecord {
-  return { ...record, customItems: record.customItems ?? [], itemSetLogs: record.itemSetLogs ?? {} };
+  return { ...record, removedItemIds: record.removedItemIds ?? [], customItems: record.customItems ?? [], itemSetLogs: record.itemSetLogs ?? {} };
 }
 
 function migrateV1State(state: V1AppState): AppState {

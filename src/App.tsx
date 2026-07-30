@@ -221,6 +221,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
     : 0;
   const savedRecord = hasRecordContent(record);
   const itemSetLogs = record.itemSetLogs ?? {};
+  const visiblePlanItems = plan.items.filter((item) => !record.removedItemIds?.includes(item.id));
 
   const updateItemSets = (itemId: string, sets: TrainingSet[]) => {
     updateRecord({ itemSetLogs: { ...itemSetLogs, [itemId]: sets } });
@@ -262,6 +263,21 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
 
   const removeSet = (itemId: string, setId: string) => {
     updateItemSets(itemId, (itemSetLogs[itemId] ?? []).filter((set) => set.id !== setId));
+  };
+
+  const removePlannedItem = (id: string) => {
+    updateRecord({
+      removedItemIds: Array.from(new Set([...(record.removedItemIds ?? []), id])),
+      completedItemIds: record.completedItemIds.filter((candidate) => candidate !== id),
+      itemSetLogs: Object.fromEntries(Object.entries(itemSetLogs).filter(([itemId]) => itemId !== id)),
+    });
+  };
+
+  const removeCustomItem = (id: string) => {
+    updateRecord({
+      customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== id),
+      itemSetLogs: Object.fromEntries(Object.entries(itemSetLogs).filter(([itemId]) => itemId !== id)),
+    });
   };
 
   const toggleItem = (id: string) => {
@@ -341,13 +357,13 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
               <span className="rule-number">01</span>
             </div>
             <div className="checklist">
-              {plan.items.map((planItem, index) => {
+              {visiblePlanItems.map((planItem, index) => {
                 const checked = isTrainingItemComplete(record, planItem.id);
                 const title = formatPlanLabel(planItem.label, language);
                 const detail = formatPlanLabel(planItem.detail, language);
                 return (
                   <details className={`training-entry ${checked ? "checked" : ""}`} key={planItem.id}>
-                    <summary className="training-item">
+                    <summary className="training-item removable-training-item">
                       <label className="completion-toggle" onClick={(event) => event.stopPropagation()}>
                         <input
                           type="checkbox"
@@ -363,6 +379,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                         <small>{detail}</small>
                       </span>
                       <span className="set-count">{itemSetLogs[planItem.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
+                      <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); removePlannedItem(planItem.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
                     </summary>
                     <TrainingSetLogger
                       itemId={planItem.id}
@@ -387,9 +404,9 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                     <label className="completion-toggle" onClick={(event) => event.stopPropagation()}>
                       <input type="checkbox" checked={checked} onChange={() => { updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !checked } : candidate), itemSetLogs: checked ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }} aria-label={`${title} — ${item.quantity} ${unit}`} />
                       <span className="custom-check">{checked && <Check size={17} />}</span>
-                    </label><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
+                    </label><span className="item-order">{String(visiblePlanItems.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
-                    <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); updateRecord({ customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== item.id) }); }} aria-label={`${language === "zh-TW" ? "取消" : "Remove"} ${title}`}><Minus size={17} /></button>
+                    <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); removeCustomItem(item.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
                   </summary>
                   <TrainingSetLogger
                     itemId={item.id}
@@ -478,6 +495,43 @@ function combineDuration(minutes: number, seconds: number) {
   return minutes * 60 + normalizedSeconds;
 }
 
+function DurationPicker({ value, language, label, onChange }: { value?: number; language: Language; label: string; onChange: (seconds: number) => void }) {
+  const [open, setOpen] = useState(false);
+  const [draftSeconds, setDraftSeconds] = useState(value ?? 0);
+  const parts = getDurationParts(draftSeconds);
+  const openPicker = () => { setDraftSeconds(value ?? 0); setOpen(true); };
+  const updatePart = (minutes: number, seconds: number) => setDraftSeconds(combineDuration(minutes, seconds));
+  const display = formatDurationInput(value ?? 0);
+
+  return <>
+    <button type="button" className="duration-picker-trigger" onClick={openPicker} aria-label={label}>{display}<span aria-hidden="true">⌄</span></button>
+    {open && <div className="dialog-backdrop duration-picker-backdrop" role="presentation">
+      <section className="duration-picker-sheet" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "選擇時間" : "Choose duration"}>
+        <div className="duration-picker-actions">
+          <button type="button" onClick={() => setOpen(false)}>{language === "zh-TW" ? "取消" : "Cancel"}</button>
+          <strong>{language === "zh-TW" ? "選擇時間" : "Duration"}</strong>
+          <button type="button" onClick={() => { onChange(draftSeconds); setOpen(false); }} aria-label={language === "zh-TW" ? "確認時間" : "Confirm duration"}>{language === "zh-TW" ? "完成" : "Done"}</button>
+        </div>
+        <div className="duration-wheels">
+          <div className="wheel-column">
+            <select size={5} value={parts.minutes} onChange={(event) => updatePart(Number(event.target.value), parts.seconds)} aria-label={`${label} ${language === "zh-TW" ? "分鐘" : "minutes"}`}>
+              {Array.from({ length: 31 }, (_, minute) => <option value={minute} key={minute}>{String(minute).padStart(2, "0")}</option>)}
+            </select>
+            <span>{language === "zh-TW" ? "分" : "min"}</span>
+          </div>
+          <b>:</b>
+          <div className="wheel-column">
+            <select size={5} value={parts.seconds} onChange={(event) => updatePart(parts.minutes, Number(event.target.value))} aria-label={`${label} ${language === "zh-TW" ? "秒數" : "seconds"}`}>
+              {Array.from({ length: 60 }, (_, second) => <option value={second} key={second}>{String(second).padStart(2, "0")}</option>)}
+            </select>
+            <span>{language === "zh-TW" ? "秒" : "sec"}</span>
+          </div>
+        </div>
+      </section>
+    </div>}
+  </>;
+}
+
 function TrainingSetLogger({
   itemId,
   itemTitle,
@@ -538,35 +592,12 @@ function TrainingSetLogger({
               </label>
               <label className="duration-field">
                 <small>{language === "zh-TW" ? "時間" : "Time"}</small>
-                <span>
-                  <select
-                    value={getDurationParts(set.durationSeconds).minutes}
-                    onChange={(event) => {
-                      const current = getDurationParts(set.durationSeconds);
-                      const durationSeconds = combineDuration(Number(event.target.value), current.seconds);
-                      onUpdateSet(itemId, set.id, { durationSeconds, durationText: formatDurationInput(durationSeconds) });
-                    }}
-                    aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組分鐘" : " minutes"}`}
-                  >
-                    {Array.from({ length: 31 }, (_, minute) => (
-                      <option value={minute} key={minute}>{String(minute).padStart(2, "0")}</option>
-                    ))}
-                  </select>
-                  <b>:</b>
-                  <select
-                    value={getDurationParts(set.durationSeconds).seconds}
-                    onChange={(event) => {
-                      const current = getDurationParts(set.durationSeconds);
-                      const durationSeconds = combineDuration(current.minutes, Number(event.target.value));
-                      onUpdateSet(itemId, set.id, { durationSeconds, durationText: formatDurationInput(durationSeconds) });
-                    }}
-                    aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組秒數" : " seconds"}`}
-                  >
-                    {Array.from({ length: 60 }, (_, second) => (
-                      <option value={second} key={second}>{String(second).padStart(2, "0")}</option>
-                    ))}
-                  </select>
-                </span>
+                <DurationPicker
+                  value={set.durationSeconds}
+                  language={language}
+                  label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組時間" : " time"}`}
+                  onChange={(durationSeconds) => onUpdateSet(itemId, set.id, { durationSeconds, durationText: formatDurationInput(durationSeconds) })}
+                />
               </label>
               <button
                 className={set.completed ? "set-done active" : "set-done"}
@@ -800,6 +831,7 @@ function getMonthGridDates(monthDate: Date) {
 function hasRecordContent(record?: TrainingRecord) {
   return Boolean(
     record?.completedItemIds.length ||
+    record?.removedItemIds?.length ||
     record?.customItems?.length ||
     Object.values(record?.itemSetLogs ?? {}).some((sets) => sets.length > 0) ||
     record?.technicalNotes ||

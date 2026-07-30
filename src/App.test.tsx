@@ -32,8 +32,10 @@ describe("Boxing Tracker", () => {
     await user.selectOptions(screen.getByLabelText("第1組重量單位"), "lb");
     await user.clear(screen.getByLabelText("第1組次數"));
     await user.type(screen.getByLabelText("第1組次數"), "12");
-    await user.selectOptions(screen.getByLabelText("第1組分鐘"), "1");
-    await user.selectOptions(screen.getByLabelText("第1組秒數"), "30");
+    await user.click(screen.getByLabelText("第1組時間"));
+    await user.selectOptions(screen.getByLabelText("第1組時間 分鐘"), "1");
+    await user.selectOptions(screen.getByLabelText("第1組時間 秒數"), "30");
+    await user.click(screen.getByRole("button", { name: "確認時間" }));
     await user.click(screen.getByRole("button", { name: "完成第1組" }));
 
     first.unmount();
@@ -43,8 +45,9 @@ describe("Boxing Tracker", () => {
     expect(screen.getByLabelText("第1組重量")).toHaveValue(70);
     expect(screen.getByLabelText("第1組重量單位")).toHaveValue("lb");
     expect(screen.getByLabelText("第1組次數")).toHaveValue(12);
-    expect(screen.getByLabelText("第1組分鐘")).toHaveValue("1");
-    expect(screen.getByLabelText("第1組秒數")).toHaveValue("30");
+    await user.click(screen.getByLabelText("第1組時間"));
+    expect(screen.getByLabelText("第1組時間 分鐘")).toHaveValue("1");
+    expect(screen.getByLabelText("第1組時間 秒數")).toHaveValue("30");
   });
 
   it("keeps completed set progress in sync with calendar history", async () => {
@@ -128,6 +131,16 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("heading", { name: "雙刺拳接側移" })).toBeInTheDocument();
   });
 
+  it("removes a planned drill from today's training progress", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "移除 一對一教練課" }));
+
+    expect(screen.queryByRole("checkbox", { name: /一對一教練課/ })).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "0 / 3" })).toBeInTheDocument();
+  });
+
   it("removes an added drill from the training progress", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);
@@ -136,9 +149,9 @@ describe("Boxing Tracker", () => {
     await user.type(screen.getByPlaceholderText("搜尋動作"), "jab");
     await user.click(screen.getByRole("button", { name: "加入 刺拳" }));
     await user.click(screen.getByRole("button", { name: "加入訓練" }));
-    await user.click(screen.getByRole("button", { name: "取消 刺拳" }));
+    await user.click(screen.getByRole("button", { name: "移除 刺拳" }));
 
-    expect(screen.queryByRole("button", { name: "取消 刺拳" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "移除 刺拳" })).not.toBeInTheDocument();
   });
 
   it("cancels a saved day from the calendar detail", async () => {

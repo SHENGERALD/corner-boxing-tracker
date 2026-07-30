@@ -33,6 +33,7 @@ export interface DayPlan {
 
 export interface TrainingRecord {
   completedItemIds: string[];
+  removedItemIds?: string[];
   customItems?: CustomTrainingItem[];
   itemSetLogs?: Record<string, TrainingSet[]>;
   rpe?: number;
