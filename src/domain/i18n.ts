@@ -2,8 +2,8 @@ import type { Language, LocalizedLabel } from "./types";
 
 const translations = {
   "nav.today": { zhTW: "今天", en: "Today" },
-  "nav.week": { zhTW: "本週", en: "Week" },
-  "nav.log": { zhTW: "紀錄", en: "Log" },
+  "nav.history": { zhTW: "歷史", en: "History" },
+  "nav.library": { zhTW: "動作庫", en: "Library" },
   "nav.backup": { zhTW: "備份", en: "Backup" },
   "app.kicker": { zhTW: "私人拳擊日誌", en: "Private boxing journal" },
   "today.focus": { zhTW: "今日重點", en: "Today’s focus" },
@@ -18,6 +18,9 @@ const translations = {
   "field.bodyPlaceholder": { zhTW: "肩、腕、膝、疲勞程度…", en: "Shoulders, wrists, knees, fatigue…" },
   "field.next": { zhTW: "下次重點", en: "Next focus" },
   "field.nextPlaceholder": { zhTW: "只留一個最重要的提醒", en: "Keep one essential cue" },
+  "history.title": { zhTW: "月曆歷史", en: "Calendar history" },
+  "history.subtitle": { zhTW: "用月曆看訓練節奏，點日期回到當天紀錄。", en: "Track training rhythm by month. Tap a day to edit it." },
+  "history.stats": { zhTW: "統計", en: "Stats" },
   "week.title": { zhTW: "這一週，穩定累積。", en: "Build the week, steadily." },
   "week.subtitle": { zhTW: "保護教練課，也保護恢復日。", en: "Protect coaching days and recovery days." },
   "week.sessions": { zhTW: "完成課次", en: "sessions done" },

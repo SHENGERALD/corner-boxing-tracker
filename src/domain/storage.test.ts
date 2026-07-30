@@ -25,7 +25,7 @@ describe("local training storage", () => {
     saveState(state);
 
     expect(loadState()).toEqual(state);
-    expect(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}").version).toBe(1);
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}").version).toBe(2);
   });
 
   it("rejects malformed backups without replacing current state", () => {
@@ -34,5 +34,32 @@ describe("local training storage", () => {
 
     expect(() => importState('{"version":2}')).toThrow("Invalid backup");
     expect(loadState()).toEqual(state);
+  });
+
+  it("migrates version 1 records to version 2 without losing their notes", () => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        version: 1,
+        language: "zh-TW",
+        records: {
+          "2026-07-30": {
+            completedItemIds: ["coach-class"],
+            technicalNotes: "手要回防",
+          },
+        },
+      })
+    );
+
+    expect(loadState()).toMatchObject({
+      version: 2,
+      favoriteDrillIds: [],
+      records: {
+        "2026-07-30": {
+          technicalNotes: "手要回防",
+          customItems: [],
+        },
+      },
+    });
   });
 });

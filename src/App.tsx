@@ -2,13 +2,19 @@ import {
   Archive,
   CalendarDays,
   Check,
+  ChevronLeft,
   ChevronRight,
   ClipboardList,
   Download,
   Dumbbell,
   Globe2,
+  Heart,
   Home,
+  Minus,
+  Plus,
   RotateCcw,
+  Search,
+  Trash2,
   Upload,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -25,8 +31,10 @@ import {
   type AppState,
 } from "./domain/storage";
 import type { Language, TrainingRecord } from "./domain/types";
+import type { CustomTrainingItem, TrainingSet } from "./domain/types";
+import { drillLibrary, filterDrills, type Drill, type DrillCategory, type TrainingDomain } from "./domain/drills";
 
-type View = "today" | "week" | "log" | "backup";
+type View = "today" | "history" | "library" | "backup";
 
 interface AppProps {
   initialDate?: Date;
@@ -34,8 +42,8 @@ interface AppProps {
 
 const navItems = [
   { id: "today", icon: Home, label: "nav.today" },
-  { id: "week", icon: CalendarDays, label: "nav.week" },
-  { id: "log", icon: ClipboardList, label: "nav.log" },
+  { id: "history", icon: CalendarDays, label: "nav.history" },
+  { id: "library", icon: ClipboardList, label: "nav.library" },
   { id: "backup", icon: Archive, label: "nav.backup" },
 ] as const;
 
@@ -54,7 +62,10 @@ function initialRecord(): TrainingRecord {
 export default function App({ initialDate = new Date() }: AppProps) {
   const [view, setView] = useState<View>("today");
   const [selectedDate, setSelectedDate] = useState(() => new Date(initialDate));
+  const [displayMonth, setDisplayMonth] = useState(() => new Date(initialDate));
   const [state, setState] = useState<AppState>(() => loadState());
+  const [drillToAdd, setDrillToAdd] = useState<Drill | null>(null);
+  const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
   const language = state.language;
 
   useEffect(() => saveState(state), [state]);
@@ -84,7 +95,39 @@ export default function App({ initialDate = new Date() }: AppProps) {
 
   const openDate = (date: Date) => {
     setSelectedDate(date);
+    setDisplayMonth(date);
     setView("today");
+  };
+
+  const toggleFavorite = (drillId: string) => setState((current) => ({
+    ...current,
+    favoriteDrillIds: current.favoriteDrillIds.includes(drillId)
+      ? current.favoriteDrillIds.filter((id) => id !== drillId)
+      : [...current.favoriteDrillIds, drillId],
+  }));
+
+  const addCustomDrill = (item: CustomTrainingItem) => setState((current) => ({
+    ...current,
+    records: {
+      ...current.records,
+      [selectedKey]: {
+        ...(current.records[selectedKey] ?? initialRecord()),
+        customItems: [...(current.records[selectedKey]?.customItems ?? []), item],
+        updatedAt: new Date().toISOString(),
+      },
+    },
+  }));
+
+  const addLibraryDrill = (drill: Drill) => setState((current) => ({
+    ...current,
+    customDrills: [...(current.customDrills ?? []), drill],
+  }));
+
+  const clearRecord = (dateKey = selectedKey) => {
+    setState((current) => {
+      const { [dateKey]: _removed, ...remainingRecords } = current.records;
+      return { ...current, records: remainingRecords };
+    });
   };
 
   return (
@@ -97,10 +140,6 @@ export default function App({ initialDate = new Date() }: AppProps) {
             <small>{t(language, "app.kicker")}</small>
           </span>
         </button>
-        <div className="week-streak" aria-label="training principle">
-          <span className="pulse-dot" />
-          {language === "zh-TW" ? "技術品質優先" : "Quality over volume"}
-        </div>
       </header>
 
       <main>
@@ -111,18 +150,30 @@ export default function App({ initialDate = new Date() }: AppProps) {
             plan={plan}
             record={record}
             updateRecord={updateRecord}
+            addDrill={() => setView("library")}
+            clearRecord={() => clearRecord()}
           />
         )}
-        {view === "week" && (
-          <WeekView
-            anchorDate={selectedDate}
+        {view === "history" && (
+          <HistoryCalendarView
+            monthDate={displayMonth}
+            selectedDate={selectedDate}
             language={language}
             records={state.records}
             openDate={openDate}
+            changeMonth={(offset) => setDisplayMonth((current) => addMonths(current, offset))}
+            clearRecord={clearRecord}
           />
         )}
-        {view === "log" && (
-          <LogView language={language} records={state.records} openDate={openDate} />
+        {view === "library" && (
+          <DrillLibraryView
+            language={language}
+            favorites={state.favoriteDrillIds}
+            customDrills={state.customDrills ?? []}
+            onFavorite={toggleFavorite}
+            onAdd={setDrillToAdd}
+            onCreate={() => setCreatingLibraryDrill(true)}
+          />
         )}
         {view === "backup" && (
           <BackupView
@@ -133,6 +184,8 @@ export default function App({ initialDate = new Date() }: AppProps) {
           />
         )}
       </main>
+      {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
+      {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
 
       <nav className="bottom-nav" aria-label="Primary">
         {navItems.map(({ id, icon: Icon, label }) => (
@@ -157,13 +210,49 @@ interface TodayViewProps {
   plan: ReturnType<typeof getPlanForWeekday>;
   record: TrainingRecord;
   updateRecord: (patch: Partial<TrainingRecord>) => void;
+  addDrill: () => void;
+  clearRecord: () => void;
 }
 
-function TodayView({ date, language, plan, record, updateRecord }: TodayViewProps) {
+function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord }: TodayViewProps) {
   const completion = getRecordCompletion(plan, record);
   const percentage = completion.total
     ? Math.round((completion.completed / completion.total) * 100)
     : 0;
+  const savedRecord = hasRecordContent(record);
+  const itemSetLogs = record.itemSetLogs ?? {};
+
+  const updateItemSets = (itemId: string, sets: TrainingSet[]) => {
+    updateRecord({ itemSetLogs: { ...itemSetLogs, [itemId]: sets } });
+  };
+
+  const addSet = (itemId: string) => {
+    const currentSets = itemSetLogs[itemId] ?? [];
+    const previous = currentSets[currentSets.length - 1];
+    updateItemSets(itemId, [
+      ...currentSets,
+      {
+        id: `${itemId}-set-${Date.now()}`,
+        weight: previous?.weight,
+        weightUnit: previous?.weightUnit ?? "kg",
+        reps: previous?.reps ?? 10,
+        durationSeconds: previous?.durationSeconds,
+        durationText: previous?.durationText,
+        completed: false,
+      },
+    ]);
+  };
+
+  const updateSet = (itemId: string, setId: string, patch: Partial<TrainingSet>) => {
+    updateItemSets(
+      itemId,
+      (itemSetLogs[itemId] ?? []).map((set) => set.id === setId ? { ...set, ...patch } : set)
+    );
+  };
+
+  const removeSet = (itemId: string, setId: string) => {
+    updateItemSets(itemId, (itemSetLogs[itemId] ?? []).filter((set) => set.id !== setId));
+  };
 
   const toggleItem = (id: string) => {
     const isDone = record.completedItemIds.includes(id);
@@ -176,7 +265,8 @@ function TodayView({ date, language, plan, record, updateRecord }: TodayViewProp
 
   return (
     <div className="page today-page">
-      <section className="today-hero">
+      <section className="today-workbench">
+        <div className="today-hero">
         <div>
           <p className="eyebrow">{formatDate(date, language)}</p>
           <h1>{formatPlanLabel(plan.session, language)}</h1>
@@ -199,6 +289,14 @@ function TodayView({ date, language, plan, record, updateRecord }: TodayViewProp
           >
             <strong>{percentage}%</strong>
             <small>{t(language, "today.complete")}</small>
+          </div>
+        )}
+        </div>
+        {plan.items.length > 0 && (
+          <div className="workbench-actions">
+            <div className="workbench-count"><strong>{completion.completed}/{completion.total}</strong><span>{t(language, "today.progress")}</span></div>
+            <button className="add-training" onClick={addDrill}><Plus size={18} />{language === "zh-TW" ? "新增動作" : "Add drill"}</button>
+            {savedRecord && <button className="cancel-record" onClick={() => { if (window.confirm(language === "zh-TW" ? "取消今天的全部訓練紀錄？" : "Cancel all records for today?")) clearRecord(); }}><Trash2 size={16} />{language === "zh-TW" ? "取消紀錄" : "Cancel record"}</button>}
           </div>
         )}
       </section>
@@ -233,22 +331,59 @@ function TodayView({ date, language, plan, record, updateRecord }: TodayViewProp
               {plan.items.map((planItem, index) => {
                 const checked = record.completedItemIds.includes(planItem.id);
                 const title = formatPlanLabel(planItem.label, language);
+                const detail = formatPlanLabel(planItem.detail, language);
                 return (
-                  <label className={`training-item ${checked ? "checked" : ""}`} key={planItem.id}>
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      onChange={() => toggleItem(planItem.id)}
-                      aria-label={`${title} — ${formatPlanLabel(planItem.detail, language)}`}
+                  <details className={`training-entry ${checked ? "checked" : ""}`} key={planItem.id}>
+                    <summary className="training-item">
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onClick={(event) => event.stopPropagation()}
+                        onChange={() => toggleItem(planItem.id)}
+                        aria-label={`${title} — ${detail}`}
+                      />
+                      <span className="custom-check">{checked && <Check size={17} />}</span>
+                      <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="item-copy">
+                        <strong>{title}</strong>
+                        <small>{detail}</small>
+                      </span>
+                      <span className="set-count">{itemSetLogs[planItem.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
+                    </summary>
+                    <TrainingSetLogger
+                      itemId={planItem.id}
+                      itemTitle={title}
+                      language={language}
+                      sets={itemSetLogs[planItem.id] ?? []}
+                      onAddSet={addSet}
+                      onUpdateSet={updateSet}
+                      onRemoveSet={removeSet}
                     />
-                    <span className="custom-check">{checked && <Check size={17} />}</span>
-                    <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
-                    <span className="item-copy">
-                      <strong>{title}</strong>
-                      <small>{formatPlanLabel(planItem.detail, language)}</small>
-                    </span>
-                  </label>
+                  </details>
                 );
+              })}
+              {(record.customItems ?? []).map((item, index) => {
+                const drill = drillLibrary.find((candidate) => candidate.id === item.drillId);
+                if (!drill) return null;
+                const title = formatPlanLabel(drill.name, language);
+                const unit = item.unit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
+                return <details className={`training-entry custom-training-entry ${item.completed ? "checked" : ""}`} key={item.id}>
+                  <summary className="training-item custom-training-item">
+                    <input type="checkbox" checked={item.completed} onClick={(event) => event.stopPropagation()} onChange={() => updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !candidate.completed } : candidate) })} aria-label={`${title} — ${item.quantity} ${unit}`} />
+                    <span className="custom-check">{item.completed && <Check size={17} />}</span><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
+                    <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
+                    <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); updateRecord({ customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== item.id) }); }} aria-label={`${language === "zh-TW" ? "取消" : "Remove"} ${title}`}><Minus size={17} /></button>
+                  </summary>
+                  <TrainingSetLogger
+                    itemId={item.id}
+                    itemTitle={title}
+                    language={language}
+                    sets={itemSetLogs[item.id] ?? []}
+                    onAddSet={addSet}
+                    onUpdateSet={updateSet}
+                    onRemoveSet={removeSet}
+                  />
+                </details>;
               })}
             </div>
           </section>
@@ -257,7 +392,7 @@ function TodayView({ date, language, plan, record, updateRecord }: TodayViewProp
             <div className="section-heading">
               <div>
                 <p className="eyebrow">SESSION NOTES</p>
-                <h2>{language === "zh-TW" ? "一好，一修正。" : "One win. One correction."}</h2>
+                <h2>{language === "zh-TW" ? "訓練筆記" : "Training notes"}</h2>
               </div>
               <span className="rule-number">02</span>
             </div>
@@ -306,6 +441,305 @@ function TodayView({ date, language, plan, record, updateRecord }: TodayViewProp
   );
 }
 
+
+function formatDurationInput(seconds?: number) {
+  if (seconds === undefined) return "";
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+}
+
+function getDurationParts(seconds?: number) {
+  return {
+    minutes: seconds === undefined ? 0 : Math.floor(seconds / 60),
+    seconds: seconds === undefined ? 0 : seconds % 60,
+  };
+}
+
+function combineDuration(minutes: number, seconds: number) {
+  const normalizedSeconds = Math.min(Math.max(seconds, 0), 59);
+  return minutes * 60 + normalizedSeconds;
+}
+
+function TrainingSetLogger({
+  itemId,
+  itemTitle,
+  language,
+  sets,
+  onAddSet,
+  onUpdateSet,
+  onRemoveSet,
+}: {
+  itemId: string;
+  itemTitle: string;
+  language: Language;
+  sets: TrainingSet[];
+  onAddSet: (itemId: string) => void;
+  onUpdateSet: (itemId: string, setId: string, patch: Partial<TrainingSet>) => void;
+  onRemoveSet: (itemId: string, setId: string) => void;
+}) {
+  return (
+    <div className="set-logger" aria-label={language === "zh-TW" ? "組數紀錄" : "Set log"}>
+      {sets.length === 0 ? (
+        <p className="set-empty">{language === "zh-TW" ? "展開後可新增每一組的重量、單位、次數、時間與完成狀態。" : "Add sets to log weight, unit, reps, time, and completion."}</p>
+      ) : (
+        <div className="set-table">
+          {sets.map((set, index) => (
+            <div className={`set-row ${set.completed ? "completed" : ""}`} key={set.id}>
+              <span className="set-index">{index + 1}</span>
+              <label className="weight-field">
+                <small>{language === "zh-TW" ? "重量" : "Weight"}</small>
+                <span>
+                  <input
+                    type="number"
+                    min="0"
+                    inputMode="decimal"
+                    value={set.weight ?? ""}
+                    onChange={(event) => onUpdateSet(itemId, set.id, { weight: event.target.value === "" ? undefined : Number(event.target.value) })}
+                    aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組重量" : " weight"}`}
+                  />
+                  <select
+                    value={set.weightUnit ?? "kg"}
+                    onChange={(event) => onUpdateSet(itemId, set.id, { weightUnit: event.target.value as TrainingSet["weightUnit"] })}
+                    aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組重量單位" : " weight unit"}`}
+                  >
+                    <option value="kg">kg</option>
+                    <option value="lb">lb</option>
+                  </select>
+                </span>
+              </label>
+              <label>
+                <small>{language === "zh-TW" ? "次數" : "Reps"}</small>
+                <input
+                  type="number"
+                  min="0"
+                  inputMode="numeric"
+                  value={set.reps ?? ""}
+                  onChange={(event) => onUpdateSet(itemId, set.id, { reps: event.target.value === "" ? undefined : Number(event.target.value) })}
+                  aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組次數" : " reps"}`}
+                />
+              </label>
+              <label className="duration-field">
+                <small>{language === "zh-TW" ? "時間" : "Time"}</small>
+                <span>
+                  <select
+                    value={getDurationParts(set.durationSeconds).minutes}
+                    onChange={(event) => {
+                      const current = getDurationParts(set.durationSeconds);
+                      const durationSeconds = combineDuration(Number(event.target.value), current.seconds);
+                      onUpdateSet(itemId, set.id, { durationSeconds, durationText: formatDurationInput(durationSeconds) });
+                    }}
+                    aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組分鐘" : " minutes"}`}
+                  >
+                    {Array.from({ length: 31 }, (_, minute) => (
+                      <option value={minute} key={minute}>{String(minute).padStart(2, "0")}</option>
+                    ))}
+                  </select>
+                  <b>:</b>
+                  <select
+                    value={getDurationParts(set.durationSeconds).seconds}
+                    onChange={(event) => {
+                      const current = getDurationParts(set.durationSeconds);
+                      const durationSeconds = combineDuration(current.minutes, Number(event.target.value));
+                      onUpdateSet(itemId, set.id, { durationSeconds, durationText: formatDurationInput(durationSeconds) });
+                    }}
+                    aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組秒數" : " seconds"}`}
+                  >
+                    {Array.from({ length: 60 }, (_, second) => (
+                      <option value={second} key={second}>{String(second).padStart(2, "0")}</option>
+                    ))}
+                  </select>
+                </span>
+              </label>
+              <button
+                className={set.completed ? "set-done active" : "set-done"}
+                onClick={() => onUpdateSet(itemId, set.id, { completed: !set.completed })}
+                aria-label={`${language === "zh-TW" ? "完成第" : "Complete set "}${index + 1}${language === "zh-TW" ? "組" : ""}`}
+              >
+                <Check size={19} />
+              </button>
+              <button
+                className="set-remove"
+                onClick={() => onRemoveSet(itemId, set.id)}
+                aria-label={`${language === "zh-TW" ? "刪除第" : "Remove set "}${index + 1}${language === "zh-TW" ? "組" : ""}`}
+              >
+                <Trash2 size={16} />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+      <button
+        className="add-set"
+        onClick={() => onAddSet(itemId)}
+        aria-label={language === "zh-TW" ? `新增${itemTitle}一組` : `Add set for ${itemTitle}`}
+      >
+        <Plus size={17} />{language === "zh-TW" ? "新增一組" : "Add set"}
+      </button>
+    </div>
+  );
+}
+
+function DrillLibraryView({
+  language,
+  favorites,
+  customDrills,
+  onFavorite,
+  onAdd,
+  onCreate,
+}: {
+  language: Language;
+  favorites: string[];
+  customDrills: Drill[];
+  onFavorite: (id: string) => void;
+  onAdd: (drill: Drill) => void;
+  onCreate: () => void;
+}) {
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<Drill["category"] | "all">("all");
+  const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const [domain, setDomain] = useState<TrainingDomain>("boxing");
+  const drills = filterDrills([...customDrills, ...drillLibrary], { query, domain, category, favoriteIds: favorites, favoritesOnly: onlyFavorites });
+  const categories: Array<[Drill["category"] | "all", string]> = domain === "boxing"
+    ? [
+        ["all", language === "zh-TW" ? "全部" : "All"],
+        ["fundamentals", language === "zh-TW" ? "基礎" : "Basics"],
+        ["footwork", language === "zh-TW" ? "步法" : "Footwork"],
+        ["offense", language === "zh-TW" ? "進攻" : "Offense"],
+        ["defense", language === "zh-TW" ? "防守" : "Defense"],
+        ["equipment", language === "zh-TW" ? "器材" : "Equipment"],
+        ["conditioning", language === "zh-TW" ? "體能" : "Conditioning"],
+      ]
+    : [
+        ["all", language === "zh-TW" ? "全部" : "All"],
+        ["chest", language === "zh-TW" ? "胸" : "Chest"],
+        ["back", language === "zh-TW" ? "背" : "Back"],
+        ["legs", language === "zh-TW" ? "腿" : "Legs"],
+        ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"],
+        ["core", language === "zh-TW" ? "核心" : "Core"],
+      ];
+  const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory("all"); };
+
+  return (
+    <div className="page library-page">
+      <div className="library-type-switch" aria-label={language === "zh-TW" ? "訓練類型" : "Training type"}>
+        <button className={domain === "boxing" ? "selected" : ""} onClick={() => changeDomain("boxing")}>{language === "zh-TW" ? "拳擊" : "Boxing"}</button>
+        <button className={domain === "strength" ? "selected" : ""} onClick={() => changeDomain("strength")}>{language === "zh-TW" ? "重訓" : "Strength"}</button>
+      </div>
+      <section className="library-toolbar">
+        <label className="library-search">
+          <Search size={21} />
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={language === "zh-TW" ? "搜尋動作" : "Search drills"}
+            aria-label={language === "zh-TW" ? "搜尋動作" : "Search drills"}
+          />
+        </label>
+        <button className="library-add-button" onClick={onCreate} aria-label={language === "zh-TW" ? "新增動作" : "Add drill"}>
+          <Plus size={29} />
+        </button>
+      </section>
+
+      <section className="library-layout">
+        <aside className="category-rail" aria-label={language === "zh-TW" ? "動作分類" : "Drill categories"}>
+          {categories.map(([id, label]) => (
+            <button className={category === id ? "selected" : ""} onClick={() => setCategory(id)} key={id}>
+              {label}
+            </button>
+          ))}
+          <button className={onlyFavorites ? "selected favorite-filter" : "favorite-filter"} onClick={() => setOnlyFavorites(!onlyFavorites)}>
+            {language === "zh-TW" ? "收藏" : "Favorites"}
+          </button>
+        </aside>
+
+        <div className="library-content">
+          <div className="library-heading">
+            <p className="eyebrow">BOXING DATABASE</p>
+            <h1>{domain === "boxing" ? (language === "zh-TW" ? "拳擊資料庫" : "Boxing database") : (language === "zh-TW" ? "重訓資料庫" : "Strength database")}</h1>
+            <p>{domain === "boxing" ? (language === "zh-TW" ? "搜尋技術、步法、沙包與體能動作，直接加入今天訓練。" : "Search boxing skills, footwork, bag work, and conditioning. Add any drill to today.") : (language === "zh-TW" ? "依部位挑選重訓動作，記錄重量、次數與組數。" : "Browse strength exercises by body part and log load, reps, and sets.")}</p>
+          </div>
+          <div className="category-chips">
+            {categories.map(([id, label]) => (
+              <button className={category === id ? "selected" : ""} onClick={() => setCategory(id)} key={id}>{label}</button>
+            ))}
+          </div>
+          <div className="drill-grid">
+            {drills.map((drill) => {
+              const favorite = favorites.includes(drill.id);
+              const title = formatPlanLabel(drill.name, language);
+              const unit = drill.defaultUnit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
+              return (
+                <article className="drill-card" key={drill.id}>
+                  <div className="drill-card-top">
+                    <span className="explain-pill">{language === "zh-TW" ? "講解" : "Guide"}</span>
+                    <button className={favorite ? "favorite active" : "favorite"} onClick={() => onFavorite(drill.id)} aria-label={`${language === "zh-TW" ? "收藏" : "Favorite"} ${title}`}>
+                      <Heart size={16} />
+                    </button>
+                  </div>
+                  <div className="drill-visual" aria-hidden="true">
+                    <span>{title.slice(0, 1)}</span>
+                  </div>
+                  <h2>{title}</h2>
+                  <p>{formatPlanLabel(drill.cue, language)}</p>
+                  <small>{drill.defaultQuantity} {unit}</small>
+                  <button className="add-drill" onClick={() => onAdd(drill)} aria-label={`${language === "zh-TW" ? "加入" : "Add"} ${title}`}>
+                    <Plus size={16} />{language === "zh-TW" ? "加入" : "Add"}
+                  </button>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: Language; onClose: () => void; onConfirm: (drill: Drill) => void }) {
+  const [name, setName] = useState("");
+  const [englishName, setEnglishName] = useState("");
+  const [cue, setCue] = useState("");
+  const [domain, setDomain] = useState<TrainingDomain>("boxing");
+  const [category, setCategory] = useState<DrillCategory>("fundamentals");
+  const [unit, setUnit] = useState<"rounds" | "minutes">("rounds");
+  const [quantity, setQuantity] = useState(3);
+  const categories: Array<[DrillCategory, string]> = domain === "boxing"
+    ? [["fundamentals", language === "zh-TW" ? "基礎" : "Basics"], ["footwork", language === "zh-TW" ? "步法" : "Footwork"], ["offense", language === "zh-TW" ? "進攻" : "Offense"], ["defense", language === "zh-TW" ? "防守" : "Defense"], ["equipment", language === "zh-TW" ? "器材" : "Equipment"], ["conditioning", language === "zh-TW" ? "體能" : "Conditioning"]]
+    : [["chest", language === "zh-TW" ? "胸" : "Chest"], ["back", language === "zh-TW" ? "背" : "Back"], ["legs", language === "zh-TW" ? "腿" : "Legs"], ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"], ["core", language === "zh-TW" ? "核心" : "Core"]];
+  const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory(nextDomain === "boxing" ? "fundamentals" : "chest"); };
+  const save = () => {
+    const trimmedName = name.trim();
+    if (!trimmedName) return;
+    onConfirm({
+      id: `custom-${Date.now()}`,
+      domain,
+      category,
+      name: { zhTW: trimmedName, en: englishName.trim() || trimmedName },
+      cue: { zhTW: cue.trim() || (language === "zh-TW" ? "自訂訓練動作" : "Custom training drill"), en: cue.trim() || "Custom training drill" },
+      defaultUnit: unit,
+      defaultQuantity: Math.max(1, quantity),
+    });
+  };
+
+  return <div className="dialog-backdrop" role="presentation"><section className="add-dialog create-drill-dialog" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "新增自訂動作" : "Create custom drill"}>
+    <p className="eyebrow">CUSTOM DRILL</p>
+    <h2>{language === "zh-TW" ? "新增到動作庫" : "Add to your library"}</h2>
+    <label>{language === "zh-TW" ? "動作名稱" : "Drill name"}<input autoFocus value={name} onChange={(event) => setName(event.target.value)} placeholder={language === "zh-TW" ? "例如：閃躲接右直拳" : "e.g. Slip to cross"} /></label>
+    <label>{language === "zh-TW" ? "英文名稱（選填）" : "English name (optional)"}<input value={englishName} onChange={(event) => setEnglishName(event.target.value)} /></label>
+    <label>{language === "zh-TW" ? "提示（選填）" : "Cue (optional)"}<input value={cue} onChange={(event) => setCue(event.target.value)} placeholder={language === "zh-TW" ? "例如：下潛後立刻回到護手" : "e.g. Return to guard after the slip"} /></label>
+    <label>{language === "zh-TW" ? "訓練類型" : "Training type"}<select value={domain} onChange={(event) => changeDomain(event.target.value as TrainingDomain)}><option value="boxing">{language === "zh-TW" ? "拳擊" : "Boxing"}</option><option value="strength">{language === "zh-TW" ? "重訓" : "Strength"}</option></select></label>
+    <label>{language === "zh-TW" ? "分類" : "Category"}<select value={category} onChange={(event) => setCategory(event.target.value as DrillCategory)}>{categories.map(([id, label]) => <option value={id} key={id}>{label}</option>)}</select></label>
+    <div className="custom-drill-defaults"><label>{language === "zh-TW" ? "預設數量" : "Default quantity"}<input type="number" min="1" value={quantity} onChange={(event) => setQuantity(Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "單位" : "Unit"}<select value={unit} onChange={(event) => setUnit(event.target.value as "rounds" | "minutes")}><option value="rounds">{language === "zh-TW" ? "回合" : "Rounds"}</option><option value="minutes">{language === "zh-TW" ? "分鐘" : "Minutes"}</option></select></label></div>
+    <div className="dialog-actions"><button onClick={onClose}>{language === "zh-TW" ? "取消" : "Cancel"}</button><button onClick={save} disabled={!name.trim()}>{language === "zh-TW" ? "儲存動作" : "Save drill"}</button></div>
+  </section></div>;
+}
+
+function AddDrillPanel({ drill, language, onClose, onConfirm }: { drill: Drill; language: Language; onClose: () => void; onConfirm: (item: CustomTrainingItem) => void }) {
+  const [quantity, setQuantity] = useState(drill.defaultQuantity); const [unit, setUnit] = useState(drill.defaultUnit);
+  const name = formatPlanLabel(drill.name, language); const unitLabel = unit === "rounds" ? (language === "zh-TW" ? "回合數" : "Rounds") : (language === "zh-TW" ? "分鐘數" : "Minutes");
+  return <div className="dialog-backdrop" role="presentation"><section className="add-dialog" role="dialog" aria-modal="true" aria-label={`${language === "zh-TW" ? "加入訓練：" : "Add training: "}${name}`}><p className="eyebrow">SCHEDULE DRILL</p><h2>{language === "zh-TW" ? `加入訓練：${name}` : `Add training: ${name}`}</h2><label>{unitLabel}<input type="number" min="1" value={quantity} onChange={(event) => setQuantity(Math.max(1, Number(event.target.value)))} /></label><div className="unit-toggle"><button className={unit === "rounds" ? "selected" : ""} onClick={() => setUnit("rounds")}>{language === "zh-TW" ? "回合" : "Rounds"}</button><button className={unit === "minutes" ? "selected" : ""} onClick={() => setUnit("minutes")}>{language === "zh-TW" ? "分鐘" : "Minutes"}</button></div><div className="dialog-actions"><button onClick={onClose}>{language === "zh-TW" ? "取消" : "Cancel"}</button><button onClick={() => onConfirm({ id: `${drill.id}-${Date.now()}`, drillId: drill.id, quantity, unit, completed: false })}>{language === "zh-TW" ? "加入訓練" : "Add training"}</button></div></section></div>;
+}
+
 function TextField({
   label,
   placeholder,
@@ -327,6 +761,155 @@ function TextField({
         onChange={(event) => onChange(event.target.value)}
       />
     </label>
+  );
+}
+
+function addMonths(date: Date, offset: number) {
+  return new Date(date.getFullYear(), date.getMonth() + offset, 1, 12);
+}
+
+function getMonthGridDates(monthDate: Date) {
+  const first = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1, 12);
+  const startOffset = (first.getDay() + 6) % 7;
+  const start = new Date(first);
+  start.setDate(first.getDate() - startOffset);
+  return Array.from({ length: 42 }, (_, index) => {
+    const date = new Date(start);
+    date.setDate(start.getDate() + index);
+    return date;
+  });
+}
+
+function hasRecordContent(record?: TrainingRecord) {
+  return Boolean(
+    record?.completedItemIds.length ||
+    record?.customItems?.length ||
+    Object.values(record?.itemSetLogs ?? {}).some((sets) => sets.length > 0) ||
+    record?.technicalNotes ||
+    record?.bodyCheck ||
+    record?.nextFocus ||
+    record?.rpe
+  );
+}
+
+function recordPreviewTags(plan: ReturnType<typeof getPlanForWeekday>, record: TrainingRecord | undefined, language: Language) {
+  const customTags = (record?.customItems ?? [])
+    .map((item) => drillLibrary.find((drill) => drill.id === item.drillId))
+    .filter((drill): drill is Drill => Boolean(drill))
+    .map((drill) => formatPlanLabel(drill.name, language));
+  if (customTags.length) return customTags.slice(0, 3);
+  return [formatPlanLabel(plan.session, language), formatPlanLabel(plan.focus, language)].slice(0, 3);
+}
+
+function HistoryCalendarView({
+  monthDate,
+  selectedDate,
+  language,
+  records,
+  openDate,
+  changeMonth,
+  clearRecord,
+}: {
+  monthDate: Date;
+  selectedDate: Date;
+  language: Language;
+  records: AppState["records"];
+  openDate: (date: Date) => void;
+  changeMonth: (offset: number) => void;
+  clearRecord: (dateKey: string) => void;
+}) {
+  const monthDates = getMonthGridDates(monthDate);
+  const month = monthDate.getMonth();
+  const monthLabel = new Intl.DateTimeFormat(language, { month: "long" }).format(monthDate);
+  const yearLabel = new Intl.DateTimeFormat(language, { year: "numeric" }).format(monthDate).replace("年", "");
+  const weekdayLabels = getWeekDates(new Date(2026, 6, 27, 12)).map((date) =>
+    new Intl.DateTimeFormat(language, { weekday: "short" }).format(date)
+  );
+  const monthRecords = monthDates.filter((date) => date.getMonth() === month && hasRecordContent(records[toDateKey(date)]));
+  const selectedKey = toDateKey(selectedDate);
+  const selectedRecord = records[selectedKey];
+  const selectedPlan = getPlanForWeekday(getWeekday(selectedDate));
+  const todayKey = toDateKey(new Date());
+
+  return (
+    <div className="page history-page">
+      <section className="calendar-top">
+        <button className="month-arrow" onClick={() => changeMonth(-1)} aria-label={language === "zh-TW" ? "上一個月" : "Previous month"}>
+          <ChevronLeft size={28} />
+        </button>
+        <div>
+          <span>{yearLabel}</span>
+          <h1>{monthLabel}</h1>
+        </div>
+        <button className="month-arrow" onClick={() => changeMonth(1)} aria-label={language === "zh-TW" ? "下一個月" : "Next month"}>
+          <ChevronRight size={28} />
+        </button>
+        <div className="history-segment" aria-label={language === "zh-TW" ? "歷史與統計" : "History and stats"}>
+          <button className="selected">{language === "zh-TW" ? "歷史" : "History"}</button>
+          <button>{t(language, "history.stats")}</button>
+        </div>
+        <div className="calendar-summary">
+          <strong>{monthRecords.length}</strong>
+          <small>{language === "zh-TW" ? "有紀錄日" : "logged days"}</small>
+        </div>
+      </section>
+
+      <section className="calendar-panel" aria-label={t(language, "history.title")}>
+        <div className="calendar-caption">
+          <div>
+            <p className="eyebrow">HISTORY</p>
+            <h2>{t(language, "history.title")}</h2>
+          </div>
+          <p>{t(language, "history.subtitle")}</p>
+        </div>
+        <div className="weekday-row">
+          {weekdayLabels.map((label) => <span key={label}>{label}</span>)}
+        </div>
+        <div className="month-grid">
+          {monthDates.map((date) => {
+            const key = toDateKey(date);
+            const dayPlan = getPlanForWeekday(getWeekday(date));
+            const savedRecord = records[key];
+            const completion = getRecordCompletion(dayPlan, savedRecord);
+            const logged = hasRecordContent(savedRecord);
+            const outside = date.getMonth() !== month;
+            const metric = savedRecord?.rpe ? `RPE ${savedRecord.rpe}` : completion.total ? `${completion.completed}/${completion.total}` : "";
+            const ariaDate = language === "zh-TW"
+              ? `${monthLabel} ${date.getDate()}日 ${formatPlanLabel(dayPlan.session, language)}`
+              : `${monthLabel} ${date.getDate()} ${formatPlanLabel(dayPlan.session, language)}`;
+            return (
+              <button
+                className={`calendar-day ${outside ? "outside" : ""} ${key === todayKey ? "today" : ""} ${key === selectedKey ? "selected" : ""}`}
+                key={key}
+                onClick={() => openDate(date)}
+                aria-label={ariaDate}
+              >
+                <span className="day-number">{date.getDate()}</span>
+                {logged && (
+                  <span className="day-log">
+                    <strong>{metric}</strong>
+                    {recordPreviewTags(dayPlan, savedRecord, language).map((tag) => <small key={tag}>{tag}</small>)}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </section>
+      {hasRecordContent(selectedRecord) && (
+        <section className="history-detail" aria-label={language === "zh-TW" ? "選取日期紀錄" : "Selected day record"}>
+          <div>
+            <p className="eyebrow">{formatDate(selectedDate, language)}</p>
+            <h2>{formatPlanLabel(selectedPlan.session, language)}</h2>
+            <p>{selectedRecord?.technicalNotes || selectedRecord?.nextFocus || formatPlanLabel(selectedPlan.focus, language)}</p>
+          </div>
+          <div className="history-detail-actions">
+            <button onClick={() => openDate(selectedDate)}>{language === "zh-TW" ? "查看紀錄" : "View record"}</button>
+            <button className="delete-history-record" onClick={() => { if (window.confirm(language === "zh-TW" ? "取消這一天的訓練紀錄？" : "Cancel this training record?")) clearRecord(selectedKey); }}><Trash2 size={16} />{language === "zh-TW" ? "取消紀錄" : "Cancel record"}</button>
+          </div>
+        </section>
+      )}
+    </div>
   );
 }
 
@@ -398,6 +981,8 @@ function LogView({
     .filter(([, record]) =>
       Boolean(
         record.completedItemIds.length ||
+        record.customItems?.length ||
+        Object.values(record.itemSetLogs ?? {}).some((sets) => sets.length > 0) ||
         record.technicalNotes ||
         record.bodyCheck ||
         record.nextFocus ||

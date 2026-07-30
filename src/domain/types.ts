@@ -33,6 +33,8 @@ export interface DayPlan {
 
 export interface TrainingRecord {
   completedItemIds: string[];
+  customItems?: CustomTrainingItem[];
+  itemSetLogs?: Record<string, TrainingSet[]>;
   rpe?: number;
   technicalNotes?: string;
   bodyCheck?: string;
@@ -40,3 +42,25 @@ export interface TrainingRecord {
   updatedAt?: string;
 }
 
+export type WeightUnit = "kg" | "lb";
+
+export interface TrainingSet {
+  id: string;
+  weight?: number;
+  weightUnit?: WeightUnit;
+  reps?: number;
+  durationSeconds?: number;
+  durationText?: string;
+  completed: boolean;
+}
+
+export type TrainingUnit = "rounds" | "minutes";
+
+export interface CustomTrainingItem {
+  id: string;
+  drillId: string;
+  quantity: number;
+  unit: TrainingUnit;
+  note?: string;
+  completed: boolean;
+}

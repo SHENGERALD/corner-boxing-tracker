@@ -2,16 +2,20 @@ import type { DayPlan, TrainingRecord } from "./types";
 
 export function getRecordCompletion(
   plan: DayPlan,
-  record?: Pick<TrainingRecord, "completedItemIds">
+  record?: Pick<TrainingRecord, "completedItemIds" | "customItems">
 ) {
-  const completed = record?.completedItemIds.filter((id) =>
+  const completedPlanned = record?.completedItemIds.filter((id) =>
     plan.items.some((item) => item.id === id)
   ).length ?? 0;
+  const customItems = record?.customItems ?? [];
+  const completedCustom = customItems.filter((item) => item.completed).length;
+  const total = plan.items.length + customItems.length;
+  const completed = completedPlanned + completedCustom;
 
   return {
     completed,
-    total: plan.items.length,
-    isComplete: plan.items.length > 0 && completed === plan.items.length,
+    total,
+    isComplete: total > 0 && completed === total,
   };
 }
 
