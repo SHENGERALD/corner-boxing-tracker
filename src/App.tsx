@@ -1,6 +1,9 @@
 import {
   Archive,
+  ArrowDown,
+  ArrowUp,
   CalendarDays,
+  CalendarRange,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -20,7 +23,7 @@ import {
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
 import { formatPlanLabel, t } from "./domain/i18n";
-import { getPlanForWeekday } from "./domain/plan";
+import { cloneWeeklyPlan, createBlankWeeklyPlan, getPlanForWeekday } from "./domain/plan";
 import { getRecordCompletion, getWeeklySummary, isTrainingItemComplete } from "./domain/progress";
 import {
   createEmptyState,
@@ -30,11 +33,10 @@ import {
   saveState,
   type AppState,
 } from "./domain/storage";
-import type { Language, TrainingRecord } from "./domain/types";
-import type { CustomTrainingItem, TrainingSet } from "./domain/types";
+import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingType, Weekday } from "./domain/types";
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type TrainingDomain } from "./domain/drills";
 
-type View = "today" | "history" | "library" | "backup";
+type View = "today" | "schedule" | "history" | "library" | "backup";
 
 interface AppProps {
   initialDate?: Date;
@@ -42,6 +44,7 @@ interface AppProps {
 
 const navItems = [
   { id: "today", icon: Home, label: "nav.today" },
+  { id: "schedule", icon: CalendarRange, label: "nav.schedule" },
   { id: "history", icon: CalendarDays, label: "nav.history" },
   { id: "library", icon: ClipboardList, label: "nav.library" },
   { id: "backup", icon: Archive, label: "nav.backup" },
@@ -71,7 +74,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
   useEffect(() => saveState(state), [state]);
 
   const selectedKey = toDateKey(selectedDate);
-  const plan = getPlanForWeekday(getWeekday(selectedDate));
+  const plan = getPlanForWeekday(getWeekday(selectedDate), state.weeklyPlan);
   const record = state.records[selectedKey] ?? initialRecord();
 
   const updateRecord = (patch: Partial<TrainingRecord>) => {
@@ -81,6 +84,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
         ...current.records,
         [selectedKey]: {
           ...(current.records[selectedKey] ?? initialRecord()),
+          planSnapshot: current.records[selectedKey]?.planSnapshot ?? structuredClone(getPlanForWeekday(getWeekday(selectedDate), current.weeklyPlan)),
           ...patch,
           updatedAt: new Date().toISOString(),
         },
@@ -112,6 +116,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
       ...current.records,
       [selectedKey]: {
         ...(current.records[selectedKey] ?? initialRecord()),
+        planSnapshot: current.records[selectedKey]?.planSnapshot ?? structuredClone(getPlanForWeekday(getWeekday(selectedDate), current.weeklyPlan)),
         customItems: [...(current.records[selectedKey]?.customItems ?? []), item],
         updatedAt: new Date().toISOString(),
       },
@@ -154,12 +159,23 @@ export default function App({ initialDate = new Date() }: AppProps) {
             clearRecord={() => clearRecord()}
           />
         )}
+        {view === "schedule" && (
+          <ScheduleView
+            language={language}
+            initialDay={getWeekday(selectedDate)}
+            weeklyPlan={state.weeklyPlan}
+            customDrills={state.customDrills ?? []}
+            onUpdateDay={(nextDay) => setState((current) => ({ ...current, weeklyPlan: current.weeklyPlan.map((day) => day.day === nextDay.day ? nextDay : day) }))}
+            onReplaceSchedule={(weeklyPlan) => setState((current) => ({ ...current, weeklyPlan }))}
+          />
+        )}
         {view === "history" && (
           <HistoryCalendarView
             monthDate={displayMonth}
             selectedDate={selectedDate}
             language={language}
             records={state.records}
+            weeklyPlan={state.weeklyPlan}
             openDate={openDate}
             changeMonth={(offset) => setDisplayMonth((current) => addMonths(current, offset))}
             clearRecord={clearRecord}
@@ -303,14 +319,14 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
             <span className={`intensity intensity-${plan.intensity}`}>
               {plan.intensity === "rest"
                 ? t(language, "common.rest")
-                : plan.time ?? `${plan.duration} ${t(language, "common.minutes")}`}
+                : plan.startTime ?? plan.time ?? `${plan.duration} ${t(language, "common.minutes")}`}
             </span>
-            {plan.intensity !== "rest" && plan.time && (
+            {plan.intensity !== "rest" && (plan.startTime || plan.time) && (
               <span>{plan.duration} {t(language, "common.minutes")}</span>
             )}
           </div>
         </div>
-        {plan.items.length > 0 && (
+        {completion.total > 0 && (
           <div
             className="progress-ring"
             style={{ "--progress": `${percentage * 3.6}deg` } as React.CSSProperties}
@@ -321,13 +337,11 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
           </div>
         )}
         </div>
-        {plan.items.length > 0 && (
-          <div className="workbench-actions">
-            <div className="workbench-count"><strong>{completion.completed}/{completion.total}</strong><span>{t(language, "today.progress")}</span></div>
-            <button className="add-training" onClick={addDrill}><Plus size={18} />{language === "zh-TW" ? "新增動作" : "Add drill"}</button>
-            {savedRecord && <button className="cancel-record" onClick={() => { if (window.confirm(language === "zh-TW" ? "取消今天的全部訓練紀錄？" : "Cancel all records for today?")) clearRecord(); }}><Trash2 size={16} />{language === "zh-TW" ? "取消紀錄" : "Cancel record"}</button>}
-          </div>
-        )}
+        <div className="workbench-actions">
+          <div className="workbench-count"><strong>{completion.completed}/{completion.total}</strong><span>{t(language, "today.progress")}</span></div>
+          <button className="add-training" onClick={addDrill}><Plus size={18} />{language === "zh-TW" ? "新增動作" : "Add drill"}</button>
+          {savedRecord && <button className="cancel-record" onClick={() => { if (window.confirm(language === "zh-TW" ? "取消今天的全部訓練紀錄？" : "Cancel all records for today?")) clearRecord(); }}><Trash2 size={16} />{language === "zh-TW" ? "取消紀錄" : "Cancel record"}</button>}
+        </div>
       </section>
 
       <section className="focus-strip">
@@ -338,11 +352,12 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
         </div>
       </section>
 
-      {plan.items.length === 0 ? (
+      {completion.total === 0 ? (
         <section className="rest-card">
           <span className="rest-orbit" />
           <h2>{formatPlanLabel(plan.session, language)}</h2>
           <p>{t(language, "today.rest")}</p>
+          <button className="add-training rest-add-training" onClick={addDrill}><Plus size={18} />{language === "zh-TW" ? "今天想動一下" : "Add a workout"}</button>
         </section>
       ) : (
         <>
@@ -812,6 +827,145 @@ function TextField({
   );
 }
 
+
+const weekdayOrder: Weekday[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+function ScheduleView({
+  language,
+  initialDay,
+  weeklyPlan,
+  customDrills,
+  onUpdateDay,
+  onReplaceSchedule,
+}: {
+  language: Language;
+  initialDay: Weekday;
+  weeklyPlan: DayPlan[];
+  customDrills: Drill[];
+  onUpdateDay: (day: DayPlan) => void;
+  onReplaceSchedule: (schedule: DayPlan[]) => void;
+}) {
+  const [selectedDay, setSelectedDay] = useState<Weekday>(initialDay);
+  const [showDrills, setShowDrills] = useState(false);
+  const [query, setQuery] = useState("");
+  const [domain, setDomain] = useState<TrainingDomain>("boxing");
+  const day = getPlanForWeekday(selectedDay, weeklyPlan);
+  const availableDrills = filterDrills([...customDrills, ...drillLibrary], {
+    query,
+    domain,
+    category: "all",
+    favoriteIds: [],
+    favoritesOnly: false,
+  });
+
+  const update = (patch: Partial<DayPlan>) => onUpdateDay({ ...day, ...patch });
+  const updateLabel = (field: "session" | "focus", locale: "zhTW" | "en", value: string) => {
+    update({ [field]: { ...day[field], [locale]: value } });
+  };
+  const setTrainingType = (trainingType: TrainingType) => {
+    if (trainingType === "rest") {
+      update({ trainingType, intensity: "rest", duration: 0, startTime: undefined, time: undefined, items: [] });
+      return;
+    }
+    update({ trainingType, intensity: day.intensity === "rest" ? "moderate" : day.intensity, time: undefined });
+  };
+  const addPlanItem = (drill: Drill) => {
+    const item: PlanItem = {
+      id: `plan-${drill.id}-${Date.now()}`,
+      label: { ...drill.name },
+      detail: {
+        zhTW: `${drill.defaultQuantity} ${drill.defaultUnit === "rounds" ? "回合" : "分鐘"}`,
+        en: `${drill.defaultQuantity} ${drill.defaultUnit === "rounds" ? "rounds" : "min"}`,
+      },
+    };
+    update({ items: [...day.items, item] });
+  };
+  const moveItem = (index: number, offset: number) => {
+    const target = index + offset;
+    if (target < 0 || target >= day.items.length) return;
+    const items = [...day.items];
+    [items[index], items[target]] = [items[target], items[index]];
+    update({ items });
+  };
+
+  return (
+    <div className="page inner-page schedule-page">
+      <section className="page-intro schedule-intro">
+        <div>
+          <p className="eyebrow">WEEKLY SCHEDULE</p>
+          <h1>{language === "zh-TW" ? "我的課表" : "My schedule"}</h1>
+          <p>{language === "zh-TW" ? "依你的生活調整一週節奏，變更會自動儲存在這台裝置。" : "Shape the week around your life. Changes save on this device."}</p>
+        </div>
+        <div className="schedule-template-actions">
+          <button onClick={() => { if (window.confirm(language === "zh-TW" ? "套用 Gerald 課表範本？目前課表會被取代。" : "Apply Gerald's template? Your current schedule will be replaced.")) onReplaceSchedule(cloneWeeklyPlan()); }}>
+            <RotateCcw size={16} />{language === "zh-TW" ? "Gerald 範本" : "Gerald template"}
+          </button>
+          <button onClick={() => { if (window.confirm(language === "zh-TW" ? "建立空白課表？目前課表會被取代。" : "Create a blank schedule? Your current schedule will be replaced.")) onReplaceSchedule(createBlankWeeklyPlan()); }}>
+            {language === "zh-TW" ? "空白課表" : "Blank schedule"}
+          </button>
+        </div>
+      </section>
+
+      <section className="week-schedule-strip" aria-label={language === "zh-TW" ? "選擇星期" : "Choose weekday"}>
+        {weekdayOrder.map((weekday) => {
+          const candidate = getPlanForWeekday(weekday, weeklyPlan);
+          return <button key={weekday} className={weekday === selectedDay ? "selected" : ""} onClick={() => setSelectedDay(weekday)}>
+            <small>{formatPlanLabel(candidate.dayLabel, language)}</small>
+            <strong>{formatPlanLabel(candidate.session, language)}</strong>
+            <span>{candidate.trainingType === "rest" ? (language === "zh-TW" ? "休息" : "Rest") : `${candidate.duration} min`}</span>
+          </button>;
+        })}
+      </section>
+
+      <section className="schedule-editor">
+        <div className="schedule-editor-heading">
+          <div><p className="eyebrow">{formatPlanLabel(day.dayLabel, language)}</p><h2>{formatPlanLabel(day.session, language)}</h2></div>
+          <span className={`intensity intensity-${day.intensity}`}>{day.trainingType.toUpperCase()}</span>
+        </div>
+
+        <div className="schedule-type-switch" aria-label={language === "zh-TW" ? "訓練類型" : "Training type"}>
+          {(["boxing", "strength", "mixed", "rest"] as TrainingType[]).map((type) => <button key={type} className={day.trainingType === type ? "selected" : ""} onClick={() => setTrainingType(type)}>
+            {language === "zh-TW" ? ({ boxing: "拳擊", strength: "重訓", mixed: "混合", rest: "休息" } as const)[type] : ({ boxing: "Boxing", strength: "Strength", mixed: "Mixed", rest: "Rest" } as const)[type]}
+          </button>)}
+        </div>
+
+        <div className="schedule-fields">
+          <label><span>課程名稱</span><input value={day.session.zhTW} onChange={(event) => updateLabel("session", "zhTW", event.target.value)} /></label>
+          <label><span>Session name</span><input value={day.session.en} onChange={(event) => updateLabel("session", "en", event.target.value)} /></label>
+          <label><span>{language === "zh-TW" ? "開始時間" : "Start time"}</span><input type="time" disabled={day.trainingType === "rest"} value={day.startTime ?? ""} onChange={(event) => update({ startTime: event.target.value, time: undefined })} /></label>
+          <label><span>{language === "zh-TW" ? "分鐘" : "Minutes"}</span><input type="number" min="0" step="5" disabled={day.trainingType === "rest"} value={day.duration} onChange={(event) => update({ duration: Math.max(0, Number(event.target.value)) })} /></label>
+          <label className="wide"><span>訓練重點</span><input value={day.focus.zhTW} onChange={(event) => updateLabel("focus", "zhTW", event.target.value)} /></label>
+          <label className="wide"><span>Training focus</span><input value={day.focus.en} onChange={(event) => updateLabel("focus", "en", event.target.value)} /></label>
+        </div>
+
+        <div className="schedule-items-heading">
+          <div><h3>{language === "zh-TW" ? "預設動作" : "Default drills"}</h3><p>{language === "zh-TW" ? "拖曳感用上下鍵調整順序" : "Use the arrow controls to reorder"}</p></div>
+          <button className="add-training" onClick={() => setShowDrills((open) => !open)}><Plus size={17} />{language === "zh-TW" ? "加入動作" : "Add drill"}</button>
+        </div>
+
+        {showDrills && <div className="schedule-drill-picker">
+          <div className="schedule-picker-toolbar">
+            <label><Search size={17} /><input placeholder={language === "zh-TW" ? "搜尋動作" : "Search drills"} value={query} onChange={(event) => setQuery(event.target.value)} /></label>
+            <div className="schedule-domain-switch"><button className={domain === "boxing" ? "selected" : ""} onClick={() => setDomain("boxing")}>{language === "zh-TW" ? "拳擊" : "Boxing"}</button><button className={domain === "strength" ? "selected" : ""} onClick={() => setDomain("strength")}>{language === "zh-TW" ? "重訓" : "Strength"}</button></div>
+          </div>
+          <div className="schedule-drill-options">{availableDrills.map((drill) => <button key={drill.id} onClick={() => addPlanItem(drill)}><Plus size={15} /><span><strong>{formatPlanLabel(drill.name, language)}</strong><small>{formatPlanLabel(drill.cue, language)}</small></span></button>)}</div>
+        </div>}
+
+        <div className="schedule-item-list">
+          {day.items.length === 0 ? <div className="schedule-empty">{language === "zh-TW" ? "尚未安排動作，當天仍可臨時加入。" : "No drills planned. You can still add one that day."}</div> : day.items.map((entry, index) => <div className="schedule-item-row" key={entry.id}>
+            <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
+            <span className="item-copy"><strong>{formatPlanLabel(entry.label, language)}</strong><small>{formatPlanLabel(entry.detail, language)}</small></span>
+            <button disabled={index === 0} onClick={() => moveItem(index, -1)} aria-label={`${language === "zh-TW" ? "上移" : "Move up"} ${formatPlanLabel(entry.label, language)}`}><ArrowUp size={17} /></button>
+            <button disabled={index === day.items.length - 1} onClick={() => moveItem(index, 1)} aria-label={`${language === "zh-TW" ? "下移" : "Move down"} ${formatPlanLabel(entry.label, language)}`}><ArrowDown size={17} /></button>
+            <button className="danger" onClick={() => update({ items: day.items.filter((item) => item.id !== entry.id) })} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${formatPlanLabel(entry.label, language)}`}><Trash2 size={17} /></button>
+          </div>)}
+        </div>
+        <p className="autosave"><span />{language === "zh-TW" ? "課表變更已自動儲存" : "Schedule changes save automatically"}</p>
+      </section>
+    </div>
+  );
+}
+
 function addMonths(date: Date, offset: number) {
   return new Date(date.getFullYear(), date.getMonth() + offset, 1, 12);
 }
@@ -855,6 +1009,7 @@ function HistoryCalendarView({
   selectedDate,
   language,
   records,
+  weeklyPlan,
   openDate,
   changeMonth,
   clearRecord,
@@ -863,6 +1018,7 @@ function HistoryCalendarView({
   selectedDate: Date;
   language: Language;
   records: AppState["records"];
+  weeklyPlan: DayPlan[];
   openDate: (date: Date) => void;
   changeMonth: (offset: number) => void;
   clearRecord: (dateKey: string) => void;
@@ -877,7 +1033,7 @@ function HistoryCalendarView({
   const monthRecords = monthDates.filter((date) => date.getMonth() === month && hasRecordContent(records[toDateKey(date)]));
   const selectedKey = toDateKey(selectedDate);
   const selectedRecord = records[selectedKey];
-  const selectedPlan = getPlanForWeekday(getWeekday(selectedDate));
+  const selectedPlan = selectedRecord?.planSnapshot ?? getPlanForWeekday(getWeekday(selectedDate), weeklyPlan);
   const todayKey = toDateKey(new Date());
 
   return (
@@ -917,8 +1073,8 @@ function HistoryCalendarView({
         <div className="month-grid">
           {monthDates.map((date) => {
             const key = toDateKey(date);
-            const dayPlan = getPlanForWeekday(getWeekday(date));
             const savedRecord = records[key];
+            const dayPlan = savedRecord?.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan);
             const completion = getRecordCompletion(dayPlan, savedRecord);
             const logged = hasRecordContent(savedRecord);
             const outside = date.getMonth() !== month;

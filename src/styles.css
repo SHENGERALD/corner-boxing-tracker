@@ -412,6 +412,7 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 }
 .rest-card h2 { margin: 18px 0 7px; font-size: 30px; }
 .rest-card p { margin: 0; color: var(--muted); }
+.rest-add-training { margin-top: 22px; }
 .rest-orbit { width: 60px; height: 60px; border: 7px solid var(--graph); border-radius: 50%; border-right-color: transparent; }
 
 .inner-page { max-width: 900px; }
@@ -819,7 +820,7 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
   transform: translateX(-50%);
   width: min(480px, calc(100% - 28px));
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   padding: 5px;
   border: 1px solid rgba(71,72,68,.88);
   border-radius: 16px;
@@ -842,6 +843,66 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 }
 .bottom-nav button span { font-size: 10px; }
 .bottom-nav button.active { background: var(--strava); color: #fff; }
+
+
+.schedule-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.schedule-intro > div:first-child { flex: 1; }
+.schedule-template-actions { display: flex; gap: 8px; flex: 0 0 auto; }
+.schedule-template-actions button {
+  min-height: 42px; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 0 13px; border: 1px solid var(--line-strong); border-radius: 7px;
+  background: var(--surface); color: var(--ink); cursor: pointer; font-size: 12px; font-weight: 800;
+}
+.schedule-template-actions button:first-child { border-color: var(--strava); color: var(--strava); }
+.week-schedule-strip {
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px;
+  margin-bottom: 18px; overflow-x: auto; scrollbar-width: none;
+}
+.week-schedule-strip::-webkit-scrollbar { display: none; }
+.week-schedule-strip button {
+  min-width: 108px; min-height: 108px; display: flex; flex-direction: column; align-items: flex-start;
+  gap: 7px; padding: 13px; border: 1px solid var(--line); border-radius: 9px;
+  background: var(--surface); color: var(--muted); text-align: left; cursor: pointer;
+}
+.week-schedule-strip button.selected { border-color: var(--strava); background: var(--strava-soft); color: var(--ink-strong); }
+.week-schedule-strip small { font-size: 11px; font-weight: 800; }
+.week-schedule-strip strong { width: 100%; overflow: hidden; color: inherit; font-size: 13px; line-height: 1.3; text-overflow: ellipsis; white-space: nowrap; }
+.week-schedule-strip span { margin-top: auto; color: var(--strava); font-size: 11px; font-weight: 800; }
+.schedule-editor { padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); }
+.schedule-editor-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.schedule-editor-heading h2 { margin: 0; font-size: 25px; }
+.schedule-type-switch { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin: 20px 0; padding: 4px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+.schedule-type-switch button { min-height: 42px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; font-weight: 800; }
+.schedule-type-switch button.selected { background: var(--strava); color: #fff; }
+.schedule-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.schedule-fields label { display: grid; gap: 7px; color: var(--muted); font-size: 11px; font-weight: 800; }
+.schedule-fields label.wide { grid-column: 1 / -1; }
+.schedule-fields input { width: 100%; min-width: 0; min-height: 46px; padding: 0 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-raised); color: var(--ink); }
+.schedule-fields input:disabled { opacity: .42; }
+.schedule-items-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.schedule-items-heading h3 { margin: 0 0 3px; color: var(--ink-strong); font-size: 17px; }
+.schedule-items-heading p { margin: 0; color: var(--muted-2); font-size: 11px; }
+.schedule-drill-picker { margin-top: 15px; padding: 14px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+.schedule-picker-toolbar { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+.schedule-picker-toolbar > label { min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--muted); }
+.schedule-picker-toolbar input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); }
+.schedule-domain-switch { display: grid; grid-template-columns: 1fr 1fr; padding: 3px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+.schedule-domain-switch button { min-width: 72px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 800; }
+.schedule-domain-switch button.selected { background: var(--strava); color: #fff; }
+.schedule-drill-options { max-height: 260px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; overflow-y: auto; }
+.schedule-drill-options > button { min-height: 56px; display: flex; align-items: center; gap: 9px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); text-align: left; cursor: pointer; }
+.schedule-drill-options > button > span { min-width: 0; display: grid; gap: 2px; }
+.schedule-drill-options strong, .schedule-drill-options small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.schedule-drill-options strong { color: var(--ink-strong); font-size: 12px; }
+.schedule-drill-options small { color: var(--muted); font-size: 10px; }
+.schedule-drill-options svg { flex: 0 0 auto; color: var(--strava); }
+.schedule-item-list { display: grid; gap: 7px; margin-top: 14px; }
+.schedule-item-row { min-height: 62px; display: grid; grid-template-columns: 34px 1fr 38px 38px 38px; align-items: center; gap: 7px; padding: 8px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-raised); }
+.schedule-item-row > button { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--muted); cursor: pointer; }
+.schedule-item-row > button:disabled { opacity: .25; cursor: default; }
+.schedule-item-row > button.danger { color: var(--danger); }
+.schedule-empty { padding: 28px 16px; border: 1px dashed var(--line-strong); border-radius: 8px; color: var(--muted); text-align: center; font-size: 13px; }
+.schedule-editor .autosave { margin-bottom: 0; }
 
 @media (max-width: 680px) {
   .topbar { height: 66px; padding: 0 18px; }
@@ -881,7 +942,15 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
   .drill-card { min-height: 225px; }
   .drill-visual { width: 86px; height: 86px; }
   .data-actions { grid-template-columns: 1fr; }
+  .schedule-intro { align-items: stretch; flex-direction: column; }
+  .schedule-template-actions { width: 100%; }
+  .schedule-template-actions button { flex: 1; }
+  .week-schedule-strip { margin-right: -16px; padding-right: 16px; }
+  .schedule-editor { padding: 18px; }
+  .schedule-picker-toolbar { grid-template-columns: 1fr; }
+  .schedule-domain-switch button { min-height: 38px; }
 }
+
 
 @media (max-width: 430px) {
   .today-hero h1 { font-size: 31px; }
@@ -897,6 +966,10 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
   .set-done { grid-column: 2 / 3; }
   .set-remove { grid-column: 3 / 4; justify-self: stretch; }
   .drill-grid { grid-template-columns: 1fr; }
+  .schedule-fields, .schedule-drill-options { grid-template-columns: 1fr; }
+  .schedule-type-switch { grid-template-columns: 1fr 1fr; }
+  .schedule-item-row { grid-template-columns: 30px 1fr 34px 34px 34px; gap: 4px; }
+  .schedule-item-row > button { width: 32px; height: 34px; }
   .bottom-nav { bottom: 9px; }
 }
 

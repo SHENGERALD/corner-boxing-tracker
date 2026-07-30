@@ -2,6 +2,7 @@ import type { Language, LocalizedLabel } from "./types";
 
 const translations = {
   "nav.today": { zhTW: "今天", en: "Today" },
+  "nav.schedule": { zhTW: "課表", en: "Schedule" },
   "nav.history": { zhTW: "歷史", en: "History" },
   "nav.library": { zhTW: "動作庫", en: "Library" },
   "nav.backup": { zhTW: "備份", en: "Backup" },

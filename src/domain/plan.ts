@@ -28,6 +28,7 @@ export const weeklyPlan: DayPlan[] = [
     session: label("低強度技術", "Light Technique"),
     duration: 75,
     intensity: "light",
+    trainingType: "boxing",
     focus: label("動作預習與節奏", "Movement preview and rhythm"),
     items: [
       item("rope", "跳繩", "Jump rope", "10 分鐘", "10 minutes"),
@@ -42,6 +43,7 @@ export const weeklyPlan: DayPlan[] = [
     session: label("教練課＋自主訓練", "Coaching + Self Training"),
     duration: 90,
     intensity: "hard",
+    trainingType: "boxing",
     time: "17:40–19:10",
     focus: label("本週新技術主題", "New weekly technique"),
     items: coachingItems,
@@ -52,6 +54,7 @@ export const weeklyPlan: DayPlan[] = [
     session: label("完全休息", "Rest"),
     duration: 0,
     intensity: "rest",
+    trainingType: "rest",
     focus: label("散步、伸展、完整恢復", "Walk, stretch, recover"),
     items: [],
   },
@@ -61,6 +64,7 @@ export const weeklyPlan: DayPlan[] = [
     session: label("教練課＋自主訓練", "Coaching + Self Training"),
     duration: 90,
     intensity: "hard",
+    trainingType: "boxing",
     time: "17:40–19:10",
     focus: label("修正、移動與加壓", "Correction, movement, pressure"),
     items: coachingItems,
@@ -71,6 +75,7 @@ export const weeklyPlan: DayPlan[] = [
     session: label("可選低強度沙包", "Optional Light Bag"),
     duration: 45,
     intensity: "light",
+    trainingType: "boxing",
     focus: label("累的時候優先休息", "Skip first when fatigued"),
     items: [
       item("shadow", "影子拳擊", "Shadow boxing", "3 回合", "3 rounds"),
@@ -84,6 +89,7 @@ export const weeklyPlan: DayPlan[] = [
     session: label("肌力＋跑步", "Strength + Run"),
     duration: 90,
     intensity: "moderate",
+    trainingType: "mixed",
     focus: label("力量傳遞鏈與有氧底", "Power chain and aerobic base"),
     items: [
       item("squat", "深蹲", "Squat", "4 × 6–8", "4 × 6–8"),
@@ -98,13 +104,38 @@ export const weeklyPlan: DayPlan[] = [
     session: label("完全休息", "Rest"),
     duration: 0,
     intensity: "rest",
+    trainingType: "rest",
     focus: label("不補訓練", "No makeup training"),
     items: [],
   },
 ];
 
-export function getPlanForWeekday(day: Weekday): DayPlan {
-  const plan = weeklyPlan.find((candidate) => candidate.day === day);
+export function cloneWeeklyPlan(plan: DayPlan[] = weeklyPlan): DayPlan[] {
+  return plan.map((day) => ({
+    ...day,
+    dayLabel: { ...day.dayLabel },
+    session: { ...day.session },
+    focus: { ...day.focus },
+    items: day.items.map((entry) => ({ ...entry, label: { ...entry.label }, detail: { ...entry.detail } })),
+  }));
+}
+
+export function createBlankWeeklyPlan(): DayPlan[] {
+  return cloneWeeklyPlan().map((day) => ({
+    ...day,
+    session: { zhTW: "休息／自由安排", en: "Rest / Open" },
+    duration: 0,
+    intensity: "rest",
+    trainingType: "rest",
+    startTime: undefined,
+    time: undefined,
+    focus: { zhTW: "依身體狀態安排", en: "Follow how your body feels" },
+    items: [],
+  }));
+}
+
+export function getPlanForWeekday(day: Weekday, schedule: DayPlan[] = weeklyPlan): DayPlan {
+  const plan = schedule.find((candidate) => candidate.day === day);
   if (!plan) {
     throw new Error(`Missing plan for ${day}`);
   }

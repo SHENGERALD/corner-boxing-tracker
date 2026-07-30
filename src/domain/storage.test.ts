@@ -25,7 +25,7 @@ describe("local training storage", () => {
     saveState(state);
 
     expect(loadState()).toEqual(state);
-    expect(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}").version).toBe(2);
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}").version).toBe(3);
   });
 
   it("rejects malformed backups without replacing current state", () => {
@@ -36,7 +36,7 @@ describe("local training storage", () => {
     expect(loadState()).toEqual(state);
   });
 
-  it("migrates version 1 records to version 2 without losing their notes", () => {
+  it("migrates version 1 records to version 3 without losing their notes", () => {
     localStorage.setItem(
       STORAGE_KEY,
       JSON.stringify({
@@ -52,8 +52,9 @@ describe("local training storage", () => {
     );
 
     expect(loadState()).toMatchObject({
-      version: 2,
+      version: 3,
       favoriteDrillIds: [],
+      weeklyPlan: expect.arrayContaining([expect.objectContaining({ day: "tue", trainingType: "boxing" })]),
       records: {
         "2026-07-30": {
           technicalNotes: "手要回防",
@@ -62,4 +63,21 @@ describe("local training storage", () => {
       },
     });
   });
+  it("migrates version 2 data and adds an editable weekly schedule", () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      version: 2,
+      language: "en",
+      favoriteDrillIds: ["jab"],
+      customDrills: [],
+      records: { "2026-07-30": { completedItemIds: ["coach-class"] } },
+    }));
+
+    const state = loadState();
+    expect(state.version).toBe(3);
+    expect(state.favoriteDrillIds).toEqual(["jab"]);
+    expect(state.weeklyPlan).toHaveLength(7);
+    expect(state.records["2026-07-30"].completedItemIds).toEqual(["coach-class"]);
+    expect(state.records["2026-07-30"].planSnapshot?.day).toBe("thu");
+  });
+
 });

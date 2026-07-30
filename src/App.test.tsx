@@ -93,6 +93,20 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("checkbox", { name: /跳繩/ })).toBeInTheDocument();
   });
 
+  it("adds an ad-hoc drill on a full rest day", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 29, 12)} />);
+
+    expect(screen.getByRole("heading", { name: "完全休息", level: 1 })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "今天想動一下" }));
+    await user.type(screen.getByPlaceholderText("搜尋動作"), "jab");
+    await user.click(screen.getByRole("button", { name: "加入 刺拳" }));
+    await user.click(screen.getByRole("button", { name: "加入訓練" }));
+
+    expect(screen.getByText("刺拳")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "0 / 1" })).toBeInTheDocument();
+  });
+
   it("searches the boxing database and adds a drill to today", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);
@@ -166,6 +180,34 @@ describe("Boxing Tracker", () => {
 
     expect(screen.queryByLabelText("選取日期紀錄")).not.toBeInTheDocument();
     confirmSpy.mockRestore();
+  });
+
+  it("edits the weekly schedule and updates the matching day", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "課表" }));
+    const title = screen.getByLabelText("課程名稱");
+    await user.clear(title);
+    await user.type(title, "週四技術日");
+    await user.click(screen.getByRole("button", { name: "今天" }));
+
+    expect(screen.getByRole("heading", { name: "週四技術日", level: 1 })).toBeInTheDocument();
+  });
+
+  it("keeps a recorded day on its original schedule snapshot", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("checkbox", { name: /一對一教練課/ }));
+    await user.click(screen.getByRole("button", { name: "課表" }));
+    const title = screen.getByLabelText("課程名稱");
+    await user.clear(title);
+    await user.type(title, "新版週四課表");
+    await user.click(screen.getByRole("button", { name: "歷史" }));
+
+    expect(screen.getByLabelText("選取日期紀錄")).toHaveTextContent("教練課＋自主訓練");
+    expect(screen.getByLabelText("選取日期紀錄")).not.toHaveTextContent("新版週四課表");
   });
 
 });

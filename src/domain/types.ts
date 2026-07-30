@@ -9,6 +9,8 @@ export type Weekday =
   | "sat"
   | "sun";
 
+export type TrainingType = "boxing" | "strength" | "mixed" | "rest";
+
 export interface LocalizedLabel {
   zhTW: string;
   en: string;
@@ -26,6 +28,8 @@ export interface DayPlan {
   session: LocalizedLabel;
   duration: number;
   intensity: "light" | "moderate" | "hard" | "rest";
+  trainingType: TrainingType;
+  startTime?: string;
   time?: string;
   focus: LocalizedLabel;
   items: PlanItem[];
@@ -36,6 +40,7 @@ export interface TrainingRecord {
   removedItemIds?: string[];
   customItems?: CustomTrainingItem[];
   itemSetLogs?: Record<string, TrainingSet[]>;
+  planSnapshot?: DayPlan;
   rpe?: number;
   technicalNotes?: string;
   bodyCheck?: string;
