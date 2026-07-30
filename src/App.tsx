@@ -672,7 +672,7 @@ function DrillLibraryView({
 
         <div className="library-content">
           <div className="library-heading">
-            <p className="eyebrow">BOXING DATABASE</p>
+            <p className="eyebrow">{domain === "boxing" ? "BOXING DATABASE" : "STRENGTH DATABASE"}</p>
             <h1>{domain === "boxing" ? (language === "zh-TW" ? "拳擊資料庫" : "Boxing database") : (language === "zh-TW" ? "重訓資料庫" : "Strength database")}</h1>
             <p>{domain === "boxing" ? (language === "zh-TW" ? "搜尋技術、步法、沙包與體能動作，直接加入今天訓練。" : "Search boxing skills, footwork, bag work, and conditioning. Add any drill to today.") : (language === "zh-TW" ? "依部位挑選重訓動作，記錄重量、次數與組數。" : "Browse strength exercises by body part and log load, reps, and sets.")}</p>
           </div>
