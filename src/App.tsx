@@ -417,6 +417,20 @@ function AuthPanel({
     onClose();
   };
 
+  const signInWithGoogle = async () => {
+    if (!supabase) return;
+    setSubmitting(true);
+    setMessage("");
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: getAuthRedirectUrl() },
+    });
+    if (error) {
+      setSubmitting(false);
+      setMessage(error.message);
+    }
+  };
+
   const signOut = async () => {
     if (!supabase) return;
     setSubmitting(true);
@@ -445,6 +459,13 @@ function AuthPanel({
         {message && <div className="auth-message error">{message}</div>}
         <button className="auth-signout" onClick={() => void signOut()} disabled={submitting}><LogOut size={17} />{language === "zh-TW" ? "登出" : "Sign out"}</button>
       </> : <>
+        <button className="auth-google" type="button" onClick={() => void signInWithGoogle()} disabled={submitting}>
+          <img className="google-mark" src={`${import.meta.env.BASE_URL}google-g.png`} alt="" />
+          {submitting
+            ? (language === "zh-TW" ? "正在前往 Google" : "Connecting to Google")
+            : (language === "zh-TW" ? "使用 Google 登入" : "Continue with Google")}
+        </button>
+        <div className="auth-divider"><span>{language === "zh-TW" ? "或使用 Email" : "or use email"}</span></div>
         <div className="auth-mode-switch">
           <button className={mode === "signin" ? "selected" : ""} onClick={() => { setMode("signin"); setMessage(""); }}>{language === "zh-TW" ? "登入" : "Sign in"}</button>
           <button className={mode === "signup" ? "selected" : ""} onClick={() => { setMode("signup"); setMessage(""); }}>{language === "zh-TW" ? "建立帳號" : "Create account"}</button>

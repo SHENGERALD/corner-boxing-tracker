@@ -6,7 +6,7 @@ const translations = {
   "nav.history": { zhTW: "歷史", en: "History" },
   "nav.library": { zhTW: "動作庫", en: "Library" },
   "nav.backup": { zhTW: "備份", en: "Backup" },
-  "app.kicker": { zhTW: "私人拳擊日誌", en: "Private boxing journal" },
+  "app.kicker": { zhTW: "訓練日誌", en: "Training journal" },
   "today.focus": { zhTW: "今日重點", en: "Today’s focus" },
   "today.progress": { zhTW: "訓練進度", en: "Session progress" },
   "today.rest": { zhTW: "今天的任務是完整恢復。", en: "Today’s assignment is full recovery." },
