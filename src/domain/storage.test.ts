@@ -80,4 +80,27 @@ describe("local training storage", () => {
     expect(state.records["2026-07-30"].planSnapshot?.day).toBe("thu");
   });
 
+  it("keeps guest and signed-in local caches separate", () => {
+    const guest = createEmptyState();
+    guest.language = "zh-TW";
+    const account = createEmptyState();
+    account.language = "en";
+
+    saveState(guest);
+    saveState(account, "user-123");
+
+    expect(loadState().language).toBe("zh-TW");
+    expect(loadState("user-123").language).toBe("en");
+  });
+
+  it("imports a backup into the signed-in account cache without exposing it to guests", () => {
+    const backup = createEmptyState();
+    backup.language = "en";
+
+    importState(JSON.stringify(backup), "user-123");
+
+    expect(loadState("user-123").language).toBe("en");
+    expect(loadState().language).toBe("zh-TW");
+  });
+
 });

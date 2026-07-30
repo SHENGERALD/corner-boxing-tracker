@@ -904,8 +904,52 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 .schedule-empty { padding: 28px 16px; border: 1px dashed var(--line-strong); border-radius: 8px; color: var(--muted); text-align: center; font-size: 13px; }
 .schedule-editor .autosave { margin-bottom: 0; }
 
+
+.account-trigger {
+  max-width: 210px; min-height: 44px; display: flex; align-items: center; gap: 9px;
+  padding: 6px 11px; border: 1px solid var(--line); border-radius: 9px;
+  background: var(--surface); color: var(--ink); cursor: pointer; text-align: left;
+}
+.account-trigger > svg { flex: 0 0 auto; color: var(--strava); }
+.account-trigger > span { min-width: 0; display: grid; gap: 1px; }
+.account-trigger strong, .account-trigger small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.account-trigger strong { color: var(--ink-strong); font-size: 12px; }
+.account-trigger small { color: var(--muted); font-size: 10px; }
+.auth-backdrop { z-index: 40; place-items: center; }
+.auth-panel {
+  position: relative; width: min(440px, 100%); padding: 25px; border: 1px solid var(--line-strong);
+  border-radius: 14px; background: var(--surface); box-shadow: 0 28px 70px rgba(0,0,0,.55);
+}
+.auth-close { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-raised); color: var(--muted); cursor: pointer; }
+.auth-brand { display: flex; align-items: center; gap: 13px; padding-right: 44px; }
+.auth-brand h2 { margin: 0; font-size: 24px; }
+.auth-mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 24px 0 17px; padding: 4px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+.auth-mode-switch button { min-height: 42px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; font-weight: 800; }
+.auth-mode-switch button.selected { background: var(--strava); color: #fff; }
+.auth-form { display: grid; gap: 13px; }
+.auth-form label { display: grid; gap: 7px; color: var(--muted); font-size: 11px; font-weight: 800; }
+.auth-form input { min-height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-raised); color: var(--ink); }
+.auth-submit, .auth-signout { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 7px; cursor: pointer; font-weight: 850; }
+.auth-submit { margin-top: 5px; background: var(--strava); color: #fff; }
+.auth-submit:disabled, .auth-signout:disabled { opacity: .55; cursor: wait; }
+.auth-privacy { margin: 15px 0 0; color: var(--muted-2); font-size: 11px; line-height: 1.55; }
+.auth-message { padding: 10px 12px; border-radius: 7px; font-size: 12px; line-height: 1.45; }
+.auth-message.error { border: 1px solid rgba(255,90,95,.3); background: rgba(255,90,95,.08); color: #ff9b9e; }
+.auth-message.success { border: 1px solid rgba(67,201,111,.3); background: rgba(67,201,111,.08); color: #8fe0aa; }
+.account-summary, .cloud-status { display: flex; align-items: center; gap: 12px; margin-top: 20px; padding: 15px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-raised); }
+.account-summary > svg, .cloud-status > svg { flex: 0 0 auto; color: var(--strava); }
+.account-summary > div, .cloud-status > div { min-width: 0; display: grid; gap: 3px; }
+.account-summary small, .cloud-status small { color: var(--muted); font-size: 11px; }
+.account-summary strong { overflow: hidden; color: var(--ink-strong); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.cloud-status { margin-top: 10px; }
+.cloud-status.synced > svg { color: var(--success); }
+.cloud-status.error > svg { color: var(--danger); }
+.cloud-status strong { color: var(--ink-strong); font-size: 13px; }
+.auth-signout { width: 100%; margin-top: 16px; border: 1px solid var(--line-strong); background: var(--surface-soft); color: var(--danger); }
+
 @media (max-width: 680px) {
   .topbar { height: 66px; padding: 0 18px; }
+  .account-trigger { max-width: 150px; }
   .page { padding: 20px 16px 44px; }
   .today-workbench { padding: 21px; border-radius: 14px; }
   .today-hero { align-items: center; gap: 13px; }
@@ -954,6 +998,9 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 
 @media (max-width: 430px) {
   .today-hero h1 { font-size: 31px; }
+  .brand small, .account-trigger small { display: none; }
+  .account-trigger { max-width: 112px; min-height: 40px; }
+  .auth-panel { padding: 21px; }
   .progress-ring { width: 74px; height: 74px; }
   .progress-ring small { display: none; }
   .training-item { grid-template-columns: 28px 30px 1fr; }

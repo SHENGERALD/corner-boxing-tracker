@@ -8,10 +8,13 @@ import {
   ChevronLeft,
   ChevronRight,
   ClipboardList,
+  Cloud,
+  CloudOff,
   Download,
   Dumbbell,
   Globe2,
   Heart,
+  LogOut,
   Home,
   Minus,
   Plus,
@@ -19,24 +22,33 @@ import {
   Search,
   Trash2,
   Upload,
+  UserRound,
+  X,
 } from "lucide-react";
+import type { Session } from "@supabase/supabase-js";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { resolveInitialState } from "./domain/cloud";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
 import { formatPlanLabel, t } from "./domain/i18n";
 import { cloneWeeklyPlan, createBlankWeeklyPlan, getPlanForWeekday } from "./domain/plan";
 import { getRecordCompletion, getWeeklySummary, isTrainingItemComplete } from "./domain/progress";
 import {
   createEmptyState,
+  decodeState,
   exportState,
+  getStateSavedAt,
+  hasStoredState,
   importState,
   loadState,
   saveState,
   type AppState,
 } from "./domain/storage";
+import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/supabase";
 import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingType, Weekday } from "./domain/types";
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type TrainingDomain } from "./domain/drills";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
+type SyncStatus = "local" | "syncing" | "synced" | "error";
 
 interface AppProps {
   initialDate?: Date;
@@ -69,9 +81,118 @@ export default function App({ initialDate = new Date() }: AppProps) {
   const [state, setState] = useState<AppState>(() => loadState());
   const [drillToAdd, setDrillToAdd] = useState<Drill | null>(null);
   const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
+  const [session, setSession] = useState<Session | null>(null);
+  const [authReady, setAuthReady] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [cloudReady, setCloudReady] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>("local");
+  const stateRef = useRef(state);
   const language = state.language;
+  const userId = session?.user.id;
 
-  useEffect(() => saveState(state), [state]);
+  useEffect(() => { stateRef.current = state; }, [state]);
+  useEffect(() => {
+    if (!userId || cloudReady) saveState(state, userId);
+  }, [cloudReady, state, userId]);
+
+  useEffect(() => {
+    if (!supabase) {
+      setAuthReady(true);
+      return;
+    }
+    let active = true;
+    void supabase.auth.getSession().then(({ data }) => {
+      if (!active) return;
+      setSession(data.session);
+      setAuthReady(true);
+    });
+    const { data: listener } = supabase.auth.onAuthStateChange((event, nextSession) => {
+      if (!active) return;
+      if (event === "SIGNED_OUT") {
+        setState(loadState());
+        setCloudReady(false);
+        setSyncStatus("local");
+      }
+      setSession(nextSession);
+    });
+    return () => {
+      active = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!authReady || !userId || !supabase) {
+      setCloudReady(false);
+      setSyncStatus("local");
+      return;
+    }
+    let active = true;
+    setCloudReady(false);
+    setSyncStatus("syncing");
+    void (async () => {
+      const { data, error } = await supabase
+        .from("user_app_states")
+        .select("state, updated_at")
+        .eq("user_id", userId)
+        .maybeSingle();
+      if (!active) return;
+      if (error) {
+        if (hasStoredState(userId)) setState(loadState(userId));
+        setSyncStatus("error");
+        return;
+      }
+      const cloudState = data ? decodeState(data.state) : null;
+      const accountState = hasStoredState(userId) ? loadState(userId) : null;
+      const resolution = resolveInitialState({
+        guestState: stateRef.current,
+        accountState,
+        accountSavedAt: getStateSavedAt(userId),
+        cloudState,
+        cloudUpdatedAt: data?.updated_at ?? null,
+      });
+      if (resolution.shouldUpload) {
+        const updatedAt = new Date().toISOString();
+        const { error: uploadError } = await supabase
+          .from("user_app_states")
+          .upsert({ user_id: userId, state: resolution.state, updated_at: updatedAt }, { onConflict: "user_id" });
+        if (!active) return;
+        if (uploadError) {
+          setState(resolution.state);
+          setSyncStatus("error");
+          return;
+        }
+        saveState(resolution.state, userId, updatedAt);
+      } else {
+        saveState(resolution.state, userId, data?.updated_at ?? undefined);
+      }
+      setState(resolution.state);
+      setCloudReady(true);
+      setSyncStatus("synced");
+    })();
+    return () => { active = false; };
+  }, [authReady, userId]);
+
+  useEffect(() => {
+    const client = supabase;
+    if (!cloudReady || !userId || !client) return;
+    setSyncStatus("syncing");
+    const timer = window.setTimeout(() => {
+      const updatedAt = new Date().toISOString();
+      void client
+        .from("user_app_states")
+        .upsert({ user_id: userId, state, updated_at: updatedAt }, { onConflict: "user_id" })
+        .then(({ error }) => {
+          if (error) {
+            setSyncStatus("error");
+            return;
+          }
+          saveState(state, userId, updatedAt);
+          setSyncStatus("synced");
+        });
+    }, 700);
+    return () => window.clearTimeout(timer);
+  }, [cloudReady, state, userId]);
 
   const selectedKey = toDateKey(selectedDate);
   const plan = getPlanForWeekday(getWeekday(selectedDate), state.weeklyPlan);
@@ -145,6 +266,13 @@ export default function App({ initialDate = new Date() }: AppProps) {
             <small>{t(language, "app.kicker")}</small>
           </span>
         </button>
+        <button className="account-trigger" onClick={() => setAuthOpen(true)} aria-label={session ? (language === "zh-TW" ? "帳號與同步" : "Account and sync") : (language === "zh-TW" ? "登入" : "Sign in")}>
+          {session ? (syncStatus === "error" ? <CloudOff size={18} /> : <Cloud size={18} />) : <UserRound size={18} />}
+          <span>
+            <strong>{session?.user.email?.split("@")[0] ?? (language === "zh-TW" ? "登入" : "Sign in")}</strong>
+            <small>{syncStatusLabel(syncStatus, language, Boolean(session))}</small>
+          </span>
+        </button>
       </header>
 
       <main>
@@ -195,6 +323,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
           <BackupView
             state={state}
             language={language}
+            userId={userId}
             setLanguage={setLanguage}
             replaceState={setState}
           />
@@ -202,6 +331,21 @@ export default function App({ initialDate = new Date() }: AppProps) {
       </main>
       {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
       {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
+      {authOpen && (
+        <AuthPanel
+          language={language}
+          session={session}
+          syncStatus={syncStatus}
+          configured={isSupabaseConfigured}
+          onClose={() => setAuthOpen(false)}
+          onSignedOut={() => {
+            setState(loadState());
+            setCloudReady(false);
+            setSyncStatus("local");
+            setAuthOpen(false);
+          }}
+        />
+      )}
 
       <nav className="bottom-nav" aria-label="Primary">
         {navItems.map(({ id, icon: Icon, label }) => (
@@ -218,6 +362,103 @@ export default function App({ initialDate = new Date() }: AppProps) {
       </nav>
     </div>
   );
+}
+
+
+function syncStatusLabel(status: SyncStatus, language: Language, signedIn: boolean) {
+  if (!signedIn) return language === "zh-TW" ? "僅此裝置" : "On this device";
+  const labels = {
+    local: { zhTW: "僅此裝置", en: "On this device" },
+    syncing: { zhTW: "同步中", en: "Syncing" },
+    synced: { zhTW: "已同步", en: "Synced" },
+    error: { zhTW: "同步失敗", en: "Sync failed" },
+  } as const;
+  return language === "zh-TW" ? labels[status].zhTW : labels[status].en;
+}
+
+function AuthPanel({
+  language,
+  session,
+  syncStatus,
+  configured,
+  onClose,
+  onSignedOut,
+}: {
+  language: Language;
+  session: Session | null;
+  syncStatus: SyncStatus;
+  configured: boolean;
+  onClose: () => void;
+  onSignedOut: () => void;
+}) {
+  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const submit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!supabase) return;
+    setSubmitting(true);
+    setMessage("");
+    const result = mode === "signup"
+      ? await supabase.auth.signUp({ email, password, options: { emailRedirectTo: getAuthRedirectUrl() } })
+      : await supabase.auth.signInWithPassword({ email, password });
+    setSubmitting(false);
+    if (result.error) {
+      setMessage(result.error.message);
+      return;
+    }
+    if (mode === "signup" && !result.data.session) {
+      setMessage(language === "zh-TW" ? "確認信已寄出，請到信箱完成驗證。" : "Check your inbox to confirm your account.");
+      return;
+    }
+    onClose();
+  };
+
+  const signOut = async () => {
+    if (!supabase) return;
+    setSubmitting(true);
+    const { error } = await supabase.auth.signOut();
+    setSubmitting(false);
+    if (error) {
+      setMessage(error.message);
+      return;
+    }
+    onSignedOut();
+  };
+
+  return <div className="dialog-backdrop auth-backdrop" role="presentation">
+    <section className="auth-panel" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "Corner 帳號" : "Corner account"}>
+      <button className="auth-close" onClick={onClose} aria-label={language === "zh-TW" ? "關閉" : "Close"}><X size={19} /></button>
+      <div className="auth-brand"><span className="brand-mark">C</span><div><p className="eyebrow">CORNER CLOUD</p><h2>{session ? (language === "zh-TW" ? "帳號與同步" : "Account and sync") : (language === "zh-TW" ? "讓紀錄跟著你" : "Take your records with you")}</h2></div></div>
+      {!configured ? <div className="auth-message error">Supabase is not configured.</div> : session ? <>
+        <div className="account-summary">
+          <UserRound size={22} />
+          <div><small>{language === "zh-TW" ? "登入帳號" : "Signed in as"}</small><strong>{session.user.email}</strong></div>
+        </div>
+        <div className={`cloud-status ${syncStatus}`}>
+          {syncStatus === "error" ? <CloudOff size={20} /> : <Cloud size={20} />}
+          <div><strong>{syncStatusLabel(syncStatus, language, true)}</strong><small>{syncStatus === "error" ? (language === "zh-TW" ? "請確認資料表與網路設定" : "Check the database setup and connection") : (language === "zh-TW" ? "課表與訓練紀錄會自動保存" : "Schedules and records save automatically")}</small></div>
+        </div>
+        {message && <div className="auth-message error">{message}</div>}
+        <button className="auth-signout" onClick={() => void signOut()} disabled={submitting}><LogOut size={17} />{language === "zh-TW" ? "登出" : "Sign out"}</button>
+      </> : <>
+        <div className="auth-mode-switch">
+          <button className={mode === "signin" ? "selected" : ""} onClick={() => { setMode("signin"); setMessage(""); }}>{language === "zh-TW" ? "登入" : "Sign in"}</button>
+          <button className={mode === "signup" ? "selected" : ""} onClick={() => { setMode("signup"); setMessage(""); }}>{language === "zh-TW" ? "建立帳號" : "Create account"}</button>
+        </div>
+        <form className="auth-form" onSubmit={(event) => void submit(event)}>
+          <label><span>Email</span><input type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} /></label>
+          <label><span>{language === "zh-TW" ? "密碼" : "Password"}</span><input type="password" minLength={6} autoComplete={mode === "signin" ? "current-password" : "new-password"} required value={password} onChange={(event) => setPassword(event.target.value)} /></label>
+          {message && <div className={`auth-message ${message.includes("寄出") || message.includes("inbox") ? "success" : "error"}`}>{message}</div>}
+          <button className="auth-submit" type="submit" disabled={submitting}>{submitting ? (language === "zh-TW" ? "處理中" : "Working") : mode === "signin" ? (language === "zh-TW" ? "登入並同步" : "Sign in and sync") : (language === "zh-TW" ? "建立帳號" : "Create account")}</button>
+        </form>
+        <p className="auth-privacy">{language === "zh-TW" ? "未登入時仍可離線使用。登入後，只有你能讀取自己的資料。" : "Corner still works offline without an account. Once signed in, only you can access your data."}</p>
+      </>}
+    </section>
+  </div>;
 }
 
 interface TodayViewProps {
@@ -1236,11 +1477,13 @@ function LogView({
 function BackupView({
   state,
   language,
+  userId,
   setLanguage,
   replaceState,
 }: {
   state: AppState;
   language: Language;
+  userId?: string;
   setLanguage: (language: Language) => void;
   replaceState: (state: AppState) => void;
 }) {
@@ -1261,7 +1504,7 @@ function BackupView({
   const handleImport = async (file?: File) => {
     if (!file) return;
     try {
-      const imported = importState(await file.text());
+      const imported = importState(await file.text(), userId);
       replaceState(imported);
       setMessage(t(imported.language, "backup.imported"));
     } catch {

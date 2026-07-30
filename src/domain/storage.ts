@@ -188,19 +188,39 @@ function isAppState(value: unknown): value is AppState {
   );
 }
 
-export function saveState(state: AppState): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+export function getStorageKey(userId?: string): string {
+  return userId ? `${STORAGE_KEY}:${userId}` : STORAGE_KEY;
 }
 
-export function loadState(): AppState {
-  const raw = localStorage.getItem(STORAGE_KEY);
+export function getStorageUpdatedAtKey(userId?: string): string {
+  return `${getStorageKey(userId)}:updated-at`;
+}
+
+export function hasStoredState(userId?: string): boolean {
+  return localStorage.getItem(getStorageKey(userId)) !== null;
+}
+
+export function getStateSavedAt(userId?: string): string | null {
+  return localStorage.getItem(getStorageUpdatedAtKey(userId));
+}
+
+export function decodeState(value: unknown): AppState | null {
+  if (isAppState(value)) return value;
+  if (isV2AppState(value)) return migrateV2State(value);
+  if (isV1AppState(value)) return migrateV1State(value);
+  return null;
+}
+
+export function saveState(state: AppState, userId?: string, savedAt = new Date().toISOString()): void {
+  localStorage.setItem(getStorageKey(userId), JSON.stringify(state));
+  localStorage.setItem(getStorageUpdatedAtKey(userId), savedAt);
+}
+
+export function loadState(userId?: string): AppState {
+  const raw = localStorage.getItem(getStorageKey(userId));
   if (!raw) return createEmptyState();
   try {
-    const parsed: unknown = JSON.parse(raw);
-    if (isAppState(parsed)) return parsed;
-    if (isV2AppState(parsed)) return migrateV2State(parsed);
-    if (isV1AppState(parsed)) return migrateV1State(parsed);
-    return createEmptyState();
+    return decodeState(JSON.parse(raw)) ?? createEmptyState();
   } catch {
     return createEmptyState();
   }
@@ -210,12 +230,12 @@ export function exportState(state: AppState): string {
   return JSON.stringify(state, null, 2);
 }
 
-export function importState(raw: string): AppState {
+export function importState(raw: string, userId?: string): AppState {
   try {
     const parsed: unknown = JSON.parse(raw);
-    const state = isAppState(parsed) ? parsed : isV2AppState(parsed) ? migrateV2State(parsed) : isV1AppState(parsed) ? migrateV1State(parsed) : undefined;
+    const state = decodeState(parsed);
     if (!state) throw new Error("Invalid backup");
-    saveState(state);
+    saveState(state, userId);
     return state;
   } catch (error) {
     if (error instanceof Error && error.message === "Invalid backup") throw error;
