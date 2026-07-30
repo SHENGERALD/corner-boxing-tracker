@@ -47,6 +47,19 @@ describe("Boxing Tracker", () => {
     expect(screen.getByLabelText("第1組秒數")).toHaveValue("30");
   });
 
+  it("keeps completed set progress in sync with calendar history", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByText("一對一教練課"));
+    await user.click(screen.getByRole("button", { name: "新增一對一教練課一組" }));
+    await user.click(screen.getByRole("button", { name: "完成第1組" }));
+    expect(screen.getByRole("heading", { name: "1 / 4" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "歷史" }));
+    expect(screen.getByText("1/4")).toBeInTheDocument();
+  });
+
   it("switches interface and plan labels to English", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);

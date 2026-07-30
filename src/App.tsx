@@ -21,7 +21,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
 import { formatPlanLabel, t } from "./domain/i18n";
 import { getPlanForWeekday } from "./domain/plan";
-import { getRecordCompletion, getWeeklySummary } from "./domain/progress";
+import { getRecordCompletion, getWeeklySummary, isTrainingItemComplete } from "./domain/progress";
 import {
   createEmptyState,
   exportState,
@@ -255,11 +255,14 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
   };
 
   const toggleItem = (id: string) => {
-    const isDone = record.completedItemIds.includes(id);
+    const isDone = isTrainingItemComplete(record, id);
     updateRecord({
       completedItemIds: isDone
         ? record.completedItemIds.filter((candidate) => candidate !== id)
         : [...record.completedItemIds, id],
+      itemSetLogs: isDone
+        ? { ...itemSetLogs, [id]: (itemSetLogs[id] ?? []).map((set) => ({ ...set, completed: false })) }
+        : itemSetLogs,
     });
   };
 
@@ -329,7 +332,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
             </div>
             <div className="checklist">
               {plan.items.map((planItem, index) => {
-                const checked = record.completedItemIds.includes(planItem.id);
+                const checked = isTrainingItemComplete(record, planItem.id);
                 const title = formatPlanLabel(planItem.label, language);
                 const detail = formatPlanLabel(planItem.detail, language);
                 return (
@@ -369,7 +372,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                 const unit = item.unit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
                 return <details className={`training-entry custom-training-entry ${item.completed ? "checked" : ""}`} key={item.id}>
                   <summary className="training-item custom-training-item">
-                    <input type="checkbox" checked={item.completed} onClick={(event) => event.stopPropagation()} onChange={() => updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !candidate.completed } : candidate) })} aria-label={`${title} — ${item.quantity} ${unit}`} />
+                    <input type="checkbox" checked={item.completed || isTrainingItemComplete(record, item.id)} onClick={(event) => event.stopPropagation()} onChange={() => { const complete = item.completed || isTrainingItemComplete(record, item.id); updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !complete } : candidate), itemSetLogs: complete ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }} aria-label={`${title} — ${item.quantity} ${unit}`} />
                     <span className="custom-check">{item.completed && <Check size={17} />}</span><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
                     <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); updateRecord({ customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== item.id) }); }} aria-label={`${language === "zh-TW" ? "取消" : "Remove"} ${title}`}><Minus size={17} /></button>
@@ -873,7 +876,7 @@ function HistoryCalendarView({
             const completion = getRecordCompletion(dayPlan, savedRecord);
             const logged = hasRecordContent(savedRecord);
             const outside = date.getMonth() !== month;
-            const metric = savedRecord?.rpe ? `RPE ${savedRecord.rpe}` : completion.total ? `${completion.completed}/${completion.total}` : "";
+            const metric = completion.total ? `${completion.completed}/${completion.total}` : savedRecord?.rpe ? `RPE ${savedRecord.rpe}` : "";
             const ariaDate = language === "zh-TW"
               ? `${monthLabel} ${date.getDate()}日 ${formatPlanLabel(dayPlan.session, language)}`
               : `${monthLabel} ${date.getDate()} ${formatPlanLabel(dayPlan.session, language)}`;
