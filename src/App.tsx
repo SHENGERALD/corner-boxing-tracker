@@ -348,14 +348,16 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                 return (
                   <details className={`training-entry ${checked ? "checked" : ""}`} key={planItem.id}>
                     <summary className="training-item">
-                      <input
-                        type="checkbox"
-                        checked={checked}
-                        onClick={(event) => event.stopPropagation()}
-                        onChange={() => toggleItem(planItem.id)}
+                      <button
+                        type="button"
+                        className="completion-toggle"
+                        role="checkbox"
+                        aria-checked={checked}
                         aria-label={`${title} — ${detail}`}
-                      />
-                      <span className="custom-check">{checked && <Check size={17} />}</span>
+                        onClick={(event) => { event.preventDefault(); event.stopPropagation(); toggleItem(planItem.id); }}
+                      >
+                        <span className="custom-check">{checked && <Check size={17} />}</span>
+                      </button>
                       <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
                       <span className="item-copy">
                         <strong>{title}</strong>
@@ -383,8 +385,9 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                 const checked = item.completed || isTrainingItemComplete(record, item.id);
                 return <details className={`training-entry custom-training-entry ${checked ? "checked" : ""}`} key={item.id}>
                   <summary className="training-item custom-training-item">
-                    <input type="checkbox" checked={checked} onClick={(event) => event.stopPropagation()} onChange={() => { updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !checked } : candidate), itemSetLogs: checked ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }} aria-label={`${title} — ${item.quantity} ${unit}`} />
-                    <span className="custom-check">{checked && <Check size={17} />}</span><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
+                    <button type="button" className="completion-toggle" role="checkbox" aria-checked={checked} aria-label={`${title} — ${item.quantity} ${unit}`} onClick={(event) => { event.preventDefault(); event.stopPropagation(); updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !checked } : candidate), itemSetLogs: checked ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }}>
+                      <span className="custom-check">{checked && <Check size={17} />}</span>
+                    </button><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
                     <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); updateRecord({ customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== item.id) }); }} aria-label={`${language === "zh-TW" ? "取消" : "Remove"} ${title}`}><Minus size={17} /></button>
                   </summary>
