@@ -244,10 +244,20 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
   };
 
   const updateSet = (itemId: string, setId: string, patch: Partial<TrainingSet>) => {
-    updateItemSets(
-      itemId,
-      (itemSetLogs[itemId] ?? []).map((set) => set.id === setId ? { ...set, ...patch } : set)
-    );
+    const nextSets = (itemSetLogs[itemId] ?? []).map((set) => set.id === setId ? { ...set, ...patch } : set);
+    const completed = nextSets.some((set) => set.completed);
+    const isPlannedItem = plan.items.some((item) => item.id === itemId);
+    updateRecord({
+      itemSetLogs: { ...itemSetLogs, [itemId]: nextSets },
+      completedItemIds: isPlannedItem
+        ? completed
+          ? Array.from(new Set([...record.completedItemIds, itemId]))
+          : record.completedItemIds.filter((id) => id !== itemId)
+        : record.completedItemIds,
+      customItems: isPlannedItem
+        ? record.customItems
+        : (record.customItems ?? []).map((item) => item.id === itemId ? { ...item, completed } : item),
+    });
   };
 
   const removeSet = (itemId: string, setId: string) => {
@@ -370,10 +380,11 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                 if (!drill) return null;
                 const title = formatPlanLabel(drill.name, language);
                 const unit = item.unit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
-                return <details className={`training-entry custom-training-entry ${item.completed ? "checked" : ""}`} key={item.id}>
+                const checked = item.completed || isTrainingItemComplete(record, item.id);
+                return <details className={`training-entry custom-training-entry ${checked ? "checked" : ""}`} key={item.id}>
                   <summary className="training-item custom-training-item">
-                    <input type="checkbox" checked={item.completed || isTrainingItemComplete(record, item.id)} onClick={(event) => event.stopPropagation()} onChange={() => { const complete = item.completed || isTrainingItemComplete(record, item.id); updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !complete } : candidate), itemSetLogs: complete ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }} aria-label={`${title} — ${item.quantity} ${unit}`} />
-                    <span className="custom-check">{item.completed && <Check size={17} />}</span><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
+                    <input type="checkbox" checked={checked} onClick={(event) => event.stopPropagation()} onChange={() => { updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !checked } : candidate), itemSetLogs: checked ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }} aria-label={`${title} — ${item.quantity} ${unit}`} />
+                    <span className="custom-check">{checked && <Check size={17} />}</span><span className="item-order">{String(plan.items.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
                     <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); updateRecord({ customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== item.id) }); }} aria-label={`${language === "zh-TW" ? "取消" : "Remove"} ${title}`}><Minus size={17} /></button>
                   </summary>

@@ -55,6 +55,7 @@ describe("Boxing Tracker", () => {
     await user.click(screen.getByRole("button", { name: "新增一對一教練課一組" }));
     await user.click(screen.getByRole("button", { name: "完成第1組" }));
     expect(screen.getByRole("heading", { name: "1 / 4" })).toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: /一對一教練課/ })).toBeChecked();
 
     await user.click(screen.getByRole("button", { name: "歷史" }));
     expect(screen.getByText("1/4")).toBeInTheDocument();
