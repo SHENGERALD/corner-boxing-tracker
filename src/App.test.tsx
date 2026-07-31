@@ -133,6 +133,38 @@ describe("Boxing Tracker", () => {
 
     expect(screen.getByText("刺拳")).toBeInTheDocument();
   });
+
+  it("reorders an added drill with planned drills and restores the order", async () => {
+    const user = userEvent.setup();
+    const first = render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.type(screen.getByPlaceholderText("搜尋動作"), "jab");
+    await user.click(screen.getByRole("button", { name: "加入 刺拳" }));
+    await user.click(screen.getByRole("button", { name: "加入訓練" }));
+
+    const jab = screen.getByText("刺拳").closest("summary");
+    const shadow = screen.getByText("影子拳擊").closest("summary");
+    expect(jab).not.toBeNull();
+    expect(shadow).not.toBeNull();
+    let draggedId = "";
+    const dataTransfer = {
+      effectAllowed: "",
+      setData: (_type: string, value: string) => { draggedId = value; },
+      getData: () => draggedId,
+    };
+    fireEvent.dragStart(jab!, { dataTransfer });
+    fireEvent.drop(shadow!, { dataTransfer });
+
+    expect(Array.from(document.querySelectorAll(".training-entry .item-copy strong"), (node) => node.textContent))
+      .toEqual(["一對一教練課", "刺拳", "影子拳擊", "沙包技術", "核心與收操"]);
+
+    first.unmount();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    expect(Array.from(document.querySelectorAll(".training-entry .item-copy strong"), (node) => node.textContent))
+      .toEqual(["一對一教練課", "刺拳", "影子拳擊", "沙包技術", "核心與收操"]);
+  });
   it("switches to the strength database and adds a strength drill", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);

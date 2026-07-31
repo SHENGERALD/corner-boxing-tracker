@@ -39,6 +39,7 @@ export interface TrainingRecord {
   completedItemIds: string[];
   removedItemIds?: string[];
   customItems?: CustomTrainingItem[];
+  itemOrder?: string[];
   itemSetLogs?: Record<string, TrainingSet[]>;
   planSnapshot?: DayPlan;
   rpe?: number;
