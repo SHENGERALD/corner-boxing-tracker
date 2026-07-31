@@ -128,6 +128,7 @@ function isTrainingRecord(value: unknown): value is TrainingRecord {
     Array.isArray(record.completedItemIds) && record.completedItemIds.every((item) => typeof item === "string") &&
     (record.removedItemIds === undefined || (Array.isArray(record.removedItemIds) && record.removedItemIds.every((item) => typeof item === "string"))) &&
     (record.customItems === undefined || (Array.isArray(record.customItems) && record.customItems.every(isCustomTrainingItem))) &&
+    (record.itemOrder === undefined || (Array.isArray(record.itemOrder) && record.itemOrder.every((item) => typeof item === "string"))) &&
     (record.itemSetLogs === undefined || isItemSetLogs(record.itemSetLogs)) &&
     (record.planSnapshot === undefined || isDayPlan(record.planSnapshot))
   );

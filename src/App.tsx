@@ -265,20 +265,34 @@ export default function App({ initialDate = new Date() }: AppProps) {
   const reorderTodayItems = (fromId: string, toId: string) => {
     if (fromId === toId) return;
     const selectedWeekday = getWeekday(selectedDate);
-    setState((current) => ({
-      ...current,
-      weeklyPlan: current.weeklyPlan.map((day) => {
-        if (day.day !== selectedWeekday) return day;
-        const items = [...day.items];
-        const fromIndex = items.findIndex((item) => item.id === fromId);
-        const toIndex = items.findIndex((item) => item.id === toId);
-        if (fromIndex < 0 || toIndex < 0) return day;
-        const [moved] = items.splice(fromIndex, 1);
-        items.splice(toIndex, 0, moved);
-        return { ...day, items };
-      }),
-      weeklyPlanUpdatedAt: new Date().toISOString(),
-    }));
+    setState((current) => {
+      const day = getPlanForWeekday(selectedWeekday, current.weeklyPlan);
+      const currentRecord = current.records[selectedKey] ?? initialRecord();
+      const visiblePlanIds = day.items.filter((item) => !currentRecord.removedItemIds?.includes(item.id)).map((item) => item.id);
+      const customIds = (currentRecord.customItems ?? []).map((item) => item.id);
+      const availableIds = [...visiblePlanIds, ...customIds];
+      const orderedIds = [
+        ...(currentRecord.itemOrder ?? []).filter((id) => availableIds.includes(id)),
+        ...availableIds.filter((id) => !currentRecord.itemOrder?.includes(id)),
+      ];
+      const fromIndex = orderedIds.indexOf(fromId);
+      const toIndex = orderedIds.indexOf(toId);
+      if (fromIndex < 0 || toIndex < 0) return current;
+      const [moved] = orderedIds.splice(fromIndex, 1);
+      orderedIds.splice(toIndex, 0, moved);
+      const orderedPlanIds = orderedIds.filter((id) => day.items.some((item) => item.id === id));
+      const sortedPlanItems = orderedPlanIds.map((id) => day.items.find((item) => item.id === id)!).concat(day.items.filter((item) => !orderedPlanIds.includes(item.id)));
+
+      return {
+        ...current,
+        records: {
+          ...current.records,
+          [selectedKey]: { ...currentRecord, itemOrder: orderedIds, updatedAt: new Date().toISOString() },
+        },
+        weeklyPlan: current.weeklyPlan.map((candidate) => candidate.day === selectedWeekday ? { ...candidate, items: sortedPlanItems } : candidate),
+        weeklyPlanUpdatedAt: new Date().toISOString(),
+      };
+    });
   };
 
   return (
@@ -543,6 +557,32 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
     setDraggedItemId(null);
   };
   const visiblePlanItems = plan.items.filter((item) => !record.removedItemIds?.includes(item.id));
+  const todayItems = [
+    ...visiblePlanItems.map((item) => ({
+      id: item.id,
+      kind: "planned" as const,
+      title: formatPlanLabel(item.label, language),
+      detail: formatPlanLabel(item.detail, language),
+      checked: isTrainingItemComplete(record, item.id),
+    })),
+    ...(record.customItems ?? []).flatMap((item) => {
+      const drill = drillLibrary.find((candidate) => candidate.id === item.drillId);
+      if (!drill) return [];
+      const unit = item.unit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
+      return [{
+        id: item.id,
+        kind: "custom" as const,
+        title: formatPlanLabel(drill.name, language),
+        detail: `${item.quantity} ${unit}`,
+        checked: item.completed || isTrainingItemComplete(record, item.id),
+      }];
+    }),
+  ];
+  const todayItemById = new Map(todayItems.map((item) => [item.id, item]));
+  const orderedTodayItems = [
+    ...(record.itemOrder ?? []).filter((id) => todayItemById.has(id)),
+    ...todayItems.map((item) => item.id).filter((id) => !record.itemOrder?.includes(id)),
+  ].map((id) => todayItemById.get(id)!);
 
   const updateItemSets = (itemId: string, sets: TrainingSet[]) => {
     updateRecord({ itemSetLogs: { ...itemSetLogs, [itemId]: sets } });
@@ -597,7 +637,15 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
   const removeCustomItem = (id: string) => {
     updateRecord({
       customItems: (record.customItems ?? []).filter((candidate) => candidate.id !== id),
+      itemOrder: record.itemOrder?.filter((itemId) => itemId !== id),
       itemSetLogs: Object.fromEntries(Object.entries(itemSetLogs).filter(([itemId]) => itemId !== id)),
+    });
+  };
+
+  const toggleCustomItem = (id: string, isDone: boolean) => {
+    updateRecord({
+      customItems: (record.customItems ?? []).map((item) => item.id === id ? { ...item, completed: !isDone } : item),
+      itemSetLogs: isDone ? { ...itemSetLogs, [id]: (itemSetLogs[id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs,
     });
   };
 
@@ -677,69 +725,35 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
               <span className="rule-number">01</span>
             </div>
             <div className="checklist">
-              {visiblePlanItems.map((planItem, index) => {
-                const checked = isTrainingItemComplete(record, planItem.id);
-                const title = formatPlanLabel(planItem.label, language);
-                const detail = formatPlanLabel(planItem.detail, language);
-                return (
-                  <details className={`training-entry ${checked ? "checked" : ""}`} key={planItem.id}>
-                    <summary className={`training-item removable-training-item draggable-item ${draggedItemId === planItem.id ? "dragging" : ""}`} draggable onDragStart={(event) => handleDragStart(event, planItem.id)} onDragOver={(event) => event.preventDefault()} onDrop={(event) => handleDrop(event, planItem.id)} onDragEnd={() => setDraggedItemId(null)}>
-                      <label className="completion-toggle" onClick={(event) => event.stopPropagation()}>
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={() => toggleItem(planItem.id)}
-                          aria-label={`${title} — ${detail}`}
-                        />
-                        <span className="custom-check">{checked && <Check size={17} />}</span>
-                      </label>
-                      <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
-                      <span className="item-copy">
-                        <strong>{title}</strong>
-                        <small>{detail}</small>
-                      </span>
-                      <span className="set-count">{itemSetLogs[planItem.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
-                      <GripVertical className="drag-handle" size={17} aria-hidden="true" />
-                      <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); removePlannedItem(planItem.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
-                    </summary>
-                    <TrainingSetLogger
-                      itemId={planItem.id}
-                      itemTitle={title}
-                      language={language}
-                      sets={itemSetLogs[planItem.id] ?? []}
-                      onAddSet={addSet}
-                      onUpdateSet={updateSet}
-                      onRemoveSet={removeSet}
-                    />
-                  </details>
-                );
-              })}
-              {(record.customItems ?? []).map((item, index) => {
-                const drill = drillLibrary.find((candidate) => candidate.id === item.drillId);
-                if (!drill) return null;
-                const title = formatPlanLabel(drill.name, language);
-                const unit = item.unit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
-                const checked = item.completed || isTrainingItemComplete(record, item.id);
-                return <details className={`training-entry custom-training-entry ${checked ? "checked" : ""}`} key={item.id}>
-                  <summary className="training-item custom-training-item">
+              {orderedTodayItems.map((item, index) => (
+                <details className={`training-entry ${item.kind === "custom" ? "custom-training-entry " : ""}${item.checked ? "checked" : ""}`} key={item.id}>
+                  <summary className={`training-item ${item.kind === "planned" ? "removable-training-item" : "custom-training-item"} draggable-item ${draggedItemId === item.id ? "dragging" : ""}`} draggable onDragStart={(event) => handleDragStart(event, item.id)} onDragOver={(event) => event.preventDefault()} onDrop={(event) => handleDrop(event, item.id)} onDragEnd={() => setDraggedItemId(null)}>
                     <label className="completion-toggle" onClick={(event) => event.stopPropagation()}>
-                      <input type="checkbox" checked={checked} onChange={() => { updateRecord({ customItems: (record.customItems ?? []).map((candidate) => candidate.id === item.id ? { ...candidate, completed: !checked } : candidate), itemSetLogs: checked ? { ...itemSetLogs, [item.id]: (itemSetLogs[item.id] ?? []).map((set) => ({ ...set, completed: false })) } : itemSetLogs }); }} aria-label={`${title} — ${item.quantity} ${unit}`} />
-                      <span className="custom-check">{checked && <Check size={17} />}</span>
-                    </label><span className="item-order">{String(visiblePlanItems.length + index + 1).padStart(2, "0")}</span><span className="item-copy"><strong>{title}</strong><small>{item.quantity} {unit}</small></span>
+                      <input
+                        type="checkbox"
+                        checked={item.checked}
+                        onChange={() => item.kind === "planned" ? toggleItem(item.id) : toggleCustomItem(item.id, item.checked)}
+                        aria-label={`${item.title} — ${item.detail}`}
+                      />
+                      <span className="custom-check">{item.checked && <Check size={17} />}</span>
+                    </label>
+                    <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="item-copy"><strong>{item.title}</strong><small>{item.detail}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
-                    <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); removeCustomItem(item.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
+                    <GripVertical className="drag-handle" size={17} aria-hidden="true" />
+                    <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); item.kind === "planned" ? removePlannedItem(item.id) : removeCustomItem(item.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${item.title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
                   </summary>
                   <TrainingSetLogger
                     itemId={item.id}
-                    itemTitle={title}
+                    itemTitle={item.title}
                     language={language}
                     sets={itemSetLogs[item.id] ?? []}
                     onAddSet={addSet}
                     onUpdateSet={updateSet}
                     onRemoveSet={removeSet}
                   />
-                </details>;
-              })}
+                </details>
+              ))}
             </div>
           </section>
 
