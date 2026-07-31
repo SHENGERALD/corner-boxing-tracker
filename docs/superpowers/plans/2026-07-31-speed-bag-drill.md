@@ -31,7 +31,7 @@
 - Consumes: `filterDrills(drills, options): Drill[]` and the existing `d(...): Drill` helper.
 - Produces: a `Drill` with ID `speed-bag` available through `drillLibrary`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Add this test inside the existing `describe("drill library", ...)` block:
 
@@ -60,7 +60,7 @@ it("includes Speed Bag as a three-round boxing equipment drill", () => {
 });
 ```
 
-- [ ] **Step 2: Run the focused test and verify RED**
+- [x] **Step 2: Run the focused test and verify RED**
 
 Run:
 
@@ -70,7 +70,7 @@ npm test -- src/domain/drills.test.ts
 
 Expected: FAIL because the filtered result is an empty array and no `speed-bag` entry exists.
 
-- [ ] **Step 3: Add the minimal library entry**
+- [x] **Step 3: Add the minimal library entry**
 
 Append this entry to the equipment row in `src/domain/drills.ts`:
 
@@ -87,7 +87,7 @@ d(
 
 The helper defaults provide `domain: "boxing"`, `defaultUnit: "rounds"`, and `defaultQuantity: 3`.
 
-- [ ] **Step 4: Run focused and full verification**
+- [x] **Step 4: Run focused and full verification**
 
 Run:
 
@@ -100,7 +100,7 @@ git diff --check
 
 Expected: the focused test passes, all existing tests pass, the production build succeeds, and `git diff --check` returns no output.
 
-- [ ] **Step 5: Commit the implementation**
+- [x] **Step 5: Commit the implementation**
 
 ```bash
 git add src/domain/drills.test.ts src/domain/drills.ts docs/superpowers/plans/2026-07-31-speed-bag-drill.md
