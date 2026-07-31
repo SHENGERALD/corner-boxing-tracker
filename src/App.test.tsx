@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
@@ -20,6 +20,18 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("checkbox", { name: /一對一教練課/ })).toBeChecked();
     expect(screen.getByLabelText("技術筆記")).toHaveValue("刺拳後立刻回防");
   });
+  it("reorders Today session progress items by drag and persists the order", () => {
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+    const first = screen.getByText("一對一教練課").closest("summary");
+    const second = screen.getByText("影子拳擊").closest("summary");
+    expect(first).not.toBeNull();
+    expect(second).not.toBeNull();
+    const dataTransfer = { effectAllowed: "", setData: () => undefined, getData: () => "coach-class" };
+    fireEvent.dragStart(first!, { dataTransfer });
+    fireEvent.drop(second!, { dataTransfer });
+    const titles = Array.from(document.querySelectorAll(".training-entry .item-copy strong"), (node) => node.textContent);
+    expect(titles.slice(0, 2)).toEqual(["影子拳擊", "一對一教練課"]);
+  });
 
 
   it("logs expandable sets for a training item and restores them", async () => {
@@ -33,6 +45,8 @@ describe("Boxing Tracker", () => {
     await user.clear(screen.getByLabelText("第1組次數"));
     await user.type(screen.getByLabelText("第1組次數"), "12");
     await user.click(screen.getByLabelText("第1組時間"));
+    expect(screen.getByRole("dialog").closest("label")).toBeNull();
+    expect(screen.getByLabelText("第1組時間 分鐘")).not.toHaveAttribute("size");
     await user.selectOptions(screen.getByLabelText("第1組時間 分鐘"), "1");
     await user.selectOptions(screen.getByLabelText("第1組時間 秒數"), "30");
     await user.click(screen.getByRole("button", { name: "確認時間" }));

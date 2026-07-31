@@ -1,7 +1,5 @@
 import {
   Archive,
-  ArrowDown,
-  ArrowUp,
   CalendarDays,
   CalendarRange,
   Check,
@@ -13,6 +11,7 @@ import {
   Download,
   Dumbbell,
   Globe2,
+  GripVertical,
   Heart,
   LogOut,
   Home,
@@ -26,6 +25,14 @@ import {
   X,
 } from "lucide-react";
 import type { Session } from "@supabase/supabase-js";
+function CornerMark({ className = "" }: { className?: string }) {
+  return (
+    <span className={`corner-mark ${className}`.trim()} aria-hidden="true">
+      <img src={`${import.meta.env.BASE_URL}corner-mark.png`} alt="" />
+    </span>
+  );
+}
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { resolveInitialState } from "./domain/cloud";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
@@ -255,12 +262,30 @@ export default function App({ initialDate = new Date() }: AppProps) {
       return { ...current, records: remainingRecords };
     });
   };
+  const reorderTodayItems = (fromId: string, toId: string) => {
+    if (fromId === toId) return;
+    const selectedWeekday = getWeekday(selectedDate);
+    setState((current) => ({
+      ...current,
+      weeklyPlan: current.weeklyPlan.map((day) => {
+        if (day.day !== selectedWeekday) return day;
+        const items = [...day.items];
+        const fromIndex = items.findIndex((item) => item.id === fromId);
+        const toIndex = items.findIndex((item) => item.id === toId);
+        if (fromIndex < 0 || toIndex < 0) return day;
+        const [moved] = items.splice(fromIndex, 1);
+        items.splice(toIndex, 0, moved);
+        return { ...day, items };
+      }),
+      weeklyPlanUpdatedAt: new Date().toISOString(),
+    }));
+  };
 
   return (
     <div className="app-shell">
       <header className="topbar">
         <button className="brand" onClick={() => setView("today")} aria-label="Corner home">
-          <span className="brand-mark">C</span>
+          <CornerMark className="brand-mark" />
           <span>
             <strong>CORNER</strong>
             <small>{t(language, "app.kicker")}</small>
@@ -283,6 +308,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
             plan={plan}
             record={record}
             updateRecord={updateRecord}
+            onReorder={reorderTodayItems}
             addDrill={() => setView("library")}
             clearRecord={() => clearRecord()}
           />
@@ -293,8 +319,8 @@ export default function App({ initialDate = new Date() }: AppProps) {
             initialDay={getWeekday(selectedDate)}
             weeklyPlan={state.weeklyPlan}
             customDrills={state.customDrills ?? []}
-            onUpdateDay={(nextDay) => setState((current) => ({ ...current, weeklyPlan: current.weeklyPlan.map((day) => day.day === nextDay.day ? nextDay : day) }))}
-            onReplaceSchedule={(weeklyPlan) => setState((current) => ({ ...current, weeklyPlan }))}
+            onUpdateDay={(nextDay) => setState((current) => ({ ...current, weeklyPlan: current.weeklyPlan.map((day) => day.day === nextDay.day ? nextDay : day), weeklyPlanUpdatedAt: new Date().toISOString() }))}
+            onReplaceSchedule={(weeklyPlan) => setState((current) => ({ ...current, weeklyPlan, weeklyPlanUpdatedAt: new Date().toISOString() }))}
           />
         )}
         {view === "history" && (
@@ -446,7 +472,7 @@ function AuthPanel({
   return <div className="dialog-backdrop auth-backdrop" role="presentation">
     <section className="auth-panel" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "Corner 帳號" : "Corner account"}>
       <button className="auth-close" onClick={onClose} aria-label={language === "zh-TW" ? "關閉" : "Close"}><X size={19} /></button>
-      <div className="auth-brand"><span className="brand-mark">C</span><div><p className="eyebrow">CORNER CLOUD</p><h2>{session ? (language === "zh-TW" ? "帳號與同步" : "Account and sync") : (language === "zh-TW" ? "讓紀錄跟著你" : "Take your records with you")}</h2></div></div>
+      <div className="auth-brand"><CornerMark className="brand-mark" /><div><p className="eyebrow">CORNER CLOUD</p><h2>{session ? (language === "zh-TW" ? "帳號與同步" : "Account and sync") : (language === "zh-TW" ? "讓紀錄跟著你" : "Take your records with you")}</h2></div></div>
       {!configured ? <div className="auth-message error">Supabase is not configured.</div> : session ? <>
         <div className="account-summary">
           <UserRound size={22} />
@@ -488,17 +514,34 @@ interface TodayViewProps {
   plan: ReturnType<typeof getPlanForWeekday>;
   record: TrainingRecord;
   updateRecord: (patch: Partial<TrainingRecord>) => void;
+  onReorder: (fromId: string, toId: string) => void;
   addDrill: () => void;
   clearRecord: () => void;
 }
 
-function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord }: TodayViewProps) {
+function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder }: TodayViewProps) {
   const completion = getRecordCompletion(plan, record);
   const percentage = completion.total
     ? Math.round((completion.completed / completion.total) * 100)
     : 0;
   const savedRecord = hasRecordContent(record);
   const itemSetLogs = record.itemSetLogs ?? {};
+  const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
+  const handleDragStart = (event: React.DragEvent<HTMLElement>, itemId: string) => {
+    if ((event.target as HTMLElement).closest("button, input, label")) {
+      event.preventDefault();
+      return;
+    }
+    setDraggedItemId(itemId);
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", itemId);
+  };
+  const handleDrop = (event: React.DragEvent<HTMLElement>, targetId: string) => {
+    event.preventDefault();
+    const fromId = event.dataTransfer.getData("text/plain") || draggedItemId;
+    if (fromId) onReorder(fromId, targetId);
+    setDraggedItemId(null);
+  };
   const visiblePlanItems = plan.items.filter((item) => !record.removedItemIds?.includes(item.id));
 
   const updateItemSets = (itemId: string, sets: TrainingSet[]) => {
@@ -640,7 +683,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                 const detail = formatPlanLabel(planItem.detail, language);
                 return (
                   <details className={`training-entry ${checked ? "checked" : ""}`} key={planItem.id}>
-                    <summary className="training-item removable-training-item">
+                    <summary className={`training-item removable-training-item draggable-item ${draggedItemId === planItem.id ? "dragging" : ""}`} draggable onDragStart={(event) => handleDragStart(event, planItem.id)} onDragOver={(event) => event.preventDefault()} onDrop={(event) => handleDrop(event, planItem.id)} onDragEnd={() => setDraggedItemId(null)}>
                       <label className="completion-toggle" onClick={(event) => event.stopPropagation()}>
                         <input
                           type="checkbox"
@@ -656,6 +699,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                         <small>{detail}</small>
                       </span>
                       <span className="set-count">{itemSetLogs[planItem.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
+                      <GripVertical className="drag-handle" size={17} aria-hidden="true" />
                       <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); removePlannedItem(planItem.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
                     </summary>
                     <TrainingSetLogger
@@ -791,14 +835,14 @@ function DurationPicker({ value, language, label, onChange }: { value?: number; 
         </div>
         <div className="duration-wheels">
           <div className="wheel-column">
-            <select size={5} value={parts.minutes} onChange={(event) => updatePart(Number(event.target.value), parts.seconds)} aria-label={`${label} ${language === "zh-TW" ? "分鐘" : "minutes"}`}>
+            <select value={parts.minutes} onChange={(event) => updatePart(Number(event.target.value), parts.seconds)} aria-label={`${label} ${language === "zh-TW" ? "分鐘" : "minutes"}`}>
               {Array.from({ length: 31 }, (_, minute) => <option value={minute} key={minute}>{String(minute).padStart(2, "0")}</option>)}
             </select>
             <span>{language === "zh-TW" ? "分" : "min"}</span>
           </div>
           <b>:</b>
           <div className="wheel-column">
-            <select size={5} value={parts.seconds} onChange={(event) => updatePart(parts.minutes, Number(event.target.value))} aria-label={`${label} ${language === "zh-TW" ? "秒數" : "seconds"}`}>
+            <select value={parts.seconds} onChange={(event) => updatePart(parts.minutes, Number(event.target.value))} aria-label={`${label} ${language === "zh-TW" ? "秒數" : "seconds"}`}>
               {Array.from({ length: 60 }, (_, second) => <option value={second} key={second}>{String(second).padStart(2, "0")}</option>)}
             </select>
             <span>{language === "zh-TW" ? "秒" : "sec"}</span>
@@ -867,7 +911,7 @@ function TrainingSetLogger({
                   aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組次數" : " reps"}`}
                 />
               </label>
-              <label className="duration-field">
+              <div className="duration-field">
                 <small>{language === "zh-TW" ? "時間" : "Time"}</small>
                 <DurationPicker
                   value={set.durationSeconds}
@@ -875,7 +919,7 @@ function TrainingSetLogger({
                   label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組時間" : " time"}`}
                   onChange={(durationSeconds) => onUpdateSet(itemId, set.id, { durationSeconds, durationText: formatDurationInput(durationSeconds) })}
                 />
-              </label>
+              </div>
               <button
                 className={set.completed ? "set-done active" : "set-done"}
                 onClick={() => onUpdateSet(itemId, set.id, { completed: !set.completed })}
@@ -1111,6 +1155,7 @@ function ScheduleView({
   const [showDrills, setShowDrills] = useState(false);
   const [query, setQuery] = useState("");
   const [domain, setDomain] = useState<TrainingDomain>("boxing");
+  const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
   const day = getPlanForWeekday(selectedDay, weeklyPlan);
   const availableDrills = filterDrills([...customDrills, ...drillLibrary], {
     query,
@@ -1142,12 +1187,29 @@ function ScheduleView({
     };
     update({ items: [...day.items, item] });
   };
-  const moveItem = (index: number, offset: number) => {
-    const target = index + offset;
-    if (target < 0 || target >= day.items.length) return;
-    const items = [...day.items];
-    [items[index], items[target]] = [items[target], items[index]];
-    update({ items });
+  const handleScheduleDragStart = (event: React.DragEvent<HTMLElement>, itemId: string) => {
+    if ((event.target as HTMLElement).closest("button, input, label")) {
+      event.preventDefault();
+      return;
+    }
+    setDraggedItemId(itemId);
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", itemId);
+  };
+  const handleScheduleDrop = (event: React.DragEvent<HTMLElement>, targetId: string) => {
+    event.preventDefault();
+    const fromId = event.dataTransfer.getData("text/plain") || draggedItemId;
+    if (fromId && fromId !== targetId) {
+      const fromIndex = day.items.findIndex((item) => item.id === fromId);
+      const targetIndex = day.items.findIndex((item) => item.id === targetId);
+      if (fromIndex >= 0 && targetIndex >= 0) {
+        const items = [...day.items];
+        const [moved] = items.splice(fromIndex, 1);
+        items.splice(targetIndex, 0, moved);
+        update({ items });
+      }
+    }
+    setDraggedItemId(null);
   };
 
   return (
@@ -1201,7 +1263,7 @@ function ScheduleView({
         </div>
 
         <div className="schedule-items-heading">
-          <div><h3>{language === "zh-TW" ? "預設動作" : "Default drills"}</h3><p>{language === "zh-TW" ? "拖曳感用上下鍵調整順序" : "Use the arrow controls to reorder"}</p></div>
+          <div><h3>{language === "zh-TW" ? "預設動作" : "Default drills"}</h3><p>{language === "zh-TW" ? "按住動作列即可拖曳排序" : "Drag a drill to reorder"}</p></div>
           <button className="add-training" onClick={() => setShowDrills((open) => !open)}><Plus size={17} />{language === "zh-TW" ? "加入動作" : "Add drill"}</button>
         </div>
 
@@ -1214,12 +1276,11 @@ function ScheduleView({
         </div>}
 
         <div className="schedule-item-list">
-          {day.items.length === 0 ? <div className="schedule-empty">{language === "zh-TW" ? "尚未安排動作，當天仍可臨時加入。" : "No drills planned. You can still add one that day."}</div> : day.items.map((entry, index) => <div className="schedule-item-row" key={entry.id}>
+          {day.items.length === 0 ? <div className="schedule-empty">{language === "zh-TW" ? "尚未安排動作，當天仍可臨時加入。" : "No drills planned. You can still add one that day."}</div> : day.items.map((entry, index) => <div className={`schedule-item-row ${draggedItemId === entry.id ? "dragging" : ""}`} key={entry.id} draggable onDragStart={(event) => handleScheduleDragStart(event, entry.id)} onDragOver={(event) => event.preventDefault()} onDrop={(event) => handleScheduleDrop(event, entry.id)} onDragEnd={() => setDraggedItemId(null)}>
             <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
             <span className="item-copy"><strong>{formatPlanLabel(entry.label, language)}</strong><small>{formatPlanLabel(entry.detail, language)}</small></span>
-            <button disabled={index === 0} onClick={() => moveItem(index, -1)} aria-label={`${language === "zh-TW" ? "上移" : "Move up"} ${formatPlanLabel(entry.label, language)}`}><ArrowUp size={17} /></button>
-            <button disabled={index === day.items.length - 1} onClick={() => moveItem(index, 1)} aria-label={`${language === "zh-TW" ? "下移" : "Move down"} ${formatPlanLabel(entry.label, language)}`}><ArrowDown size={17} /></button>
             <button className="danger" onClick={() => update({ items: day.items.filter((item) => item.id !== entry.id) })} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${formatPlanLabel(entry.label, language)}`}><Trash2 size={17} /></button>
+            <GripVertical className="drag-handle" size={17} aria-hidden="true" />
           </div>)}
         </div>
         <p className="autosave"><span />{language === "zh-TW" ? "課表變更已自動儲存" : "Schedule changes save automatically"}</p>

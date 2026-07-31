@@ -11,6 +11,7 @@ export interface AppState {
   favoriteDrillIds: string[];
   customDrills?: Drill[];
   weeklyPlan: DayPlan[];
+  weeklyPlanUpdatedAt?: string;
 }
 
 interface V2AppState {
