@@ -9,3 +9,5 @@ dist/
 
 .env.local
 .env.*.local
+
+.worktrees/
