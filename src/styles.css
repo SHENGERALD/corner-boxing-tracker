@@ -1482,3 +1482,17 @@ img { max-width: 100%; }
     font-size: 16px;
   }
 }
+
+.schedule-fields input[type="time"] {
+  text-align: center;
+  -webkit-text-align-last: center;
+}
+.schedule-fields input[type="time"]::-webkit-date-and-time-value {
+  text-align: center;
+}
+.schedule-fields input[type="time"]::-webkit-datetime-edit,
+.schedule-fields input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
