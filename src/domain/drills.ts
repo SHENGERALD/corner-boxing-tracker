@@ -55,8 +55,9 @@ const spritePosition = (index: number) => {
   const row = ["0%", "33.333%", "66.667%", "100%"][Math.floor(index / 4)];
   return offset + " " + row;
 };
-const boxingSpriteA = "/assets/boxing/boxing-sprite-a.png";
-const boxingSpriteB = "/assets/boxing/boxing-sprite-b.png";
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+const boxingSpriteA = assetUrl("assets/boxing/boxing-sprite-a.png");
+const boxingSpriteB = assetUrl("assets/boxing/boxing-sprite-b.png");
 const boxingSpriteMap: Record<string, { imageUrl: string; imagePosition: string }> = {
   stance: { imageUrl: boxingSpriteA, imagePosition: spritePosition(0) },
   guard: { imageUrl: boxingSpriteA, imagePosition: spritePosition(1) },
@@ -69,7 +70,7 @@ const boxingSpriteMap: Record<string, { imageUrl: string; imagePosition: string 
   "step-back": { imageUrl: boxingSpriteA, imagePosition: spritePosition(8) },
   "lateral-slide": { imageUrl: boxingSpriteA, imagePosition: spritePosition(9) },
   pivot: { imageUrl: boxingSpriteA, imagePosition: spritePosition(10) },
-  "high-guard": { imageUrl: "/assets/boxing/high-guard-reference.png", imagePosition: "" },
+  "high-guard": { imageUrl: assetUrl("assets/boxing/high-guard-reference.png"), imagePosition: "" },
   parry: { imageUrl: boxingSpriteA, imagePosition: spritePosition(12) },
   slip: { imageUrl: boxingSpriteA, imagePosition: spritePosition(13) },
   "heavy-bag": { imageUrl: boxingSpriteA, imagePosition: spritePosition(14) },
