@@ -103,4 +103,15 @@ describe("local training storage", () => {
     expect(loadState().language).toBe("zh-TW");
   });
 
+  it("rejects oversized backups and external custom drill images", () => {
+    expect(() => importState("x".repeat(2 * 1024 * 1024 + 1))).toThrow("Invalid backup");
+    const backup = createEmptyState();
+    backup.customDrills = [{
+      id: "unsafe", domain: "boxing", category: "offense",
+      name: { zhTW: "測試", en: "Test" }, cue: { zhTW: "提示", en: "Cue" },
+      defaultUnit: "rounds", defaultQuantity: 3, imageUrl: "https://example.com/image.png",
+    }];
+    expect(() => importState(JSON.stringify(backup))).toThrow("Invalid backup");
+  });
+
 });

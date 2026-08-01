@@ -155,3 +155,14 @@ export function resolveInitialState({
   if (accountState) return { state: accountState, source: "account", shouldUpload: true };
   return { state: guestState, source: "guest", shouldUpload: true };
 }
+
+
+export interface RevisionedCloudState {
+  state: AppState;
+  revision: number | null;
+}
+
+export function mergeForRevisionedSave(localState: AppState, cloud: RevisionedCloudState | null) {
+  if (!cloud) return { state: localState, expectedRevision: null };
+  return { state: mergeStateWithCloud(localState, cloud.state).state, expectedRevision: cloud.revision };
+}

@@ -3,6 +3,9 @@ import type { Drill } from "./drills";
 import { cloneWeeklyPlan, getPlanForWeekday } from "./plan";
 
 export const STORAGE_KEY = "boxing-tracker-v1";
+const MAX_BACKUP_CHARS = 2 * 1024 * 1024;
+const MAX_LABEL_LENGTH = 120;
+const MAX_NOTE_LENGTH = 2_000;
 
 export interface AppState {
   version: 3;
@@ -45,7 +48,7 @@ export function createEmptyState(): AppState {
 function isLocalizedLabel(value: unknown): value is { zhTW: string; en: string } {
   if (!value || typeof value !== "object") return false;
   const label = value as Record<string, unknown>;
-  return typeof label.zhTW === "string" && typeof label.en === "string";
+  return typeof label.zhTW === "string" && label.zhTW.length <= MAX_LABEL_LENGTH && typeof label.en === "string" && label.en.length <= MAX_LABEL_LENGTH;
 }
 
 function isPlanItem(value: unknown) {
@@ -86,7 +89,8 @@ function isCustomDrill(value: unknown): value is Drill {
     isLocalizedLabel(drill.name) &&
     isLocalizedLabel(drill.cue) &&
     (drill.defaultUnit === "rounds" || drill.defaultUnit === "minutes") &&
-    typeof drill.defaultQuantity === "number" && drill.defaultQuantity > 0
+    typeof drill.defaultQuantity === "number" && drill.defaultQuantity > 0 && drill.defaultQuantity <= 1_000 &&
+    (drill.imageUrl === undefined || (typeof drill.imageUrl === "string" && drill.imageUrl.startsWith("/")))
   );
 }
 
@@ -120,7 +124,7 @@ function isCustomTrainingItem(value: unknown): value is CustomTrainingItem {
     typeof item.quantity === "number" && item.quantity > 0 &&
     (item.unit === "rounds" || item.unit === "minutes") &&
     typeof item.completed === "boolean" &&
-    (item.note === undefined || typeof item.note === "string")
+    (item.note === undefined || (typeof item.note === "string" && item.note.length <= MAX_NOTE_LENGTH))
   );
 }
 
@@ -133,7 +137,10 @@ function isTrainingRecord(value: unknown): value is TrainingRecord {
     (record.customItems === undefined || (Array.isArray(record.customItems) && record.customItems.every(isCustomTrainingItem))) &&
     (record.itemOrder === undefined || (Array.isArray(record.itemOrder) && record.itemOrder.every((item) => typeof item === "string"))) &&
     (record.itemSetLogs === undefined || isItemSetLogs(record.itemSetLogs)) &&
-    (record.planSnapshot === undefined || isDayPlan(record.planSnapshot))
+    (record.planSnapshot === undefined || isDayPlan(record.planSnapshot)) &&
+    (record.technicalNotes === undefined || (typeof record.technicalNotes === "string" && record.technicalNotes.length <= MAX_NOTE_LENGTH)) &&
+    (record.bodyCheck === undefined || (typeof record.bodyCheck === "string" && record.bodyCheck.length <= MAX_NOTE_LENGTH)) &&
+    (record.nextFocus === undefined || (typeof record.nextFocus === "string" && record.nextFocus.length <= MAX_NOTE_LENGTH))
   );
 }
 
@@ -244,6 +251,7 @@ export function exportState(state: AppState): string {
 
 export function importState(raw: string, userId?: string): AppState {
   try {
+    if (raw.length > MAX_BACKUP_CHARS) throw new Error("Invalid backup");
     const parsed: unknown = JSON.parse(raw);
     const state = decodeState(parsed);
     if (!state) throw new Error("Invalid backup");

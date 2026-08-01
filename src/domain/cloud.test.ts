@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveInitialState } from "./cloud";
+import { mergeForRevisionedSave, resolveInitialState } from "./cloud";
 import { createEmptyState } from "./storage";
 
 const stateWithLanguage = (language: "zh-TW" | "en") => ({ ...createEmptyState(), language });
@@ -127,4 +127,22 @@ it("merges custom drills added on both devices", () => {
   cloud.customDrills = [cloudDrill];
   const result = resolveInitialState({ guestState: createEmptyState(), accountState: local, accountSavedAt: null, cloudState: cloud, cloudUpdatedAt: null });
   expect(result.state.customDrills?.map((drill) => drill.id)).toEqual(["custom-cloud", "custom-local"]);
+});
+
+
+describe("revision-aware cloud saves", () => {
+  it("keeps independent records when a stale writer refetches before retrying", () => {
+    const local = createEmptyState();
+    const cloud = createEmptyState();
+    local.records["2026-08-01"] = { completedItemIds: ["local"], updatedAt: "2026-08-01T20:00:00.000Z" };
+    cloud.records["2026-08-02"] = { completedItemIds: ["cloud"], updatedAt: "2026-08-01T21:00:00.000Z" };
+
+    const result = mergeForRevisionedSave(local, { state: cloud, revision: 7 });
+
+    expect(result.expectedRevision).toBe(7);
+    expect(result.state.records).toMatchObject({
+      "2026-08-01": local.records["2026-08-01"],
+      "2026-08-02": cloud.records["2026-08-02"],
+    });
+  });
 });
