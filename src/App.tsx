@@ -144,9 +144,28 @@ function QuickLogPreview() {
   </main>;
 }
 
+function LaunchSplash() {
+  return <div className="launch-splash" role="status" aria-label="Corner loading">
+    <div className="launch-splash-mark"><img src={import.meta.env.BASE_URL + "corner-mark.png"} alt="" /></div>
+    <strong>CORNER</strong>
+  </div>;
+}
+
 export default function App(props: AppProps) {
-  if (new URLSearchParams(window.location.search).get("preview") === "quick-log") return <QuickLogPreview />;
-  return <BoxingTrackerApp {...props} />;
+  const isPreview = new URLSearchParams(window.location.search).get("preview") === "quick-log";
+  const [showSplash, setShowSplash] = useState(() => !isPreview && import.meta.env.MODE !== "test");
+
+  useEffect(() => {
+    if (!showSplash) return;
+    const timer = window.setTimeout(() => setShowSplash(false), 700);
+    return () => window.clearTimeout(timer);
+  }, [showSplash]);
+
+  if (isPreview) return <QuickLogPreview />;
+  return <>
+    <BoxingTrackerApp {...props} />
+    {showSplash && <LaunchSplash />}
+  </>;
 }
 
 function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
