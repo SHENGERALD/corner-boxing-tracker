@@ -547,18 +547,19 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 .rpe-badge { padding: 6px 9px; border-radius: 5px; background: var(--strava-soft); color: var(--strava-dark); font-size: 10px; font-weight: 800; }
 
 
-.stats-view { display: grid; gap: 16px; }
+.stats-view { display: grid; gap: 16px; min-width: 0; max-width: 100%; }
 .stats-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 2px; }
-.stats-overview > div { padding: 17px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.stats-overview > div { min-width: 0; padding: 17px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 .stats-overview small, .stats-overview strong, .stats-overview span { display: block; }
 .stats-overview small { color: var(--muted); font-size: 11px; }
-.stats-overview strong { margin-top: 8px; color: var(--ink-strong); font-size: 30px; line-height: 1; }
+.stats-overview strong { margin-top: 8px; color: var(--ink-strong); font-size: 30px; line-height: 1; overflow-wrap: anywhere; }
 .stats-overview em { margin-left: 3px; color: var(--muted); font-size: 13px; font-style: normal; font-weight: 750; }
 .stats-overview span { margin-top: 6px; color: var(--muted); font-size: 11px; }
 .stats-overview > div:nth-child(2) strong { color: var(--success); }
 .stats-overview > div:nth-child(3) strong { color: var(--strava); }
-.stats-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: var(--shadow); }
+.stats-card { min-width: 0; max-width: 100%; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: var(--shadow); }
 .stats-card-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.stats-card-heading > div { min-width: 0; }
 .stats-card-heading .eyebrow { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 7px; }
 .stats-card-heading h2 { margin: 0; font-size: 23px; }
 .stats-card-heading > span { color: var(--muted); font-size: 11px; }
@@ -582,8 +583,8 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 .heatmap-legend { display: flex; align-items: center; justify-content: flex-end; gap: 5px; margin-top: 13px; color: var(--muted); font-size: 10px; }
 .heatmap-legend .heat-cell { cursor: default; }
 .heatmap-legend .heat-cell:hover { outline: 0; }
-.line-chart-wrap { width: 100%; overflow: hidden; }
-.line-chart { display: block; width: 100%; min-width: 480px; height: auto; overflow: visible; }
+.line-chart-wrap { width: 100%; min-width: 0; overflow: hidden; }
+.line-chart { display: block; width: 100%; min-width: 0; max-width: 100%; height: auto; overflow: visible; }
 .chart-grid-line { stroke: var(--line); stroke-width: 1; }
 .weekly-volume-bar { fill: rgba(67, 201, 111, .66); }
 .weekly-rpe-point { fill: var(--graph); stroke: var(--surface); stroke-width: 3; }
