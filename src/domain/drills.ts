@@ -4,7 +4,7 @@ import { strengthLibrary } from "./strengthData";
 export type TrainingDomain = "boxing" | "strength";
 export type DrillCategory = "fundamentals" | "footwork" | "offense" | "defense" | "equipment" | "conditioning" | "chest" | "back" | "legs" | "shoulders" | "arms" | "core" | "calves" | "cardio";
 export type EquipmentType = "barbell" | "dumbbell" | "kettlebell" | "cable" | "hammer" | "machine" | "bodyweight";
-export interface Drill { id: string; domain: TrainingDomain; category: DrillCategory; name: LocalizedLabel; cue: LocalizedLabel; defaultUnit: TrainingUnit; defaultQuantity: number; imageUrl?: string; imageSource?: string; equipment?: EquipmentType; searchTerms?: string[]; }
+export interface Drill { id: string; domain: TrainingDomain; category: DrillCategory; name: LocalizedLabel; cue: LocalizedLabel; defaultUnit: TrainingUnit; defaultQuantity: number; imageUrl?: string; imagePosition?: string; imageSource?: string; equipment?: EquipmentType; searchTerms?: string[]; }
 const d = (id: string, category: DrillCategory, zhTW: string, en: string, cueZh: string, cueEn: string, defaultUnit: TrainingUnit = "rounds", defaultQuantity = 3, domain: TrainingDomain = "boxing"): Drill => ({ id, domain, category, name: { zhTW, en }, cue: { zhTW: cueZh, en: cueEn }, defaultUnit, defaultQuantity });
 const s = (id: string, category: DrillCategory, zhTW: string, en: string, cueZh: string, cueEn: string, imageUrl: string, defaultUnit: TrainingUnit = "rounds", defaultQuantity = 3): Drill => ({ ...d(id, category, zhTW, en, cueZh, cueEn, defaultUnit, defaultQuantity, "strength"), imageUrl, imageSource: "wger" });
 export const drillCategories: DrillCategory[] = ["fundamentals", "footwork", "offense", "defense", "equipment", "conditioning", "chest", "back", "legs", "shoulders", "arms", "core", "calves", "cardio"];
@@ -50,5 +50,46 @@ const legacyDrillLibrary: Drill[] = [
  d("pallof-press","core","Pallof 抗旋轉推","Pallof Press","骨盆保持正、不要旋轉","Resist rotation","rounds",3,"strength"), d("dead-bug","core","死蟲式","Dead Bug","下背貼地、慢慢伸展","Low back stays down","rounds",3,"strength"), d("farmer-carry","core","農夫走路","Farmer Carry","握緊、軀幹直立","Grip tight, stand tall","minutes",3,"strength"),
  ...strengthExpansion,
 ];
-export const drillLibrary: Drill[] = [...legacyDrillLibrary.filter((drill) => drill.domain === "boxing"), ...strengthLibrary];
+const spritePosition = (index: number) => {
+  const offset = ["0%", "33.333%", "66.667%", "100%"][index % 4];
+  const row = ["0%", "33.333%", "66.667%", "100%"][Math.floor(index / 4)];
+  return offset + " " + row;
+};
+const boxingSpriteA = "/assets/boxing/boxing-sprite-a.png";
+const boxingSpriteB = "/assets/boxing/boxing-sprite-b.png";
+const boxingSpriteMap: Record<string, { imageUrl: string; imagePosition: string }> = {
+  stance: { imageUrl: boxingSpriteA, imagePosition: spritePosition(0) },
+  guard: { imageUrl: boxingSpriteA, imagePosition: spritePosition(1) },
+  jab: { imageUrl: boxingSpriteA, imagePosition: spritePosition(2) },
+  cross: { imageUrl: boxingSpriteA, imagePosition: spritePosition(3) },
+  hook: { imageUrl: boxingSpriteA, imagePosition: spritePosition(4) },
+  uppercut: { imageUrl: boxingSpriteA, imagePosition: spritePosition(5) },
+  "one-two": { imageUrl: boxingSpriteA, imagePosition: spritePosition(6) },
+  "step-forward": { imageUrl: boxingSpriteA, imagePosition: spritePosition(7) },
+  "step-back": { imageUrl: boxingSpriteA, imagePosition: spritePosition(8) },
+  "lateral-slide": { imageUrl: boxingSpriteA, imagePosition: spritePosition(9) },
+  pivot: { imageUrl: boxingSpriteA, imagePosition: spritePosition(10) },
+  "high-guard": { imageUrl: "/assets/boxing/high-guard-reference.png", imagePosition: "" },
+  parry: { imageUrl: boxingSpriteA, imagePosition: spritePosition(12) },
+  slip: { imageUrl: boxingSpriteA, imagePosition: spritePosition(13) },
+  "heavy-bag": { imageUrl: boxingSpriteA, imagePosition: spritePosition(14) },
+  "speed-bag": { imageUrl: boxingSpriteA, imagePosition: spritePosition(15) },
+  "one-two-three": { imageUrl: boxingSpriteB, imagePosition: spritePosition(0) },
+  "pull-back": { imageUrl: boxingSpriteB, imagePosition: spritePosition(1) },
+  roll: { imageUrl: boxingSpriteB, imagePosition: spritePosition(2) },
+  "slip-rope": { imageUrl: boxingSpriteB, imagePosition: spritePosition(3) },
+  padwork: { imageUrl: boxingSpriteB, imagePosition: spritePosition(4) },
+  "core-circuit": { imageUrl: boxingSpriteB, imagePosition: spritePosition(5) },
+  "zone-two": { imageUrl: boxingSpriteB, imagePosition: spritePosition(6) },
+  "round-intervals": { imageUrl: boxingSpriteB, imagePosition: spritePosition(7) },
+  mobility: { imageUrl: boxingSpriteB, imagePosition: spritePosition(8) },
+  skipping: { imageUrl: boxingSpriteB, imagePosition: spritePosition(9) },
+  shadow: { imageUrl: boxingSpriteB, imagePosition: "calc(66.667% + 8px) 100%" },
+  "double-end": { imageUrl: boxingSpriteB, imagePosition: "0% calc(100% + 8px)" },
+};
+const boxingDrillsWithImages = legacyDrillLibrary.map((drill) => {
+  const sprite = boxingSpriteMap[drill.id];
+  return sprite ? { ...drill, ...sprite, imageSource: "corner" } : drill;
+});
+export const drillLibrary: Drill[] = [...boxingDrillsWithImages.filter((drill) => drill.domain === "boxing"), ...strengthLibrary];
 export function filterDrills(drills: Drill[], options: { query: string; domain: TrainingDomain; category: DrillCategory | "all"; equipment?: EquipmentType | "all"; favoriteIds: string[]; favoritesOnly: boolean }) { const q = options.query.toLowerCase().replace(/\s+/g, " ").trim(); return drills.filter((drill) => { const searchable = [drill.name.en, drill.name.zhTW, drill.category, drill.equipment ?? "", ...(drill.searchTerms ?? [])].join(" ").toLowerCase().replace(/\s+/g, " "); return drill.domain === options.domain && (options.category === "all" || drill.category === options.category) && (options.equipment === undefined || options.equipment === "all" || drill.equipment === options.equipment) && (!options.favoritesOnly || options.favoriteIds.includes(drill.id)) && (!q || searchable.includes(q)); }); }

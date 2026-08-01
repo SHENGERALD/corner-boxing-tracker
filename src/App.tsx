@@ -812,6 +812,22 @@ interface TodayViewProps {
   clearRecord: () => void;
 }
 
+const planDrillAliases: Record<string, string> = {
+  "coach-class": "padwork",
+  cooldown: "mobility",
+  footwork: "step-forward",
+  rope: "skipping",
+  squat: "back-squat",
+  hinge: "romanian-deadlift",
+  "push-pull": "bench-press",
+  run: "cardio-run",
+};
+
+function getPlanDrill(itemId: string) {
+  const drillId = planDrillAliases[itemId] ?? itemId;
+  return drillLibrary.find((drill) => drill.id === drillId);
+}
+
 function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder }: TodayViewProps) {
   const completion = getRecordCompletion(plan, record);
   const percentage = completion.total
@@ -842,6 +858,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
       kind: "planned" as const,
       title: formatPlanLabel(item.label, language),
       detail: formatPlanLabel(item.detail, language),
+      drill: getPlanDrill(item.id),
       checked: isTrainingItemComplete(record, item.id),
     })),
     ...(record.customItems ?? []).flatMap((item) => {
@@ -853,6 +870,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
         kind: "custom" as const,
         title: formatPlanLabel(drill.name, language),
         detail: `${item.quantity} ${unit}`,
+        drill,
         checked: item.completed || isTrainingItemComplete(record, item.id),
       }];
     }),
@@ -1017,6 +1035,9 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                       <span className="custom-check">{item.checked && <Check size={17} />}</span>
                     </label>
                     <span className="item-order">{String(index + 1).padStart(2, "0")}</span>
+                    <span className={`training-drill-icon${item.drill?.imageUrl ? " has-image" : ""}${item.drill?.imagePosition ? " sprite-image" : ""}`} style={item.drill?.imagePosition ? { backgroundImage: `url(${item.drill.imageUrl})`, backgroundPosition: item.drill.imagePosition } : undefined} aria-hidden="true">
+                      {item.drill?.imageUrl && !item.drill.imagePosition ? <img src={item.drill.imageUrl} alt="" /> : !item.drill?.imageUrl ? <span>{item.title.slice(0, 1)}</span> : null}
+                    </span>
                     <span className="item-copy"><strong>{item.title}</strong><small>{item.detail}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
                     <GripVertical className="drag-handle" size={17} aria-hidden="true" />
@@ -1363,8 +1384,8 @@ function DrillLibraryView({
                       <Heart size={16} />
                     </button>
                   </div>
-                  <div className={drill.imageUrl ? "drill-visual has-image" : "drill-visual"} aria-hidden="true">
-                    {drill.imageUrl ? <img src={drill.imageUrl} alt="" loading="lazy" /> : <span>{title.slice(0, 1)}</span>}
+                  <div className={drill.imageUrl ? `drill-visual has-image${drill.imagePosition ? " sprite-image" : ""}` : "drill-visual"} style={drill.imagePosition ? { backgroundImage: `url(${drill.imageUrl})`, backgroundPosition: drill.imagePosition } : undefined} aria-hidden="true">
+                    {drill.imageUrl && !drill.imagePosition ? <img src={drill.imageUrl} alt="" loading="lazy" /> : !drill.imageUrl ? <span>{title.slice(0, 1)}</span> : null}
                   </div>
                   <h2>{title}</h2>
                   <p>{formatPlanLabel(drill.cue, language)}</p>
