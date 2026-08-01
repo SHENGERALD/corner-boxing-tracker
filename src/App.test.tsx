@@ -78,6 +78,21 @@ describe("Boxing Tracker", () => {
     expect(screen.getByText("1/4")).toBeInTheDocument();
   });
 
+  it("starts the persistent boxing timer from the mobile timer control", async () => {
+    const user = userEvent.setup();
+    const first = render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "拳擊回合計時器" }));
+    expect(screen.getByRole("dialog", { name: "拳擊回合計時器" })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "開始計時" }));
+    expect(screen.getByRole("button", { name: "暫停" })).toBeInTheDocument();
+
+    first.unmount();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+    await user.click(screen.getByRole("button", { name: "拳擊回合計時器" }));
+    expect(screen.getByRole("button", { name: "暫停" })).toBeInTheDocument();
+  });
+
   it("switches interface and plan labels to English", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);
@@ -155,6 +170,23 @@ describe("Boxing Tracker", () => {
     expect(screen.getByText("刺拳")).toBeInTheDocument();
   });
 
+  it("shows favorited drills in the favorites category and removes them when unhearted", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.type(screen.getByPlaceholderText("搜尋動作"), "jab");
+    await user.click(screen.getByRole("button", { name: "收藏 刺拳" }));
+
+    const favoriteCategories = screen.getAllByRole("button", { name: "收藏" });
+    expect(favoriteCategories).toHaveLength(2);
+    await user.click(favoriteCategories[1]);
+    expect(screen.getByRole("heading", { name: "刺拳" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "收藏 刺拳" }));
+    expect(screen.queryByRole("heading", { name: "刺拳" })).not.toBeInTheDocument();
+  });
+
   it("reorders an added drill with planned drills and restores the order", async () => {
     const user = userEvent.setup();
     const first = render(<App initialDate={new Date(2026, 6, 30, 12)} />);
@@ -193,10 +225,28 @@ describe("Boxing Tracker", () => {
     await user.click(screen.getByRole("button", { name: "動作庫" }));
     await user.click(screen.getByRole("button", { name: "重訓" }));
     expect(screen.getByText("重訓資料庫")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "啞鈴臥推" })).toBeInTheDocument();
+    await user.click(screen.getAllByRole("button", { name: "手臂" })[0]);
+    expect(screen.getByRole("heading", { name: "槓鈴彎舉" })).toBeInTheDocument();
+    await user.click(screen.getAllByRole("button", { name: "全部" })[0]);
     await user.click(screen.getByRole("button", { name: "加入 槓鈴臥推" }));
     await user.click(screen.getByRole("button", { name: "加入訓練" }));
 
     expect(screen.getByText("槓鈴臥推")).toBeInTheDocument();
+  });
+
+  it("filters strength drills by equipment and shows the cardio category", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.click(screen.getByRole("button", { name: "重訓" }));
+    await user.click(screen.getByRole("button", { name: "啞鈴" }));
+    expect(screen.getByRole("heading", { name: "啞鈴臥推" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "槓鈴臥推" })).not.toBeInTheDocument();
+
+    await user.click(screen.getAllByRole("button", { name: "有氧" })[0]);
+    expect(screen.getByRole("heading", { name: "跑步" })).toBeInTheDocument();
   });
 
   it("adds a custom action to the boxing library", async () => {

@@ -78,7 +78,7 @@ function isCustomDrill(value: unknown): value is Drill {
   const drill = value as Record<string, unknown>;
   return (
     typeof drill.id === "string" &&
-    ["fundamentals", "footwork", "offense", "defense", "equipment", "conditioning", "chest", "back", "legs", "shoulders", "core"].includes(drill.category as string) &&
+    ["fundamentals", "footwork", "offense", "defense", "equipment", "conditioning", "chest", "back", "legs", "shoulders", "arms", "core", "calves", "cardio"].includes(drill.category as string) &&
     (drill.domain === "boxing" || drill.domain === "strength") &&
     isLocalizedLabel(drill.name) &&
     isLocalizedLabel(drill.cue) &&

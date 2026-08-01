@@ -23,6 +23,13 @@ import {
   Search,
   Trash2,
   TrendingUp,
+  Timer as TimerIcon,
+  Pause,
+  Play,
+  SkipForward,
+  Settings2,
+  Volume2,
+  VolumeX,
   Upload,
   UserRound,
   X,
@@ -55,7 +62,8 @@ import {
 } from "./domain/storage";
 import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/supabase";
 import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingType, Weekday } from "./domain/types";
-import { drillLibrary, filterDrills, type Drill, type DrillCategory, type TrainingDomain } from "./domain/drills";
+import { drillLibrary, filterDrills, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
+import { advanceTimer, getRemainingSeconds, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
 type HistoryMode = "history" | "stats";
@@ -92,6 +100,12 @@ export default function App({ initialDate = new Date() }: AppProps) {
   const [historyMode, setHistoryMode] = useState<HistoryMode>("history");
   const [state, setState] = useState<AppState>(() => loadState());
   const [drillToAdd, setDrillToAdd] = useState<Drill | null>(null);
+  const [timer, setTimer] = useState<BoxingTimerState | null>(() => loadTimer());
+  const [timerOpen, setTimerOpen] = useState(false);
+  const [timerNow, setTimerNow] = useState(() => Date.now());
+  const timerCueRef = useRef("");
+  const [timerSoundEnabled, setTimerSoundEnabled] = useState(true);
+  const [timerVoiceEnabled, setTimerVoiceEnabled] = useState(true);
   const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
   const [authReady, setAuthReady] = useState(false);
@@ -106,6 +120,47 @@ export default function App({ initialDate = new Date() }: AppProps) {
   useEffect(() => {
     if (!userId || cloudReady) saveState(state, userId);
   }, [cloudReady, state, userId]);
+  useEffect(() => {
+    if (timer?.status !== "running") return;
+    const tick = () => {
+      const now = Date.now();
+      setTimerNow(now);
+      setTimer((current) => {
+        if (!current || current.status !== "running") return current;
+        const next = advanceTimer(current, now);
+        if (next !== current) saveTimer(next);
+        return next;
+      });
+    };
+    tick();
+    const interval = window.setInterval(tick, 250);
+    const onVisibilityChange = () => tick();
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      window.clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, [timer?.status]);
+
+  useEffect(() => {
+    if (!timer || timer.status !== "running") {
+      timerCueRef.current = "";
+      return;
+    }
+    const remaining = getRemainingSeconds(timer, timerNow);
+    const phaseKey = timer.phase + "-" + timer.round;
+    if (timerCueRef.current !== phaseKey) {
+      timerCueRef.current = phaseKey;
+      announceTimerPhase(timer.phase, timer.round, language, timerSoundEnabled, timerVoiceEnabled);
+    }
+    if (remaining > 0 && remaining <= 10) {
+      const countdownKey = phaseKey + "-" + remaining;
+      if (timerCueRef.current !== countdownKey) {
+        timerCueRef.current = countdownKey;
+        if (timerSoundEnabled) playTimerBeep(remaining <= 3 ? 1046 : 784);
+      }
+    }
+  }, [language, timer, timerNow, timerSoundEnabled, timerVoiceEnabled]);
 
   useEffect(() => {
     if (!supabase) {
@@ -205,6 +260,38 @@ export default function App({ initialDate = new Date() }: AppProps) {
     }, 700);
     return () => window.clearTimeout(timer);
   }, [cloudReady, state, userId]);
+
+  const startBoxingTimer = (settings: BoxingTimerSettings) => {
+    const next = startTimer(settings);
+    saveTimer(next);
+    setTimer(next);
+    setTimerNow(Date.now());
+    setTimerOpen(true);
+  };
+  const pauseBoxingTimer = () => setTimer((current) => {
+    if (!current) return current;
+    const next = pauseTimer(current);
+    saveTimer(next);
+    return next;
+  });
+  const resumeBoxingTimer = () => setTimer((current) => {
+    if (!current) return current;
+    const next = resumeTimer(current);
+    saveTimer(next);
+    return next;
+  });
+  const skipBoxingTimerPhase = () => setTimer((current) => {
+    if (!current) return current;
+    const next = skipTimerPhase(current);
+    saveTimer(next);
+    setTimerNow(Date.now());
+    return next;
+  });
+  const resetBoxingTimer = () => {
+    saveTimer(null);
+    setTimer(null);
+    setTimerOpen(false);
+  };
 
   const selectedKey = toDateKey(selectedDate);
   const plan = getPlanForWeekday(getWeekday(selectedDate), state.weeklyPlan);
@@ -310,6 +397,10 @@ export default function App({ initialDate = new Date() }: AppProps) {
             <small>{t(language, "app.kicker")}</small>
           </span>
         </button>
+        <button className="timer-trigger" onClick={() => setTimerOpen(true)} aria-label={language === "zh-TW" ? "拳擊回合計時器" : "Boxing round timer"}>
+          <TimerIcon size={18} />
+          <span><strong>{timer && timer.status !== "complete" ? formatTimerClock(getRemainingSeconds(timer, timerNow)) : language === "zh-TW" ? "計時" : "Timer"}</strong><small>{timer?.status === "running" ? (timer.phase === "work" ? (language === "zh-TW" ? "回合" : "Round") : (language === "zh-TW" ? "休息" : "Rest")) + " " + timer.round : language === "zh-TW" ? "拳擊回合" : "Boxing rounds"}</small></span>
+        </button>
         <button className="account-trigger" onClick={() => setAuthOpen(true)} aria-label={session ? (language === "zh-TW" ? "帳號與同步" : "Account and sync") : (language === "zh-TW" ? "登入" : "Sign in")}>
           {session ? (syncStatus === "error" ? <CloudOff size={18} /> : <Cloud size={18} />) : <UserRound size={18} />}
           <span>
@@ -377,6 +468,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
           />
         )}
       </main>
+      {timerOpen && <BoxingTimerPanel language={language} timer={timer} now={timerNow} soundEnabled={timerSoundEnabled} voiceEnabled={timerVoiceEnabled} onSoundChange={setTimerSoundEnabled} onVoiceChange={setTimerVoiceEnabled} onClose={() => setTimerOpen(false)} onStart={startBoxingTimer} onPause={pauseBoxingTimer} onResume={resumeBoxingTimer} onSkip={skipBoxingTimerPhase} onReset={resetBoxingTimer} />}
       {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
       {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
       {authOpen && (
@@ -412,6 +504,133 @@ export default function App({ initialDate = new Date() }: AppProps) {
   );
 }
 
+
+
+function formatTimerClock(totalSeconds: number): string {
+  const seconds = Math.max(0, Math.ceil(totalSeconds));
+  return String(Math.floor(seconds / 60)).padStart(2, "0") + ":" + String(seconds % 60).padStart(2, "0");
+}
+
+function playTimerBeep(frequency = 784): void {
+  const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!AudioContextClass) return;
+  const context = new AudioContextClass();
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+  oscillator.frequency.value = frequency;
+  oscillator.type = "sine";
+  gain.gain.setValueAtTime(0.001, context.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.18, context.currentTime + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.16);
+  oscillator.connect(gain);
+  gain.connect(context.destination);
+  oscillator.start();
+  oscillator.stop(context.currentTime + 0.18);
+  window.setTimeout(() => void context.close(), 250);
+}
+
+function announceTimerPhase(phase: "work" | "rest", round: number, language: Language, soundEnabled: boolean, voiceEnabled: boolean): void {
+  if (soundEnabled) playTimerBell(phase);
+function playTimerBell(phase: "work" | "rest"): void {
+  const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!AudioContextClass) return;
+  const context = new AudioContextClass();
+  const notes = phase === "work" ? [660, 880] : [440, 440];
+  notes.forEach((frequency, index) => {
+    const start = context.currentTime + index * 0.18;
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    oscillator.frequency.value = frequency;
+    oscillator.type = "triangle";
+    gain.gain.setValueAtTime(0.001, start);
+    gain.gain.exponentialRampToValueAtTime(0.22, start + 0.025);
+    gain.gain.exponentialRampToValueAtTime(0.001, start + 0.34);
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.start(start);
+    oscillator.stop(start + 0.36);
+  });
+  window.setTimeout(() => void context.close(), 700);
+}
+
+
+  if (!voiceEnabled || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const speech = new SpeechSynthesisUtterance(
+    phase === "work"
+      ? language === "zh-TW" ? "第 " + round + " 回合" : "Round " + round
+      : language === "zh-TW" ? "休息" : "Rest",
+  );
+  speech.lang = language === "zh-TW" ? "zh-TW" : "en-US";
+  window.speechSynthesis.speak(speech);
+}
+
+function BoxingTimerPanel({
+  language,
+  timer,
+  now,
+  soundEnabled,
+  voiceEnabled,
+  onSoundChange,
+  onVoiceChange,
+  onClose,
+  onStart,
+  onPause,
+  onResume,
+  onSkip,
+  onReset,
+}: {
+  language: Language;
+  timer: BoxingTimerState | null;
+  now: number;
+  soundEnabled: boolean;
+  voiceEnabled: boolean;
+  onSoundChange: (value: boolean) => void;
+  onVoiceChange: (value: boolean) => void;
+  onClose: () => void;
+  onStart: (settings: BoxingTimerSettings) => void;
+  onPause: () => void;
+  onResume: () => void;
+  onSkip: () => void;
+  onReset: () => void;
+}) {
+  const [rounds, setRounds] = useState(timer?.settings.rounds ?? 6);
+  const [workMinutes, setWorkMinutes] = useState(Math.max(1, Math.round((timer?.settings.workSeconds ?? 180) / 60)));
+  const [restSeconds, setRestSeconds] = useState(timer?.settings.restSeconds ?? 60);
+  const active = timer?.status === "running" || timer?.status === "paused";
+  const remaining = timer ? getRemainingSeconds(timer, now) : 0;
+  const phaseSeconds = timer ? timer.phase === "work" ? timer.settings.workSeconds : timer.settings.restSeconds : 180;
+  const progress = timer && phaseSeconds > 0 ? Math.min(100, Math.max(0, (remaining / phaseSeconds) * 100)) : 0;
+  const start = () => onStart({ rounds, workSeconds: workMinutes * 60, restSeconds });
+
+  return <div className="dialog-backdrop timer-backdrop" role="presentation">
+    <section className="timer-sheet" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "拳擊回合計時器" : "Boxing round timer"}>
+      <header className="timer-sheet-header">
+        <div><p className="eyebrow">BOXING TIMER</p><h2>{language === "zh-TW" ? "拳擊回合計時器" : "Boxing round timer"}</h2></div>
+        <button className="icon-button" onClick={onClose} aria-label={language === "zh-TW" ? "關閉計時器" : "Close timer"}><X size={20} /></button>
+      </header>
+      {active ? <div className="timer-active">
+        <div className="timer-ring" style={{ background: "conic-gradient(var(--strava) " + progress + "%, var(--surface-soft) 0)" }}>
+          <div><span>{timer?.phase === "work" ? (language === "zh-TW" ? "回合" : "ROUND") : (language === "zh-TW" ? "休息" : "REST")}</span><strong>{formatTimerClock(remaining)}</strong><small>{timer?.round} / {timer?.settings.rounds}</small></div>
+        </div>
+        <div className="timer-stat-row"><span>{language === "zh-TW" ? "工作" : "WORK"}<strong>{formatTimerClock(timer?.settings.workSeconds ?? 0)}</strong></span><span>{language === "zh-TW" ? "休息" : "REST"}<strong>{formatTimerClock(timer?.settings.restSeconds ?? 0)}</strong></span></div>
+        <div className="timer-controls">
+          <button onClick={onSkip} aria-label={language === "zh-TW" ? "跳過階段" : "Skip phase"}><SkipForward size={19} /><span>{language === "zh-TW" ? "跳過" : "Skip"}</span></button>
+          <button className="timer-primary-control" onClick={timer?.status === "paused" ? onResume : onPause} aria-label={timer?.status === "paused" ? (language === "zh-TW" ? "繼續" : "Resume") : (language === "zh-TW" ? "暫停" : "Pause")}>{timer?.status === "paused" ? <Play size={25} /> : <Pause size={25} />}</button>
+          <button onClick={onReset} aria-label={language === "zh-TW" ? "重設計時器" : "Reset timer"}><RotateCcw size={19} /><span>{language === "zh-TW" ? "重設" : "Reset"}</span></button>
+        </div>
+      </div> : <div className="timer-setup">
+        {timer?.status === "complete" && <p className="timer-complete">{language === "zh-TW" ? "訓練完成" : "Workout complete"}</p>}
+        <div className="timer-presets">
+          {([["標準", 6, 3, 60], ["技術", 3, 2, 60], ["HIIT", 8, 1, 30]] as const).map(([label, presetRounds, minutes, rest]) => <button key={String(label)} onClick={() => { setRounds(presetRounds); setWorkMinutes(minutes); setRestSeconds(rest); }}><strong>{language === "zh-TW" ? label : label === "標準" ? "Standard" : label === "技術" ? "Technique" : "HIIT"}</strong><span>{presetRounds} × {minutes}:00</span></button>)}
+        </div>
+        <div className="timer-fields"><label>{language === "zh-TW" ? "回合數" : "Rounds"}<input type="number" min="1" max="99" value={rounds} onChange={(event) => setRounds(Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "每回合分鐘" : "Work minutes"}<input type="number" min="1" max="20" value={workMinutes} onChange={(event) => setWorkMinutes(Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "休息秒數" : "Rest seconds"}<input type="number" min="0" max="600" value={restSeconds} onChange={(event) => setRestSeconds(Math.max(0, Number(event.target.value)))} /></label></div>
+        <div className="timer-preferences"><button className={soundEnabled ? "selected" : ""} onClick={() => onSoundChange(!soundEnabled)}>{soundEnabled ? <Volume2 size={17} /> : <VolumeX size={17} />}{language === "zh-TW" ? "提示音" : "Sounds"}</button><button className={voiceEnabled ? "selected" : ""} onClick={() => onVoiceChange(!voiceEnabled)}><Settings2 size={17} />{language === "zh-TW" ? "回合語音" : "Round voice"}</button></div>
+        <button className="timer-start-button" onClick={start}><Play size={19} />{language === "zh-TW" ? "開始計時" : "Start timer"}</button>
+      </div>}
+    </section>
+  </div>;
+}
 
 function syncStatusLabel(status: SyncStatus, language: Language, signedIn: boolean) {
   if (!signedIn) return language === "zh-TW" ? "僅此裝置" : "On this device";
@@ -990,7 +1209,8 @@ function DrillLibraryView({
   const [category, setCategory] = useState<Drill["category"] | "all">("all");
   const [onlyFavorites, setOnlyFavorites] = useState(false);
   const [domain, setDomain] = useState<TrainingDomain>("boxing");
-  const drills = filterDrills([...customDrills, ...drillLibrary], { query, domain, category, favoriteIds: favorites, favoritesOnly: onlyFavorites });
+  const [equipment, setEquipment] = useState<EquipmentType | "all">("all");
+  const drills = filterDrills([...customDrills, ...drillLibrary], { query, domain, category, equipment, favoriteIds: favorites, favoritesOnly: onlyFavorites });
   const categories: Array<[Drill["category"] | "all", string]> = domain === "boxing"
     ? [
         ["all", language === "zh-TW" ? "全部" : "All"],
@@ -1007,9 +1227,23 @@ function DrillLibraryView({
         ["back", language === "zh-TW" ? "背" : "Back"],
         ["legs", language === "zh-TW" ? "腿" : "Legs"],
         ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"],
+        ["arms", language === "zh-TW" ? "手臂" : "Arms"],
         ["core", language === "zh-TW" ? "核心" : "Core"],
+        ["calves", language === "zh-TW" ? "小腿" : "Calves"],
+        ["cardio", language === "zh-TW" ? "有氧" : "Cardio"],
       ];
-  const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory("all"); };
+  const equipmentOptions: Array<[EquipmentType | "all", string]> = [
+    ["all", language === "zh-TW" ? "全部器材" : "All equipment"],
+    ["barbell", language === "zh-TW" ? "槓鈴" : "Barbell"],
+    ["dumbbell", language === "zh-TW" ? "啞鈴" : "Dumbbell"],
+    ["kettlebell", language === "zh-TW" ? "壺鈴" : "Kettlebell"],
+    ["cable", language === "zh-TW" ? "繩索" : "Cable"],
+    ["hammer", language === "zh-TW" ? "悍馬" : "Hammer"],
+    ["machine", language === "zh-TW" ? "器材" : "Machine"],
+    ["bodyweight", language === "zh-TW" ? "自重" : "Bodyweight"],
+  ];
+  const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory("all"); setEquipment("all"); };
+  const changeCategory = (nextCategory: Drill["category"] | "all") => { setCategory(nextCategory); if (nextCategory === "cardio") setEquipment("all"); };
 
   return (
     <div className="page library-page">
@@ -1017,6 +1251,7 @@ function DrillLibraryView({
         <button className={domain === "boxing" ? "selected" : ""} onClick={() => changeDomain("boxing")}>{language === "zh-TW" ? "拳擊" : "Boxing"}</button>
         <button className={domain === "strength" ? "selected" : ""} onClick={() => changeDomain("strength")}>{language === "zh-TW" ? "重訓" : "Strength"}</button>
       </div>
+      {domain === "strength" && <p className="library-attribution">{language === "zh-TW" ? "重訓示意圖部分來源：wger，採 CC BY-SA 授權；有氧圖示為 Corner 原創。" : "Strength visuals are partly from wger under CC BY-SA; cardio visuals are original Corner illustrations."} <a href="https://wger.de" target="_blank" rel="noreferrer">wger.de</a></p>}
       <section className="library-toolbar">
         <label className="library-search">
           <Search size={21} />
@@ -1035,11 +1270,12 @@ function DrillLibraryView({
       <section className="library-layout">
         <aside className="category-rail" aria-label={language === "zh-TW" ? "動作分類" : "Drill categories"}>
           {categories.map(([id, label]) => (
-            <button className={category === id ? "selected" : ""} onClick={() => setCategory(id)} key={id}>
+            <button className={category === id ? "selected" : ""} onClick={() => changeCategory(id)} key={id}>
               {label}
             </button>
           ))}
-          <button className={onlyFavorites ? "selected favorite-filter" : "favorite-filter"} onClick={() => setOnlyFavorites(!onlyFavorites)}>
+          <button className={onlyFavorites ? "selected favorite-filter" : "favorite-filter"} onClick={() => setOnlyFavorites(!onlyFavorites)} aria-pressed={onlyFavorites}>
+            <Heart size={15} fill={onlyFavorites ? "currentColor" : "none"} />
             {language === "zh-TW" ? "收藏" : "Favorites"}
           </button>
         </aside>
@@ -1052,9 +1288,16 @@ function DrillLibraryView({
           </div>
           <div className="category-chips">
             {categories.map(([id, label]) => (
-              <button className={category === id ? "selected" : ""} onClick={() => setCategory(id)} key={id}>{label}</button>
+              <button className={category === id ? "selected" : ""} onClick={() => changeCategory(id)} key={id}>{label}</button>
             ))}
+            <button className={onlyFavorites ? "selected favorite-chip" : "favorite-chip"} onClick={() => setOnlyFavorites(!onlyFavorites)} aria-pressed={onlyFavorites}>
+              <Heart size={15} fill={onlyFavorites ? "currentColor" : "none"} />
+              {language === "zh-TW" ? "收藏" : "Favorites"}
+            </button>
           </div>
+          {domain === "strength" && <div className="equipment-chips" aria-label={language === "zh-TW" ? "器材篩選" : "Equipment filter"}>
+            {equipmentOptions.map(([id, label]) => <button className={equipment === id ? "selected" : ""} onClick={() => setEquipment(id)} key={id}>{label}</button>)}
+          </div>}
           <div className="drill-grid">
             {drills.map((drill) => {
               const favorite = favorites.includes(drill.id);
@@ -1068,8 +1311,8 @@ function DrillLibraryView({
                       <Heart size={16} />
                     </button>
                   </div>
-                  <div className="drill-visual" aria-hidden="true">
-                    <span>{title.slice(0, 1)}</span>
+                  <div className={drill.imageUrl ? "drill-visual has-image" : "drill-visual"} aria-hidden="true">
+                    {drill.imageUrl ? <img src={drill.imageUrl} alt="" loading="lazy" /> : <span>{title.slice(0, 1)}</span>}
                   </div>
                   <h2>{title}</h2>
                   <p>{formatPlanLabel(drill.cue, language)}</p>
@@ -1096,7 +1339,7 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
   const [quantity, setQuantity] = useState(3);
   const categories: Array<[DrillCategory, string]> = domain === "boxing"
     ? [["fundamentals", language === "zh-TW" ? "基礎" : "Basics"], ["footwork", language === "zh-TW" ? "步法" : "Footwork"], ["offense", language === "zh-TW" ? "進攻" : "Offense"], ["defense", language === "zh-TW" ? "防守" : "Defense"], ["equipment", language === "zh-TW" ? "器材" : "Equipment"], ["conditioning", language === "zh-TW" ? "體能" : "Conditioning"]]
-    : [["chest", language === "zh-TW" ? "胸" : "Chest"], ["back", language === "zh-TW" ? "背" : "Back"], ["legs", language === "zh-TW" ? "腿" : "Legs"], ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"], ["core", language === "zh-TW" ? "核心" : "Core"]];
+    : [["chest", language === "zh-TW" ? "胸" : "Chest"], ["back", language === "zh-TW" ? "背" : "Back"], ["legs", language === "zh-TW" ? "腿" : "Legs"], ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"], ["arms", language === "zh-TW" ? "手臂" : "Arms"], ["core", language === "zh-TW" ? "核心" : "Core"], ["calves", language === "zh-TW" ? "小腿" : "Calves"], ["cardio", language === "zh-TW" ? "有氧" : "Cardio"]];
   const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory(nextDomain === "boxing" ? "fundamentals" : "chest"); };
   const save = () => {
     const trimmedName = name.trim();

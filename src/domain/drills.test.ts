@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { drillLibrary, filterDrills } from "./drills";
+import { drillLibrary, filterDrills, type DrillCategory } from "./drills";
 
 describe("drill library", () => {
   it("searches English and Chinese names and filters favorites", () => {
@@ -35,5 +35,37 @@ describe("drill library", () => {
         defaultQuantity: 3,
       }),
     ]);
+  });
+
+  it("filters strength drills by equipment without mixing equipment types", () => {
+    const drills = filterDrills(drillLibrary, {
+      query: "",
+      domain: "strength",
+      category: "chest",
+      equipment: "dumbbell",
+      favoriteIds: [],
+      favoritesOnly: false,
+    });
+
+    expect(drills).toEqual(expect.arrayContaining([expect.objectContaining({ id: "dumbbell-bench-press", equipment: "dumbbell" })]));
+    expect(drills.every((drill) => drill.equipment === "dumbbell")).toBe(true);
+  });
+
+  it("keeps cardio drills in the dedicated strength category", () => {
+    expect(filterDrills(drillLibrary, {
+      query: "跑步",
+      domain: "strength",
+      category: "cardio" as DrillCategory,
+      equipment: "all",
+      favoriteIds: [],
+      favoritesOnly: false,
+    })).toEqual([expect.objectContaining({ id: "cardio-run", defaultUnit: "minutes", imageUrl: import.meta.env.BASE_URL + "cardio/running.png", imageSource: "Corner cardio illustration" })]);
+  });
+
+  it("gives every strength drill an image and equipment label", () => {
+    const strengthDrills = drillLibrary.filter((drill) => drill.domain === "strength" && drill.category !== "cardio");
+    expect(strengthDrills.length).toBeGreaterThanOrEqual(50);
+    expect(strengthDrills.every((drill) => drill.imageUrl && drill.imageSource === "wger" && drill.equipment)).toBe(true);
+    expect(new Set(strengthDrills.map((drill) => drill.name.en.toLowerCase())).size).toBe(strengthDrills.length);
   });
 });
