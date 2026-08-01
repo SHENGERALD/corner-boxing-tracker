@@ -1466,3 +1466,19 @@ img { max-width: 100%; }
   .launch-splash, .launch-splash-mark, .launch-splash strong { animation: none; }
   .launch-splash { display: none; }
 }
+
+.schedule-fields input[type="time"] {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 680px) {
+  .schedule-fields input[type="time"] {
+    padding-inline: 10px;
+    font-size: 16px;
+  }
+}
