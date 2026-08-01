@@ -44,7 +44,7 @@ function CornerMark({ className = "" }: { className?: string }) {
 }
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { mergeStateWithCloud, resolveInitialState } from "./domain/cloud";
+import { mergeForRevisionedSave, mergeStateWithCloud, resolveInitialState } from "./domain/cloud";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
 import { formatPlanLabel, t } from "./domain/i18n";
 import { cloneWeeklyPlan, createBlankWeeklyPlan, getPlanForWeekday } from "./domain/plan";
@@ -54,6 +54,8 @@ import {
   decodeState,
   exportState,
   getStateSavedAt,
+  getStorageKey,
+  getStorageUpdatedAtKey,
   hasStoredState,
   importState,
   loadState,
@@ -94,10 +96,15 @@ function initialRecord(): TrainingRecord {
 }
 
 type PreviewSet = { id: string; weight: number; reps: number; completed: boolean };
+type PreviewQuantity = string;
 
 function QuickLogPreview() {
   const [boxingComplete, setBoxingComplete] = useState(false);
   const [cardioComplete, setCardioComplete] = useState(false);
+  const [boxingDetailsOpen, setBoxingDetailsOpen] = useState(false);
+  const [cardioDetailsOpen, setCardioDetailsOpen] = useState(false);
+  const [boxingQuantity, setBoxingQuantity] = useState<PreviewQuantity>("3");
+  const [cardioQuantity, setCardioQuantity] = useState<PreviewQuantity>("20");
   const [sets, setSets] = useState<PreviewSet[]>([{ id: "squat-1", weight: 60, reps: 8, completed: false }]);
   const [detailsOpen, setDetailsOpen] = useState(false);
 
@@ -120,12 +127,20 @@ function QuickLogPreview() {
   return <main className="quick-log-preview">
     <header className="quick-log-header"><p className="eyebrow">CORNER / PREVIEW</p><h1>快速記錄原型</h1><p>今天的訓練，幾秒內留下來。</p></header>
     <section className="quick-log-list" aria-label="示範訓練">
-      <article className={`quick-log-card ${boxingComplete ? "is-complete" : ""}`}><div className="quick-log-card-heading"><Activity size={20} /><div><h2>影子拳擊</h2><p>3 回合</p></div></div><button className="quick-log-complete" onClick={() => setBoxingComplete(true)} disabled={boxingComplete}><Check size={18} />{boxingComplete ? "已完成" : "完成 影子拳擊"}</button></article>
-      <article className={`quick-log-card ${cardioComplete ? "is-complete" : ""}`}><div className="quick-log-card-heading"><TimerIcon size={20} /><div><h2>Zone 2 跑步</h2><p>20 分鐘</p></div></div><button className="quick-log-complete" onClick={() => setCardioComplete(true)} disabled={cardioComplete}><Check size={18} />{cardioComplete ? "已完成" : "完成 Zone 2 跑步"}</button></article>
+      <article className={`quick-log-card ${boxingComplete ? "is-complete" : ""}`}>
+        <div className="quick-log-card-top"><div className="quick-log-card-heading"><Activity size={20} /><div><h2>影子拳擊</h2><p>{boxingQuantity || "0"} 回合</p></div></div><button className="quick-log-more" aria-expanded={boxingDetailsOpen} onClick={() => setBoxingDetailsOpen((open) => !open)}>更多</button></div>
+        {boxingDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="影子拳擊數量" type="number" min="1" value={boxingQuantity} onChange={(event) => setBoxingQuantity(event.target.value)} /></label><label>備註<textarea aria-label="影子拳擊備註" placeholder="選填" /></label></div>}
+        <button className="quick-log-complete" onClick={() => setBoxingComplete(true)} disabled={boxingComplete}><Check size={18} />{boxingComplete ? "已完成" : "完成 影子拳擊"}</button>
+      </article>
+      <article className={`quick-log-card ${cardioComplete ? "is-complete" : ""}`}>
+        <div className="quick-log-card-top"><div className="quick-log-card-heading"><TimerIcon size={20} /><div><h2>Zone 2 跑步</h2><p>{cardioQuantity || "0"} 分鐘</p></div></div><button className="quick-log-more" aria-expanded={cardioDetailsOpen} onClick={() => setCardioDetailsOpen((open) => !open)}>更多</button></div>
+        {cardioDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="Zone 2 跑步數量" type="number" min="1" value={cardioQuantity} onChange={(event) => setCardioQuantity(event.target.value)} /></label><label>備註<textarea aria-label="Zone 2 跑步備註" placeholder="選填" /></label></div>}
+        <button className="quick-log-complete" onClick={() => setCardioComplete(true)} disabled={cardioComplete}><Check size={18} />{cardioComplete ? "已完成" : "完成 Zone 2 跑步"}</button>
+      </article>
       <article className="quick-log-card quick-log-strength"><div className="quick-log-card-heading"><Dumbbell size={20} /><div><h2>深蹲</h2><p>60 kg x 8</p></div></div><div className="quick-log-sets">{sets.map((set, index) => <div className={`quick-log-set ${set.completed ? "is-complete" : ""}`} key={set.id}><span>第 {index + 1} 組</span><label>重量<input aria-label={`第${index + 1}組重量`} type="number" min="0" value={set.weight} onChange={(event) => updateSet(set.id, "weight", Number(event.target.value))} /></label><label>次數<input aria-label={`第${index + 1}組次數`} type="number" min="0" value={set.reps} onChange={(event) => updateSet(set.id, "reps", Number(event.target.value))} /></label><button aria-label={`完成第${index + 1}組深蹲`} onClick={() => setSets((current) => current.map((item) => item.id === set.id ? { ...item, completed: !item.completed } : item))}><Check size={17} /></button></div>)}</div><button className="quick-log-add-set" onClick={addSet}><Plus size={18} />新增一組 深蹲</button></article>
     </section>
     <button className="quick-log-details-trigger" onClick={() => setDetailsOpen(true)}>查看細節</button>
-    {detailsOpen && <button className="quick-log-backdrop" aria-label="關閉細節" onClick={() => setDetailsOpen(false)}><section className="quick-log-details" role="dialog" aria-modal="true" aria-label="訓練細節" onClick={(event) => event.stopPropagation()}><div><h2>可選細節</h2><button aria-label="關閉" onClick={() => setDetailsOpen(false)}><X size={20} /></button></div><p>這裡可補上 RPE、技術感受和下一次的提醒；完成按鈕仍是最快的記錄方式。</p></section></button>}
+    {detailsOpen && <div className="quick-log-backdrop" data-testid="details-backdrop" onClick={() => setDetailsOpen(false)}><section className="quick-log-details" role="dialog" aria-modal="true" aria-label="訓練細節" onClick={(event) => event.stopPropagation()}><div><h2>可選細節</h2><button aria-label="關閉" onClick={() => setDetailsOpen(false)}><X size={20} /></button></div><p>這裡可補上 RPE、技術感受和下一次的提醒；完成按鈕仍是最快的記錄方式。</p></section></div>}
   </main>;
 }
 
@@ -155,6 +170,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   const [cloudReady, setCloudReady] = useState(false);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>("local");
   const stateRef = useRef(state);
+  const cloudRevisionRef = useRef<number | null>(null);
   const suppressNextGuestSaveRef = useRef(false);
   const language = state.language;
   const userId = session?.user.id;
@@ -252,7 +268,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
     void (async () => {
       const { data, error } = await supabase
         .from("user_app_states")
-        .select("state, updated_at")
+        .select("state, updated_at, revision")
         .eq("user_id", userId)
         .maybeSingle();
       if (!active) return;
@@ -262,6 +278,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
         return;
       }
       const cloudState = data ? decodeState(data.state) : null;
+      cloudRevisionRef.current = data?.revision ?? null;
       const accountState = hasStoredState(userId) ? loadState(userId) : null;
       const resolution = resolveInitialState({
         guestState: stateRef.current,
@@ -271,17 +288,17 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
         cloudUpdatedAt: data?.updated_at ?? null,
       });
       if (resolution.shouldUpload) {
-        const updatedAt = new Date().toISOString();
-        const { error: uploadError } = await supabase
-          .from("user_app_states")
-          .upsert({ user_id: userId, state: resolution.state, updated_at: updatedAt }, { onConflict: "user_id" });
+        const { data: savedRows, error: uploadError } = await supabase
+          .rpc("save_user_app_state", { next_state: resolution.state, expected_revision: cloudRevisionRef.current });
         if (!active) return;
-        if (uploadError) {
+        const saved = savedRows?.[0];
+        if (uploadError || !saved) {
           setState(resolution.state);
           setSyncStatus("error");
           return;
         }
-        saveState(resolution.state, userId, updatedAt);
+        cloudRevisionRef.current = saved.revision;
+        saveState(resolution.state, userId, saved.updated_at);
       } else {
         saveState(resolution.state, userId, data?.updated_at ?? undefined);
       }
@@ -302,8 +319,10 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
         "postgres_changes",
         { event: "*", schema: "public", table: "user_app_states", filter: "user_id=eq." + userId },
         (payload) => {
-          const incoming = decodeState((payload.new as { state?: unknown }).state);
+          const incomingRow = payload.new as { state?: unknown; revision?: number };
+          const incoming = decodeState(incomingRow.state);
           if (!incoming) return;
+          cloudRevisionRef.current = incomingRow.revision ?? cloudRevisionRef.current;
           setState((current) => {
             const merged = mergeStateWithCloud(current, incoming).state;
             return JSON.stringify(merged) === JSON.stringify(current) ? current : merged;
@@ -324,7 +343,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       void (async () => {
         const { data: latestData, error: latestError } = await client
           .from("user_app_states")
-          .select("state, updated_at")
+          .select("state, updated_at, revision")
           .eq("user_id", userId)
           .maybeSingle();
         if (latestError) {
@@ -332,16 +351,22 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
           return;
         }
         const latestCloudState = latestData ? decodeState(latestData.state) : null;
-        const mergedState = latestCloudState ? mergeStateWithCloud(state, latestCloudState).state : state;
-        const updatedAt = new Date().toISOString();
-        const { error } = await client
-          .from("user_app_states")
-          .upsert({ user_id: userId, state: mergedState, updated_at: updatedAt }, { onConflict: "user_id" });
-        if (error) {
-          setSyncStatus("error");
-          return;
+        const firstWrite = mergeForRevisionedSave(state, latestCloudState ? { state: latestCloudState, revision: latestData?.revision ?? null } : null);
+        let mergedState = firstWrite.state;
+        let { data: savedRows, error } = await client.rpc("save_user_app_state", { next_state: mergedState, expected_revision: firstWrite.expectedRevision });
+        let saved = savedRows?.[0];
+        if (!error && !saved) {
+          const { data: retryData, error: retryReadError } = await client.from("user_app_states").select("state, updated_at, revision").eq("user_id", userId).maybeSingle();
+          if (retryReadError) { setSyncStatus("error"); return; }
+          const retryCloudState = retryData ? decodeState(retryData.state) : null;
+          const retryWrite = mergeForRevisionedSave(mergedState, retryCloudState ? { state: retryCloudState, revision: retryData?.revision ?? null } : null);
+          mergedState = retryWrite.state;
+          ({ data: savedRows, error } = await client.rpc("save_user_app_state", { next_state: mergedState, expected_revision: retryWrite.expectedRevision }));
+          saved = savedRows?.[0];
         }
-        saveState(mergedState, userId, updatedAt);
+        if (error || !saved) { setSyncStatus("error"); return; }
+        cloudRevisionRef.current = saved.revision;
+        saveState(mergedState, userId, saved.updated_at);
         if (JSON.stringify(mergedState) !== JSON.stringify(state)) setState(mergedState);
         setSyncStatus("synced");
       })();
@@ -556,6 +581,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
             state={state}
             language={language}
             userId={userId}
+            syncStatus={syncStatus}
             setLanguage={setLanguage}
             replaceState={setState}
           />
@@ -756,6 +782,8 @@ function AuthPanel({
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [confirmingDelete, setConfirmingDelete] = useState(false);
+  const [deletePhrase, setDeletePhrase] = useState("");
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -791,6 +819,32 @@ function AuthPanel({
     }
   };
 
+  const resetPassword = async () => {
+    if (!supabase || !email.trim()) {
+      setMessage(language === "zh-TW" ? "請先輸入 Email。" : "Enter your email first.");
+      return;
+    }
+    setSubmitting(true);
+    const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: getAuthRedirectUrl() });
+    setSubmitting(false);
+    setMessage(error ? (language === "zh-TW" ? "暫時無法寄送復原信，請稍後再試。" : "We could not send a recovery email. Please try again.") : (language === "zh-TW" ? "若帳號存在，復原信已寄出。" : "If that account exists, a recovery email is on its way."));
+  };
+
+  const deleteAccount = async () => {
+    if (!supabase || deletePhrase !== "DELETE") return;
+    setSubmitting(true);
+    const { error } = await supabase.functions.invoke("delete-account", { method: "DELETE" });
+    setSubmitting(false);
+    if (error) {
+      setMessage(language === "zh-TW" ? "帳號刪除失敗，資料仍保留。請稍後再試。" : "Account deletion failed. Your data is still available. Please try again.");
+      return;
+    }
+    localStorage.removeItem(getStorageKey(session?.user.id));
+    localStorage.removeItem(getStorageUpdatedAtKey(session?.user.id));
+    await supabase.auth.signOut();
+    onSignedOut();
+  };
+
   const signOut = async () => {
     if (!supabase) return;
     setSubmitting(true);
@@ -817,6 +871,7 @@ function AuthPanel({
           <div><strong>{syncStatusLabel(syncStatus, language, true)}</strong><small>{syncStatus === "error" ? (language === "zh-TW" ? "請確認資料表與網路設定" : "Check the database setup and connection") : (language === "zh-TW" ? "課表與訓練紀錄會自動保存" : "Schedules and records save automatically")}</small></div>
         </div>
         {message && <div className="auth-message error">{message}</div>}
+        {confirmingDelete ? <div className="account-delete-confirm"><p>{language === "zh-TW" ? "輸入 DELETE 以永久刪除帳號與雲端資料。" : "Type DELETE to permanently remove your account and cloud data."}</p><input aria-label="Delete account confirmation" value={deletePhrase} onChange={(event) => setDeletePhrase(event.target.value)} /><div><button onClick={() => { setConfirmingDelete(false); setDeletePhrase(""); }}>{language === "zh-TW" ? "取消" : "Cancel"}</button><button className="danger" onClick={() => void deleteAccount()} disabled={submitting || deletePhrase !== "DELETE"}>{language === "zh-TW" ? "永久刪除" : "Delete permanently"}</button></div></div> : <button className="account-delete" onClick={() => setConfirmingDelete(true)} disabled={submitting}><Trash2 size={17} />{language === "zh-TW" ? "刪除帳號" : "Delete account"}</button>}
         <button className="auth-signout" onClick={() => void signOut()} disabled={submitting}><LogOut size={17} />{language === "zh-TW" ? "登出" : "Sign out"}</button>
       </> : <>
         <button className="auth-google" type="button" onClick={() => void signInWithGoogle()} disabled={submitting}>
@@ -833,7 +888,8 @@ function AuthPanel({
         <form className="auth-form" onSubmit={(event) => void submit(event)}>
           <label><span>Email</span><input type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} /></label>
           <label><span>{language === "zh-TW" ? "密碼" : "Password"}</span><input type="password" minLength={6} autoComplete={mode === "signin" ? "current-password" : "new-password"} required value={password} onChange={(event) => setPassword(event.target.value)} /></label>
-          {message && <div className={`auth-message ${message.includes("寄出") || message.includes("inbox") ? "success" : "error"}`}>{message}</div>}
+          {mode === "signin" && <button className="auth-recovery" type="button" onClick={() => void resetPassword()} disabled={submitting}>{language === "zh-TW" ? "忘記密碼" : "Forgot password"}</button>}
+          {message && <div className={`auth-message ${message.includes("寄出") || message.includes("inbox") || message.includes("exists") ? "success" : "error"}`}>{message}</div>}
           <button className="auth-submit" type="submit" disabled={submitting}>{submitting ? (language === "zh-TW" ? "處理中" : "Working") : mode === "signin" ? (language === "zh-TW" ? "登入並同步" : "Sign in and sync") : (language === "zh-TW" ? "建立帳號" : "Create account")}</button>
         </form>
         <p className="auth-privacy">{language === "zh-TW" ? "未登入時仍可離線使用。登入後，只有你能讀取自己的資料。" : "Corner still works offline without an account. Once signed in, only you can access your data."}</p>
@@ -1633,12 +1689,12 @@ function ScheduleView({
         </div>
 
         <div className="schedule-fields">
-          <label><span>課程名稱</span><input value={day.session.zhTW} onChange={(event) => updateLabel("session", "zhTW", event.target.value)} /></label>
-          <label><span>Session name</span><input value={day.session.en} onChange={(event) => updateLabel("session", "en", event.target.value)} /></label>
+          <label><span>{t(language, "schedule.sessionZh")}</span><input value={day.session.zhTW} onChange={(event) => updateLabel("session", "zhTW", event.target.value)} /></label>
+          <label><span>{t(language, "schedule.sessionEn")}</span><input value={day.session.en} onChange={(event) => updateLabel("session", "en", event.target.value)} /></label>
           <label><span>{language === "zh-TW" ? "開始時間" : "Start time"}</span><input type="time" disabled={day.trainingType === "rest"} value={day.startTime ?? ""} onChange={(event) => update({ startTime: event.target.value, time: undefined })} /></label>
           <label><span>{language === "zh-TW" ? "分鐘" : "Minutes"}</span><input type="number" min="0" step="5" disabled={day.trainingType === "rest"} value={day.duration} onChange={(event) => update({ duration: Math.max(0, Number(event.target.value)) })} /></label>
-          <label className="wide"><span>訓練重點</span><input value={day.focus.zhTW} onChange={(event) => updateLabel("focus", "zhTW", event.target.value)} /></label>
-          <label className="wide"><span>Training focus</span><input value={day.focus.en} onChange={(event) => updateLabel("focus", "en", event.target.value)} /></label>
+          <label className="wide"><span>{t(language, "schedule.focusZh")}</span><input value={day.focus.zhTW} onChange={(event) => updateLabel("focus", "zhTW", event.target.value)} /></label>
+          <label className="wide"><span>{t(language, "schedule.focusEn")}</span><input value={day.focus.en} onChange={(event) => updateLabel("focus", "en", event.target.value)} /></label>
         </div>
 
         <div className="schedule-items-heading">
@@ -1802,6 +1858,8 @@ interface WeeklyLoadPoint {
   label: string;
   hours: number;
   volumeKg: number;
+  boxingRounds: number;
+  boxingMinutes: number;
   averageRpe: number | null;
 }
 
@@ -1815,6 +1873,31 @@ function getRecordVolumeKg(record: TrainingRecord) {
     if (set.weight === undefined) return total;
     return total + weightInKg(set.weight, set.weightUnit) * (set.reps ?? 0);
   }, 0);
+}
+
+function getRecordBoxingLoad(plan: DayPlan, record: TrainingRecord) {
+  const load = { rounds: 0, minutes: 0 };
+  const parseDetail = (detail: string) => {
+    const matches = [...detail.matchAll(/(\d+(?:\.\d+)?)\s*(回合|rounds?|分鐘|minutes?|min)/gi)];
+    for (const match of matches) {
+      const quantity = Number(match[1]);
+      if (/回合|round/i.test(match[2])) load.rounds += quantity;
+      else load.minutes += quantity;
+    }
+  };
+  for (const item of plan.items) {
+    if (record.completedItemIds.includes(item.id)) {
+      const zhMatches = [...item.detail.zhTW.matchAll(/(\d+(?:\.\d+)?)\s*(回合|分鐘)/g)];
+      parseDetail(zhMatches.length ? item.detail.zhTW : item.detail.en);
+    }
+  }
+  for (const item of record.customItems ?? []) {
+    if (!item.completed) continue;
+    if (item.unit === "rounds") load.rounds += item.quantity;
+    else load.minutes += item.quantity;
+  }
+  load.minutes += Object.values(record.itemSetLogs ?? {}).flat().reduce((total, set) => total + (set.completed ? (set.durationSeconds ?? 0) / 60 : 0), 0);
+  return load;
 }
 
 function getWeeklyLoad(records: AppState["records"], weeklyPlan: DayPlan[]): WeeklyLoadPoint[] {
@@ -1840,6 +1923,8 @@ function getWeeklyLoad(records: AppState["records"], weeklyPlan: DayPlan[]): Wee
       label: `${days[0].getMonth() + 1}/${days[0].getDate()}`,
       hours: loggedRecords.reduce((total, { date, record }) => total + getRecordTrainingMinutes(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record), 0) / 60,
       volumeKg: loggedRecords.reduce((total, { record }) => total + getRecordVolumeKg(record), 0),
+      boxingRounds: loggedRecords.reduce((total, { date, record }) => total + getRecordBoxingLoad(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record).rounds, 0),
+      boxingMinutes: loggedRecords.reduce((total, { date, record }) => total + getRecordBoxingLoad(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record).minutes, 0),
       averageRpe: rpes.length ? rpes.reduce((total, rpe) => total + rpe, 0) / rpes.length : null,
     };
   });
@@ -1856,6 +1941,8 @@ function getLoadPoint(records: AppState["records"], weeklyPlan: DayPlan[], dates
     label,
     hours: loggedRecords.reduce((total, { date, record }) => total + getRecordTrainingMinutes(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record), 0) / 60,
     volumeKg: loggedRecords.reduce((total, { record }) => total + getRecordVolumeKg(record), 0),
+    boxingRounds: loggedRecords.reduce((total, { date, record }) => total + getRecordBoxingLoad(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record).rounds, 0),
+    boxingMinutes: loggedRecords.reduce((total, { date, record }) => total + getRecordBoxingLoad(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record).minutes, 0),
     averageRpe: rpes.length ? rpes.reduce((total, rpe) => total + rpe, 0) / rpes.length : null,
   };
 }
@@ -1941,6 +2028,10 @@ function StatsView({ language, records, weeklyPlan, customDrills, openDate }: {
   const currentWeek = loadPoints[loadPoints.length - 1];
   const previousWeek = loadPoints[loadPoints.length - 2];
   const volumeDelta = currentWeek.volumeKg - previousWeek.volumeKg;
+  const boxingLoad = currentWeek.boxingRounds > 0 ? currentWeek.boxingRounds : currentWeek.boxingMinutes;
+  const previousBoxingLoad = previousWeek.boxingRounds > 0 ? previousWeek.boxingRounds : previousWeek.boxingMinutes;
+  const boxingSuffix = currentWeek.boxingRounds > 0 ? "R" : "m";
+  const boxingDelta = boxingLoad - previousBoxingLoad;
   const hoursDelta = currentWeek.hours - previousWeek.hours;
   const rpeDelta = (currentWeek.averageRpe ?? 0) - (previousWeek.averageRpe ?? 0);
 
@@ -1948,7 +2039,11 @@ function StatsView({ language, records, weeklyPlan, customDrills, openDate }: {
     <div className="stats-view">
       <section className="stats-overview">
         <div><small>{language === "zh-TW" ? "本週訓練時間" : "Training time"}</small><strong>{currentWeek.hours.toFixed(1)}<em>h</em></strong><span>{formatDelta(hoursDelta, "h", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
-        <div><small>{language === "zh-TW" ? "本週訓練量" : "Training volume"}</small><strong>{Math.round(currentWeek.volumeKg)}<em>kg</em></strong><span>{formatDelta(volumeDelta, " kg", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
+        {currentWeek.volumeKg > 0 ? (
+          <div><small>{language === "zh-TW" ? "本週訓練量" : "Training volume"}</small><strong>{Math.round(currentWeek.volumeKg)}<em>kg</em></strong><span>{formatDelta(volumeDelta, " kg", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
+        ) : (
+          <div><small>{language === "zh-TW" ? "拳擊負荷" : "Boxing load"}</small><strong>{Math.round(boxingLoad)}<em>{boxingSuffix}</em></strong><span>{formatDelta(boxingDelta, boxingSuffix, language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
+        )}
         <div><small>{language === "zh-TW" ? "平均 RPE" : "Average RPE"}</small><strong>{currentWeek.averageRpe === null ? "—" : currentWeek.averageRpe.toFixed(1)}</strong><span>{formatDelta(rpeDelta, "", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
         <div><small>{language === "zh-TW" ? "恢復提示" : "Recovery"}</small><strong>{highRpeCount >= 3 ? "!" : "✓"}</strong><span>{highRpeCount >= 3 ? (language === "zh-TW" ? "安排恢復日" : "Recovery suggested") : (language === "zh-TW" ? "狀態穩定" : "Looking steady")}</span></div>
       </section>
@@ -2113,18 +2208,20 @@ function WeekView({
   anchorDate,
   language,
   records,
+  weeklyPlan,
   openDate,
 }: {
   anchorDate: Date;
   language: Language;
   records: AppState["records"];
+  weeklyPlan: DayPlan[];
   openDate: (date: Date) => void;
 }) {
   const weekDates = getWeekDates(anchorDate);
   const entries = weekDates.map((date) => ({
     date,
-    plan: getPlanForWeekday(getWeekday(date)),
     record: records[toDateKey(date)],
+    plan: records[toDateKey(date)]?.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan),
   }));
   const summary = getWeeklySummary(entries);
 
@@ -2167,10 +2264,12 @@ function WeekView({
 function LogView({
   language,
   records,
+  weeklyPlan,
   openDate,
 }: {
   language: Language;
   records: AppState["records"];
+  weeklyPlan: DayPlan[];
   openDate: (date: Date) => void;
 }) {
   const entries = Object.entries(records)
@@ -2203,7 +2302,7 @@ function LogView({
         <section className="log-list">
           {entries.map(([dateKey, savedRecord]) => {
             const date = new Date(`${dateKey}T12:00:00`);
-            const dayPlan = getPlanForWeekday(getWeekday(date));
+            const dayPlan = savedRecord.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan);
             return (
               <button key={dateKey} onClick={() => openDate(date)}>
                 <div className="log-date">
@@ -2228,18 +2327,21 @@ function BackupView({
   state,
   language,
   userId,
+  syncStatus,
   setLanguage,
   replaceState,
 }: {
   state: AppState;
   language: Language;
   userId?: string;
+  syncStatus: SyncStatus;
   setLanguage: (language: Language) => void;
   replaceState: (state: AppState) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState("");
   const recordCount = useMemo(() => Object.keys(state.records).length, [state.records]);
+  const backupLocation = !userId ? t(language, "backup.local") : syncStatus === "synced" ? t(language, "backup.cloudSynced") : syncStatus === "error" ? t(language, "backup.cloudError") : t(language, "backup.cloudSyncing");
 
   const downloadBackup = () => {
     const blob = new Blob([exportState(state)], { type: "application/json" });
@@ -2275,9 +2377,9 @@ function BackupView({
   return (
     <div className="page inner-page">
       <section className="page-intro">
-        <p className="eyebrow">LOCAL FIRST</p>
+        <p className="eyebrow">{userId ? "PRIVATE SYNC" : "LOCAL FIRST"}</p>
         <h1>{t(language, "backup.title")}</h1>
-        <p>{t(language, "backup.local")}</p>
+        <p>{backupLocation}</p>
       </section>
 
       <section className="settings-card">

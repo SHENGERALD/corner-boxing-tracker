@@ -1371,6 +1371,14 @@ img { max-width: 100%; }
   .bottom-nav button span { font-size: 9px; }
 }
 
+.account-delete { color: #ff5c5c; border-color: rgba(255, 92, 92, .34); }
+.account-delete-confirm { margin-top: 12px; padding: 14px; border: 1px solid rgba(255, 92, 92, .28); border-radius: 8px; }
+.account-delete-confirm p { margin: 0 0 10px; color: var(--muted); }
+.account-delete-confirm input { width: 100%; box-sizing: border-box; margin-bottom: 10px; }
+.account-delete-confirm > div { display: flex; gap: 8px; }
+.account-delete-confirm > div button { flex: 1; }
+.auth-recovery { align-self: flex-end; padding: 0; border: 0; background: transparent; color: var(--strava); cursor: pointer; font-size: .82rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
 .quick-log-preview { width: min(100%, 480px); min-height: 100vh; margin: 0 auto; padding: 28px 18px 40px; overflow-x: clip; }
 .quick-log-header { margin-bottom: 24px; }
 .quick-log-header h1 { margin: 0 0 8px; font-size: 32px; line-height: 1.15; }
@@ -1401,3 +1409,12 @@ img { max-width: 100%; }
 .quick-log-details button { display: grid; width: 44px; height: 44px; place-items: center; border: 0; border-radius: 6px; background: var(--surface-raised); color: var(--ink); cursor: pointer; }
 .quick-log-details p { margin: 14px 0 0; color: var(--muted); line-height: 1.55; }
 @media (max-width: 390px) { .quick-log-preview { padding-inline: 12px; } .quick-log-card { padding: 15px; } .quick-log-set { grid-template-columns: 40px minmax(0, 1fr) minmax(0, 1fr) 44px; gap: 6px; } .quick-log-set input { padding-inline: 6px; } }
+
+.quick-log-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.quick-log-more { min-height: 32px; padding: 0 9px; border: 1px solid var(--line-strong); border-radius: 6px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 750; cursor: pointer; }
+.quick-log-extra { display: grid; grid-template-columns: minmax(0, 110px) minmax(0, 1fr); gap: 8px; margin-top: 14px; }
+.quick-log-extra label { display: grid; gap: 4px; min-width: 0; color: var(--muted-2); font-size: 11px; font-weight: 750; }
+.quick-log-extra input, .quick-log-extra textarea { width: 100%; min-width: 0; min-height: 44px; border: 1px solid var(--line-strong); border-radius: 6px; padding: 8px; background: var(--surface-raised); color: var(--ink-strong); resize: vertical; }
+.quick-log-backdrop { cursor: pointer; }
+.quick-log-details { cursor: default; }
+@media (max-width: 390px) { .quick-log-extra { grid-template-columns: minmax(0, 92px) minmax(0, 1fr); } }

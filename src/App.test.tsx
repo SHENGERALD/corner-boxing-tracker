@@ -29,6 +29,36 @@ describe("Boxing Tracker", () => {
     expect(screen.getByLabelText("第2組次數")).toHaveValue(8);
   });
 
+  it("reveals inline quantity and notes from a compact More control", async () => {
+    window.history.replaceState({}, "", "/?preview=quick-log");
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getAllByRole("button", { name: "更多" })[0]);
+    const quantity = screen.getByLabelText("影子拳擊數量");
+    expect(quantity).toHaveValue(3);
+    await user.clear(quantity);
+    await user.type(quantity, "4");
+    expect(screen.getByText("4 回合")).toBeInTheDocument();
+    expect(screen.getByLabelText("影子拳擊備註")).toBeInTheDocument();
+  });
+
+  it("closes the optional details sheet with Escape, backdrop, and close button", async () => {
+    window.history.replaceState({}, "", "/?preview=quick-log");
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole("button", { name: "查看細節" }));
+    fireEvent.keyDown(window, { key: "Escape" });
+    expect(screen.queryByRole("dialog", { name: "訓練細節" })).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "查看細節" }));
+    await user.click(screen.getByRole("button", { name: "關閉" }));
+    expect(screen.queryByRole("dialog", { name: "訓練細節" })).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "查看細節" }));
+    await user.click(screen.getByTestId("details-backdrop"));
+    expect(screen.queryByRole("dialog", { name: "訓練細節" })).not.toBeInTheDocument();
+  });
+
   it("saves checked items and notes, then restores them after remount", async () => {
     const user = userEvent.setup();
     const first = render(<App initialDate={new Date(2026, 6, 30, 12)} />);
@@ -327,7 +357,7 @@ describe("Boxing Tracker", () => {
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);
 
     await user.click(screen.getByRole("button", { name: "課表" }));
-    const title = screen.getByLabelText("課程名稱");
+    const title = screen.getByLabelText("中文課程名稱");
     await user.clear(title);
     await user.type(title, "週四技術日");
     await user.click(screen.getByRole("button", { name: "今天" }));
@@ -341,13 +371,38 @@ describe("Boxing Tracker", () => {
 
     await user.click(screen.getByRole("checkbox", { name: /一對一教練課/ }));
     await user.click(screen.getByRole("button", { name: "課表" }));
-    const title = screen.getByLabelText("課程名稱");
+    const title = screen.getByLabelText("中文課程名稱");
     await user.clear(title);
     await user.type(title, "新版週四課表");
     await user.click(screen.getByRole("button", { name: "歷史" }));
 
     expect(screen.getByLabelText("選取日期紀錄")).toHaveTextContent("教練課＋自主訓練");
     expect(screen.getByLabelText("選取日期紀錄")).not.toHaveTextContent("新版週四課表");
+  });
+
+  it("shows boxing load instead of zero kilograms for a boxing-only session", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("checkbox", { name: /一對一教練課/ }));
+    await user.click(screen.getByRole("button", { name: "歷史" }));
+    await user.click(screen.getByRole("button", { name: "統計" }));
+
+    const overview = document.querySelector(".stats-overview");
+    expect(overview).toHaveTextContent("拳擊負荷");
+    expect(overview).not.toHaveTextContent("0kg");
+  });
+
+  it("localizes schedule editor field labels in English", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "備份" }));
+    await user.click(screen.getByRole("button", { name: "English" }));
+    await user.click(screen.getByRole("button", { name: "Schedule" }));
+
+    expect(screen.getByLabelText("Chinese session name")).toBeInTheDocument();
+    expect(screen.getByLabelText("Chinese training focus")).toBeInTheDocument();
   });
 
 });
