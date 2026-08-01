@@ -107,6 +107,27 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("checkbox", { name: /跳繩/ })).toBeInTheDocument();
   });
 
+  it("switches history to the statistics dashboard", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "歷史" }));
+    await user.click(screen.getByRole("button", { name: "統計" }));
+
+    expect(screen.getByRole("heading", { name: "訓練一致性" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "每週訓練負荷" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "動作進度" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "疲勞趨勢" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "月" }));
+    expect(screen.getByRole("heading", { name: "每月訓練負荷" })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "年" }));
+    expect(screen.getByRole("heading", { name: "年度訓練負荷" })).toBeInTheDocument();
+
+    await user.click(screen.getAllByRole("button", { name: "歷史" })[0]);
+    expect(screen.getByText("月曆歷史")).toBeInTheDocument();
+  });
+
   it("adds an ad-hoc drill on a full rest day", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 29, 12)} />);

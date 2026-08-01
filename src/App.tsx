@@ -1,5 +1,6 @@
 import {
   Archive,
+  Activity,
   CalendarDays,
   CalendarRange,
   Check,
@@ -10,6 +11,7 @@ import {
   CloudOff,
   Download,
   Dumbbell,
+  Flame,
   Globe2,
   GripVertical,
   Heart,
@@ -20,6 +22,7 @@ import {
   RotateCcw,
   Search,
   Trash2,
+  TrendingUp,
   Upload,
   UserRound,
   X,
@@ -55,6 +58,7 @@ import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, T
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type TrainingDomain } from "./domain/drills";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
+type HistoryMode = "history" | "stats";
 type SyncStatus = "local" | "syncing" | "synced" | "error";
 
 interface AppProps {
@@ -85,6 +89,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
   const [view, setView] = useState<View>("today");
   const [selectedDate, setSelectedDate] = useState(() => new Date(initialDate));
   const [displayMonth, setDisplayMonth] = useState(() => new Date(initialDate));
+  const [historyMode, setHistoryMode] = useState<HistoryMode>("history");
   const [state, setState] = useState<AppState>(() => loadState());
   const [drillToAdd, setDrillToAdd] = useState<Drill | null>(null);
   const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
@@ -347,6 +352,9 @@ export default function App({ initialDate = new Date() }: AppProps) {
             openDate={openDate}
             changeMonth={(offset) => setDisplayMonth((current) => addMonths(current, offset))}
             clearRecord={clearRecord}
+            mode={historyMode}
+            onModeChange={setHistoryMode}
+            customDrills={state.customDrills ?? []}
           />
         )}
         {view === "library" && (
@@ -1341,6 +1349,288 @@ function recordPreviewTags(plan: ReturnType<typeof getPlanForWeekday>, record: T
   return [formatPlanLabel(plan.session, language), formatPlanLabel(plan.focus, language)].slice(0, 3);
 }
 
+type ProgressMetric = "maxWeight" | "volume";
+
+interface ChartPoint {
+  dateKey: string;
+  label: string;
+  value: number;
+}
+
+function getStatsDates() {
+  const today = new Date();
+  today.setHours(12, 0, 0, 0);
+  const mondayOffset = (today.getDay() + 6) % 7;
+  const end = new Date(today);
+  end.setDate(today.getDate() - mondayOffset + 6);
+  const start = new Date(end);
+  start.setDate(end.getDate() - (26 * 7 - 1));
+  return Array.from({ length: 26 * 7 }, (_, index) => {
+    const date = new Date(start);
+    date.setDate(start.getDate() + index);
+    return date;
+  });
+}
+
+function getDrillLogs(record: TrainingRecord, drillId: string) {
+  const itemIds = [
+    drillId,
+    ...(record.customItems ?? []).filter((item) => item.drillId === drillId).map((item) => item.id),
+  ];
+  return Array.from(new Map(
+    itemIds.flatMap((itemId) => (record.itemSetLogs?.[itemId] ?? []).map((set) => [set.id, set] as const))
+  ).values());
+}
+
+function weightInKg(weight: number, unit: "kg" | "lb" = "kg") {
+  return unit === "lb" ? weight * 0.453592 : weight;
+}
+
+function getProgressPoints(records: AppState["records"], drillId: string, metric: ProgressMetric): ChartPoint[] {
+  return Object.entries(records)
+    .map(([dateKey, record]) => {
+      const sets = getDrillLogs(record, drillId).filter((set) => set.weight !== undefined);
+      if (!sets.length) return null;
+      const value = metric === "maxWeight"
+        ? Math.max(...sets.map((set) => weightInKg(set.weight ?? 0, set.weightUnit)))
+        : sets.reduce((total, set) => total + weightInKg(set.weight ?? 0, set.weightUnit) * (set.reps ?? 0), 0);
+      const date = new Date(`${dateKey}T12:00:00`);
+      return { dateKey, label: `${date.getMonth() + 1}/${date.getDate()}`, value };
+    })
+    .filter((point): point is ChartPoint => Boolean(point))
+    .sort((a, b) => a.dateKey.localeCompare(b.dateKey));
+}
+
+function getRpePoints(records: AppState["records"]): ChartPoint[] {
+  return Object.entries(records)
+    .filter(([, record]) => typeof record.rpe === "number")
+    .map(([dateKey, record]) => {
+      const date = new Date(`${dateKey}T12:00:00`);
+      return { dateKey, label: `${date.getMonth() + 1}/${date.getDate()}`, value: record.rpe ?? 0 };
+    })
+    .sort((a, b) => a.dateKey.localeCompare(b.dateKey));
+}
+
+function LineChart({ points, color, emptyLabel, suffix = "" }: { points: ChartPoint[]; color: string; emptyLabel: string; suffix?: string }) {
+  if (!points.length) return <div className="stats-empty-chart">{emptyLabel}</div>;
+  const width = 720;
+  const height = 220;
+  const padding = { top: 20, right: 18, bottom: 34, left: 42 };
+  const values = points.map((point) => point.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = max - min || 1;
+  const x = (index: number) => padding.left + (points.length === 1 ? (width - padding.left - padding.right) / 2 : index * (width - padding.left - padding.right) / (points.length - 1));
+  const y = (value: number) => padding.top + (max - value) * (height - padding.top - padding.bottom) / range;
+  const line = points.map((point, index) => `${x(index)},${y(point.value)}`).join(" ");
+  const axisLabels = [min, min + range / 2, max];
+  return (
+    <div className="line-chart-wrap">
+      <svg className="line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={emptyLabel}>
+        {axisLabels.map((value, index) => <g key={value}>
+          <line x1={padding.left} x2={width - padding.right} y1={y(value)} y2={y(value)} className="chart-grid-line" />
+          <text x={padding.left - 9} y={y(value) + 4} textAnchor="end" className="chart-axis-label">{Math.round(value)}{suffix}</text>
+          {index === 0 && <text x={padding.left} y={height - 8} className="chart-date-label">{points[0].label}</text>}
+          {index === 2 && <text x={width - padding.right} y={height - 8} textAnchor="end" className="chart-date-label">{points[points.length - 1].label}</text>}
+        </g>)}
+        <polyline points={line} fill="none" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        {points.map((point, index) => <circle key={point.dateKey} cx={x(index)} cy={y(point.value)} r="5" fill={color} stroke="#20211f" strokeWidth="3"><title>{point.label}: {Math.round(point.value)}{suffix}</title></circle>)}
+      </svg>
+    </div>
+  );
+}
+
+interface WeeklyLoadPoint {
+  weekKey: string;
+  label: string;
+  hours: number;
+  volumeKg: number;
+  averageRpe: number | null;
+}
+
+function getRecordTrainingMinutes(plan: DayPlan, record: TrainingRecord) {
+  const loggedSeconds = Object.values(record.itemSetLogs ?? {}).flat().reduce((total, set) => total + (set.durationSeconds ?? 0), 0);
+  return loggedSeconds > 0 ? loggedSeconds / 60 : plan.duration;
+}
+
+function getRecordVolumeKg(record: TrainingRecord) {
+  return Object.values(record.itemSetLogs ?? {}).flat().reduce((total, set) => {
+    if (set.weight === undefined) return total;
+    return total + weightInKg(set.weight, set.weightUnit) * (set.reps ?? 0);
+  }, 0);
+}
+
+function getWeeklyLoad(records: AppState["records"], weeklyPlan: DayPlan[]): WeeklyLoadPoint[] {
+  const today = new Date();
+  today.setHours(12, 0, 0, 0);
+  const currentMonday = new Date(today);
+  currentMonday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
+  return Array.from({ length: 8 }, (_, index) => {
+    const monday = new Date(currentMonday);
+    monday.setDate(currentMonday.getDate() - (7 * (7 - index)));
+    const days = Array.from({ length: 7 }, (_, dayIndex) => {
+      const date = new Date(monday);
+      date.setDate(monday.getDate() + dayIndex);
+      return date;
+    });
+    const loggedRecords = days
+      .map((date) => ({ date, record: records[toDateKey(date)] }))
+      .filter((entry): entry is { date: Date; record: TrainingRecord } => Boolean(entry.record && hasRecordContent(entry.record)));
+    const rpes = loggedRecords.map(({ record }) => record.rpe).filter((rpe): rpe is number => typeof rpe === "number");
+    const startKey = toDateKey(days[0]);
+    return {
+      weekKey: startKey,
+      label: `${days[0].getMonth() + 1}/${days[0].getDate()}`,
+      hours: loggedRecords.reduce((total, { date, record }) => total + getRecordTrainingMinutes(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record), 0) / 60,
+      volumeKg: loggedRecords.reduce((total, { record }) => total + getRecordVolumeKg(record), 0),
+      averageRpe: rpes.length ? rpes.reduce((total, rpe) => total + rpe, 0) / rpes.length : null,
+    };
+  });
+}
+
+
+function getLoadPoint(records: AppState["records"], weeklyPlan: DayPlan[], dates: Date[], key: string, label: string): WeeklyLoadPoint {
+  const loggedRecords = dates
+    .map((date) => ({ date, record: records[toDateKey(date)] }))
+    .filter((entry): entry is { date: Date; record: TrainingRecord } => Boolean(entry.record && hasRecordContent(entry.record)));
+  const rpes = loggedRecords.map(({ record }) => record.rpe).filter((rpe): rpe is number => typeof rpe === "number");
+  return {
+    weekKey: key,
+    label,
+    hours: loggedRecords.reduce((total, { date, record }) => total + getRecordTrainingMinutes(record.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan), record), 0) / 60,
+    volumeKg: loggedRecords.reduce((total, { record }) => total + getRecordVolumeKg(record), 0),
+    averageRpe: rpes.length ? rpes.reduce((total, rpe) => total + rpe, 0) / rpes.length : null,
+  };
+}
+
+function getMonthlyLoad(records: AppState["records"], weeklyPlan: DayPlan[]) {
+  const today = new Date();
+  today.setHours(12, 0, 0, 0);
+  return Array.from({ length: 6 }, (_, index) => {
+    const monthDate = new Date(today.getFullYear(), today.getMonth() - (5 - index), 1, 12);
+    const daysInMonth = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0).getDate();
+    const dates = Array.from({ length: daysInMonth }, (_, dayIndex) => new Date(monthDate.getFullYear(), monthDate.getMonth(), dayIndex + 1, 12));
+    return getLoadPoint(records, weeklyPlan, dates, `${monthDate.getFullYear()}-${monthDate.getMonth() + 1}`, `${monthDate.getMonth() + 1}月`);
+  });
+}
+
+function getYearlyLoad(records: AppState["records"], weeklyPlan: DayPlan[]) {
+  const today = new Date();
+  today.setHours(12, 0, 0, 0);
+  return Array.from({ length: 5 }, (_, index) => {
+    const year = today.getFullYear() - (4 - index);
+    const days = new Date(year, 11, 31).getDate() === 31 ? 365 + (year % 4 === 0 ? 1 : 0) : 365;
+    const dates = Array.from({ length: days }, (_, dayIndex) => {
+      const date = new Date(year, 0, dayIndex + 1, 12);
+      return date;
+    });
+    return getLoadPoint(records, weeklyPlan, dates, String(year), String(year));
+  });
+}
+
+function formatDelta(value: number, suffix: string, language: Language) {
+  if (Math.abs(value) < 0.05) return language === "zh-TW" ? "持平" : "Steady";
+  return `${value > 0 ? "+" : ""}${value.toFixed(1)}${suffix}`;
+}
+
+function WeeklyLoadChart({ points, language }: { points: WeeklyLoadPoint[]; language: Language }) {
+  const width = 720;
+  const height = 245;
+  const padding = { top: 22, right: 22, bottom: 38, left: 46 };
+  const maxVolume = Math.max(...points.map((point) => point.volumeKg), 1);
+  const maxRpe = 10;
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+  const barWidth = Math.min(48, chartWidth / points.length * .54);
+  const x = (index: number) => padding.left + (index + .5) * chartWidth / points.length;
+  const barHeight = (value: number) => value / maxVolume * chartHeight;
+  const lineY = (value: number) => padding.top + (maxRpe - value) / maxRpe * chartHeight;
+  const rpePoints = points.map((point, index) => `${x(index)},${lineY(point.averageRpe ?? 0)}`).join(" ");
+  return <div className="line-chart-wrap">
+    <svg className="line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={language === "zh-TW" ? "每週訓練量與平均 RPE" : "Weekly training volume and average RPE"}>
+      {[0, .5, 1].map((ratio) => <line key={ratio} x1={padding.left} x2={width - padding.right} y1={padding.top + chartHeight * ratio} y2={padding.top + chartHeight * ratio} className="chart-grid-line" />)}
+      <text x={padding.left - 9} y={padding.top + 4} textAnchor="end" className="chart-axis-label">{Math.round(maxVolume)} kg</text>
+      <text x={padding.left - 9} y={padding.top + chartHeight + 4} textAnchor="end" className="chart-axis-label">0 kg</text>
+      <text x={width - padding.right + 9} y={padding.top + 4} className="chart-axis-label">10</text>
+      <text x={width - padding.right + 9} y={padding.top + chartHeight + 4} className="chart-axis-label">0</text>
+      {points.map((point, index) => <g key={point.weekKey}>
+        <rect x={x(index) - barWidth / 2} y={padding.top + chartHeight - barHeight(point.volumeKg)} width={barWidth} height={barHeight(point.volumeKg)} rx="5" className="weekly-volume-bar" />
+        <text x={x(index)} y={height - 12} textAnchor="middle" className="chart-date-label">{point.label}</text>
+      </g>)}
+      <polyline points={rpePoints} fill="none" stroke="var(--graph)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+      {points.map((point, index) => point.averageRpe !== null && <circle key={`${point.weekKey}-rpe`} cx={x(index)} cy={lineY(point.averageRpe)} r="4.5" className="weekly-rpe-point"><title>{point.label}: RPE {point.averageRpe.toFixed(1)}</title></circle>)}
+    </svg>
+    <div className="chart-legend"><span><i className="legend-volume" />{language === "zh-TW" ? "訓練量" : "Volume"}</span><span><i className="legend-rpe" />{language === "zh-TW" ? "平均 RPE" : "Average RPE"}</span></div>
+  </div>;
+}
+
+function StatsView({ language, records, weeklyPlan, customDrills, openDate }: {
+  language: Language;
+  records: AppState["records"];
+  weeklyPlan: DayPlan[];
+  customDrills: Drill[];
+  openDate: (date: Date) => void;
+}) {
+  const availableDrills = Array.from(new Map([...drillLibrary, ...customDrills].map((drill) => [drill.id, drill])).values());
+  const [selectedDrillId, setSelectedDrillId] = useState("back-squat");
+  const [progressMetric, setProgressMetric] = useState<ProgressMetric>("maxWeight");
+  const [loadPeriod, setLoadPeriod] = useState<"week" | "month" | "year">("week");
+  const dates = getStatsDates();
+  const selectedDrill = availableDrills.find((drill) => drill.id === selectedDrillId) ?? availableDrills[0];
+  const progressPoints = selectedDrill ? getProgressPoints(records, selectedDrill.id, progressMetric) : [];
+  const rpePoints = getRpePoints(records);
+  const highRpeCount = rpePoints.slice(-3).filter((point) => point.value >= 8).length;
+  const loadPoints = loadPeriod === "week" ? getWeeklyLoad(records, weeklyPlan) : loadPeriod === "month" ? getMonthlyLoad(records, weeklyPlan) : getYearlyLoad(records, weeklyPlan);
+  const currentWeek = loadPoints[loadPoints.length - 1];
+  const previousWeek = loadPoints[loadPoints.length - 2];
+  const volumeDelta = currentWeek.volumeKg - previousWeek.volumeKg;
+  const hoursDelta = currentWeek.hours - previousWeek.hours;
+  const rpeDelta = (currentWeek.averageRpe ?? 0) - (previousWeek.averageRpe ?? 0);
+
+  return (
+    <div className="stats-view">
+      <section className="stats-overview">
+        <div><small>{language === "zh-TW" ? "本週訓練時間" : "Training time"}</small><strong>{currentWeek.hours.toFixed(1)}<em>h</em></strong><span>{formatDelta(hoursDelta, "h", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
+        <div><small>{language === "zh-TW" ? "本週訓練量" : "Training volume"}</small><strong>{Math.round(currentWeek.volumeKg)}<em>kg</em></strong><span>{formatDelta(volumeDelta, " kg", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
+        <div><small>{language === "zh-TW" ? "平均 RPE" : "Average RPE"}</small><strong>{currentWeek.averageRpe === null ? "—" : currentWeek.averageRpe.toFixed(1)}</strong><span>{formatDelta(rpeDelta, "", language)} {language === "zh-TW" ? "對比上週" : "vs last week"}</span></div>
+        <div><small>{language === "zh-TW" ? "恢復提示" : "Recovery"}</small><strong>{highRpeCount >= 3 ? "!" : "✓"}</strong><span>{highRpeCount >= 3 ? (language === "zh-TW" ? "安排恢復日" : "Recovery suggested") : (language === "zh-TW" ? "狀態穩定" : "Looking steady")}</span></div>
+      </section>
+
+      <section className="stats-card consistency-card">
+        <div className="stats-card-heading"><div><p className="eyebrow"><Flame size={14} /> CONSISTENCY</p><h2>{language === "zh-TW" ? "訓練一致性" : "Training consistency"}</h2></div><span>{language === "zh-TW" ? "最近 26 週" : "Last 26 weeks"}</span></div>
+        <div className="heatmap-scroll"><div className="heatmap-grid" aria-label={language === "zh-TW" ? "訓練一致性熱力圖" : "Training consistency heatmap"}>
+          {dates.map((date) => {
+            const key = toDateKey(date);
+            const record = records[key];
+            const plan = record?.planSnapshot ?? getPlanForWeekday(getWeekday(date), weeklyPlan);
+            const completion = record ? getRecordCompletion(plan, record) : { completed: 0, total: 0 };
+            const ratio = completion.total ? completion.completed / completion.total : record && hasRecordContent(record) ? .25 : 0;
+            return <button key={key} className="heat-cell" data-level={ratio === 0 ? 0 : ratio >= 1 ? 4 : ratio >= .75 ? 3 : ratio >= .5 ? 2 : 1} onClick={() => openDate(date)} title={`${key} ${Math.round(ratio * 100)}%`} aria-label={`${key} ${Math.round(ratio * 100)}%`} />;
+          })}
+        </div></div>
+        <div className="heatmap-legend"><span>{language === "zh-TW" ? "少" : "Less"}</span>{[0, 1, 2, 3, 4].map((level) => <i key={level} className="heat-cell" data-level={level} />)}<span>{language === "zh-TW" ? "多" : "More"}</span></div>
+      </section>
+
+      <section className="stats-card weekly-load-card">
+        <div className="stats-card-heading"><div><p className="eyebrow"><TrendingUp size={14} /> LOAD</p><h2>{loadPeriod === "week" ? (language === "zh-TW" ? "每週訓練負荷" : "Weekly training load") : loadPeriod === "month" ? (language === "zh-TW" ? "每月訓練負荷" : "Monthly training load") : (language === "zh-TW" ? "年度訓練負荷" : "Yearly training load")}</h2></div><div className="load-heading-tools"><span>{language === "zh-TW" ? "訓練量與平均 RPE" : "Volume and average RPE"}</span><div className="load-period-switch" aria-label={language === "zh-TW" ? "訓練負荷期間" : "Load period"}><button className={loadPeriod === "week" ? "selected" : ""} onClick={() => setLoadPeriod("week")}>{language === "zh-TW" ? "週" : "Week"}</button><button className={loadPeriod === "month" ? "selected" : ""} onClick={() => setLoadPeriod("month")}>{language === "zh-TW" ? "月" : "Month"}</button><button className={loadPeriod === "year" ? "selected" : ""} onClick={() => setLoadPeriod("year")}>{language === "zh-TW" ? "年" : "Year"}</button></div></div></div>
+        <WeeklyLoadChart points={loadPoints} language={language} />
+      </section>
+
+      <section className="stats-card">
+        <div className="stats-card-heading"><div><p className="eyebrow"><TrendingUp size={14} /> PROGRESS</p><h2>{language === "zh-TW" ? "動作進度" : "Drill progress"}</h2></div><select className="stats-select" value={selectedDrill?.id ?? ""} onChange={(event) => setSelectedDrillId(event.target.value)} aria-label={language === "zh-TW" ? "選擇動作" : "Choose drill"}>{availableDrills.map((drill) => <option key={drill.id} value={drill.id}>{formatPlanLabel(drill.name, language)}</option>)}</select></div>
+        <div className="stats-segment"><button className={progressMetric === "maxWeight" ? "selected" : ""} onClick={() => setProgressMetric("maxWeight")}>{language === "zh-TW" ? "最重重量" : "Max weight"}</button><button className={progressMetric === "volume" ? "selected" : ""} onClick={() => setProgressMetric("volume")}>{language === "zh-TW" ? "總訓練量" : "Total volume"}</button></div>
+        <LineChart points={progressPoints} color="var(--strava)" suffix={progressMetric === "maxWeight" ? " kg" : " kg"} emptyLabel={language === "zh-TW" ? "這個動作還沒有重量紀錄" : "No weight records for this drill yet"} />
+      </section>
+
+      <section className="stats-card">
+        <div className="stats-card-heading"><div><p className="eyebrow"><Activity size={14} /> RPE</p><h2>{language === "zh-TW" ? "疲勞趨勢" : "Effort trend"}</h2></div><span>1—10</span></div>
+        <LineChart points={rpePoints} color="var(--graph)" suffix="" emptyLabel={language === "zh-TW" ? "完成訓練並填寫 RPE 後，這裡會顯示趨勢" : "Complete a session and add RPE to see the trend"} />
+        {highRpeCount >= 3 && <div className="stats-alert"><strong>{language === "zh-TW" ? "連續高強度" : "Sustained high effort"}</strong><span>{language === "zh-TW" ? "最近三次訓練 RPE 偏高，建議安排恢復日。" : "Your last three sessions were high effort. Consider a recovery day."}</span></div>}
+      </section>
+    </div>
+  );
+}
+
 function HistoryCalendarView({
   monthDate,
   selectedDate,
@@ -1350,6 +1640,9 @@ function HistoryCalendarView({
   openDate,
   changeMonth,
   clearRecord,
+  mode,
+  onModeChange,
+  customDrills,
 }: {
   monthDate: Date;
   selectedDate: Date;
@@ -1359,6 +1652,9 @@ function HistoryCalendarView({
   openDate: (date: Date) => void;
   changeMonth: (offset: number) => void;
   clearRecord: (dateKey: string) => void;
+  mode: HistoryMode;
+  onModeChange: (mode: HistoryMode) => void;
+  customDrills: Drill[];
 }) {
   const monthDates = getMonthGridDates(monthDate);
   const month = monthDate.getMonth();
@@ -1387,8 +1683,8 @@ function HistoryCalendarView({
           <ChevronRight size={28} />
         </button>
         <div className="history-segment" aria-label={language === "zh-TW" ? "歷史與統計" : "History and stats"}>
-          <button className="selected">{language === "zh-TW" ? "歷史" : "History"}</button>
-          <button>{t(language, "history.stats")}</button>
+          <button className={mode === "history" ? "selected" : ""} onClick={() => onModeChange("history")}>{language === "zh-TW" ? "歷史" : "History"}</button>
+          <button className={mode === "stats" ? "selected" : ""} onClick={() => onModeChange("stats")}>{t(language, "history.stats")}</button>
         </div>
         <div className="calendar-summary">
           <strong>{monthRecords.length}</strong>
@@ -1396,7 +1692,7 @@ function HistoryCalendarView({
         </div>
       </section>
 
-      <section className="calendar-panel" aria-label={t(language, "history.title")}>
+      {mode === "stats" ? <StatsView language={language} records={records} weeklyPlan={weeklyPlan} customDrills={customDrills} openDate={openDate} /> : <><section className="calendar-panel" aria-label={t(language, "history.title")}>
         <div className="calendar-caption">
           <div>
             <p className="eyebrow">HISTORY</p>
@@ -1451,6 +1747,7 @@ function HistoryCalendarView({
           </div>
         </section>
       )}
+    </>}
     </div>
   );
 }
