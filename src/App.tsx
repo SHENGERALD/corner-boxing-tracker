@@ -96,7 +96,7 @@ function initialRecord(): TrainingRecord {
 }
 
 type PreviewSet = { id: string; weight: number; reps: number; completed: boolean };
-type PreviewQuantity = string;
+type PreviewQuantity = number | string;
 
 function QuickLogPreview() {
   const [boxingComplete, setBoxingComplete] = useState(false);
@@ -129,12 +129,12 @@ function QuickLogPreview() {
     <section className="quick-log-list" aria-label="示範訓練">
       <article className={`quick-log-card ${boxingComplete ? "is-complete" : ""}`}>
         <div className="quick-log-card-top"><div className="quick-log-card-heading"><Activity size={20} /><div><h2>影子拳擊</h2><p>{boxingQuantity || "0"} 回合</p></div></div><button className="quick-log-more" aria-expanded={boxingDetailsOpen} onClick={() => setBoxingDetailsOpen((open) => !open)}>更多</button></div>
-        {boxingDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="影子拳擊數量" type="number" min="1" value={boxingQuantity} onChange={(event) => setBoxingQuantity(event.target.value)} /></label><label>備註<textarea aria-label="影子拳擊備註" placeholder="選填" /></label></div>}
+        {boxingDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="影子拳擊數量" type="number" min="1" value={boxingQuantity} onChange={(event) => setBoxingQuantity(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>備註<textarea aria-label="影子拳擊備註" placeholder="選填" /></label></div>}
         <button className="quick-log-complete" onClick={() => setBoxingComplete(true)} disabled={boxingComplete}><Check size={18} />{boxingComplete ? "已完成" : "完成 影子拳擊"}</button>
       </article>
       <article className={`quick-log-card ${cardioComplete ? "is-complete" : ""}`}>
         <div className="quick-log-card-top"><div className="quick-log-card-heading"><TimerIcon size={20} /><div><h2>Zone 2 跑步</h2><p>{cardioQuantity || "0"} 分鐘</p></div></div><button className="quick-log-more" aria-expanded={cardioDetailsOpen} onClick={() => setCardioDetailsOpen((open) => !open)}>更多</button></div>
-        {cardioDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="Zone 2 跑步數量" type="number" min="1" value={cardioQuantity} onChange={(event) => setCardioQuantity(event.target.value)} /></label><label>備註<textarea aria-label="Zone 2 跑步備註" placeholder="選填" /></label></div>}
+        {cardioDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="Zone 2 跑步數量" type="number" min="1" value={cardioQuantity} onChange={(event) => setCardioQuantity(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>備註<textarea aria-label="Zone 2 跑步備註" placeholder="選填" /></label></div>}
         <button className="quick-log-complete" onClick={() => setCardioComplete(true)} disabled={cardioComplete}><Check size={18} />{cardioComplete ? "已完成" : "完成 Zone 2 跑步"}</button>
       </article>
       <article className="quick-log-card quick-log-strength"><div className="quick-log-card-heading"><Dumbbell size={20} /><div><h2>深蹲</h2><p>60 kg x 8</p></div></div><div className="quick-log-sets">{sets.map((set, index) => <div className={`quick-log-set ${set.completed ? "is-complete" : ""}`} key={set.id}><span>第 {index + 1} 組</span><label>重量<input aria-label={`第${index + 1}組重量`} type="number" min="0" value={set.weight} onChange={(event) => updateSet(set.id, "weight", Number(event.target.value))} /></label><label>次數<input aria-label={`第${index + 1}組次數`} type="number" min="0" value={set.reps} onChange={(event) => updateSet(set.id, "reps", Number(event.target.value))} /></label><button aria-label={`完成第${index + 1}組深蹲`} onClick={() => setSets((current) => current.map((item) => item.id === set.id ? { ...item, completed: !item.completed } : item))}><Check size={17} /></button></div>)}</div><button className="quick-log-add-set" onClick={addSet}><Plus size={18} />新增一組 深蹲</button></article>
