@@ -1372,7 +1372,7 @@ img { max-width: 100%; }
   .bottom-nav button span { font-size: 9px; }
 }
 
-.account-delete { color: #ff5c5c; border-color: rgba(255, 92, 92, .34); }
+.account-delete { width: 100%; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; border: 1px solid var(--line-strong); border-radius: 7px; background: var(--surface-soft); color: var(--danger); cursor: pointer; font-weight: 850; }
 .account-delete-confirm { margin-top: 12px; padding: 14px; border: 1px solid rgba(255, 92, 92, .28); border-radius: 8px; }
 .account-delete-confirm p { margin: 0 0 10px; color: var(--muted); }
 .account-delete-confirm input { width: 100%; box-sizing: border-box; margin-bottom: 10px; }
