@@ -172,7 +172,20 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   const stateRef = useRef(state);
   const cloudRevisionRef = useRef<number | null>(null);
   const suppressNextGuestSaveRef = useRef(false);
+  const syncGenerationRef = useRef(0);
   const language = state.language;
+
+  const clearGuestStorage = () => {
+    localStorage.removeItem(getStorageKey());
+    localStorage.removeItem(getStorageUpdatedAtKey());
+  };
+  const resetGuestState = () => {
+    syncGenerationRef.current += 1;
+    clearGuestStorage();
+    const empty = createEmptyState();
+    stateRef.current = empty;
+    setState(empty);
+  };
   const userId = session?.user.id;
 
   useEffect(() => { stateRef.current = state; }, [state]);
@@ -244,7 +257,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       if (!active) return;
       if (event === "SIGNED_OUT") {
         suppressNextGuestSaveRef.current = true;
-        setState(loadState());
+        resetGuestState();
         setCloudReady(false);
         setSyncStatus("local");
       }
@@ -302,6 +315,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       } else {
         saveState(resolution.state, userId, data?.updated_at ?? undefined);
       }
+      clearGuestStorage();
       setState(resolution.state);
       setCloudReady(true);
       setSyncStatus("synced");
@@ -338,6 +352,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   useEffect(() => {
     const client = supabase;
     if (!cloudReady || !userId || !client) return;
+    const generation = ++syncGenerationRef.current;
     setSyncStatus("syncing");
     const timer = window.setTimeout(() => {
       void (async () => {
@@ -351,7 +366,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
           return;
         }
         const latestCloudState = latestData ? decodeState(latestData.state) : null;
-        const firstWrite = mergeForRevisionedSave(state, latestCloudState ? { state: latestCloudState, revision: latestData?.revision ?? null } : null);
+        const firstWrite = mergeForRevisionedSave(stateRef.current, latestCloudState ? { state: latestCloudState, revision: latestData?.revision ?? null } : null);
         let mergedState = firstWrite.state;
         let { data: savedRows, error } = await client.rpc("save_user_app_state", { next_state: mergedState, expected_revision: firstWrite.expectedRevision });
         let saved = savedRows?.[0];
@@ -359,15 +374,19 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
           const { data: retryData, error: retryReadError } = await client.from("user_app_states").select("state, updated_at, revision").eq("user_id", userId).maybeSingle();
           if (retryReadError) { setSyncStatus("error"); return; }
           const retryCloudState = retryData ? decodeState(retryData.state) : null;
-          const retryWrite = mergeForRevisionedSave(mergedState, retryCloudState ? { state: retryCloudState, revision: retryData?.revision ?? null } : null);
+          const retryWrite = mergeForRevisionedSave(stateRef.current, retryCloudState ? { state: retryCloudState, revision: retryData?.revision ?? null } : null);
           mergedState = retryWrite.state;
           ({ data: savedRows, error } = await client.rpc("save_user_app_state", { next_state: mergedState, expected_revision: retryWrite.expectedRevision }));
           saved = savedRows?.[0];
         }
         if (error || !saved) { setSyncStatus("error"); return; }
+        if (generation !== syncGenerationRef.current) return;
         cloudRevisionRef.current = saved.revision;
-        saveState(mergedState, userId, saved.updated_at);
-        if (JSON.stringify(mergedState) !== JSON.stringify(state)) setState(mergedState);
+        const previousState = stateRef.current;
+        const latestState = mergeStateWithCloud(previousState, mergedState).state;
+        saveState(latestState, userId, saved.updated_at);
+        stateRef.current = latestState;
+        if (JSON.stringify(latestState) !== JSON.stringify(previousState)) setState(latestState);
         setSyncStatus("synced");
       })();
     }, 700);
@@ -598,7 +617,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
           configured={isSupabaseConfigured}
           onClose={() => setAuthOpen(false)}
           onSignedOut={() => {
-            setState(loadState());
+            resetGuestState();
             setCloudReady(false);
             setSyncStatus("local");
             setAuthOpen(false);
