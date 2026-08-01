@@ -93,7 +93,48 @@ function initialRecord(): TrainingRecord {
   return { completedItemIds: [] };
 }
 
-export default function App({ initialDate = new Date() }: AppProps) {
+type PreviewSet = { id: string; weight: number; reps: number; completed: boolean };
+
+function QuickLogPreview() {
+  const [boxingComplete, setBoxingComplete] = useState(false);
+  const [cardioComplete, setCardioComplete] = useState(false);
+  const [sets, setSets] = useState<PreviewSet[]>([{ id: "squat-1", weight: 60, reps: 8, completed: false }]);
+  const [detailsOpen, setDetailsOpen] = useState(false);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setDetailsOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const updateSet = (id: string, field: "weight" | "reps", value: number) => {
+    setSets((current) => current.map((set) => set.id === id ? { ...set, [field]: value } : set));
+  };
+  const addSet = () => setSets((current) => {
+    const previous = current[current.length - 1];
+    return [...current, { ...previous, id: `squat-${current.length + 1}`, completed: false }];
+  });
+
+  return <main className="quick-log-preview">
+    <header className="quick-log-header"><p className="eyebrow">CORNER / PREVIEW</p><h1>快速記錄原型</h1><p>今天的訓練，幾秒內留下來。</p></header>
+    <section className="quick-log-list" aria-label="示範訓練">
+      <article className={`quick-log-card ${boxingComplete ? "is-complete" : ""}`}><div className="quick-log-card-heading"><Activity size={20} /><div><h2>影子拳擊</h2><p>3 回合</p></div></div><button className="quick-log-complete" onClick={() => setBoxingComplete(true)} disabled={boxingComplete}><Check size={18} />{boxingComplete ? "已完成" : "完成 影子拳擊"}</button></article>
+      <article className={`quick-log-card ${cardioComplete ? "is-complete" : ""}`}><div className="quick-log-card-heading"><TimerIcon size={20} /><div><h2>Zone 2 跑步</h2><p>20 分鐘</p></div></div><button className="quick-log-complete" onClick={() => setCardioComplete(true)} disabled={cardioComplete}><Check size={18} />{cardioComplete ? "已完成" : "完成 Zone 2 跑步"}</button></article>
+      <article className="quick-log-card quick-log-strength"><div className="quick-log-card-heading"><Dumbbell size={20} /><div><h2>深蹲</h2><p>60 kg x 8</p></div></div><div className="quick-log-sets">{sets.map((set, index) => <div className={`quick-log-set ${set.completed ? "is-complete" : ""}`} key={set.id}><span>第 {index + 1} 組</span><label>重量<input aria-label={`第${index + 1}組重量`} type="number" min="0" value={set.weight} onChange={(event) => updateSet(set.id, "weight", Number(event.target.value))} /></label><label>次數<input aria-label={`第${index + 1}組次數`} type="number" min="0" value={set.reps} onChange={(event) => updateSet(set.id, "reps", Number(event.target.value))} /></label><button aria-label={`完成第${index + 1}組深蹲`} onClick={() => setSets((current) => current.map((item) => item.id === set.id ? { ...item, completed: !item.completed } : item))}><Check size={17} /></button></div>)}</div><button className="quick-log-add-set" onClick={addSet}><Plus size={18} />新增一組 深蹲</button></article>
+    </section>
+    <button className="quick-log-details-trigger" onClick={() => setDetailsOpen(true)}>查看細節</button>
+    {detailsOpen && <button className="quick-log-backdrop" aria-label="關閉細節" onClick={() => setDetailsOpen(false)}><section className="quick-log-details" role="dialog" aria-modal="true" aria-label="訓練細節" onClick={(event) => event.stopPropagation()}><div><h2>可選細節</h2><button aria-label="關閉" onClick={() => setDetailsOpen(false)}><X size={20} /></button></div><p>這裡可補上 RPE、技術感受和下一次的提醒；完成按鈕仍是最快的記錄方式。</p></section></button>}
+  </main>;
+}
+
+export default function App(props: AppProps) {
+  if (new URLSearchParams(window.location.search).get("preview") === "quick-log") return <QuickLogPreview />;
+  return <BoxingTrackerApp {...props} />;
+}
+
+function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   const [view, setView] = useState<View>("today");
   const [selectedDate, setSelectedDate] = useState(() => new Date(initialDate));
   const [displayMonth, setDisplayMonth] = useState(() => new Date(initialDate));

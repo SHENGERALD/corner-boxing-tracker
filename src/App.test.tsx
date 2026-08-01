@@ -4,7 +4,30 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
 
 describe("Boxing Tracker", () => {
-  beforeEach(() => localStorage.clear());
+  beforeEach(() => {
+    localStorage.clear();
+    window.history.replaceState({}, "", "/");
+  });
+
+  it("renders the isolated quick log preview from its query parameter", () => {
+    window.history.replaceState({}, "", "/?preview=quick-log");
+    render(<App />);
+
+    expect(screen.getByRole("heading", { name: "快速記錄原型" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "今天" })).not.toBeInTheDocument();
+  });
+
+  it("records boxing in one tap and copies the previous strength set", async () => {
+    window.history.replaceState({}, "", "/?preview=quick-log");
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole("button", { name: "完成 影子拳擊" }));
+    expect(screen.getByText("已完成")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "新增一組 深蹲" }));
+    expect(screen.getByLabelText("第2組重量")).toHaveValue(60);
+    expect(screen.getByLabelText("第2組次數")).toHaveValue(8);
+  });
 
   it("saves checked items and notes, then restores them after remount", async () => {
     const user = userEvent.setup();
