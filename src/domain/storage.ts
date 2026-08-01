@@ -12,6 +12,9 @@ export interface AppState {
   customDrills?: Drill[];
   weeklyPlan: DayPlan[];
   weeklyPlanUpdatedAt?: string;
+  deletedRecordUpdatedAt?: Record<string, string>;
+  favoriteDrillUpdatedAt?: Record<string, string>;
+  customDrillUpdatedAt?: Record<string, string>;
 }
 
 interface V2AppState {
@@ -159,11 +162,18 @@ function migrateV1State(state: V1AppState): AppState {
   return migrateV2State({ version: 2, language: state.language, favoriteDrillIds: [], customDrills: [], records: state.records });
 }
 
+function isTimestampMap(value: unknown): value is Record<string, string> {
+  return value === undefined || (Boolean(value) && typeof value === "object" && !Array.isArray(value) && Object.values(value as Record<string, unknown>).every((item) => typeof item === "string"));
+}
+
 function hasValidCommonState(state: Record<string, unknown>) {
   return (
     (state.language === "zh-TW" || state.language === "en") &&
     Boolean(state.records) && typeof state.records === "object" && !Array.isArray(state.records) &&
-    Object.values(state.records as Record<string, unknown>).every(isTrainingRecord)
+    Object.values(state.records as Record<string, unknown>).every(isTrainingRecord) &&
+    isTimestampMap(state.deletedRecordUpdatedAt) &&
+    isTimestampMap(state.favoriteDrillUpdatedAt) &&
+    isTimestampMap(state.customDrillUpdatedAt)
   );
 }
 

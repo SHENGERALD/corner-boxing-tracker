@@ -85,3 +85,46 @@ describe("cloud state resolution", () => {
     expect(result.state.weeklyPlan[1].session.zhTW).toBe("本地課表");
     expect(result.state.favoriteDrillIds).toEqual(cloud.favoriteDrillIds);
   });
+
+it("keeps a newer local deletion instead of restoring the cloud record", () => {
+  const local = stateWithLanguage("zh-TW");
+  const cloud = stateWithLanguage("zh-TW");
+  cloud.records = { "2026-07-30": { completedItemIds: ["old"], updatedAt: "2026-07-30T20:00:00.000Z" } };
+  local.deletedRecordUpdatedAt = { "2026-07-30": "2026-07-30T21:00:00.000Z" };
+  const result = resolveInitialState({ guestState: createEmptyState(), accountState: local, accountSavedAt: null, cloudState: cloud, cloudUpdatedAt: null });
+  expect(result.shouldUpload).toBe(true);
+  expect(result.state.records).toEqual({});
+  expect(result.state.deletedRecordUpdatedAt?.["2026-07-30"]).toBe("2026-07-30T21:00:00.000Z");
+});
+
+it("keeps unrelated local records while accepting a newer cloud record", () => {
+  const local = stateWithLanguage("zh-TW");
+  const cloud = stateWithLanguage("zh-TW");
+  local.records = { "2026-07-29": { completedItemIds: ["local"], updatedAt: "2026-07-30T20:00:00.000Z" } };
+  cloud.records = { "2026-07-30": { completedItemIds: ["cloud"], updatedAt: "2026-07-30T21:00:00.000Z" } };
+  const result = resolveInitialState({ guestState: createEmptyState(), accountState: local, accountSavedAt: null, cloudState: cloud, cloudUpdatedAt: null });
+  expect(result.state.records).toEqual({ "2026-07-29": local.records["2026-07-29"], "2026-07-30": cloud.records["2026-07-30"] });
+});
+
+it("merges favorites from both devices and respects a newer unfavorite", () => {
+  const local = stateWithLanguage("zh-TW");
+  const cloud = stateWithLanguage("zh-TW");
+  local.favoriteDrillIds = ["local-favorite"];
+  local.favoriteDrillUpdatedAt = { "shared": "2026-08-01T21:00:00.000Z", "local-favorite": "2026-08-01T21:00:00.000Z" };
+  cloud.favoriteDrillIds = ["shared", "cloud-favorite"];
+  cloud.favoriteDrillUpdatedAt = { "shared": "2026-08-01T20:00:00.000Z", "cloud-favorite": "2026-08-01T20:00:00.000Z" };
+  const result = resolveInitialState({ guestState: createEmptyState(), accountState: local, accountSavedAt: null, cloudState: cloud, cloudUpdatedAt: null });
+  expect(result.state.favoriteDrillIds).toEqual(["local-favorite", "cloud-favorite"]);
+  expect(result.state.favoriteDrillUpdatedAt?.shared).toBe("2026-08-01T21:00:00.000Z");
+});
+
+it("merges custom drills added on both devices", () => {
+  const local = stateWithLanguage("zh-TW");
+  const cloud = stateWithLanguage("zh-TW");
+  const localDrill = { id: "custom-local", domain: "boxing" as const, category: "offense" as const, name: { zhTW: "本地動作", en: "Local drill" }, cue: { zhTW: "提示", en: "Cue" }, defaultUnit: "rounds" as const, defaultQuantity: 3 };
+  const cloudDrill = { id: "custom-cloud", domain: "boxing" as const, category: "defense" as const, name: { zhTW: "雲端動作", en: "Cloud drill" }, cue: { zhTW: "提示", en: "Cue" }, defaultUnit: "rounds" as const, defaultQuantity: 3 };
+  local.customDrills = [localDrill];
+  cloud.customDrills = [cloudDrill];
+  const result = resolveInitialState({ guestState: createEmptyState(), accountState: local, accountSavedAt: null, cloudState: cloud, cloudUpdatedAt: null });
+  expect(result.state.customDrills?.map((drill) => drill.id)).toEqual(["custom-cloud", "custom-local"]);
+});

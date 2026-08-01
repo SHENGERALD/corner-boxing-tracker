@@ -44,7 +44,7 @@ function CornerMark({ className = "" }: { className?: string }) {
 }
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { resolveInitialState } from "./domain/cloud";
+import { mergeStateWithCloud, resolveInitialState } from "./domain/cloud";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
 import { formatPlanLabel, t } from "./domain/i18n";
 import { cloneWeeklyPlan, createBlankWeeklyPlan, getPlanForWeekday } from "./domain/plan";
@@ -103,7 +103,8 @@ export default function App({ initialDate = new Date() }: AppProps) {
   const [timer, setTimer] = useState<BoxingTimerState | null>(() => loadTimer());
   const [timerOpen, setTimerOpen] = useState(false);
   const [timerNow, setTimerNow] = useState(() => Date.now());
-  const timerCueRef = useRef("");
+  const timerPhaseCueRef = useRef("");
+  const timerCountdownCueRef = useRef("");
   const [timerSoundEnabled, setTimerSoundEnabled] = useState(true);
   const [timerVoiceEnabled, setTimerVoiceEnabled] = useState(true);
   const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
@@ -113,12 +114,19 @@ export default function App({ initialDate = new Date() }: AppProps) {
   const [cloudReady, setCloudReady] = useState(false);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>("local");
   const stateRef = useRef(state);
+  const suppressNextGuestSaveRef = useRef(false);
   const language = state.language;
   const userId = session?.user.id;
 
   useEffect(() => { stateRef.current = state; }, [state]);
   useEffect(() => {
-    if (!userId || cloudReady) saveState(state, userId);
+    if (!userId || cloudReady) {
+      if (!userId && suppressNextGuestSaveRef.current) {
+        suppressNextGuestSaveRef.current = false;
+        return;
+      }
+      saveState(state, userId);
+    }
   }, [cloudReady, state, userId]);
   useEffect(() => {
     if (timer?.status !== "running") return;
@@ -144,20 +152,22 @@ export default function App({ initialDate = new Date() }: AppProps) {
 
   useEffect(() => {
     if (!timer || timer.status !== "running") {
-      timerCueRef.current = "";
+      timerPhaseCueRef.current = "";
+      timerCountdownCueRef.current = "";
       return;
     }
     const remaining = getRemainingSeconds(timer, timerNow);
     const phaseKey = timer.phase + "-" + timer.round;
-    if (timerCueRef.current !== phaseKey) {
-      timerCueRef.current = phaseKey;
+    if (timerPhaseCueRef.current !== phaseKey) {
+      timerPhaseCueRef.current = phaseKey;
+      timerCountdownCueRef.current = "";
       announceTimerPhase(timer.phase, timer.round, language, timerSoundEnabled, timerVoiceEnabled);
     }
     if (remaining > 0 && remaining <= 10) {
       const countdownKey = phaseKey + "-" + remaining;
-      if (timerCueRef.current !== countdownKey) {
-        timerCueRef.current = countdownKey;
-        if (timerSoundEnabled) playTimerBeep(remaining <= 3 ? 1046 : 784);
+      if (timerCountdownCueRef.current !== countdownKey) {
+        timerCountdownCueRef.current = countdownKey;
+        if (timerSoundEnabled) playTimerChime();
       }
     }
   }, [language, timer, timerNow, timerSoundEnabled, timerVoiceEnabled]);
@@ -176,6 +186,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
     const { data: listener } = supabase.auth.onAuthStateChange((event, nextSession) => {
       if (!active) return;
       if (event === "SIGNED_OUT") {
+        suppressNextGuestSaveRef.current = true;
         setState(loadState());
         setCloudReady(false);
         setSyncStatus("local");
@@ -240,23 +251,59 @@ export default function App({ initialDate = new Date() }: AppProps) {
     return () => { active = false; };
   }, [authReady, userId]);
 
+
+  useEffect(() => {
+    const client = supabase;
+    if (!cloudReady || !userId || !client) return;
+    const channel = client
+      .channel("user-app-state-" + userId)
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "user_app_states", filter: "user_id=eq." + userId },
+        (payload) => {
+          const incoming = decodeState((payload.new as { state?: unknown }).state);
+          if (!incoming) return;
+          setState((current) => {
+            const merged = mergeStateWithCloud(current, incoming).state;
+            return JSON.stringify(merged) === JSON.stringify(current) ? current : merged;
+          });
+          setSyncStatus("synced");
+        },
+      )
+      .subscribe((status) => {
+        if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") setSyncStatus("error");
+      });
+    return () => { void client.removeChannel(channel); };
+  }, [cloudReady, userId]);
   useEffect(() => {
     const client = supabase;
     if (!cloudReady || !userId || !client) return;
     setSyncStatus("syncing");
     const timer = window.setTimeout(() => {
-      const updatedAt = new Date().toISOString();
-      void client
-        .from("user_app_states")
-        .upsert({ user_id: userId, state, updated_at: updatedAt }, { onConflict: "user_id" })
-        .then(({ error }) => {
-          if (error) {
-            setSyncStatus("error");
-            return;
-          }
-          saveState(state, userId, updatedAt);
-          setSyncStatus("synced");
-        });
+      void (async () => {
+        const { data: latestData, error: latestError } = await client
+          .from("user_app_states")
+          .select("state, updated_at")
+          .eq("user_id", userId)
+          .maybeSingle();
+        if (latestError) {
+          setSyncStatus("error");
+          return;
+        }
+        const latestCloudState = latestData ? decodeState(latestData.state) : null;
+        const mergedState = latestCloudState ? mergeStateWithCloud(state, latestCloudState).state : state;
+        const updatedAt = new Date().toISOString();
+        const { error } = await client
+          .from("user_app_states")
+          .upsert({ user_id: userId, state: mergedState, updated_at: updatedAt }, { onConflict: "user_id" });
+        if (error) {
+          setSyncStatus("error");
+          return;
+        }
+        saveState(mergedState, userId, updatedAt);
+        if (JSON.stringify(mergedState) !== JSON.stringify(state)) setState(mergedState);
+        setSyncStatus("synced");
+      })();
     }, 700);
     return () => window.clearTimeout(timer);
   }, [cloudReady, state, userId]);
@@ -309,6 +356,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
           updatedAt: new Date().toISOString(),
         },
       },
+      deletedRecordUpdatedAt: Object.fromEntries(Object.entries(current.deletedRecordUpdatedAt ?? {}).filter(([dateKey]) => dateKey !== selectedKey)),
     }));
   };
 
@@ -328,6 +376,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
     favoriteDrillIds: current.favoriteDrillIds.includes(drillId)
       ? current.favoriteDrillIds.filter((id) => id !== drillId)
       : [...current.favoriteDrillIds, drillId],
+    favoriteDrillUpdatedAt: { ...(current.favoriteDrillUpdatedAt ?? {}), [drillId]: new Date().toISOString() },
   }));
 
   const addCustomDrill = (item: CustomTrainingItem) => setState((current) => ({
@@ -341,17 +390,19 @@ export default function App({ initialDate = new Date() }: AppProps) {
         updatedAt: new Date().toISOString(),
       },
     },
+    deletedRecordUpdatedAt: Object.fromEntries(Object.entries(current.deletedRecordUpdatedAt ?? {}).filter(([dateKey]) => dateKey !== selectedKey)),
   }));
 
   const addLibraryDrill = (drill: Drill) => setState((current) => ({
     ...current,
     customDrills: [...(current.customDrills ?? []), drill],
+    customDrillUpdatedAt: { ...(current.customDrillUpdatedAt ?? {}), [drill.id]: new Date().toISOString() },
   }));
 
   const clearRecord = (dateKey = selectedKey) => {
     setState((current) => {
       const { [dateKey]: _removed, ...remainingRecords } = current.records;
-      return { ...current, records: remainingRecords };
+      return { ...current, records: remainingRecords, deletedRecordUpdatedAt: { ...(current.deletedRecordUpdatedAt ?? {}), [dateKey]: new Date().toISOString() } };
     });
   };
   const reorderTodayItems = (fromId: string, toId: string) => {
@@ -381,6 +432,7 @@ export default function App({ initialDate = new Date() }: AppProps) {
           ...current.records,
           [selectedKey]: { ...currentRecord, itemOrder: orderedIds, updatedAt: new Date().toISOString() },
         },
+        deletedRecordUpdatedAt: Object.fromEntries(Object.entries(current.deletedRecordUpdatedAt ?? {}).filter(([dateKey]) => dateKey !== selectedKey)),
         weeklyPlan: current.weeklyPlan.map((candidate) => candidate.day === selectedWeekday ? { ...candidate, items: sortedPlanItems } : candidate),
         weeklyPlanUpdatedAt: new Date().toISOString(),
       };
@@ -511,22 +563,22 @@ function formatTimerClock(totalSeconds: number): string {
   return String(Math.floor(seconds / 60)).padStart(2, "0") + ":" + String(seconds % 60).padStart(2, "0");
 }
 
-function playTimerBeep(frequency = 784): void {
+function playTimerChime(): void {
   const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   if (!AudioContextClass) return;
   const context = new AudioContextClass();
   const oscillator = context.createOscillator();
   const gain = context.createGain();
-  oscillator.frequency.value = frequency;
-  oscillator.type = "sine";
+  oscillator.frequency.value = 784;
+  oscillator.type = "triangle";
   gain.gain.setValueAtTime(0.001, context.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.18, context.currentTime + 0.02);
-  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.16);
+  gain.gain.exponentialRampToValueAtTime(0.16, context.currentTime + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.24);
   oscillator.connect(gain);
   gain.connect(context.destination);
   oscillator.start();
-  oscillator.stop(context.currentTime + 0.18);
-  window.setTimeout(() => void context.close(), 250);
+  oscillator.stop(context.currentTime + 0.26);
+  window.setTimeout(() => void context.close(), 320);
 }
 
 function announceTimerPhase(phase: "work" | "rest", round: number, language: Language, soundEnabled: boolean, voiceEnabled: boolean): void {
