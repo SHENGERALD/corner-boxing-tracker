@@ -62,6 +62,13 @@ describe("drill library", () => {
     })).toEqual([expect.objectContaining({ id: "cardio-run", defaultUnit: "minutes", imageUrl: import.meta.env.BASE_URL + "cardio/running.png", imageSource: "Corner cardio illustration" })]);
   });
 
+  it("uses the deployed base path for boxing drill images", () => {
+    expect(drillLibrary.find((drill) => drill.id === "jab")?.imageUrl)
+      .toBe(`${import.meta.env.BASE_URL}assets/boxing/boxing-sprite-a.png`);
+    expect(drillLibrary.find((drill) => drill.id === "high-guard")?.imageUrl)
+      .toBe(`${import.meta.env.BASE_URL}assets/boxing/high-guard-reference.png`);
+  });
+
   it("gives every strength drill an image and equipment label", () => {
     const strengthDrills = drillLibrary.filter((drill) => drill.domain === "strength" && drill.category !== "cardio");
     expect(strengthDrills.length).toBeGreaterThanOrEqual(50);
