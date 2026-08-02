@@ -43,7 +43,7 @@ function CornerMark({ className = "" }: { className?: string }) {
   );
 }
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { mergeForRevisionedSave, mergeStateWithCloud, resolveInitialState } from "./domain/cloud";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
 import { formatPlanLabel, t } from "./domain/i18n";
@@ -644,7 +644,12 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
         />
       )}
 
-      <nav className="bottom-nav" aria-label="Primary">
+      <nav
+        className="bottom-nav"
+        aria-label="Primary"
+        style={{ "--active-nav-index": navItems.findIndex(({ id }) => id === view) } as CSSProperties}
+      >
+        <span className="bottom-nav-indicator" aria-hidden="true" />
         {navItems.map(({ id, icon: Icon, label }) => (
           <button
             key={id}
