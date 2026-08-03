@@ -194,6 +194,71 @@ describe("Boxing Tracker", () => {
     expect(quantity).toHaveValue(12);
   });
 
+  it("overrides a planned target for one day and restores it after a reload", async () => {
+    const user = userEvent.setup();
+    const first = render(<App initialDate={new Date(2026, 7, 3, 12)} />);
+
+    await user.click(screen.getByText("影子拳擊"));
+    const target = screen.getByRole("spinbutton", { name: "影子拳擊今日目標" });
+    expect(target).toHaveValue(5);
+    await user.clear(target);
+    expect(target).toHaveValue(null);
+    await user.type(target, "12");
+    await user.tab();
+    expect(screen.getByText("今日 12 回合")).toBeInTheDocument();
+
+    first.unmount();
+    render(<App initialDate={new Date(2026, 7, 3, 12)} />);
+    expect(screen.getByText("今日 12 回合")).toBeInTheDocument();
+  });
+
+  it("keeps a target override scoped to the date that was edited", async () => {
+    const user = userEvent.setup();
+    const first = render(<App initialDate={new Date(2026, 7, 3, 12)} />);
+
+    await user.click(screen.getByText("影子拳擊"));
+    const target = screen.getByRole("spinbutton", { name: "影子拳擊今日目標" });
+    await user.clear(target);
+    await user.type(target, "12");
+    await user.tab();
+    expect(screen.getByText("今日 12 回合")).toBeInTheDocument();
+
+    first.unmount();
+    render(<App initialDate={new Date(2026, 7, 10, 12)} />);
+    expect(screen.queryByText("今日 12 回合")).not.toBeInTheDocument();
+    expect(screen.getByText("超慢速 5 回合")).toBeInTheDocument();
+  });
+
+  it("steps a custom drill target without touching the weekly plan", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 7, 3, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "新增動作" }));
+    await user.click(screen.getByRole("button", { name: /加入.*刺拳/ }));
+    await user.click(screen.getByRole("button", { name: "加入訓練" }));
+
+    await user.click(screen.getByText("刺拳"));
+    await user.click(screen.getByRole("button", { name: "增加刺拳今日目標" }));
+    expect(screen.getByRole("spinbutton", { name: "刺拳今日目標" })).toHaveValue(4);
+  });
+
+  it("counts an overridden target in the weekly boxing load", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 7, 3, 12)} />);
+
+    await user.click(screen.getByText("影子拳擊"));
+    const target = screen.getByRole("spinbutton", { name: "影子拳擊今日目標" });
+    await user.clear(target);
+    await user.type(target, "12");
+    await user.tab();
+    await user.click(screen.getByRole("checkbox", { name: /影子拳擊/ }));
+
+    await user.click(screen.getByRole("button", { name: "歷史" }));
+    await user.click(screen.getByRole("button", { name: "統計" }));
+
+    expect(screen.getByText("拳擊負荷").closest("div")).toHaveTextContent("12R");
+  });
+
   it("switches interface and plan labels to English", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);

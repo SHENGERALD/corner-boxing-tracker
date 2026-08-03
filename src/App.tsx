@@ -63,10 +63,11 @@ import {
   type AppState,
 } from "./domain/storage";
 import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/supabase";
-import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingType, Weekday } from "./domain/types";
+import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingTarget, TrainingType, Weekday } from "./domain/types";
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
 import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 import { NumericDraftInput } from "./components/NumericDraftInput";
+import { formatTrainingTarget, parseTrainingTarget } from "./domain/targets";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
 type HistoryMode = "history" | "stats";
@@ -1010,23 +1011,31 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
   };
   const visiblePlanItems = plan.items.filter((item) => !record.removedItemIds?.includes(item.id));
   const todayItems = [
-    ...visiblePlanItems.map((item) => ({
-      id: item.id,
-      kind: "planned" as const,
-      title: formatPlanLabel(item.label, language),
-      detail: formatPlanLabel(item.detail, language),
-      drill: getPlanDrill(item.id),
-      checked: isTrainingItemComplete(record, item.id),
-    })),
+    ...visiblePlanItems.map((item) => {
+      const override = record.itemTargetOverrides?.[item.id];
+      return {
+        id: item.id,
+        kind: "planned" as const,
+        title: formatPlanLabel(item.label, language),
+        detail: formatPlanLabel(item.detail, language),
+        target: override ?? parseTrainingTarget(item.detail),
+        overrideLabel: override
+          ? `${language === "zh-TW" ? "今日" : "Today"} ${formatTrainingTarget(override, language)}`
+          : null,
+        drill: getPlanDrill(item.id),
+        checked: isTrainingItemComplete(record, item.id),
+      };
+    }),
     ...(record.customItems ?? []).flatMap((item) => {
       const drill = drillLibrary.find((candidate) => candidate.id === item.drillId);
       if (!drill) return [];
-      const unit = item.unit === "rounds" ? (language === "zh-TW" ? "回合" : "rounds") : (language === "zh-TW" ? "分鐘" : "min");
       return [{
         id: item.id,
         kind: "custom" as const,
         title: formatPlanLabel(drill.name, language),
-        detail: `${item.quantity} ${unit}`,
+        detail: formatTrainingTarget({ quantity: item.quantity, unit: item.unit }, language),
+        target: { quantity: item.quantity, unit: item.unit } as TrainingTarget,
+        overrideLabel: null,
         drill,
         checked: item.completed || isTrainingItemComplete(record, item.id),
       }];
@@ -1080,11 +1089,22 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
     updateItemSets(itemId, (itemSetLogs[itemId] ?? []).filter((set) => set.id !== setId));
   };
 
+  const updateTarget = (itemId: string, kind: "planned" | "custom", target: TrainingTarget) => {
+    if (kind === "planned") {
+      updateRecord({ itemTargetOverrides: { ...(record.itemTargetOverrides ?? {}), [itemId]: target } });
+      return;
+    }
+    updateRecord({
+      customItems: (record.customItems ?? []).map((item) => item.id === itemId ? { ...item, ...target } : item),
+    });
+  };
+
   const removePlannedItem = (id: string) => {
     updateRecord({
       removedItemIds: Array.from(new Set([...(record.removedItemIds ?? []), id])),
       completedItemIds: record.completedItemIds.filter((candidate) => candidate !== id),
       itemSetLogs: Object.fromEntries(Object.entries(itemSetLogs).filter(([itemId]) => itemId !== id)),
+      itemTargetOverrides: Object.fromEntries(Object.entries(record.itemTargetOverrides ?? {}).filter(([itemId]) => itemId !== id)),
     });
   };
 
@@ -1195,11 +1215,19 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
                     <span className={`training-drill-icon${item.drill?.imageUrl ? " has-image" : ""}${item.drill?.imagePosition ? " sprite-image" : ""}`} style={item.drill?.imagePosition ? { backgroundImage: `url(${item.drill.imageUrl})`, backgroundPosition: item.drill.imagePosition } : undefined} aria-hidden="true">
                       {item.drill?.imageUrl && !item.drill.imagePosition ? <img src={item.drill.imageUrl} alt="" /> : !item.drill?.imageUrl ? <span>{item.title.slice(0, 1)}</span> : null}
                     </span>
-                    <span className="item-copy"><strong>{item.title}</strong><small>{item.detail}</small></span>
+                    <span className="item-copy"><strong>{item.title}</strong><small>{item.overrideLabel ?? item.detail}</small></span>
                     <span className="set-count">{itemSetLogs[item.id]?.length ?? 0} {language === "zh-TW" ? "組" : "sets"}</span>
                     <GripVertical className="drag-handle" size={17} aria-hidden="true" />
                     <button className="remove-training-item" onClick={(event) => { event.preventDefault(); event.stopPropagation(); item.kind === "planned" ? removePlannedItem(item.id) : removeCustomItem(item.id); }} aria-label={`${language === "zh-TW" ? "移除" : "Remove"} ${item.title}`} title={language === "zh-TW" ? "移除動作" : "Remove drill"}><Minus size={17} /></button>
                   </summary>
+                  {item.target && (
+                    <TodayTargetEditor
+                      itemTitle={item.title}
+                      target={item.target}
+                      language={language}
+                      onChange={(target) => updateTarget(item.id, item.kind, target)}
+                    />
+                  )}
                   <TrainingSetLogger
                     itemId={item.id}
                     itemTitle={item.title}
@@ -1322,6 +1350,52 @@ function DurationPicker({ value, language, label, onChange }: { value?: number; 
       </section>
     </div>}
   </>;
+}
+
+function TodayTargetEditor({
+  itemTitle,
+  target,
+  language,
+  onChange,
+}: {
+  itemTitle: string;
+  target: TrainingTarget;
+  language: Language;
+  onChange: (target: TrainingTarget) => void;
+}) {
+  const unitLabel = target.unit === "rounds"
+    ? (language === "zh-TW" ? "回合" : "rounds")
+    : (language === "zh-TW" ? "分鐘" : "min");
+  const label = language === "zh-TW" ? `${itemTitle}今日目標` : `${itemTitle} today target`;
+  const step = (delta: number) => onChange({ ...target, quantity: Math.max(1, target.quantity + delta) });
+  return (
+    <div className="today-target-editor">
+      <small>{language === "zh-TW" ? "今日目標" : "Today target"}</small>
+      <div className="target-stepper">
+        <button
+          onClick={() => step(-1)}
+          disabled={target.quantity <= 1}
+          aria-label={`${language === "zh-TW" ? "減少" : "Decrease "}${label}`}
+        >
+          <Minus size={16} />
+        </button>
+        <NumericDraftInput
+          min={1}
+          inputMode="numeric"
+          value={target.quantity}
+          onCommit={(quantity) => onChange({ ...target, quantity: quantity ?? 1 })}
+          aria-label={label}
+        />
+        <button
+          onClick={() => step(1)}
+          aria-label={`${language === "zh-TW" ? "增加" : "Increase "}${label}`}
+        >
+          <Plus size={16} />
+        </button>
+        <span className="target-unit">{unitLabel}</span>
+      </div>
+    </div>
+  );
 }
 
 function TrainingSetLogger({
@@ -1807,6 +1881,7 @@ function hasRecordContent(record?: TrainingRecord) {
     record?.completedItemIds.length ||
     record?.removedItemIds?.length ||
     record?.customItems?.length ||
+    Object.keys(record?.itemTargetOverrides ?? {}).length > 0 ||
     Object.values(record?.itemSetLogs ?? {}).some((sets) => sets.length > 0) ||
     record?.technicalNotes ||
     record?.bodyCheck ||
@@ -1927,7 +2002,15 @@ interface WeeklyLoadPoint {
 
 function getRecordTrainingMinutes(plan: DayPlan, record: TrainingRecord) {
   const loggedSeconds = Object.values(record.itemSetLogs ?? {}).flat().reduce((total, set) => total + (set.durationSeconds ?? 0), 0);
-  return loggedSeconds > 0 ? loggedSeconds / 60 : plan.duration;
+  if (loggedSeconds > 0) return loggedSeconds / 60;
+  const minuteDelta = plan.items.reduce((total, item) => {
+    const override = record.itemTargetOverrides?.[item.id];
+    const fallback = parseTrainingTarget(item.detail);
+    return override?.unit === "minutes" && fallback?.unit === "minutes"
+      ? total + override.quantity - fallback.quantity
+      : total;
+  }, 0);
+  return Math.max(0, plan.duration + minuteDelta);
 }
 
 function getRecordVolumeKg(record: TrainingRecord) {
@@ -1948,10 +2031,15 @@ function getRecordBoxingLoad(plan: DayPlan, record: TrainingRecord) {
     }
   };
   for (const item of plan.items) {
-    if (record.completedItemIds.includes(item.id)) {
-      const zhMatches = [...item.detail.zhTW.matchAll(/(\d+(?:\.\d+)?)\s*(回合|分鐘)/g)];
-      parseDetail(zhMatches.length ? item.detail.zhTW : item.detail.en);
+    if (!record.completedItemIds.includes(item.id)) continue;
+    const override = record.itemTargetOverrides?.[item.id];
+    if (override) {
+      if (override.unit === "rounds") load.rounds += override.quantity;
+      else load.minutes += override.quantity;
+      continue;
     }
+    const zhMatches = [...item.detail.zhTW.matchAll(/(\d+(?:\.\d+)?)\s*(回合|分鐘)/g)];
+    parseDetail(zhMatches.length ? item.detail.zhTW : item.detail.en);
   }
   for (const item of record.customItems ?? []) {
     if (!item.completed) continue;
