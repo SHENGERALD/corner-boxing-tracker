@@ -1,4 +1,4 @@
-import type { CustomTrainingItem, DayPlan, Language, TrainingRecord, TrainingSet } from "./types";
+import type { CustomTrainingItem, DayPlan, Language, TrainingRecord, TrainingSet, TrainingTarget } from "./types";
 import type { Drill } from "./drills";
 import { cloneWeeklyPlan, getPlanForWeekday } from "./plan";
 
@@ -128,6 +128,20 @@ function isCustomTrainingItem(value: unknown): value is CustomTrainingItem {
   );
 }
 
+function isTrainingTarget(value: unknown): value is TrainingTarget {
+  if (!value || typeof value !== "object") return false;
+  const target = value as Record<string, unknown>;
+  return (
+    typeof target.quantity === "number" && Number.isFinite(target.quantity) && target.quantity > 0 &&
+    (target.unit === "rounds" || target.unit === "minutes")
+  );
+}
+
+function isItemTargetOverrides(value: unknown): value is Record<string, TrainingTarget> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  return Object.entries(value).every(([itemId, target]) => typeof itemId === "string" && isTrainingTarget(target));
+}
+
 function isTrainingRecord(value: unknown): value is TrainingRecord {
   if (!value || typeof value !== "object") return false;
   const record = value as Record<string, unknown>;
@@ -137,6 +151,7 @@ function isTrainingRecord(value: unknown): value is TrainingRecord {
     (record.customItems === undefined || (Array.isArray(record.customItems) && record.customItems.every(isCustomTrainingItem))) &&
     (record.itemOrder === undefined || (Array.isArray(record.itemOrder) && record.itemOrder.every((item) => typeof item === "string"))) &&
     (record.itemSetLogs === undefined || isItemSetLogs(record.itemSetLogs)) &&
+    (record.itemTargetOverrides === undefined || isItemTargetOverrides(record.itemTargetOverrides)) &&
     (record.planSnapshot === undefined || isDayPlan(record.planSnapshot)) &&
     (record.technicalNotes === undefined || (typeof record.technicalNotes === "string" && record.technicalNotes.length <= MAX_NOTE_LENGTH)) &&
     (record.bodyCheck === undefined || (typeof record.bodyCheck === "string" && record.bodyCheck.length <= MAX_NOTE_LENGTH)) &&
@@ -145,7 +160,7 @@ function isTrainingRecord(value: unknown): value is TrainingRecord {
 }
 
 function normalizeRecord(record: TrainingRecord): TrainingRecord {
-  return { ...record, removedItemIds: record.removedItemIds ?? [], customItems: record.customItems ?? [], itemSetLogs: record.itemSetLogs ?? {} };
+  return { ...record, removedItemIds: record.removedItemIds ?? [], customItems: record.customItems ?? [], itemSetLogs: record.itemSetLogs ?? {}, ...(record.itemTargetOverrides === undefined ? {} : { itemTargetOverrides: record.itemTargetOverrides }) };
 }
 
 function snapshotForDateKey(dateKey: string): DayPlan {

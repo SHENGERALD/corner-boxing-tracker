@@ -41,6 +41,7 @@ export interface TrainingRecord {
   customItems?: CustomTrainingItem[];
   itemOrder?: string[];
   itemSetLogs?: Record<string, TrainingSet[]>;
+  itemTargetOverrides?: Record<string, TrainingTarget>;
   planSnapshot?: DayPlan;
   rpe?: number;
   technicalNotes?: string;
@@ -62,6 +63,11 @@ export interface TrainingSet {
 }
 
 export type TrainingUnit = "rounds" | "minutes";
+
+export interface TrainingTarget {
+  quantity: number;
+  unit: TrainingUnit;
+}
 
 export interface CustomTrainingItem {
   id: string;

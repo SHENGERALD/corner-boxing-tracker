@@ -28,6 +28,20 @@ describe("local training storage", () => {
     expect(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}").version).toBe(3);
   });
 
+  it("preserves valid target overrides and rejects invalid ones", () => {
+    const state = createEmptyState();
+    state.records["2026-08-03"] = {
+      completedItemIds: [],
+      itemTargetOverrides: { shadow: { quantity: 12, unit: "rounds" } },
+    };
+    saveState(state);
+    expect(loadState().records["2026-08-03"].itemTargetOverrides?.shadow).toEqual({ quantity: 12, unit: "rounds" });
+
+    const malformed = structuredClone(state);
+    malformed.records["2026-08-03"].itemTargetOverrides = { shadow: { quantity: 0, unit: "rounds" } };
+    expect(() => importState(JSON.stringify(malformed))).toThrow("Invalid backup");
+  });
+
   it("rejects malformed backups without replacing current state", () => {
     const state = createEmptyState();
     saveState(state);
