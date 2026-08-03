@@ -65,7 +65,7 @@ import {
 import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/supabase";
 import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingType, Weekday } from "./domain/types";
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
-import { advanceTimer, getRemainingSeconds, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
+import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
 type HistoryMode = "history" | "stats";
@@ -178,8 +178,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   const [timer, setTimer] = useState<BoxingTimerState | null>(() => loadTimer());
   const [timerOpen, setTimerOpen] = useState(false);
   const [timerNow, setTimerNow] = useState(() => Date.now());
-  const timerPhaseCueRef = useRef("");
-  const timerCountdownCueRef = useRef("");
+  const timerCueKeysRef = useRef(new Set<string>());
   const [timerSoundEnabled, setTimerSoundEnabled] = useState(true);
   const [timerVoiceEnabled, setTimerVoiceEnabled] = useState(true);
   const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
@@ -240,24 +239,17 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   }, [timer?.status]);
 
   useEffect(() => {
-    if (!timer || timer.status !== "running") {
-      timerPhaseCueRef.current = "";
-      timerCountdownCueRef.current = "";
+    if (!timer) {
+      timerCueKeysRef.current.clear();
       return;
     }
     const remaining = getRemainingSeconds(timer, timerNow);
-    const phaseKey = timer.phase + "-" + timer.round;
-    if (timerPhaseCueRef.current !== phaseKey) {
-      timerPhaseCueRef.current = phaseKey;
-      timerCountdownCueRef.current = "";
-      announceTimerPhase(timer.phase, timer.round, language, timerSoundEnabled, timerVoiceEnabled);
-    }
-    if (remaining > 0 && remaining <= 10) {
-      const countdownKey = phaseKey + "-" + remaining;
-      if (timerCountdownCueRef.current !== countdownKey) {
-        timerCountdownCueRef.current = countdownKey;
-        if (timerSoundEnabled) playTimerChime();
-      }
+    for (const cue of getTimerCues(timer, remaining)) {
+      if (timerCueKeysRef.current.has(cue.key)) continue;
+      timerCueKeysRef.current.add(cue.key);
+      if (cue.type === "phase") announceTimerPhase(cue.phase, cue.round, language, timerSoundEnabled, timerVoiceEnabled);
+      if (cue.type === "countdown" && timerSoundEnabled) playTimerChime();
+      if (cue.type === "complete") announceTimerComplete(language, timerSoundEnabled, timerVoiceEnabled);
     }
   }, [language, timer, timerNow, timerSoundEnabled, timerVoiceEnabled]);
 
@@ -413,6 +405,8 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   }, [cloudReady, state, userId]);
 
   const startBoxingTimer = (settings: BoxingTimerSettings) => {
+    timerCueKeysRef.current.clear();
+    unlockTimerAudio();
     const next = startTimer(settings);
     saveTimer(next);
     setTimer(next);
@@ -439,6 +433,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
     return next;
   });
   const resetBoxingTimer = () => {
+    timerCueKeysRef.current.clear();
     saveTimer(null);
     setTimer(null);
     setTimerOpen(false);
@@ -673,10 +668,23 @@ function formatTimerClock(totalSeconds: number): string {
   return String(Math.floor(seconds / 60)).padStart(2, "0") + ":" + String(seconds % 60).padStart(2, "0");
 }
 
-function playTimerChime(): void {
+let timerAudioContext: AudioContext | null = null;
+
+function getTimerAudioContext(): AudioContext | null {
   const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-  if (!AudioContextClass) return;
-  const context = new AudioContextClass();
+  if (!AudioContextClass) return null;
+  if (!timerAudioContext || timerAudioContext.state === "closed") timerAudioContext = new AudioContextClass();
+  return timerAudioContext;
+}
+
+function unlockTimerAudio(): void {
+  const context = getTimerAudioContext();
+  if (context?.state === "suspended") void context.resume();
+}
+
+function playTimerChime(): void {
+  const context = getTimerAudioContext();
+  if (!context) return;
   const oscillator = context.createOscillator();
   const gain = context.createGain();
   oscillator.frequency.value = 784;
@@ -688,15 +696,33 @@ function playTimerChime(): void {
   gain.connect(context.destination);
   oscillator.start();
   oscillator.stop(context.currentTime + 0.26);
-  window.setTimeout(() => void context.close(), 320);
 }
 
 function announceTimerPhase(phase: "work" | "rest", round: number, language: Language, soundEnabled: boolean, voiceEnabled: boolean): void {
   if (soundEnabled) playTimerBell(phase);
+  if (!voiceEnabled || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const speech = new SpeechSynthesisUtterance(
+    phase === "work"
+      ? language === "zh-TW" ? "第 " + round + " 回合" : "Round " + round
+      : language === "zh-TW" ? "休息" : "Rest",
+  );
+  speech.lang = language === "zh-TW" ? "zh-TW" : "en-US";
+  window.speechSynthesis.speak(speech);
+}
+
+function announceTimerComplete(language: Language, soundEnabled: boolean, voiceEnabled: boolean): void {
+  if (soundEnabled) playTimerBell("work");
+  if (!voiceEnabled || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const speech = new SpeechSynthesisUtterance(language === "zh-TW" ? "訓練結束" : "Workout complete");
+  speech.lang = language === "zh-TW" ? "zh-TW" : "en-US";
+  window.speechSynthesis.speak(speech);
+}
+
 function playTimerBell(phase: "work" | "rest"): void {
-  const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-  if (!AudioContextClass) return;
-  const context = new AudioContextClass();
+  const context = getTimerAudioContext();
+  if (!context) return;
   const notes = phase === "work" ? [660, 880] : [440, 440];
   notes.forEach((frequency, index) => {
     const start = context.currentTime + index * 0.18;
@@ -712,19 +738,6 @@ function playTimerBell(phase: "work" | "rest"): void {
     oscillator.start(start);
     oscillator.stop(start + 0.36);
   });
-  window.setTimeout(() => void context.close(), 700);
-}
-
-
-  if (!voiceEnabled || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const speech = new SpeechSynthesisUtterance(
-    phase === "work"
-      ? language === "zh-TW" ? "第 " + round + " 回合" : "Round " + round
-      : language === "zh-TW" ? "休息" : "Rest",
-  );
-  speech.lang = language === "zh-TW" ? "zh-TW" : "en-US";
-  window.speechSynthesis.speak(speech);
 }
 
 function BoxingTimerPanel({
@@ -756,14 +769,18 @@ function BoxingTimerPanel({
   onSkip: () => void;
   onReset: () => void;
 }) {
-  const [rounds, setRounds] = useState(timer?.settings.rounds ?? 6);
-  const [workMinutes, setWorkMinutes] = useState(Math.max(1, Math.round((timer?.settings.workSeconds ?? 180) / 60)));
-  const [restSeconds, setRestSeconds] = useState(timer?.settings.restSeconds ?? 60);
+  const [rounds, setRounds] = useState<number | "">(timer?.settings.rounds ?? 6);
+  const [workMinutes, setWorkMinutes] = useState<number | "">(Math.max(1, Math.round((timer?.settings.workSeconds ?? 180) / 60)));
+  const [restSeconds, setRestSeconds] = useState<number | "">(timer?.settings.restSeconds ?? 60);
   const active = timer?.status === "running" || timer?.status === "paused";
   const remaining = timer ? getRemainingSeconds(timer, now) : 0;
   const phaseSeconds = timer ? timer.phase === "work" ? timer.settings.workSeconds : timer.settings.restSeconds : 180;
   const progress = timer && phaseSeconds > 0 ? Math.min(100, Math.max(0, (remaining / phaseSeconds) * 100)) : 0;
-  const start = () => onStart({ rounds, workSeconds: workMinutes * 60, restSeconds });
+  const start = () => onStart({
+    rounds: Math.max(1, Number(rounds || 1)),
+    workSeconds: Math.max(1, Number(workMinutes || 1)) * 60,
+    restSeconds: Math.max(0, Number(restSeconds || 0)),
+  });
 
   return <div className="dialog-backdrop timer-backdrop" role="presentation">
     <section className="timer-sheet" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "拳擊回合計時器" : "Boxing round timer"}>
@@ -786,7 +803,7 @@ function BoxingTimerPanel({
         <div className="timer-presets">
           {([["標準", 6, 3, 60], ["技術", 3, 2, 60], ["HIIT", 8, 1, 30]] as const).map(([label, presetRounds, minutes, rest]) => <button key={String(label)} onClick={() => { setRounds(presetRounds); setWorkMinutes(minutes); setRestSeconds(rest); }}><strong>{language === "zh-TW" ? label : label === "標準" ? "Standard" : label === "技術" ? "Technique" : "HIIT"}</strong><span>{presetRounds} × {minutes}:00</span></button>)}
         </div>
-        <div className="timer-fields"><label>{language === "zh-TW" ? "回合數" : "Rounds"}<input type="number" min="1" max="99" value={rounds} onChange={(event) => setRounds(Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "每回合分鐘" : "Work minutes"}<input type="number" min="1" max="20" value={workMinutes} onChange={(event) => setWorkMinutes(Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "休息秒數" : "Rest seconds"}<input type="number" min="0" max="600" value={restSeconds} onChange={(event) => setRestSeconds(Math.max(0, Number(event.target.value)))} /></label></div>
+        <div className="timer-fields"><label>{language === "zh-TW" ? "回合數" : "Rounds"}<input type="number" min="1" max="99" value={rounds} onChange={(event) => setRounds(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "每回合分鐘" : "Work minutes"}<input type="number" min="1" max="20" value={workMinutes} onChange={(event) => setWorkMinutes(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "休息秒數" : "Rest seconds"}<input type="number" min="0" max="600" value={restSeconds} onChange={(event) => setRestSeconds(event.target.value === "" ? "" : Math.max(0, Number(event.target.value)))} /></label></div>
         <div className="timer-preferences"><button className={soundEnabled ? "selected" : ""} onClick={() => onSoundChange(!soundEnabled)}>{soundEnabled ? <Volume2 size={17} /> : <VolumeX size={17} />}{language === "zh-TW" ? "提示音" : "Sounds"}</button><button className={voiceEnabled ? "selected" : ""} onClick={() => onVoiceChange(!voiceEnabled)}><Settings2 size={17} />{language === "zh-TW" ? "回合語音" : "Round voice"}</button></div>
         <button className="timer-start-button" onClick={start}><Play size={19} />{language === "zh-TW" ? "開始計時" : "Start timer"}</button>
       </div>}

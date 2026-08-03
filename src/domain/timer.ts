@@ -16,6 +16,11 @@ export interface BoxingTimerState {
   pausedRemainingSeconds?: number;
 }
 
+export type TimerCue =
+  | { key: string; type: "phase"; phase: TimerPhase; round: number }
+  | { key: string; type: "countdown"; seconds: number }
+  | { key: string; type: "complete"; round: number };
+
 export const TIMER_STORAGE_KEY = "corner-boxing-timer-v1";
 
 function normalizeSettings(settings: BoxingTimerSettings): BoxingTimerSettings {
@@ -41,6 +46,20 @@ export function getRemainingSeconds(state: BoxingTimerState, now = Date.now()): 
   if (state.status === "complete") return 0;
   if (state.status === "paused") return state.pausedRemainingSeconds ?? 0;
   return Math.max(0, Math.ceil(((state.phaseEndsAt ?? now) - now) / 1000));
+}
+
+export function getTimerCues(state: BoxingTimerState, remainingSeconds: number): TimerCue[] {
+  if (state.status === "complete") {
+    return [{ key: `complete-${state.round}`, type: "complete", round: state.round }];
+  }
+  if (state.status !== "running") return [];
+
+  const phaseKey = `${state.phase}-${state.round}`;
+  const cues: TimerCue[] = [{ key: `phase-${phaseKey}`, type: "phase", phase: state.phase, round: state.round }];
+  if (remainingSeconds > 0 && remainingSeconds <= 10) {
+    cues.push({ key: `countdown-${phaseKey}-${remainingSeconds}`, type: "countdown", seconds: remainingSeconds });
+  }
+  return cues;
 }
 
 export function advanceTimer(state: BoxingTimerState, now = Date.now()): BoxingTimerState {

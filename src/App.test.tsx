@@ -146,6 +146,18 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("button", { name: "暫停" })).toBeInTheDocument();
   });
 
+  it("lets timer settings be cleared before entering a multi-digit value", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "拳擊回合計時器" }));
+    const rounds = screen.getByRole("spinbutton", { name: "回合數" });
+    await user.clear(rounds);
+    expect(rounds).toHaveValue(null);
+    await user.type(rounds, "12");
+    expect(rounds).toHaveValue(12);
+  });
+
   it("switches interface and plan labels to English", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);
