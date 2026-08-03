@@ -686,17 +686,20 @@ function unlockTimerAudio(): void {
 function playTimerChime(): void {
   const context = getTimerAudioContext();
   if (!context) return;
-  const oscillator = context.createOscillator();
-  const gain = context.createGain();
-  oscillator.frequency.value = 784;
-  oscillator.type = "triangle";
-  gain.gain.setValueAtTime(0.001, context.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.16, context.currentTime + 0.02);
-  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.24);
-  oscillator.connect(gain);
-  gain.connect(context.destination);
-  oscillator.start();
-  oscillator.stop(context.currentTime + 0.26);
+  for (const index of [0, 1]) {
+    const start = context.currentTime + index * 0.22;
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    oscillator.frequency.value = 784;
+    oscillator.type = "triangle";
+    gain.gain.setValueAtTime(0.001, start);
+    gain.gain.exponentialRampToValueAtTime(0.16, start + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, start + 0.18);
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.start(start);
+    oscillator.stop(start + 0.2);
+  }
 }
 
 function announceTimerPhase(phase: "work" | "rest", round: number, language: Language, soundEnabled: boolean, voiceEnabled: boolean): void {
@@ -1377,7 +1380,7 @@ function TodayTargetEditor({
           disabled={target.quantity <= 1}
           aria-label={`${language === "zh-TW" ? "減少" : "Decrease "}${label}`}
         >
-          <Minus size={16} />
+          <Minus size={13} />
         </button>
         <NumericDraftInput
           min={1}
@@ -1390,7 +1393,7 @@ function TodayTargetEditor({
           onClick={() => step(1)}
           aria-label={`${language === "zh-TW" ? "增加" : "Increase "}${label}`}
         >
-          <Plus size={16} />
+          <Plus size={13} />
         </button>
         <span className="target-unit">{unitLabel}</span>
       </div>

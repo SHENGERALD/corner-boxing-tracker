@@ -322,32 +322,32 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 .removable-training-item, .custom-training-item { grid-template-columns: 28px 36px 46px 1fr auto 34px 38px; padding-right: 10px; }
 .remove-training-item { width: 34px; height: 34px; border-radius: 50%; background: var(--surface-soft); color: var(--danger); }
 .drag-handle { justify-self: center; color: var(--muted-2); }
-.today-target-editor { display: grid; gap: 6px; padding: 12px 16px 0 93px; }
+.today-target-editor { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 9px; padding: 10px 16px 12px 93px; }
 .today-target-editor > small { color: var(--muted-2); font-size: 11px; font-weight: 750; }
-.target-stepper { display: grid; grid-template-columns: 44px minmax(64px, 84px) 44px auto; align-items: center; gap: 8px; max-width: 100%; }
+.target-stepper { display: inline-grid; grid-template-columns: 30px 46px 30px auto; align-items: center; gap: 5px; }
 .target-stepper button {
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
-  border-radius: 12px;
+  border-radius: 9px;
   background: var(--surface-soft);
-  color: var(--ink);
+  color: var(--muted);
 }
-.target-stepper button:disabled { opacity: .4; }
+.target-stepper button:disabled { opacity: .35; }
 .target-stepper input {
   width: 100%;
   min-width: 0;
-  height: 44px;
-  padding: 0 8px;
-  border-radius: 12px;
+  height: 30px;
+  padding: 0 4px;
+  border-radius: 9px;
   background: var(--surface-soft);
   color: var(--ink);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 800;
   text-align: center;
 }
-.target-unit { color: var(--muted); font-size: 12px; font-weight: 750; white-space: nowrap; }
+.target-unit { color: var(--muted-2); font-size: 11px; font-weight: 750; white-space: nowrap; }
 .set-logger { padding: 0 16px 18px 93px; }
 .set-empty { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
 .set-table { display: grid; gap: 10px; margin-bottom: 13px; }
@@ -1182,8 +1182,7 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
   .add-training, .cancel-record { flex: 1; }
   .notes-grid { grid-template-columns: 1fr; }
   .text-field:first-child { grid-column: auto; }
-  .today-target-editor { padding: 12px 13px 0; }
-  .target-stepper { grid-template-columns: 44px minmax(0, 1fr) 44px auto; }
+  .today-target-editor { padding: 10px 13px 12px; }
   .set-logger { padding: 0 13px 16px; }
   .set-row { grid-template-columns: 38px 1.25fr .8fr 1fr 50px 36px; gap: 7px; }
   .set-index, .set-row label, .set-done, .set-remove { min-height: 50px; }

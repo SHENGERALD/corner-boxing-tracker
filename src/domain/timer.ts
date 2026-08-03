@@ -56,8 +56,10 @@ export function getTimerCues(state: BoxingTimerState, remainingSeconds: number):
 
   const phaseKey = `${state.phase}-${state.round}`;
   const cues: TimerCue[] = [{ key: `phase-${phaseKey}`, type: "phase", phase: state.phase, round: state.round }];
+  // One warning per phase, not one per second. The key leaves out the seconds so
+  // a dropped tick still chimes once instead of skipping the cue altogether.
   if (remainingSeconds > 0 && remainingSeconds <= 10) {
-    cues.push({ key: `countdown-${phaseKey}-${remainingSeconds}`, type: "countdown", seconds: remainingSeconds });
+    cues.push({ key: `countdown-${phaseKey}`, type: "countdown", seconds: remainingSeconds });
   }
   return cues;
 }

@@ -32,10 +32,24 @@ describe("boxing timer", () => {
     expect(getTimerCues(completed, 0)).toContainEqual({ key: "complete-1", type: "complete", round: 1 });
   });
 
-  it("emits a chime cue during the final ten seconds of a phase", () => {
+  it("emits a chime cue when a phase reaches its final ten seconds", () => {
     const started = startTimer({ rounds: 1, workSeconds: 60, restSeconds: 0 }, 1_000);
 
-    expect(getTimerCues(started, 10)).toContainEqual({ key: "countdown-work-1-10", type: "countdown", seconds: 10 });
+    expect(getTimerCues(started, 11)).not.toContainEqual(expect.objectContaining({ type: "countdown" }));
+    expect(getTimerCues(started, 10)).toContainEqual({ key: "countdown-work-1", type: "countdown", seconds: 10 });
+  });
+
+  it("reuses one countdown key for the whole phase so the chime sounds once", () => {
+    const started = startTimer({ rounds: 2, workSeconds: 60, restSeconds: 30 }, 1_000);
+    const countdownKeys = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+      .flatMap((seconds) => getTimerCues(started, seconds))
+      .filter((cue) => cue.type === "countdown")
+      .map((cue) => cue.key);
+
+    expect(new Set(countdownKeys).size).toBe(1);
+
+    const resting = advanceTimer(started, 61_000);
+    expect(getTimerCues(resting, 10)).toContainEqual({ key: "countdown-rest-1", type: "countdown", seconds: 10 });
   });
 
   it("pauses with remaining time and resumes from that point", () => {
