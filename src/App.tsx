@@ -66,6 +66,7 @@ import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/sup
 import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingType, Weekday } from "./domain/types";
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
 import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
+import { NumericDraftInput } from "./components/NumericDraftInput";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
 type HistoryMode = "history" | "stats";
@@ -769,17 +770,17 @@ function BoxingTimerPanel({
   onSkip: () => void;
   onReset: () => void;
 }) {
-  const [rounds, setRounds] = useState<number | "">(timer?.settings.rounds ?? 6);
-  const [workMinutes, setWorkMinutes] = useState<number | "">(Math.max(1, Math.round((timer?.settings.workSeconds ?? 180) / 60)));
-  const [restSeconds, setRestSeconds] = useState<number | "">(timer?.settings.restSeconds ?? 60);
+  const [rounds, setRounds] = useState(timer?.settings.rounds ?? 6);
+  const [workMinutes, setWorkMinutes] = useState(Math.max(1, Math.round((timer?.settings.workSeconds ?? 180) / 60)));
+  const [restSeconds, setRestSeconds] = useState(timer?.settings.restSeconds ?? 60);
   const active = timer?.status === "running" || timer?.status === "paused";
   const remaining = timer ? getRemainingSeconds(timer, now) : 0;
   const phaseSeconds = timer ? timer.phase === "work" ? timer.settings.workSeconds : timer.settings.restSeconds : 180;
   const progress = timer && phaseSeconds > 0 ? Math.min(100, Math.max(0, (remaining / phaseSeconds) * 100)) : 0;
   const start = () => onStart({
-    rounds: Math.max(1, Number(rounds || 1)),
-    workSeconds: Math.max(1, Number(workMinutes || 1)) * 60,
-    restSeconds: Math.max(0, Number(restSeconds || 0)),
+    rounds: Math.max(1, rounds ?? 1),
+    workSeconds: Math.max(1, workMinutes ?? 1) * 60,
+    restSeconds: Math.max(0, restSeconds ?? 0),
   });
 
   return <div className="dialog-backdrop timer-backdrop" role="presentation">
@@ -803,7 +804,7 @@ function BoxingTimerPanel({
         <div className="timer-presets">
           {([["標準", 6, 3, 60], ["技術", 3, 2, 60], ["HIIT", 8, 1, 30]] as const).map(([label, presetRounds, minutes, rest]) => <button key={String(label)} onClick={() => { setRounds(presetRounds); setWorkMinutes(minutes); setRestSeconds(rest); }}><strong>{language === "zh-TW" ? label : label === "標準" ? "Standard" : label === "技術" ? "Technique" : "HIIT"}</strong><span>{presetRounds} × {minutes}:00</span></button>)}
         </div>
-        <div className="timer-fields"><label>{language === "zh-TW" ? "回合數" : "Rounds"}<input type="number" min="1" max="99" value={rounds} onChange={(event) => setRounds(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "每回合分鐘" : "Work minutes"}<input type="number" min="1" max="20" value={workMinutes} onChange={(event) => setWorkMinutes(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "休息秒數" : "Rest seconds"}<input type="number" min="0" max="600" value={restSeconds} onChange={(event) => setRestSeconds(event.target.value === "" ? "" : Math.max(0, Number(event.target.value)))} /></label></div>
+        <div className="timer-fields"><label>{language === "zh-TW" ? "回合數" : "Rounds"}<NumericDraftInput min={1} max={99} value={rounds} onCommit={(value) => setRounds(value ?? 1)} /></label><label>{language === "zh-TW" ? "每回合分鐘" : "Work minutes"}<NumericDraftInput min={1} max={20} value={workMinutes} onCommit={(value) => setWorkMinutes(value ?? 1)} /></label><label>{language === "zh-TW" ? "休息秒數" : "Rest seconds"}<NumericDraftInput min={0} max={600} value={restSeconds} onCommit={(value) => setRestSeconds(value ?? 0)} /></label></div>
         <div className="timer-preferences"><button className={soundEnabled ? "selected" : ""} onClick={() => onSoundChange(!soundEnabled)}>{soundEnabled ? <Volume2 size={17} /> : <VolumeX size={17} />}{language === "zh-TW" ? "提示音" : "Sounds"}</button><button className={voiceEnabled ? "selected" : ""} onClick={() => onVoiceChange(!voiceEnabled)}><Settings2 size={17} />{language === "zh-TW" ? "回合語音" : "Round voice"}</button></div>
         <button className="timer-start-button" onClick={start}><Play size={19} />{language === "zh-TW" ? "開始計時" : "Start timer"}</button>
       </div>}
@@ -1353,12 +1354,12 @@ function TrainingSetLogger({
               <label className="weight-field">
                 <small>{language === "zh-TW" ? "重量" : "Weight"}</small>
                 <span>
-                  <input
-                    type="number"
-                    min="0"
+                  <NumericDraftInput
+                    min={0}
                     inputMode="decimal"
-                    value={set.weight ?? ""}
-                    onChange={(event) => onUpdateSet(itemId, set.id, { weight: event.target.value === "" ? undefined : Number(event.target.value) })}
+                    value={set.weight}
+                    allowEmpty
+                    onCommit={(weight) => onUpdateSet(itemId, set.id, { weight })}
                     aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組重量" : " weight"}`}
                   />
                   <select
@@ -1373,12 +1374,12 @@ function TrainingSetLogger({
               </label>
               <label>
                 <small>{language === "zh-TW" ? "次數" : "Reps"}</small>
-                <input
-                  type="number"
-                  min="0"
+                <NumericDraftInput
+                  min={0}
                   inputMode="numeric"
-                  value={set.reps ?? ""}
-                  onChange={(event) => onUpdateSet(itemId, set.id, { reps: event.target.value === "" ? undefined : Number(event.target.value) })}
+                  value={set.reps}
+                  allowEmpty
+                  onCommit={(reps) => onUpdateSet(itemId, set.id, { reps })}
                   aria-label={`${language === "zh-TW" ? "第" : "Set "}${index + 1}${language === "zh-TW" ? "組次數" : " reps"}`}
                 />
               </label>
@@ -1574,6 +1575,7 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
   const save = () => {
     const trimmedName = name.trim();
     if (!trimmedName) return;
+    const positiveQuantity = Math.max(1, quantity ?? 1);
     onConfirm({
       id: `custom-${Date.now()}`,
       domain,
@@ -1581,7 +1583,7 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
       name: { zhTW: trimmedName, en: englishName.trim() || trimmedName },
       cue: { zhTW: cue.trim() || (language === "zh-TW" ? "自訂訓練動作" : "Custom training drill"), en: cue.trim() || "Custom training drill" },
       defaultUnit: unit,
-      defaultQuantity: Math.max(1, quantity),
+      defaultQuantity: positiveQuantity,
     });
   };
 
@@ -1593,7 +1595,7 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
     <label>{language === "zh-TW" ? "提示（選填）" : "Cue (optional)"}<input value={cue} onChange={(event) => setCue(event.target.value)} placeholder={language === "zh-TW" ? "例如：下潛後立刻回到護手" : "e.g. Return to guard after the slip"} /></label>
     <label>{language === "zh-TW" ? "訓練類型" : "Training type"}<select value={domain} onChange={(event) => changeDomain(event.target.value as TrainingDomain)}><option value="boxing">{language === "zh-TW" ? "拳擊" : "Boxing"}</option><option value="strength">{language === "zh-TW" ? "重訓" : "Strength"}</option></select></label>
     <label>{language === "zh-TW" ? "分類" : "Category"}<select value={category} onChange={(event) => setCategory(event.target.value as DrillCategory)}>{categories.map(([id, label]) => <option value={id} key={id}>{label}</option>)}</select></label>
-    <div className="custom-drill-defaults"><label>{language === "zh-TW" ? "預設數量" : "Default quantity"}<input type="number" min="1" value={quantity} onChange={(event) => setQuantity(Math.max(1, Number(event.target.value)))} /></label><label>{language === "zh-TW" ? "單位" : "Unit"}<select value={unit} onChange={(event) => setUnit(event.target.value as "rounds" | "minutes")}><option value="rounds">{language === "zh-TW" ? "回合" : "Rounds"}</option><option value="minutes">{language === "zh-TW" ? "分鐘" : "Minutes"}</option></select></label></div>
+    <div className="custom-drill-defaults"><label>{language === "zh-TW" ? "預設數量" : "Default quantity"}<NumericDraftInput min={1} value={quantity} onCommit={(value) => setQuantity(value ?? 1)} /></label><label>{language === "zh-TW" ? "單位" : "Unit"}<select value={unit} onChange={(event) => setUnit(event.target.value as "rounds" | "minutes")}><option value="rounds">{language === "zh-TW" ? "回合" : "Rounds"}</option><option value="minutes">{language === "zh-TW" ? "分鐘" : "Minutes"}</option></select></label></div>
     <div className="dialog-actions"><button onClick={onClose}>{language === "zh-TW" ? "取消" : "Cancel"}</button><button onClick={save} disabled={!name.trim()}>{language === "zh-TW" ? "儲存動作" : "Save drill"}</button></div>
   </section></div>;
 }
@@ -1601,7 +1603,8 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
 function AddDrillPanel({ drill, language, onClose, onConfirm }: { drill: Drill; language: Language; onClose: () => void; onConfirm: (item: CustomTrainingItem) => void }) {
   const [quantity, setQuantity] = useState(drill.defaultQuantity); const [unit, setUnit] = useState(drill.defaultUnit);
   const name = formatPlanLabel(drill.name, language); const unitLabel = unit === "rounds" ? (language === "zh-TW" ? "回合數" : "Rounds") : (language === "zh-TW" ? "分鐘數" : "Minutes");
-  return <div className="dialog-backdrop" role="presentation"><section className="add-dialog" role="dialog" aria-modal="true" aria-label={`${language === "zh-TW" ? "加入訓練：" : "Add training: "}${name}`}><p className="eyebrow">SCHEDULE DRILL</p><h2>{language === "zh-TW" ? `加入訓練：${name}` : `Add training: ${name}`}</h2><label>{unitLabel}<input type="number" min="1" value={quantity} onChange={(event) => setQuantity(Math.max(1, Number(event.target.value)))} /></label><div className="unit-toggle"><button className={unit === "rounds" ? "selected" : ""} onClick={() => setUnit("rounds")}>{language === "zh-TW" ? "回合" : "Rounds"}</button><button className={unit === "minutes" ? "selected" : ""} onClick={() => setUnit("minutes")}>{language === "zh-TW" ? "分鐘" : "Minutes"}</button></div><div className="dialog-actions"><button onClick={onClose}>{language === "zh-TW" ? "取消" : "Cancel"}</button><button onClick={() => onConfirm({ id: `${drill.id}-${Date.now()}`, drillId: drill.id, quantity, unit, completed: false })}>{language === "zh-TW" ? "加入訓練" : "Add training"}</button></div></section></div>;
+  const positiveQuantity = Math.max(1, quantity ?? 1);
+  return <div className="dialog-backdrop" role="presentation"><section className="add-dialog" role="dialog" aria-modal="true" aria-label={`${language === "zh-TW" ? "加入訓練：" : "Add training: "}${name}`}><p className="eyebrow">SCHEDULE DRILL</p><h2>{language === "zh-TW" ? `加入訓練：${name}` : `Add training: ${name}`}</h2><label>{unitLabel}<NumericDraftInput min={1} value={quantity} onCommit={(value) => setQuantity(value ?? 1)} /></label><div className="unit-toggle"><button className={unit === "rounds" ? "selected" : ""} onClick={() => setUnit("rounds")}>{language === "zh-TW" ? "回合" : "Rounds"}</button><button className={unit === "minutes" ? "selected" : ""} onClick={() => setUnit("minutes")}>{language === "zh-TW" ? "分鐘" : "Minutes"}</button></div><div className="dialog-actions"><button onClick={onClose}>{language === "zh-TW" ? "取消" : "Cancel"}</button><button onClick={() => onConfirm({ id: `${drill.id}-${Date.now()}`, drillId: drill.id, quantity: positiveQuantity, unit, completed: false })}>{language === "zh-TW" ? "加入訓練" : "Add training"}</button></div></section></div>;
 }
 
 function TextField({
@@ -1752,7 +1755,7 @@ function ScheduleView({
           <label><span>{t(language, "schedule.sessionZh")}</span><input value={day.session.zhTW} onChange={(event) => updateLabel("session", "zhTW", event.target.value)} /></label>
           <label><span>{t(language, "schedule.sessionEn")}</span><input value={day.session.en} onChange={(event) => updateLabel("session", "en", event.target.value)} /></label>
           <label><span>{language === "zh-TW" ? "開始時間" : "Start time"}</span><input type="time" disabled={day.trainingType === "rest"} value={day.startTime ?? ""} onChange={(event) => update({ startTime: event.target.value, time: undefined })} /></label>
-          <label><span>{language === "zh-TW" ? "分鐘" : "Minutes"}</span><input type="number" min="0" step="5" disabled={day.trainingType === "rest"} value={day.duration} onChange={(event) => update({ duration: Math.max(0, Number(event.target.value)) })} /></label>
+          <label><span>{language === "zh-TW" ? "分鐘" : "Minutes"}</span><NumericDraftInput min={0} step="5" disabled={day.trainingType === "rest"} value={day.duration} onCommit={(value) => update({ duration: Math.max(0, value ?? 0) })} /></label>
           <label className="wide"><span>{t(language, "schedule.focusZh")}</span><input value={day.focus.zhTW} onChange={(event) => updateLabel("focus", "zhTW", event.target.value)} /></label>
           <label className="wide"><span>{t(language, "schedule.focusEn")}</span><input value={day.focus.en} onChange={(event) => updateLabel("focus", "en", event.target.value)} /></label>
         </div>
