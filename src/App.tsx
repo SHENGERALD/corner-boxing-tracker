@@ -96,16 +96,15 @@ function initialRecord(): TrainingRecord {
   return { completedItemIds: [] };
 }
 
-type PreviewSet = { id: string; weight: number; reps: number; completed: boolean };
-type PreviewQuantity = number | string;
+type PreviewSet = { id: string; weight?: number; reps?: number; completed: boolean };
 
 function QuickLogPreview() {
   const [boxingComplete, setBoxingComplete] = useState(false);
   const [cardioComplete, setCardioComplete] = useState(false);
   const [boxingDetailsOpen, setBoxingDetailsOpen] = useState(false);
   const [cardioDetailsOpen, setCardioDetailsOpen] = useState(false);
-  const [boxingQuantity, setBoxingQuantity] = useState<PreviewQuantity>("3");
-  const [cardioQuantity, setCardioQuantity] = useState<PreviewQuantity>("20");
+  const [boxingQuantity, setBoxingQuantity] = useState(3);
+  const [cardioQuantity, setCardioQuantity] = useState(20);
   const [sets, setSets] = useState<PreviewSet[]>([{ id: "squat-1", weight: 60, reps: 8, completed: false }]);
   const [detailsOpen, setDetailsOpen] = useState(false);
 
@@ -117,7 +116,7 @@ function QuickLogPreview() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const updateSet = (id: string, field: "weight" | "reps", value: number) => {
+  const updateSet = (id: string, field: "weight" | "reps", value: number | undefined) => {
     setSets((current) => current.map((set) => set.id === id ? { ...set, [field]: value } : set));
   };
   const addSet = () => setSets((current) => {
@@ -130,15 +129,15 @@ function QuickLogPreview() {
     <section className="quick-log-list" aria-label="示範訓練">
       <article className={`quick-log-card ${boxingComplete ? "is-complete" : ""}`}>
         <div className="quick-log-card-top"><div className="quick-log-card-heading"><Activity size={20} /><div><h2>影子拳擊</h2><p>{boxingQuantity || "0"} 回合</p></div></div><button className="quick-log-more" aria-expanded={boxingDetailsOpen} onClick={() => setBoxingDetailsOpen((open) => !open)}>更多</button></div>
-        {boxingDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="影子拳擊數量" type="number" min="1" value={boxingQuantity} onChange={(event) => setBoxingQuantity(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>備註<textarea aria-label="影子拳擊備註" placeholder="選填" /></label></div>}
+        {boxingDetailsOpen && <div className="quick-log-extra"><label>數量<NumericDraftInput aria-label="影子拳擊數量" min={1} value={boxingQuantity} onCommit={(value) => setBoxingQuantity(value ?? 1)} /></label><label>備註<textarea aria-label="影子拳擊備註" placeholder="選填" /></label></div>}
         <button className="quick-log-complete" onClick={() => setBoxingComplete(true)} disabled={boxingComplete}><Check size={18} />{boxingComplete ? "已完成" : "完成 影子拳擊"}</button>
       </article>
       <article className={`quick-log-card ${cardioComplete ? "is-complete" : ""}`}>
         <div className="quick-log-card-top"><div className="quick-log-card-heading"><TimerIcon size={20} /><div><h2>Zone 2 跑步</h2><p>{cardioQuantity || "0"} 分鐘</p></div></div><button className="quick-log-more" aria-expanded={cardioDetailsOpen} onClick={() => setCardioDetailsOpen((open) => !open)}>更多</button></div>
-        {cardioDetailsOpen && <div className="quick-log-extra"><label>數量<input aria-label="Zone 2 跑步數量" type="number" min="1" value={cardioQuantity} onChange={(event) => setCardioQuantity(event.target.value === "" ? "" : Math.max(1, Number(event.target.value)))} /></label><label>備註<textarea aria-label="Zone 2 跑步備註" placeholder="選填" /></label></div>}
+        {cardioDetailsOpen && <div className="quick-log-extra"><label>數量<NumericDraftInput aria-label="Zone 2 跑步數量" min={1} value={cardioQuantity} onCommit={(value) => setCardioQuantity(value ?? 1)} /></label><label>備註<textarea aria-label="Zone 2 跑步備註" placeholder="選填" /></label></div>}
         <button className="quick-log-complete" onClick={() => setCardioComplete(true)} disabled={cardioComplete}><Check size={18} />{cardioComplete ? "已完成" : "完成 Zone 2 跑步"}</button>
       </article>
-      <article className="quick-log-card quick-log-strength"><div className="quick-log-card-heading"><Dumbbell size={20} /><div><h2>深蹲</h2><p>60 kg x 8</p></div></div><div className="quick-log-sets">{sets.map((set, index) => <div className={`quick-log-set ${set.completed ? "is-complete" : ""}`} key={set.id}><span>第 {index + 1} 組</span><label>重量<input aria-label={`第${index + 1}組重量`} type="number" min="0" value={set.weight} onChange={(event) => updateSet(set.id, "weight", Number(event.target.value))} /></label><label>次數<input aria-label={`第${index + 1}組次數`} type="number" min="0" value={set.reps} onChange={(event) => updateSet(set.id, "reps", Number(event.target.value))} /></label><button aria-label={`完成第${index + 1}組深蹲`} onClick={() => setSets((current) => current.map((item) => item.id === set.id ? { ...item, completed: !item.completed } : item))}><Check size={17} /></button></div>)}</div><button className="quick-log-add-set" onClick={addSet}><Plus size={18} />新增一組 深蹲</button></article>
+      <article className="quick-log-card quick-log-strength"><div className="quick-log-card-heading"><Dumbbell size={20} /><div><h2>深蹲</h2><p>60 kg x 8</p></div></div><div className="quick-log-sets">{sets.map((set, index) => <div className={`quick-log-set ${set.completed ? "is-complete" : ""}`} key={set.id}><span>第 {index + 1} 組</span><label>重量<NumericDraftInput aria-label={`第${index + 1}組重量`} min={0} value={set.weight} allowEmpty onCommit={(weight) => updateSet(set.id, "weight", weight)} /></label><label>次數<NumericDraftInput aria-label={`第${index + 1}組次數`} min={0} value={set.reps} allowEmpty onCommit={(reps) => updateSet(set.id, "reps", reps)} /></label><button aria-label={`完成第${index + 1}組深蹲`} onClick={() => setSets((current) => current.map((item) => item.id === set.id ? { ...item, completed: !item.completed } : item))}><Check size={17} /></button></div>)}</div><button className="quick-log-add-set" onClick={addSet}><Plus size={18} />新增一組 深蹲</button></article>
     </section>
     <button className="quick-log-details-trigger" onClick={() => setDetailsOpen(true)}>查看細節</button>
     {detailsOpen && <div className="quick-log-backdrop" data-testid="details-backdrop" onClick={() => setDetailsOpen(false)}><section className="quick-log-details" role="dialog" aria-modal="true" aria-label="訓練細節" onClick={(event) => event.stopPropagation()}><div><h2>可選細節</h2><button aria-label="關閉" onClick={() => setDetailsOpen(false)}><X size={20} /></button></div><p>這裡可補上 RPE、技術感受和下一次的提醒；完成按鈕仍是最快的記錄方式。</p></section></div>}

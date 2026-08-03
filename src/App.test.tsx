@@ -39,8 +39,31 @@ describe("Boxing Tracker", () => {
     expect(quantity).toHaveValue(3);
     await user.clear(quantity);
     await user.type(quantity, "4");
+    await user.tab();
     expect(screen.getByText("4 回合")).toBeInTheDocument();
     expect(screen.getByLabelText("影子拳擊備註")).toBeInTheDocument();
+  });
+
+  it("keeps Quick Log numeric fields editable until they are committed", async () => {
+    window.history.replaceState({}, "", "/?preview=quick-log");
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getAllByRole("button", { name: "更多" })[0]);
+    await user.click(screen.getAllByRole("button", { name: "更多" })[1]);
+    const inputs = [
+      screen.getByLabelText("影子拳擊數量"),
+      screen.getByLabelText("Zone 2 跑步數量"),
+      screen.getByLabelText("第1組重量"),
+      screen.getByLabelText("第1組次數"),
+    ];
+
+    for (const [input, value] of inputs.map((input, index) => [input, index < 2 ? "12" : "120"] as const)) {
+      await user.clear(input);
+      expect(input).toHaveValue(null);
+      await user.type(input, value);
+      expect(input).toHaveValue(Number(value));
+    }
   });
 
   it("closes the optional details sheet with Escape, backdrop, and close button", async () => {
