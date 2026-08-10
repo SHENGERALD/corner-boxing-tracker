@@ -17,6 +17,35 @@ test("normalizes wger equipment into Corner equipment values", () => {
   assert.equal(normalizeEquipment({ equipment: "Dumbbell" }), "dumbbell");
 });
 
+test("does not treat a bench as a machine", () => {
+  assert.equal(normalizeEquipment({
+    equipment: [{ name: "Bench" }],
+    name: "Dumbbell Bench Press",
+  }), "bodyweight");
+});
+
+test("infers plate-loaded and leverage equipment from unambiguous names", () => {
+  assert.equal(normalizeEquipment({
+    equipment: [{ name: "None" }],
+    name: "Leverage Machine Iso Row",
+  }), "hammer");
+  assert.equal(normalizeEquipment({
+    equipment: [{ name: "None" }],
+    name: "Pendulum Squat",
+  }), "hammer");
+});
+
+test("infers fixed-path machine equipment from unambiguous names", () => {
+  assert.equal(normalizeEquipment({
+    equipment: [{ name: "None" }],
+    name: "Smith Machine Press",
+  }), "machine");
+  assert.equal(normalizeEquipment({
+    equipment: [{ name: "None" }],
+    name: "Biceps Curl Machine",
+  }), "machine");
+});
+
 test("creates deterministic source ids", () => {
   assert.equal(toStableId({ id: 123 }), "wger-123");
 });

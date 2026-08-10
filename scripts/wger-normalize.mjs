@@ -22,15 +22,15 @@ const EQUIPMENT_MAP = [
   ["dumbbell", "dumbbell"],
   ["kettlebell", "kettlebell"],
   ["machine", "machine"],
-  ["bench", "machine"],
   ["pull-up bar", "bodyweight"],
   ["resistance band", "bodyweight"],
   ["gym mat", "bodyweight"],
   ["swiss ball", "bodyweight"],
-  ["none", "bodyweight"],
 ];
 
 const MOBILITY_TERMS = /stretch|mobil|flexib|rehab|foam roll|warm.?up|cool.?down|world.?s greatest|cossack|cat.?cow|hip airplane|thoracic rotation/i;
+const HAMMER_NAME_TERMS = /plate.?loaded|leverage machine|hammer.?strength|hammer machine|pendulum squat|hack squat machine/i;
+const MACHINE_NAME_TERMS = /smith machine|multipress|machine|selectorized|pullover machine|assisted pull.?up/i;
 
 function cleanText(value) {
   return String(value ?? "")
@@ -84,6 +84,12 @@ export function normalizeEquipment(input) {
 
   for (const [needle, value] of EQUIPMENT_MAP) {
     if (names.some((name) => name.includes(needle))) return value;
+  }
+  const metadataMissing = names.length === 0 || names.every((name) => /^(none|no equipment|bodyweight|body only)$/.test(name));
+  if (metadataMissing) {
+    const movementText = exerciseSearchText(input).toLowerCase();
+    if (HAMMER_NAME_TERMS.test(movementText)) return "hammer";
+    if (MACHINE_NAME_TERMS.test(movementText)) return "machine";
   }
   return "bodyweight";
 }
