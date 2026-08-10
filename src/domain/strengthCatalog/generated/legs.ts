@@ -23,7 +23,8 @@ export const records = [
       "Sentadilla a cajón a una pierna",
       "Squat sur boîte à une jambe"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1096",
@@ -49,7 +50,8 @@ export const records = [
       "Abduction debout",
       "Abduktion im Stand"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-2491",
@@ -73,7 +75,8 @@ export const records = [
       "bodyweight",
       "Abduzioni"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-2493",
@@ -97,7 +100,8 @@ export const records = [
       "machine",
       "Adductor side plank"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-2492",
@@ -121,7 +125,8 @@ export const records = [
       "bodyweight",
       "Adduttori"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1102",
@@ -145,7 +150,8 @@ export const records = [
       "bodyweight",
       "Affondi indietro alternati"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1804",
@@ -272,7 +278,8 @@ export const records = [
       "Clamshell mit Band",
       "Coquille à l'élastique"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1801",
@@ -323,7 +330,8 @@ export const records = [
       "barbell",
       "Sentadilla Hack con Barra"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-46",
@@ -350,7 +358,8 @@ export const records = [
       "Wykroki ze sztangą",
       "Zancadas con Barra"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-802",
@@ -374,7 +383,8 @@ export const records = [
       "barbell",
       "Zancadas Caminando con Barra"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1830",
@@ -427,7 +437,8 @@ export const records = [
       "Sentadilla con cinturón",
       "Squat à la ceinture"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1953",
@@ -450,7 +461,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1324",
@@ -476,7 +488,8 @@ export const records = [
       "Fente au poids du corps HD",
       "Zancada con el peso corporal"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1312",
@@ -501,7 +514,8 @@ export const records = [
       "Kniebeuge mit Körpergewicht",
       "Squat au poids du corps HD"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-977",
@@ -554,7 +568,8 @@ export const records = [
       "Sentadilla con Disco al Frente",
       "Squat gainé"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-988",
@@ -627,7 +642,8 @@ export const records = [
       "الرفع القرفصاء البلغارية اليمين",
       "右保加利亚分腿蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1706",
@@ -706,7 +722,8 @@ export const records = [
       "Cable Pull Through",
       "Tirage à la poulie entre les jambes"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1466",
@@ -729,7 +746,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1911",
@@ -755,7 +773,8 @@ export const records = [
       "Plancha del gato",
       "Planche du chat"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-2449",
@@ -781,7 +800,8 @@ export const records = [
       "Clamshell vers clamshell inversé",
       "Clamshell zu Reverse Clamshell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1438",
@@ -804,7 +824,8 @@ export const records = [
       "legs",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1605",
@@ -831,7 +852,8 @@ export const records = [
       "Ejercicio de aducción Copenhagen",
       "Exercice d'adduction de Copenhague"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1395",
@@ -858,7 +880,8 @@ export const records = [
       "Beinschwingen über Kreuz",
       "Lateral Leg Swings"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1361",
@@ -881,7 +904,8 @@ export const records = [
       "legs",
       "kettlebell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1243",
@@ -934,7 +958,8 @@ export const records = [
       "Sentadilla Dragón",
       "Squat du dragon"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1370",
@@ -957,7 +982,8 @@ export const records = [
       "legs",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1616",
@@ -1007,7 +1033,8 @@ export const records = [
       "legs",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1503",
@@ -1030,7 +1057,8 @@ export const records = [
       "legs",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1640",
@@ -1110,7 +1138,8 @@ export const records = [
       "Výpad Statický",
       "Zancadas con Mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-206",
@@ -1245,7 +1274,8 @@ export const records = [
       "Empuje de cadera a una pierna con mancuerna",
       "Hip thrust à une jambe avec haltère"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1947",
@@ -1294,7 +1324,8 @@ export const records = [
       "legs",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1088",
@@ -1347,7 +1378,8 @@ export const records = [
       "Thruster avec haltères",
       "Thruster con mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1241",
@@ -1370,7 +1402,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1242",
@@ -1396,7 +1429,8 @@ export const records = [
       "Flexión plantar con banda elástica",
       "Plantarflexion mit Widerstandsband"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1956",
@@ -1419,7 +1453,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-257",
@@ -1472,7 +1507,8 @@ export const records = [
       "Puente de glúteos",
       "Puente de cadera"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1528",
@@ -1496,7 +1532,8 @@ export const records = [
       "bodyweight",
       "Glute drive (machine à fessiers)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1723",
@@ -1519,7 +1556,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-2478",
@@ -1542,7 +1580,8 @@ export const records = [
       "legs",
       "machine"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1392",
@@ -1594,7 +1633,8 @@ export const records = [
       "Hack squats",
       "Sentadillas Hack"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1387",
@@ -1647,7 +1687,8 @@ export const records = [
       "Sentadillas Hindúes",
       "Squats hindous"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1906",
@@ -1673,7 +1714,8 @@ export const records = [
       "Pont fessier",
       "Puente de cadera"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1862",
@@ -1746,7 +1788,8 @@ export const records = [
       "Charnière de hanche",
       "Hip Hinge"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-294",
@@ -1775,7 +1818,8 @@ export const records = [
       "Hip thrust con barra",
       "Hip Thrust con Barra"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1846",
@@ -1801,7 +1845,8 @@ export const records = [
       "Posture du cavalier (grand écart latéral)",
       "Reiterstellung (Seitspagat)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1733",
@@ -1948,7 +1993,8 @@ export const records = [
       "kettlebell",
       "Swings au kettlebell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1688",
@@ -1971,7 +2017,8 @@ export const records = [
       "legs",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-990",
@@ -2033,7 +2080,8 @@ export const records = [
       "Sentadilla con barra landmine y press",
       "Squat-développé au landmine"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1325",
@@ -2182,7 +2230,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-373",
@@ -2235,7 +2284,8 @@ export const records = [
       "Press de piernas abierto",
       "Presse à cuisses (large)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-376",
@@ -2271,7 +2321,8 @@ export const records = [
       "رفع الساق",
       "抬腿"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1670",
@@ -2298,7 +2349,8 @@ export const records = [
       "Beinpendel (vor und zurück)",
       "Círculos de perna (frente-trás)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1949",
@@ -2321,7 +2373,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-397",
@@ -2348,7 +2401,8 @@ export const records = [
       "Dřep do Sedu na Box",
       "Sentadilla a cajón bajo con stance ancho"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-984",
@@ -2412,7 +2466,8 @@ export const records = [
       "Extensión de glúteo en máquina",
       "Gesäßstrecken an der Maschine"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1748",
@@ -2517,7 +2572,8 @@ export const records = [
       "bodyweight",
       "Curl Nórdico"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-441",
@@ -2543,7 +2599,8 @@ export const records = [
       "Sentadilla por encima de la cabeza",
       "Überkopfkniebeuge"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1464",
@@ -2569,7 +2626,8 @@ export const records = [
       "Hack squats avec pause",
       "Hack squats con pausa"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1521",
@@ -2617,7 +2675,8 @@ export const records = [
       "bodyweight",
       "Pendelkniebeube"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1437",
@@ -2642,7 +2701,8 @@ export const records = [
       "Sentadilla con pines",
       "Squat aux barres d'arrêt"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1020",
@@ -2678,7 +2738,8 @@ export const records = [
       "Βαθύ κάθισμα δεξιού ποδιού",
       "右腿手枪式深蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1410",
@@ -2702,7 +2763,8 @@ export const records = [
       "bodyweight",
       "Plancha con elevación de pierna"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1208",
@@ -2727,7 +2789,8 @@ export const records = [
       "Sentadilla del prisionero",
       "Squat du prisonnier"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-2448",
@@ -2752,7 +2815,8 @@ export const records = [
       "Almeja inversa",
       "Clamshell inversé"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1809",
@@ -2778,7 +2842,8 @@ export const records = [
       "Hyperextension inversée",
       "Umgekehrte Hyperextension"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-999",
@@ -2864,7 +2929,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1613",
@@ -2917,7 +2983,8 @@ export const records = [
       "Figur-Vier-Dehnung im Sitzen",
       "Étirement en figure quatre assis"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1672",
@@ -2943,7 +3010,8 @@ export const records = [
       "Abduction des hanches assis",
       "Hüftabduktion sitzend"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-12",
@@ -2996,7 +3064,8 @@ export const records = [
       "Good morning jambes écartées assis",
       "Sitzendes Good Morning mit weitem Stand (Pancake)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1739",
@@ -3019,7 +3088,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1202",
@@ -3045,7 +3115,8 @@ export const records = [
       "Abduction de hanche en décubitus latéral",
       "Hüftabduktion in Seitenlage"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1195",
@@ -3071,7 +3142,8 @@ export const records = [
       "Pas chassés + squats",
       "Seitliche Slides + Kniebeugen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-986",
@@ -3107,7 +3179,8 @@ export const records = [
       "انقسام القرفصاء اليسار",
       "左腿侧箭步蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-987",
@@ -3143,7 +3216,8 @@ export const records = [
       "انقسام القرفصاء اليمين",
       "右腿侧箭步蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-71",
@@ -3168,7 +3242,8 @@ export const records = [
       "Beinstrecker Einbeinig",
       "Extensión de Cuádriceps a una Pierna"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1740",
@@ -3191,7 +3266,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1388",
@@ -3218,7 +3294,8 @@ export const records = [
       "Single Leg Romanian Deadlift",
       "Soulevé de terre roumain sur une jambe"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1736",
@@ -3268,7 +3345,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1734",
@@ -3456,7 +3534,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1576",
@@ -3479,7 +3558,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-604",
@@ -3502,7 +3582,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-991",
@@ -3538,7 +3619,8 @@ export const records = [
       "انقسام القرفصاء اليسار",
       "左腿箭步蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-992",
@@ -3574,7 +3656,8 @@ export const records = [
       "تقسيم القرفصاء اليمين",
       "右腿箭步蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-614",
@@ -3598,7 +3681,8 @@ export const records = [
       "bodyweight",
       "Tiefe Hocksprünge"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-616",
@@ -3633,7 +3717,8 @@ export const records = [
       "دفعات القرفصاء",
       "俯卧撑腿屈伸"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-615",
@@ -3672,7 +3757,8 @@ export const records = [
       "القرفصاء",
       "深蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-341",
@@ -3696,7 +3782,8 @@ export const records = [
       "bodyweight",
       "Kniebeuge an Multipresse - Eng"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1724",
@@ -3722,7 +3809,8 @@ export const records = [
       "Adduktion im Stehen (Kabelzug)",
       "Aducción de pie (polea)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1396",
@@ -3748,7 +3836,8 @@ export const records = [
       "Pancake debout",
       "Stehender Pancake"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1397",
@@ -3775,7 +3864,8 @@ export const records = [
       "Wide-Stance Good Morning",
       "Stehendes Good Morning mit weitem Stand (Pancake)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-981",
@@ -3839,7 +3929,8 @@ export const records = [
       "barbell",
       "Stiff"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-630",
@@ -3903,7 +3994,8 @@ export const records = [
       "قرفصاء السومو",
       "相扑深蹲"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1886",
@@ -3930,7 +4022,8 @@ export const records = [
       "Abduzione dell'anca in posizione supina",
       "Hüftabduktion in Rückenlage"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-650",
@@ -3953,7 +4046,8 @@ export const records = [
       "legs",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1390",
@@ -3980,7 +4074,8 @@ export const records = [
       "Toucher des orteils",
       "Zehenberührung"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1803",
@@ -4006,7 +4101,8 @@ export const records = [
       "Squat à la barre trap",
       "Trap-Bar-Kniebeuge"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1913",
@@ -4029,7 +4125,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1907",
@@ -4052,7 +4149,8 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1100",
@@ -4102,7 +4200,8 @@ export const records = [
       "Exercices au mur",
       "Wand-Drills"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-718",
@@ -4142,7 +4241,8 @@ export const records = [
       "نشستن دیوار",
       "直角坐墙"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-1408",
@@ -4170,7 +4270,8 @@ export const records = [
       "Silla contra la pared",
       "Wandsitz"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   },
   {
     "id": "wger-722",
@@ -4193,6 +4294,7 @@ export const records = [
       "legs",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/legs.webp"
   }
 ];

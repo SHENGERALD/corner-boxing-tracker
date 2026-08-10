@@ -24,7 +24,8 @@ export const records = [
       "Entrenamiento con saco",
       "Sandsacktraining"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1525",
@@ -49,7 +50,8 @@ export const records = [
       "Lanzamientos de balón",
       "Slams de ballon (ball slams)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1524",
@@ -74,7 +76,8 @@ export const records = [
       "Cordes ondulatoires",
       "Cuerdas de batalla"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1630",
@@ -97,7 +100,8 @@ export const records = [
       "cardio",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-2482",
@@ -120,7 +124,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1373",
@@ -145,7 +150,8 @@ export const records = [
       "Boxsprünge",
       "Kastensprünge"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1579",
@@ -168,7 +174,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1449",
@@ -193,7 +200,8 @@ export const records = [
       "Escaladora",
       "Simulateur d'escalier (ClimbMill)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-177",
@@ -222,7 +230,8 @@ export const records = [
       "Fahrrad fahren",
       "Велотренажор"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1204",
@@ -245,7 +254,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1940",
@@ -268,7 +278,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-2480",
@@ -291,7 +302,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-962",
@@ -320,7 +332,8 @@ export const records = [
       "Vélo elliptique",
       "Elliptique"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1592",
@@ -345,7 +358,8 @@ export const records = [
       "Geführte oder freie Meditation",
       "Meditación guiada o libre"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-285",
@@ -398,7 +412,8 @@ export const records = [
       "Montées de genoux sautées HD",
       "Saltos Altos De Rodilla HD"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-983",
@@ -464,7 +479,8 @@ export const records = [
       "Laufen",
       "Бег"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-993",
@@ -502,7 +518,8 @@ export const records = [
       "القفز على الحبل: القفزات الأساسية",
       "基本跳绳"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1314",
@@ -527,7 +544,8 @@ export const records = [
       "Hampelmann HD",
       "Jumping jack HD"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-2481",
@@ -550,7 +568,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1584",
@@ -576,7 +595,8 @@ export const records = [
       "Marcha o trote en el lugar",
       "Marche ou course sur place"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-2486",
@@ -599,7 +619,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1376",
@@ -622,7 +643,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1093",
@@ -646,7 +668,8 @@ export const records = [
       "bodyweight",
       "Rudergerät"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-527",
@@ -671,7 +694,8 @@ export const records = [
       "Hardlopen",
       "Rennen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-529",
@@ -695,7 +719,8 @@ export const records = [
       "bodyweight",
       "HIIT"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-530",
@@ -721,7 +746,8 @@ export const records = [
       "Laufen an Laufband",
       "Tapis roulant"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1574",
@@ -744,7 +770,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-2484",
@@ -767,7 +794,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1526",
@@ -793,7 +821,8 @@ export const records = [
       "Máquina de esquí",
       "Ski-Maschine"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-595",
@@ -820,7 +849,8 @@ export const records = [
       "Saut à la corde - Standard",
       "Seilspringen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1523",
@@ -847,7 +877,8 @@ export const records = [
       "Pousse-traîneau",
       "Schlitten schieben"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1548",
@@ -871,7 +902,8 @@ export const records = [
       "bodyweight",
       "Stair Master (simulateur d'escaliers)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-624",
@@ -894,7 +926,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1618",
@@ -970,7 +1003,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-927",
@@ -1023,7 +1057,8 @@ export const records = [
       "bodyweight",
       "Piques de 50m en Natación"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-1285",
@@ -1098,7 +1133,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-2483",
@@ -1121,7 +1157,8 @@ export const records = [
       "cardio",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   },
   {
     "id": "wger-908",
@@ -1146,6 +1183,7 @@ export const records = [
       "Carrera en Zona 2",
       "Corsa in zona 2"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
   }
 ];

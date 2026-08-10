@@ -190,8 +190,10 @@ export function normalizeExercises(exercises, { existing = [], report = {} } = {
 
   for (const exercise of exercises) {
     try {
+      const missingMediaStart = nextReport.missingMedia.length;
       const candidate = normalizeExercise(exercise, { report: nextReport });
       if (isDuplicateMovement(seen, candidate)) {
+        nextReport.missingMedia.splice(missingMediaStart);
         nextReport.duplicates.push({ sourceId: exercise.id, name: candidate.name.en });
         continue;
       }

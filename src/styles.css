@@ -784,6 +784,9 @@ h1, h2 { letter-spacing: 0; color: var(--ink-strong); }
 }
 .library-attribution { margin: -8px 0 14px; color: var(--muted-2); font-size: 11px; }
 .library-attribution a { color: var(--strava-dark); }
+.library-loading { margin: 0 0 12px; color: var(--strava-dark); font-size: 13px; font-weight: 700; }
+.library-load-error { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; padding: 10px 12px; border: 1px solid rgba(255, 106, 0, .35); border-radius: 10px; color: var(--muted); font-size: 12px; }
+.library-load-error button { flex: 0 0 auto; border: 1px solid var(--strava); border-radius: 999px; background: transparent; color: var(--strava); padding: 7px 12px; font: inherit; font-weight: 800; }
 .library-toolbar { display: grid; grid-template-columns: 1fr 58px; gap: 12px; margin-bottom: 24px; }
 .library-search {
   min-height: 56px;

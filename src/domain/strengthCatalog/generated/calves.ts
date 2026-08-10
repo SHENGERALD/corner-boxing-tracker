@@ -52,7 +52,8 @@ export const records = [
       "Výpony na Horu Leg-Press",
       "Wadenheben an Hackenschmidt"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-1203",
@@ -78,7 +79,8 @@ export const records = [
       "Extensions des mollets, jambe gauche",
       "Wadenheben, linkes Bein"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-702",
@@ -114,7 +116,8 @@ export const records = [
       "رفع ربلة الساق اليسرى",
       "左腿提踵"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-1021",
@@ -150,7 +153,8 @@ export const records = [
       "رفع ربلة الساق اليمنى",
       "右腿提踵"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-1603",
@@ -174,7 +178,8 @@ export const records = [
       "bodyweight",
       "Leg curl con elastico"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-1915",
@@ -200,7 +205,8 @@ export const records = [
       "Abduction de hanche à quatre pattes",
       "Hüftabduktion im Vierfüßlerstand"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-1620",
@@ -253,7 +259,8 @@ export const records = [
       "Extensions des mollets assis",
       "Wadenheben Sitzend"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   },
   {
     "id": "wger-622",
@@ -305,6 +312,7 @@ export const records = [
       "bodyweight",
       "Elevación tibial anterior"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/calves.webp"
   }
 ];

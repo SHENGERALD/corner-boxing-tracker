@@ -105,7 +105,8 @@ export const records = [
       "Elevaciones de brazos (T/Y/I)",
       "Élévations de bras (T/Y/I)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1219",
@@ -131,7 +132,8 @@ export const records = [
       "Dominadas australianas (remo invertido)",
       "Tractions australiennes"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-31",
@@ -192,7 +194,8 @@ export const records = [
       "تدوير الذراع إلى الخلف",
       "大臂绕环"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-48",
@@ -218,7 +221,8 @@ export const records = [
       "Curl inversé des poignets à la barre",
       "Langhantel-Handgelenkcurl mit Untergriff"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-50",
@@ -299,7 +303,8 @@ export const records = [
       "arms",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1320",
@@ -325,7 +330,8 @@ export const records = [
       "Dips sur banc au sol HD",
       "Inmersiones De Banco En El Piso HD"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-76",
@@ -381,7 +387,8 @@ export const records = [
       "Puxada de Biceps",
       "Tirage vertical en prise serrée pour les biceps"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1424",
@@ -407,7 +414,8 @@ export const records = [
       "Curl de bíceps sentado",
       "Machine à curl biceps"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-95",
@@ -572,7 +580,8 @@ export const records = [
       "Curl biceps trifecta",
       "Curl de bíceps trifecta"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-112",
@@ -597,7 +606,8 @@ export const records = [
       "Body up",
       "Plancha a Flexión"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1608",
@@ -623,7 +633,8 @@ export const records = [
       "Curl biceps au poids du corps",
       "Curl de bíceps con el peso corporal"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1109",
@@ -673,7 +684,8 @@ export const records = [
       "arms",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1662",
@@ -699,7 +711,8 @@ export const records = [
       "Extensión de tríceps en polea con rotación interna",
       "Trizepsstrecken am Kabelzug mit Innenrotation"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1509",
@@ -725,7 +738,8 @@ export const records = [
       "Patada de tríceps en polea",
       "Trizeps-Kickback am Kabelzug"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1661",
@@ -751,7 +765,8 @@ export const records = [
       "Press de tríceps en polea",
       "Trizepsdrücken am Kabelzug"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1223",
@@ -801,7 +816,8 @@ export const records = [
       "Curl con el hombro elevado",
       "Curl mit angehobener Schulter"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-2452",
@@ -853,7 +869,8 @@ export const records = [
       "Curl mit Kettlebell beidhändig",
       "Curl à la kettlebell à deux mains"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1502",
@@ -876,7 +893,8 @@ export const records = [
       "arms",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-2504",
@@ -899,7 +917,8 @@ export const records = [
       "arms",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1881",
@@ -925,7 +944,8 @@ export const records = [
       "Extensión de muñeca con mancuernas",
       "Handgelenkstreckung mit Kurzhanteln"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-182",
@@ -949,7 +969,8 @@ export const records = [
       "bodyweight",
       "Suspensiones en Regleta"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-197",
@@ -1002,7 +1023,8 @@ export const records = [
       "Doppeltes Kettlebell Clean and Press",
       "Épaulé-développé avec deux kettlebells"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1481",
@@ -1027,7 +1049,8 @@ export const records = [
       "Drag pushdown",
       "Extension des triceps à la poulie en tirant la corde vers soi"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1512",
@@ -1051,7 +1074,8 @@ export const records = [
       "dumbbell",
       "Drop curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1226",
@@ -1104,7 +1128,8 @@ export const records = [
       "Curl triché aux haltères",
       "Kurzhantel-Cheat-Curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1228",
@@ -1130,7 +1155,8 @@ export const records = [
       "Kurzhantel-Bankdrücken im engen Griff",
       "Press de banca con agarre cerrado con mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-202",
@@ -1156,7 +1182,8 @@ export const records = [
       "Curl de concentración con mancuerna",
       "Konzentrations-Curls"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1224",
@@ -1182,7 +1209,8 @@ export const records = [
       "Drag curls con mancuernas",
       "Kurzhantel-Drag-Curls"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-204",
@@ -1208,7 +1236,8 @@ export const records = [
       "Curl Inclinado con Mancuernas",
       "Curl incliné aux haltères"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-211",
@@ -1234,7 +1263,8 @@ export const records = [
       "Press Francés con Mancuerna",
       "Trizepsstrecken mit Kurzhantel"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1463",
@@ -1260,7 +1290,8 @@ export const records = [
       "Remo con mancuernas en supinación desde parada muerta",
       "Rowing aux haltères en prise supination"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1225",
@@ -1311,7 +1342,8 @@ export const records = [
       "dumbbell",
       "Curl con Mancuernas en Banco Scott"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1824",
@@ -1337,7 +1369,8 @@ export const records = [
       "Tate press avec haltères",
       "Tate press con mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1498",
@@ -1360,7 +1393,8 @@ export const records = [
       "arms",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1217",
@@ -1413,7 +1447,8 @@ export const records = [
       "Leisten hängen an 20 mm Kante",
       "Suspensión en regleta de 20 mm"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1000",
@@ -1474,7 +1509,8 @@ export const records = [
       "Barre au front au sol",
       "Press francés en el suelo"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1333",
@@ -1535,7 +1571,8 @@ export const records = [
       "تدوير الذراع إلى الأمام",
       "前臂绕环"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1686",
@@ -1561,7 +1598,8 @@ export const records = [
       "Pont fessier avec développé d'un bras",
       "Puente de glúteos con press a un brazo"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-272",
@@ -1665,7 +1703,8 @@ export const records = [
       "arms",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1298",
@@ -1715,7 +1754,8 @@ export const records = [
       "arms",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-911",
@@ -1738,7 +1778,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1302",
@@ -1761,7 +1802,8 @@ export const records = [
       "arms",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1218",
@@ -1787,7 +1829,8 @@ export const records = [
       "Liegestütze auf den Knien",
       "Pompes sur les genoux"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1511",
@@ -1811,7 +1854,8 @@ export const records = [
       "dumbbell",
       "Kong curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1741",
@@ -1834,7 +1878,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1530",
@@ -1860,7 +1905,8 @@ export const records = [
       "Curls con mancuernas tumbado",
       "Liegende Kurzhantel-Curls"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1480",
@@ -1886,7 +1932,8 @@ export const records = [
       "Extensions des triceps allongé",
       "Liegendes Trizepsstrecken"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1490",
@@ -1912,7 +1959,8 @@ export const records = [
       "Liegender Trizeps-Kickback",
       "Patada de tríceps tumbado"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1971",
@@ -1963,7 +2011,8 @@ export const records = [
       "cable",
       "Codo unilateral polea alta"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1738",
@@ -2016,7 +2065,8 @@ export const records = [
       "Extension Triceps Poulie Basse à Un Bras",
       "Extensión de tríceps sobre la cabeza a una mano en polea"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-803",
@@ -2041,7 +2091,8 @@ export const records = [
       "Extensión de Tríceps a una Mano en Polea",
       "Trizeps Seildrücken Einarmig"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-975",
@@ -2095,7 +2146,8 @@ export const records = [
       "Extensión de tríceps sobre la cabeza en polea",
       "Trizepsdrücken über Kopf am Kabelzug"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1808",
@@ -2121,7 +2173,8 @@ export const records = [
       "Maintien aux barres parallèles",
       "Sujeción en barras paralelas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1703",
@@ -2146,7 +2199,8 @@ export const records = [
       "Extensions des triceps en kickback",
       "Kickbacks (Trizepsdrücken nach hinten)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-454",
@@ -2207,7 +2261,8 @@ export const records = [
       "Maintien de disques en pince",
       "Sostén con pellizco de disco"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1658",
@@ -2233,7 +2288,8 @@ export const records = [
       "Curl en banco Scott - rotación externa",
       "Scottcurl - nach außen rotiert"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1657",
@@ -2259,7 +2315,8 @@ export const records = [
       "Curl en banco Scott con rotación interna",
       "Scott-Curl mit Innenrotation"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-465",
@@ -2314,7 +2371,8 @@ export const records = [
       "Dominadas en Tabla de Multipresas",
       "Klimmzug an Leiste"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1462",
@@ -2337,7 +2395,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-985",
@@ -2376,7 +2435,8 @@ export const records = [
       "تمرين الضغط المتناوب",
       "交替抬肘俯卧撑"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1216",
@@ -2400,7 +2460,8 @@ export const records = [
       "bodyweight",
       "Tractions de recrutement"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1114",
@@ -2423,7 +2484,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-493",
@@ -2446,7 +2508,8 @@ export const records = [
       "arms",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-495",
@@ -2474,7 +2537,8 @@ export const records = [
       "Curl invertido",
       "Reverse Curls"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-914",
@@ -2498,7 +2562,8 @@ export const records = [
       "cable",
       "Curl Inverso con Barra EZ en Polea"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1290",
@@ -2550,7 +2615,8 @@ export const records = [
       "barbell",
       "Curl de Predicador Inverso"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-501",
@@ -2573,7 +2639,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1485",
@@ -2598,7 +2665,8 @@ export const records = [
       "Extension des triceps à la corde avec balancement",
       "Rocking triceps pushdown"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1289",
@@ -2624,7 +2692,8 @@ export const records = [
       "Curls avec haltères assis",
       "Sitzende Kurzhantel-Curls"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-549",
@@ -2651,7 +2720,8 @@ export const records = [
       "Press de tríceps sentado",
       "Trizepsdrücken im Sitzen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1448",
@@ -2704,7 +2774,8 @@ export const records = [
       "Pompe trois points à largeur d'épaules",
       "Schulterbreite Dreipunkt-Liegestütze"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1969",
@@ -2730,7 +2801,8 @@ export const records = [
       "Extension triceps unilatérale à la poulie",
       "Extensión de tríceps en polea a un brazo"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-584",
@@ -2756,7 +2828,8 @@ export const records = [
       "Curl en banco Scott a un brazo",
       "Einarmiger Scott-Curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-245",
@@ -2783,7 +2856,8 @@ export const records = [
       "Press Francés con Mancuernas",
       "French Press Dumbbells"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-246",
@@ -2863,7 +2937,8 @@ export const records = [
       "Enges Bankdrücken an der Multipresse",
       "Press de banca con agarre cerrado en multipower"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1465",
@@ -2888,7 +2963,8 @@ export const records = [
       "Curl Araña",
       "Spider curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-621",
@@ -2914,7 +2990,8 @@ export const records = [
       "Curl biceps debout",
       "Curl de bíceps de pie"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-623",
@@ -2940,7 +3017,8 @@ export const records = [
       "Enrouleur de poignet debout",
       "Unterarmtraining mit Rollstange im Stehen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-912",
@@ -2991,7 +3069,8 @@ export const records = [
       "Extension des avant-bras avec haltère",
       "Kick-Backs"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-805",
@@ -3069,7 +3148,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-659",
@@ -3123,7 +3203,8 @@ export const records = [
       "Extensões de tríceps no cabo com barra",
       "Trizeps Seildrücken Mit Stange"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-661",
@@ -3150,7 +3231,8 @@ export const records = [
       "Tríceps en máquina",
       "Tríceps na máquina"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1336",
@@ -3203,7 +3285,8 @@ export const records = [
       "Fondos en TRX",
       "TRX Dips"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1261",
@@ -3229,7 +3312,8 @@ export const records = [
       "TRX Gorilla-Bizeps-Curl",
       "TRX- biceps gorila"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1260",
@@ -3254,7 +3338,8 @@ export const records = [
       "Curl marteau au TRX",
       "TRX Hammer-Curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1262",
@@ -3280,7 +3365,8 @@ export const records = [
       "TRX - curl de bíceps a un brazo",
       "TRX einarmiger Bizeps-Curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1266",
@@ -3306,7 +3392,8 @@ export const records = [
       "TRX Trizepsstrecken",
       "extensiones de triceps con trx"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-713",
@@ -3329,7 +3416,8 @@ export const records = [
       "arms",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1771",
@@ -3355,7 +3443,8 @@ export const records = [
       "Flexion des poignets à la poulie",
       "Handgelenk-Curl am Kabelzug"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1205",
@@ -3381,7 +3470,8 @@ export const records = [
       "Curl des poignets, haltères",
       "Handgelenk-Curl mit Kurzhanteln"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   },
   {
     "id": "wger-1683",
@@ -3406,6 +3496,7 @@ export const records = [
       "Curl Zottman",
       "Zottman-Curl"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/arms.webp"
   }
 ];

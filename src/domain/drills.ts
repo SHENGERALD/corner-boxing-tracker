@@ -2,7 +2,7 @@ import type { LocalizedLabel, TrainingUnit } from "./types";
 import { strengthLibrary } from "./strengthData";
 
 export type TrainingDomain = "boxing" | "strength";
-export type DrillCategory = "fundamentals" | "footwork" | "offense" | "defense" | "equipment" | "conditioning" | "chest" | "back" | "legs" | "shoulders" | "arms" | "core" | "calves" | "cardio";
+export type DrillCategory = "fundamentals" | "footwork" | "offense" | "defense" | "equipment" | "conditioning" | "chest" | "back" | "legs" | "shoulders" | "arms" | "core" | "calves" | "mobility" | "cardio";
 export type EquipmentType = "barbell" | "dumbbell" | "kettlebell" | "cable" | "hammer" | "machine" | "bodyweight";
 export interface Drill { id: string; domain: TrainingDomain; category: DrillCategory; name: LocalizedLabel; cue: LocalizedLabel; defaultUnit: TrainingUnit; defaultQuantity: number; imageUrl?: string; imagePosition?: string; imageSource?: string; equipment?: EquipmentType; searchTerms?: string[]; }
 const d = (id: string, category: DrillCategory, zhTW: string, en: string, cueZh: string, cueEn: string, defaultUnit: TrainingUnit = "rounds", defaultQuantity = 3, domain: TrainingDomain = "boxing"): Drill => ({ id, domain, category, name: { zhTW, en }, cue: { zhTW: cueZh, en: cueEn }, defaultUnit, defaultQuantity });

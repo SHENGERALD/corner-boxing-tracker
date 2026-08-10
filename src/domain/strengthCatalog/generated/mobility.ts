@@ -23,7 +23,8 @@ export const records = [
       "Rotación torácica en media rodilla",
       "Rotation thoracique à demi-genou"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1115",
@@ -49,7 +50,8 @@ export const records = [
       "Zancada 3D de calentamiento",
       "Échauffement en fentes 3D"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1590",
@@ -74,7 +76,8 @@ export const records = [
       "Arm- und Nackendehnung",
       "Estiramiento de brazos y cuello"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1010",
@@ -109,7 +112,8 @@ export const records = [
       "تمتد الرقبة الخلفية",
       "后颈部拉伸"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1865",
@@ -156,7 +160,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1577",
@@ -182,7 +187,8 @@ export const records = [
       "Estiramiento Bretzel",
       "Étirement Bretzel"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1710",
@@ -208,7 +214,8 @@ export const records = [
       "Estiramiento Butcher's Block",
       "Étirement du billot de boucher (butcher's block)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1843",
@@ -234,7 +241,8 @@ export const records = [
       "Schmetterlingsdehnung",
       "Étirement du papillon"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1854",
@@ -282,7 +290,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1450",
@@ -309,7 +318,8 @@ export const records = [
       "Étirement du cobra",
       "Posture du cobra"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-2487",
@@ -332,7 +342,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1407",
@@ -358,7 +369,8 @@ export const records = [
       "Sentadilla cosaca",
       "Squat cosaque"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1400",
@@ -385,7 +397,8 @@ export const records = [
       "Estiramiento cruzado de isquiotibiales",
       "Étirement des ischio-jambiers jambes croisées"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1536",
@@ -408,7 +421,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1713",
@@ -434,7 +448,8 @@ export const records = [
       "Estiramiento de pectoral en el marco de la puerta",
       "Étirement des pectoraux dans l'encadrement de porte"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1391",
@@ -460,7 +475,8 @@ export const records = [
       "Walking Hamstring Stretch",
       "Marche de l'éléphant"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1027",
@@ -486,7 +502,8 @@ export const records = [
       "Estiramiento de oración elevado",
       "Étirement de la prière surélevé"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1835",
@@ -536,7 +553,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1919",
@@ -559,7 +577,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1920",
@@ -582,7 +601,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1950",
@@ -605,7 +625,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1860",
@@ -756,7 +777,8 @@ export const records = [
       "Froschdehnung",
       "Étirement de la grenouille"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1011",
@@ -792,7 +814,8 @@ export const records = [
       "تمتد الرقبة الأمامية",
       "前颈部拉伸"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1398",
@@ -817,7 +840,8 @@ export const records = [
       "Dynamic Hamstring Stretch",
       "Étirement de l'ischio-jambier vers la poitrine"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1855",
@@ -866,7 +890,8 @@ export const records = [
       "kettlebell",
       "Hip airplane"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1867",
@@ -916,7 +941,8 @@ export const records = [
       "Estiramiento de flexión horizontal del hombro",
       "Étirement en flexion horizontale de l'épaule"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1452",
@@ -969,7 +995,8 @@ export const records = [
       "Estiramiento del Elevador de la Escápula",
       "Étirement de l'angulaire de l'omoplate gauche"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1008",
@@ -1004,7 +1031,8 @@ export const records = [
       "تمتد الرقبة لليسار",
       "左颈部拉伸"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1589",
@@ -1027,7 +1055,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1868",
@@ -1197,7 +1226,8 @@ export const records = [
       "Rotación torácica en cuadrupedia izquierda",
       "Rotation thoracique à quatre pattes à gauche"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1029",
@@ -1223,7 +1253,8 @@ export const records = [
       "Rotación torácica en cuadrupedia derecha",
       "Rotation thoracique à quatre pattes, côté droit"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1960",
@@ -1249,7 +1280,8 @@ export const records = [
       "Hüftbeuger-Dehnung mit erhöhtem hinterem Fuß",
       "Étirement des fléchisseurs de la hanche, pied arrière surélevé"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1014",
@@ -1275,7 +1307,8 @@ export const records = [
       "Estiramiento del Elevador de la Escápula",
       "Étirement de l'angulaire de l'omoplate droit"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1009",
@@ -1310,7 +1343,8 @@ export const records = [
       "تمدد الرقبة لليمين",
       "右颈部拉伸"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1874",
@@ -1360,7 +1394,8 @@ export const records = [
       "Sitzende Piriformis-Dehnung",
       "Étirement du piriforme assis"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1841",
@@ -1386,7 +1421,8 @@ export const records = [
       "Sitzende Schulterextensions-Dehnung",
       "Étirement des épaules en extension assis"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1884",
@@ -1413,7 +1449,8 @@ export const records = [
       "Shinbox-Innenrotations-Dehnung",
       "Étirement en rotation interne en position shinbox"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1861",
@@ -1464,7 +1501,8 @@ export const records = [
       "Seated Single Leg Stretch",
       "Étirement des ischio-jambiers sur une jambe"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1274",
@@ -1512,7 +1550,8 @@ export const records = [
       "bodyweight",
       "Étirement du dormeur (sleeper stretch)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1839",
@@ -1535,7 +1574,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1232",
@@ -1663,7 +1703,8 @@ export const records = [
       "mobility",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1876",
@@ -1713,7 +1754,8 @@ export const records = [
       "Rumpfrotations-Dehnung",
       "Étirement en rotation du tronc"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/mobility.webp"
   },
   {
     "id": "wger-1230",

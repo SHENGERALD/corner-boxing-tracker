@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { drillCategories, drillLibrary, filterDrills, type DrillCategory } from "./drills";
+import { loadStrengthLibrary, strengthCategoryIds } from "./strengthCatalog";
 
 describe("drill library", () => {
   it("searches English and Chinese names and filters favorites", () => {
@@ -16,6 +17,18 @@ describe("drill library", () => {
 
   it("exposes mobility as a strength-library category", () => {
     expect(drillCategories).toContain("mobility");
+  });
+  it("loads the complete strength catalog with legacy drills and mobility", async () => {
+    const catalog = await loadStrengthLibrary();
+    const ids = catalog.map((drill) => drill.id);
+
+    expect(strengthCategoryIds).toContain("mobility");
+    expect(catalog).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: "bench-press" }),
+      expect.objectContaining({ id: "back-squat" }),
+      expect.objectContaining({ category: "mobility" }),
+    ]));
+    expect(new Set(ids).size).toBe(ids.length);
   });
 
   it("includes Speed Bag as a three-round boxing equipment drill", () => {

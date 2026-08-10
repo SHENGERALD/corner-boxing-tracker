@@ -20,7 +20,8 @@ export const records = [
       "shoulders",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-20",
@@ -49,7 +50,8 @@ export const records = [
       "Dumbbell Corkscrew Press",
       "Press Arnold"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1826",
@@ -75,7 +77,8 @@ export const records = [
       "Band Pull-Apart mit Außenrotation",
       "Écarté à l'élastique avec rotation externe"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1838",
@@ -101,7 +104,8 @@ export const records = [
       "Exercices d'épaules à l'élastique",
       "Schulterübungen mit Band"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1638",
@@ -154,7 +158,8 @@ export const records = [
       "Haussement d'épaules Silverback à la barre",
       "Langhantel-Silverback-Shrug"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1807",
@@ -180,7 +185,8 @@ export const records = [
       "Seitheben am Kabelzug hinter dem Rücken",
       "Élévation latérale à la poulie derrière le dos"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-79",
@@ -233,7 +239,8 @@ export const records = [
       "Vorgebeugtes Seitheben",
       "Élévations latérales buste penché"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-915",
@@ -282,7 +289,8 @@ export const records = [
       "bodyweight",
       "Pec-Deck Inverso"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-142",
@@ -308,7 +316,8 @@ export const records = [
       "Rotación externa con polea",
       "Rotation externe à la poulie"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1745",
@@ -416,7 +425,8 @@ export const records = [
       "Oiseau à la poulie (un bras)",
       "Reverse Butterfly am Kabel (einarmig)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1472",
@@ -439,7 +449,8 @@ export const records = [
       "shoulders",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1774",
@@ -465,7 +476,8 @@ export const records = [
       "Dips sur chaise",
       "Fondos en silla"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1825",
@@ -491,7 +503,8 @@ export const records = [
       "Reverse Flys für die hintere Schulter mit Brustauflage",
       "Élévation des deltoïdes postérieurs avec appui sur la poitrine"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1446",
@@ -514,7 +527,8 @@ export const records = [
       "shoulders",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1901",
@@ -597,7 +611,8 @@ export const records = [
       "Développé épaules en diagonale",
       "Press Diagonal para Hombros"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1504",
@@ -623,7 +638,8 @@ export const records = [
       "Développé Bradford aux haltères",
       "Press Bradford con mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1227",
@@ -676,7 +692,8 @@ export const records = [
       "Scaption con mancuernas",
       "Élévation en scaption aux haltères"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1429",
@@ -702,7 +719,8 @@ export const records = [
       "Rotations d'épaule avec haltère",
       "Schulterrotationen mit Kurzhantel"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-222",
@@ -729,7 +747,8 @@ export const records = [
       "Jalón a la Cara",
       "Tirage à la face (Face pull)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1833",
@@ -755,7 +774,8 @@ export const records = [
       "Curl de isquiotibiales en el suelo con discos deslizantes",
       "Curl des ischio-jambiers avec sliders au sol"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1731",
@@ -778,7 +798,8 @@ export const records = [
       "shoulders",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-256",
@@ -835,7 +856,8 @@ export const records = [
       "Trazioni al mento Bilanciere",
       "Élévation frontale au disque"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1516",
@@ -858,7 +880,8 @@ export const records = [
       "shoulders",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-282",
@@ -946,7 +969,8 @@ export const records = [
       "High pull",
       "Tirage haut (High pull)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1882",
@@ -972,7 +996,8 @@ export const records = [
       "Seitheben am hohen Kabelzug",
       "Élévation latérale à la poulie haute"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1080",
@@ -1024,7 +1049,8 @@ export const records = [
       "Y-Raise mit Kurzhanteln auf der Schrägbank",
       "Élévation en Y aux haltères sur banc incliné"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1441",
@@ -1050,7 +1076,8 @@ export const records = [
       "Press militar en banco inclinado con mancuernas",
       "Schrägbank-Schulterdrücken mit Kurzhanteln"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1914",
@@ -1076,7 +1103,8 @@ export const records = [
       "Isometría en las paralelas",
       "Maintien isométrique aux barres parallèles"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1445",
@@ -1102,7 +1130,8 @@ export const records = [
       "Jerk (envión)",
       "Jeté — haltérophilie"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1442",
@@ -1128,7 +1157,8 @@ export const records = [
       "Kreis-Press mit Kurzhanteln",
       "Press circular con mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-346",
@@ -1152,7 +1182,8 @@ export const records = [
       "barbell",
       "Landmine-Press, Einarmig"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-348",
@@ -1237,7 +1268,8 @@ export const records = [
       "Seitheben zum Frontheben",
       "Élévations latérales puis frontales"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-406",
@@ -1263,7 +1295,8 @@ export const records = [
       "Exercice de coiffe des rotateurs allongé",
       "Rotatorenmanschette im Liegen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1654",
@@ -1368,7 +1401,8 @@ export const records = [
       "shoulders",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1893",
@@ -1423,7 +1457,8 @@ export const records = [
       "Pájaro para deltoides posterior en máquina pec deck",
       "Reverse Butterfly für die hintere Schulter"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1580",
@@ -1449,7 +1484,8 @@ export const records = [
       "Remo unilateral perpendicular en landmine",
       "Rowing landmine unilatéral perpendiculaire"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-2498",
@@ -1472,7 +1508,8 @@ export const records = [
       "shoulders",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1439",
@@ -1495,7 +1532,8 @@ export const records = [
       "shoulders",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1284",
@@ -1521,7 +1559,8 @@ export const records = [
       "Pompe pseudo planche",
       "Pseudo-Planche-Liegestütz"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1440",
@@ -1546,7 +1585,8 @@ export const records = [
       "Développé militaire avec impulsion (push press)",
       "Push Press"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-478",
@@ -1625,7 +1665,8 @@ export const records = [
       "Pájaro de pie",
       "Reverse Fly im Stehen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-918",
@@ -1648,7 +1689,8 @@ export const records = [
       "shoulders",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1081",
@@ -1674,7 +1716,8 @@ export const records = [
       "Dislocations d'épaules",
       "Schulterdislokationen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1714",
@@ -1700,7 +1743,8 @@ export const records = [
       "Exercice pendulaire de l'épaule avec haltère",
       "Pendelübung für die Schulter mit Kurzhantel"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1729",
@@ -1726,7 +1770,8 @@ export const records = [
       "Rotación externa de hombro (polea)",
       "Rotation externe de l'épaule (poulie)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1715",
@@ -1752,7 +1797,8 @@ export const records = [
       "Rotación externa de hombro con mancuerna",
       "Rotation externe de l'épaule avec haltère"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1728",
@@ -1778,7 +1824,8 @@ export const records = [
       "Rotación interna de hombro (polea)",
       "Rotation interne de l'épaule (poulie)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-566",
@@ -1894,7 +1941,8 @@ export const records = [
       "Military Press MP",
       "Press de hombros en multipower"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1338",
@@ -1947,7 +1995,8 @@ export const records = [
       "Seitheben und Frontheben mit Kurzhanteln",
       "Élévation latérale et frontale aux haltères"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-570",
@@ -2004,7 +2053,8 @@ export const records = [
       "shoulders",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-575",
@@ -2029,7 +2079,8 @@ export const records = [
       "Shrugs an der MP",
       "Schulterheben MP"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-571",
@@ -2111,7 +2162,8 @@ export const records = [
       "shoulders",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1752",
@@ -2134,7 +2186,8 @@ export const records = [
       "shoulders",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1582",
@@ -2187,7 +2240,8 @@ export const records = [
       "Rotación externa tumbado de lado",
       "Rotation externe allongé sur le côté"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1968",
@@ -2265,7 +2319,8 @@ export const records = [
       "Arrancada (Snatch)",
       "Reißen (Snatch)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1575",
@@ -2288,7 +2343,8 @@ export const records = [
       "shoulders",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-917",
@@ -2312,7 +2368,8 @@ export const records = [
       "cable",
       "Elevación frontal con cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1581",
@@ -2389,7 +2446,8 @@ export const records = [
       "Jalón cruzado unilateral en polea",
       "Tirage croisé unilatéral à la poulie"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-694",
@@ -2498,7 +2556,8 @@ export const records = [
       "bodyweight",
       "Wall angels (anges au mur)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-711",
@@ -2523,7 +2582,8 @@ export const records = [
       "Flexión a pino contra la pared",
       "Handstand Gegen Die Wand"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-2454",
@@ -2546,7 +2606,8 @@ export const records = [
       "shoulders",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   },
   {
     "id": "wger-1885",
@@ -2573,6 +2634,7 @@ export const records = [
       "Exercice YTWL",
       "YTWL-Übung"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/shoulders.webp"
   }
 ];

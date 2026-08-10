@@ -56,7 +56,13 @@ async function writeGeneratedCatalog(recordsByCategory, counts) {
   await fs.mkdir(outputDir, { recursive: true });
 
   for (const category of categoryOrder) {
-    const records = recordsByCategory[category] ?? [];
+    const records = (recordsByCategory[category] ?? []).map((record) => record.imageUrl
+      ? record
+      : {
+          ...record,
+          imageUrl: "/assets/strength/generated/" + category + ".webp",
+          imageSource: "Corner generated",
+        });
     const source = "export const records = " + JSON.stringify(records, null, 2) + ";\n";
     await fs.writeFile(path.join(outputDir, category + ".ts"), source);
   }

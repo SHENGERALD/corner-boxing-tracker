@@ -1,8 +1,8 @@
 {
   "source": "https://wger.de/api/v2/exerciseinfo/",
   "sourceLicense": "wger initial exercise data: CC BY-SA 3.0",
-  "fetchedCount": 847,
-  "importedCount": 826,
+  "fetchedCount": 860,
+  "importedCount": 828,
   "skippedDuplicateCount": 18,
   "categoryCounts": {
     "chest": 77,
@@ -10,7 +10,7 @@
     "legs": 157,
     "shoulders": 98,
     "arms": 130,
-    "core": 94,
+    "core": 96,
     "calves": 11,
     "mobility": 69,
     "cardio": 45
@@ -67,6 +67,10 @@
     {
       "sourceId": 923,
       "name": "Lying Dumbbell Row SS Seated Shrug"
+    },
+    {
+      "sourceId": 2507,
+      "name": "Forearm Plank (Core L1)"
     },
     {
       "sourceId": 993,
@@ -249,6 +253,10 @@
       "name": "Single-arm cable pushdown"
     },
     {
+      "sourceId": 2508,
+      "name": "Bird Dog (Core L1)"
+    },
+    {
       "sourceId": 910,
       "name": "Nordic Curl"
     },
@@ -369,10 +377,6 @@
       "name": "Seated Dumbbell Side Lateral"
     },
     {
-      "sourceId": 919,
-      "name": "T-Bar row"
-    },
-    {
       "sourceId": 516,
       "name": "Front Wood Chop"
     },
@@ -467,10 +471,6 @@
     {
       "sourceId": 716,
       "name": "Wall Slides"
-    },
-    {
-      "sourceId": 687,
-      "name": "Overhead Press"
     },
     {
       "sourceId": 1027,
@@ -1901,10 +1901,6 @@
       "name": "Assisted Pull-Up"
     },
     {
-      "sourceId": 1931,
-      "name": "Dumbbell Curl"
-    },
-    {
       "sourceId": 1905,
       "name": "Pullback"
     },
@@ -2233,10 +2229,6 @@
       "name": "Standing Bicep Curl"
     },
     {
-      "sourceId": 507,
-      "name": "Romanian Deadlift"
-    },
-    {
       "sourceId": 312,
       "name": "Incline Plank With Alternate Floor Touch"
     },
@@ -2331,7 +2323,43 @@
   ],
   "invalid": [
     {
+      "sourceId": 2509,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2510,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2511,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2512,
+      "reason": "Exercise is missing an English name"
+    },
+    {
       "sourceId": 2500,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2513,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2514,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2515,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2516,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2517,
       "reason": "Exercise is missing an English name"
     },
     {
@@ -2339,7 +2367,15 @@
       "reason": "Exercise is missing an English name"
     },
     {
+      "sourceId": 2518,
+      "reason": "Exercise is missing an English name"
+    },
+    {
       "sourceId": 2506,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2519,
       "reason": "Exercise is missing an English name"
     }
   ],

@@ -20,7 +20,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1486",
@@ -46,7 +47,8 @@ export const records = [
       "Remo alto en polea alternado",
       "Tirage à la poulie haute en alternance"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1501",
@@ -72,7 +74,8 @@ export const records = [
       "Remo gorila alternativo con mancuernas",
       "Variante de rowing gorille aux haltères"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1545",
@@ -98,7 +101,8 @@ export const records = [
       "Dominada de arquero",
       "Traction de l'archer"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1737",
@@ -121,7 +125,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1929",
@@ -147,7 +152,8 @@ export const records = [
       "Traction assistée",
       "Unterstützter Klimmzug"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1263",
@@ -173,7 +179,8 @@ export const records = [
       "Puente con propio peso",
       "Rückenbrücke"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1143",
@@ -220,7 +227,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1005",
@@ -255,7 +263,8 @@ export const records = [
       "دوران الكتف للخلف",
       "肩部向后绕环"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1380",
@@ -281,7 +290,8 @@ export const records = [
       "Band Pull-Aparts",
       "Pull-apart avec élastique"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1877",
@@ -307,7 +317,8 @@ export const records = [
       "Rétraction scapulaire à l'élastique",
       "Schulter-Rückzieher"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1700",
@@ -333,7 +344,8 @@ export const records = [
       "Rumänisches Kreuzheben mit Langhantel (RDL)",
       "Soulevé de terre roumain à la barre (RDL)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1698",
@@ -359,7 +371,8 @@ export const records = [
       "Remo con barra (agarre prono)",
       "Rowing à la barre (prise en pronation)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1699",
@@ -385,7 +398,8 @@ export const records = [
       "Remo con barra (agarre supino)",
       "Rowing à la barre (prise en supination)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-81",
@@ -440,7 +454,8 @@ export const records = [
       "Rowing penché vers rotation externe",
       "Vorgebeugtes Rudern mit Außenrotation"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-83",
@@ -543,7 +558,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1002",
@@ -615,7 +631,8 @@ export const records = [
       "تشين تاك",
       "收下巴运动"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-152",
@@ -669,7 +686,8 @@ export const records = [
       "Círculos de Cuello (Sentido Horario)",
       "Halskreise im Uhrzeigersinn"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-158",
@@ -752,7 +770,8 @@ export const records = [
       "Tractions commando",
       "Trazioni alla sbarra commando"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1016",
@@ -778,7 +797,8 @@ export const records = [
       "Círculos de Cuello (Sentido Antihorario)",
       "Nackenkreise gegen den Uhrzeigersinn"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1458",
@@ -801,7 +821,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-2502",
@@ -824,7 +845,8 @@ export const records = [
       "back",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-184",
@@ -881,7 +903,8 @@ export const records = [
       "Peso Muerto con Déficit",
       "Soulevé de terre en déficit"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1639",
@@ -959,7 +982,8 @@ export const records = [
       "machine",
       "Elevacion lateral polea"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-2503",
@@ -982,7 +1006,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1732",
@@ -1044,7 +1069,8 @@ export const records = [
       "دوران الكتف إلى الأمام",
       "肩部向前绕环"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1214",
@@ -1070,7 +1096,8 @@ export const records = [
       "Front lever agrupado",
       "Front lever groupé"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-259",
@@ -1094,7 +1121,8 @@ export const records = [
       "barbell",
       "Frontziehen Eng"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-258",
@@ -1118,7 +1146,8 @@ export const records = [
       "barbell",
       "Frontziehen Breit"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-516",
@@ -1142,7 +1171,8 @@ export const records = [
       "bodyweight",
       "Rückenstrecker im Stehen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1018",
@@ -1194,7 +1224,8 @@ export const records = [
       "Remo Helms",
       "Rowing Helms"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1492",
@@ -1217,7 +1248,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1137",
@@ -1271,7 +1303,8 @@ export const records = [
       "Pont fessier au sol",
       "Relevé de bassin"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1101",
@@ -1295,7 +1328,8 @@ export const records = [
       "bodyweight",
       "Isometria trazioni orizzontali"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1487",
@@ -1321,7 +1355,8 @@ export const records = [
       "Combo hyperextension Y et W",
       "Hyper Y-W-Kombination"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-301",
@@ -1455,7 +1490,8 @@ export const records = [
       "Rowing aux haltères sur banc incliné",
       "Rudern KH Auf Schrägbank"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1927",
@@ -1481,7 +1517,8 @@ export const records = [
       "Latzug mit Untergriff",
       "Tirage vertical en prise inversée"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1282",
@@ -1504,7 +1541,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1702",
@@ -1529,7 +1567,8 @@ export const records = [
       "Latzug zur Brust mit weitem Griff",
       "Tirage vertical à la poulie en prise large"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1719",
@@ -1553,7 +1592,8 @@ export const records = [
       "dumbbell",
       "Jalón caballero unialteral"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1003",
@@ -1613,7 +1653,8 @@ export const records = [
       "Sumo high pull con kettlebell",
       "Tirage haut sumo à la kettlebell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1910",
@@ -1639,7 +1680,8 @@ export const records = [
       "Superman de rodillas",
       "Superman à genoux"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1471",
@@ -1662,7 +1704,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1434",
@@ -1685,7 +1728,8 @@ export const records = [
       "back",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-354",
@@ -1710,7 +1754,8 @@ export const records = [
       "Jalón al pecho (inclinado)",
       "Lat Machine (Piegati Indietro)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-355",
@@ -1739,7 +1784,8 @@ export const records = [
       "Puxada Alta",
       "Tirage vertical à la poulie haute"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1659",
@@ -1765,7 +1811,8 @@ export const records = [
       "Latzug einarmig über Kreuz",
       "Tirage vertical - un bras croisé devant le corps"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1514",
@@ -1791,7 +1838,8 @@ export const records = [
       "Marche latérale",
       "Seitwärtsgehen (Lateral Walk)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1967",
@@ -1814,7 +1862,8 @@ export const records = [
       "back",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-380",
@@ -1837,7 +1886,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-394",
@@ -1892,7 +1942,8 @@ export const records = [
       "Remo en polea baja, agarre estrecho",
       "Tirage à la poulie basse, prise serrée"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-2489",
@@ -1916,7 +1967,8 @@ export const records = [
       "bodyweight",
       "Trazioni"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1348",
@@ -1966,7 +2018,8 @@ export const records = [
       "back",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1304",
@@ -1991,7 +2044,8 @@ export const records = [
       "Remo Meadows",
       "Rowing Meadows"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1635",
@@ -2039,7 +2093,8 @@ export const records = [
       "bodyweight",
       "Muscle-up"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1017",
@@ -2065,7 +2120,8 @@ export const records = [
       "Medios Círculos de Cuello (Media Luna)",
       "Nacken-Halbkreise"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1510",
@@ -2088,7 +2144,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1136",
@@ -2165,7 +2222,8 @@ export const records = [
       "Rowing lourd à un bras",
       "Schweres einarmiges Rudern"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1822",
@@ -2191,7 +2249,8 @@ export const records = [
       "Le livre ouvert",
       "Libro abierto"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-448",
@@ -2217,7 +2276,8 @@ export const records = [
       "Rowing Pendlay",
       "Wiosłowanie sztangą Pendelay"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-468",
@@ -2243,7 +2303,8 @@ export const records = [
       "Rétraction des omoplates à plat ventre - bras le long du corps",
       "Schulterblatt-Retraktion in Bauchlage – Arme seitlich"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-477",
@@ -2268,7 +2329,8 @@ export const records = [
       "Klimmzüge an Maschine",
       "Pull Ups na máquina"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1537",
@@ -2291,7 +2353,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-475",
@@ -2352,7 +2415,8 @@ export const records = [
       "Klimmzüge (neutraler Griff)",
       "Tractions (prise neutre)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1695",
@@ -2378,7 +2442,8 @@ export const records = [
       "Klimmzüge (weiter Griff)",
       "Tractions (prise large)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1905",
@@ -2402,7 +2467,8 @@ export const records = [
       "cable",
       "Tirage en arrière (pullback)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-2490",
@@ -2426,7 +2492,8 @@ export const records = [
       "bodyweight",
       "Rematore con triangolo - busto eretto"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1273",
@@ -2449,7 +2516,8 @@ export const records = [
       "back",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1384",
@@ -2472,7 +2540,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-957",
@@ -2552,7 +2621,8 @@ export const records = [
       "cable",
       "Remo alto desde polea"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1119",
@@ -2625,7 +2695,8 @@ export const records = [
       "Remo renegado",
       "Renegade row"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1473",
@@ -2648,7 +2719,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1215",
@@ -2673,7 +2745,8 @@ export const records = [
       "Ange de neige inversé",
       "Ángel de nieve invertido"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1433",
@@ -2699,7 +2772,8 @@ export const records = [
       "Umgekehrte Holzhacker",
       "Wood chops inversés (rotation du tronc)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1399",
@@ -2723,7 +2797,8 @@ export const records = [
       "bodyweight",
       "Déroulé du buste (roll down)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1634",
@@ -2778,7 +2853,8 @@ export const records = [
       "Tirage horizontal",
       "Rudern"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-512",
@@ -2829,7 +2905,8 @@ export const records = [
       "bodyweight",
       "TRX Rudern"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-510",
@@ -2852,7 +2929,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-513",
@@ -2902,7 +2980,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1207",
@@ -2928,7 +3007,8 @@ export const records = [
       "Patada de escorpión",
       "Skorpion-Kick"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-922",
@@ -2951,7 +3031,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1098",
@@ -3028,7 +3109,8 @@ export const records = [
       "Sitzendes Rudern mit V-Griff",
       "Tirage assis à poignée en V"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-562",
@@ -3052,7 +3134,8 @@ export const records = [
       "cable",
       "Shotgun row"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1730",
@@ -3075,7 +3158,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1727",
@@ -3101,7 +3185,8 @@ export const records = [
       "Seitlicher Überzug mit gestrecktem Arm am Kabelzug",
       "Tirage latéral bras tendu (poulie)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1022",
@@ -3182,7 +3267,8 @@ export const records = [
       "Tirage vertical à un bras",
       "Tirage vertical unilatéral"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1394",
@@ -3208,7 +3294,8 @@ export const records = [
       "Seated Forward Bend",
       "Seated Toe Touches"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1210",
@@ -3234,7 +3321,8 @@ export const records = [
       "Paracaidista con brazos en posición de T",
       "Superman avec bras en position T"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1447",
@@ -3260,7 +3348,8 @@ export const records = [
       "Snatch (Reißen)",
       "Snatch (arrancada)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-628",
@@ -3286,7 +3375,8 @@ export const records = [
       "Lat-Ziehen Mit Gesteckten Armen Mit (Stange)",
       "Tirage bras tendus (poignée barre)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-629",
@@ -3314,7 +3404,8 @@ export const records = [
       "Lat Pulldown am Seil",
       "Tirage bras tendus (poignée corde)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1726",
@@ -3364,7 +3455,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1583",
@@ -3387,7 +3479,8 @@ export const records = [
       "back",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-2501",
@@ -3410,7 +3503,8 @@ export const records = [
       "back",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1455",
@@ -3436,7 +3530,8 @@ export const records = [
       "Superman avec serviette",
       "Superman con toalla"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1834",
@@ -3462,7 +3557,8 @@ export const records = [
       "Trap-3-Raise",
       "Élévation trapèze inférieur (Trap-3)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-959",
@@ -3515,7 +3611,8 @@ export const records = [
       "Typewriter-Klimmzüge",
       "Підтягування-друкарська машинка"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-684",
@@ -3541,7 +3638,8 @@ export const records = [
       "Latzug im Untergriff",
       "Tirage vertical en supination"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1621",
@@ -3594,7 +3692,8 @@ export const records = [
       "Espalda alta",
       "Haut du dos"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-695",
@@ -3617,7 +3716,8 @@ export const records = [
       "back",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-716",
@@ -3644,7 +3744,8 @@ export const records = [
       "Scivoli a muro",
       "Wandgleiten"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-723",
@@ -3674,7 +3775,8 @@ export const records = [
       "Tirage vertical en prise large",
       "Lat Pulldown (Wide Grip)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1125",
@@ -3700,7 +3802,8 @@ export const records = [
       "Latzug mit weitem Untergriff",
       "Tirage vertical prise large en supination"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1244",
@@ -3727,7 +3830,8 @@ export const records = [
       "Gato-Vaca (movilidad espinal)",
       "Yoga-Übung: Katze-Kuh"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   },
   {
     "id": "wger-1083",
@@ -3751,6 +3855,7 @@ export const records = [
       "bodyweight",
       "YWT"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/back.webp"
   }
 ];

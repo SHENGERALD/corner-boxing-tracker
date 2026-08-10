@@ -31,7 +31,8 @@ export const records = [
       "Βατραχάκια σε 4-χρόνους",
       "四联波比跳"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-57",
@@ -57,7 +58,8 @@ export const records = [
       "Caminata del Oso",
       "Marche de l'ours 2"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-73",
@@ -138,7 +140,8 @@ export const records = [
       "chest",
       "cable"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-132",
@@ -171,7 +174,8 @@ export const records = [
       "الدفع burpees",
       "波比跳"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-135",
@@ -222,7 +226,8 @@ export const records = [
       "Butterfly à prise serrée",
       "Pectoral en Máquina"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1656",
@@ -248,7 +253,8 @@ export const records = [
       "Développé poitrine à la poulie, en décliné",
       "Press de pecho en polea - declinado"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1660",
@@ -274,7 +280,8 @@ export const records = [
       "Développé pectoraux à la poulie - incliné",
       "Press de pecho en polea inclinado"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-323",
@@ -328,7 +335,8 @@ export const records = [
       "Kabelzug-Fly für die untere Brust",
       "Écarté à la poulie pour le bas des pectoraux"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1689",
@@ -354,7 +362,8 @@ export const records = [
       "Kabelzug-Fly für die mittlere Brust",
       "Écarté à la poulie pour le milieu des pectoraux"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1690",
@@ -380,7 +389,8 @@ export const records = [
       "Kabelzug-Fly für die obere Brust",
       "Écarté à la poulie pour le haut des pectoraux"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1457",
@@ -404,7 +414,8 @@ export const records = [
       "cable",
       "Press around à la poulie"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-129",
@@ -539,7 +550,8 @@ export const records = [
       "chest",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1497",
@@ -562,7 +574,8 @@ export const records = [
       "chest",
       "dumbbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1496",
@@ -588,7 +601,8 @@ export const records = [
       "Variación con mancuerna para el pecho superior",
       "Variante haut des pectoraux aux haltères"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-185",
@@ -642,7 +656,8 @@ export const records = [
       "Negativ Bankdrücken KH",
       "Press de Banca Declinado con Mancuernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1591",
@@ -665,7 +680,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1777",
@@ -688,7 +704,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-386",
@@ -715,7 +732,8 @@ export const records = [
       "Piegamenti a diamante",
       "Pompes diamant"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-194",
@@ -821,7 +839,8 @@ export const records = [
       "Flexiones con mancuernas",
       "Piegamenti con manubri"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1694",
@@ -847,7 +866,8 @@ export const records = [
       "Développé à la machine sur plat",
       "Press de pecho en máquina (plano)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-237",
@@ -927,7 +947,8 @@ export const records = [
       "Negativ Fliegende Mit KH",
       "Écarté aux haltères sur banc décliné"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1831",
@@ -990,7 +1011,8 @@ export const records = [
       "لوح مرتفع",
       "高位平板支撑"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1508",
@@ -1013,7 +1035,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-538",
@@ -1123,7 +1146,8 @@ export const records = [
       "Fliegende KH Schrägbank",
       "Écarté incliné aux haltères"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-2499",
@@ -1146,7 +1170,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1716",
@@ -1172,7 +1197,8 @@ export const records = [
       "Push-up escapular en banco inclinado",
       "Schulterdrücken auf der Bank (Scapular Push-up)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1693",
@@ -1198,7 +1224,8 @@ export const records = [
       "Sostenimiento estático en banco inclinado",
       "Statisches Halten auf der Schrägbank"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1198",
@@ -1252,7 +1279,8 @@ export const records = [
       "Essuie-glaces isométriques",
       "Limpiaparabrisas isométricos"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1546",
@@ -1275,7 +1303,8 @@ export const records = [
       "chest",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1918",
@@ -1298,7 +1327,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1773",
@@ -1322,7 +1352,8 @@ export const records = [
       "bodyweight",
       "LeverEdge Machine Incline Press"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-379",
@@ -1346,7 +1377,8 @@ export const records = [
       "bodyweight",
       "Press de pecho con máquina"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1270",
@@ -1372,7 +1404,8 @@ export const records = [
       "Kabel-Fly am unteren Kabelzug",
       "Écarté à la poulie basse"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1296",
@@ -1463,7 +1496,8 @@ export const records = [
       "متسلقو الجبال",
       "登山者式"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1461",
@@ -1489,7 +1523,8 @@ export const records = [
       "Kurzhantel-Brustdrücken ohne Beineinsatz",
       "Press de pecho con mancuernas sin impulso de piernas"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-998",
@@ -1525,7 +1560,8 @@ export const records = [
       "لا push-up burpees",
       "半程波比跳"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1484",
@@ -1551,7 +1587,8 @@ export const records = [
       "Cruce de poleas omni",
       "Omni Cable Crossover"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-445",
@@ -1576,7 +1613,8 @@ export const records = [
       "Développé couché avec pause",
       "Press de banca con pausa"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1904",
@@ -1599,7 +1637,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1436",
@@ -1625,7 +1664,8 @@ export const records = [
       "Pin Bench Press LH",
       "Press de banca con pines (barra)"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-683",
@@ -1649,7 +1689,8 @@ export const records = [
       "barbell",
       "Umsetzen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1551",
@@ -1731,7 +1772,8 @@ export const records = [
       "Liegestütze | erhöht (Incline)",
       "Pompes | Inclinées"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1113",
@@ -1757,7 +1799,8 @@ export const records = [
       "Liegestütze | Parallettes",
       "Pompes | Parallettes"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-498",
@@ -1780,7 +1823,8 @@ export const records = [
       "chest",
       "barbell"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1832",
@@ -1806,7 +1850,8 @@ export const records = [
       "Mantenimiento en apoyo en anillas",
       "Stützhalt an den Ringen"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1094",
@@ -1832,7 +1877,8 @@ export const records = [
       "Développé couché assis",
       "Press Banca Sentado"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1922",
@@ -1886,7 +1932,8 @@ export const records = [
       "Pompes d'un côté à l'autre",
       "Push Up da un lato all'altro"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-925",
@@ -1936,7 +1983,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-688",
@@ -1959,7 +2007,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-2496",
@@ -1982,7 +2031,8 @@ export const records = [
       "chest",
       "bodyweight"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   },
   {
     "id": "wger-1902",
@@ -2037,6 +2087,7 @@ export const records = [
       "Pompe écartée",
       "Wide Grip Push-Up"
     ],
-    "imageSource": "Corner generated"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/chest.webp"
   }
 ];

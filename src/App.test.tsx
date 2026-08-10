@@ -399,6 +399,18 @@ describe("Boxing Tracker", () => {
     expect(Array.from(document.querySelectorAll(".training-entry .item-copy strong"), (node) => node.textContent))
       .toEqual(["一對一教練課", "刺拳", "影子拳擊", "沙包技術", "核心與收操"]);
   });
+  it("loads imported mobility drills after entering the strength library", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.click(screen.getByRole("button", { name: "重訓" }));
+    await user.click(screen.getAllByRole("button", { name: "活動度／伸展" })[0]);
+
+    await waitFor(() => {
+      expect(screen.getByRole("heading", { name: "Cat-Cow" })).toBeInTheDocument();
+    });
+  });
   it("switches to the strength database and adds a strength drill", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);

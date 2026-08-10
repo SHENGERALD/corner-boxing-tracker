@@ -65,6 +65,7 @@ import {
 import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/supabase";
 import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingTarget, TrainingType, Weekday } from "./domain/types";
 import { drillLibrary, filterDrills, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
+import { loadStrengthLibrary } from "./domain/strengthCatalog";
 import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 import { NumericDraftInput } from "./components/NumericDraftInput";
 import { formatTrainingTarget, parseTrainingTarget } from "./domain/targets";
@@ -1521,7 +1522,32 @@ function DrillLibraryView({
   const [onlyFavorites, setOnlyFavorites] = useState(false);
   const [domain, setDomain] = useState<TrainingDomain>("boxing");
   const [equipment, setEquipment] = useState<EquipmentType | "all">("all");
-  const drills = filterDrills([...customDrills, ...drillLibrary], { query, domain, category, equipment, favoriteIds: favorites, favoritesOnly: onlyFavorites });
+  const [strengthDrills, setStrengthDrills] = useState<Drill[] | null>(null);
+  const [strengthLoading, setStrengthLoading] = useState(false);
+  const [strengthLoadError, setStrengthLoadError] = useState(false);
+  const [strengthRetryToken, setStrengthRetryToken] = useState(0);
+  const strengthImageFallback = (drill: Drill) => `${import.meta.env.BASE_URL}assets/strength/generated/${drill.category}.webp`;
+
+  useEffect(() => {
+    if (domain !== "strength") return;
+    let cancelled = false;
+    setStrengthLoading(true);
+    setStrengthLoadError(false);
+    loadStrengthLibrary()
+      .then((loaded) => {
+        if (!cancelled) setStrengthDrills(loaded);
+      })
+      .catch(() => {
+        if (!cancelled) setStrengthLoadError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setStrengthLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, [domain, strengthRetryToken]);
+
+  const sourceDrills = domain === "strength" ? strengthDrills ?? drillLibrary : drillLibrary;
+  const drills = filterDrills([...customDrills, ...sourceDrills], { query, domain, category, equipment, favoriteIds: favorites, favoritesOnly: onlyFavorites });
   const categories: Array<[Drill["category"] | "all", string]> = domain === "boxing"
     ? [
         ["all", language === "zh-TW" ? "全部" : "All"],
@@ -1541,6 +1567,7 @@ function DrillLibraryView({
         ["arms", language === "zh-TW" ? "手臂" : "Arms"],
         ["core", language === "zh-TW" ? "核心" : "Core"],
         ["calves", language === "zh-TW" ? "小腿" : "Calves"],
+        ["mobility", language === "zh-TW" ? "活動度／伸展" : "Mobility / Stretching"],
         ["cardio", language === "zh-TW" ? "有氧" : "Cardio"],
       ];
   const equipmentOptions: Array<[EquipmentType | "all", string]> = [
@@ -1554,7 +1581,7 @@ function DrillLibraryView({
     ["bodyweight", language === "zh-TW" ? "自重" : "Bodyweight"],
   ];
   const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory("all"); setEquipment("all"); };
-  const changeCategory = (nextCategory: Drill["category"] | "all") => { setCategory(nextCategory); if (nextCategory === "cardio") setEquipment("all"); };
+  const changeCategory = (nextCategory: Drill["category"] | "all") => { setCategory(nextCategory); if (nextCategory === "cardio" || nextCategory === "mobility") setEquipment("all"); };
 
   return (
     <div className="page library-page">
@@ -1609,6 +1636,11 @@ function DrillLibraryView({
           {domain === "strength" && <div className="equipment-chips" aria-label={language === "zh-TW" ? "器材篩選" : "Equipment filter"}>
             {equipmentOptions.map(([id, label]) => <button className={equipment === id ? "selected" : ""} onClick={() => setEquipment(id)} key={id}>{label}</button>)}
           </div>}
+          {domain === "strength" && strengthLoading && <p className="library-loading" role="status">{language === "zh-TW" ? "載入完整重訓動作庫…" : "Loading the full strength library…"}</p>}
+          {domain === "strength" && strengthLoadError && <div className="library-load-error" role="alert">
+            <span>{language === "zh-TW" ? "完整動作庫載入失敗，先顯示內建動作。" : "The full library could not load. Built-in drills are still available."}</span>
+            <button onClick={() => setStrengthRetryToken((token) => token + 1)}>{language === "zh-TW" ? "重試" : "Retry"}</button>
+          </div>}
           <div className="drill-grid">
             {drills.map((drill) => {
               const favorite = favorites.includes(drill.id);
@@ -1623,7 +1655,15 @@ function DrillLibraryView({
                     </button>
                   </div>
                   <div className={drill.imageUrl ? `drill-visual has-image${drill.imagePosition ? " sprite-image" : ""}` : "drill-visual"} style={drill.imagePosition ? { backgroundImage: `url(${drill.imageUrl})`, backgroundPosition: drill.imagePosition } : undefined} aria-hidden="true">
-                    {drill.imageUrl && !drill.imagePosition ? <img src={drill.imageUrl} alt="" loading="lazy" /> : !drill.imageUrl ? <span>{title.slice(0, 1)}</span> : null}
+                    {drill.imageUrl && !drill.imagePosition ? <img src={drill.imageUrl} alt="" loading="lazy" onError={(event) => {
+                      const image = event.currentTarget;
+                      if (drill.domain !== "strength" || image.dataset.fallback === "true") {
+                        image.style.display = "none";
+                        return;
+                      }
+                      image.dataset.fallback = "true";
+                      image.src = strengthImageFallback(drill);
+                    }} /> : !drill.imageUrl ? <span>{title.slice(0, 1)}</span> : null}
                   </div>
                   <h2>{title}</h2>
                   <p>{formatPlanLabel(drill.cue, language)}</p>
@@ -1650,7 +1690,7 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
   const [quantity, setQuantity] = useState(3);
   const categories: Array<[DrillCategory, string]> = domain === "boxing"
     ? [["fundamentals", language === "zh-TW" ? "基礎" : "Basics"], ["footwork", language === "zh-TW" ? "步法" : "Footwork"], ["offense", language === "zh-TW" ? "進攻" : "Offense"], ["defense", language === "zh-TW" ? "防守" : "Defense"], ["equipment", language === "zh-TW" ? "器材" : "Equipment"], ["conditioning", language === "zh-TW" ? "體能" : "Conditioning"]]
-    : [["chest", language === "zh-TW" ? "胸" : "Chest"], ["back", language === "zh-TW" ? "背" : "Back"], ["legs", language === "zh-TW" ? "腿" : "Legs"], ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"], ["arms", language === "zh-TW" ? "手臂" : "Arms"], ["core", language === "zh-TW" ? "核心" : "Core"], ["calves", language === "zh-TW" ? "小腿" : "Calves"], ["cardio", language === "zh-TW" ? "有氧" : "Cardio"]];
+    : [["chest", language === "zh-TW" ? "胸" : "Chest"], ["back", language === "zh-TW" ? "背" : "Back"], ["legs", language === "zh-TW" ? "腿" : "Legs"], ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"], ["arms", language === "zh-TW" ? "手臂" : "Arms"], ["core", language === "zh-TW" ? "核心" : "Core"], ["calves", language === "zh-TW" ? "小腿" : "Calves"], ["mobility", language === "zh-TW" ? "活動度／伸展" : "Mobility / Stretching"], ["cardio", language === "zh-TW" ? "有氧" : "Cardio"]];
   const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory(nextDomain === "boxing" ? "fundamentals" : "chest"); };
   const save = () => {
     const trimmedName = name.trim();
