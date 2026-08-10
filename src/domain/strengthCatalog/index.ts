@@ -1,4 +1,5 @@
 import { drillLibrary, type Drill } from "../drills";
+import reviewedOverrides from "./reviewedOverrides.json";
 
 export const strengthCategoryIds = [
   "chest",
@@ -33,15 +34,22 @@ function mergeWithoutDuplicateIds(drills: Drill[]) {
   return drills;
 }
 
+export function applyReviewedOverrides(drills: Drill[]): Drill[] {
+  return drills.map((drill) => {
+    const override = reviewedOverrides[drill.id as keyof typeof reviewedOverrides] as Partial<Drill> | undefined;
+    return override ? { ...drill, ...override } : drill;
+  });
+}
+
 export async function loadStrengthLibrary(): Promise<Drill[]> {
   const generated = await Promise.all(
     strengthCategoryIds.map((category) => categoryLoaders[category]())
   );
   const baseline = drillLibrary.filter((drill) => drill.domain === "strength");
-  const merged = [
+  const merged = applyReviewedOverrides([
     ...baseline,
     ...generated.flat() as Drill[],
-  ].map((drill) => drill.imageUrl?.startsWith("/")
+  ]).map((drill) => drill.imageUrl?.startsWith("/")
     ? { ...drill, imageUrl: `${import.meta.env.BASE_URL}${drill.imageUrl.replace(/^\/+/, "")}` }
     : drill);
   return mergeWithoutDuplicateIds(merged);

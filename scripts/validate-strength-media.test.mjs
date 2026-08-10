@@ -11,6 +11,7 @@ test("every generated strength drill has valid external or local media", async (
   const result = await validateCatalogMedia({ root });
   assert.deepEqual(result.missing, []);
   assert.deepEqual(result.invalid, []);
+  assert.deepEqual(result.reviewedInvalid, []);
 });
 
 test("every generated strength drill has a Chinese title and cue", async () => {

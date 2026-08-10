@@ -68,6 +68,37 @@ describe("drill library", () => {
     expect(drills.every((drill) => drill.equipment === "dumbbell")).toBe(true);
   });
 
+  it("corrects reviewed machine records with equipment and movement-specific local media", async () => {
+    const catalog = await loadStrengthLibrary();
+    const reviewed = new Map(catalog.map((drill) => [drill.id, drill]));
+
+    expect(reviewed.get("wger-379")).toEqual(expect.objectContaining({
+      equipment: "hammer",
+      imageSource: "Corner generated",
+    }));
+    expect(reviewed.get("wger-380")).toEqual(expect.objectContaining({
+      equipment: "hammer",
+      imageSource: "Corner generated",
+    }));
+    expect(reviewed.get("wger-1414")).toEqual(expect.objectContaining({
+      equipment: "hammer",
+      imageSource: "Corner generated",
+    }));
+    expect(reviewed.get("wger-1424")).toEqual(expect.objectContaining({
+      equipment: "machine",
+      imageSource: "Corner generated",
+    }));
+    expect(reviewed.get("wger-543")).toEqual(expect.objectContaining({
+      equipment: "machine",
+      imageSource: "Corner generated",
+    }));
+
+    for (const id of ["wger-379", "wger-380", "wger-1414", "wger-1424", "wger-543"]) {
+      expect(reviewed.get(id)?.imageUrl).toContain("assets/strength/reviewed/");
+      expect(reviewed.get(id)?.imageUrl).toMatch(new RegExp("^" + import.meta.env.BASE_URL));
+    }
+  });
+
   it("keeps cardio drills in the dedicated strength category", () => {
     expect(filterDrills(drillLibrary, {
       query: "跑步",

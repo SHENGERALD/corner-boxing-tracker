@@ -29,6 +29,14 @@ async function isLocalImage(root, imageUrl) {
   }
 }
 
+async function readReviewedOverrides(root) {
+  const source = await fs.readFile(
+    path.join(root, "src/domain/strengthCatalog/reviewedOverrides.json"),
+    "utf8"
+  );
+  return JSON.parse(source);
+}
+
 export async function validateCatalogMedia({ root }) {
   const records = await readGeneratedRecords(root);
   const missing = [];
@@ -40,7 +48,14 @@ export async function validateCatalogMedia({ root }) {
       invalid.push({ id: record.id, imageUrl: record.imageUrl });
     }
   }
-  return { total: records.length, missing, invalid };
+  const reviewedOverrides = await readReviewedOverrides(root);
+  const reviewedInvalid = [];
+  for (const [id, override] of Object.entries(reviewedOverrides)) {
+    if (!(await isLocalImage(root, override.imageUrl))) {
+      reviewedInvalid.push({ id, imageUrl: override.imageUrl });
+    }
+  }
+  return { total: records.length, missing, invalid, reviewedInvalid };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -50,6 +65,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     total: result.total,
     missing: result.missing.length,
     invalid: result.invalid.length,
+    reviewedInvalid: result.reviewedInvalid.length,
   }, null, 2));
-  if (result.missing.length || result.invalid.length) process.exitCode = 1;
+  if (result.missing.length || result.invalid.length || result.reviewedInvalid.length) process.exitCode = 1;
 }

@@ -9,6 +9,7 @@ const inputPath = process.env.WGER_INPUT;
 const outputDir = path.join(root, "src/domain/strengthCatalog/generated");
 const reportPath = path.join(root, "scripts/wger-import-report.json");
 const translationsPath = path.join(root, "scripts/wger-zh-TW-cache.json");
+const reviewedOverridesPath = path.join(root, "src/domain/strengthCatalog/reviewedOverrides.json");
 const pageSize = Number(process.env.WGER_PAGE_SIZE ?? 100);
 const categoryOrder = ["chest", "back", "legs", "shoulders", "arms", "core", "calves", "mobility", "cardio"];
 
@@ -61,18 +62,22 @@ function findSourceIdCollisions(exercises) {
   return collisions;
 }
 
-async function writeGeneratedCatalog(recordsByCategory, counts) {
+async function writeGeneratedCatalog(recordsByCategory, counts, reviewedOverrides) {
   await fs.rm(outputDir, { recursive: true, force: true });
   await fs.mkdir(outputDir, { recursive: true });
 
   for (const category of categoryOrder) {
-    const records = (recordsByCategory[category] ?? []).map((record) => record.imageUrl
-      ? record
-      : {
-          ...record,
-          imageUrl: "/assets/strength/generated/" + category + ".webp",
-          imageSource: "Corner generated",
-        });
+    const records = (recordsByCategory[category] ?? []).map((record) => {
+      const override = reviewedOverrides[record.id] ?? {};
+      const reviewed = { ...record, ...override };
+      return reviewed.imageUrl
+        ? reviewed
+        : {
+            ...reviewed,
+            imageUrl: "/assets/strength/generated/" + category + ".webp",
+            imageSource: "Corner generated",
+          };
+    });
     const source = "export const records = " + JSON.stringify(records, null, 2) + ";\n";
     await fs.writeFile(path.join(outputDir, category + ".ts"), source);
   }
@@ -96,6 +101,7 @@ async function main() {
   const collisions = findSourceIdCollisions(exercises);
   const report = { missingMedia: [], duplicates: [], invalid: [], collisions };
   const translations = await loadTranslations();
+  const reviewedOverrides = await loadJsonFile(reviewedOverridesPath);
   const normalized = normalizeExercises(exercises, { existing, report, translations });
   const recordsByCategory = Object.fromEntries(categoryOrder.map((category) => [category, []]));
   for (const record of normalized.records) {
@@ -106,7 +112,7 @@ async function main() {
   }
   const counts = Object.fromEntries(categoryOrder.map((category) => [category, recordsByCategory[category].length]));
 
-  await writeGeneratedCatalog(recordsByCategory, counts);
+  await writeGeneratedCatalog(recordsByCategory, counts, reviewedOverrides);
   const outputReport = {
     source: apiUrl,
     sourceLicense: "wger initial exercise data: CC BY-SA 3.0",
