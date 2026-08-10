@@ -42,6 +42,24 @@ describe("local training storage", () => {
     expect(() => importState(JSON.stringify(malformed))).toThrow("Invalid backup");
   });
 
+  it("accepts mobility as a persisted custom strength category", () => {
+    const state = createEmptyState();
+    const backup = {
+      ...state,
+      customDrills: [{
+        id: "mobility-test",
+        domain: "strength",
+        category: "mobility",
+        name: { zhTW: "髖部活動度", en: "Hip Mobility" },
+        cue: { zhTW: "控制活動範圍", en: "Control the range" },
+        defaultUnit: "minutes",
+        defaultQuantity: 5,
+      }],
+    };
+
+    importState(JSON.stringify(backup));
+    expect(loadState().customDrills?.[0].category).toBe("mobility");
+  });
   it("rejects malformed backups without replacing current state", () => {
     const state = createEmptyState();
     saveState(state);
