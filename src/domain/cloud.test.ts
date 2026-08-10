@@ -5,6 +5,25 @@ import { createEmptyState } from "./storage";
 const stateWithLanguage = (language: "zh-TW" | "en") => ({ ...createEmptyState(), language });
 
 describe("cloud state resolution", () => {
+  it("keeps a newer local language preference and schedules it for upload", () => {
+    const local = stateWithLanguage("en");
+    const cloud = stateWithLanguage("zh-TW");
+    local.languageUpdatedAt = "2026-08-09T18:00:00.000Z";
+    cloud.languageUpdatedAt = "2026-08-09T17:00:00.000Z";
+
+    const result = resolveInitialState({
+      guestState: stateWithLanguage("zh-TW"),
+      accountState: local,
+      accountSavedAt: null,
+      cloudState: cloud,
+      cloudUpdatedAt: null,
+    });
+
+    expect(result.state.language).toBe("en");
+    expect(result.state.languageUpdatedAt).toBe(local.languageUpdatedAt);
+    expect(result.shouldUpload).toBe(true);
+  });
+
   it("keeps a newer offline account cache and schedules it for upload", () => {
     const result = resolveInitialState({
       guestState: stateWithLanguage("zh-TW"),

@@ -10,6 +10,7 @@ const MAX_NOTE_LENGTH = 2_000;
 export interface AppState {
   version: 3;
   language: Language;
+  languageUpdatedAt?: string;
   records: Record<string, TrainingRecord>;
   favoriteDrillIds: string[];
   customDrills?: Drill[];
@@ -191,6 +192,7 @@ function isTimestampMap(value: unknown): value is Record<string, string> {
 function hasValidCommonState(state: Record<string, unknown>) {
   return (
     (state.language === "zh-TW" || state.language === "en") &&
+    (state.languageUpdatedAt === undefined || typeof state.languageUpdatedAt === "string") &&
     Boolean(state.records) && typeof state.records === "object" && !Array.isArray(state.records) &&
     Object.values(state.records as Record<string, unknown>).every(isTrainingRecord) &&
     isTimestampMap(state.deletedRecordUpdatedAt) &&

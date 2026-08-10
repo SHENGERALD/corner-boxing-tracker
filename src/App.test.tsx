@@ -1,7 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
+import { STORAGE_KEY } from "./domain/storage";
 
 describe("Boxing Tracker", () => {
   beforeEach(() => {
@@ -270,6 +271,20 @@ describe("Boxing Tracker", () => {
     expect(screen.getByText("Your data stays on this device.")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Today" }));
     expect(screen.getByText("Coaching + Self Training")).toBeInTheDocument();
+  });
+
+  it("timestamps a language change so cloud sync cannot restore an older preference", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "備份" }));
+    await user.click(screen.getByRole("button", { name: "English" }));
+
+    await waitFor(() => {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
+      expect(saved.language).toBe("en");
+      expect(saved.languageUpdatedAt).toEqual(expect.any(String));
+    });
   });
 
   it("shows a month calendar history and opens a selected day", async () => {

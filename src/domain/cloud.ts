@@ -116,10 +116,13 @@ export function mergeStateWithCloud(localState: AppState, cloudState: AppState):
     }
   }
   const localPlanWon = isAfter(localState.weeklyPlanUpdatedAt, cloudState.weeklyPlanUpdatedAt);
+  const localLanguageWon = isAfter(localState.languageUpdatedAt, cloudState.languageUpdatedAt);
   const favorites = mergeFavorites(localState, cloudState);
   const customDrills = mergeCustomDrills(localState, cloudState);
   const mergedState: AppState = {
     ...cloudState,
+    language: localLanguageWon ? localState.language : cloudState.language,
+    languageUpdatedAt: localLanguageWon ? localState.languageUpdatedAt : cloudState.languageUpdatedAt,
     records: mergedRecords,
     deletedRecordUpdatedAt: Object.keys(mergedDeleted).length > 0 ? mergedDeleted : undefined,
     favoriteDrillIds: favorites.favoriteDrillIds,
@@ -131,7 +134,7 @@ export function mergeStateWithCloud(localState: AppState, cloudState: AppState):
   };
   return {
     state: mergedState,
-    localWon: localWon || localPlanWon || favorites.localWon || customDrills.localWon,
+    localWon: localWon || localLanguageWon || localPlanWon || favorites.localWon || customDrills.localWon,
   };
 }
 

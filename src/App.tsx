@@ -461,7 +461,11 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   };
 
   const setLanguage = (nextLanguage: Language) => {
-    setState((current) => ({ ...current, language: nextLanguage }));
+    setState((current) => ({
+      ...current,
+      language: nextLanguage,
+      languageUpdatedAt: new Date().toISOString(),
+    }));
     document.documentElement.lang = nextLanguage === "zh-TW" ? "zh-Hant" : "en";
   };
 
