@@ -408,7 +408,7 @@ describe("Boxing Tracker", () => {
     await user.click(screen.getAllByRole("button", { name: "活動度／伸展" })[0]);
 
     await waitFor(() => {
-      expect(screen.getByRole("heading", { name: "Cat-Cow" })).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "貓牛" })).toBeInTheDocument();
     });
   });
   it("switches to the strength database and adds a strength drill", async () => {

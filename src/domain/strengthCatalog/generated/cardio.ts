@@ -5,11 +5,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Bag training",
+      "zhTW": "包袋訓練",
       "en": "Bag training"
     },
     "cue": {
-      "zhTW": "Bag training improves muscle definition of: deltoids; rear deltoids; triceps; biceps, as well as being a great cardio exercise",
+      "zhTW": "沙袋訓練可改善三角肌的肌肉清晰度；三角肌後束；三頭肌；二頭肌，也是很好的有氧運動",
       "en": "Bag training improves muscle definition of: deltoids; rear deltoids; triceps; biceps, as well as being a great cardio exercise"
     },
     "defaultUnit": "minutes",
@@ -17,6 +17,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bag training",
+      "包袋訓練",
       "cardio",
       "bodyweight",
       "Allenamento al sacco",
@@ -33,11 +34,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Ball Slams",
+      "zhTW": "球大滿貫",
       "en": "Ball Slams"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "minutes",
@@ -45,6 +46,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Ball Slams",
+      "球大滿貫",
       "cardio",
       "bodyweight",
       "Lanzamientos de balón",
@@ -59,11 +61,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Battle Ropes",
+      "zhTW": "戰鬥繩索",
       "en": "Battle Ropes"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "minutes",
@@ -71,6 +73,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Battle Ropes",
+      "戰鬥繩索",
       "cardio",
       "bodyweight",
       "Cordes ondulatoires",
@@ -85,11 +88,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Blaze",
+      "zhTW": "火焰",
       "en": "Blaze"
     },
     "cue": {
-      "zhTW": "BLAZE is a full-body HIIT workout.",
+      "zhTW": "BLAZE 是一項全身 HIIT 鍛鍊。",
       "en": "BLAZE is a full-body HIIT workout."
     },
     "defaultUnit": "minutes",
@@ -97,6 +100,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Blaze",
+      "火焰",
       "cardio",
       "dumbbell"
     ],
@@ -109,11 +113,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Bobbing Exhale Drill",
+      "zhTW": "上下擺動呼氣練習",
       "en": "Bobbing Exhale Drill"
     },
     "cue": {
-      "zhTW": "Stand in chest-deep water.",
+      "zhTW": "站在齊胸深的水中。",
       "en": "Stand in chest-deep water."
     },
     "defaultUnit": "minutes",
@@ -121,6 +125,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bobbing Exhale Drill",
+      "上下擺動呼氣練習",
       "cardio",
       "bodyweight"
     ],
@@ -133,11 +138,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "box jumps",
+      "zhTW": "跳箱",
       "en": "box jumps"
     },
     "cue": {
-      "zhTW": "Jump from a standing position onto the box, stretch your body, then step down again (do not jump)",
+      "zhTW": "從站立位置跳到箱子上，伸展身體，然後再次下坡（不要跳）",
       "en": "Jump from a standing position onto the box, stretch your body, then step down again (do not jump)"
     },
     "defaultUnit": "minutes",
@@ -145,6 +150,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "box jumps",
+      "跳箱",
       "cardio",
       "bodyweight",
       "Boxsprünge",
@@ -159,11 +165,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Bronco",
+      "zhTW": "野馬",
       "en": "Bronco"
     },
     "cue": {
-      "zhTW": "Finess test for rugby.5 x shuttle runs of 20m, 40m, and 60m (20yd, 45yd, 65yd/far 45yd mark) Complete as fast as possible",
+      "zhTW": "橄欖球精細度測試。 5 次 20m、40m 和 60m 的往返跑（20 碼、45 碼、65 碼/遠 45 碼標記）盡快完成",
       "en": "Finess test for rugby.5 x shuttle runs of 20m, 40m, and 60m (20yd, 45yd, 65yd/far 45yd mark) Complete as fast as possible"
     },
     "defaultUnit": "minutes",
@@ -171,6 +177,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bronco",
+      "野馬",
       "cardio",
       "bodyweight"
     ],
@@ -183,11 +190,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "ClimbMill",
+      "zhTW": "爬磨機",
       "en": "ClimbMill"
     },
     "cue": {
-      "zhTW": "The ClimbMill, also known as a stair climber, is a cardio-focused machine that simulates climbing stairs.",
+      "zhTW": "ClimbMill，也稱為爬樓梯機，是一款模擬爬樓梯的有氧運動機器。",
       "en": "The ClimbMill, also known as a stair climber, is a cardio-focused machine that simulates climbing stairs."
     },
     "defaultUnit": "minutes",
@@ -195,6 +202,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "ClimbMill",
+      "爬磨機",
       "cardio",
       "bodyweight",
       "Escaladora",
@@ -209,11 +217,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Cycling",
+      "zhTW": "騎腳踏車",
       "en": "Cycling"
     },
     "cue": {
-      "zhTW": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport.",
+      "zhTW": "騎自行車，也稱為騎自行車或騎自行車，是使用自行車進行交通、娛樂、運動或運動。",
       "en": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport."
     },
     "defaultUnit": "minutes",
@@ -221,6 +229,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Cycling",
+      "騎腳踏車",
       "cardio",
       "bodyweight",
       "Bicicletta",
@@ -239,11 +248,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Cycling cardio session",
+      "zhTW": "騎自行車有氧運動",
       "en": "Cycling cardio session"
     },
     "cue": {
-      "zhTW": "Cardio session on a Technogym Bike Excite 1000 stationary bike.",
+      "zhTW": "使用 Technogym Bike Excite 1000 固定自行車進行有氧運動。",
       "en": "Cardio session on a Technogym Bike Excite 1000 stationary bike."
     },
     "defaultUnit": "minutes",
@@ -251,6 +260,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Cycling cardio session",
+      "騎自行車有氧運動",
       "cardio",
       "bodyweight"
     ],
@@ -263,11 +273,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Diaphragmatic Breathing",
+      "zhTW": "橫膈膜呼吸",
       "en": "Diaphragmatic Breathing"
     },
     "cue": {
-      "zhTW": "Diaphragmatic Breathing",
+      "zhTW": "橫膈膜呼吸",
       "en": "Diaphragmatic Breathing"
     },
     "defaultUnit": "minutes",
@@ -275,6 +285,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Diaphragmatic Breathing",
+      "橫膈膜呼吸",
       "cardio",
       "bodyweight"
     ],
@@ -287,11 +298,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Easy Continuous Swim (Freestyle)",
+      "zhTW": "輕鬆連續游泳（自由式）",
       "en": "Easy Continuous Swim (Freestyle)"
     },
     "cue": {
-      "zhTW": "Swim freestyle at a relaxed, steady pace without stopping — think conversation pace, not racing.",
+      "zhTW": "以輕鬆、穩定的速度自由式，不停歇－想想談話的速度，而不是比賽的速度。",
       "en": "Swim freestyle at a relaxed, steady pace without stopping — think conversation pace, not racing."
     },
     "defaultUnit": "minutes",
@@ -299,6 +310,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Easy Continuous Swim (Freestyle)",
+      "輕鬆連續游泳（自由式）",
       "cardio",
       "bodyweight"
     ],
@@ -311,11 +323,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Elliptical",
+      "zhTW": "橢圓形",
       "en": "Elliptical"
     },
     "cue": {
-      "zhTW": "It improves muscle toning, strengthens the leg muscles (quads, glutes, calves), helps vascularisation and increases resistance.",
+      "zhTW": "它可以改善肌肉張力，增強腿部肌肉（股四頭肌，臀部，小腿），幫助血管化並增加抵抗力。",
       "en": "It improves muscle toning, strengthens the leg muscles (quads, glutes, calves), helps vascularisation and increases resistance."
     },
     "defaultUnit": "minutes",
@@ -323,6 +335,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Elliptical",
+      "橢圓形",
       "cardio",
       "bodyweight",
       "Crosstrainer",
@@ -341,11 +354,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Guided or free meditation",
+      "zhTW": "引導或自由冥想",
       "en": "Guided or free meditation"
     },
     "cue": {
-      "zhTW": "A mental mindfulness exercise that helps reduce anxiety, improve focus and enhance overall well-being.",
+      "zhTW": "一種精神正念練習，有助於減少焦慮、提高專注力和增強整體幸福感。",
       "en": "A mental mindfulness exercise that helps reduce anxiety, improve focus and enhance overall well-being."
     },
     "defaultUnit": "minutes",
@@ -353,6 +366,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Guided or free meditation",
+      "引導或自由冥想",
       "cardio",
       "bodyweight",
       "Geführte oder freie Meditation",
@@ -367,11 +381,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "High Knee Jumps",
+      "zhTW": "高膝跳",
       "en": "High Knee Jumps"
     },
     "cue": {
-      "zhTW": "- Start with legs slightly wider than shoulder width - Drop into a bodyweight squat - As you hit the bottom of the squat, explode upwards into a jump while simultaneously tucking y",
+      "zhTW": "- 從雙腿稍寬於肩寬開始 - 進入自重深蹲 - 當你到達深蹲底部時，爆發式向上跳躍，同時收身",
       "en": "- Start with legs slightly wider than shoulder width - Drop into a bodyweight squat - As you hit the bottom of the squat, explode upwards into a jump while simultaneously tucking y"
     },
     "defaultUnit": "minutes",
@@ -379,6 +393,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "High Knee Jumps",
+      "高膝跳",
       "cardio",
       "bodyweight",
       "Hohe Knie-Sprünge",
@@ -394,11 +409,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "High Knee Skips HD",
+      "zhTW": "高膝跳HD",
       "en": "High Knee Skips HD"
     },
     "cue": {
-      "zhTW": "You can use this exercise both as a dynamic warm-up before training and add it to your cardio training routine to burn fat.",
+      "zhTW": "您可以將此練習用作訓練前的動態熱身，也可以將其添加到您的有氧訓練程序中以燃燒脂肪。",
       "en": "You can use this exercise both as a dynamic warm-up before training and add it to your cardio training routine to burn fat."
     },
     "defaultUnit": "minutes",
@@ -406,6 +421,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "High Knee Skips HD",
+      "高膝跳HD",
       "cardio",
       "bodyweight",
       "High Knee Skips",
@@ -421,11 +437,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "High knees",
+      "zhTW": "高膝",
       "en": "High knees"
     },
     "cue": {
-      "zhTW": "Starting positionStand straight.",
+      "zhTW": "起始位置站直。",
       "en": "Starting positionStand straight."
     },
     "defaultUnit": "minutes",
@@ -433,6 +449,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "High knees",
+      "高膝",
       "cardio",
       "bodyweight",
       "Corsa sul posto con ginocchia alte",
@@ -455,16 +472,41 @@ export const records = [
     "imageUrl": "https://wger.de/media/exercise-images/983/16245344-9957-4a24-8d61-f9939ed5f964.png"
   },
   {
+    "id": "wger-2510",
+    "sourceId": 2510,
+    "domain": "strength",
+    "category": "cardio",
+    "name": {
+      "zhTW": "空心體固定（核心 L1）",
+      "en": "Hollow Body Hold (Core L1)"
+    },
+    "cue": {
+      "zhTW": "Vasco 客製化空心身體保持 - 基礎抗伸展核心穩定性。",
+      "en": "Vasco custom hollow body hold - foundational anti-extension core stability."
+    },
+    "defaultUnit": "minutes",
+    "defaultQuantity": 20,
+    "equipment": "bodyweight",
+    "searchTerms": [
+      "Hollow Body Hold (Core L1)",
+      "空心體固定（核心 L1）",
+      "cardio",
+      "bodyweight"
+    ],
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/generated/cardio.webp"
+  },
+  {
     "id": "wger-319",
     "sourceId": 319,
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Jogging",
+      "zhTW": "慢跑",
       "en": "Jogging"
     },
     "cue": {
-      "zhTW": "Get your shoes on, go outside and start running at a moderate pace.",
+      "zhTW": "穿上鞋子，走到外面，開始以適中的速度跑步。",
       "en": "Get your shoes on, go outside and start running at a moderate pace."
     },
     "defaultUnit": "minutes",
@@ -472,6 +514,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Jogging",
+      "慢跑",
       "cardio",
       "bodyweight",
       "Joggen",
@@ -488,11 +531,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Jump rope: basic jumps",
+      "zhTW": "跳繩：基本跳躍",
       "en": "Jump rope: basic jumps"
     },
     "cue": {
-      "zhTW": "Starting position: Put your feet close together, bend the knees a bit, keep your head and body straight, keep elbows in, open your arms.",
+      "zhTW": "起始姿勢：雙腳併攏，膝蓋稍微彎曲，頭部和身體保持伸直，肘部內收，雙臂打開。",
       "en": "Starting position: Put your feet close together, bend the knees a bit, keep your head and body straight, keep elbows in, open your arms."
     },
     "defaultUnit": "minutes",
@@ -500,6 +543,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Jump rope: basic jumps",
+      "跳繩：基本跳躍",
       "cardio",
       "bodyweight",
       "Corda de Salto: saltos básicos",
@@ -527,11 +571,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Jumping Jack HD",
+      "zhTW": "跳傑克 HD",
       "en": "Jumping Jack HD"
     },
     "cue": {
-      "zhTW": "Jumping jack are a plyometric exercise.",
+      "zhTW": "開合跳是一項增強式練習。",
       "en": "Jumping jack are a plyometric exercise."
     },
     "defaultUnit": "minutes",
@@ -539,6 +583,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Jumping Jack HD",
+      "跳傑克 HD",
       "cardio",
       "bodyweight",
       "Hampelmann HD",
@@ -553,11 +598,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Kick with Board",
+      "zhTW": "用板踢",
       "en": "Kick with Board"
     },
     "cue": {
-      "zhTW": "Hold a kickboard with both hands, arms extended in front of you, face in the water (lift head forward to breathe when needed).",
+      "zhTW": "雙手握住浮板，手臂伸至身前，臉浸入水中（需要時將頭向前抬起以呼吸）。",
       "en": "Hold a kickboard with both hands, arms extended in front of you, face in the water (lift head forward to breathe when needed)."
     },
     "defaultUnit": "minutes",
@@ -565,6 +610,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Kick with Board",
+      "用板踢",
       "cardio",
       "bodyweight"
     ],
@@ -577,11 +623,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "March or jog in place",
+      "zhTW": "原地行進或慢跑",
       "en": "March or jog in place"
     },
     "cue": {
-      "zhTW": "Low-impact cardiovascular exercise that simulates running without moving, ideal for warming up, improving endurance, or training in small spaces.",
+      "zhTW": "低衝擊心血管運動，無需移動即可模擬跑步，非常適合熱身、提高耐力或在狹小空間內進行訓練。",
       "en": "Low-impact cardiovascular exercise that simulates running without moving, ideal for warming up, improving endurance, or training in small spaces."
     },
     "defaultUnit": "minutes",
@@ -589,6 +635,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "March or jog in place",
+      "原地行進或慢跑",
       "cardio",
       "bodyweight",
       "Auf der Stelle marschieren oder joggen",
@@ -604,11 +651,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Recovery Bobbing",
+      "zhTW": "恢復擺動",
       "en": "Recovery Bobbing"
     },
     "cue": {
-      "zhTW": "Same motion as the Bobbing Exhale Drill, but done in slightly deeper water (so you're not touching the bottom) and at a slower, more relaxed pace — think of it as a recovery/reset ",
+      "zhTW": "與上下擺動呼氣練習相同的動作，但在稍深的水中進行（這樣你就不會接觸到底部）並且以更慢、更放鬆的速度進行 - 將其視為恢復/重置",
       "en": "Same motion as the Bobbing Exhale Drill, but done in slightly deeper water (so you're not touching the bottom) and at a slower, more relaxed pace — think of it as a recovery/reset "
     },
     "defaultUnit": "minutes",
@@ -616,6 +663,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Recovery Bobbing",
+      "恢復擺動",
       "cardio",
       "bodyweight"
     ],
@@ -628,11 +676,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Recumbent Bike",
+      "zhTW": "臥式自行車",
       "en": "Recumbent Bike"
     },
     "cue": {
-      "zhTW": "For this exercise Recumbent Bike is needed.",
+      "zhTW": "此練習需要臥式自行車。",
       "en": "For this exercise Recumbent Bike is needed."
     },
     "defaultUnit": "minutes",
@@ -640,6 +688,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Recumbent Bike",
+      "臥式自行車",
       "cardio",
       "bodyweight"
     ],
@@ -652,11 +701,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Rowing Machine",
+      "zhTW": "划船機",
       "en": "Rowing Machine"
     },
     "cue": {
-      "zhTW": "Sit on a rowing machine with your back straight.",
+      "zhTW": "坐在划船機上，背部挺直。",
       "en": "Sit on a rowing machine with your back straight."
     },
     "defaultUnit": "minutes",
@@ -664,6 +713,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rowing Machine",
+      "划船機",
       "cardio",
       "bodyweight",
       "Rudergerät"
@@ -677,11 +727,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Run",
+      "zhTW": "奔跑",
       "en": "Run"
     },
     "cue": {
-      "zhTW": "Running or jogging outside in a park, on the tracks,...",
+      "zhTW": "在公園外、跑道上跑步或慢跑...",
       "en": "Running or jogging outside in a park, on the tracks,..."
     },
     "defaultUnit": "minutes",
@@ -689,6 +739,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Run",
+      "奔跑",
       "cardio",
       "bodyweight",
       "Hardlopen",
@@ -703,11 +754,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Run - Interval Training",
+      "zhTW": "跑步 - 間歇訓練",
       "en": "Run - Interval Training"
     },
     "cue": {
-      "zhTW": "Run and do some interval trainings such as hill repat, fartlek,..",
+      "zhTW": "跑步並進行一些間歇訓練，例如山地重跑、法特萊克訓練等。",
       "en": "Run and do some interval trainings such as hill repat, fartlek,.."
     },
     "defaultUnit": "minutes",
@@ -715,6 +766,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Run - Interval Training",
+      "跑步 - 間歇訓練",
       "cardio",
       "bodyweight",
       "HIIT"
@@ -728,11 +780,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Run - Treadmill",
+      "zhTW": "跑步 - 跑步機",
       "en": "Run - Treadmill"
     },
     "cue": {
-      "zhTW": "Run on a treadmill",
+      "zhTW": "在跑步機上跑步",
       "en": "Run on a treadmill"
     },
     "defaultUnit": "minutes",
@@ -740,6 +792,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Run - Treadmill",
+      "跑步 - 跑步機",
       "cardio",
       "bodyweight",
       "Correr en cinta",
@@ -755,11 +808,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Schwimmen",
+      "zhTW": "施維門",
       "en": "Schwimmen"
     },
     "cue": {
-      "zhTW": "* 800m Schwimmen in 20 Minuten",
+      "zhTW": "* 20 分鐘內 800m Schwimmen",
       "en": "* 800m Schwimmen in 20 Minuten"
     },
     "defaultUnit": "minutes",
@@ -767,6 +820,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Schwimmen",
+      "施維門",
       "cardio",
       "bodyweight"
     ],
@@ -779,11 +833,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Side-Kick Breathing (Kickboard)",
+      "zhTW": "側踢呼吸（踢板）",
       "en": "Side-Kick Breathing (Kickboard)"
     },
     "cue": {
-      "zhTW": "Push off the wall on your side (not flat on your stomach), one arm extended forward holding the board or just extended, kicking continuously.",
+      "zhTW": "側身推牆（不是平放在肚子上），一隻手臂向前伸出握住木板或只是伸出，不斷踢腿。",
       "en": "Push off the wall on your side (not flat on your stomach), one arm extended forward holding the board or just extended, kicking continuously."
     },
     "defaultUnit": "minutes",
@@ -791,6 +845,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Side-Kick Breathing (Kickboard)",
+      "側踢呼吸（踢板）",
       "cardio",
       "bodyweight"
     ],
@@ -803,11 +858,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Ski Machine",
+      "zhTW": "滑雪機",
       "en": "Ski Machine"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "minutes",
@@ -815,6 +870,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Ski Machine",
+      "滑雪機",
       "cardio",
       "bodyweight",
       "Machine de ski (ski erg)",
@@ -830,11 +886,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Skipping - Standard",
+      "zhTW": "跳繩 - 標準",
       "en": "Skipping - Standard"
     },
     "cue": {
-      "zhTW": "Do a single, double footed jump for each swing of the rope.",
+      "zhTW": "每次擺動繩子時，做一次單雙腳跳躍。",
       "en": "Do a single, double footed jump for each swing of the rope."
     },
     "defaultUnit": "minutes",
@@ -842,6 +898,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Skipping - Standard",
+      "跳繩 - 標準",
       "cardio",
       "bodyweight",
       "Saltar a la comba – estándar",
@@ -858,11 +915,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Sled Push",
+      "zhTW": "推雪橇",
       "en": "Sled Push"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "minutes",
@@ -870,6 +927,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Sled Push",
+      "推雪橇",
       "cardio",
       "bodyweight",
       "Empuje de trineo",
@@ -886,11 +944,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Stair Master",
+      "zhTW": "樓梯大師",
       "en": "Stair Master"
     },
     "cue": {
-      "zhTW": "cardio and lower-body strength machine designed to simulate climbing stairs.",
+      "zhTW": "有氧運動和下半身力量機器，旨在模擬爬樓梯。",
       "en": "cardio and lower-body strength machine designed to simulate climbing stairs."
     },
     "defaultUnit": "minutes",
@@ -898,6 +956,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Stair Master",
+      "樓梯大師",
       "cardio",
       "bodyweight",
       "Stair Master (simulateur d'escaliers)"
@@ -911,11 +970,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Stationary Bike",
+      "zhTW": "固定自行車",
       "en": "Stationary Bike"
     },
     "cue": {
-      "zhTW": "Ride a Stationary Bike with various tensions.",
+      "zhTW": "騎著具有各種張力的固定自行車。",
       "en": "Ride a Stationary Bike with various tensions."
     },
     "defaultUnit": "minutes",
@@ -923,6 +982,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Stationary Bike",
+      "固定自行車",
       "cardio",
       "bodyweight"
     ],
@@ -935,11 +995,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Stationary bike cardio",
+      "zhTW": "固定式自行車有氧運動",
       "en": "Stationary bike cardio"
     },
     "cue": {
-      "zhTW": "Benefits of Stationary Bike Cardio Stationary bike cardio is an excellent form of exercise that offers multiple benefits for health and well-being.",
+      "zhTW": "固定式自行車有氧運動的好處 固定式自行車有氧運動是一種極佳的運動形式，可為健康和福祉帶來多種好處。",
       "en": "Benefits of Stationary Bike Cardio Stationary bike cardio is an excellent form of exercise that offers multiple benefits for health and well-being."
     },
     "defaultUnit": "minutes",
@@ -947,6 +1007,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Stationary bike cardio",
+      "固定式自行車有氧運動",
       "cardio",
       "bodyweight",
       "Cardio auf dem Heimtrainer",
@@ -962,11 +1023,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Step Jack",
+      "zhTW": "步傑克",
       "en": "Step Jack"
     },
     "cue": {
-      "zhTW": "The Step Jack is a low-impact plyometric-style move that provides cardiovascular benefits without the joint stress of jumping.",
+      "zhTW": "Step Jack 是一種低衝擊的增強式動作，可提供心血管益處，且不會產生跳躍時的關節壓力。",
       "en": "The Step Jack is a low-impact plyometric-style move that provides cardiovascular benefits without the joint stress of jumping."
     },
     "defaultUnit": "minutes",
@@ -974,6 +1035,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Step Jack",
+      "步傑克",
       "cardio",
       "bodyweight",
       "Side Step Jack",
@@ -988,11 +1050,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Stroke-and-Roll Drill",
+      "zhTW": "劃滾鑽",
       "en": "Stroke-and-Roll Drill"
     },
     "cue": {
-      "zhTW": "Push off, swim a few strokes, and every breath roll fully onto your back for 2-3 breaths, then roll back into freestyle.",
+      "zhTW": "蹬水，遊幾下，每次呼吸時完全翻滾到背部，持續 2-3 次呼吸，然後翻滾回到自由泳。",
       "en": "Push off, swim a few strokes, and every breath roll fully onto your back for 2-3 breaths, then roll back into freestyle."
     },
     "defaultUnit": "minutes",
@@ -1000,6 +1062,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Stroke-and-Roll Drill",
+      "劃滾鑽",
       "cardio",
       "bodyweight"
     ],
@@ -1012,11 +1075,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Suspended crossess",
+      "zhTW": "懸掛十字架",
       "en": "Suspended crossess"
     },
     "cue": {
-      "zhTW": "Suspension exercise with trx for chest training",
+      "zhTW": "trx 懸吊運動進行胸部訓練",
       "en": "Suspension exercise with trx for chest training"
     },
     "defaultUnit": "minutes",
@@ -1024,6 +1087,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Suspended crossess",
+      "懸掛十字架",
       "cardio",
       "bodyweight",
       "Croci in sospensione",
@@ -1041,11 +1105,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Swimming 50m sprints",
+      "zhTW": "游泳50m短跑",
       "en": "Swimming 50m sprints"
     },
     "cue": {
-      "zhTW": "50m swimming sprints at 1min",
+      "zhTW": "50m游泳衝刺1分鐘",
       "en": "50m swimming sprints at 1min"
     },
     "defaultUnit": "minutes",
@@ -1053,6 +1117,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Swimming 50m sprints",
+      "游泳50m短跑",
       "cardio",
       "bodyweight",
       "Piques de 50m en Natación"
@@ -1066,11 +1131,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Talons fesses",
+      "zhTW": "利爪坦白",
       "en": "Talons fesses"
     },
     "cue": {
-      "zhTW": "Touch your heels to your buttocks, while remaining static or moving",
+      "zhTW": "用腳跟觸碰臀部，同時保持靜止或移動",
       "en": "Touch your heels to your buttocks, while remaining static or moving"
     },
     "defaultUnit": "minutes",
@@ -1078,6 +1143,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Talons fesses",
+      "利爪坦白",
       "cardio",
       "bodyweight",
       "Bum kicks"
@@ -1091,11 +1157,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Treadmill Cardio",
+      "zhTW": "跑步機有氧運動",
       "en": "Treadmill Cardio"
     },
     "cue": {
-      "zhTW": "It's a cardiovascular workout performed on a treadmill to improve endurance, burn calories, and promote heart health.",
+      "zhTW": "這是在跑步機上進行的心血管鍛煉，可提高耐力、燃燒卡路里並促進心臟健康。",
       "en": "It's a cardiovascular workout performed on a treadmill to improve endurance, burn calories, and promote heart health."
     },
     "defaultUnit": "minutes",
@@ -1103,6 +1169,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Treadmill Cardio",
+      "跑步機有氧運動",
       "cardio",
       "bodyweight",
       "Cardio en cinta",
@@ -1118,11 +1185,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Walking",
+      "zhTW": "步行",
       "en": "Walking"
     },
     "cue": {
-      "zhTW": "Walking outdoor or indoor, try keeping a pace of at list 100 steps per minute.",
+      "zhTW": "在室外或室內行走，盡量保持每分鐘至少 100 步的速度。",
       "en": "Walking outdoor or indoor, try keeping a pace of at list 100 steps per minute."
     },
     "defaultUnit": "minutes",
@@ -1130,6 +1197,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Walking",
+      "步行",
       "cardio",
       "bodyweight"
     ],
@@ -1142,11 +1210,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Wall-Hold Rotation",
+      "zhTW": "壁掛旋轉",
       "en": "Wall-Hold Rotation"
     },
     "cue": {
-      "zhTW": "Hold the pool wall or edge with one hand, body horizontal at the surface, legs kicking gently behind you.",
+      "zhTW": "用一隻手握住池壁或邊緣，身體水平於水面，雙腿在身後輕輕踢動。",
       "en": "Hold the pool wall or edge with one hand, body horizontal at the surface, legs kicking gently behind you."
     },
     "defaultUnit": "minutes",
@@ -1154,6 +1222,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wall-Hold Rotation",
+      "壁掛旋轉",
       "cardio",
       "bodyweight"
     ],
@@ -1166,11 +1235,11 @@ export const records = [
     "domain": "strength",
     "category": "cardio",
     "name": {
-      "zhTW": "Zone 2 Running",
+      "zhTW": "2區跑步",
       "en": "Zone 2 Running"
     },
     "cue": {
-      "zhTW": "Zone two Cardio for endurance, you should be able to speak while running",
+      "zhTW": "第二區有氧運動耐力，你應該能夠在跑步時說話",
       "en": "Zone two Cardio for endurance, you should be able to speak while running"
     },
     "defaultUnit": "minutes",
@@ -1178,6 +1247,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Zone 2 Running",
+      "2區跑步",
       "cardio",
       "bodyweight",
       "Carrera en Zona 2",

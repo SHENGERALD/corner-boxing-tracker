@@ -5,6 +5,7 @@ import {
   normalizeCategory,
   normalizeEquipment,
   normalizeExercise,
+  normalizeExercises,
   toStableId,
 } from "./wger-normalize.mjs";
 
@@ -41,4 +42,25 @@ test("reports exercises without usable images instead of dropping them", () => {
 
   assert.equal(result.imageUrl, undefined);
   assert.deepEqual(report.missingMedia, [{ sourceId: 42, name: "Barbell Press" }]);
+});
+
+test("applies cached Traditional Chinese labels while preserving English search data", () => {
+  const exercise = {
+    id: 42,
+    category: { name: "Chest" },
+    equipment: [{ name: "Barbell" }],
+    translations: [{ language: 2, name: "Barbell Bench Press", description_source: "Lower the bar with control." }],
+    images: [],
+  };
+
+  const result = normalizeExercises([exercise], {
+    translations: {
+      42: { name: "槓鈴臥推", cue: "控制槓鈴下放。" },
+    },
+  }).records[0];
+
+  assert.equal(result.name.zhTW, "槓鈴臥推");
+  assert.equal(result.name.en, "Barbell Bench Press");
+  assert.equal(result.cue.zhTW, "控制槓鈴下放。");
+  assert.ok(result.searchTerms.includes("Barbell Bench Press"));
 });

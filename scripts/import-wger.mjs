@@ -8,11 +8,21 @@ const apiUrl = process.env.WGER_API_URL ?? "https://wger.de/api/v2/exerciseinfo/
 const inputPath = process.env.WGER_INPUT;
 const outputDir = path.join(root, "src/domain/strengthCatalog/generated");
 const reportPath = path.join(root, "scripts/wger-import-report.json");
+const translationsPath = path.join(root, "scripts/wger-zh-TW-cache.json");
 const pageSize = Number(process.env.WGER_PAGE_SIZE ?? 100);
 const categoryOrder = ["chest", "back", "legs", "shoulders", "arms", "core", "calves", "mobility", "cardio"];
 
 async function loadJsonFile(filePath) {
   return JSON.parse(await fs.readFile(filePath, "utf8"));
+}
+
+async function loadTranslations() {
+  try {
+    return await loadJsonFile(translationsPath);
+  } catch (error) {
+    if (error.code === "ENOENT") return {};
+    throw error;
+  }
 }
 
 async function fetchExercises() {
@@ -85,7 +95,8 @@ async function main() {
 
   const collisions = findSourceIdCollisions(exercises);
   const report = { missingMedia: [], duplicates: [], invalid: [], collisions };
-  const normalized = normalizeExercises(exercises, { existing, report });
+  const translations = await loadTranslations();
+  const normalized = normalizeExercises(exercises, { existing, report, translations });
   const recordsByCategory = Object.fromEntries(categoryOrder.map((category) => [category, []]));
   for (const record of normalized.records) {
     if (recordsByCategory[record.category]) recordsByCategory[record.category].push(record);
@@ -102,6 +113,7 @@ async function main() {
     fetchedCount: exercises.length,
     importedCount: normalized.records.length,
     skippedDuplicateCount: report.duplicates.length,
+    localizedCount: normalized.records.filter((record) => record.name.zhTW !== record.name.en).length,
     categoryCounts: counts,
     missingMedia: report.missingMedia,
     invalid: report.invalid,

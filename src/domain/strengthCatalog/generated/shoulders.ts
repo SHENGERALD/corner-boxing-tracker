@@ -5,11 +5,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "45° lateral raises",
+      "zhTW": "45°側平舉",
       "en": "45° lateral raises"
     },
     "cue": {
-      "zhTW": "dumbbell raise in the space between front and side raises",
+      "zhTW": "在前平舉與側平舉之間的空間內進行啞鈴平舉",
       "en": "dumbbell raise in the space between front and side raises"
     },
     "defaultUnit": "rounds",
@@ -17,6 +17,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "45° lateral raises",
+      "45°側平舉",
       "shoulders",
       "dumbbell"
     ],
@@ -29,11 +30,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Arnold Shoulder Press",
+      "zhTW": "阿諾肩部推舉",
       "en": "Arnold Shoulder Press"
     },
     "cue": {
-      "zhTW": "Very common shoulder exercise.",
+      "zhTW": "非常常見的肩部運動。",
       "en": "Very common shoulder exercise."
     },
     "defaultUnit": "rounds",
@@ -41,6 +42,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Arnold Shoulder Press",
+      "阿諾肩部推舉",
       "shoulders",
       "dumbbell",
       "Arnold Press",
@@ -59,11 +61,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Band pull-apart with external rotation",
+      "zhTW": "透過外部旋轉將帶拉開",
       "en": "Band pull-apart with external rotation"
     },
     "cue": {
-      "zhTW": "Stand tall with your feet shoulder-width apart, chest out, and shoulders back.",
+      "zhTW": "站直，雙腳分開與肩同寬，挺胸，肩膀向後。",
       "en": "Stand tall with your feet shoulder-width apart, chest out, and shoulders back."
     },
     "defaultUnit": "rounds",
@@ -71,6 +73,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Band pull-apart with external rotation",
+      "透過外部旋轉將帶拉開",
       "shoulders",
       "bodyweight",
       "Apertura con banda y rotación externa",
@@ -86,11 +89,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Banded Shoulder Drills",
+      "zhTW": "帶肩訓練",
       "en": "Banded Shoulder Drills"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -98,6 +101,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Banded Shoulder Drills",
+      "帶肩訓練",
       "shoulders",
       "bodyweight",
       "Ejercicios de hombro con banda",
@@ -113,11 +117,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Barbell Clean and press",
+      "zhTW": "槓鈴 清潔並按壓",
       "en": "Barbell Clean and press"
     },
     "cue": {
-      "zhTW": "This exercise involves lifting a barbell from the ground to the shoulders, then pressing it overhead.",
+      "zhTW": "此練習包括將槓鈴從地面舉至肩部，然後將其壓過頭頂。",
       "en": "This exercise involves lifting a barbell from the ground to the shoulders, then pressing it overhead."
     },
     "defaultUnit": "rounds",
@@ -125,6 +129,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Barbell Clean and press",
+      "槓鈴 清潔並按壓",
       "shoulders",
       "dumbbell",
       "Cargada y press con barra",
@@ -140,11 +145,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Barbell Silverback Shrug",
+      "zhTW": "槓鈴銀背聳肩",
       "en": "Barbell Silverback Shrug"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -152,6 +157,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Silverback Shrug",
+      "槓鈴銀背聳肩",
       "shoulders",
       "barbell",
       "Encogimiento Silverback con barra",
@@ -167,11 +173,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Behind the Back Cable Lateral Raise",
+      "zhTW": "背後繩索側平舉",
       "en": "Behind the Back Cable Lateral Raise"
     },
     "cue": {
-      "zhTW": "Lateral raises have long been a staple for building capped delts, and lifters use everything from dumbbells and bands to machines and single-arm variations to make them grow.",
+      "zhTW": "側平舉長期以來一直是塑造三角肌受限的主要手段，舉重運動員使用從啞鈴、彈力帶到器械和單臂變式等各種器械來促進三角肌增長。",
       "en": "Lateral raises have long been a staple for building capped delts, and lifters use everything from dumbbells and bands to machines and single-arm variations to make them grow."
     },
     "defaultUnit": "rounds",
@@ -179,6 +185,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Behind the Back Cable Lateral Raise",
+      "背後繩索側平舉",
       "shoulders",
       "cable",
       "Elevación lateral en polea por detrás de la espalda",
@@ -194,11 +201,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Bent High Pulls",
+      "zhTW": "彎曲高拉",
       "en": "Bent High Pulls"
     },
     "cue": {
-      "zhTW": "Bend over slightly while holding two dumbbells.",
+      "zhTW": "握住兩個啞鈴，稍微彎腰。",
       "en": "Bend over slightly while holding two dumbbells."
     },
     "defaultUnit": "rounds",
@@ -206,6 +213,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Bent High Pulls",
+      "彎曲高拉",
       "shoulders",
       "dumbbell",
       "Jalón Alto Inclinado con Mancuernas",
@@ -221,11 +229,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Bent-over Lateral Raises",
+      "zhTW": "彎腰側平舉",
       "en": "Bent-over Lateral Raises"
     },
     "cue": {
-      "zhTW": "Sit on bench while holding weights.",
+      "zhTW": "坐在長凳上，舉重。",
       "en": "Sit on bench while holding weights."
     },
     "defaultUnit": "rounds",
@@ -233,6 +241,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Bent-over Lateral Raises",
+      "彎腰側平舉",
       "shoulders",
       "dumbbell",
       "Elevaciones Posteriores",
@@ -248,11 +257,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Bus Drivers",
+      "zhTW": "巴士司機",
       "en": "Bus Drivers"
     },
     "cue": {
-      "zhTW": "Sitting with a Weight Plate, used as wheel, in both hands; raised slightly below eye level",
+      "zhTW": "雙手拿著配重板，用作輪子；略低於眼睛水平",
       "en": "Sitting with a Weight Plate, used as wheel, in both hands; raised slightly below eye level"
     },
     "defaultUnit": "rounds",
@@ -260,6 +269,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bus Drivers",
+      "巴士司機",
       "shoulders",
       "bodyweight",
       "Volante"
@@ -273,11 +283,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Butterfly Reverse",
+      "zhTW": "蝴蝶反轉",
       "en": "Butterfly Reverse"
     },
     "cue": {
-      "zhTW": "Butterfly Reverse",
+      "zhTW": "蝴蝶反轉",
       "en": "Butterfly Reverse"
     },
     "defaultUnit": "rounds",
@@ -285,6 +295,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Butterfly Reverse",
+      "蝴蝶反轉",
       "shoulders",
       "bodyweight",
       "Pec-Deck Inverso"
@@ -298,11 +309,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Cable External Rotation",
+      "zhTW": "電纜外旋",
       "en": "Cable External Rotation"
     },
     "cue": {
-      "zhTW": "Steps: 1.",
+      "zhTW": "步驟： 1.",
       "en": "Steps: 1."
     },
     "defaultUnit": "rounds",
@@ -310,6 +321,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable External Rotation",
+      "電纜外旋",
       "shoulders",
       "cable",
       "Außenrotation am Kabelzug",
@@ -325,11 +337,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Cable Front Raise with a small bar",
+      "zhTW": "附小槓的繩索前平舉",
       "en": "Cable Front Raise with a small bar"
     },
     "cue": {
-      "zhTW": "The Cable Front Raise with a small bar isolates your anterior deltoids (front shoulders) by providing constant tension, requiring you to stand facing away from a low pulley, grab t",
+      "zhTW": "帶有小桿的繩索前平舉透過提供恆定的張力來隔離您的前三角肌（前肩），要求您背對低滑輪站立，抓住",
       "en": "The Cable Front Raise with a small bar isolates your anterior deltoids (front shoulders) by providing constant tension, requiring you to stand facing away from a low pulley, grab t"
     },
     "defaultUnit": "rounds",
@@ -337,6 +349,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Front Raise with a small bar",
+      "附小槓的繩索前平舉",
       "shoulders",
       "cable",
       "Elevación frontal en polea con barra",
@@ -352,11 +365,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Cable Lateral Raises (Single Arm)",
+      "zhTW": "繩索側平舉（單臂）",
       "en": "Cable Lateral Raises (Single Arm)"
     },
     "cue": {
-      "zhTW": "The single arm cable lateral raise is a variation of the lateral raise and an exercise used to build the muscles of the shoulders.",
+      "zhTW": "單臂繩索側平舉是側平舉的變體，是一種鍛鍊肩部肌肉的動作。",
       "en": "The single arm cable lateral raise is a variation of the lateral raise and an exercise used to build the muscles of the shoulders."
     },
     "defaultUnit": "rounds",
@@ -364,6 +377,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Lateral Raises (Single Arm)",
+      "繩索側平舉（單臂）",
       "shoulders",
       "cable",
       "Elevaciones laterales en polea (a un brazo)",
@@ -379,11 +393,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Cable Rear Delt Fly",
+      "zhTW": "三角肌後束繩索飛鳥",
       "en": "Cable Rear Delt Fly"
     },
     "cue": {
-      "zhTW": "The reverse cable fly, also known as the cable rear delt fly, is a deltoid muscle strengthening and definition exercise.",
+      "zhTW": "反向拉索飛鳥，也稱為拉索後三角肌飛鳥，是一種增強三角肌和定義輪廓的練習。",
       "en": "The reverse cable fly, also known as the cable rear delt fly, is a deltoid muscle strengthening and definition exercise."
     },
     "defaultUnit": "rounds",
@@ -391,6 +405,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Rear Delt Fly",
+      "三角肌後束繩索飛鳥",
       "shoulders",
       "cable",
       "Aperturas Posteriores en Polea",
@@ -407,11 +422,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Cable Rear-Delt Fly (single arm)",
+      "zhTW": "繩索後三角肌飛鳥（單臂）",
       "en": "Cable Rear-Delt Fly (single arm)"
     },
     "cue": {
-      "zhTW": "**Cable rear delt fly (single arm):** Stand sideways to a cable machine with the handle set around shoulder height.",
+      "zhTW": "**繩索後三角肌飛鳥（單臂）：** 側身站在繩索機前，手柄設置在肩部高度。",
       "en": "**Cable rear delt fly (single arm):** Stand sideways to a cable machine with the handle set around shoulder height."
     },
     "defaultUnit": "rounds",
@@ -419,6 +434,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Rear-Delt Fly (single arm)",
+      "繩索後三角肌飛鳥（單臂）",
       "shoulders",
       "cable",
       "Aperturas para deltoides posterior en polea (un brazo)",
@@ -434,11 +450,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Cable Shrug-In",
+      "zhTW": "電纜聳入",
       "en": "Cable Shrug-In"
     },
     "cue": {
-      "zhTW": "Attach two D-Handles to two low cables and shrug in using your upper traps.",
+      "zhTW": "將兩個 D 型手柄連接到兩根低纜繩上，並在使用上部斜方肌時聳肩。",
       "en": "Attach two D-Handles to two low cables and shrug in using your upper traps."
     },
     "defaultUnit": "rounds",
@@ -446,6 +462,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Shrug-In",
+      "電纜聳入",
       "shoulders",
       "cable"
     ],
@@ -458,11 +475,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Chair dips",
+      "zhTW": "椅子蹲",
       "en": "Chair dips"
     },
     "cue": {
-      "zhTW": "**Starting position:** Sit down on the front edge of a chair, back straight, hands holding the front edge.",
+      "zhTW": "**起始位置：** 坐在椅子的前緣上，背部挺直，雙手握住前緣。",
       "en": "**Starting position:** Sit down on the front edge of a chair, back straight, hands holding the front edge."
     },
     "defaultUnit": "rounds",
@@ -470,6 +487,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Chair dips",
+      "椅子蹲",
       "shoulders",
       "bodyweight",
       "Dips am Stuhl",
@@ -485,11 +503,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Chest-Supported Rear Delt Raise",
+      "zhTW": "胸部支撐三角肌後部平舉",
       "en": "Chest-Supported Rear Delt Raise"
     },
     "cue": {
-      "zhTW": "\"The Y\"Position: Set an incline bench to 30-45 degrees.",
+      "zhTW": "「Y」位置：將傾斜長凳設定為 30-45 度。",
       "en": "\"The Y\"Position: Set an incline bench to 30-45 degrees."
     },
     "defaultUnit": "rounds",
@@ -497,6 +515,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Chest-Supported Rear Delt Raise",
+      "胸部支撐三角肌後部平舉",
       "shoulders",
       "dumbbell",
       "Elevación posterior de hombro con apoyo en el pecho",
@@ -512,11 +531,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Clean and Jerk OL",
+      "zhTW": "挺舉OL",
       "en": "Clean and Jerk OL"
     },
     "cue": {
-      "zhTW": "Olympic lift clean and jerk.",
+      "zhTW": "奧林匹克舉重挺舉。",
       "en": "Olympic lift clean and jerk."
     },
     "defaultUnit": "rounds",
@@ -524,6 +543,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Clean and Jerk OL",
+      "挺舉OL",
       "shoulders",
       "barbell"
     ],
@@ -536,11 +556,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Clean and Press",
+      "zhTW": "清潔並按壓",
       "en": "Clean and Press"
     },
     "cue": {
-      "zhTW": "* **The First Pull:** Lift the bar from the floor to knee-height by driving with the legs, keeping the angle of your back constant.",
+      "zhTW": "* **第一次拉動：** 用腿驅動，將槓鈴從地板提升到膝蓋高度，保持背部角度不變。",
       "en": "* **The First Pull:** Lift the bar from the floor to knee-height by driving with the legs, keeping the angle of your back constant."
     },
     "defaultUnit": "rounds",
@@ -548,6 +568,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Clean and Press",
+      "清潔並按壓",
       "shoulders",
       "barbell",
       "Cargada y press",
@@ -567,11 +588,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Devil’s Press",
+      "zhTW": "魔鬼出版社",
       "en": "Devil’s Press"
     },
     "cue": {
-      "zhTW": "The Devil’s Press is a hybrid movement combining a dumbbell burpee and a double dumbbell snatch.",
+      "zhTW": "魔鬼推舉是一種結合了啞鈴波比跳和雙啞鈴抓舉的混合動作。",
       "en": "The Devil’s Press is a hybrid movement combining a dumbbell burpee and a double dumbbell snatch."
     },
     "defaultUnit": "rounds",
@@ -579,6 +600,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Devil’s Press",
+      "魔鬼出版社",
       "shoulders",
       "dumbbell",
       "Devil's Press",
@@ -593,11 +615,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Diagonal Shoulder Press",
+      "zhTW": "對角肩推舉",
       "en": "Diagonal Shoulder Press"
     },
     "cue": {
-      "zhTW": "You sit at the bench press device, back slightly tilted to the back.",
+      "zhTW": "你坐在臥推裝置前，背部稍微向後傾斜。",
       "en": "You sit at the bench press device, back slightly tilted to the back."
     },
     "defaultUnit": "rounds",
@@ -605,6 +627,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Diagonal Shoulder Press",
+      "對角肩推舉",
       "shoulders",
       "machine",
       "Diagonales Schulterdrücken",
@@ -620,11 +643,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Dumbbell Bradford press",
+      "zhTW": "啞鈴布拉德福德推舉",
       "en": "Dumbbell Bradford press"
     },
     "cue": {
-      "zhTW": "From a front hold of the DBs in a OHP, press above the head, bring back towards the rear of the shoulders, down, and press back forward.",
+      "zhTW": "從 OHP 中前握 DB 開始，按壓頭頂上方，向後推至肩部後方，向下，然後向前按壓。",
       "en": "From a front hold of the DBs in a OHP, press above the head, bring back towards the rear of the shoulders, down, and press back forward."
     },
     "defaultUnit": "rounds",
@@ -632,6 +655,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Bradford press",
+      "啞鈴布拉德福德推舉",
       "shoulders",
       "dumbbell",
       "Bradford-Drücken mit Kurzhanteln",
@@ -647,11 +671,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Dumbbell rear delt row",
+      "zhTW": "啞鈴三角肌後側划船",
       "en": "Dumbbell rear delt row"
     },
     "cue": {
-      "zhTW": "Hold a dumbbell in each hand.",
+      "zhTW": "雙手各握一個啞鈴。",
       "en": "Hold a dumbbell in each hand."
     },
     "defaultUnit": "rounds",
@@ -659,6 +683,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell rear delt row",
+      "啞鈴三角肌後側划船",
       "shoulders",
       "dumbbell",
       "Kurzhantel-Rudern für die hintere Schulter",
@@ -674,11 +699,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Dumbbell Scaption",
+      "zhTW": "啞鈴肩胛骨",
       "en": "Dumbbell Scaption"
     },
     "cue": {
-      "zhTW": "Starting position: Stand upright with your feet shoulder-width apart.",
+      "zhTW": "起始位置：直立，雙腳分開與肩同寬。",
       "en": "Starting position: Stand upright with your feet shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -686,6 +711,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Scaption",
+      "啞鈴肩胛骨",
       "shoulders",
       "dumbbell",
       "Kurzhantel-Scaption",
@@ -701,11 +727,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Dumbbell Shoulder Rotations",
+      "zhTW": "啞鈴肩旋轉",
       "en": "Dumbbell Shoulder Rotations"
     },
     "cue": {
-      "zhTW": "Dumbbell shoulder rotations are designed to strengthen the rotator cuff muscles and improve shoulder stability and mobility.",
+      "zhTW": "啞鈴肩部旋轉旨在增強肩袖肌肉，提高肩部穩定性和靈活性。",
       "en": "Dumbbell shoulder rotations are designed to strengthen the rotator cuff muscles and improve shoulder stability and mobility."
     },
     "defaultUnit": "rounds",
@@ -713,6 +739,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Shoulder Rotations",
+      "啞鈴肩旋轉",
       "shoulders",
       "dumbbell",
       "Rotaciones de hombro con mancuerna",
@@ -728,11 +755,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Facepull",
+      "zhTW": "拉臉",
       "en": "Facepull"
     },
     "cue": {
-      "zhTW": "Attach a rope to a pulley station set at about chest level.",
+      "zhTW": "將一條繩子連接到設置在胸部附近的滑輪站上。",
       "en": "Attach a rope to a pulley station set at about chest level."
     },
     "defaultUnit": "rounds",
@@ -740,6 +767,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Facepull",
+      "拉臉",
       "shoulders",
       "cable",
       "Face Pulls",
@@ -756,11 +784,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Floor Glider Hamstring Curls",
+      "zhTW": "地板滑翔腿筋彎舉",
       "en": "Floor Glider Hamstring Curls"
     },
     "cue": {
-      "zhTW": "Lie on back with heels on floor gliders or towels.",
+      "zhTW": "仰臥，腳跟放在地板滑翔機或毛巾上。",
       "en": "Lie on back with heels on floor gliders or towels."
     },
     "defaultUnit": "rounds",
@@ -768,6 +796,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Floor Glider Hamstring Curls",
+      "地板滑翔腿筋彎舉",
       "shoulders",
       "bodyweight",
       "Beinbeuger am Boden mit Glidern",
@@ -783,11 +812,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Front Raise (Cable)",
+      "zhTW": "前平舉（拉索）",
       "en": "Front Raise (Cable)"
     },
     "cue": {
-      "zhTW": "Raise the handle in a slight arc with controlled movement.",
+      "zhTW": "以輕微的弧線抬起手柄並控制移動。",
       "en": "Raise the handle in a slight arc with controlled movement."
     },
     "defaultUnit": "rounds",
@@ -795,6 +824,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Front Raise (Cable)",
+      "前平舉（拉索）",
       "shoulders",
       "cable"
     ],
@@ -807,11 +837,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Front Raises",
+      "zhTW": "前平舉",
       "en": "Front Raises"
     },
     "cue": {
-      "zhTW": "To execute the exercise, the lifter stands with their feet shoulder width apart and weights or resistance handles held by their side with a pronated (overhand) grip.",
+      "zhTW": "為了進行練習，舉重者站立，雙腳分開與肩同寬，並用內旋（正手）握法將重物或阻力手柄放在身體兩側。",
       "en": "To execute the exercise, the lifter stands with their feet shoulder width apart and weights or resistance handles held by their side with a pronated (overhand) grip."
     },
     "defaultUnit": "rounds",
@@ -819,6 +849,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Front Raises",
+      "前平舉",
       "shoulders",
       "barbell",
       "Distensione lento avanti Bilanciere",
@@ -837,11 +868,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Front Raises with Plates",
+      "zhTW": "平板前平舉",
       "en": "Front Raises with Plates"
     },
     "cue": {
-      "zhTW": "The plate front raise is a variation of the dumbbell front raise where the lifter holds a weight plate between two hands, rather than using a dumbbell, barbell, or other weight.",
+      "zhTW": "平板前平舉是啞鈴前平舉的變體，舉重者用兩隻手握住槓鈴片，而不是使用啞鈴、槓鈴或其他重量。",
       "en": "The plate front raise is a variation of the dumbbell front raise where the lifter holds a weight plate between two hands, rather than using a dumbbell, barbell, or other weight."
     },
     "defaultUnit": "rounds",
@@ -849,6 +880,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Front Raises with Plates",
+      "平板前平舉",
       "shoulders",
       "bodyweight",
       "Elevaciones Frontales con Disco",
@@ -865,11 +897,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Handstand",
+      "zhTW": "倒立",
       "en": "Handstand"
     },
     "cue": {
-      "zhTW": "Handstand free standing by pressing arms into the ground and contracting core and glutes",
+      "zhTW": "倒立，將手臂壓入地面並收縮核心和臀肌",
       "en": "Handstand free standing by pressing arms into the ground and contracting core and glutes"
     },
     "defaultUnit": "rounds",
@@ -877,6 +909,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Handstand",
+      "倒立",
       "shoulders",
       "bodyweight"
     ],
@@ -889,11 +922,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Handstand Pushup",
+      "zhTW": "倒立伏地挺身",
       "en": "Handstand Pushup"
     },
     "cue": {
-      "zhTW": "The handstand push-up (press-up) - also called the vertical push-up (press-up) or the inverted push-up (press-up) also called commandos- is a type of push-up exercise where the bod",
+      "zhTW": "倒立俯臥撐（Press-Up） - 也稱為垂直俯臥撐（Press-Up）或倒立俯臥撐（Press-Up）也稱為突擊隊 - 是俯臥撐運動的一種，其中身體需要",
       "en": "The handstand push-up (press-up) - also called the vertical push-up (press-up) or the inverted push-up (press-up) also called commandos- is a type of push-up exercise where the bod"
     },
     "defaultUnit": "rounds",
@@ -901,6 +934,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Handstand Pushup",
+      "倒立伏地挺身",
       "shoulders",
       "bodyweight",
       "Flexiones en pino",
@@ -916,11 +950,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Head turns",
+      "zhTW": "轉頭",
       "en": "Head turns"
     },
     "cue": {
-      "zhTW": "Starting position: Sit or stand with your back straight and shoulders down.",
+      "zhTW": "起始位置：坐或站，背部挺直，肩膀向下。",
       "en": "Starting position: Sit or stand with your back straight and shoulders down."
     },
     "defaultUnit": "rounds",
@@ -928,6 +962,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Head turns",
+      "轉頭",
       "shoulders",
       "bodyweight",
       "Hoofd draaiingen",
@@ -952,11 +987,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "High Pull",
+      "zhTW": "高拉力",
       "en": "High Pull"
     },
     "cue": {
-      "zhTW": "Use a light barbell, perform explosive lift up starting from underneath knee cap level.",
+      "zhTW": "使用輕槓鈴，從膝蓋下方開始進行爆炸性舉起。",
       "en": "Use a light barbell, perform explosive lift up starting from underneath knee cap level."
     },
     "defaultUnit": "rounds",
@@ -964,6 +999,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "High Pull",
+      "高拉力",
       "shoulders",
       "bodyweight",
       "High pull",
@@ -978,11 +1014,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "High-Cable Lateral Raise",
+      "zhTW": "高繩側平舉",
       "en": "High-Cable Lateral Raise"
     },
     "cue": {
-      "zhTW": "Stand next to a cable machine with the pulley set to waist height.",
+      "zhTW": "站在纜繩機旁邊，將滑輪設定到腰部高度。",
       "en": "Stand next to a cable machine with the pulley set to waist height."
     },
     "defaultUnit": "rounds",
@@ -990,6 +1026,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "High-Cable Lateral Raise",
+      "高繩側平舉",
       "shoulders",
       "cable",
       "Elevación lateral en polea alta",
@@ -1005,11 +1042,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Hindu Pushups",
+      "zhTW": "印度俯臥撐",
       "en": "Hindu Pushups"
     },
     "cue": {
-      "zhTW": "Exercise to strengthen the shoulders and pectorals.",
+      "zhTW": "鍛鍊肩膀和胸肌。",
       "en": "Exercise to strengthen the shoulders and pectorals."
     },
     "defaultUnit": "rounds",
@@ -1017,6 +1054,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Hindu Pushups",
+      "印度俯臥撐",
       "shoulders",
       "bodyweight",
       "Hindu-Liegestütze",
@@ -1031,11 +1069,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Incline DB Y-Raise",
+      "zhTW": "傾斜 DB Y 型提升",
       "en": "Incline DB Y-Raise"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1043,6 +1081,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline DB Y-Raise",
+      "傾斜 DB Y 型提升",
       "shoulders",
       "dumbbell",
       "Elevación en Y con mancuernas en banco inclinado",
@@ -1058,11 +1097,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Incline OHP DB",
+      "zhTW": "傾斜 OHP DB",
       "en": "Incline OHP DB"
     },
     "cue": {
-      "zhTW": "* Sit on a bench with 45° incline * Ellbows 45° out * Move dumbbells down until upper arms are parallel to shoulders * Move dumbbells up, meeting overhead",
+      "zhTW": "* 坐在傾斜 45° 的長凳上 * 肘部向外 45° * 向下移動啞鈴，直到上臂與肩膀平行 * 向上移動啞鈴，與頭頂相遇",
       "en": "* Sit on a bench with 45° incline * Ellbows 45° out * Move dumbbells down until upper arms are parallel to shoulders * Move dumbbells up, meeting overhead"
     },
     "defaultUnit": "rounds",
@@ -1070,6 +1109,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline OHP DB",
+      "傾斜 OHP DB",
       "shoulders",
       "dumbbell",
       "Développé épaules incliné aux haltères",
@@ -1085,11 +1125,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Isometria alle parallele",
+      "zhTW": "平行等距",
       "en": "Isometria alle parallele"
     },
     "cue": {
-      "zhTW": "The parallel bars isometric hold is a static upper-body exercise performed on dip bars (parallel bars).",
+      "zhTW": "雙槓等距保持是在雙槓（雙槓）上進行的靜態上半身練習。",
       "en": "The parallel bars isometric hold is a static upper-body exercise performed on dip bars (parallel bars)."
     },
     "defaultUnit": "rounds",
@@ -1097,6 +1137,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Isometria alle parallele",
+      "平行等距",
       "shoulders",
       "bodyweight",
       "Isometrisches Halten am Barren",
@@ -1112,11 +1153,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Jerk OL",
+      "zhTW": "混蛋OL",
       "en": "Jerk OL"
     },
     "cue": {
-      "zhTW": "Olympic lift jerk * Hold bar in front on shoulders like push press * Bend and extend knees pushing bar up while diving under the bar * Catch bar overhead with straight arms using l",
+      "zhTW": "奧林匹克舉重挺舉 * 將槓鈴舉在肩部前方，如推舉式 * 彎曲並伸展膝蓋，將槓鈴推到槓鈴下方 * 伸直手臂，用 l 將槓鈴舉過頭頂",
       "en": "Olympic lift jerk * Hold bar in front on shoulders like push press * Bend and extend knees pushing bar up while diving under the bar * Catch bar overhead with straight arms using l"
     },
     "defaultUnit": "rounds",
@@ -1124,6 +1165,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Jerk OL",
+      "混蛋OL",
       "shoulders",
       "barbell",
       "Jerk (Stoßen)",
@@ -1139,11 +1181,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Kreis Press DB",
+      "zhTW": "克雷斯出版社 DB",
       "en": "Kreis Press DB"
     },
     "cue": {
-      "zhTW": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of you",
+      "zhTW": "* 坐在傾斜 45° 的長凳上 * 將啞鈴舉過頭頂 * 將啞鈴向下移動，就像做過頭推舉一樣 * 旋轉啞鈴，手掌朝上，並將手臂伸到身前",
       "en": "* Sit on a bench with 45° incline * Hold dumbbells overhead * Move dumbbells down as if doing overhead press * Rotate dumbbells palms facing up and extend your arms in front of you"
     },
     "defaultUnit": "rounds",
@@ -1151,6 +1193,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Kreis Press DB",
+      "克雷斯出版社 DB",
       "shoulders",
       "dumbbell",
       "Kreis Press aux haltères",
@@ -1166,11 +1209,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Landmine press",
+      "zhTW": "地雷壓機",
       "en": "Landmine press"
     },
     "cue": {
-      "zhTW": "Landmine press",
+      "zhTW": "地雷壓機",
       "en": "Landmine press"
     },
     "defaultUnit": "rounds",
@@ -1178,6 +1221,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Landmine press",
+      "地雷壓機",
       "shoulders",
       "barbell",
       "Landmine-Press, Einarmig"
@@ -1191,11 +1235,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Lateral Raises",
+      "zhTW": "側平舉",
       "en": "Lateral Raises"
     },
     "cue": {
-      "zhTW": "This exercise works the deltoid muscle of the shoulder.",
+      "zhTW": "這個動作可以鍛鍊肩部的三角肌。",
       "en": "This exercise works the deltoid muscle of the shoulder."
     },
     "defaultUnit": "rounds",
@@ -1203,6 +1247,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lateral Raises",
+      "側平舉",
       "shoulders",
       "dumbbell",
       "Alzate Laterali",
@@ -1222,11 +1267,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Lateral Rows on Cable, One Armed",
+      "zhTW": "繩索橫向划船，單臂",
       "en": "Lateral Rows on Cable, One Armed"
     },
     "cue": {
-      "zhTW": "Set cable at waist height, start with arm across your belly and move han over and out too other side, one arm at the time.",
+      "zhTW": "將電纜設置在腰部高度，首先將手臂放在腹部上，然後將手移至另一側，每次一隻手臂。",
       "en": "Set cable at waist height, start with arm across your belly and move han over and out too other side, one arm at the time."
     },
     "defaultUnit": "rounds",
@@ -1234,6 +1279,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Lateral Rows on Cable, One Armed",
+      "繩索橫向划船，單臂",
       "shoulders",
       "cable",
       "Side raises on Cable",
@@ -1250,11 +1296,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Lateral-to-Front Raises",
+      "zhTW": "橫向向前平舉",
       "en": "Lateral-to-Front Raises"
     },
     "cue": {
-      "zhTW": "-(1) Perform a lateral raise, pausing at the top of the lift (2).",
+      "zhTW": "-(1) 進行側平舉，在舉重的頂部暫停 (2)。",
       "en": "-(1) Perform a lateral raise, pausing at the top of the lift (2)."
     },
     "defaultUnit": "rounds",
@@ -1262,6 +1308,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lateral-to-Front Raises",
+      "橫向向前平舉",
       "shoulders",
       "dumbbell",
       "Elevaciones lateral a frontal",
@@ -1277,11 +1324,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Lying Rotator Cuff Exercise",
+      "zhTW": "躺臥肩袖練習",
       "en": "Lying Rotator Cuff Exercise"
     },
     "cue": {
-      "zhTW": "This is an excercise for problems with the rotator cuff.",
+      "zhTW": "這是針對肩袖問題的練習。",
       "en": "This is an excercise for problems with the rotator cuff."
     },
     "defaultUnit": "rounds",
@@ -1289,6 +1336,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lying Rotator Cuff Exercise",
+      "躺臥肩袖練習",
       "shoulders",
       "dumbbell",
       "Ejercicio del manguito rotador tumbado",
@@ -1304,11 +1352,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Machine Lateral Raise",
+      "zhTW": "機器側平舉",
       "en": "Machine Lateral Raise"
     },
     "cue": {
-      "zhTW": "The machine lateral raise is an isolation exercise that targets the medial (side) deltoid muscle to build wider, more defined shoulders.",
+      "zhTW": "機器側平舉是一項孤立練習，針對內側（側）三角肌，以塑造更寬、更清晰的肩膀。",
       "en": "The machine lateral raise is an isolation exercise that targets the medial (side) deltoid muscle to build wider, more defined shoulders."
     },
     "defaultUnit": "rounds",
@@ -1316,6 +1364,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Machine Lateral Raise",
+      "機器側平舉",
       "shoulders",
       "bodyweight",
       "Elevación lateral en máquina",
@@ -1332,11 +1381,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Machine Side Lateral Raises",
+      "zhTW": "機器側平舉",
       "en": "Machine Side Lateral Raises"
     },
     "cue": {
-      "zhTW": "Machine side lateral raises are an isolation exercise for the side (lateral) deltoids, performed on a machine for stability, targeting the outer shoulder by lifting pads or handles",
+      "zhTW": "機器側平舉是對三角肌側面（外側）的隔離練習，在機器上進行以保持穩定性，透過舉升墊或手柄針對外側肩部",
       "en": "Machine side lateral raises are an isolation exercise for the side (lateral) deltoids, performed on a machine for stability, targeting the outer shoulder by lifting pads or handles"
     },
     "defaultUnit": "rounds",
@@ -1344,6 +1393,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Machine Side Lateral Raises",
+      "機器側平舉",
       "shoulders",
       "bodyweight",
       "Elevación lateral en maquina",
@@ -1359,11 +1409,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Military Press mit SZ-Bar",
+      "zhTW": "SZ-Bar 軍事出版社",
       "en": "Military Press mit SZ-Bar"
     },
     "cue": {
-      "zhTW": "On an SZ-bar grip your hands on the outside of each bend and stand with your arms straight down, palms facing your legs.",
+      "zhTW": "在 SZ 槓上，雙手握住每個彎道的外側，雙臂伸直站立，手掌朝向腿部。",
       "en": "On an SZ-bar grip your hands on the outside of each bend and stand with your arms straight down, palms facing your legs."
     },
     "defaultUnit": "rounds",
@@ -1371,6 +1421,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Military Press mit SZ-Bar",
+      "SZ-Bar 軍事出版社",
       "shoulders",
       "barbell",
       "Développé militaire à la barre EZ",
@@ -1386,11 +1437,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Neck CARs",
+      "zhTW": "頸車",
       "en": "Neck CARs"
     },
     "cue": {
-      "zhTW": "Neck CARs",
+      "zhTW": "頸車",
       "en": "Neck CARs"
     },
     "defaultUnit": "rounds",
@@ -1398,6 +1449,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Neck CARs",
+      "頸車",
       "shoulders",
       "bodyweight"
     ],
@@ -1410,11 +1462,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Overhead Barbell Press",
+      "zhTW": "過頭槓鈴推舉",
       "en": "Overhead Barbell Press"
     },
     "cue": {
-      "zhTW": "- **Setup:** Stand with feet together and grip the bar slightly wider than shoulders.",
+      "zhTW": "- **設定：** 雙腳併攏站立，握住槓鈴，握距比肩膀稍寬。",
       "en": "- **Setup:** Stand with feet together and grip the bar slightly wider than shoulders."
     },
     "defaultUnit": "rounds",
@@ -1422,6 +1474,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Overhead Barbell Press",
+      "過頭槓鈴推舉",
       "shoulders",
       "barbell",
       "Développé militaire à la barre",
@@ -1439,11 +1492,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Pec deck rear delt fly",
+      "zhTW": "胸肌甲板後三角肌飛鳥",
       "en": "Pec deck rear delt fly"
     },
     "cue": {
-      "zhTW": "Seated rear delt fly on pec deck machine (facing the machine and extending arms backwards, the hands should be at the height of the shoulders)",
+      "zhTW": "坐姿三角肌後束飛鳥在胸肌甲板機上（面向機器，手臂向後伸展，雙手應與肩膀同高）",
       "en": "Seated rear delt fly on pec deck machine (facing the machine and extending arms backwards, the hands should be at the height of the shoulders)"
     },
     "defaultUnit": "rounds",
@@ -1451,6 +1504,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pec deck rear delt fly",
+      "胸肌甲板後三角肌飛鳥",
       "shoulders",
       "bodyweight",
       "Oiseau arrière à la machine pec deck",
@@ -1466,11 +1520,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Perpendicular Unilateral Landmine Row",
+      "zhTW": "垂直單邊地雷排",
       "en": "Perpendicular Unilateral Landmine Row"
     },
     "cue": {
-      "zhTW": "Using a landmine attachment with the barbell running at 90 degrees to either side, hinge slightly at the hips and grip the barbell by the plate sleeve.",
+      "zhTW": "使用地雷配件，使槓鈴與兩側成 90 度，稍微鉸接臀部並透過板套抓住槓鈴。",
       "en": "Using a landmine attachment with the barbell running at 90 degrees to either side, hinge slightly at the hips and grip the barbell by the plate sleeve."
     },
     "defaultUnit": "rounds",
@@ -1478,6 +1532,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Perpendicular Unilateral Landmine Row",
+      "垂直單邊地雷排",
       "shoulders",
       "barbell",
       "Einarmiges Landmine-Rudern (senkrecht)",
@@ -1493,11 +1548,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Pike Push-ups (Vasco L1)",
+      "zhTW": "派克俯臥撐（Vasco L1）",
       "en": "Pike Push-ups (Vasco L1)"
     },
     "cue": {
-      "zhTW": "Vasco custom pike push-up for shoulder development in beginner home training.",
+      "zhTW": "Vasco 客製化派克俯臥撐，用於初學者家庭訓練中的肩部發育。",
       "en": "Vasco custom pike push-up for shoulder development in beginner home training."
     },
     "defaultUnit": "rounds",
@@ -1505,6 +1560,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pike Push-ups (Vasco L1)",
+      "派克俯臥撐（Vasco L1）",
       "shoulders",
       "bodyweight"
     ],
@@ -1517,11 +1573,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Pin OHP",
+      "zhTW": "腳位 OHP",
       "en": "Pin OHP"
     },
     "cue": {
-      "zhTW": "* Set security pins to the height of your lower chin * Rest bar on pins keeping tension * Raise bar over head",
+      "zhTW": "* 將安全別針設定到下巴的高度 * 將槓鈴放在別針上以保持張力 * 將槓鈴舉過頭頂",
       "en": "* Set security pins to the height of your lower chin * Rest bar on pins keeping tension * Raise bar over head"
     },
     "defaultUnit": "rounds",
@@ -1529,6 +1585,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Pin OHP",
+      "腳位 OHP",
       "shoulders",
       "barbell"
     ],
@@ -1541,11 +1598,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Pseudo Planche Push-up",
+      "zhTW": "偽平板俯臥撐",
       "en": "Pseudo Planche Push-up"
     },
     "cue": {
-      "zhTW": "You should have the shoulder line in front of your wrists an perform a push-up, maintaining the shoulder in the same position",
+      "zhTW": "肩線應在手腕前方，做伏地挺身時，肩膀保持在同一位置",
       "en": "You should have the shoulder line in front of your wrists an perform a push-up, maintaining the shoulder in the same position"
     },
     "defaultUnit": "rounds",
@@ -1553,6 +1610,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pseudo Planche Push-up",
+      "偽平板俯臥撐",
       "shoulders",
       "bodyweight",
       "Flexión pseudo planche",
@@ -1568,11 +1626,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Push OHP",
+      "zhTW": "推OHP",
       "en": "Push OHP"
     },
     "cue": {
-      "zhTW": "* Rest bar in front on your shoulders * Bend knees while keeping upper body straight * Extend legs pushing the bar overhead with force",
+      "zhTW": "* 將槓鈴放在肩膀上 * 彎曲膝蓋，同時保持上半身伸直 * 伸展雙腿，用力將槓鈴推過頭頂",
       "en": "* Rest bar in front on your shoulders * Bend knees while keeping upper body straight * Extend legs pushing the bar overhead with force"
     },
     "defaultUnit": "rounds",
@@ -1580,6 +1638,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Push OHP",
+      "推OHP",
       "shoulders",
       "barbell",
       "Développé militaire avec impulsion (push press)",
@@ -1594,11 +1653,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Push Press",
+      "zhTW": "推壓",
       "en": "Push Press"
     },
     "cue": {
-      "zhTW": "Clean your dumbbells onto your shoulders, palms facing in.",
+      "zhTW": "將啞鈴放在肩膀上，手掌朝內。",
       "en": "Clean your dumbbells onto your shoulders, palms facing in."
     },
     "defaultUnit": "rounds",
@@ -1606,6 +1665,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Push Press",
+      "推壓",
       "shoulders",
       "bodyweight",
       "Press de hombro con mancuernas",
@@ -1620,11 +1680,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Rear Delt Raises",
+      "zhTW": "三角肌後部平舉",
       "en": "Rear Delt Raises"
     },
     "cue": {
-      "zhTW": "Seated on a bench with the dumbbells on the floor bend over at 45 Degrees and then slowly raise each dumbbell to shoulder height and hold for a couple seconds before lowering to th",
+      "zhTW": "坐在長凳上，啞鈴放在地板上，彎腰 45 度，然後慢慢將每個啞鈴舉至肩部高度，保持幾秒鐘，然後降低至肩部高度。",
       "en": "Seated on a bench with the dumbbells on the floor bend over at 45 Degrees and then slowly raise each dumbbell to shoulder height and hold for a couple seconds before lowering to th"
     },
     "defaultUnit": "rounds",
@@ -1632,6 +1692,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Rear Delt Raises",
+      "三角肌後部平舉",
       "shoulders",
       "dumbbell",
       "Elevaciones de deltoides posterior",
@@ -1647,11 +1708,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Reverse Fly Standing",
+      "zhTW": "反向飛站立",
       "en": "Reverse Fly Standing"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1659,6 +1720,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Reverse Fly Standing",
+      "反向飛站立",
       "shoulders",
       "cable",
       "Oiseau debout",
@@ -1674,11 +1736,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Seated Dumbbell Side Lateral",
+      "zhTW": "坐姿啞鈴側臥",
       "en": "Seated Dumbbell Side Lateral"
     },
     "cue": {
-      "zhTW": "seated slightly leaned forward at beginning of exercise",
+      "zhTW": "運動開始時坐姿稍微前傾",
       "en": "seated slightly leaned forward at beginning of exercise"
     },
     "defaultUnit": "rounds",
@@ -1686,6 +1748,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Seated Dumbbell Side Lateral",
+      "坐姿啞鈴側臥",
       "shoulders",
       "dumbbell"
     ],
@@ -1698,11 +1761,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder dislocates",
+      "zhTW": "肩膀脫臼",
       "en": "Shoulder dislocates"
     },
     "cue": {
-      "zhTW": "**Starting position:** Stand up with your back straight and a resistance band, towel, or broomstick handle in hand.",
+      "zhTW": "**起始位置：** 站立，背部挺直，手裡拿著阻力帶、毛巾或掃帚柄。",
       "en": "**Starting position:** Stand up with your back straight and a resistance band, towel, or broomstick handle in hand."
     },
     "defaultUnit": "rounds",
@@ -1710,6 +1773,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Shoulder dislocates",
+      "肩膀脫臼",
       "shoulders",
       "bodyweight",
       "Dislocaciones de hombro",
@@ -1725,11 +1789,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Dumbbell Pendular Exercise",
+      "zhTW": "肩部啞鈴擺練習",
       "en": "Shoulder Dumbbell Pendular Exercise"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1737,6 +1801,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Shoulder Dumbbell Pendular Exercise",
+      "肩部啞鈴擺練習",
       "shoulders",
       "dumbbell",
       "Ejercicio pendular de hombro con mancuerna",
@@ -1752,11 +1817,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder External Rotation (Cable)",
+      "zhTW": "肩部外旋（拉索）",
       "en": "Shoulder External Rotation (Cable)"
     },
     "cue": {
-      "zhTW": "Keep elbow fixed at your side and rotate forearm outward smoothly.",
+      "zhTW": "保持手肘固定在身體兩側，並平穩地向外旋轉前臂。",
       "en": "Keep elbow fixed at your side and rotate forearm outward smoothly."
     },
     "defaultUnit": "rounds",
@@ -1764,6 +1829,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Shoulder External Rotation (Cable)",
+      "肩部外旋（拉索）",
       "shoulders",
       "cable",
       "Außenrotation der Schulter am Kabelzug",
@@ -1779,11 +1845,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder External Rotation with Dumbbell",
+      "zhTW": "啞鈴肩外旋",
       "en": "Shoulder External Rotation with Dumbbell"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1791,6 +1857,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Shoulder External Rotation with Dumbbell",
+      "啞鈴肩外旋",
       "shoulders",
       "dumbbell",
       "Außenrotation der Schulter mit Kurzhantel",
@@ -1806,11 +1873,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Internal Rotation (Cable)",
+      "zhTW": "肩部內旋（拉索）",
       "en": "Shoulder Internal Rotation (Cable)"
     },
     "cue": {
-      "zhTW": "Keep your elbow tucked to your side like it's superglued there.",
+      "zhTW": "將手肘夾在身體兩側，就像用強力膠黏在那裡一樣。",
       "en": "Keep your elbow tucked to your side like it's superglued there."
     },
     "defaultUnit": "rounds",
@@ -1818,6 +1885,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Shoulder Internal Rotation (Cable)",
+      "肩部內旋（拉索）",
       "shoulders",
       "cable",
       "Innenrotation der Schulter am Kabelzug",
@@ -1833,11 +1901,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Press, Barbell",
+      "zhTW": "肩部推舉、槓鈴",
       "en": "Shoulder Press, Barbell"
     },
     "cue": {
-      "zhTW": "Sit on a bench, the back rest should be almost vertical.",
+      "zhTW": "坐在長凳上，靠背應幾乎垂直。",
       "en": "Sit on a bench, the back rest should be almost vertical."
     },
     "defaultUnit": "rounds",
@@ -1845,6 +1913,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Shoulder Press, Barbell",
+      "肩部推舉、槓鈴",
       "shoulders",
       "barbell",
       "Développé épaules, barre",
@@ -1864,11 +1933,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Press, Dumbbells",
+      "zhTW": "肩部推舉、啞鈴",
       "en": "Shoulder Press, Dumbbells"
     },
     "cue": {
-      "zhTW": "Sit on a bench, the back rest should be almost vertical.",
+      "zhTW": "坐在長凳上，靠背應幾乎垂直。",
       "en": "Sit on a bench, the back rest should be almost vertical."
     },
     "defaultUnit": "rounds",
@@ -1876,6 +1945,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Shoulder Press, Dumbbells",
+      "肩部推舉、啞鈴",
       "shoulders",
       "dumbbell",
       "Développé épaules, haltères",
@@ -1895,11 +1965,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Press, on Machine",
+      "zhTW": "肩部推舉，機器上",
       "en": "Shoulder Press, on Machine"
     },
     "cue": {
-      "zhTW": "Shoulder Press, on Machine",
+      "zhTW": "肩部推舉，機器上",
       "en": "Shoulder Press, on Machine"
     },
     "defaultUnit": "rounds",
@@ -1907,6 +1977,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Shoulder Press, on Machine",
+      "肩部推舉，機器上",
       "shoulders",
       "bodyweight",
       "Press de hombro con maquina",
@@ -1921,11 +1992,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Press, on Multi Press",
+      "zhTW": "肩部推舉，多次推舉",
       "en": "Shoulder Press, on Multi Press"
     },
     "cue": {
-      "zhTW": "The exercise is basically the same as with a free barbell: Sit on a bench, the back rest should be almost vertical.",
+      "zhTW": "練習方式與自由槓鈴基本相同：坐在長凳上，靠背應幾乎垂直。",
       "en": "The exercise is basically the same as with a free barbell: Sit on a bench, the back rest should be almost vertical."
     },
     "defaultUnit": "rounds",
@@ -1933,6 +2004,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Shoulder Press, on Multi Press",
+      "肩部推舉，多次推舉",
       "shoulders",
       "bodyweight",
       "Développé épaules à la multipresse",
@@ -1950,11 +2022,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Raise (Dumbbell)",
+      "zhTW": "肩部抬高（啞鈴）",
       "en": "Shoulder Raise (Dumbbell)"
     },
     "cue": {
-      "zhTW": "* Engage the muscles * Don't use momentum * Controlled movement * Slow movement * Always keep the arms bent * Don't overextend",
+      "zhTW": "* 調動肌肉 * 不要使用動力 * 受控運動 * 緩慢運動 * 始終保持手臂彎曲 * 不要過度伸展",
       "en": "* Engage the muscles * Don't use momentum * Controlled movement * Slow movement * Always keep the arms bent * Don't overextend"
     },
     "defaultUnit": "rounds",
@@ -1962,6 +2034,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Shoulder Raise (Dumbbell)",
+      "肩部抬高（啞鈴）",
       "shoulders",
       "dumbbell",
       "Elevación de hombros (mancuerna)",
@@ -1977,11 +2050,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Raise Side and Front DB",
+      "zhTW": "肩部提升側面和前DB",
       "en": "Shoulder Raise Side and Front DB"
     },
     "cue": {
-      "zhTW": "* Stand while holding dumbbells beside body * Keep arms almost fully extended * Without momentum raise dumbbells to the side of your body until shoulder height, palms facing down *",
+      "zhTW": "* 握住啞鈴站立在身體旁邊 * 保持手臂幾乎完全伸展 * 沒有動力將啞鈴舉到身體一側，直到與肩同高，手掌朝下 *",
       "en": "* Stand while holding dumbbells beside body * Keep arms almost fully extended * Without momentum raise dumbbells to the side of your body until shoulder height, palms facing down *"
     },
     "defaultUnit": "rounds",
@@ -1989,6 +2062,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Shoulder Raise Side and Front DB",
+      "肩部提升側面和前DB",
       "shoulders",
       "dumbbell",
       "Elevación lateral y frontal con mancuernas",
@@ -2004,11 +2078,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Shrug",
+      "zhTW": "聳肩",
       "en": "Shoulder Shrug"
     },
     "cue": {
-      "zhTW": "The shoulder shrug (usually called simply the shrug) is an exercise in weight training used to develop the upper trapezius muscle.",
+      "zhTW": "聳肩（通常簡稱聳肩）是一種重量訓練練習，用於發展上斜方肌。",
       "en": "The shoulder shrug (usually called simply the shrug) is an exercise in weight training used to develop the upper trapezius muscle."
     },
     "defaultUnit": "rounds",
@@ -2016,6 +2090,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Shoulder Shrug",
+      "聳肩",
       "shoulders",
       "bodyweight",
       "Encogimiento de hombros",
@@ -2038,11 +2113,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shoulder Y-pull cable",
+      "zhTW": "肩Y型拉索",
       "en": "Shoulder Y-pull cable"
     },
     "cue": {
-      "zhTW": "on a cable rack cross the cables and pull elbows to ceiling close to the body.",
+      "zhTW": "在電纜架上交叉電纜並將肘部拉到靠近身體的天花板上。",
       "en": "on a cable rack cross the cables and pull elbows to ceiling close to the body."
     },
     "defaultUnit": "rounds",
@@ -2050,6 +2125,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Shoulder Y-pull cable",
+      "肩Y型拉索",
       "shoulders",
       "cable"
     ],
@@ -2062,11 +2138,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shrugs on Multipress",
+      "zhTW": "多按聳肩",
       "en": "Shrugs on Multipress"
     },
     "cue": {
-      "zhTW": "Shrugs on Multipress",
+      "zhTW": "多按聳肩",
       "en": "Shrugs on Multipress"
     },
     "defaultUnit": "rounds",
@@ -2074,6 +2150,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Shrugs on Multipress",
+      "多按聳肩",
       "shoulders",
       "bodyweight",
       "Shrugs an der MP",
@@ -2088,11 +2165,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shrugs, Barbells",
+      "zhTW": "聳肩、槓鈴",
       "en": "Shrugs, Barbells"
     },
     "cue": {
-      "zhTW": "Take a barbell and stand with a straight body, the arms are hanging freely in front of you.",
+      "zhTW": "拿槓鈴，身體挺直站立，雙臂自由垂於身前。",
       "en": "Take a barbell and stand with a straight body, the arms are hanging freely in front of you."
     },
     "defaultUnit": "rounds",
@@ -2100,6 +2177,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Shrugs, Barbells",
+      "聳肩、槓鈴",
       "shoulders",
       "barbell",
       "Encogimientos de hombros con barra",
@@ -2118,11 +2196,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Shrugs, Dumbbells",
+      "zhTW": "聳肩、啞鈴",
       "en": "Shrugs, Dumbbells"
     },
     "cue": {
-      "zhTW": "Stand with straight body, the hands are hanging freely on the side and hold each a dumbbell.",
+      "zhTW": "身體挺直站立，雙手自然垂於體側，各握一個啞鈴。",
       "en": "Stand with straight body, the hands are hanging freely on the side and hold each a dumbbell."
     },
     "defaultUnit": "rounds",
@@ -2130,6 +2208,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Shrugs, Dumbbells",
+      "聳肩、啞鈴",
       "shoulders",
       "dumbbell",
       "Encogimientos de hombros con mancuernas",
@@ -2147,11 +2226,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Side lateral raise - Back (Cable)",
+      "zhTW": "側平舉 - 背部（繩索）",
       "en": "Side lateral raise - Back (Cable)"
     },
     "cue": {
-      "zhTW": "on a cable rack do a side lateral raise with the cable behind you.",
+      "zhTW": "在繩索架上做側平舉，繩索在你身後。",
       "en": "on a cable rack do a side lateral raise with the cable behind you."
     },
     "defaultUnit": "rounds",
@@ -2159,6 +2238,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Side lateral raise - Back (Cable)",
+      "側平舉 - 背部（繩索）",
       "shoulders",
       "cable"
     ],
@@ -2171,11 +2251,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Side lateral raise - Front (Cable)",
+      "zhTW": "側平舉 - 前側（拉索）",
       "en": "Side lateral raise - Front (Cable)"
     },
     "cue": {
-      "zhTW": "in a cablerack do a side lateral raise with cable in front of you, with focus in tension on the back of your shoulder.",
+      "zhTW": "在繩索架上做側平舉，繩索在你前面，注意力集中在肩膀後面。",
       "en": "in a cablerack do a side lateral raise with cable in front of you, with focus in tension on the back of your shoulder."
     },
     "defaultUnit": "rounds",
@@ -2183,6 +2263,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Side lateral raise - Front (Cable)",
+      "側平舉 - 前側（拉索）",
       "shoulders",
       "cable"
     ],
@@ -2195,11 +2276,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Side-laying interior rotation",
+      "zhTW": "側臥內旋轉",
       "en": "Side-laying interior rotation"
     },
     "cue": {
-      "zhTW": "Laying on your side and using the arm closest to the bench, maintain a 90 degree bend at the elbow and allow the weight to fall towards the ground past the bench as low as comforta",
+      "zhTW": "側躺，用最靠近長凳的手臂，肘部保持 90 度彎曲，讓重量越過長凳落向地面，盡可能低",
       "en": "Laying on your side and using the arm closest to the bench, maintain a 90 degree bend at the elbow and allow the weight to fall towards the ground past the bench as low as comforta"
     },
     "defaultUnit": "rounds",
@@ -2207,6 +2288,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Side-laying interior rotation",
+      "側臥內旋轉",
       "shoulders",
       "barbell",
       "Innenrotation in Seitenlage",
@@ -2222,11 +2304,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Side-lying External Rotation",
+      "zhTW": "側臥外旋",
       "en": "Side-lying External Rotation"
     },
     "cue": {
-      "zhTW": "With a weight in one hand, lie on your side opposite the weight.",
+      "zhTW": "一手拿重物，面向重物側躺。",
       "en": "With a weight in one hand, lie on your side opposite the weight."
     },
     "defaultUnit": "rounds",
@@ -2234,6 +2316,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Side-lying External Rotation",
+      "側臥外旋",
       "shoulders",
       "bodyweight",
       "Außenrotation in Seitenlage",
@@ -2249,11 +2332,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Single-arm dumbbell shoulder press",
+      "zhTW": "單臂啞鈴肩部推舉",
       "en": "Single-arm dumbbell shoulder press"
     },
     "cue": {
-      "zhTW": "Press the dumbbell vertically overhead in a controlled motion until your arm is fully extended, without locking the elbow.",
+      "zhTW": "以受控動作將啞鈴垂直舉過頭頂，直到手臂完全伸展，但不要鎖定肘部。",
       "en": "Press the dumbbell vertically overhead in a controlled motion until your arm is fully extended, without locking the elbow."
     },
     "defaultUnit": "rounds",
@@ -2261,6 +2344,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Single-arm dumbbell shoulder press",
+      "單臂啞鈴肩部推舉",
       "shoulders",
       "dumbbell",
       "Développé épaules unilatéral à l'haltère",
@@ -2276,11 +2360,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Smith Press",
+      "zhTW": "史密斯出版社",
       "en": "Smith Press"
     },
     "cue": {
-      "zhTW": "Sitting almost 90 degree angle, smith machine",
+      "zhTW": "幾乎90度角坐，史密斯機",
       "en": "Sitting almost 90 degree angle, smith machine"
     },
     "defaultUnit": "rounds",
@@ -2288,6 +2372,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Smith Press",
+      "史密斯出版社",
       "shoulders",
       "machine",
       "Prensa Smith"
@@ -2301,11 +2386,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Snatch",
+      "zhTW": "搶奪",
       "en": "Snatch"
     },
     "cue": {
-      "zhTW": "Stand with your feet at hip width and your shins against the bar.",
+      "zhTW": "站立，雙腳與臀部同寬，小腿靠在橫桿。",
       "en": "Stand with your feet at hip width and your shins against the bar."
     },
     "defaultUnit": "rounds",
@@ -2313,6 +2398,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Snatch",
+      "搶奪",
       "shoulders",
       "barbell",
       "Arraché",
@@ -2328,11 +2414,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Standing Dowel Shoulder press",
+      "zhTW": "站立銷肩推舉",
       "en": "Standing Dowel Shoulder press"
     },
     "cue": {
-      "zhTW": "Mobility - prone dowel press or standing dowel shoulder press alternating between front andback",
+      "zhTW": "靈活性 - 俯臥推舉或站立推舉肩部前後交替進行",
       "en": "Mobility - prone dowel press or standing dowel shoulder press alternating between front andback"
     },
     "defaultUnit": "rounds",
@@ -2340,6 +2426,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Standing Dowel Shoulder press",
+      "站立銷肩推舉",
       "shoulders",
       "barbell"
     ],
@@ -2352,11 +2439,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Straight Bar Cable Front Raise",
+      "zhTW": "直桿繩索前平舉",
       "en": "Straight Bar Cable Front Raise"
     },
     "cue": {
-      "zhTW": "Back to cable tower, cable between legs, SZ Bar",
+      "zhTW": "返回電纜塔、腿間電纜、SZ Bar",
       "en": "Back to cable tower, cable between legs, SZ Bar"
     },
     "defaultUnit": "rounds",
@@ -2364,6 +2451,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Straight Bar Cable Front Raise",
+      "直桿繩索前平舉",
       "shoulders",
       "cable",
       "Elevación frontal con cable"
@@ -2377,11 +2465,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Trap press",
+      "zhTW": "陷阱按壓",
       "en": "Trap press"
     },
     "cue": {
-      "zhTW": "Laying flat with arm pointing straight upwards, elbow fully extended, use only your shoulder to raise the weight as high as comfortable and back to rest.",
+      "zhTW": "平躺，手臂伸直向上，手肘完全伸展，僅用肩膀將重量舉至舒適的高度，然後返回休息。",
       "en": "Laying flat with arm pointing straight upwards, elbow fully extended, use only your shoulder to raise the weight as high as comfortable and back to rest."
     },
     "defaultUnit": "rounds",
@@ -2389,6 +2477,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Trap press",
+      "陷阱按壓",
       "shoulders",
       "barbell",
       "Développé trapèzes",
@@ -2404,11 +2493,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Tuck planche",
+      "zhTW": "塔克板",
       "en": "Tuck planche"
     },
     "cue": {
-      "zhTW": "Basic calisthenics progression for the full planche",
+      "zhTW": "完整體操的基本健身操進展",
       "en": "Basic calisthenics progression for the full planche"
     },
     "defaultUnit": "rounds",
@@ -2416,6 +2505,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Tuck planche",
+      "塔克板",
       "shoulders",
       "bodyweight"
     ],
@@ -2428,11 +2518,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "unilateral cross body cable pull down",
+      "zhTW": "單邊斜背拉繩下拉",
       "en": "unilateral cross body cable pull down"
     },
     "cue": {
-      "zhTW": "on a cable rack place cable high, and with a straight arm pull that cable across you from high to low.",
+      "zhTW": "將電纜放在電纜架上，然後用直臂將電纜從高到低拉過您。",
       "en": "on a cable rack place cable high, and with a straight arm pull that cable across you from high to low."
     },
     "defaultUnit": "rounds",
@@ -2440,6 +2530,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "unilateral cross body cable pull down",
+      "單邊斜背拉繩下拉",
       "shoulders",
       "cable",
       "Einarmiger Cable Pulldown über Kreuz",
@@ -2455,11 +2546,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Upright Row w/ Dumbbells",
+      "zhTW": "啞鈴直立划船",
       "en": "Upright Row w/ Dumbbells"
     },
     "cue": {
-      "zhTW": "Hold a dumbbell in each hand in front of your body.",
+      "zhTW": "雙手各握一個啞鈴放在身體前方。",
       "en": "Hold a dumbbell in each hand in front of your body."
     },
     "defaultUnit": "rounds",
@@ -2467,6 +2558,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Upright Row w/ Dumbbells",
+      "啞鈴直立划船",
       "shoulders",
       "dumbbell",
       "Aufrechtes Rudern mit Kurzhanteln",
@@ -2483,11 +2575,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Upright Row, on Multi Press",
+      "zhTW": "直立划船，多次按壓",
       "en": "Upright Row, on Multi Press"
     },
     "cue": {
-      "zhTW": "The movements are basically the same as with an SZ-bar, but you use the bar on the multi press: Stand straight, your feet are shoulder-width apart.",
+      "zhTW": "動作與 SZ 槓鈴基本相同，但您在多重推舉上使用槓鈴：站直，雙腳分開與肩同寬。",
       "en": "The movements are basically the same as with an SZ-bar, but you use the bar on the multi press: Stand straight, your feet are shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -2495,6 +2587,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Upright Row, on Multi Press",
+      "直立划船，多次按壓",
       "shoulders",
       "bodyweight",
       "Remo al mentón en multipower",
@@ -2512,11 +2605,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Upright Row, SZ-bar",
+      "zhTW": "直立划船，SZ 槓鈴",
       "en": "Upright Row, SZ-bar"
     },
     "cue": {
-      "zhTW": "Stand straight, your feet are shoulder-width apart.",
+      "zhTW": "站直，雙腳分開與肩同寬。",
       "en": "Stand straight, your feet are shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -2524,6 +2617,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Upright Row, SZ-bar",
+      "直立划船，SZ 槓鈴",
       "shoulders",
       "barbell",
       "Remo al Menton",
@@ -2540,11 +2634,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Wall Angels",
+      "zhTW": "牆天使",
       "en": "Wall Angels"
     },
     "cue": {
-      "zhTW": "The **Wall Angels** exercise primarily targets the **upper back and shoulder muscles**, helping improve **posture**, **shoulder mobility**, and **scapular control**.",
+      "zhTW": "**牆天使**練習主要針對**上背部和肩部肌肉**，幫助改善**姿勢**、**肩部活動性**和**肩胛骨控制**。",
       "en": "The **Wall Angels** exercise primarily targets the **upper back and shoulder muscles**, helping improve **posture**, **shoulder mobility**, and **scapular control**."
     },
     "defaultUnit": "rounds",
@@ -2552,6 +2646,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wall Angels",
+      "牆天使",
       "shoulders",
       "bodyweight",
       "Wall angels (anges au mur)"
@@ -2565,11 +2660,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "Wall Handstand",
+      "zhTW": "牆壁倒立",
       "en": "Wall Handstand"
     },
     "cue": {
-      "zhTW": "Handstand against a wall for support (chest facing wall).",
+      "zhTW": "倒立靠牆支撐（胸部面向牆壁）。",
       "en": "Handstand against a wall for support (chest facing wall)."
     },
     "defaultUnit": "rounds",
@@ -2577,6 +2672,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wall Handstand",
+      "牆壁倒立",
       "shoulders",
       "bodyweight",
       "Flexión a pino contra la pared",
@@ -2591,11 +2687,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "YTW Raises",
+      "zhTW": "YTW 加薪",
       "en": "YTW Raises"
     },
     "cue": {
-      "zhTW": "The YTW exercise for scapular retraction is designed to strengthen the inter-scapular muscles between your shoulder blades, to help retract or pull your shoulders back, helping to ",
+      "zhTW": "YTW 肩胛骨後縮運動旨在增強肩胛骨之間的肩胛間肌，幫助肩胛骨後縮或向後拉，從而有助於",
       "en": "The YTW exercise for scapular retraction is designed to strengthen the inter-scapular muscles between your shoulder blades, to help retract or pull your shoulders back, helping to "
     },
     "defaultUnit": "rounds",
@@ -2603,6 +2699,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "YTW Raises",
+      "YTW 加薪",
       "shoulders",
       "bodyweight"
     ],
@@ -2615,11 +2712,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "YTWL Exercise",
+      "zhTW": "YTWL 練習",
       "en": "YTWL Exercise"
     },
     "cue": {
-      "zhTW": "* **Purpose:** Improves shoulder stability, posture, and scapular (shoulder blade) control.",
+      "zhTW": "* **目的：** 改善肩部穩定、姿勢和肩胛骨（肩胛骨）控制。",
       "en": "* **Purpose:** Improves shoulder stability, posture, and scapular (shoulder blade) control."
     },
     "defaultUnit": "rounds",
@@ -2627,6 +2724,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "YTWL Exercise",
+      "YTWL 練習",
       "shoulders",
       "dumbbell",
       "Ejercicio YTWL",

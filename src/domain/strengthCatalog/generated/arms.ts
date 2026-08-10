@@ -5,11 +5,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Alternating bicep curls",
+      "zhTW": "交替二頭肌彎舉",
       "en": "Alternating bicep curls"
     },
     "cue": {
-      "zhTW": "Starting position: Start standing up with dumbbells in each hand, your back straight and feet hip-width apart.",
+      "zhTW": "起始位置：開始站立，雙手各持啞鈴，背部挺直，雙腳分開與臀部同寬。",
       "en": "Starting position: Start standing up with dumbbells in each hand, your back straight and feet hip-width apart."
     },
     "defaultUnit": "rounds",
@@ -17,6 +17,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Alternating bicep curls",
+      "交替二頭肌彎舉",
       "arms",
       "dumbbell",
       "Abwechselnde Bizepscurls",
@@ -32,11 +33,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Alternating Biceps Curls With Dumbbell",
+      "zhTW": "啞鈴交替二頭肌彎舉",
       "en": "Alternating Biceps Curls With Dumbbell"
     },
     "cue": {
-      "zhTW": "Hold two dumbbells, the arms are streched, the hands are on your side, the palms face inwards.",
+      "zhTW": "握住兩個啞鈴，手臂伸直，雙手放在體側，掌心向內。",
       "en": "Hold two dumbbells, the arms are streched, the hands are on your side, the palms face inwards."
     },
     "defaultUnit": "rounds",
@@ -44,6 +45,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Alternating Biceps Curls With Dumbbell",
+      "啞鈴交替二頭肌彎舉",
       "arms",
       "dumbbell",
       "Alternierende Bizeps-Curls mit Kurzhantel",
@@ -60,11 +62,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Alternating dumbbell hammer curl",
+      "zhTW": "交替啞鈴錘式彎舉",
       "en": "Alternating dumbbell hammer curl"
     },
     "cue": {
-      "zhTW": "Stand with your knees slightly bent and your back straight.",
+      "zhTW": "站立，膝蓋略彎曲，背部挺直。",
       "en": "Stand with your knees slightly bent and your back straight."
     },
     "defaultUnit": "rounds",
@@ -72,6 +74,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Alternating dumbbell hammer curl",
+      "交替啞鈴錘式彎舉",
       "arms",
       "dumbbell",
       "Curl alterno de martillo con mancuernas",
@@ -87,11 +90,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Arm Raises (T/Y/I)",
+      "zhTW": "手臂舉起（T/Y/I）",
       "en": "Arm Raises (T/Y/I)"
     },
     "cue": {
-      "zhTW": "Stand upright with feet hip-width apart, core engaged, and arms relaxed at your sides.",
+      "zhTW": "站直，雙腳分開與臀部同寬，核心收緊，手臂放鬆放在身體兩側。",
       "en": "Stand upright with feet hip-width apart, core engaged, and arms relaxed at your sides."
     },
     "defaultUnit": "rounds",
@@ -99,6 +102,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Arm Raises (T/Y/I)",
+      "手臂舉起（T/Y/I）",
       "arms",
       "bodyweight",
       "Armheben (T/Y/I)",
@@ -114,11 +118,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Australian pull-ups",
+      "zhTW": "澳洲引體向上",
       "en": "Australian pull-ups"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -126,6 +130,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Australian pull-ups",
+      "澳洲引體向上",
       "arms",
       "bodyweight",
       "Australian Pull-ups (umgekehrtes Rudern)",
@@ -141,11 +146,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Axe Hold",
+      "zhTW": "斧頭握持",
       "en": "Axe Hold"
     },
     "cue": {
-      "zhTW": "Grab dumbbells and extend arms to side and hold as long as you can",
+      "zhTW": "抓住啞鈴並將手臂向一側伸展並儘可能長時間地保持",
       "en": "Grab dumbbells and extend arms to side and hold as long as you can"
     },
     "defaultUnit": "rounds",
@@ -153,6 +158,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Axe Hold",
+      "斧頭握持",
       "arms",
       "dumbbell",
       "Sostenimiento Lateral Isométrico"
@@ -166,11 +172,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Backward arm circles",
+      "zhTW": "手臂向後轉圈",
       "en": "Backward arm circles"
     },
     "cue": {
-      "zhTW": "Starting position: Stand tall with your back straight.",
+      "zhTW": "起始位置：站直，背部挺直。",
       "en": "Starting position: Stand tall with your back straight."
     },
     "defaultUnit": "rounds",
@@ -178,6 +184,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Backward arm circles",
+      "手臂向後轉圈",
       "arms",
       "bodyweight",
       "Achterwaartse arm cirkels",
@@ -203,11 +210,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Barbell Reverse Wrist Curl",
+      "zhTW": "槓鈴反向手腕彎舉",
       "en": "Barbell Reverse Wrist Curl"
     },
     "cue": {
-      "zhTW": "Sitting on a bench, grab a barbell with your palms facing down and your hands shoulder-width apart.",
+      "zhTW": "坐在長凳上，手掌朝下，雙手與肩同寬，抓住槓鈴。",
       "en": "Sitting on a bench, grab a barbell with your palms facing down and your hands shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -215,6 +222,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Reverse Wrist Curl",
+      "槓鈴反向手腕彎舉",
       "arms",
       "barbell",
       "Curl de Muñeca Inverso con Barra",
@@ -230,11 +238,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Barbell Triceps Extension",
+      "zhTW": "槓鈴三頭肌伸展",
       "en": "Barbell Triceps Extension"
     },
     "cue": {
-      "zhTW": "Position barbell overhead with narrow overhand grip.",
+      "zhTW": "將槓鈴置於頭頂，窄握距。",
       "en": "Position barbell overhead with narrow overhand grip."
     },
     "defaultUnit": "rounds",
@@ -242,6 +250,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Triceps Extension",
+      "槓鈴三頭肌伸展",
       "arms",
       "barbell",
       "Estensione dei Tricipiti con Bilanciere",
@@ -258,11 +267,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Barbell Wrist Curl",
+      "zhTW": "槓鈴腕彎舉",
       "en": "Barbell Wrist Curl"
     },
     "cue": {
-      "zhTW": "Sitting on a bench, grab a barbell with your palms facing up and your hands shoulder-width apart.",
+      "zhTW": "坐在長凳上，手掌朝上，雙手分開與肩同寬，抓住槓鈴。",
       "en": "Sitting on a bench, grab a barbell with your palms facing up and your hands shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -270,6 +279,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Wrist Curl",
+      "槓鈴腕彎舉",
       "arms",
       "barbell",
       "Forearm Curls",
@@ -288,11 +298,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Bayesian Curl",
+      "zhTW": "貝葉斯旋度",
       "en": "Bayesian Curl"
     },
     "cue": {
-      "zhTW": "Cable curl with stretched shoulder (backwards)",
+      "zhTW": "肩部伸展的繩索彎舉（向後）",
       "en": "Cable curl with stretched shoulder (backwards)"
     },
     "defaultUnit": "rounds",
@@ -300,6 +310,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Bayesian Curl",
+      "貝葉斯旋度",
       "arms",
       "cable"
     ],
@@ -312,11 +323,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Bench Dips On Floor HD",
+      "zhTW": "地板上的臥推臥推 HD",
       "en": "Bench Dips On Floor HD"
     },
     "cue": {
-      "zhTW": "Triceps dips on floor are a compound exercise as they worked multiple muscle groups simultaneously.",
+      "zhTW": "地板上的三頭肌臂屈伸是一項複合練習，因為它們同時鍛鍊多個肌肉群。",
       "en": "Triceps dips on floor are a compound exercise as they worked multiple muscle groups simultaneously."
     },
     "defaultUnit": "rounds",
@@ -324,6 +335,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bench Dips On Floor HD",
+      "地板上的臥推臥推 HD",
       "arms",
       "bodyweight",
       "Bench Dips am Boden",
@@ -339,11 +351,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Bench Press Narrow Grip",
+      "zhTW": "臥推窄握距",
       "en": "Bench Press Narrow Grip"
     },
     "cue": {
-      "zhTW": "- **Setup:** Lie flat on the bench and grip the bar at shoulder-width (closer than a standard bench press).",
+      "zhTW": "- **設定：** 平躺在長凳上，握住槓鈴，與肩同寬（比標準臥推更近）。",
       "en": "- **Setup:** Lie flat on the bench and grip the bar at shoulder-width (closer than a standard bench press)."
     },
     "defaultUnit": "rounds",
@@ -351,6 +363,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Bench Press Narrow Grip",
+      "臥推窄握距",
       "arms",
       "barbell",
       "Bankdrücken Eng",
@@ -368,11 +381,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps Close Grip Pull Down",
+      "zhTW": "二頭肌緊握下拉",
       "en": "Biceps Close Grip Pull Down"
     },
     "cue": {
-      "zhTW": "On a lat pull down machine, hold the bar keeping your hands relatively close.",
+      "zhTW": "在高位下拉機上，握住槓鈴，保持雙手相對靠近。",
       "en": "On a lat pull down machine, hold the bar keeping your hands relatively close."
     },
     "defaultUnit": "rounds",
@@ -380,6 +393,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Biceps Close Grip Pull Down",
+      "二頭肌緊握下拉",
       "arms",
       "bodyweight",
       "Bizeps-Latzug mit engem Griff",
@@ -396,11 +410,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps Curl Machine",
+      "zhTW": "二頭肌彎舉機",
       "en": "Biceps Curl Machine"
     },
     "cue": {
-      "zhTW": "The biceps curl machine is designed to isolate the biceps muscles and provide a controlled range of motion.",
+      "zhTW": "二頭肌彎舉機旨在隔離二頭肌並提供受控的運動範圍。",
       "en": "The biceps curl machine is designed to isolate the biceps muscles and provide a controlled range of motion."
     },
     "defaultUnit": "rounds",
@@ -408,6 +422,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Biceps Curl Machine",
+      "二頭肌彎舉機",
       "arms",
       "bodyweight",
       "Bizepscurl-Maschine",
@@ -423,11 +438,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps Curl With Cable",
+      "zhTW": "二頭肌彎舉繩索",
       "en": "Biceps Curl With Cable"
     },
     "cue": {
-      "zhTW": "Stand around 30 - 40cm away from the cable, the feet are firmly on the floor.",
+      "zhTW": "站在距離電纜約 30 - 40 公分的位置，雙腳牢牢踩在地板上。",
       "en": "Stand around 30 - 40cm away from the cable, the feet are firmly on the floor."
     },
     "defaultUnit": "rounds",
@@ -435,6 +450,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Biceps Curl With Cable",
+      "二頭肌彎舉繩索",
       "arms",
       "cable",
       "Bizeps am Kabel",
@@ -450,11 +466,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps Curls With Barbell",
+      "zhTW": "槓鈴二頭肌彎舉",
       "en": "Biceps Curls With Barbell"
     },
     "cue": {
-      "zhTW": "Hold the Barbell shoulder-wide, the back is straight, the shoulders slightly back, the arms are streched.",
+      "zhTW": "握住槓鈴與肩同寬，背部挺直，肩膀稍微向後，手臂伸直。",
       "en": "Hold the Barbell shoulder-wide, the back is straight, the shoulders slightly back, the arms are streched."
     },
     "defaultUnit": "rounds",
@@ -462,6 +478,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Biceps Curls With Barbell",
+      "槓鈴二頭肌彎舉",
       "arms",
       "barbell",
       "Bizeps LH-Curls",
@@ -479,11 +496,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps Curls With Dumbbell",
+      "zhTW": "啞鈴二頭肌彎舉",
       "en": "Biceps Curls With Dumbbell"
     },
     "cue": {
-      "zhTW": "Hold two dumbbells, the arms are streched, the hands are on your side, the palms face inwards.",
+      "zhTW": "握住兩個啞鈴，雙臂伸直，雙手放在體側，掌心向內。",
       "en": "Hold two dumbbells, the arms are streched, the hands are on your side, the palms face inwards."
     },
     "defaultUnit": "rounds",
@@ -491,6 +508,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Biceps Curls With Dumbbell",
+      "啞鈴二頭肌彎舉",
       "arms",
       "dumbbell",
       "Bizeps KH-Curls",
@@ -507,11 +525,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps Curls With SZ-bar",
+      "zhTW": "附 SZ 槓的二頭肌彎舉",
       "en": "Biceps Curls With SZ-bar"
     },
     "cue": {
-      "zhTW": "Hold the SZ-bar shoulder-wide, the back is straight, the shoulders slightly back, the arms are streched.",
+      "zhTW": "握住槓鈴與肩同寬，背部挺直，肩膀稍微向後，手臂伸展。",
       "en": "Hold the SZ-bar shoulder-wide, the back is straight, the shoulders slightly back, the arms are streched."
     },
     "defaultUnit": "rounds",
@@ -519,6 +537,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Biceps Curls With SZ-bar",
+      "附 SZ 槓的二頭肌彎舉",
       "arms",
       "barbell",
       "Bizeps Curls Mit SZ-Stange",
@@ -534,11 +553,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Biceps with TRX",
+      "zhTW": "二頭肌與 TRX",
       "en": "Biceps with TRX"
     },
     "cue": {
-      "zhTW": "Grab the handles of the TRX straps, lean your body back, arms and legs extended, with your body positioned in a single straight line.",
+      "zhTW": "抓住TRX肩帶的手柄，身體向後傾斜，手臂和腿伸展，身體呈一條直線。",
       "en": "Grab the handles of the TRX straps, lean your body back, arms and legs extended, with your body positioned in a single straight line."
     },
     "defaultUnit": "rounds",
@@ -546,6 +565,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Biceps with TRX",
+      "二頭肌與 TRX",
       "arms",
       "bodyweight",
       "Biceps au TRX",
@@ -562,11 +582,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Bizeps Curls Trifecta",
+      "zhTW": "Bizeps 捲髮三連勝",
       "en": "Bizeps Curls Trifecta"
     },
     "cue": {
-      "zhTW": "This exercise is a mixture of three different curls: the Supinated Cross Body Curl, the Pronated Cross Body Curl and the No Money Curl.",
+      "zhTW": "這個練習混合了三種不同的彎舉：旋後斜體彎舉、旋前斜體彎舉和無錢彎舉。",
       "en": "This exercise is a mixture of three different curls: the Supinated Cross Body Curl, the Pronated Cross Body Curl and the No Money Curl."
     },
     "defaultUnit": "rounds",
@@ -574,6 +594,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Bizeps Curls Trifecta",
+      "Bizeps 捲髮三連勝",
       "arms",
       "dumbbell",
       "Bizeps-Curls-Trifecta",
@@ -589,11 +610,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Body-Ups",
+      "zhTW": "塑身",
       "en": "Body-Ups"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -601,6 +622,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Body-Ups",
+      "塑身",
       "arms",
       "bodyweight",
       "Body up",
@@ -615,11 +637,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Bodyweight Biceps Curl",
+      "zhTW": "自重二頭肌彎舉",
       "en": "Bodyweight Biceps Curl"
     },
     "cue": {
-      "zhTW": "Set up under a straight bar (around waist or chest height).",
+      "zhTW": "設定在直桿下方（腰部或胸部高度）。",
       "en": "Set up under a straight bar (around waist or chest height)."
     },
     "defaultUnit": "rounds",
@@ -627,6 +649,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bodyweight Biceps Curl",
+      "自重二頭肌彎舉",
       "arms",
       "bodyweight",
       "Bizeps-Curl mit dem eigenen Körpergewicht",
@@ -642,11 +665,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Cable Concentration Curl",
+      "zhTW": "電纜集中捲曲",
       "en": "Cable Concentration Curl"
     },
     "cue": {
-      "zhTW": "The concentration curl is a classic exercise for building the biceps one arm at a time.",
+      "zhTW": "集中彎舉是一次鍛鍊一隻手臂二頭肌的經典練習。",
       "en": "The concentration curl is a classic exercise for building the biceps one arm at a time."
     },
     "defaultUnit": "rounds",
@@ -654,6 +677,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Concentration Curl",
+      "電纜集中捲曲",
       "arms",
       "cable",
       "Biceps concentrado",
@@ -669,11 +693,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Cable Curls",
+      "zhTW": "電纜彎舉",
       "en": "Cable Curls"
     },
     "cue": {
-      "zhTW": "Bicep Curls using cables.",
+      "zhTW": "使用繩索進行二頭肌彎舉。",
       "en": "Bicep Curls using cables."
     },
     "defaultUnit": "rounds",
@@ -681,6 +705,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Curls",
+      "電纜彎舉",
       "arms",
       "cable"
     ],
@@ -693,11 +718,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Cable Tri Extension - Internal Rotation",
+      "zhTW": "電纜三延長線 - 內部旋轉",
       "en": "Cable Tri Extension - Internal Rotation"
     },
     "cue": {
-      "zhTW": "single arm exercise with cable held at opposite shoulder with elbow bent.",
+      "zhTW": "單臂練習，將繩索固定在對側肩部，手肘彎曲。",
       "en": "single arm exercise with cable held at opposite shoulder with elbow bent."
     },
     "defaultUnit": "rounds",
@@ -705,6 +730,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Tri Extension - Internal Rotation",
+      "電纜三延長線 - 內部旋轉",
       "arms",
       "cable",
       "Extension des triceps à la poulie - rotation interne",
@@ -720,11 +746,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Cable Tricep Kickback",
+      "zhTW": "電纜三頭肌回扣",
       "en": "Cable Tricep Kickback"
     },
     "cue": {
-      "zhTW": "Grab onto the handle, and pull your elbow up and back slightly above your torso.",
+      "zhTW": "抓住手柄，將手肘向上向後拉至略高於軀幹的位置。",
       "en": "Grab onto the handle, and pull your elbow up and back slightly above your torso."
     },
     "defaultUnit": "rounds",
@@ -732,6 +758,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Tricep Kickback",
+      "電纜三頭肌回扣",
       "arms",
       "cable",
       "Extension des triceps à la poulie (kickback)",
@@ -747,11 +774,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Cable Triceps Press",
+      "zhTW": "電纜三頭肌推舉",
       "en": "Cable Triceps Press"
     },
     "cue": {
-      "zhTW": "A single arm exercise that starts with the hand close to the chest with with the elbows bent, and the elbow flared out.",
+      "zhTW": "單臂練習，從雙手靠近胸部開始，手肘彎曲，手肘向外張開。",
       "en": "A single arm exercise that starts with the hand close to the chest with with the elbows bent, and the elbow flared out."
     },
     "defaultUnit": "rounds",
@@ -759,6 +786,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Triceps Press",
+      "電纜三頭肌推舉",
       "arms",
       "cable",
       "Poussée des triceps à la poulie",
@@ -774,11 +802,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Claps over the head",
+      "zhTW": "拍打頭部",
       "en": "Claps over the head"
     },
     "cue": {
-      "zhTW": "Stand with your feet shoulder width apart.",
+      "zhTW": "站立，雙腳分開與肩同寬。",
       "en": "Stand with your feet shoulder width apart."
     },
     "defaultUnit": "rounds",
@@ -786,6 +814,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Claps over the head",
+      "拍打頭部",
       "arms",
       "bodyweight"
     ],
@@ -798,11 +827,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Curl - With Shoulder Elevated",
+      "zhTW": "彎舉 - 肩部抬高",
       "en": "Curl - With Shoulder Elevated"
     },
     "cue": {
-      "zhTW": "Place elbow so that it is about level with the shoulder.",
+      "zhTW": "將手肘放置在與肩部大致水平的位置。",
       "en": "Place elbow so that it is about level with the shoulder."
     },
     "defaultUnit": "rounds",
@@ -810,6 +839,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Curl - With Shoulder Elevated",
+      "彎舉 - 肩部抬高",
       "arms",
       "dumbbell",
       "Curl - épaule surélevée",
@@ -825,11 +855,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Curl De Muñeca Con Barra",
+      "zhTW": "穆尼卡·孔·巴拉 (Curl De Muñeca Con Barra)",
       "en": "Curl De Muñeca Con Barra"
     },
     "cue": {
-      "zhTW": "This is a variation of the flat bench press designed to emphasize the clavicular head of the pectoralis major (the upper portion).",
+      "zhTW": "這是平板臥推的一種變體，旨在強調胸大肌的鎖骨頭（上部）。",
       "en": "This is a variation of the flat bench press designed to emphasize the clavicular head of the pectoralis major (the upper portion)."
     },
     "defaultUnit": "rounds",
@@ -837,6 +867,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Curl De Muñeca Con Barra",
+      "穆尼卡·孔·巴拉 (Curl De Muñeca Con Barra)",
       "arms",
       "barbell"
     ],
@@ -849,11 +880,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Curl with kettlebell two hands",
+      "zhTW": "雙手壺鈴彎舉",
       "en": "Curl with kettlebell two hands"
     },
     "cue": {
-      "zhTW": "Stand upright and grip the kettlebell with both hands.",
+      "zhTW": "站直，雙手握住壺鈴。",
       "en": "Stand upright and grip the kettlebell with both hands."
     },
     "defaultUnit": "rounds",
@@ -861,6 +892,7 @@ export const records = [
     "equipment": "kettlebell",
     "searchTerms": [
       "Curl with kettlebell two hands",
+      "雙手壺鈴彎舉",
       "arms",
       "kettlebell",
       "Curl con kettlebell a due mani",
@@ -878,11 +910,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "DB Cross Body Hammer Curls",
+      "zhTW": "DB 斜挎錘式彎舉",
       "en": "DB Cross Body Hammer Curls"
     },
     "cue": {
-      "zhTW": "Dumbbell cross body biceps curls, works on the braccialis",
+      "zhTW": "啞鈴斜體二頭肌彎舉，作用於肱肌",
       "en": "Dumbbell cross body biceps curls, works on the braccialis"
     },
     "defaultUnit": "rounds",
@@ -890,6 +922,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Cross Body Hammer Curls",
+      "DB 斜挎錘式彎舉",
       "arms",
       "dumbbell"
     ],
@@ -902,11 +935,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "DB Hammer Curls (5kg)",
+      "zhTW": "DB錘式彎舉（5公斤）",
       "en": "DB Hammer Curls (5kg)"
     },
     "cue": {
-      "zhTW": "Vasco custom single-arm hammer curl for 5kg dumbbell.",
+      "zhTW": "Vasco 客製化單臂錘式彎舉，適用於 5 公斤啞鈴。",
       "en": "Vasco custom single-arm hammer curl for 5kg dumbbell."
     },
     "defaultUnit": "rounds",
@@ -914,6 +947,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Hammer Curls (5kg)",
+      "DB錘式彎舉（5公斤）",
       "arms",
       "dumbbell"
     ],
@@ -926,11 +960,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "DB Wrist Extension",
+      "zhTW": "DB 手腕伸展器",
       "en": "DB Wrist Extension"
     },
     "cue": {
-      "zhTW": ": Grab two dumbbells with an overhand grip and lay your forearms across your knees.",
+      "zhTW": "：正手握住兩個啞鈴，將前臂放在膝蓋上。",
       "en": ": Grab two dumbbells with an overhand grip and lay your forearms across your knees."
     },
     "defaultUnit": "rounds",
@@ -938,6 +972,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Wrist Extension",
+      "DB 手腕伸展器",
       "arms",
       "dumbbell",
       "Extension des poignets aux haltères",
@@ -953,11 +988,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Deadhang",
+      "zhTW": "死角",
       "en": "Deadhang"
     },
     "cue": {
-      "zhTW": "Deadhang performed on an edge either with or without added weight (adujst edge or weight to adjust difficulty)",
+      "zhTW": "在有或沒有增加重量的邊緣上進行死懸（調整邊緣或重量以調整難度）",
       "en": "Deadhang performed on an edge either with or without added weight (adujst edge or weight to adjust difficulty)"
     },
     "defaultUnit": "rounds",
@@ -965,6 +1000,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Deadhang",
+      "死角",
       "arms",
       "bodyweight",
       "Suspensiones en Regleta"
@@ -978,11 +1014,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dips Between Two Benches",
+      "zhTW": "蹲在兩個長凳之間",
       "en": "Dips Between Two Benches"
     },
     "cue": {
-      "zhTW": "Put two benches so far appart, that you can hold onto one with your hands and are just able to reach the other with your feet.",
+      "zhTW": "將兩張長凳放得夠遠，這樣你可以用手抓住一張，用腳夠到另一張。",
       "en": "Put two benches so far appart, that you can hold onto one with your hands and are just able to reach the other with your feet."
     },
     "defaultUnit": "rounds",
@@ -990,6 +1026,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Dips Between Two Benches",
+      "蹲在兩個長凳之間",
       "arms",
       "machine",
       "Dips Zwischen 2 Bänke",
@@ -1005,11 +1042,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Double Kettlebell Clean and Press",
+      "zhTW": "雙壺鈴清潔與按壓",
       "en": "Double Kettlebell Clean and Press"
     },
     "cue": {
-      "zhTW": "Full-body muscles building exercise.",
+      "zhTW": "全身肌肉鍛鍊。",
       "en": "Full-body muscles building exercise."
     },
     "defaultUnit": "rounds",
@@ -1017,6 +1054,7 @@ export const records = [
     "equipment": "kettlebell",
     "searchTerms": [
       "Double Kettlebell Clean and Press",
+      "雙壺鈴清潔與按壓",
       "arms",
       "kettlebell",
       "Clean and press con doble kettlebell",
@@ -1032,11 +1070,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Drag Pushdown",
+      "zhTW": "拖曳下推",
       "en": "Drag Pushdown"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1044,6 +1082,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Drag Pushdown",
+      "拖曳下推",
       "arms",
       "cable",
       "Drag pushdown",
@@ -1058,11 +1097,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Drop Curl",
+      "zhTW": "下降捲曲",
       "en": "Drop Curl"
     },
     "cue": {
-      "zhTW": "Drop curls in a modified position at a slow pace effectively engage the brachialis for arm width.",
+      "zhTW": "以緩慢的速度在修改的位置下彎舉，有效地調動肱肌以達到手臂的寬度。",
       "en": "Drop curls in a modified position at a slow pace effectively engage the brachialis for arm width."
     },
     "defaultUnit": "rounds",
@@ -1070,6 +1109,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Drop Curl",
+      "下降捲曲",
       "arms",
       "dumbbell",
       "Drop curl"
@@ -1083,11 +1123,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell bicep curl to press",
+      "zhTW": "啞鈴二頭肌彎舉按壓",
       "en": "Dumbbell bicep curl to press"
     },
     "cue": {
-      "zhTW": "Bend your elbows and lift the dumbbells to your shoulders.",
+      "zhTW": "彎曲肘部，將啞鈴舉至肩部。",
       "en": "Bend your elbows and lift the dumbbells to your shoulders."
     },
     "defaultUnit": "rounds",
@@ -1095,6 +1135,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell bicep curl to press",
+      "啞鈴二頭肌彎舉按壓",
       "arms",
       "dumbbell",
       "Curl biceps à développé aux haltères",
@@ -1110,11 +1151,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell Cheat Curl",
+      "zhTW": "啞鈴彎舉",
       "en": "Dumbbell Cheat Curl"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1122,6 +1163,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Cheat Curl",
+      "啞鈴彎舉",
       "arms",
       "dumbbell",
       "Curl con trampa con mancuernas",
@@ -1137,11 +1179,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell close grip bench press",
+      "zhTW": "啞鈴窄握臥推",
       "en": "Dumbbell close grip bench press"
     },
     "cue": {
-      "zhTW": "Lie down with your back on a flat bench.",
+      "zhTW": "仰躺在平坦的長凳上。",
       "en": "Lie down with your back on a flat bench."
     },
     "defaultUnit": "rounds",
@@ -1149,6 +1191,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell close grip bench press",
+      "啞鈴窄握臥推",
       "arms",
       "dumbbell",
       "Développé couché serré aux haltères",
@@ -1164,11 +1207,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell Concentration Curl",
+      "zhTW": "啞鈴集中彎舉",
       "en": "Dumbbell Concentration Curl"
     },
     "cue": {
-      "zhTW": "Sit on bench.",
+      "zhTW": "坐在長凳上。",
       "en": "Sit on bench."
     },
     "defaultUnit": "rounds",
@@ -1176,6 +1219,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Concentration Curl",
+      "啞鈴集中彎舉",
       "arms",
       "dumbbell",
       "Curl biceps avec haltère",
@@ -1191,11 +1235,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell drag curls",
+      "zhTW": "啞鈴彎舉",
       "en": "Dumbbell drag curls"
     },
     "cue": {
-      "zhTW": "Hold a dumbbell in each hand with your palms facing forward.",
+      "zhTW": "雙手各握一個啞鈴，掌心向前。",
       "en": "Hold a dumbbell in each hand with your palms facing forward."
     },
     "defaultUnit": "rounds",
@@ -1203,6 +1247,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell drag curls",
+      "啞鈴彎舉",
       "arms",
       "dumbbell",
       "Drag curls aux haltères",
@@ -1218,11 +1263,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell Incline Curl",
+      "zhTW": "啞鈴上斜彎舉",
       "en": "Dumbbell Incline Curl"
     },
     "cue": {
-      "zhTW": "- **Setup:** Set an adjustable bench to an incline of approximately **45 to 60 degrees**.",
+      "zhTW": "- **設定：** 將可調式長凳設定為大約 **45 至 60 度** 的傾斜度。",
       "en": "- **Setup:** Set an adjustable bench to an incline of approximately **45 to 60 degrees**."
     },
     "defaultUnit": "rounds",
@@ -1230,6 +1275,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Incline Curl",
+      "啞鈴上斜彎舉",
       "arms",
       "dumbbell",
       "Bizeps KH-Curls Schrägbank",
@@ -1245,11 +1291,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell Triceps Extension",
+      "zhTW": "啞鈴三頭肌伸展",
       "en": "Dumbbell Triceps Extension"
     },
     "cue": {
-      "zhTW": "Position one dumbbell over head with both hands under inner plate (heart shaped grip).",
+      "zhTW": "將一隻啞鈴舉過頭頂，雙手置於內板下方（心型握把）。",
       "en": "Position one dumbbell over head with both hands under inner plate (heart shaped grip)."
     },
     "defaultUnit": "rounds",
@@ -1257,6 +1303,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Triceps Extension",
+      "啞鈴三頭肌伸展",
       "arms",
       "dumbbell",
       "Extension des triceps à l'haltère",
@@ -1272,11 +1319,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell Underhand Dead Row",
+      "zhTW": "啞鈴反手死排",
       "en": "Dumbbell Underhand Dead Row"
     },
     "cue": {
-      "zhTW": "The Dumbbell Underhand Dead Row will involve the back, which means you can try a bit heavier weight.",
+      "zhTW": "啞鈴下手死劃會涉及到背部，這意味著你可以嘗試稍重一點的重量。",
       "en": "The Dumbbell Underhand Dead Row will involve the back, which means you can try a bit heavier weight."
     },
     "defaultUnit": "rounds",
@@ -1284,6 +1331,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Underhand Dead Row",
+      "啞鈴反手死排",
       "arms",
       "dumbbell",
       "Kurzhantel-Rudern im Untergriff aus dem Dead Stop",
@@ -1299,11 +1347,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbell wide bicep curls",
+      "zhTW": "啞鈴寬二頭肌彎舉",
       "en": "Dumbbell wide bicep curls"
     },
     "cue": {
-      "zhTW": "Hold a dumbbell in each hand with your hands slightly wider than shoulder-width apart and palms facing forward.",
+      "zhTW": "雙手各握一個啞鈴，雙手分開略寬於肩寬，掌心向前。",
       "en": "Hold a dumbbell in each hand with your hands slightly wider than shoulder-width apart and palms facing forward."
     },
     "defaultUnit": "rounds",
@@ -1311,6 +1359,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell wide bicep curls",
+      "啞鈴寬二頭肌彎舉",
       "arms",
       "dumbbell",
       "Breite Bizeps-Curls mit Kurzhanteln",
@@ -1326,11 +1375,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbbells on Scott Machine",
+      "zhTW": "史考特機上的啞鈴",
       "en": "Dumbbells on Scott Machine"
     },
     "cue": {
-      "zhTW": "Dumbbells on Scott Machine",
+      "zhTW": "史考特機上的啞鈴",
       "en": "Dumbbells on Scott Machine"
     },
     "defaultUnit": "rounds",
@@ -1338,6 +1387,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbells on Scott Machine",
+      "史考特機上的啞鈴",
       "arms",
       "dumbbell",
       "Curl con Mancuernas en Banco Scott"
@@ -1351,11 +1401,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Dumbell Tate Press",
+      "zhTW": "啞鈴泰特推舉",
       "en": "Dumbell Tate Press"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1363,6 +1413,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbell Tate Press",
+      "啞鈴泰特推舉",
       "arms",
       "dumbbell",
       "Tate Press mit Kurzhanteln",
@@ -1378,11 +1429,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Elbows Tucked DB Bench Press",
+      "zhTW": "肘部折疊臥推臥推",
       "en": "Elbows Tucked DB Bench Press"
     },
     "cue": {
-      "zhTW": "Elbows Tucked DB Bench Press, chest press movement focusing on the triceps.",
+      "zhTW": "肘部折疊臥推臥推，胸部推舉運動重點在於三頭肌。",
       "en": "Elbows Tucked DB Bench Press, chest press movement focusing on the triceps."
     },
     "defaultUnit": "rounds",
@@ -1390,6 +1441,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Elbows Tucked DB Bench Press",
+      "肘部折疊臥推臥推",
       "arms",
       "dumbbell"
     ],
@@ -1402,11 +1454,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Finger Pushup",
+      "zhTW": "手指俯臥撐",
       "en": "Finger Pushup"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1414,6 +1466,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Finger Pushup",
+      "手指俯臥撐",
       "arms",
       "bodyweight",
       "Flexão de dedo",
@@ -1430,11 +1483,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Fingerboard 20 mm edge",
+      "zhTW": "指板20毫米邊緣",
       "en": "Fingerboard 20 mm edge"
     },
     "cue": {
-      "zhTW": "Hang for 10 seconds on a fingerboard with a 20 mm edge",
+      "zhTW": "在邊緣為 20 毫米的指板上懸掛 10 秒",
       "en": "Hang for 10 seconds on a fingerboard with a 20 mm edge"
     },
     "defaultUnit": "rounds",
@@ -1442,6 +1495,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Fingerboard 20 mm edge",
+      "指板20毫米邊緣",
       "arms",
       "bodyweight",
       "Leisten hängen an 20 mm Kante",
@@ -1456,11 +1510,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Floor dips",
+      "zhTW": "地板傾斜",
       "en": "Floor dips"
     },
     "cue": {
-      "zhTW": "Starting position: Sit with your arms behind you, supporting your back.Your fingers should point forward.Your knees should be bent, feet together.",
+      "zhTW": "起始位置：坐下，雙臂放在身後，支撐背部。手指應指向前方。膝蓋應彎曲，雙腳併攏。",
       "en": "Starting position: Sit with your arms behind you, supporting your back.Your fingers should point forward.Your knees should be bent, feet together."
     },
     "defaultUnit": "rounds",
@@ -1468,6 +1522,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Floor dips",
+      "地板傾斜",
       "arms",
       "bodyweight",
       "Bodensenken",
@@ -1492,11 +1547,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Floor Skull Crusher",
+      "zhTW": "落地顱骨粉碎機",
       "en": "Floor Skull Crusher"
     },
     "cue": {
-      "zhTW": "Allowing you to safely load more weight than a regular skull crusher, lie on the floor and rest the weight on the floor in between each repetition.",
+      "zhTW": "允許您安全地加載比普通顱骨破碎機更多的重量，躺在地板上，並在每次重複之間將重量放在地板上。",
       "en": "Allowing you to safely load more weight than a regular skull crusher, lie on the floor and rest the weight on the floor in between each repetition."
     },
     "defaultUnit": "rounds",
@@ -1504,6 +1559,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Floor Skull Crusher",
+      "落地顱骨粉碎機",
       "arms",
       "barbell",
       "Barre au front au sol",
@@ -1518,11 +1574,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Forearm Curls (underhand grip)",
+      "zhTW": "前臂彎舉（反握）",
       "en": "Forearm Curls (underhand grip)"
     },
     "cue": {
-      "zhTW": "* Engage the muscles * Don't use momentum * Controlled movement * Slow movement",
+      "zhTW": "* 調動肌肉 * 不要使用動量 * 受控運動 * 緩慢運動",
       "en": "* Engage the muscles * Don't use momentum * Controlled movement * Slow movement"
     },
     "defaultUnit": "rounds",
@@ -1530,6 +1586,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Forearm Curls (underhand grip)",
+      "前臂彎舉（反握）",
       "arms",
       "dumbbell"
     ],
@@ -1542,11 +1599,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Forward arm circles",
+      "zhTW": "手臂向前轉圈",
       "en": "Forward arm circles"
     },
     "cue": {
-      "zhTW": "Starting position: Stand tall with your back straight.",
+      "zhTW": "起始位置：站直，背部挺直。",
       "en": "Starting position: Stand tall with your back straight."
     },
     "defaultUnit": "rounds",
@@ -1554,6 +1611,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Forward arm circles",
+      "手臂向前轉圈",
       "arms",
       "bodyweight",
       "Armkreisen vorwärts",
@@ -1580,11 +1638,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Glute Bridge Single-Arm Press",
+      "zhTW": "臀橋單臂推舉",
       "en": "Glute Bridge Single-Arm Press"
     },
     "cue": {
-      "zhTW": "With one dumbbell in hand, perform a glute bridge.",
+      "zhTW": "手裡拿著一個啞鈴，做臀橋。",
       "en": "With one dumbbell in hand, perform a glute bridge."
     },
     "defaultUnit": "rounds",
@@ -1592,6 +1650,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Glute Bridge Single-Arm Press",
+      "臀橋單臂推舉",
       "arms",
       "dumbbell",
       "Glute Bridge mit einarmigem Drücken",
@@ -1607,11 +1666,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Hammer Curls",
+      "zhTW": "錘式彎舉",
       "en": "Hammer Curls"
     },
     "cue": {
-      "zhTW": "- **Start:** Hold dumbbells at your sides with palms facing your torso.",
+      "zhTW": "- **開始：** 將啞鈴放在身體兩側，手掌朝向軀幹。",
       "en": "- **Start:** Hold dumbbells at your sides with palms facing your torso."
     },
     "defaultUnit": "rounds",
@@ -1619,6 +1678,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Hammer Curls",
+      "錘式彎舉",
       "arms",
       "dumbbell",
       "Biceps Martelo",
@@ -1636,11 +1696,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Hammercurls on Cable",
+      "zhTW": "電纜上的 Hammercurls",
       "en": "Hammercurls on Cable"
     },
     "cue": {
-      "zhTW": "Take a cable in your hands (palms parallel, point to each other), the body is straight.",
+      "zhTW": "雙手拿一條電纜（手掌平行，互相指向），身體伸直。",
       "en": "Take a cable in your hands (palms parallel, point to each other), the body is straight."
     },
     "defaultUnit": "rounds",
@@ -1648,6 +1708,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Hammercurls on Cable",
+      "電纜上的 Hammercurls",
       "arms",
       "cable",
       "Biceps concentrado martillo con cable",
@@ -1663,11 +1724,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Hand Grip",
+      "zhTW": "手柄",
       "en": "Hand Grip"
     },
     "cue": {
-      "zhTW": "chrome Hand Flex Grip to build up forearms muscles",
+      "zhTW": "鍍鉻手部彎曲握把，增強前臂肌肉",
       "en": "chrome Hand Flex Grip to build up forearms muscles"
     },
     "defaultUnit": "rounds",
@@ -1675,6 +1736,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Hand Grip",
+      "手柄",
       "arms",
       "bodyweight",
       "Fortalecedor de Agarre"
@@ -1688,11 +1750,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Hercules Pillars",
+      "zhTW": "大力士柱",
       "en": "Hercules Pillars"
     },
     "cue": {
-      "zhTW": "Grab two cables stand in the middle so both have tension and hold",
+      "zhTW": "抓住中間的兩條電纜，這樣它們就有張力並保持住",
       "en": "Grab two cables stand in the middle so both have tension and hold"
     },
     "defaultUnit": "rounds",
@@ -1700,6 +1762,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Hercules Pillars",
+      "大力士柱",
       "arms",
       "cable"
     ],
@@ -1712,11 +1775,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "High-Cable Cross Tricep Extention - NB",
+      "zhTW": "高纜交叉三頭肌伸展 - NB",
       "en": "High-Cable Cross Tricep Extention - NB"
     },
     "cue": {
-      "zhTW": "The high-cable cross tricep extension is an isolation exercise for targeting the triceps, particularly the long head.",
+      "zhTW": "高繩交叉三頭肌伸展是針對三頭肌，特別是長頭的孤立練習。",
       "en": "The high-cable cross tricep extension is an isolation exercise for targeting the triceps, particularly the long head."
     },
     "defaultUnit": "rounds",
@@ -1724,6 +1787,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "High-Cable Cross Tricep Extention - NB",
+      "高纜交叉三頭肌伸展 - NB",
       "arms",
       "cable",
       "Extension des triceps croisée à la poulie haute - NB",
@@ -1739,11 +1803,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Incline Close Grip Barbell Bench Press",
+      "zhTW": "上斜窄握槓鈴臥推",
       "en": "Incline Close Grip Barbell Bench Press"
     },
     "cue": {
-      "zhTW": "Narrower grip than regular bench press, just outside shoulder width.",
+      "zhTW": "握距比普通臥推窄，剛好在肩寬之外。",
       "en": "Narrower grip than regular bench press, just outside shoulder width."
     },
     "defaultUnit": "rounds",
@@ -1751,6 +1815,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Incline Close Grip Barbell Bench Press",
+      "上斜窄握槓鈴臥推",
       "arms",
       "barbell"
     ],
@@ -1763,11 +1828,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Incline Skull Crush",
+      "zhTW": "傾斜顱骨粉碎",
       "en": "Incline Skull Crush"
     },
     "cue": {
-      "zhTW": "Siting in a 45 Degree Angle, using DB to do Incline Skull Crush",
+      "zhTW": "45度角坐姿，用DB做Incline Skull Crush",
       "en": "Siting in a 45 Degree Angle, using DB to do Incline Skull Crush"
     },
     "defaultUnit": "rounds",
@@ -1775,6 +1840,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Incline Skull Crush",
+      "傾斜顱骨粉碎",
       "arms",
       "bodyweight"
     ],
@@ -1787,11 +1853,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "JM Press",
+      "zhTW": "JM出版社",
       "en": "JM Press"
     },
     "cue": {
-      "zhTW": "The JM press keeps your shoulders stationary, relying on the elbow flexion and extension to move the weight using your triceps strength.",
+      "zhTW": "JM 推舉讓您的肩膀保持靜止，依靠肘部彎曲和伸展，利用三頭肌的力量來移動重量。",
       "en": "The JM press keeps your shoulders stationary, relying on the elbow flexion and extension to move the weight using your triceps strength."
     },
     "defaultUnit": "rounds",
@@ -1799,6 +1865,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "JM Press",
+      "JM出版社",
       "arms",
       "barbell"
     ],
@@ -1811,11 +1878,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "knee push-ups",
+      "zhTW": "膝蓋俯臥撐",
       "en": "knee push-ups"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1823,6 +1890,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "knee push-ups",
+      "膝蓋俯臥撐",
       "arms",
       "bodyweight",
       "Flexiones de rodillas",
@@ -1838,11 +1906,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Kong Curl",
+      "zhTW": "孔彎舉",
       "en": "Kong Curl"
     },
     "cue": {
-      "zhTW": "This exercise is somewhat similar to a cable curl and a cable crossover.",
+      "zhTW": "這個練習有點類似繩索彎舉和繩索交叉。",
       "en": "This exercise is somewhat similar to a cable curl and a cable crossover."
     },
     "defaultUnit": "rounds",
@@ -1850,6 +1918,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Kong Curl",
+      "孔彎舉",
       "arms",
       "dumbbell",
       "Kong curl"
@@ -1863,11 +1932,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "L-Sit Pull-ups",
+      "zhTW": "L 坐引體向上",
       "en": "L-Sit Pull-ups"
     },
     "cue": {
-      "zhTW": "L-Sit Pull-ups train both upper body and core muscles.",
+      "zhTW": "L-Sit 引體向上可以訓練上半身和核心肌肉。",
       "en": "L-Sit Pull-ups train both upper body and core muscles."
     },
     "defaultUnit": "rounds",
@@ -1875,6 +1944,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "L-Sit Pull-ups",
+      "L 坐引體向上",
       "arms",
       "bodyweight"
     ],
@@ -1887,11 +1957,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Lying Dumbbell Curls",
+      "zhTW": "臥式啞鈴彎舉",
       "en": "Lying Dumbbell Curls"
     },
     "cue": {
-      "zhTW": "Take a dumbbell in each hand and lie backwards on a bench, similar to a classic chest press.",
+      "zhTW": "雙手各拿一個啞鈴，向後躺在長凳上，類似經典的推胸動作。",
       "en": "Take a dumbbell in each hand and lie backwards on a bench, similar to a classic chest press."
     },
     "defaultUnit": "rounds",
@@ -1899,6 +1969,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lying Dumbbell Curls",
+      "臥式啞鈴彎舉",
       "arms",
       "dumbbell",
       "Curls avec haltères allongé",
@@ -1914,11 +1985,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Lying Triceps Extensions",
+      "zhTW": "仰臥三頭肌屈伸",
       "en": "Lying Triceps Extensions"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1926,6 +1997,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Lying Triceps Extensions",
+      "仰臥三頭肌屈伸",
       "arms",
       "barbell",
       "Extensiones de tríceps tumbado",
@@ -1941,11 +2013,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Lying Triceps Kickback",
+      "zhTW": "臥式三頭肌回扣",
       "en": "Lying Triceps Kickback"
     },
     "cue": {
-      "zhTW": "Set the bench to an 60deg angle.",
+      "zhTW": "將工作台設定為 60 度角。",
       "en": "Set the bench to an 60deg angle."
     },
     "defaultUnit": "rounds",
@@ -1953,6 +2025,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lying Triceps Kickback",
+      "臥式三頭肌回扣",
       "arms",
       "dumbbell",
       "Kickback triceps allongé",
@@ -1968,11 +2041,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Mentzer Pulldown",
+      "zhTW": "門澤下拉",
       "en": "Mentzer Pulldown"
     },
     "cue": {
-      "zhTW": "Close grip front facing Pull down, while focusing on Biceps, Increases activation of biceps over the whole range, Avoid activating Lats.",
+      "zhTW": "緊握正面朝下拉，同時專注於二頭肌，增加整個範圍內二頭肌的激活，避免激活背闊肌。",
       "en": "Close grip front facing Pull down, while focusing on Biceps, Increases activation of biceps over the whole range, Avoid activating Lats."
     },
     "defaultUnit": "rounds",
@@ -1980,6 +2053,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Mentzer Pulldown",
+      "門澤下拉",
       "arms",
       "cable",
       "Jalón Mentzer",
@@ -1995,11 +2069,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Neck extension",
+      "zhTW": "頸部伸展",
       "en": "Neck extension"
     },
     "cue": {
-      "zhTW": "Unilateral triceps exercise with your back to the pulley, with the pulley at the top",
+      "zhTW": "單側三頭肌鍛鍊背對滑輪，滑輪在上方",
       "en": "Unilateral triceps exercise with your back to the pulley, with the pulley at the top"
     },
     "defaultUnit": "rounds",
@@ -2007,6 +2081,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Neck extension",
+      "頸部伸展",
       "arms",
       "cable",
       "Codo unilateral polea alta"
@@ -2020,11 +2095,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Neutral-grip pull-ups or TRX rows",
+      "zhTW": "中握引體向上或 TRX 划船",
       "en": "Neutral-grip pull-ups or TRX rows"
     },
     "cue": {
-      "zhTW": "- **Pull-Up: Vertical Pull — Focuses more on the Lats (back width).** **TRX Row: Horizontal Pull — Focuses more on the Rhomboids/Traps (mid-back thickness and posture).**",
+      "zhTW": "- **引體向上：垂直拉－更重視背闊肌（背部寬度）。 ** **TRX 划船：水平拉－更專注於菱形肌/斜方肌（中背部厚度和姿勢）。 **",
       "en": "- **Pull-Up: Vertical Pull — Focuses more on the Lats (back width).** **TRX Row: Horizontal Pull — Focuses more on the Rhomboids/Traps (mid-back thickness and posture).**"
     },
     "defaultUnit": "rounds",
@@ -2032,6 +2107,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Neutral-grip pull-ups or TRX rows",
+      "中握引體向上或 TRX 划船",
       "arms",
       "bodyweight",
       "Dominadas en agarre neutro o remo TRX",
@@ -2047,11 +2123,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "One Arm Overhead Cable Tricep Extension",
+      "zhTW": "單臂過頭電纜三頭肌伸展",
       "en": "One Arm Overhead Cable Tricep Extension"
     },
     "cue": {
-      "zhTW": "Set the pulley at the bottom of the cable machine and grab onto it without using any attachments.",
+      "zhTW": "將滑輪設置在電纜機底部並抓住它，無需使用任何附件。",
       "en": "Set the pulley at the bottom of the cable machine and grab onto it without using any attachments."
     },
     "defaultUnit": "rounds",
@@ -2059,6 +2135,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "One Arm Overhead Cable Tricep Extension",
+      "單臂過頭電纜三頭肌伸展",
       "arms",
       "cable",
       "Einarmiges Trizepsstrecken über Kopf am Kabelzug",
@@ -2074,11 +2151,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "One Arm Triceps Extensions on Cable",
+      "zhTW": "單臂三頭肌伸展繩索",
       "en": "One Arm Triceps Extensions on Cable"
     },
     "cue": {
-      "zhTW": "One Arm Triceps Extensions on Cable",
+      "zhTW": "單臂三頭肌伸展繩索",
       "en": "One Arm Triceps Extensions on Cable"
     },
     "defaultUnit": "rounds",
@@ -2086,6 +2163,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "One Arm Triceps Extensions on Cable",
+      "單臂三頭肌伸展繩索",
       "arms",
       "cable",
       "Extensión de Tríceps a una Mano en Polea",
@@ -2100,11 +2178,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "one-handed kettlebell curls",
+      "zhTW": "單手壺鈴彎舉",
       "en": "one-handed kettlebell curls"
     },
     "cue": {
-      "zhTW": "Standing with the kettlebell in one hand and bent at the elbow, start from a fully extended position until your hand reaches shoulder height.",
+      "zhTW": "站立，一手握住壺鈴，手肘彎曲，從完全伸展的位置開始，直到手達到肩膀高度。",
       "en": "Standing with the kettlebell in one hand and bent at the elbow, start from a fully extended position until your hand reaches shoulder height."
     },
     "defaultUnit": "rounds",
@@ -2112,6 +2190,7 @@ export const records = [
     "equipment": "kettlebell",
     "searchTerms": [
       "one-handed kettlebell curls",
+      "單手壺鈴彎舉",
       "arms",
       "kettlebell",
       "Curl con kettlebell una sola mano",
@@ -2128,11 +2207,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Overhead Cable Tricep Extension",
+      "zhTW": "頭頂纜線三頭肌伸展器",
       "en": "Overhead Cable Tricep Extension"
     },
     "cue": {
-      "zhTW": "Use rope handle with your back against the cable machine.",
+      "zhTW": "使用繩索手柄，背部靠在纜繩機上。",
       "en": "Use rope handle with your back against the cable machine."
     },
     "defaultUnit": "rounds",
@@ -2140,6 +2219,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Overhead Cable Tricep Extension",
+      "頭頂纜線三頭肌伸展器",
       "arms",
       "cable",
       "Extension des triceps à la poulie au-dessus de la tête",
@@ -2155,11 +2235,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Parallel Bar Hold",
+      "zhTW": "雙槓保持",
       "en": "Parallel Bar Hold"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -2167,6 +2247,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Parallel Bar Hold",
+      "雙槓保持",
       "arms",
       "bodyweight",
       "Halten am Barren",
@@ -2182,11 +2263,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Patadas traseras",
+      "zhTW": "馬鈴薯餅",
       "en": "Patadas traseras"
     },
     "cue": {
-      "zhTW": "The dumbbell kickback is a popular strength training exercise that targets the triceps muscles in the back of your upper arms.",
+      "zhTW": "啞鈴反沖是一種流行的肌力訓練動作，針對上臂後部的三頭肌。",
       "en": "The dumbbell kickback is a popular strength training exercise that targets the triceps muscles in the back of your upper arms."
     },
     "defaultUnit": "rounds",
@@ -2194,6 +2275,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Patadas traseras",
+      "馬鈴薯餅",
       "arms",
       "dumbbell",
       "Extensions des triceps en kickback",
@@ -2208,11 +2290,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Pike Push Ups",
+      "zhTW": "派克俯臥撐",
       "en": "Pike Push Ups"
     },
     "cue": {
-      "zhTW": "Push Up performed from a pike position (optional to have feet elevated).",
+      "zhTW": "從屈體姿勢進行伏地挺身（可選擇將腳抬高）。",
       "en": "Push Up performed from a pike position (optional to have feet elevated)."
     },
     "defaultUnit": "rounds",
@@ -2220,6 +2302,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pike Push Ups",
+      "派克俯臥撐",
       "arms",
       "bodyweight",
       "Flessioni del luccio",
@@ -2244,11 +2327,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Plate Pinch Hold",
+      "zhTW": "板夾捏",
       "en": "Plate Pinch Hold"
     },
     "cue": {
-      "zhTW": "The plate pinch hold is a grip strength exercise designed to target the forearms and improve grip endurance.",
+      "zhTW": "板捏握是一種握力練習，旨在針對前臂並提高握力耐力。",
       "en": "The plate pinch hold is a grip strength exercise designed to target the forearms and improve grip endurance."
     },
     "defaultUnit": "rounds",
@@ -2256,6 +2339,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Plate Pinch Hold",
+      "板夾捏",
       "arms",
       "bodyweight",
       "Maintien de disques en pince",
@@ -2270,11 +2354,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Preacher Curl - Externally Rotated",
+      "zhTW": "傳教士彎舉 - 外旋",
       "en": "Preacher Curl - Externally Rotated"
     },
     "cue": {
-      "zhTW": "Single arm curl that can be done using a dumbbell and a preacher bench, or a preacher curl machine.",
+      "zhTW": "單臂彎舉，可以使用啞鈴和牧師凳或牧師彎舉機完成。",
       "en": "Single arm curl that can be done using a dumbbell and a preacher bench, or a preacher curl machine."
     },
     "defaultUnit": "rounds",
@@ -2282,6 +2366,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Preacher Curl - Externally Rotated",
+      "傳教士彎舉 - 外旋",
       "arms",
       "dumbbell",
       "Curl au pupitre - rotation externe",
@@ -2297,11 +2382,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Preacher Curl - Internally Rotated",
+      "zhTW": "傳教士彎舉 - 內旋",
       "en": "Preacher Curl - Internally Rotated"
     },
     "cue": {
-      "zhTW": "Single arm curl that can be done using a dumbbell and a preacher bench, or a preacher curl machine.",
+      "zhTW": "單臂彎舉，可以使用啞鈴和牧師凳或牧師彎舉機完成。",
       "en": "Single arm curl that can be done using a dumbbell and a preacher bench, or a preacher curl machine."
     },
     "defaultUnit": "rounds",
@@ -2309,6 +2394,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Preacher Curl - Internally Rotated",
+      "傳教士彎舉 - 內旋",
       "arms",
       "dumbbell",
       "Curl au pupitre - rotation interne",
@@ -2324,11 +2410,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Preacher Curls",
+      "zhTW": "牧師彎舉",
       "en": "Preacher Curls"
     },
     "cue": {
-      "zhTW": "Place the EZ curl bar on the rest handles in front of the preacher bench.",
+      "zhTW": "將 EZ 彎舉桿放在牧師凳前方的休息把手上。",
       "en": "Place the EZ curl bar on the rest handles in front of the preacher bench."
     },
     "defaultUnit": "rounds",
@@ -2336,6 +2422,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Preacher Curls",
+      "牧師彎舉",
       "arms",
       "barbell",
       "Curl en banco Scott",
@@ -2354,11 +2441,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Pullup on fingerboard",
+      "zhTW": "指板上引體向上",
       "en": "Pullup on fingerboard"
     },
     "cue": {
-      "zhTW": "Pullup on a choosen edge of a fingerboard / hangboard",
+      "zhTW": "在指板/吊板的選定邊緣上引體向上",
       "en": "Pullup on a choosen edge of a fingerboard / hangboard"
     },
     "defaultUnit": "rounds",
@@ -2366,6 +2453,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pullup on fingerboard",
+      "指板上引體向上",
       "arms",
       "bodyweight",
       "Dominadas en Tabla de Multipresas",
@@ -2380,11 +2468,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "punches",
+      "zhTW": "拳",
       "en": "punches"
     },
     "cue": {
-      "zhTW": "stand stable and throw normal straight punches",
+      "zhTW": "站穩並出普通直拳",
       "en": "stand stable and throw normal straight punches"
     },
     "defaultUnit": "rounds",
@@ -2392,6 +2480,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "punches",
+      "拳",
       "arms",
       "bodyweight"
     ],
@@ -2404,11 +2493,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Push-up rotations",
+      "zhTW": "俯臥撐旋轉",
       "en": "Push-up rotations"
     },
     "cue": {
-      "zhTW": "Starting position: Get into the starting push-up position, with your hands and toes touching the ground and back, arms and legs straight.",
+      "zhTW": "起始位置：進入起始俯臥撐位置，雙手和腳趾接觸地面和背部，手臂和腿伸直。",
       "en": "Starting position: Get into the starting push-up position, with your hands and toes touching the ground and back, arms and legs straight."
     },
     "defaultUnit": "rounds",
@@ -2416,6 +2505,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Push-up rotations",
+      "俯臥撐旋轉",
       "arms",
       "bodyweight",
       "Draaiend opdrukken",
@@ -2444,11 +2534,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Recruitment Pulls",
+      "zhTW": "招募拉動",
       "en": "Recruitment Pulls"
     },
     "cue": {
-      "zhTW": "Find a few specific edge sizes on a hangboard, get fixed underneath them with the board overhead, and pull with max effort, 1 arm at a time, for 3-5 seconds.",
+      "zhTW": "在吊板上找到幾個特定的邊緣尺寸，將板固定在它們下方，將板放在上方，然後用最大的力拉，一次一隻手臂，持續 3-5 秒。",
       "en": "Find a few specific edge sizes on a hangboard, get fixed underneath them with the board overhead, and pull with max effort, 1 arm at a time, for 3-5 seconds."
     },
     "defaultUnit": "rounds",
@@ -2456,6 +2546,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Recruitment Pulls",
+      "招募拉動",
       "arms",
       "bodyweight",
       "Tractions de recrutement"
@@ -2469,11 +2560,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Rest (for timed workouts)",
+      "zhTW": "休息（用於定時運動）",
       "en": "Rest (for timed workouts)"
     },
     "cue": {
-      "zhTW": "When creating a workout based on time, add this to add rest time in the program",
+      "zhTW": "創建基於時間的鍛煉時，添加此項目以在程序中添加休息時間",
       "en": "When creating a workout based on time, add this to add rest time in the program"
     },
     "defaultUnit": "rounds",
@@ -2481,6 +2572,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rest (for timed workouts)",
+      "休息（用於定時運動）",
       "arms",
       "bodyweight"
     ],
@@ -2493,11 +2585,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Reverse Bar Curl",
+      "zhTW": "反向槓鈴彎舉",
       "en": "Reverse Bar Curl"
     },
     "cue": {
-      "zhTW": "Hold bar with reverse (or \"overhand\") grip, palms facing the floor.",
+      "zhTW": "反握（或稱「正手」）握住槓鈴，手掌面向地板。",
       "en": "Hold bar with reverse (or \"overhand\") grip, palms facing the floor."
     },
     "defaultUnit": "rounds",
@@ -2505,6 +2597,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Reverse Bar Curl",
+      "反向槓鈴彎舉",
       "arms",
       "barbell"
     ],
@@ -2517,11 +2610,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Reverse Curl",
+      "zhTW": "反向彎舉",
       "en": "Reverse Curl"
     },
     "cue": {
-      "zhTW": "The reverse-grip barbell curl is a variation on the biceps curl where the palms face downward.",
+      "zhTW": "反握槓鈴彎舉是二頭肌彎舉的變體，手掌朝下。",
       "en": "The reverse-grip barbell curl is a variation on the biceps curl where the palms face downward."
     },
     "defaultUnit": "rounds",
@@ -2529,6 +2622,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Reverse Curl",
+      "反向彎舉",
       "arms",
       "barbell",
       "Curl en pronation (reverse curl)",
@@ -2546,11 +2640,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Reverse EZ Bar Cable Curls",
+      "zhTW": "反向 EZ 槓鈴彎舉",
       "en": "Reverse EZ Bar Cable Curls"
     },
     "cue": {
-      "zhTW": "Standing in front of cable tower using a SZ Bar",
+      "zhTW": "站在電纜塔前使用 SZ Bar",
       "en": "Standing in front of cable tower using a SZ Bar"
     },
     "defaultUnit": "rounds",
@@ -2558,6 +2652,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Reverse EZ Bar Cable Curls",
+      "反向 EZ 槓鈴彎舉",
       "arms",
       "cable",
       "Curl Inverso con Barra EZ en Polea"
@@ -2571,11 +2666,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Reverse Grip Barbell Curls",
+      "zhTW": "反握槓鈴彎舉",
       "en": "Reverse Grip Barbell Curls"
     },
     "cue": {
-      "zhTW": "Hold the barbell with an overhand grip (palms facing down) approximately shoulder-width apart.",
+      "zhTW": "正手握住槓鈴（手掌朝下），與肩同寬。",
       "en": "Hold the barbell with an overhand grip (palms facing down) approximately shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -2583,6 +2678,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Reverse Grip Barbell Curls",
+      "反握槓鈴彎舉",
       "arms",
       "barbell",
       "Curl de bíceps con barra en agarre invertido",
@@ -2599,11 +2695,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Reverse Preacher Curl (Close Grip)",
+      "zhTW": "反向傳教士彎舉（窄握）",
       "en": "Reverse Preacher Curl (Close Grip)"
     },
     "cue": {
-      "zhTW": "Sitting reverse on a Biceps Bench with a close grip",
+      "zhTW": "反向坐在二頭肌訓練凳上，緊握",
       "en": "Sitting reverse on a Biceps Bench with a close grip"
     },
     "defaultUnit": "rounds",
@@ -2611,6 +2707,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Reverse Preacher Curl (Close Grip)",
+      "反向傳教士彎舉（窄握）",
       "arms",
       "barbell",
       "Curl de Predicador Inverso"
@@ -2624,11 +2721,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Ring Dips",
+      "zhTW": "環浸",
       "en": "Ring Dips"
     },
     "cue": {
-      "zhTW": "Dips peformed on gymnastic rings.",
+      "zhTW": "在體操吊環上進行雙槓臂屈伸。",
       "en": "Dips peformed on gymnastic rings."
     },
     "defaultUnit": "rounds",
@@ -2636,6 +2733,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Ring Dips",
+      "環浸",
       "arms",
       "bodyweight"
     ],
@@ -2648,11 +2746,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Rocking Triceps Pushdown",
+      "zhTW": "搖擺三頭肌下壓",
       "en": "Rocking Triceps Pushdown"
     },
     "cue": {
-      "zhTW": "Set your feet below the rope and lean your upper body towards the rope.",
+      "zhTW": "將腳放在繩子下方，並將上半身靠向繩子。",
       "en": "Set your feet below the rope and lean your upper body towards the rope."
     },
     "defaultUnit": "rounds",
@@ -2660,6 +2758,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Rocking Triceps Pushdown",
+      "搖擺三頭肌下壓",
       "arms",
       "cable",
       "Extension des triceps à la corde avec balancement",
@@ -2674,11 +2773,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Seated Dumbbell Curls",
+      "zhTW": "坐姿啞鈴彎舉",
       "en": "Seated Dumbbell Curls"
     },
     "cue": {
-      "zhTW": "Seated Dumbbell Curls are an effective bicep workout that isolates the muscles by stabilizing the upper body, reducing momentum that can detract from the exercise’s effectiveness.",
+      "zhTW": "坐式啞鈴彎舉是一種有效的二頭肌鍛鍊方法，可以透過穩定上半身來隔離肌肉，減少可能降低鍛鍊效果的動量。",
       "en": "Seated Dumbbell Curls are an effective bicep workout that isolates the muscles by stabilizing the upper body, reducing momentum that can detract from the exercise’s effectiveness."
     },
     "defaultUnit": "rounds",
@@ -2686,6 +2785,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Seated Dumbbell Curls",
+      "坐姿啞鈴彎舉",
       "arms",
       "dumbbell",
       "Curl con mancuernas sentado",
@@ -2701,11 +2801,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Seated Triceps Press",
+      "zhTW": "坐式三頭肌推舉",
       "en": "Seated Triceps Press"
     },
     "cue": {
-      "zhTW": "Sit down on a back (better with back support).",
+      "zhTW": "坐在靠背上（有靠背支撐效果更好）。",
       "en": "Sit down on a back (better with back support)."
     },
     "defaultUnit": "rounds",
@@ -2713,6 +2813,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Seated Triceps Press",
+      "坐式三頭肌推舉",
       "arms",
       "dumbbell",
       "Extension des triceps assis",
@@ -2729,11 +2830,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Seated W Curl",
+      "zhTW": "坐式W彎舉",
       "en": "Seated W Curl"
     },
     "cue": {
-      "zhTW": "* Sit on bench with 60° incline * Hold dumbbells beside body near the ground, palms facing outwards, arms fully extended * Move dumbbells up using only biceps and without momentum",
+      "zhTW": "* 坐在傾斜 60° 的長凳上 * 將啞鈴放在身體旁邊靠近地面的位置，手掌朝外，雙臂完全伸展 * 僅使用二頭肌，無動力將啞鈴向上移動",
       "en": "* Sit on bench with 60° incline * Hold dumbbells beside body near the ground, palms facing outwards, arms fully extended * Move dumbbells up using only biceps and without momentum"
     },
     "defaultUnit": "rounds",
@@ -2741,6 +2842,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Seated W Curl",
+      "坐式W彎舉",
       "arms",
       "dumbbell",
       "Curl inclinado con mancuernas",
@@ -2756,11 +2858,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Shoulder width three-point push-up",
+      "zhTW": "肩寬三點俯臥撐",
       "en": "Shoulder width three-point push-up"
     },
     "cue": {
-      "zhTW": "Get into a push-up position with your shoulders directly above your hands and your feet hip-width apart.",
+      "zhTW": "進入伏地挺身姿勢，肩膀位於雙手正上方，雙腳分開與臀部同寬。",
       "en": "Get into a push-up position with your shoulders directly above your hands and your feet hip-width apart."
     },
     "defaultUnit": "rounds",
@@ -2768,6 +2870,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Shoulder width three-point push-up",
+      "肩寬三點俯臥撐",
       "arms",
       "bodyweight",
       "Flexión a tres puntos al ancho de los hombros",
@@ -2783,11 +2886,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Single-arm cable pushdown",
+      "zhTW": "單臂拉索下壓",
       "en": "Single-arm cable pushdown"
     },
     "cue": {
-      "zhTW": "Single-arm cable pushdown is a unilateral isolation exercise that targets the triceps brachii.",
+      "zhTW": "單臂繩索下壓是一項針對肱三頭肌的單側孤立練習。",
       "en": "Single-arm cable pushdown is a unilateral isolation exercise that targets the triceps brachii."
     },
     "defaultUnit": "rounds",
@@ -2795,6 +2898,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Single-arm cable pushdown",
+      "單臂拉索下壓",
       "arms",
       "cable",
       "Einarmiges Trizepsdrücken am Kabelzug",
@@ -2810,11 +2914,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Single-arm Preacher Curl",
+      "zhTW": "單臂傳教士彎舉",
       "en": "Single-arm Preacher Curl"
     },
     "cue": {
-      "zhTW": "Sit on the preacher curl bench and perform a bicep curl with a dumbbell in one hand.",
+      "zhTW": "坐在牧師彎舉凳上，單手持啞鈴進行二頭肌彎舉。",
       "en": "Sit on the preacher curl bench and perform a bicep curl with a dumbbell in one hand."
     },
     "defaultUnit": "rounds",
@@ -2822,6 +2926,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Single-arm Preacher Curl",
+      "單臂傳教士彎舉",
       "arms",
       "dumbbell",
       "Curl au pupitre à un bras",
@@ -2837,11 +2942,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Skullcrusher Dumbbells",
+      "zhTW": "碎顱啞鈴",
       "en": "Skullcrusher Dumbbells"
     },
     "cue": {
-      "zhTW": "Hold the dumbbells and lay down on a flat bench in such a way that around 1/4 of your head is over the edge.",
+      "zhTW": "握住啞鈴，躺在平的長凳上，使頭部約 1/4 超出邊緣。",
       "en": "Hold the dumbbells and lay down on a flat bench in such a way that around 1/4 of your head is over the edge."
     },
     "defaultUnit": "rounds",
@@ -2849,6 +2954,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Skullcrusher Dumbbells",
+      "碎顱啞鈴",
       "arms",
       "dumbbell",
       "Barre au front aux haltères",
@@ -2865,11 +2971,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Skullcrusher SZ-bar",
+      "zhTW": "碎顱者 SZ 棒",
       "en": "Skullcrusher SZ-bar"
     },
     "cue": {
-      "zhTW": "Hold the SZ-bar and lay down on a flat bench in such a way that around 1/4 of your head is over the edge.",
+      "zhTW": "握住 SZ 桿並躺在平坦的長凳上，使您的頭部約 1/4 超出邊緣。",
       "en": "Hold the SZ-bar and lay down on a flat bench in such a way that around 1/4 of your head is over the edge."
     },
     "defaultUnit": "rounds",
@@ -2877,6 +2983,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Skullcrusher SZ-bar",
+      "碎顱者 SZ 棒",
       "arms",
       "barbell",
       "Barre au front à la barre EZ",
@@ -2893,11 +3000,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Sloper hanging",
+      "zhTW": "斜掛",
       "en": "Sloper hanging"
     },
     "cue": {
-      "zhTW": "Hanging on sloper holds of a fingerboard for a amount of seconds",
+      "zhTW": "懸掛在指板的傾斜位置上幾秒鐘",
       "en": "Hanging on sloper holds of a fingerboard for a amount of seconds"
     },
     "defaultUnit": "rounds",
@@ -2905,6 +3012,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Sloper hanging",
+      "斜掛",
       "arms",
       "bodyweight",
       "Sloper hängen",
@@ -2919,11 +3027,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Smith Machine Close-grip Bench Press",
+      "zhTW": "史密斯機窄距臥推",
       "en": "Smith Machine Close-grip Bench Press"
     },
     "cue": {
-      "zhTW": "Perform a standard bench press on the smith machine, but have your hands on the bar about shoulder width apart, and keep your elbows close to your body.",
+      "zhTW": "在史密斯機上進行標準臥推，但雙手與肩同寬放在槓上，手肘靠近身體。",
       "en": "Perform a standard bench press on the smith machine, but have your hands on the bar about shoulder width apart, and keep your elbows close to your body."
     },
     "defaultUnit": "rounds",
@@ -2931,6 +3039,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Smith Machine Close-grip Bench Press",
+      "史密斯機窄距臥推",
       "arms",
       "bodyweight",
       "Développé couché prise serrée à la machine Smith",
@@ -2946,11 +3055,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Spider Curl",
+      "zhTW": "蜘蛛捲毛",
       "en": "Spider Curl"
     },
     "cue": {
-      "zhTW": "To get the most out of DB Spider Curls, you need an adjustable weight bench set at a 45-degree incline.",
+      "zhTW": "為了充分利用 DB Spider Curls，您需要一個傾斜 45 度的可調式舉重凳。",
       "en": "To get the most out of DB Spider Curls, you need an adjustable weight bench set at a 45-degree incline."
     },
     "defaultUnit": "rounds",
@@ -2958,6 +3067,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Spider Curl",
+      "蜘蛛捲毛",
       "arms",
       "machine",
       "Curl Araña",
@@ -2972,11 +3082,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Standing Bicep Curl",
+      "zhTW": "站立二頭肌彎舉",
       "en": "Standing Bicep Curl"
     },
     "cue": {
-      "zhTW": "Stand holding dumbbells at shoulder width apart.",
+      "zhTW": "站立，手持啞鈴，與肩同寬。",
       "en": "Stand holding dumbbells at shoulder width apart."
     },
     "defaultUnit": "rounds",
@@ -2984,6 +3094,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Standing Bicep Curl",
+      "站立二頭肌彎舉",
       "arms",
       "dumbbell",
       "Bizeps-Curl im Stehen",
@@ -2999,11 +3110,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Standing Rope Forearm",
+      "zhTW": "站立繩前臂",
       "en": "Standing Rope Forearm"
     },
     "cue": {
-      "zhTW": "Grab a wrist roller tool with both hands while standing with your feet about shoulder width apart.",
+      "zhTW": "雙手抓住手腕滾輪工具，雙腳分開與肩同寬站立。",
       "en": "Grab a wrist roller tool with both hands while standing with your feet about shoulder width apart."
     },
     "defaultUnit": "rounds",
@@ -3011,6 +3122,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Standing Rope Forearm",
+      "站立繩前臂",
       "arms",
       "bodyweight",
       "Antebrazo con rodillo de muñeca de pie",
@@ -3026,11 +3138,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Straight Bar Cable Curls",
+      "zhTW": "直槓電纜彎舉",
       "en": "Straight Bar Cable Curls"
     },
     "cue": {
-      "zhTW": "Standing upright in front of Cable Tower using a straight bar",
+      "zhTW": "使用直桿直立在電纜塔前",
       "en": "Standing upright in front of Cable Tower using a straight bar"
     },
     "defaultUnit": "rounds",
@@ -3038,6 +3150,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Straight Bar Cable Curls",
+      "直槓電纜彎舉",
       "arms",
       "cable",
       "Curl en Polea con Barra Recta"
@@ -3051,11 +3164,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Tricep Dumbbell Kickback",
+      "zhTW": "三頭肌啞鈴反沖",
       "en": "Tricep Dumbbell Kickback"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -3063,6 +3176,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Tricep Dumbbell Kickback",
+      "三頭肌啞鈴反沖",
       "arms",
       "dumbbell",
       "Contragolpe de tríceps con mancuernas",
@@ -3078,11 +3192,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Tricep Pushdown on Cable",
+      "zhTW": "三頭肌下壓繩索",
       "en": "Tricep Pushdown on Cable"
     },
     "cue": {
-      "zhTW": "The cable rope push-down is a popular exercise targeting the triceps muscles.",
+      "zhTW": "繩索下壓是針對肱三頭肌的流行運動。",
       "en": "The cable rope push-down is a popular exercise targeting the triceps muscles."
     },
     "defaultUnit": "rounds",
@@ -3090,6 +3204,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Tricep Pushdown on Cable",
+      "三頭肌下壓繩索",
       "arms",
       "cable",
       "Empuje de tríceps en cable",
@@ -3106,11 +3221,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Tricep Rope Pushdowns",
+      "zhTW": "三頭肌繩索下壓",
       "en": "Tricep Rope Pushdowns"
     },
     "cue": {
-      "zhTW": "- **Setup:** Stand facing the cable, feet shoulder-width apart, with a slight forward lean.",
+      "zhTW": "- **設定：** 面向電纜站立，雙腳分開與肩同寬，稍微向前傾斜。",
       "en": "- **Setup:** Stand facing the cable, feet shoulder-width apart, with a slight forward lean."
     },
     "defaultUnit": "rounds",
@@ -3118,6 +3233,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Tricep Rope Pushdowns",
+      "三頭肌繩索下壓",
       "arms",
       "cable",
       "Extensiones de tríceps con cuerda en polea",
@@ -3133,11 +3249,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Triceps Dips (Assisted)",
+      "zhTW": "三頭肌臂屈伸（輔助）",
       "en": "Triceps Dips (Assisted)"
     },
     "cue": {
-      "zhTW": "Assisted triceps dips is a gym work out exercise that targets triceps and also involves chest.",
+      "zhTW": "輔助三頭肌臂屈伸是一項針對三頭肌並且還涉及胸部的健身房鍛鍊運動。",
       "en": "Assisted triceps dips is a gym work out exercise that targets triceps and also involves chest."
     },
     "defaultUnit": "rounds",
@@ -3145,6 +3261,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Triceps Dips (Assisted)",
+      "三頭肌臂屈伸（輔助）",
       "arms",
       "bodyweight"
     ],
@@ -3157,11 +3274,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Triceps Extensions on Cable",
+      "zhTW": "繩索三頭肌伸展",
       "en": "Triceps Extensions on Cable"
     },
     "cue": {
-      "zhTW": "Grab the cable, stand with your feet shoulder wide, keep your back straight and lean forward a little.",
+      "zhTW": "抓住電纜，雙腳與肩同寬站立，保持背部挺直並稍微向前傾斜。",
       "en": "Grab the cable, stand with your feet shoulder wide, keep your back straight and lean forward a little."
     },
     "defaultUnit": "rounds",
@@ -3169,6 +3286,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Triceps Extensions on Cable",
+      "繩索三頭肌伸展",
       "arms",
       "cable",
       "Extension de triceps polea",
@@ -3184,11 +3302,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Triceps Extensions on Cable With Bar",
+      "zhTW": "附槓索的三頭肌伸展器",
       "en": "Triceps Extensions on Cable With Bar"
     },
     "cue": {
-      "zhTW": "Grab the bar, stand with your feet shoulder wide, keep your back straight and lean forward a little.",
+      "zhTW": "抓住槓鈴，雙腳與肩同寬站立，背部挺直，身體稍微前傾。",
       "en": "Grab the bar, stand with your feet shoulder wide, keep your back straight and lean forward a little."
     },
     "defaultUnit": "rounds",
@@ -3196,6 +3314,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Triceps Extensions on Cable With Bar",
+      "附槓索的三頭肌伸展器",
       "arms",
       "cable",
       "Extensiones de tríceps en polea con barra",
@@ -3212,11 +3331,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Triceps on Machine",
+      "zhTW": "機器上的三頭肌",
       "en": "Triceps on Machine"
     },
     "cue": {
-      "zhTW": "Sit down and hold the bar firmly with your hands.",
+      "zhTW": "坐下並用手牢牢握住槓鈴。",
       "en": "Sit down and hold the bar firmly with your hands."
     },
     "defaultUnit": "rounds",
@@ -3224,6 +3343,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Triceps on Machine",
+      "機器上的三頭肌",
       "arms",
       "bodyweight",
       "Triceps à la machine",
@@ -3240,11 +3360,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Triceps Overhead (Dumbbell)",
+      "zhTW": "過頭三頭肌（啞鈴）",
       "en": "Triceps Overhead (Dumbbell)"
     },
     "cue": {
-      "zhTW": "* Keep the elbows fixed * Engage the muscles * Don't use momentum * Controlled movement * Slow movement * Don't overextend",
+      "zhTW": "* 保持肘部固定 * 調動肌肉 * 不要使用動力 * 控制運動 * 緩慢運動 * 不要過度伸展",
       "en": "* Keep the elbows fixed * Engage the muscles * Don't use momentum * Controlled movement * Slow movement * Don't overextend"
     },
     "defaultUnit": "rounds",
@@ -3252,6 +3372,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Triceps Overhead (Dumbbell)",
+      "過頭三頭肌（啞鈴）",
       "arms",
       "dumbbell",
       "Extension des triceps au-dessus de la tête (haltère)",
@@ -3267,11 +3388,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "TRX dips",
+      "zhTW": "TRX 下跌",
       "en": "TRX dips"
     },
     "cue": {
-      "zhTW": "Start with the hands on the suspension trainer and feet on the ground.",
+      "zhTW": "從雙手放在懸掛訓練器上、雙腳放在地面上開始。",
       "en": "Start with the hands on the suspension trainer and feet on the ground."
     },
     "defaultUnit": "rounds",
@@ -3279,6 +3400,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "TRX dips",
+      "TRX 下跌",
       "arms",
       "bodyweight",
       "Dips au TRX",
@@ -3294,11 +3416,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "TRX gorilla biceps curl",
+      "zhTW": "TRX 大猩猩二頭肌彎舉",
       "en": "TRX gorilla biceps curl"
     },
     "cue": {
-      "zhTW": "We'll stand facing the TRX straps and grab them with our fists facing each other, facing forward, with our arms fully extended at about shoulder-width apart.",
+      "zhTW": "我們面對 TRX 帶子站立，用拳頭相對、面向前方抓住它們，雙臂完全伸展，與肩同寬。",
       "en": "We'll stand facing the TRX straps and grab them with our fists facing each other, facing forward, with our arms fully extended at about shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -3306,6 +3428,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "TRX gorilla biceps curl",
+      "TRX 大猩猩二頭肌彎舉",
       "arms",
       "bodyweight",
       "Curl biceps gorille au TRX",
@@ -3321,11 +3444,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "TRX hammer curl",
+      "zhTW": "TRX 錘式彎舉",
       "en": "TRX hammer curl"
     },
     "cue": {
-      "zhTW": "Place the grips as if they were a continuation of the straps.",
+      "zhTW": "將手柄放置為帶子的延續。",
       "en": "Place the grips as if they were a continuation of the straps."
     },
     "defaultUnit": "rounds",
@@ -3333,6 +3456,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "TRX hammer curl",
+      "TRX 錘式彎舉",
       "arms",
       "bodyweight",
       "Curl marteau au TRX",
@@ -3347,11 +3471,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Trx Single Arm Bicep Curl",
+      "zhTW": "Trx 單臂二頭肌彎舉",
       "en": "Trx Single Arm Bicep Curl"
     },
     "cue": {
-      "zhTW": "Step 1: Stand comfortably and grasp the handles of the suspension system.",
+      "zhTW": "步驟 1：舒適站立並抓住懸掛系統的手柄。",
       "en": "Step 1: Stand comfortably and grasp the handles of the suspension system."
     },
     "defaultUnit": "rounds",
@@ -3359,6 +3483,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Trx Single Arm Bicep Curl",
+      "Trx 單臂二頭肌彎舉",
       "arms",
       "bodyweight",
       "Curl biceps à un bras au TRX",
@@ -3374,11 +3499,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "TRX Tricep Extension",
+      "zhTW": "TRX 三頭肌伸展器",
       "en": "TRX Tricep Extension"
     },
     "cue": {
-      "zhTW": "Attach the TRX or other suspension system overhead, having the handles hanging at chest level or slightly lower.",
+      "zhTW": "將 TRX 或其他懸掛系統安裝在頭頂上，將手柄懸掛在胸部水平或稍低的位置。",
       "en": "Attach the TRX or other suspension system overhead, having the handles hanging at chest level or slightly lower."
     },
     "defaultUnit": "rounds",
@@ -3386,6 +3511,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "TRX Tricep Extension",
+      "TRX 三頭肌伸展器",
       "arms",
       "bodyweight",
       "Extension des triceps au TRX",
@@ -3401,11 +3527,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Wall Pushup",
+      "zhTW": "靠牆俯臥撐",
       "en": "Wall Pushup"
     },
     "cue": {
-      "zhTW": "Pushup against a wall",
+      "zhTW": "靠牆俯臥撐",
       "en": "Pushup against a wall"
     },
     "defaultUnit": "rounds",
@@ -3413,6 +3539,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wall Pushup",
+      "靠牆俯臥撐",
       "arms",
       "bodyweight"
     ],
@@ -3425,11 +3552,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Wrist curl, cable",
+      "zhTW": "手腕彎舉、繩索",
       "en": "Wrist curl, cable"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -3437,6 +3564,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Wrist curl, cable",
+      "手腕彎舉、繩索",
       "arms",
       "cable",
       "Curl de muñeca en polea",
@@ -3452,11 +3580,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Wrist curl, dumbbells",
+      "zhTW": "腕彎舉、啞鈴",
       "en": "Wrist curl, dumbbells"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -3464,6 +3592,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Wrist curl, dumbbells",
+      "腕彎舉、啞鈴",
       "arms",
       "dumbbell",
       "Curl de muñeca con mancuernas",
@@ -3479,11 +3608,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "Zottman curl",
+      "zhTW": "佐特曼彎舉",
       "en": "Zottman curl"
     },
     "cue": {
-      "zhTW": "With your palms facing forward, curl the weights up to your shoulders.",
+      "zhTW": "手掌朝前，將啞鈴捲至肩膀處。",
       "en": "With your palms facing forward, curl the weights up to your shoulders."
     },
     "defaultUnit": "rounds",
@@ -3491,6 +3620,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Zottman curl",
+      "佐特曼彎舉",
       "arms",
       "dumbbell",
       "Curl Zottman",

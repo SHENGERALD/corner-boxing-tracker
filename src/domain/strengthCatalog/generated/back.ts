@@ -5,11 +5,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "1-Arm Half-Kneeling Lat Pulldown",
+      "zhTW": "1臂半跪姿高位下拉",
       "en": "1-Arm Half-Kneeling Lat Pulldown"
     },
     "cue": {
-      "zhTW": "Attach a D-Handle to a high pully.",
+      "zhTW": "將 D 型手柄連接到高滑輪上。",
       "en": "Attach a D-Handle to a high pully."
     },
     "defaultUnit": "rounds",
@@ -17,6 +17,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "1-Arm Half-Kneeling Lat Pulldown",
+      "1臂半跪姿高位下拉",
       "back",
       "cable"
     ],
@@ -29,11 +30,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Alternating High Cable Row",
+      "zhTW": "交替高位繩索划船",
       "en": "Alternating High Cable Row"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -41,6 +42,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Alternating High Cable Row",
+      "交替高位繩索划船",
       "back",
       "cable",
       "Abwechselndes hohes Kabelrudern",
@@ -56,11 +58,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Alternative DB Gorilla rows",
+      "zhTW": "替代 DB Gorilla 行",
       "en": "Alternative DB Gorilla rows"
     },
     "cue": {
-      "zhTW": "Slightly bent down and knees to mimic a gorilla position and pull/row up the DBs to the chest.",
+      "zhTW": "稍微彎曲膝蓋，模仿大猩猩的姿勢，並將 DB 拉/劃至胸部。",
       "en": "Slightly bent down and knees to mimic a gorilla position and pull/row up the DBs to the chest."
     },
     "defaultUnit": "rounds",
@@ -68,6 +70,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Alternative DB Gorilla rows",
+      "替代 DB Gorilla 行",
       "back",
       "dumbbell",
       "Alternatives Gorilla-Rudern mit Kurzhanteln",
@@ -83,11 +86,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Archer Pull Up",
+      "zhTW": "弓箭手引體向上",
       "en": "Archer Pull Up"
     },
     "cue": {
-      "zhTW": "An archer pull-up is an advanced bodyweight exercise that strengthens your back and biceps, serving as a progression towards a one-arm pull-up.",
+      "zhTW": "弓箭手引體向上是一種高級的自重練習，可以增強背部和二頭肌的力量，是單臂引體向上的進步。",
       "en": "An archer pull-up is an advanced bodyweight exercise that strengthens your back and biceps, serving as a progression towards a one-arm pull-up."
     },
     "defaultUnit": "rounds",
@@ -95,6 +98,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Archer Pull Up",
+      "弓箭手引體向上",
       "back",
       "bodyweight",
       "Archer-Klimmzug",
@@ -110,11 +114,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Assisted chin-ups",
+      "zhTW": "輔助引體向上",
       "en": "Assisted chin-ups"
     },
     "cue": {
-      "zhTW": "Chin-ups with machine assistance (counterweights)",
+      "zhTW": "機器輔助引體向上（配重）",
       "en": "Chin-ups with machine assistance (counterweights)"
     },
     "defaultUnit": "rounds",
@@ -122,6 +126,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Assisted chin-ups",
+      "輔助引體向上",
       "back",
       "bodyweight"
     ],
@@ -134,11 +139,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Assisted Pull-Up",
+      "zhTW": "輔助引體向上",
       "en": "Assisted Pull-Up"
     },
     "cue": {
-      "zhTW": "The **Assisted Pull-Up** is a compound vertical pulling exercise performed on a machine with a counterweight platform or by using resistance bands.",
+      "zhTW": "**輔助引體向上**是一種在具有配重平台或使用阻力帶的機器上進行的複合垂直拉動練習。",
       "en": "The **Assisted Pull-Up** is a compound vertical pulling exercise performed on a machine with a counterweight platform or by using resistance bands."
     },
     "defaultUnit": "rounds",
@@ -146,6 +151,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Assisted Pull-Up",
+      "輔助引體向上",
       "back",
       "bodyweight",
       "Dominada asistida",
@@ -161,11 +167,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Back bridge",
+      "zhTW": "後橋",
       "en": "Back bridge"
     },
     "cue": {
-      "zhTW": "Lie on the floor with your back resting on the floor and your legs bent, feet flat on the floor, leaving about 20 cm between your feet and your buttocks.",
+      "zhTW": "躺在地板上，背部靠在地板上，雙腿彎曲，腳平放在地板上，腳與臀部之間留出約20公分的距離。",
       "en": "Lie on the floor with your back resting on the floor and your legs bent, feet flat on the floor, leaving about 20 cm between your feet and your buttocks."
     },
     "defaultUnit": "rounds",
@@ -173,6 +179,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Back bridge",
+      "後橋",
       "back",
       "bodyweight",
       "Pont arrière",
@@ -188,11 +195,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Back extensión",
+      "zhTW": "背部伸展",
       "en": "Back extensión"
     },
     "cue": {
-      "zhTW": "Espalda en maquina de extensión con peso",
+      "zhTW": "比索擴展的 Espalda",
       "en": "Espalda en maquina de extensión con peso"
     },
     "defaultUnit": "rounds",
@@ -200,6 +207,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Back extensión",
+      "背部伸展",
       "back",
       "bodyweight"
     ],
@@ -212,11 +220,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Back Lever",
+      "zhTW": "後桿",
       "en": "Back Lever"
     },
     "cue": {
-      "zhTW": "Hanging from a pull-up bar facing downwards with your arms extended",
+      "zhTW": "面朝下懸掛在引體向上桿上，雙臂伸展",
       "en": "Hanging from a pull-up bar facing downwards with your arms extended"
     },
     "defaultUnit": "rounds",
@@ -224,6 +232,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Back Lever",
+      "後桿",
       "back",
       "bodyweight"
     ],
@@ -236,11 +245,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Backward shoulder rotation",
+      "zhTW": "肩部向後旋轉",
       "en": "Backward shoulder rotation"
     },
     "cue": {
-      "zhTW": "Starting position: Sit or stand with your back straight.",
+      "zhTW": "起始位置：坐或站，背部挺直。",
       "en": "Starting position: Sit or stand with your back straight."
     },
     "defaultUnit": "rounds",
@@ -248,6 +257,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Backward shoulder rotation",
+      "肩部向後旋轉",
       "back",
       "bodyweight",
       "Achterwaartse schouder draaiing",
@@ -272,11 +282,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Band pull-aparts",
+      "zhTW": "帶子拉開",
       "en": "Band pull-aparts"
     },
     "cue": {
-      "zhTW": "* Hold the band with your arms extended in front of you at shoulder height.",
+      "zhTW": "* 握住彈力帶，雙臂在身體前方伸展至與肩同高。",
       "en": "* Hold the band with your arms extended in front of you at shoulder height."
     },
     "defaultUnit": "rounds",
@@ -284,6 +294,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Band pull-aparts",
+      "帶子拉開",
       "back",
       "bodyweight",
       "Aperturas con banda elástica",
@@ -299,11 +310,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Banded Scapular Retraction",
+      "zhTW": "帶狀肩胛骨後縮",
       "en": "Banded Scapular Retraction"
     },
     "cue": {
-      "zhTW": "Attach one end of resistance band to wall/upright/...",
+      "zhTW": "將阻力帶的一端固定在牆壁/直立物/...",
       "en": "Attach one end of resistance band to wall/upright/..."
     },
     "defaultUnit": "rounds",
@@ -311,6 +322,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Banded Scapular Retraction",
+      "帶狀肩胛骨後縮",
       "back",
       "bodyweight",
       "Retracción escapular con banda",
@@ -326,11 +338,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Barbell Romanian Deadlift (RDL)",
+      "zhTW": "槓鈴羅馬尼亞硬舉 (RDL)",
       "en": "Barbell Romanian Deadlift (RDL)"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -338,6 +350,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Romanian Deadlift (RDL)",
+      "槓鈴羅馬尼亞硬舉 (RDL)",
       "back",
       "barbell",
       "Peso muerto rumano con barra (RDL)",
@@ -353,11 +366,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Barbell Row (Overhand)",
+      "zhTW": "槓鈴划船（上手）",
       "en": "Barbell Row (Overhand)"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -365,6 +378,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Row (Overhand)",
+      "槓鈴划船（上手）",
       "back",
       "barbell",
       "Langhantelrudern (Obergriff)",
@@ -380,11 +394,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Barbell Row (Underhand)",
+      "zhTW": "槓鈴划船（下手）",
       "en": "Barbell Row (Underhand)"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -392,6 +406,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Barbell Row (Underhand)",
+      "槓鈴划船（下手）",
       "back",
       "barbell",
       "Langhantelrudern (Untergriff)",
@@ -407,11 +422,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Bent Over Dumbbell Rows",
+      "zhTW": "俯身啞鈴划船",
       "en": "Bent Over Dumbbell Rows"
     },
     "cue": {
-      "zhTW": "With dumbbells in hand, bend at the hip until hands hang just below the knees (similar to straight-legged-deadlift starting position).",
+      "zhTW": "手裡拿著啞鈴，彎曲臀部，直到雙手懸掛在膝蓋下方（類似直腿硬舉起始位置）。",
       "en": "With dumbbells in hand, bend at the hip until hands hang just below the knees (similar to straight-legged-deadlift starting position)."
     },
     "defaultUnit": "rounds",
@@ -419,6 +434,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Bent Over Dumbbell Rows",
+      "俯身啞鈴划船",
       "back",
       "dumbbell",
       "One Arm DB Rows",
@@ -436,11 +452,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Bent over row to external rotation",
+      "zhTW": "彎身划船外旋",
       "en": "Bent over row to external rotation"
     },
     "cue": {
-      "zhTW": "**Starting position:** Stand behind a chair or in front of a table.",
+      "zhTW": "**起始位置：** 站在椅子後面或桌子前面。",
       "en": "**Starting position:** Stand behind a chair or in front of a table."
     },
     "defaultUnit": "rounds",
@@ -448,6 +464,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bent over row to external rotation",
+      "彎身划船外旋",
       "back",
       "bodyweight",
       "Remo inclinado con rotación externa",
@@ -463,11 +480,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Bent Over Rowing",
+      "zhTW": "彎腰划船",
       "en": "Bent Over Rowing"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -475,6 +492,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Bent Over Rowing",
+      "彎腰划船",
       "back",
       "barbell",
       "Remada Curvada",
@@ -492,11 +510,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Bent Over Rowing Reverse",
+      "zhTW": "彎腰划船反向",
       "en": "Bent Over Rowing Reverse"
     },
     "cue": {
-      "zhTW": "The same as *regular* rowing, but holding a reversed grip (your palms pointing forwards): Grab the barbell with a wide grIp (slightly more than shoulder wide) and lean forward.",
+      "zhTW": "與*常規*划船相同，但握距相反（手掌朝前）：寬握距（略大於肩寬）抓住槓鈴並向前傾斜。",
       "en": "The same as *regular* rowing, but holding a reversed grip (your palms pointing forwards): Grab the barbell with a wide grIp (slightly more than shoulder wide) and lean forward."
     },
     "defaultUnit": "rounds",
@@ -504,6 +522,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Bent Over Rowing Reverse",
+      "彎腰划船反向",
       "back",
       "barbell",
       "Remo inclinado con agarre invertido",
@@ -519,11 +538,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Blackroll",
+      "zhTW": "黑卷",
       "en": "Blackroll"
     },
     "cue": {
-      "zhTW": "* Controlled movements * Slow movements * Don't use momentum",
+      "zhTW": "* 受控動作 * 緩慢運動 * 不要使用動量",
       "en": "* Controlled movements * Slow movements * Don't use momentum"
     },
     "defaultUnit": "rounds",
@@ -531,6 +550,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Blackroll",
+      "黑卷",
       "back",
       "bodyweight"
     ],
@@ -543,11 +563,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Butterfly Superman",
+      "zhTW": "蝴蝶超人",
       "en": "Butterfly Superman"
     },
     "cue": {
-      "zhTW": "Lie on stomach, intertwine fingers behind the head and start raising your head and raise elbows as far as they go.",
+      "zhTW": "俯臥，手指在腦後交叉，開始抬起頭，並將手肘盡可能地抬起。",
       "en": "Lie on stomach, intertwine fingers behind the head and start raising your head and raise elbows as far as they go."
     },
     "defaultUnit": "rounds",
@@ -555,6 +575,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Butterfly Superman",
+      "蝴蝶超人",
       "back",
       "bodyweight"
     ],
@@ -567,11 +588,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Child's pose",
+      "zhTW": "嬰兒式",
       "en": "Child's pose"
     },
     "cue": {
-      "zhTW": "Starting position: Start on all fours, knees, toes, and hands touching the ground.",
+      "zhTW": "起始位置：四肢著地，膝蓋、腳趾和雙手接觸地面。",
       "en": "Starting position: Start on all fours, knees, toes, and hands touching the ground."
     },
     "defaultUnit": "rounds",
@@ -579,6 +600,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Child's pose",
+      "嬰兒式",
       "back",
       "bodyweight",
       "Barnets position",
@@ -605,11 +627,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Chin tuck",
+      "zhTW": "下巴提拉術",
       "en": "Chin tuck"
     },
     "cue": {
-      "zhTW": "Starting position: Sit or stand with your back straight.",
+      "zhTW": "起始位置：坐或站，背部挺直。",
       "en": "Starting position: Sit or stand with your back straight."
     },
     "defaultUnit": "rounds",
@@ -617,6 +639,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Chin tuck",
+      "下巴提拉術",
       "back",
       "bodyweight",
       "Flexão de queixo",
@@ -640,11 +663,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Chin Up",
+      "zhTW": "引體向上",
       "en": "Chin Up"
     },
     "cue": {
-      "zhTW": "The chin-up (also known as a chin or chinup) is a strength training exercise.",
+      "zhTW": "引體向上（也稱為引體向上或引體向上）是一種肌力訓練動作。",
       "en": "The chin-up (also known as a chin or chinup) is a strength training exercise."
     },
     "defaultUnit": "rounds",
@@ -652,6 +675,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Chin Up",
+      "引體向上",
       "back",
       "bodyweight",
       "Chin-ups",
@@ -668,11 +692,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Clockwise neck circles",
+      "zhTW": "順時針頸圈",
       "en": "Clockwise neck circles"
     },
     "cue": {
-      "zhTW": "Starting position: Start sitting or standing.",
+      "zhTW": "起始位置：開始坐著或站著。",
       "en": "Starting position: Start sitting or standing."
     },
     "defaultUnit": "rounds",
@@ -680,6 +704,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Clockwise neck circles",
+      "順時針頸圈",
       "back",
       "bodyweight",
       "Cercles du cou dans le sens horaire",
@@ -695,11 +720,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Close-grip Lat Pull Down",
+      "zhTW": "窄握高位下拉",
       "en": "Close-grip Lat Pull Down"
     },
     "cue": {
-      "zhTW": "Grip the pull-down bar with your hands closer than shoulder width apart, with your palms facing away from you.",
+      "zhTW": "雙手握住下拉桿，間距比肩寬，手掌背向自己。",
       "en": "Grip the pull-down bar with your hands closer than shoulder width apart, with your palms facing away from you."
     },
     "defaultUnit": "rounds",
@@ -707,6 +732,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Close-grip Lat Pull Down",
+      "窄握高位下拉",
       "back",
       "bodyweight",
       "Jalón al Pecho con Agarre Cerrado",
@@ -724,11 +750,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Close-grip supinated lat pulldown",
+      "zhTW": "緊握旋後高位下拉",
       "en": "Close-grip supinated lat pulldown"
     },
     "cue": {
-      "zhTW": "Downward movement • Pull the bar down so that it passes close to your chin and touches the upper part of your chest.",
+      "zhTW": "向下移動 • 向下拉動槓鈴，使其靠近下巴並接觸胸部上部。",
       "en": "Downward movement • Pull the bar down so that it passes close to your chin and touches the upper part of your chest."
     },
     "defaultUnit": "rounds",
@@ -736,6 +762,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Close-grip supinated lat pulldown",
+      "緊握旋後高位下拉",
       "back",
       "cable",
       "Jalón cerrado supino",
@@ -751,11 +778,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "commando pull-ups",
+      "zhTW": "突擊隊引體向上",
       "en": "commando pull-ups"
     },
     "cue": {
-      "zhTW": "variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one s",
+      "zhTW": "引體向上的變式，一手仰臥一手握地進行，不要扭轉軀幹回到前面，頭部通過一次到一秒",
       "en": "variation of the pull-up exercise, it is performed with a grip of one hand supine and one hand prone, do not twist the torso to get back to the front, the head passes once to one s"
     },
     "defaultUnit": "rounds",
@@ -763,6 +790,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "commando pull-ups",
+      "突擊隊引體向上",
       "back",
       "bodyweight",
       "Commando Pull-ups",
@@ -779,11 +807,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Counterclockwise neck circles",
+      "zhTW": "逆時針頸圈",
       "en": "Counterclockwise neck circles"
     },
     "cue": {
-      "zhTW": "Starting position: Start sitting or standing.",
+      "zhTW": "起始位置：開始坐著或站著。",
       "en": "Starting position: Start sitting or standing."
     },
     "defaultUnit": "rounds",
@@ -791,6 +819,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Counterclockwise neck circles",
+      "逆時針頸圈",
       "back",
       "bodyweight",
       "Cercles du cou dans le sens antihoraire",
@@ -806,11 +835,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Cross-Body Cable Y-Raise",
+      "zhTW": "斜背電纜 Y 型提升",
       "en": "Cross-Body Cable Y-Raise"
     },
     "cue": {
-      "zhTW": "Attach a D-Bar to the cable machine.",
+      "zhTW": "將 D 型桿連接到纜線機上。",
       "en": "Attach a D-Bar to the cable machine."
     },
     "defaultUnit": "rounds",
@@ -818,6 +847,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cross-Body Cable Y-Raise",
+      "斜背電纜 Y 型提升",
       "back",
       "cable"
     ],
@@ -830,11 +860,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "DB Single-Arm Row (5kg)",
+      "zhTW": "DB單臂划船（5公斤）",
       "en": "DB Single-Arm Row (5kg)"
     },
     "cue": {
-      "zhTW": "Vasco custom single-arm DB row for 5kg dumbbell home training.",
+      "zhTW": "Vasco 客製化單臂 DB 划船器，適用於 5 公斤啞鈴家庭訓練。",
       "en": "Vasco custom single-arm DB row for 5kg dumbbell home training."
     },
     "defaultUnit": "rounds",
@@ -842,6 +872,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Single-Arm Row (5kg)",
+      "DB單臂划船（5公斤）",
       "back",
       "dumbbell"
     ],
@@ -854,11 +885,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Deadlifts",
+      "zhTW": "硬舉",
       "en": "Deadlifts"
     },
     "cue": {
-      "zhTW": "Stand firmly, with your feet slightly more than shoulder wide apart.",
+      "zhTW": "站穩，雙腳分開略大於肩寬。",
       "en": "Stand firmly, with your feet slightly more than shoulder wide apart."
     },
     "defaultUnit": "rounds",
@@ -866,6 +897,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Deadlifts",
+      "硬舉",
       "back",
       "barbell",
       "Kreuzheben",
@@ -884,11 +916,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Deficit Deadlift",
+      "zhTW": "赤字硬舉",
       "en": "Deficit Deadlift"
     },
     "cue": {
-      "zhTW": "Preparation Stand on weight plate, bumper plate, or shallow elevated platform with loaded bar above feet.",
+      "zhTW": "準備 站在配重板、保險桿板或淺高台上，腳放置負載桿。",
       "en": "Preparation Stand on weight plate, bumper plate, or shallow elevated platform with loaded bar above feet."
     },
     "defaultUnit": "rounds",
@@ -896,6 +928,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Deficit Deadlift",
+      "赤字硬舉",
       "back",
       "barbell",
       "Defizit Kreuzheben",
@@ -912,11 +945,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Dumbbell Bent Over Face Pull",
+      "zhTW": "啞鈴彎面拉",
       "en": "Dumbbell Bent Over Face Pull"
     },
     "cue": {
-      "zhTW": "This exercise involves using dumbbells to perform a bent over face pull, which targets the upper back and shoulders.",
+      "zhTW": "此練習涉及使用啞鈴進行彎身面拉，目標是上背部和肩膀。",
       "en": "This exercise involves using dumbbells to perform a bent over face pull, which targets the upper back and shoulders."
     },
     "defaultUnit": "rounds",
@@ -924,6 +957,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Bent Over Face Pull",
+      "啞鈴彎面拉",
       "back",
       "dumbbell",
       "Face Pull mit Kurzhanteln in vorgebeugter Haltung",
@@ -939,11 +973,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Dumbbell Hang Power Cleans",
+      "zhTW": "啞鈴懸掛高翻",
       "en": "Dumbbell Hang Power Cleans"
     },
     "cue": {
-      "zhTW": "On your feet, stand tall with your dumbbells, holding them at your sides.",
+      "zhTW": "雙腳站立，手持啞鈴，將其放在身體兩側。",
       "en": "On your feet, stand tall with your dumbbells, holding them at your sides."
     },
     "defaultUnit": "rounds",
@@ -951,6 +985,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Hang Power Cleans",
+      "啞鈴懸掛高翻",
       "back",
       "dumbbell",
       "Cargada de potencia desde colgado con mancuernas",
@@ -966,11 +1001,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Elevación lateral polea",
+      "zhTW": "側向升降",
       "en": "Elevación lateral polea"
     },
     "cue": {
-      "zhTW": "Lateral elevation unilateral using a polea",
+      "zhTW": "使用極柱進行單側側向提升",
       "en": "Lateral elevation unilateral using a polea"
     },
     "defaultUnit": "rounds",
@@ -978,6 +1013,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Elevación lateral polea",
+      "側向升降",
       "back",
       "machine",
       "Elevacion lateral polea"
@@ -991,11 +1027,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Face Pulls (Bodyweight Doorframe/Towel)",
+      "zhTW": "臉部拉力器（自重門框/毛巾）",
       "en": "Face Pulls (Bodyweight Doorframe/Towel)"
     },
     "cue": {
-      "zhTW": "Vasco custom face pull variation using doorframe or towel for rear delt development.",
+      "zhTW": "Vasco 客製化面拉變式，使用門框或毛巾進行三角肌後束發育。",
       "en": "Vasco custom face pull variation using doorframe or towel for rear delt development."
     },
     "defaultUnit": "rounds",
@@ -1003,6 +1039,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Face Pulls (Bodyweight Doorframe/Towel)",
+      "臉部拉力器（自重門框/毛巾）",
       "back",
       "bodyweight"
     ],
@@ -1015,11 +1052,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Face pulls with yellow/green band",
+      "zhTW": "面拉黃/綠帶",
       "en": "Face pulls with yellow/green band"
     },
     "cue": {
-      "zhTW": "Face pulls with band – standing horizontal pull.",
+      "zhTW": "附彈力帶的面拉－站立水平拉。",
       "en": "Face pulls with band – standing horizontal pull."
     },
     "defaultUnit": "rounds",
@@ -1027,6 +1064,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Face pulls with yellow/green band",
+      "面拉黃/綠帶",
       "back",
       "bodyweight",
       "Face Pulls mit gelbem/grünem Band",
@@ -1042,11 +1080,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Forward shoulder rotation",
+      "zhTW": "肩部向前旋轉",
       "en": "Forward shoulder rotation"
     },
     "cue": {
-      "zhTW": "Starting position: Sit or stand with your back straight.",
+      "zhTW": "起始位置：坐或站，背部挺直。",
       "en": "Starting position: Sit or stand with your back straight."
     },
     "defaultUnit": "rounds",
@@ -1054,6 +1092,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Forward shoulder rotation",
+      "肩部向前旋轉",
       "back",
       "bodyweight",
       "Kroužení rameny dopředu",
@@ -1078,11 +1117,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Front lever tuck",
+      "zhTW": "前拉桿折邊",
       "en": "Front lever tuck"
     },
     "cue": {
-      "zhTW": "The muscles involved in the Front Lever, most subjected to stress, are mainly the extensors such as: the latissimus dorsi, the teres major, the posterior deltoid and the long head ",
+      "zhTW": "前槓桿所涉及的肌肉，最受壓力的，主要是伸肌，如：背闊肌、大圓肌、三角肌後束和長頭",
       "en": "The muscles involved in the Front Lever, most subjected to stress, are mainly the extensors such as: the latissimus dorsi, the teres major, the posterior deltoid and the long head "
     },
     "defaultUnit": "rounds",
@@ -1090,6 +1129,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Front lever tuck",
+      "前拉桿折邊",
       "back",
       "bodyweight",
       "Front Lever Tuck",
@@ -1105,11 +1145,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Front Pull narrow",
+      "zhTW": "前拉窄",
       "en": "Front Pull narrow"
     },
     "cue": {
-      "zhTW": "Front Pull narrow",
+      "zhTW": "前拉窄",
       "en": "Front Pull narrow"
     },
     "defaultUnit": "rounds",
@@ -1117,6 +1157,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Front Pull narrow",
+      "前拉窄",
       "back",
       "barbell",
       "Frontziehen Eng"
@@ -1130,11 +1171,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Front pull wide",
+      "zhTW": "前拉寬",
       "en": "Front pull wide"
     },
     "cue": {
-      "zhTW": "Front pull wide",
+      "zhTW": "前拉寬",
       "en": "Front pull wide"
     },
     "defaultUnit": "rounds",
@@ -1142,6 +1183,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Front pull wide",
+      "前拉寬",
       "back",
       "barbell",
       "Frontziehen Breit"
@@ -1155,11 +1197,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Front Wood Chop",
+      "zhTW": "前木砍",
       "en": "Front Wood Chop"
     },
     "cue": {
-      "zhTW": "Front Wood Chop",
+      "zhTW": "前木砍",
       "en": "Front Wood Chop"
     },
     "defaultUnit": "rounds",
@@ -1167,6 +1209,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Front Wood Chop",
+      "前木砍",
       "back",
       "bodyweight",
       "Rückenstrecker im Stehen"
@@ -1180,11 +1223,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Head tilts",
+      "zhTW": "頭部傾斜",
       "en": "Head tilts"
     },
     "cue": {
-      "zhTW": "Starting position: Sit or stand with your back straight.",
+      "zhTW": "起始位置：坐或站，背部挺直。",
       "en": "Starting position: Sit or stand with your back straight."
     },
     "defaultUnit": "rounds",
@@ -1192,6 +1235,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Head tilts",
+      "頭部傾斜",
       "back",
       "bodyweight",
       "Inclinaciones Laterales de Cabeza",
@@ -1207,11 +1251,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Helms Row",
+      "zhTW": "赫爾姆斯街",
       "en": "Helms Row"
     },
     "cue": {
-      "zhTW": "Setup: Place your chest on the end of a bench, using a towel or anything soft to keep your chest protected.",
+      "zhTW": "設定：將胸部放在長凳的一端，用毛巾或任何柔軟的東西保護胸部。",
       "en": "Setup: Place your chest on the end of a bench, using a towel or anything soft to keep your chest protected."
     },
     "defaultUnit": "rounds",
@@ -1219,6 +1263,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Helms Row",
+      "赫爾姆斯街",
       "back",
       "dumbbell",
       "Remo Helms",
@@ -1233,11 +1278,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "High Row",
+      "zhTW": "高排",
       "en": "High Row"
     },
     "cue": {
-      "zhTW": "Kneeling down on one leg and pulling cable down while driving elbow into the lats.",
+      "zhTW": "單腳跪下，向下拉動繩索，同時將手肘推入背闊肌。",
       "en": "Kneeling down on one leg and pulling cable down while driving elbow into the lats."
     },
     "defaultUnit": "rounds",
@@ -1245,6 +1290,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "High Row",
+      "高排",
       "back",
       "cable"
     ],
@@ -1257,11 +1303,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "High-pulley pullover",
+      "zhTW": "高腰套頭衫",
       "en": "High-pulley pullover"
     },
     "cue": {
-      "zhTW": "Stand facing the machine, feet slightly apart, gripping the bar with an overhand grip, arms extended, hands shoulder-width apart.",
+      "zhTW": "面向機器站立，雙腳稍微分開，正手握住槓鈴，雙臂伸展，雙手與肩同寬。",
       "en": "Stand facing the machine, feet slightly apart, gripping the bar with an overhand grip, arms extended, hands shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -1269,6 +1315,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "High-pulley pullover",
+      "高腰套頭衫",
       "back",
       "cable",
       "Pull over en polea alta",
@@ -1284,11 +1331,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Hip Raise, Lying",
+      "zhTW": "提臀，躺著",
       "en": "Hip Raise, Lying"
     },
     "cue": {
-      "zhTW": "Lying down on your back, with your feet flat on the floor.",
+      "zhTW": "仰臥，雙腳平放在地板上。",
       "en": "Lying down on your back, with your feet flat on the floor."
     },
     "defaultUnit": "rounds",
@@ -1296,6 +1343,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Hip Raise, Lying",
+      "提臀，躺著",
       "back",
       "bodyweight",
       "Elevación de cadera tumbado",
@@ -1312,11 +1360,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Horizontal traction isometry",
+      "zhTW": "水平牽引等距",
       "en": "Horizontal traction isometry"
     },
     "cue": {
-      "zhTW": "Perform a timed isometric pull-up on the bar",
+      "zhTW": "在槓鈴上進行定時等距引體向上",
       "en": "Perform a timed isometric pull-up on the bar"
     },
     "defaultUnit": "rounds",
@@ -1324,6 +1372,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Horizontal traction isometry",
+      "水平牽引等距",
       "back",
       "bodyweight",
       "Isometria trazioni orizzontali"
@@ -1337,11 +1386,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Hyper Y W Combo",
+      "zhTW": "超級 Y W 組合",
       "en": "Hyper Y W Combo"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1349,6 +1398,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Hyper Y W Combo",
+      "超級 Y W 組合",
       "back",
       "bodyweight",
       "Combinación hiperextensión Y-W",
@@ -1364,11 +1414,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Hyperextensions",
+      "zhTW": "過度伸展",
       "en": "Hyperextensions"
     },
     "cue": {
-      "zhTW": "Lie on the hyperextension pillow with your navel at the front edge, allowing your upper body to hang freely.",
+      "zhTW": "躺在過伸枕頭上，肚臍位於前緣，讓上半身自由懸掛。",
       "en": "Lie on the hyperextension pillow with your navel at the front edge, allowing your upper body to hang freely."
     },
     "defaultUnit": "rounds",
@@ -1376,6 +1426,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Hyperextensions",
+      "過度伸展",
       "back",
       "bodyweight",
       "Extensions lombaires (hyperextensions)",
@@ -1393,11 +1444,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Incline bench pulldown",
+      "zhTW": "上斜臥推下拉",
       "en": "Incline bench pulldown"
     },
     "cue": {
-      "zhTW": "Lying face down on the incline bench facing the cable machine, perform the pulldown.",
+      "zhTW": "面朝下躺在斜凳上，面向繩索機，進行下拉。",
       "en": "Lying face down on the incline bench facing the cable machine, perform the pulldown."
     },
     "defaultUnit": "rounds",
@@ -1405,6 +1456,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Incline bench pulldown",
+      "上斜臥推下拉",
       "back",
       "cable"
     ],
@@ -1417,11 +1469,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Incline Bench Reverse Fly",
+      "zhTW": "上斜臥推反向飛鳥",
       "en": "Incline Bench Reverse Fly"
     },
     "cue": {
-      "zhTW": "The incline dumbbell reverse fly is an upper-body exercise targeting the posterior or rear deltoids, as well as the postural muscles of the upper back.",
+      "zhTW": "上斜啞鈴反向飛鳥是針對三角肌後部或後部以及上背部姿勢肌的上半身練習。",
       "en": "The incline dumbbell reverse fly is an upper-body exercise targeting the posterior or rear deltoids, as well as the postural muscles of the upper back."
     },
     "defaultUnit": "rounds",
@@ -1429,6 +1481,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline Bench Reverse Fly",
+      "上斜臥推反向飛鳥",
       "back",
       "dumbbell",
       "Alzate posteriori",
@@ -1445,11 +1498,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Incline Chest-Supported Dumbbell Row",
+      "zhTW": "上斜胸支撐啞鈴划船",
       "en": "Incline Chest-Supported Dumbbell Row"
     },
     "cue": {
-      "zhTW": "Set up an adjustable bench at a 45-degree angle.",
+      "zhTW": "設定一個45度角的可調式長凳。",
       "en": "Set up an adjustable bench at a 45-degree angle."
     },
     "defaultUnit": "rounds",
@@ -1457,6 +1510,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline Chest-Supported Dumbbell Row",
+      "上斜胸支撐啞鈴划船",
       "back",
       "dumbbell",
       "Remo con mancuernas en banco inclinado con apoyo en el pecho",
@@ -1472,11 +1526,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Incline Dumbbell Row",
+      "zhTW": "上斜啞鈴划船",
       "en": "Incline Dumbbell Row"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1484,6 +1538,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline Dumbbell Row",
+      "上斜啞鈴划船",
       "back",
       "dumbbell",
       "Remo con mancuernas en banco inclinado",
@@ -1499,11 +1554,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Inverted Lat Pull Down",
+      "zhTW": "倒立高位下拉",
       "en": "Inverted Lat Pull Down"
     },
     "cue": {
-      "zhTW": "The **Inverted Lat Pull Down** (most commonly known as the **Reverse Grip Lat Pull Down**) is a variation of the standard exercise that uses an underhand (supinated) grip with hand",
+      "zhTW": "**倒立高位下拉**（最常被稱為 **反握高位下拉**）是標準練習的一種變體，使用手部反握（反握）",
       "en": "The **Inverted Lat Pull Down** (most commonly known as the **Reverse Grip Lat Pull Down**) is a variation of the standard exercise that uses an underhand (supinated) grip with hand"
     },
     "defaultUnit": "rounds",
@@ -1511,6 +1566,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Inverted Lat Pull Down",
+      "倒立高位下拉",
       "back",
       "bodyweight",
       "Jalón al pecho con agarre supino",
@@ -1526,11 +1582,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Isometria trazioni impugnatura inversa",
+      "zhTW": "反握拉力等距",
       "en": "Isometria trazioni impugnatura inversa"
     },
     "cue": {
-      "zhTW": "Trazioni in isometria con impugnatura inversa",
+      "zhTW": "Trazioni 與 impugnatura inversa 等距",
       "en": "Trazioni in isometria con impugnatura inversa"
     },
     "defaultUnit": "rounds",
@@ -1538,6 +1594,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Isometria trazioni impugnatura inversa",
+      "反握拉力等距",
       "back",
       "bodyweight"
     ],
@@ -1550,11 +1607,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Jalón al pecho con agarre ancho",
+      "zhTW": "寬握胸拉",
       "en": "Jalón al pecho con agarre ancho"
     },
     "cue": {
-      "zhTW": "The lat pulldown is a pulling exercise that primarily targets the latissimus dorsi muscles (commonly known as “lats”) in your back.",
+      "zhTW": "背闊肌下拉是一種拉力練習，主要針對背部的背闊肌（俗稱「背闊肌」）。",
       "en": "The lat pulldown is a pulling exercise that primarily targets the latissimus dorsi muscles (commonly known as “lats”) in your back."
     },
     "defaultUnit": "rounds",
@@ -1562,6 +1619,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Jalón al pecho con agarre ancho",
+      "寬握胸拉",
       "back",
       "cable",
       "Latzug zur Brust mit weitem Griff",
@@ -1576,11 +1634,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Jalon caballero unialteral",
+      "zhTW": "Jalon caballero 單一",
       "en": "Jalon caballero unialteral"
     },
     "cue": {
-      "zhTW": "``` Pull performed in knight's stance ```",
+      "zhTW": "``以騎士姿勢拉動````",
       "en": "``` Pull performed in knight's stance ```"
     },
     "defaultUnit": "rounds",
@@ -1588,6 +1646,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Jalon caballero unialteral",
+      "Jalon caballero 單一",
       "back",
       "dumbbell",
       "Jalón caballero unialteral"
@@ -1601,11 +1660,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Kettlebell deadlifts",
+      "zhTW": "壺鈴硬舉",
       "en": "Kettlebell deadlifts"
     },
     "cue": {
-      "zhTW": "Starting position: Stand hip-width apart, with your kettlebell centered between your ankles.",
+      "zhTW": "起始位置：站立與臀部同寬，壺鈴位於腳踝之間。",
       "en": "Starting position: Stand hip-width apart, with your kettlebell centered between your ankles."
     },
     "defaultUnit": "rounds",
@@ -1613,6 +1672,7 @@ export const records = [
     "equipment": "kettlebell",
     "searchTerms": [
       "Kettlebell deadlifts",
+      "壺鈴硬舉",
       "back",
       "kettlebell",
       "Deadlift Kettlebell",
@@ -1635,11 +1695,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Kettlebell sumo high pull",
+      "zhTW": "壺鈴相撲高拉",
       "en": "Kettlebell sumo high pull"
     },
     "cue": {
-      "zhTW": "A compound exercise combining elements of a sumo deadlift and a high pull.",
+      "zhTW": "結合相撲硬舉和高拉元素的複合練習。",
       "en": "A compound exercise combining elements of a sumo deadlift and a high pull."
     },
     "defaultUnit": "rounds",
@@ -1647,6 +1707,7 @@ export const records = [
     "equipment": "kettlebell",
     "searchTerms": [
       "Kettlebell sumo high pull",
+      "壺鈴相撲高拉",
       "back",
       "kettlebell",
       "Kettlebell Sumo High Pull",
@@ -1662,11 +1723,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Kneeling Superman",
+      "zhTW": "跪著的超人",
       "en": "Kneeling Superman"
     },
     "cue": {
-      "zhTW": "- Push one foot back until leg fully extended, concentrating on the having the foot high and pushed back as if pulled.",
+      "zhTW": "- 將一隻腳向後推，直到腿完全伸展，專注於將腳抬高並向後推，就像被拉一樣。",
       "en": "- Push one foot back until leg fully extended, concentrating on the having the foot high and pushed back as if pulled."
     },
     "defaultUnit": "rounds",
@@ -1674,6 +1735,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Kneeling Superman",
+      "跪著的超人",
       "back",
       "bodyweight",
       "Kniender Superman",
@@ -1689,11 +1751,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Kroc Row",
+      "zhTW": "克羅克街",
       "en": "Kroc Row"
     },
     "cue": {
-      "zhTW": "Dumbbell rows with looser technique but heavier weight.",
+      "zhTW": "啞鈴划船，技術較寬鬆，重量較重。",
       "en": "Dumbbell rows with looser technique but heavier weight."
     },
     "defaultUnit": "rounds",
@@ -1701,6 +1763,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Kroc Row",
+      "克羅克街",
       "back",
       "bodyweight"
     ],
@@ -1713,11 +1776,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lat Pull DB",
+      "zhTW": "背闊肌拉力 DB",
       "en": "Lat Pull DB"
     },
     "cue": {
-      "zhTW": "* Bend upper body forward * Move dumbbells near your body with slightly bent arms towards your back",
+      "zhTW": "* 上半身向前彎曲 * 將啞鈴移至身體附近，手臂稍微向後彎曲",
       "en": "* Bend upper body forward * Move dumbbells near your body with slightly bent arms towards your back"
     },
     "defaultUnit": "rounds",
@@ -1725,6 +1788,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lat Pull DB",
+      "背闊肌拉力 DB",
       "back",
       "dumbbell"
     ],
@@ -1737,11 +1801,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lat Pull Down (Leaning Back)",
+      "zhTW": "高位下拉（向後傾斜）",
       "en": "Lat Pull Down (Leaning Back)"
     },
     "cue": {
-      "zhTW": "Lean Back, Pull into chest",
+      "zhTW": "向後傾斜，拉入胸部",
       "en": "Lean Back, Pull into chest"
     },
     "defaultUnit": "rounds",
@@ -1749,6 +1813,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Lat Pull Down (Leaning Back)",
+      "高位下拉（向後傾斜）",
       "back",
       "bodyweight",
       "Jalón al pecho (inclinado)",
@@ -1763,11 +1828,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lat Pull Down (Straight Back)",
+      "zhTW": "高位下拉（直背）",
       "en": "Lat Pull Down (Straight Back)"
     },
     "cue": {
-      "zhTW": "The lat pull down is an exercise used to build the muscles of the back.",
+      "zhTW": "背闊肌下拉是用來鍛鍊背部肌肉的動作。",
       "en": "The lat pull down is an exercise used to build the muscles of the back."
     },
     "defaultUnit": "rounds",
@@ -1775,6 +1840,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Lat Pull Down (Straight Back)",
+      "高位下拉（直背）",
       "back",
       "bodyweight",
       "Jalón al pecho",
@@ -1793,11 +1859,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lat Pulldown - Cross Body Single Arm",
+      "zhTW": "高位下拉 - 斜背單臂",
       "en": "Lat Pulldown - Cross Body Single Arm"
     },
     "cue": {
-      "zhTW": "Sit at lat pulldown machine with body at a diagonal angle so that only one leg is under the pad.",
+      "zhTW": "坐在高位下拉機上，身體呈對角線，因此只有一條腿位於墊子下方。",
       "en": "Sit at lat pulldown machine with body at a diagonal angle so that only one leg is under the pad."
     },
     "defaultUnit": "rounds",
@@ -1805,6 +1871,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Lat Pulldown - Cross Body Single Arm",
+      "高位下拉 - 斜背單臂",
       "back",
       "cable",
       "Jalón al pecho a un brazo cruzado",
@@ -1820,11 +1887,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lateral Walk",
+      "zhTW": "橫向行走",
       "en": "Lateral Walk"
     },
     "cue": {
-      "zhTW": "Lateral walks, also known as side steps or squat walks, are a type of exercise where you move sideways in a squatting position.",
+      "zhTW": "橫向行走，也稱為側步或蹲步，是一種以蹲姿向側面移動的運動。",
       "en": "Lateral walks, also known as side steps or squat walks, are a type of exercise where you move sideways in a squatting position."
     },
     "defaultUnit": "rounds",
@@ -1832,6 +1899,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Lateral Walk",
+      "橫向行走",
       "back",
       "bodyweight",
       "Caminata lateral",
@@ -1847,11 +1915,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "lento avanti seduto",
+      "zhTW": "慢速阿凡提·塞杜托",
       "en": "lento avanti seduto"
     },
     "cue": {
-      "zhTW": "slow controlled seated forward exercise with dumbbells",
+      "zhTW": "啞鈴緩慢控制坐姿前傾練習",
       "en": "slow controlled seated forward exercise with dumbbells"
     },
     "defaultUnit": "rounds",
@@ -1859,6 +1927,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "lento avanti seduto",
+      "慢速阿凡提·塞杜托",
       "back",
       "dumbbell"
     ],
@@ -1871,11 +1940,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Leverage Machine Iso Row",
+      "zhTW": "槓桿機 Iso Row",
       "en": "Leverage Machine Iso Row"
     },
     "cue": {
-      "zhTW": "Adjust seat height so that the handles are at the bottom of your pectorals or just below.",
+      "zhTW": "調整座椅高度，使手把位於胸肌底部或正下方。",
       "en": "Adjust seat height so that the handles are at the bottom of your pectorals or just below."
     },
     "defaultUnit": "rounds",
@@ -1883,6 +1952,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Leverage Machine Iso Row",
+      "槓桿機 Iso Row",
       "back",
       "bodyweight"
     ],
@@ -1895,11 +1965,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Long-Pulley (low Row)",
+      "zhTW": "長滑輪（低排）",
       "en": "Long-Pulley (low Row)"
     },
     "cue": {
-      "zhTW": "Sit down, put your feet on the supporting points and grab the bar with a wide grip.",
+      "zhTW": "坐下，將腳放在支撐點上，寬握距抓住槓鈴。",
       "en": "Sit down, put your feet on the supporting points and grab the bar with a wide grip."
     },
     "defaultUnit": "rounds",
@@ -1907,6 +1977,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Long-Pulley (low Row)",
+      "長滑輪（低排）",
       "back",
       "cable",
       "Long-Pulley",
@@ -1924,11 +1995,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Long-Pulley, Narrow",
+      "zhTW": "長滑輪，窄",
       "en": "Long-Pulley, Narrow"
     },
     "cue": {
-      "zhTW": "The exercise is the same as the regular long pulley, but with a narrow grip: Sit down, put your feet on the supporting points and grab the bar with a wide grip.",
+      "zhTW": "練習與常規長滑輪相同，但窄握：坐下，雙腳放在支撐點上，寬握抓住槓鈴。",
       "en": "The exercise is the same as the regular long pulley, but with a narrow grip: Sit down, put your feet on the supporting points and grab the bar with a wide grip."
     },
     "defaultUnit": "rounds",
@@ -1936,6 +2007,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Long-Pulley, Narrow",
+      "長滑輪，窄",
       "back",
       "cable",
       "Long-Pulley (eng)",
@@ -1951,11 +2023,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Low row",
+      "zhTW": "低排",
       "en": "Low row"
     },
     "cue": {
-      "zhTW": "Based on Low Row Sel.",
+      "zhTW": "基於低行選擇。",
       "en": "Based on Low Row Sel."
     },
     "defaultUnit": "rounds",
@@ -1963,6 +2035,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Low row",
+      "低排",
       "back",
       "bodyweight",
       "Trazioni"
@@ -1976,11 +2049,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lower Back Extensions",
+      "zhTW": "下背部伸展",
       "en": "Lower Back Extensions"
     },
     "cue": {
-      "zhTW": "* Engage the muscles * Lift your bottom slightly * Controlled movement * Slow movement * Don't use momentum * Keep your upper body straight",
+      "zhTW": "* 調動肌肉 * 稍微抬起臀部 * 控制運動 * 緩慢運動 * 不要使用動力 * 保持上半身挺直",
       "en": "* Engage the muscles * Lift your bottom slightly * Controlled movement * Slow movement * Don't use momentum * Keep your upper body straight"
     },
     "defaultUnit": "rounds",
@@ -1988,6 +2061,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Lower Back Extensions",
+      "下背部伸展",
       "back",
       "bodyweight",
       "Extensiones de espalda baja",
@@ -2003,11 +2077,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Lying Dumbbell Row SS Seated Shrug",
+      "zhTW": "臥式啞鈴划船 SS 坐姿聳肩",
       "en": "Lying Dumbbell Row SS Seated Shrug"
     },
     "cue": {
-      "zhTW": "laying on the stomach on a bench with slight angle",
+      "zhTW": "俯臥在小角度的長凳上",
       "en": "laying on the stomach on a bench with slight angle"
     },
     "defaultUnit": "rounds",
@@ -2015,6 +2089,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Lying Dumbbell Row SS Seated Shrug",
+      "臥式啞鈴划船 SS 坐姿聳肩",
       "back",
       "dumbbell"
     ],
@@ -2027,11 +2102,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Meadows Row",
+      "zhTW": "梅多斯羅",
       "en": "Meadows Row"
     },
     "cue": {
-      "zhTW": "The Meadows row is a unilateral row performed with a landmine setup, overhand grip, and staggered stance.",
+      "zhTW": "梅多斯划船是一種單側划船，採用地雷設置、正手握桿和交錯姿勢。",
       "en": "The Meadows row is a unilateral row performed with a landmine setup, overhand grip, and staggered stance."
     },
     "defaultUnit": "rounds",
@@ -2039,6 +2114,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Meadows Row",
+      "梅多斯羅",
       "back",
       "barbell",
       "Remo Meadows",
@@ -2053,11 +2129,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Modified pulldown",
+      "zhTW": "修改下拉",
       "en": "Modified pulldown"
     },
     "cue": {
-      "zhTW": "With an inclined bench in front of the pulldown machine, use a close-grip to do latfocused pulldowns.",
+      "zhTW": "在下拉機前面有一個傾斜的長凳，使用窄握距進行集中下拉。",
       "en": "With an inclined bench in front of the pulldown machine, use a close-grip to do latfocused pulldowns."
     },
     "defaultUnit": "rounds",
@@ -2065,6 +2141,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Modified pulldown",
+      "修改下拉",
       "back",
       "cable"
     ],
@@ -2077,11 +2154,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Muscle up",
+      "zhTW": "增肌",
       "en": "Muscle up"
     },
     "cue": {
-      "zhTW": "The body is then explosively pulled up by the arms in a radial pull-up, with greater speed than a regular pull-up.",
+      "zhTW": "然後，在徑向引體向上中，身體被手臂爆發性拉起，速度比常規引體向上更快。",
       "en": "The body is then explosively pulled up by the arms in a radial pull-up, with greater speed than a regular pull-up."
     },
     "defaultUnit": "rounds",
@@ -2089,6 +2166,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Muscle up",
+      "增肌",
       "back",
       "bodyweight",
       "Muscle-up"
@@ -2102,11 +2180,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Neck half circles",
+      "zhTW": "頸部半圈",
       "en": "Neck half circles"
     },
     "cue": {
-      "zhTW": "Starting position: Start sitting or standing.",
+      "zhTW": "起始位置：開始坐著或站著。",
       "en": "Starting position: Start sitting or standing."
     },
     "defaultUnit": "rounds",
@@ -2114,6 +2192,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Neck half circles",
+      "頸部半圈",
       "back",
       "bodyweight",
       "Demi-cercles du cou",
@@ -2129,11 +2208,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Neutral Grip Lat Pulldown",
+      "zhTW": "中立握高位下拉",
       "en": "Neutral Grip Lat Pulldown"
     },
     "cue": {
-      "zhTW": "Lat pull downs with a neutral grip on the bar.",
+      "zhTW": "高位下拉，中性握桿。",
       "en": "Lat pull downs with a neutral grip on the bar."
     },
     "defaultUnit": "rounds",
@@ -2141,6 +2220,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Neutral Grip Lat Pulldown",
+      "中立握高位下拉",
       "back",
       "cable"
     ],
@@ -2153,11 +2233,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Neutral-grip chest pulldown",
+      "zhTW": "中握胸部下拉",
       "en": "Neutral-grip chest pulldown"
     },
     "cue": {
-      "zhTW": "The lat pulldown is an important exercise for strengthening the back and improving posture, which can contribute to a healthier life.",
+      "zhTW": "高位下拉是強化背部和改善姿勢的重要練習，有助於健康的生活。",
       "en": "The lat pulldown is an important exercise for strengthening the back and improving posture, which can contribute to a healthier life."
     },
     "defaultUnit": "rounds",
@@ -2165,6 +2245,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Neutral-grip chest pulldown",
+      "中握胸部下拉",
       "back",
       "cable",
       "Jalón al pecho con agarre neutro",
@@ -2180,11 +2261,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "One Arm Bent Row",
+      "zhTW": "單臂屈臂划船",
       "en": "One Arm Bent Row"
     },
     "cue": {
-      "zhTW": "One arm bent over row on cable with a machine",
+      "zhTW": "一隻手臂彎曲，用機器排在電纜上",
       "en": "One arm bent over row on cable with a machine"
     },
     "defaultUnit": "rounds",
@@ -2192,6 +2273,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "One Arm Bent Row",
+      "單臂屈臂划船",
       "back",
       "cable"
     ],
@@ -2204,11 +2286,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "One-Arm Heavy Row",
+      "zhTW": "單臂大重量划船",
       "en": "One-Arm Heavy Row"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -2216,6 +2298,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "One-Arm Heavy Row",
+      "單臂大重量划船",
       "back",
       "dumbbell",
       "Remo pesado a una mano",
@@ -2231,11 +2314,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Open Book",
+      "zhTW": "打開書本",
       "en": "Open Book"
     },
     "cue": {
-      "zhTW": "**Basic exercise** * **Focus:** enhances thoracic mobility and spinal segmentation while opening the shoulders and chest.",
+      "zhTW": "**基礎練習** * **重點：**增強胸椎活動度和脊柱分割，同時打開肩膀和胸部。",
       "en": "**Basic exercise** * **Focus:** enhances thoracic mobility and spinal segmentation while opening the shoulders and chest."
     },
     "defaultUnit": "rounds",
@@ -2243,6 +2326,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Open Book",
+      "打開書本",
       "back",
       "bodyweight",
       "Buch aufschlagen (Open Book)",
@@ -2258,11 +2342,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pendelay Rows",
+      "zhTW": "彭延遲行",
       "en": "Pendelay Rows"
     },
     "cue": {
-      "zhTW": "Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground.",
+      "zhTW": "使用槓鈴進行背部練習，起始位置為彎腰位置，背部與地面平行。",
       "en": "Back excercise with a barbell with a starting position which is in a bent over position with the back paralell to the ground."
     },
     "defaultUnit": "rounds",
@@ -2270,6 +2354,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Pendelay Rows",
+      "彭延遲行",
       "back",
       "barbell",
       "Remo Pendlay",
@@ -2285,11 +2370,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Prone Scapular Retraction - Arms at Side",
+      "zhTW": "俯臥肩胛骨後縮 - 雙臂側放",
       "en": "Prone Scapular Retraction - Arms at Side"
     },
     "cue": {
-      "zhTW": "Lying on stomach with head on towel.",
+      "zhTW": "俯臥，頭枕毛巾。",
       "en": "Lying on stomach with head on towel."
     },
     "defaultUnit": "rounds",
@@ -2297,6 +2382,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Prone Scapular Retraction - Arms at Side",
+      "俯臥肩胛骨後縮 - 雙臂側放",
       "back",
       "bodyweight",
       "Retracción escapular en prono – brazos en cruz",
@@ -2312,11 +2398,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pull Ups on Machine",
+      "zhTW": "機器引體向上",
       "en": "Pull Ups on Machine"
     },
     "cue": {
-      "zhTW": "Pull Ups on Machine",
+      "zhTW": "機器引體向上",
       "en": "Pull Ups on Machine"
     },
     "defaultUnit": "rounds",
@@ -2324,6 +2410,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pull Ups on Machine",
+      "機器引體向上",
       "back",
       "bodyweight",
       "Klimmzüge an Maschine",
@@ -2338,11 +2425,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pull-up Isometric Hold",
+      "zhTW": "引體向上等距保持",
       "en": "Pull-up Isometric Hold"
     },
     "cue": {
-      "zhTW": "Hold the pull-up movement in any position",
+      "zhTW": "在任意位置保持引體向上動作",
       "en": "Hold the pull-up movement in any position"
     },
     "defaultUnit": "rounds",
@@ -2350,6 +2437,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pull-up Isometric Hold",
+      "引體向上等距保持",
       "back",
       "bodyweight"
     ],
@@ -2362,11 +2450,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pull-ups",
+      "zhTW": "引體向上",
       "en": "Pull-ups"
     },
     "cue": {
-      "zhTW": "Grab the pull up bar with a wide grip, the body is hanging freely.",
+      "zhTW": "寬握抓住上拉桿，身體自由懸掛。",
       "en": "Grab the pull up bar with a wide grip, the body is hanging freely."
     },
     "defaultUnit": "rounds",
@@ -2374,6 +2462,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pull-ups",
+      "引體向上",
       "back",
       "bodyweight",
       "Dominadas",
@@ -2397,11 +2486,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pull-Ups (Neutral Grip)",
+      "zhTW": "引體向上（中握）",
       "en": "Pull-Ups (Neutral Grip)"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -2409,6 +2498,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pull-Ups (Neutral Grip)",
+      "引體向上（中握）",
       "back",
       "bodyweight",
       "Dominadas (agarre neutro)",
@@ -2424,11 +2514,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pull-Ups (Wide Grip)",
+      "zhTW": "引體向上（寬握）",
       "en": "Pull-Ups (Wide Grip)"
     },
     "cue": {
-      "zhTW": "**Execution** 1.",
+      "zhTW": "**執行** 1.",
       "en": "**Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -2436,6 +2526,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pull-Ups (Wide Grip)",
+      "引體向上（寬握）",
       "back",
       "bodyweight",
       "Dominadas (agarre ancho)",
@@ -2451,11 +2542,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pullback",
+      "zhTW": "回調",
       "en": "Pullback"
     },
     "cue": {
-      "zhTW": "Set weight and grip for the cables in the cage.",
+      "zhTW": "設定籠內電纜的重量和抓力。",
       "en": "Set weight and grip for the cables in the cage."
     },
     "defaultUnit": "rounds",
@@ -2463,6 +2554,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Pullback",
+      "回調",
       "back",
       "cable",
       "Tirage en arrière (pullback)"
@@ -2476,11 +2568,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pulley (low, with triangle)",
+      "zhTW": "滑輪（低位，附三角）",
       "en": "Pulley (low, with triangle)"
     },
     "cue": {
-      "zhTW": "This exercise is based on Technogym Pulley Sel.",
+      "zhTW": "此練習是基於 Technogym Pulley Sel。",
       "en": "This exercise is based on Technogym Pulley Sel."
     },
     "defaultUnit": "rounds",
@@ -2488,6 +2580,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pulley (low, with triangle)",
+      "滑輪（低位，附三角）",
       "back",
       "bodyweight",
       "Rematore con triangolo - busto eretto"
@@ -2501,11 +2594,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pullover",
+      "zhTW": "套頭衫",
       "en": "Pullover"
     },
     "cue": {
-      "zhTW": "Doubling as a back and chest exercise, the Dumbbell Pullover can train both your pecs and lats.",
+      "zhTW": "啞鈴套頭衫兼作背部和胸部練習，可以訓練胸肌和背闊肌。",
       "en": "Doubling as a back and chest exercise, the Dumbbell Pullover can train both your pecs and lats."
     },
     "defaultUnit": "rounds",
@@ -2513,6 +2606,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Pullover",
+      "套頭衫",
       "back",
       "dumbbell"
     ],
@@ -2525,11 +2619,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Pullover Machine",
+      "zhTW": "套頭機",
       "en": "Pullover Machine"
     },
     "cue": {
-      "zhTW": "Pullover machine, sitting, elbows on pads",
+      "zhTW": "套頭機，坐著，手肘放在墊子上",
       "en": "Pullover machine, sitting, elbows on pads"
     },
     "defaultUnit": "rounds",
@@ -2537,6 +2631,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pullover Machine",
+      "套頭機",
       "back",
       "bodyweight"
     ],
@@ -2549,11 +2644,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Quadriped Arm and Leg Raise",
+      "zhTW": "四足臂抬腿",
       "en": "Quadriped Arm and Leg Raise"
     },
     "cue": {
-      "zhTW": "In this exercise, the back muscles and the muscles of the back of the leg and back of the arm are activated by lifting the crossed arm and leg at the same time in the crawling posi",
+      "zhTW": "此練習中，以爬行姿勢同時抬起交叉的手臂和腿，啟動背部肌肉以及腿後部和手臂後部的肌肉。",
       "en": "In this exercise, the back muscles and the muscles of the back of the leg and back of the arm are activated by lifting the crossed arm and leg at the same time in the crawling posi"
     },
     "defaultUnit": "rounds",
@@ -2561,6 +2656,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Quadriped Arm and Leg Raise",
+      "四足臂抬腿",
       "back",
       "bodyweight",
       "Arm- und Beinheben im Vierfüßlerstand",
@@ -2576,11 +2672,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Rack Deadlift",
+      "zhTW": "架上硬舉",
       "en": "Rack Deadlift"
     },
     "cue": {
-      "zhTW": "Deadlift to be done using a Smith machine or a free rack.",
+      "zhTW": "硬舉使用史密斯機或自由架完成。",
       "en": "Deadlift to be done using a Smith machine or a free rack."
     },
     "defaultUnit": "rounds",
@@ -2588,6 +2684,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rack Deadlift",
+      "架上硬舉",
       "back",
       "bodyweight",
       "Levantamento terra em rack",
@@ -2605,11 +2702,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Remo alto polea alta",
+      "zhTW": "雷莫·阿爾托·波萊亞·阿爾塔",
       "en": "Remo alto polea alta"
     },
     "cue": {
-      "zhTW": "High pulley row with support using a single grip",
+      "zhTW": "使用單握把支撐的高位滑輪划船",
       "en": "High pulley row with support using a single grip"
     },
     "defaultUnit": "rounds",
@@ -2617,6 +2714,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Remo alto polea alta",
+      "雷莫·阿爾托·波萊亞·阿爾塔",
       "back",
       "cable",
       "Remo alto desde polea"
@@ -2630,11 +2728,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Remo maquina agarre estrecho",
+      "zhTW": "雷莫·馬奎納·阿加雷·埃斯特雷喬",
       "en": "Remo maquina agarre estrecho"
     },
     "cue": {
-      "zhTW": "Remo en máquina con barra en agarre estrecho",
+      "zhTW": "窄握槓鈴機划船",
       "en": "Remo en máquina con barra en agarre estrecho"
     },
     "defaultUnit": "rounds",
@@ -2642,6 +2740,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Remo maquina agarre estrecho",
+      "雷莫·馬奎納·阿加雷·埃斯特雷喬",
       "back",
       "bodyweight"
     ],
@@ -2654,11 +2753,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Remo maquina agarre estrecho supino",
+      "zhTW": "雷莫·馬奎納·阿加雷·埃斯特雷喬·蘇皮諾",
       "en": "Remo maquina agarre estrecho supino"
     },
     "cue": {
-      "zhTW": "Remo en máquina o polea con agarre cerrado supino",
+      "zhTW": "雷莫與阿加雷塞拉多蘇皮諾一起",
       "en": "Remo en máquina o polea con agarre cerrado supino"
     },
     "defaultUnit": "rounds",
@@ -2666,6 +2765,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Remo maquina agarre estrecho supino",
+      "雷莫·馬奎納·阿加雷·埃斯特雷喬·蘇皮諾",
       "back",
       "bodyweight"
     ],
@@ -2678,11 +2778,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Renegade Row",
+      "zhTW": "叛徒行",
       "en": "Renegade Row"
     },
     "cue": {
-      "zhTW": "Get into pushup position gripping some dumbbells.",
+      "zhTW": "握住啞鈴進入伏地挺身位置。",
       "en": "Get into pushup position gripping some dumbbells."
     },
     "defaultUnit": "rounds",
@@ -2690,6 +2790,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Renegade Row",
+      "叛徒行",
       "back",
       "dumbbell",
       "Remo renegado",
@@ -2704,11 +2805,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Reverse Cable Flye",
+      "zhTW": "反向電纜飛翼",
       "en": "Reverse Cable Flye"
     },
     "cue": {
-      "zhTW": "Attach D-Handles to two cable pulleys in the upper position.",
+      "zhTW": "將 D 型手柄連接到上部位置的兩個電纜滑輪。",
       "en": "Attach D-Handles to two cable pulleys in the upper position."
     },
     "defaultUnit": "rounds",
@@ -2716,6 +2817,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Reverse Cable Flye",
+      "反向電纜飛翼",
       "back",
       "cable"
     ],
@@ -2728,11 +2830,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Reverse Snow Angel",
+      "zhTW": "逆雪天使",
       "en": "Reverse Snow Angel"
     },
     "cue": {
-      "zhTW": "Lay flat on your stomach with your arms extended in front of you on the ground as your legs are lying flat.",
+      "zhTW": "俯臥，雙臂伸直放在地面上，雙腿平躺。",
       "en": "Lay flat on your stomach with your arms extended in front of you on the ground as your legs are lying flat."
     },
     "defaultUnit": "rounds",
@@ -2740,6 +2842,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Reverse Snow Angel",
+      "逆雪天使",
       "back",
       "bodyweight",
       "Ange de neige inversé",
@@ -2754,11 +2857,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Reverse Wood Chops",
+      "zhTW": "反向木排",
       "en": "Reverse Wood Chops"
     },
     "cue": {
-      "zhTW": "* Attach a looping resistance band to a rack below knee height * Grip the other end of the band like holding a baseball bat with both hands * Stretch the band facing it * Start wit",
+      "zhTW": "* 將環形阻力帶固定在膝蓋以下的架子上 * 握住阻力帶的另一端，就像用雙手握住棒球棒一樣 * 將阻力帶面向它拉伸 * 開始機智",
       "en": "* Attach a looping resistance band to a rack below knee height * Grip the other end of the band like holding a baseball bat with both hands * Stretch the band facing it * Start wit"
     },
     "defaultUnit": "rounds",
@@ -2766,6 +2869,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Reverse Wood Chops",
+      "反向木排",
       "back",
       "bodyweight",
       "Leñador inverso",
@@ -2781,11 +2885,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Roll Down",
+      "zhTW": "滾下來",
       "en": "Roll Down"
     },
     "cue": {
-      "zhTW": "Stand with your feet hip-width apart and slowly roll your upper body forward, one vertebra at a time, until your hands touch the ground or as far as you can comfortably go.",
+      "zhTW": "站立，雙腳分開與臀部同寬，慢慢向前滾動上身，一次滾動一根椎骨，直到雙手接觸地面或盡可能舒適地滾動。",
       "en": "Stand with your feet hip-width apart and slowly roll your upper body forward, one vertebra at a time, until your hands touch the ground or as far as you can comfortably go."
     },
     "defaultUnit": "rounds",
@@ -2793,6 +2897,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Roll Down",
+      "滾下來",
       "back",
       "bodyweight",
       "Déroulé du buste (roll down)"
@@ -2806,11 +2911,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Rope Pullover/row",
+      "zhTW": "繩索套頭衫/排",
       "en": "Rope Pullover/row"
     },
     "cue": {
-      "zhTW": "Set up bench in front of cable row machine.",
+      "zhTW": "在排纜機前設置工作台。",
       "en": "Set up bench in front of cable row machine."
     },
     "defaultUnit": "rounds",
@@ -2818,6 +2923,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Rope Pullover/row",
+      "繩索套頭衫/排",
       "back",
       "cable",
       "Pullover/remo con cuerda",
@@ -2833,11 +2939,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Row",
+      "zhTW": "行",
       "en": "Row"
     },
     "cue": {
-      "zhTW": "In strength training, rowing (or a row, usually preceded by a qualifying adjective — for instance a seated row) is an exercise where the purpose is to strengthen the muscles that d",
+      "zhTW": "在肌力訓練中，划船（或划船，通常前面有限定形容詞－例如坐式划船）是一種練習，其目的是增強肌肉力量，從而增強肌肉力量。",
       "en": "In strength training, rowing (or a row, usually preceded by a qualifying adjective — for instance a seated row) is an exercise where the purpose is to strengthen the muscles that d"
     },
     "defaultUnit": "rounds",
@@ -2845,6 +2951,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Row",
+      "行",
       "back",
       "barbell",
       "Přítahy v Sedě s Oporou",
@@ -2862,11 +2969,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Rowing seated, narrow grip",
+      "zhTW": "坐式划船，窄握距",
       "en": "Rowing seated, narrow grip"
     },
     "cue": {
-      "zhTW": "* Tighten muscles * Controlled movement * Slow movement * Keep upper body upright * Do not lean back * Pull toward chest",
+      "zhTW": "* 收緊肌肉 * 控制運動 * 緩慢運動 * 保持上半身直立 * 不要向後傾斜 * 向胸部拉",
       "en": "* Tighten muscles * Controlled movement * Slow movement * Keep upper body upright * Do not lean back * Pull toward chest"
     },
     "defaultUnit": "rounds",
@@ -2874,6 +2981,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rowing seated, narrow grip",
+      "坐式划船，窄握距",
       "back",
       "bodyweight",
       "Remo Gironda",
@@ -2889,11 +2997,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Rowing with TRX band",
+      "zhTW": "使用 TRX 樂隊划船",
       "en": "Rowing with TRX band"
     },
     "cue": {
-      "zhTW": "Rowing with resistance bands - Bodyweight Exercise",
+      "zhTW": "使用阻力帶划船 - 自重運動",
       "en": "Rowing with resistance bands - Bodyweight Exercise"
     },
     "defaultUnit": "rounds",
@@ -2901,6 +3009,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rowing with TRX band",
+      "使用 TRX 樂隊划船",
       "back",
       "bodyweight",
       "TRX Rudern"
@@ -2914,11 +3023,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Rowing, Lying on Bench",
+      "zhTW": "划船、躺在長凳上",
       "en": "Rowing, Lying on Bench"
     },
     "cue": {
-      "zhTW": "Rowing, Lying on Bench",
+      "zhTW": "划船、躺在長凳上",
       "en": "Rowing, Lying on Bench"
     },
     "defaultUnit": "rounds",
@@ -2926,6 +3035,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rowing, Lying on Bench",
+      "划船、躺在長凳上",
       "back",
       "bodyweight"
     ],
@@ -2938,11 +3048,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Rowing, T-bar",
+      "zhTW": "賽艇、T 形桿",
       "en": "Rowing, T-bar"
     },
     "cue": {
-      "zhTW": "The execution of this exercise is very similar to the regular bent over rowing, only that the bar is fixed here.",
+      "zhTW": "這個練習的執行方式和常規的彎腰划船很相似，只是槓子固定在這裡。",
       "en": "The execution of this exercise is very similar to the regular bent over rowing, only that the bar is fixed here."
     },
     "defaultUnit": "rounds",
@@ -2950,6 +3060,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Rowing, T-bar",
+      "賽艇、T 形桿",
       "back",
       "bodyweight",
       "Remo en \"T\"",
@@ -2965,11 +3076,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Scapula Pulls",
+      "zhTW": "肩胛骨拉動",
       "en": "Scapula Pulls"
     },
     "cue": {
-      "zhTW": "* Hang straight on a pull-up bar * Pull shoulder blades together, moving the body slightly up",
+      "zhTW": "* 筆直懸掛在引體向上桿上 * 將肩胛骨拉到一起，將身體稍微向上移動",
       "en": "* Hang straight on a pull-up bar * Pull shoulder blades together, moving the body slightly up"
     },
     "defaultUnit": "rounds",
@@ -2977,6 +3088,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Scapula Pulls",
+      "肩胛骨拉動",
       "back",
       "bodyweight"
     ],
@@ -2989,11 +3101,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Scorpion Kick",
+      "zhTW": "蠍子踢",
       "en": "Scorpion Kick"
     },
     "cue": {
-      "zhTW": "**Get into the push-up position with your shoulders directly above your hands and your feet hip-width apart.** **Make sure that your body forms a straight line from your head to yo",
+      "zhTW": "**進入伏地挺身姿勢，肩膀位於雙手正上方，雙腳與臀部同寬。 ** **確保身體從頭到腳形成一條直線",
       "en": "**Get into the push-up position with your shoulders directly above your hands and your feet hip-width apart.** **Make sure that your body forms a straight line from your head to yo"
     },
     "defaultUnit": "rounds",
@@ -3001,6 +3113,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Scorpion Kick",
+      "蠍子踢",
       "back",
       "bodyweight",
       "Coup de pied du scorpion",
@@ -3016,11 +3129,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Seated Cable Mid Trap Shrug",
+      "zhTW": "坐式電纜中部陷阱聳肩",
       "en": "Seated Cable Mid Trap Shrug"
     },
     "cue": {
-      "zhTW": "seated straight back, slight hold at top",
+      "zhTW": "坐直靠背，微微握住頂部",
       "en": "seated straight back, slight hold at top"
     },
     "defaultUnit": "rounds",
@@ -3028,6 +3141,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Seated Cable Mid Trap Shrug",
+      "坐式電纜中部陷阱聳肩",
       "back",
       "cable"
     ],
@@ -3040,11 +3154,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Seated rear delt rise",
+      "zhTW": "坐姿三角肌後束上升",
       "en": "Seated rear delt rise"
     },
     "cue": {
-      "zhTW": "Seated, bent 45 deg forward.",
+      "zhTW": "坐著，向前彎曲 45 度。",
       "en": "Seated, bent 45 deg forward."
     },
     "defaultUnit": "rounds",
@@ -3052,6 +3166,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Seated rear delt rise",
+      "坐姿三角肌後束上升",
       "back",
       "dumbbell"
     ],
@@ -3064,11 +3179,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Seated Row (Machine)",
+      "zhTW": "坐式划船（機器）",
       "en": "Seated Row (Machine)"
     },
     "cue": {
-      "zhTW": "Keep your chest up and squeeze your shoulder blades at the end.",
+      "zhTW": "挺胸，最後擠壓肩胛骨。",
       "en": "Keep your chest up and squeeze your shoulder blades at the end."
     },
     "defaultUnit": "rounds",
@@ -3076,6 +3191,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Seated Row (Machine)",
+      "坐式划船（機器）",
       "back",
       "bodyweight",
       "Remo sentado (máquina)",
@@ -3091,11 +3207,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Seated V-Grip Row",
+      "zhTW": "坐姿V型握力划船",
       "en": "Seated V-Grip Row"
     },
     "cue": {
-      "zhTW": "The **Seated V-Grip Row** is a compound pulling exercise performed on a cable machine using a close-grip \"V\" handle.",
+      "zhTW": "**坐式 V 形握力划船** 是一種使用緊握「V」形手柄在纜繩機上進行的複合拉動練習。",
       "en": "The **Seated V-Grip Row** is a compound pulling exercise performed on a cable machine using a close-grip \"V\" handle."
     },
     "defaultUnit": "rounds",
@@ -3103,6 +3219,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Seated V-Grip Row",
+      "坐姿V型握力划船",
       "back",
       "cable",
       "Remo sentado con agarre en V",
@@ -3118,11 +3235,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Shotgun Row",
+      "zhTW": "霰彈槍排",
       "en": "Shotgun Row"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -3130,6 +3247,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Shotgun Row",
+      "霰彈槍排",
       "back",
       "cable",
       "Shotgun row"
@@ -3143,11 +3261,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Side Lateral Raise (Cable)",
+      "zhTW": "側平舉（繩索）",
       "en": "Side Lateral Raise (Cable)"
     },
     "cue": {
-      "zhTW": "Lift with your elbows leading, not your hands.",
+      "zhTW": "抬起時用手肘引導，而不是用手。",
       "en": "Lift with your elbows leading, not your hands."
     },
     "defaultUnit": "rounds",
@@ -3155,6 +3273,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Side Lateral Raise (Cable)",
+      "側平舉（繩索）",
       "back",
       "cable"
     ],
@@ -3167,11 +3286,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Side Straight-Arm Pulldown (Cable)",
+      "zhTW": "側直臂下拉（拉繩）",
       "en": "Side Straight-Arm Pulldown (Cable)"
     },
     "cue": {
-      "zhTW": "Keep your torso still, pulling the handle down along your side using the outer lat.",
+      "zhTW": "保持軀幹靜止，利用外側背闊肌沿身體一側向下拉手柄。",
       "en": "Keep your torso still, pulling the handle down along your side using the outer lat."
     },
     "defaultUnit": "rounds",
@@ -3179,6 +3298,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Side Straight-Arm Pulldown (Cable)",
+      "側直臂下拉（拉繩）",
       "back",
       "cable",
       "Jalón lateral con brazo recto (polea)",
@@ -3194,11 +3314,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Single Arm Plank to Row",
+      "zhTW": "單臂平板支撐划船",
       "en": "Single Arm Plank to Row"
     },
     "cue": {
-      "zhTW": "Start position as row, extend to plank and back.",
+      "zhTW": "從划船開始，延伸至平板支撐並向後延伸。",
       "en": "Start position as row, extend to plank and back."
     },
     "defaultUnit": "rounds",
@@ -3206,6 +3326,7 @@ export const records = [
     "equipment": "kettlebell",
     "searchTerms": [
       "Single Arm Plank to Row",
+      "單臂平板支撐划船",
       "back",
       "kettlebell",
       "Kettlebell swing a una mano",
@@ -3220,11 +3341,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Single arm row",
+      "zhTW": "單臂划船",
       "en": "Single arm row"
     },
     "cue": {
-      "zhTW": "Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats.",
+      "zhTW": "坐在地上，單握使用一條高繩，進行高位下拉，重點是背闊肌的長距離伸展。",
       "en": "Sitting on the ground, use a high cable in a single grip, to do lat pulldowns with a focus on a long stretch in the lats."
     },
     "defaultUnit": "rounds",
@@ -3232,6 +3353,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Single arm row",
+      "單臂划船",
       "back",
       "cable",
       "Einarmiges Rudern",
@@ -3247,11 +3369,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Single-Arm Lat Pulldown",
+      "zhTW": "單臂高位下拉",
       "en": "Single-Arm Lat Pulldown"
     },
     "cue": {
-      "zhTW": "Sit at the lat pulldown machine and grab the single handle with a neutral grip.",
+      "zhTW": "坐在高位下拉機前，用中性握法抓住單一手把。",
       "en": "Sit at the lat pulldown machine and grab the single handle with a neutral grip."
     },
     "defaultUnit": "rounds",
@@ -3259,6 +3381,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Single-Arm Lat Pulldown",
+      "單臂高位下拉",
       "back",
       "cable",
       "Einarmiger Latzug",
@@ -3276,11 +3399,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Sit & Reach",
+      "zhTW": "坐下並伸手",
       "en": "Sit & Reach"
     },
     "cue": {
-      "zhTW": "Sit on the ground with your legs extended straight in front of you.",
+      "zhTW": "坐在地上，雙腿伸直在身前。",
       "en": "Sit on the ground with your legs extended straight in front of you."
     },
     "defaultUnit": "rounds",
@@ -3288,6 +3411,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Sit & Reach",
+      "坐下並伸手",
       "back",
       "bodyweight",
       "Flexion assise (sit & reach)",
@@ -3303,11 +3427,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Skydiver with arms in T-position",
+      "zhTW": "手臂處於 T 字形的跳傘運動員",
       "en": "Skydiver with arms in T-position"
     },
     "cue": {
-      "zhTW": "Lie on your stomach with your legs more than shoulder-width apart and your feet up.",
+      "zhTW": "俯臥，雙腿分開超過肩寬，雙腳抬起。",
       "en": "Lie on your stomach with your legs more than shoulder-width apart and your feet up."
     },
     "defaultUnit": "rounds",
@@ -3315,6 +3439,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Skydiver with arms in T-position",
+      "手臂處於 T 字形的跳傘運動員",
       "back",
       "bodyweight",
       "Fallschirmspringer in T-Position",
@@ -3330,11 +3455,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Snatch OL",
+      "zhTW": "搶奪OL",
       "en": "Snatch OL"
     },
     "cue": {
-      "zhTW": "Olympic lift snatch * Pull barbell from ground to overhead lockout using a wide grip and overhead squat.",
+      "zhTW": "奧林匹克舉重抓舉 * 使用寬握距和過頭深蹲將槓鈴從地面拉至過頭鎖定位置。",
       "en": "Olympic lift snatch * Pull barbell from ground to overhead lockout using a wide grip and overhead squat."
     },
     "defaultUnit": "rounds",
@@ -3342,6 +3467,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Snatch OL",
+      "搶奪OL",
       "back",
       "barbell",
       "Arraché — haltérophilie",
@@ -3357,11 +3483,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Straight-arm Pull Down (bar Attachment)",
+      "zhTW": "直臂下拉（槓鈴附件）",
       "en": "Straight-arm Pull Down (bar Attachment)"
     },
     "cue": {
-      "zhTW": "Use the straight bar attachment on a high pulley.",
+      "zhTW": "在高滑輪上使用直桿附件。",
       "en": "Use the straight bar attachment on a high pulley."
     },
     "defaultUnit": "rounds",
@@ -3369,6 +3495,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Straight-arm Pull Down (bar Attachment)",
+      "直臂下拉（槓鈴附件）",
       "back",
       "cable",
       "Jalón con brazos rectos (agarre de barra)",
@@ -3384,11 +3511,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Straight-arm Pull Down (rope Attachment)",
+      "zhTW": "直臂下拉（附繩）",
       "en": "Straight-arm Pull Down (rope Attachment)"
     },
     "cue": {
-      "zhTW": "Use the rope attachment on a high pulley.",
+      "zhTW": "在高滑輪上使用繩索附件。",
       "en": "Use the rope attachment on a high pulley."
     },
     "defaultUnit": "rounds",
@@ -3396,6 +3523,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Straight-arm Pull Down (rope Attachment)",
+      "直臂下拉（附繩）",
       "back",
       "cable",
       "Jalón con brazos rectos (agarre de cuerda)",
@@ -3413,11 +3541,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Straight-Arm Pulldown (Cable)",
+      "zhTW": "直臂下拉（拉繩）",
       "en": "Straight-Arm Pulldown (Cable)"
     },
     "cue": {
-      "zhTW": "Keep arms straight but not locked, pulling with your lats, not your shoulders.",
+      "zhTW": "保持手臂伸直但不要鎖定，用背闊肌而不是肩膀拉動。",
       "en": "Keep arms straight but not locked, pulling with your lats, not your shoulders."
     },
     "defaultUnit": "rounds",
@@ -3425,6 +3553,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Straight-Arm Pulldown (Cable)",
+      "直臂下拉（拉繩）",
       "back",
       "cable",
       "Jalón con brazos rectos (polea)",
@@ -3440,11 +3569,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Superman",
+      "zhTW": "超人",
       "en": "Superman"
     },
     "cue": {
-      "zhTW": "Lay flat on your stomach with your arms extended in front of you on the ground as your legs are lying flat.",
+      "zhTW": "俯臥，雙臂伸直放在地面上，雙腿平躺。",
       "en": "Lay flat on your stomach with your arms extended in front of you on the ground as your legs are lying flat."
     },
     "defaultUnit": "rounds",
@@ -3452,6 +3581,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Superman",
+      "超人",
       "back",
       "bodyweight"
     ],
@@ -3464,11 +3594,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Supine press",
+      "zhTW": "仰臥推舉",
       "en": "Supine press"
     },
     "cue": {
-      "zhTW": "Take a close grip and push perpendicular to the bench.",
+      "zhTW": "緊緊握住並垂直於長凳推。",
       "en": "Take a close grip and push perpendicular to the bench."
     },
     "defaultUnit": "rounds",
@@ -3476,6 +3606,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Supine press",
+      "仰臥推舉",
       "back",
       "barbell"
     ],
@@ -3488,11 +3619,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Table Bodyweight Rows (Vasco L1)",
+      "zhTW": "表體重划船 (Vasco L1)",
       "en": "Table Bodyweight Rows (Vasco L1)"
     },
     "cue": {
-      "zhTW": "Vasco custom table bodyweight row for horizontal pulling in home training.",
+      "zhTW": "Vasco 客製化自重划船桌，用於家庭訓練中的水平拉力。",
       "en": "Vasco custom table bodyweight row for horizontal pulling in home training."
     },
     "defaultUnit": "rounds",
@@ -3500,6 +3631,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Table Bodyweight Rows (Vasco L1)",
+      "表體重划船 (Vasco L1)",
       "back",
       "bodyweight"
     ],
@@ -3512,11 +3644,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Towel Superman",
+      "zhTW": "毛巾超人",
       "en": "Towel Superman"
     },
     "cue": {
-      "zhTW": "In this exercise, you lie flat on your stomach, hold a towel with your arms extended in front of you, and pull it apart to create tension.",
+      "zhTW": "在這個練習中，您平躺於肚子上，雙手在身前伸展，握住一條毛巾，然後將其拉開以產生張力。",
       "en": "In this exercise, you lie flat on your stomach, hold a towel with your arms extended in front of you, and pull it apart to create tension."
     },
     "defaultUnit": "rounds",
@@ -3524,6 +3656,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Towel Superman",
+      "毛巾超人",
       "back",
       "bodyweight",
       "Handtuch-Superman",
@@ -3539,11 +3672,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Trap-3 Raise",
+      "zhTW": "陷阱 3 加註",
       "en": "Trap-3 Raise"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -3551,6 +3684,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Trap-3 Raise",
+      "陷阱 3 加註",
       "back",
       "bodyweight",
       "Elevación Trap-3",
@@ -3566,11 +3700,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "TRX Rows",
+      "zhTW": "TRX 行",
       "en": "TRX Rows"
     },
     "cue": {
-      "zhTW": "This exercise serves as a lead-up to Pull Ups.",
+      "zhTW": "此練習是引體向上的預備練習。",
       "en": "This exercise serves as a lead-up to Pull Ups."
     },
     "defaultUnit": "rounds",
@@ -3578,6 +3712,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "TRX Rows",
+      "TRX 行",
       "back",
       "bodyweight",
       "Remo en TRX",
@@ -3592,11 +3727,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Typewriter Pull-ups",
+      "zhTW": "打字機引體向上",
       "en": "Typewriter Pull-ups"
     },
     "cue": {
-      "zhTW": "Hang from a pull-up bar with an overhand grip, slightly wider than shoulder-width.",
+      "zhTW": "正手握住引體向上桿，握距略寬於肩膀寬度。",
       "en": "Hang from a pull-up bar with an overhand grip, slightly wider than shoulder-width."
     },
     "defaultUnit": "rounds",
@@ -3604,6 +3739,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Typewriter Pull-ups",
+      "打字機引體向上",
       "back",
       "bodyweight",
       "Dominadas typewriter",
@@ -3620,11 +3756,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Underhand Lat Pull Down",
+      "zhTW": "反手高位下拉",
       "en": "Underhand Lat Pull Down"
     },
     "cue": {
-      "zhTW": "Grip the pull-down bar with your palms facing you and your hands closer than shoulder-width apart.",
+      "zhTW": "手掌朝向自己，握住下拉桿，雙手距離比肩膀寬。",
       "en": "Grip the pull-down bar with your palms facing you and your hands closer than shoulder-width apart."
     },
     "defaultUnit": "rounds",
@@ -3632,6 +3768,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Underhand Lat Pull Down",
+      "反手高位下拉",
       "back",
       "bodyweight",
       "Jalón al pecho con agarre supino",
@@ -3647,11 +3784,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Unilateral Cable row",
+      "zhTW": "單邊電纜排",
       "en": "Unilateral Cable row"
     },
     "cue": {
-      "zhTW": "Put a vertical seated bench in front of the cable row machine.position it so that you can focus on one side, and then do slow pulls focusing on the lateral muscles and ensuring ten",
+      "zhTW": "在繩索划船機前放置一個垂直坐凳，將其放置在可以集中註意力於一側的位置，然後緩慢拉動，重點關注外側肌肉，並確保十個",
       "en": "Put a vertical seated bench in front of the cable row machine.position it so that you can focus on one side, and then do slow pulls focusing on the lateral muscles and ensuring ten"
     },
     "defaultUnit": "rounds",
@@ -3659,6 +3796,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Unilateral Cable row",
+      "單邊電纜排",
       "back",
       "cable",
       "Einarmiges Rudern am Kabelzug",
@@ -3675,11 +3813,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Upper Back",
+      "zhTW": "上背部",
       "en": "Upper Back"
     },
     "cue": {
-      "zhTW": "Upper Back is suitable for building up the core muscles with a special focus on the deltoid and rhomboid muscles and the upper back muscles",
+      "zhTW": "上背部適合鍛鍊核心肌肉，特別關註三角肌和菱形肌以及上背部肌肉",
       "en": "Upper Back is suitable for building up the core muscles with a special focus on the deltoid and rhomboid muscles and the upper back muscles"
     },
     "defaultUnit": "rounds",
@@ -3687,6 +3825,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Upper Back",
+      "上背部",
       "back",
       "bodyweight",
       "Espalda alta",
@@ -3701,11 +3840,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "V-Bar Pulldown",
+      "zhTW": "V 形桿下拉",
       "en": "V-Bar Pulldown"
     },
     "cue": {
-      "zhTW": "Pulldowns using close grip v-bar.",
+      "zhTW": "使用緊握 V 型桿進行下拉。",
       "en": "Pulldowns using close grip v-bar."
     },
     "defaultUnit": "rounds",
@@ -3713,6 +3852,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "V-Bar Pulldown",
+      "V 形桿下拉",
       "back",
       "cable"
     ],
@@ -3725,11 +3865,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Wall Slides",
+      "zhTW": "牆滑梯",
       "en": "Wall Slides"
     },
     "cue": {
-      "zhTW": "Stand with heels, shoulders, back of head, and hips touching the wall.",
+      "zhTW": "站立，腳跟、肩膀、後腦勺和臀部接觸牆壁。",
       "en": "Stand with heels, shoulders, back of head, and hips touching the wall."
     },
     "defaultUnit": "rounds",
@@ -3737,6 +3877,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wall Slides",
+      "牆滑梯",
       "back",
       "bodyweight",
       "Deslizamientos en la pared",
@@ -3753,11 +3894,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Wide-grip Pulldown",
+      "zhTW": "寬握下拉",
       "en": "Wide-grip Pulldown"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -3765,6 +3906,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Wide-grip Pulldown",
+      "寬握下拉",
       "back",
       "cable",
       "Jalón con agarre ancho",
@@ -3784,11 +3926,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Wide-grip supinated lat pulldown",
+      "zhTW": "寬握旋後背闊肌下拉",
       "en": "Wide-grip supinated lat pulldown"
     },
     "cue": {
-      "zhTW": "Downward movement • Pull the bar down so that it passes close to your chin and touches the upper part of your chest.",
+      "zhTW": "向下移動 • 向下拉桿，使其靠近下巴並接觸胸部上部。",
       "en": "Downward movement • Pull the bar down so that it passes close to your chin and touches the upper part of your chest."
     },
     "defaultUnit": "rounds",
@@ -3796,6 +3938,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Wide-grip supinated lat pulldown",
+      "寬握旋後背闊肌下拉",
       "back",
       "cable",
       "Jalón abierto supino",
@@ -3811,11 +3954,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "Yoga exercise: Cow-cat",
+      "zhTW": "瑜珈練習：牛貓式",
       "en": "Yoga exercise: Cow-cat"
     },
     "cue": {
-      "zhTW": "First get into the four-footed stance.",
+      "zhTW": "首先進入四足站姿。",
       "en": "First get into the four-footed stance."
     },
     "defaultUnit": "rounds",
@@ -3823,6 +3966,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Yoga exercise: Cow-cat",
+      "瑜珈練習：牛貓式",
       "back",
       "bodyweight",
       "Esercizio di yoga: Mucca-gatto",
@@ -3839,11 +3983,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "YWTs",
+      "zhTW": "背部動作 · YWTs",
       "en": "YWTs"
     },
     "cue": {
-      "zhTW": "**Starting position:** Lie down, preferably on a mat.",
+      "zhTW": "**起始位置：** 躺下，最好躺在墊子上。",
       "en": "**Starting position:** Lie down, preferably on a mat."
     },
     "defaultUnit": "rounds",
@@ -3851,6 +3995,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "YWTs",
+      "背部動作 · YWTs",
       "back",
       "bodyweight",
       "YWT"

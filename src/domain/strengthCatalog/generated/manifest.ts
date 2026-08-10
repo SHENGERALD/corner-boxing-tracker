@@ -5,8 +5,8 @@ export const generatedStrengthCounts = {
   "legs": 157,
   "shoulders": 98,
   "arms": 130,
-  "core": 96,
+  "core": 98,
   "calves": 11,
   "mobility": 69,
-  "cardio": 45
+  "cardio": 46
 } as const;

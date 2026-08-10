@@ -5,11 +5,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "4-count burpees",
+      "zhTW": "4 拍立臥撐跳",
       "en": "4-count burpees"
     },
     "cue": {
-      "zhTW": "Starting position: Stand straight, feet hip-width apart.",
+      "zhTW": "起始位置：站直，雙腳分開與臀部同寬。",
       "en": "Starting position: Stand straight, feet hip-width apart."
     },
     "defaultUnit": "rounds",
@@ -17,6 +17,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "4-count burpees",
+      "4 拍立臥撐跳",
       "chest",
       "bodyweight",
       "4-Hitung burpe",
@@ -40,11 +41,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Bear Walk 2",
+      "zhTW": "熊行2",
       "en": "Bear Walk 2"
     },
     "cue": {
-      "zhTW": "-Rest your weight on your palms and the balls of your feet, not dissimilar to normal pushup position -Move by stepping with your R palm and L foot, then your L palm and R foot.",
+      "zhTW": "-將你的體重放在手掌和腳掌上，與正常俯臥撐位置沒有什麼不同 -先用右手掌和左腳邁步，然後用左手掌和右腳移動。",
       "en": "-Rest your weight on your palms and the balls of your feet, not dissimilar to normal pushup position -Move by stepping with your R palm and L foot, then your L palm and R foot."
     },
     "defaultUnit": "rounds",
@@ -52,6 +53,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Bear Walk 2",
+      "熊行2",
       "chest",
       "bodyweight",
       "Bear Walk",
@@ -67,11 +69,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Bench Press",
+      "zhTW": "臥推",
       "en": "Bench Press"
     },
     "cue": {
-      "zhTW": "Lay down on a bench, the bar should be directly above your eyes, the knees are somewhat angled and the feet are firmly on the floor.",
+      "zhTW": "躺在長凳上，槓鈴應位於眼睛正上方，膝蓋稍微傾斜，雙腳牢牢踩在地板上。",
       "en": "Lay down on a bench, the bar should be directly above your eyes, the knees are somewhat angled and the feet are firmly on the floor."
     },
     "defaultUnit": "rounds",
@@ -79,6 +81,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Bench Press",
+      "臥推",
       "chest",
       "barbell",
       "Bankdrücken LH",
@@ -96,11 +99,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Benchpress Dumbbells",
+      "zhTW": "臥推啞鈴",
       "en": "Benchpress Dumbbells"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -108,6 +111,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Benchpress Dumbbells",
+      "臥推啞鈴",
       "chest",
       "dumbbell",
       "Bankdrücken KH",
@@ -125,11 +129,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Bent over Cable Flye",
+      "zhTW": "彎腰電纜飛繩",
       "en": "Bent over Cable Flye"
     },
     "cue": {
-      "zhTW": "Holding your upper body at an approximate 105° angle.",
+      "zhTW": "將上半身保持在大約 105° 的角度。",
       "en": "Holding your upper body at an approximate 105° angle."
     },
     "defaultUnit": "rounds",
@@ -137,6 +141,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Bent over Cable Flye",
+      "彎腰電纜飛繩",
       "chest",
       "cable"
     ],
@@ -149,11 +154,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Burpees",
+      "zhTW": "波比跳",
       "en": "Burpees"
     },
     "cue": {
-      "zhTW": "Jump, lay down on your chest, do a pushup then jump, repeat",
+      "zhTW": "跳，胸部平躺，做伏地挺身，然後跳，重複",
       "en": "Jump, lay down on your chest, do a pushup then jump, repeat"
     },
     "defaultUnit": "rounds",
@@ -161,6 +166,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Burpees",
+      "波比跳",
       "chest",
       "bodyweight",
       "Angličáky",
@@ -171,8 +177,7 @@ export const records = [
       "Spingere su burpees",
       "Şınav ile burpee",
       "Βατραχάκια με κάμψεις",
-      "الدفع burpees",
-      "波比跳"
+      "الدفع burpees"
     ],
     "imageSource": "Corner generated",
     "imageUrl": "/assets/strength/generated/chest.webp"
@@ -183,11 +188,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Butterfly",
+      "zhTW": "蝴蝶",
       "en": "Butterfly"
     },
     "cue": {
-      "zhTW": "Sit on the butterfly machine, the feet have a good contact with the floor, the upper arms are parallel to the floor.",
+      "zhTW": "坐在蝴蝶機上，雙腳與地板接觸良好，上臂與地板平行。",
       "en": "Sit on the butterfly machine, the feet have a good contact with the floor, the upper arms are parallel to the floor."
     },
     "defaultUnit": "rounds",
@@ -195,6 +200,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Butterfly",
+      "蝴蝶",
       "chest",
       "bodyweight",
       "Aperturas en máquina"
@@ -208,11 +214,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Butterfly Narrow Grip",
+      "zhTW": "蝴蝶窄握",
       "en": "Butterfly Narrow Grip"
     },
     "cue": {
-      "zhTW": "The movement is the same as with a regular butterfly, only that the grip is narrow: Sit on the butterfly machine, the feet have a good contact with the floor, the upper arms are pa",
+      "zhTW": "動作與普通蝶泳相同，但握距較窄：坐在蝶泳機上，雙腳與地面接觸良好，上臂靠在蝶泳機上。",
       "en": "The movement is the same as with a regular butterfly, only that the grip is narrow: Sit on the butterfly machine, the feet have a good contact with the floor, the upper arms are pa"
     },
     "defaultUnit": "rounds",
@@ -220,6 +226,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Butterfly Narrow Grip",
+      "蝴蝶窄握",
       "chest",
       "bodyweight",
       "Butterfly Eng",
@@ -235,11 +242,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Chest Press - Decline",
+      "zhTW": "繩索胸部推舉 - 拒絕",
       "en": "Cable Chest Press - Decline"
     },
     "cue": {
-      "zhTW": "Single arm chest press done with the cable machine.",
+      "zhTW": "使用繩索機完成單臂胸部推舉。",
       "en": "Single arm chest press done with the cable machine."
     },
     "defaultUnit": "rounds",
@@ -247,6 +254,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Chest Press - Decline",
+      "繩索胸部推舉 - 拒絕",
       "chest",
       "cable",
       "Brustdrücken am Kabelzug - negativ geneigt",
@@ -262,11 +270,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Chest Press - Incline",
+      "zhTW": "繩索胸部推舉 - 上斜",
       "en": "Cable Chest Press - Incline"
     },
     "cue": {
-      "zhTW": "Single arm chest press done with the cable machine.",
+      "zhTW": "使用繩索機完成單臂胸部推舉。",
       "en": "Single arm chest press done with the cable machine."
     },
     "defaultUnit": "rounds",
@@ -274,6 +282,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Chest Press - Incline",
+      "繩索胸部推舉 - 上斜",
       "chest",
       "cable",
       "Brustdrücken am Kabelzug auf der Schrägbank",
@@ -289,11 +298,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Cross-over",
+      "zhTW": "電纜交叉",
       "en": "Cable Cross-over"
     },
     "cue": {
-      "zhTW": "Begin with cables at about shoulder height, one in each hand.",
+      "zhTW": "從大約肩膀高的電纜開始，每隻手各一條。",
       "en": "Begin with cables at about shoulder height, one in each hand."
     },
     "defaultUnit": "rounds",
@@ -301,6 +310,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Cross-over",
+      "電纜交叉",
       "chest",
       "cable",
       "Aperturas en polea",
@@ -317,11 +327,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Fly Lower Chest",
+      "zhTW": "電纜門襟下胸",
       "en": "Cable Fly Lower Chest"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -329,6 +339,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Fly Lower Chest",
+      "電纜門襟下胸",
       "chest",
       "cable",
       "Aperturas en polea para el pecho inferior",
@@ -344,11 +355,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Fly Middle Chest",
+      "zhTW": "中胸電纜門襟",
       "en": "Cable Fly Middle Chest"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -356,6 +367,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Fly Middle Chest",
+      "中胸電纜門襟",
       "chest",
       "cable",
       "Aperturas en polea para el pecho medio",
@@ -371,11 +383,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Fly Upper Chest",
+      "zhTW": "纜繩上胸",
       "en": "Cable Fly Upper Chest"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -383,6 +395,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Fly Upper Chest",
+      "纜繩上胸",
       "chest",
       "cable",
       "Aperturas en polea para el pecho superior",
@@ -398,11 +411,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cable Press Around",
+      "zhTW": "電纜壓繞",
       "en": "Cable Press Around"
     },
     "cue": {
-      "zhTW": "Set the cable pulley at chest height and attach a D-handle bar.",
+      "zhTW": "將電纜滑輪設置在胸部高度並安裝 D 型手柄。",
       "en": "Set the cable pulley at chest height and attach a D-handle bar."
     },
     "defaultUnit": "rounds",
@@ -410,6 +423,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Cable Press Around",
+      "電纜壓繞",
       "chest",
       "cable",
       "Press around à la poulie"
@@ -423,11 +437,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Chest Press",
+      "zhTW": "胸部按壓",
       "en": "Chest Press"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -435,6 +449,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Chest Press",
+      "胸部按壓",
       "chest",
       "bodyweight",
       "Brustpresse",
@@ -452,11 +467,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Clap Push-UP",
+      "zhTW": "拍手俯臥撐",
       "en": "Clap Push-UP"
     },
     "cue": {
-      "zhTW": "The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength.",
+      "zhTW": "拍手伏地挺身是一種爆發力的上半身運動，可以增強力量和快肌力量。",
       "en": "The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength."
     },
     "defaultUnit": "rounds",
@@ -464,6 +479,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Clap Push-UP",
+      "拍手俯臥撐",
       "chest",
       "bodyweight",
       "Flexión con palmada",
@@ -479,11 +495,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Close-grip Press-ups",
+      "zhTW": "窄距俯臥撐",
       "en": "Close-grip Press-ups"
     },
     "cue": {
-      "zhTW": "Drop into a strong plank position, bringing your hands close together until they're almost touching.",
+      "zhTW": "維持平板支撐姿勢，雙手併攏至幾乎接觸。",
       "en": "Drop into a strong plank position, bringing your hands close together until they're almost touching."
     },
     "defaultUnit": "rounds",
@@ -491,6 +507,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Close-grip Press-ups",
+      "窄距俯臥撐",
       "chest",
       "bodyweight",
       "Flexiones con agarre estrecho",
@@ -506,11 +523,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Cross-Bench Dumbbell Pullovers",
+      "zhTW": "交叉臥推啞鈴套頭衫",
       "en": "Cross-Bench Dumbbell Pullovers"
     },
     "cue": {
-      "zhTW": "Grasp a moderately weighted dumbbell so your palms are flat against the underside of the top plates and your thumbs are around the bar.",
+      "zhTW": "抓住一個中等重量的啞鈴，使手掌平放在頂板的下側，拇指放在槓鈴周圍。",
       "en": "Grasp a moderately weighted dumbbell so your palms are flat against the underside of the top plates and your thumbs are around the bar."
     },
     "defaultUnit": "rounds",
@@ -518,6 +535,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Cross-Bench Dumbbell Pullovers",
+      "交叉臥推啞鈴套頭衫",
       "chest",
       "dumbbell",
       "Croci su panca piana",
@@ -535,11 +553,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "DB Floor Press (5kg Single Arm)",
+      "zhTW": "DB地板推舉（5公斤單臂）",
       "en": "DB Floor Press (5kg Single Arm)"
     },
     "cue": {
-      "zhTW": "Vasco custom single-arm DB floor press for 5kg dumbbell home training.",
+      "zhTW": "Vasco 客製化單臂 DB 地板推舉機，適用於 5 公斤啞鈴家庭訓練。",
       "en": "Vasco custom single-arm DB floor press for 5kg dumbbell home training."
     },
     "defaultUnit": "rounds",
@@ -547,6 +565,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Floor Press (5kg Single Arm)",
+      "DB地板推舉（5公斤單臂）",
       "chest",
       "dumbbell"
     ],
@@ -559,11 +578,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "DB Underhand bench press",
+      "zhTW": "DB 下手臥推",
       "en": "DB Underhand bench press"
     },
     "cue": {
-      "zhTW": "Underhand grip DB, perform a normal bench press movement, keeping the elbows close to the chest",
+      "zhTW": "反手握DB，進行正常的臥推動作，保持手肘靠近胸部",
       "en": "Underhand grip DB, perform a normal bench press movement, keeping the elbows close to the chest"
     },
     "defaultUnit": "rounds",
@@ -571,6 +590,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Underhand bench press",
+      "DB 下手臥推",
       "chest",
       "dumbbell"
     ],
@@ -583,11 +603,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "DB Upper Chest Variation",
+      "zhTW": "DB 上胸部變體",
       "en": "DB Upper Chest Variation"
     },
     "cue": {
-      "zhTW": "Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo",
+      "zhTW": "手持啞鈴，呈捲曲狀，身體向手臂傾斜，幫助啞鈴舉至胸部上方、靠近頭部的位置，激活胸部和三角肌的組合",
       "en": "Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo"
     },
     "defaultUnit": "rounds",
@@ -595,6 +615,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "DB Upper Chest Variation",
+      "DB 上胸部變體",
       "chest",
       "dumbbell",
       "Kurzhantel-Variation für die obere Brust",
@@ -610,11 +631,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Decline Bench Press Barbell",
+      "zhTW": "下斜臥推槓鈴",
       "en": "Decline Bench Press Barbell"
     },
     "cue": {
-      "zhTW": "Lay down on a decline bench, the bar should be directly above your eyes, the knees are somewhat angled and the feet are firmly on the floor.",
+      "zhTW": "躺在下斜長凳上，槓鈴應位於眼睛正上方，膝蓋稍微傾斜，雙腳牢牢踩在地板上。",
       "en": "Lay down on a decline bench, the bar should be directly above your eyes, the knees are somewhat angled and the feet are firmly on the floor."
     },
     "defaultUnit": "rounds",
@@ -622,6 +643,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Decline Bench Press Barbell",
+      "下斜臥推槓鈴",
       "chest",
       "barbell",
       "Développé couché décliné à la barre",
@@ -638,11 +660,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Decline Bench Press Dumbbell",
+      "zhTW": "下斜臥推啞鈴",
       "en": "Decline Bench Press Dumbbell"
     },
     "cue": {
-      "zhTW": "Take two dumbbells and sit on a decline bench, the feet are firmly on the floor, the head is resting the bench.",
+      "zhTW": "拿兩個啞鈴坐在下斜凳上，雙腳牢牢踩在地板上，頭靠在凳子上。",
       "en": "Take two dumbbells and sit on a decline bench, the feet are firmly on the floor, the head is resting the bench."
     },
     "defaultUnit": "rounds",
@@ -650,6 +672,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Decline Bench Press Dumbbell",
+      "下斜臥推啞鈴",
       "chest",
       "dumbbell",
       "Développé couché décliné aux haltères",
@@ -665,11 +688,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Deep breathing (standing or seated)",
+      "zhTW": "深呼吸（站立或坐著）",
       "en": "Deep breathing (standing or seated)"
     },
     "cue": {
-      "zhTW": "A conscious breathing technique to improve oxygenation, reduce stress and connect with the present moment.",
+      "zhTW": "一種有意識的呼吸技巧，可改善氧合、減輕壓力並與當下時刻保持聯繫。",
       "en": "A conscious breathing technique to improve oxygenation, reduce stress and connect with the present moment."
     },
     "defaultUnit": "rounds",
@@ -677,6 +700,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Deep breathing (standing or seated)",
+      "深呼吸（站立或坐著）",
       "chest",
       "bodyweight"
     ],
@@ -689,11 +713,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Deficit Push ups",
+      "zhTW": "赤字俯臥撐",
       "en": "Deficit Push ups"
     },
     "cue": {
-      "zhTW": "Pushup on blocks or grips, so you can dip lower than the hands in the decent.",
+      "zhTW": "在瑜珈磚或握把上進行伏地挺身，這樣你就可以在體面中低於雙手。",
       "en": "Pushup on blocks or grips, so you can dip lower than the hands in the decent."
     },
     "defaultUnit": "rounds",
@@ -701,6 +725,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Deficit Push ups",
+      "赤字俯臥撐",
       "chest",
       "bodyweight"
     ],
@@ -713,11 +738,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Diamond push ups",
+      "zhTW": "鑽石俯臥撐",
       "en": "Diamond push ups"
     },
     "cue": {
-      "zhTW": "Start: Get into a plank.",
+      "zhTW": "開始：進入平板支撐。",
       "en": "Start: Get into a plank."
     },
     "defaultUnit": "rounds",
@@ -725,6 +750,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Diamond push ups",
+      "鑽石俯臥撐",
       "chest",
       "bodyweight",
       "Flexiones diamante",
@@ -741,11 +767,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Dips",
+      "zhTW": "下降",
       "en": "Dips"
     },
     "cue": {
-      "zhTW": "A dip is an upper-body strength exercise.",
+      "zhTW": "臂屈伸是一項上身肌力練習。",
       "en": "A dip is an upper-body strength exercise."
     },
     "defaultUnit": "rounds",
@@ -753,6 +779,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Dips",
+      "下降",
       "chest",
       "bodyweight",
       "Weighted Dips",
@@ -768,11 +795,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Dumbbell Floor Press",
+      "zhTW": "啞鈴地板推舉",
       "en": "Dumbbell Floor Press"
     },
     "cue": {
-      "zhTW": "Grab your dumbbells and lay flat on your back with your knees bent and your feet flat on the ground (use a bench if you have one).",
+      "zhTW": "抓住啞鈴，平躺，膝蓋彎曲，雙腳平放在地上（如果有長凳，請使用長凳）。",
       "en": "Grab your dumbbells and lay flat on your back with your knees bent and your feet flat on the ground (use a bench if you have one)."
     },
     "defaultUnit": "rounds",
@@ -780,6 +807,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Floor Press",
+      "啞鈴地板推舉",
       "chest",
       "dumbbell",
       "Développé au sol avec haltères",
@@ -795,11 +823,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Dumbbell Hex Press",
+      "zhTW": "啞鈴六角推舉",
       "en": "Dumbbell Hex Press"
     },
     "cue": {
-      "zhTW": "* Engage the muscles * Position your feet wide * Controlled movement * Slow movement * Bring the weights toward your lower chest/stomach",
+      "zhTW": "* 調動肌肉 * 將雙腳放寬 * 受控動作 * 緩慢運動 * 將重物移向下胸部/腹部",
       "en": "* Engage the muscles * Position your feet wide * Controlled movement * Slow movement * Bring the weights toward your lower chest/stomach"
     },
     "defaultUnit": "rounds",
@@ -807,6 +835,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Hex Press",
+      "啞鈴六角推舉",
       "chest",
       "dumbbell",
       "Développé serré aux haltères (hex press)",
@@ -822,11 +851,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Dumbbell Push-Up",
+      "zhTW": "啞鈴俯臥撐",
       "en": "Dumbbell Push-Up"
     },
     "cue": {
-      "zhTW": "Normal Push-ups on Dumbbells, this brings a further range of movement",
+      "zhTW": "啞鈴上的普通俯臥撐，這帶來了更大的運動範圍",
       "en": "Normal Push-ups on Dumbbells, this brings a further range of movement"
     },
     "defaultUnit": "rounds",
@@ -834,6 +863,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Dumbbell Push-Up",
+      "啞鈴俯臥撐",
       "chest",
       "dumbbell",
       "Flexiones con mancuernas",
@@ -848,11 +878,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Flat Machine Press",
+      "zhTW": "平壓機",
       "en": "Flat Machine Press"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -860,6 +890,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Flat Machine Press",
+      "平壓機",
       "chest",
       "machine",
       "Brustdrücken an der Maschine (flach)",
@@ -875,11 +906,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Fly With Cable",
+      "zhTW": "纜繩飛行",
       "en": "Fly With Cable"
     },
     "cue": {
-      "zhTW": "cable machine, two steps forward, straight back",
+      "zhTW": "拉線機，前進兩步，直後退",
       "en": "cable machine, two steps forward, straight back"
     },
     "defaultUnit": "rounds",
@@ -887,6 +918,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Fly With Cable",
+      "纜繩飛行",
       "chest",
       "cable",
       "Cruce de Poleas para Pecho"
@@ -900,11 +932,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Fly With Dumbbells",
+      "zhTW": "啞鈴飛翔",
       "en": "Fly With Dumbbells"
     },
     "cue": {
-      "zhTW": "Take two dumbbells and lay on a bench, make sure the feet are firmly on the ground and your back is not arched, but has good contact with the bench.",
+      "zhTW": "拿兩個啞鈴躺在長凳上，確保雙腳牢牢踩在地上，背部不拱起，但與長凳接觸良好。",
       "en": "Take two dumbbells and lay on a bench, make sure the feet are firmly on the ground and your back is not arched, but has good contact with the bench."
     },
     "defaultUnit": "rounds",
@@ -912,6 +944,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Fly With Dumbbells",
+      "啞鈴飛翔",
       "chest",
       "dumbbell",
       "Aperturas con Mancuernas",
@@ -928,11 +961,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Fly With Dumbbells, Decline Bench",
+      "zhTW": "啞鈴飛翔，下斜臥推",
       "en": "Fly With Dumbbells, Decline Bench"
     },
     "cue": {
-      "zhTW": "The exercise is the same as with a regular bench: Take two dumbbells and lay on a bench, make sure the feet are firmly on the ground and your back is not arched, but has good conta",
+      "zhTW": "練習方式與一般凳子相同：拿兩個啞鈴平躺在凳子上，確保雙腳牢牢踩在地上，背部不拱起，但有良好的接觸性。",
       "en": "The exercise is the same as with a regular bench: Take two dumbbells and lay on a bench, make sure the feet are firmly on the ground and your back is not arched, but has good conta"
     },
     "defaultUnit": "rounds",
@@ -940,6 +973,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Fly With Dumbbells, Decline Bench",
+      "啞鈴飛翔，下斜臥推",
       "chest",
       "dumbbell",
       "Aperturas con Mancuernas Declinadas",
@@ -956,11 +990,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Hammerstrength Decline Chest Press",
+      "zhTW": "Hammerstrength 下斜胸部推舉",
       "en": "Hammerstrength Decline Chest Press"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -968,6 +1002,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Hammerstrength Decline Chest Press",
+      "Hammerstrength 下斜胸部推舉",
       "chest",
       "bodyweight",
       "Développé décliné sur machine Hammer Strength",
@@ -984,11 +1019,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "High plank",
+      "zhTW": "高平板支撐",
       "en": "High plank"
     },
     "cue": {
-      "zhTW": "Starting position: Get into the high plank position:your hands and toes should be touching the ground, your back, arms and legs should be straight.To get to this position, you can ",
+      "zhTW": "起始姿勢：進入高平板支撐姿勢：雙手和腳趾接觸地面，背部、手臂和腿伸直。要達到這個姿勢，您可以",
       "en": "Starting position: Get into the high plank position:your hands and toes should be touching the ground, your back, arms and legs should be straight.To get to this position, you can "
     },
     "defaultUnit": "rounds",
@@ -996,6 +1031,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "High plank",
+      "高平板支撐",
       "chest",
       "bodyweight",
       "Asse alto",
@@ -1020,11 +1056,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "High-Incline Smith Machine Press",
+      "zhTW": "高斜度史密斯機壓力機",
       "en": "High-Incline Smith Machine Press"
     },
     "cue": {
-      "zhTW": "Set the bench to a 45-60° incline.",
+      "zhTW": "將長凳設定為 45-60° 傾斜。",
       "en": "Set the bench to a 45-60° incline."
     },
     "defaultUnit": "rounds",
@@ -1032,6 +1068,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "High-Incline Smith Machine Press",
+      "高斜度史密斯機壓力機",
       "chest",
       "bodyweight"
     ],
@@ -1044,11 +1081,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Bench Press - Barbell",
+      "zhTW": "上斜臥推 - 槓鈴",
       "en": "Incline Bench Press - Barbell"
     },
     "cue": {
-      "zhTW": "To do slowly, tempo is 4010",
+      "zhTW": "慢慢做，節奏是4010",
       "en": "To do slowly, tempo is 4010"
     },
     "defaultUnit": "rounds",
@@ -1056,6 +1093,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Incline Bench Press - Barbell",
+      "上斜臥推 - 槓鈴",
       "chest",
       "barbell",
       "Distensione Panca Inclinata Bilanciere",
@@ -1071,11 +1109,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Bench Press - Dumbbell",
+      "zhTW": "上斜臥推 - 啞鈴",
       "en": "Incline Bench Press - Dumbbell"
     },
     "cue": {
-      "zhTW": "This is a variation of the flat bench press designed to emphasize the clavicular head of the pectoralis major (the upper portion).",
+      "zhTW": "這是平板臥推的一種變體，旨在強調胸大肌的鎖骨頭（上部）。",
       "en": "This is a variation of the flat bench press designed to emphasize the clavicular head of the pectoralis major (the upper portion)."
     },
     "defaultUnit": "rounds",
@@ -1083,6 +1121,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline Bench Press - Dumbbell",
+      "上斜臥推 - 啞鈴",
       "chest",
       "dumbbell",
       "Développé incliné - haltères",
@@ -1101,11 +1140,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Bench Press - MP",
+      "zhTW": "上斜臥推 - MP",
       "en": "Incline Bench Press - MP"
     },
     "cue": {
-      "zhTW": "Incline Bench Press - MP",
+      "zhTW": "上斜臥推 - MP",
       "en": "Incline Bench Press - MP"
     },
     "defaultUnit": "rounds",
@@ -1113,6 +1152,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Incline Bench Press - MP",
+      "上斜臥推 - MP",
       "chest",
       "bodyweight",
       "Distensione su Panca Piana Imp Stretta",
@@ -1127,11 +1167,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Dumbbell Fly",
+      "zhTW": "上斜啞鈴飛鳥",
       "en": "Incline Dumbbell Fly"
     },
     "cue": {
-      "zhTW": "Use inclined bench.",
+      "zhTW": "使用斜凳。",
       "en": "Use inclined bench."
     },
     "defaultUnit": "rounds",
@@ -1139,6 +1179,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline Dumbbell Fly",
+      "上斜啞鈴飛鳥",
       "chest",
       "dumbbell",
       "Aperturas con mancuernas en banco inclinado",
@@ -1155,11 +1196,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Push-ups (Vasco L2)",
+      "zhTW": "上斜俯臥撐（Vasco L2）",
       "en": "Incline Push-ups (Vasco L2)"
     },
     "cue": {
-      "zhTW": "Vasco custom incline push-up progression for beginner home training.",
+      "zhTW": "Vasco 客製化傾斜俯臥撐進階，適合初學者家庭訓練。",
       "en": "Vasco custom incline push-up progression for beginner home training."
     },
     "defaultUnit": "rounds",
@@ -1167,6 +1208,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Incline Push-ups (Vasco L2)",
+      "上斜俯臥撐（Vasco L2）",
       "chest",
       "bodyweight"
     ],
@@ -1179,11 +1221,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Shoulder Press Up",
+      "zhTW": "上斜肩部推舉",
       "en": "Incline Shoulder Press Up"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1191,6 +1233,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Incline Shoulder Press Up",
+      "上斜肩部推舉",
       "chest",
       "machine",
       "Pompe inclinée pour les épaules",
@@ -1206,11 +1249,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Incline Static Hold",
+      "zhTW": "傾斜靜態保持",
       "en": "Incline Static Hold"
     },
     "cue": {
-      "zhTW": "### **Execution** 1.",
+      "zhTW": "### **執行** 1.",
       "en": "### **Execution** 1."
     },
     "defaultUnit": "rounds",
@@ -1218,6 +1261,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "Incline Static Hold",
+      "傾斜靜態保持",
       "chest",
       "dumbbell",
       "Maintien statique incliné",
@@ -1233,11 +1277,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Inverted Rows",
+      "zhTW": "倒排",
       "en": "Inverted Rows"
     },
     "cue": {
-      "zhTW": "Maintain a straight body, retract your shoulder blades, and pull your chest to the bar for an effective back and upper body workout.",
+      "zhTW": "保持身體挺直，收回肩胛骨，將胸部拉向槓鈴，以有效鍛鍊背部和上半身。",
       "en": "Maintain a straight body, retract your shoulder blades, and pull your chest to the bar for an effective back and upper body workout."
     },
     "defaultUnit": "rounds",
@@ -1245,6 +1289,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Inverted Rows",
+      "倒排",
       "chest",
       "bodyweight",
       "horizontal pull-ups",
@@ -1262,11 +1307,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Isometric Wipers",
+      "zhTW": "等距雨刷",
       "en": "Isometric Wipers"
     },
     "cue": {
-      "zhTW": "Assume push-up position, with hands slightly wider than shoulder width.",
+      "zhTW": "採取伏地挺身姿勢，雙手略寬於肩寬。",
       "en": "Assume push-up position, with hands slightly wider than shoulder width."
     },
     "defaultUnit": "rounds",
@@ -1274,6 +1319,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Isometric Wipers",
+      "等距雨刷",
       "chest",
       "bodyweight",
       "Essuie-glaces isométriques",
@@ -1288,11 +1334,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Larsen Press",
+      "zhTW": "拉森出版社",
       "en": "Larsen Press"
     },
     "cue": {
-      "zhTW": "Put your legs up on a separate Bench and press with no leg drive",
+      "zhTW": "將雙腿放在單獨的長凳上，並在沒有腿部驅動的情況下進行推舉",
       "en": "Put your legs up on a separate Bench and press with no leg drive"
     },
     "defaultUnit": "rounds",
@@ -1300,6 +1346,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Larsen Press",
+      "拉森出版社",
       "chest",
       "barbell"
     ],
@@ -1312,11 +1359,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Legend Chest Press",
+      "zhTW": "傳奇胸部按壓",
       "en": "Legend Chest Press"
     },
     "cue": {
-      "zhTW": "Plate-loaded chest press machine from Legend Fitness LeverEdge line.",
+      "zhTW": "Legend Fitness LeverEdge 系列的平板式壓胸機。",
       "en": "Plate-loaded chest press machine from Legend Fitness LeverEdge line."
     },
     "defaultUnit": "rounds",
@@ -1324,6 +1371,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Legend Chest Press",
+      "傳奇胸部按壓",
       "chest",
       "bodyweight"
     ],
@@ -1336,11 +1384,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Legend Incline Bench Press",
+      "zhTW": "Legend 上斜臥推 LeverEdge 機器上的",
       "en": "Legend Incline Bench Press"
     },
     "cue": {
-      "zhTW": "incline bench press on LeverEdge machine.",
+      "zhTW": "上斜臥推。",
       "en": "incline bench press on LeverEdge machine."
     },
     "defaultUnit": "rounds",
@@ -1348,6 +1396,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Legend Incline Bench Press",
+      "Legend 上斜臥推 LeverEdge 機器上的",
       "chest",
       "bodyweight",
       "LeverEdge Machine Incline Press"
@@ -1361,11 +1410,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Leverage Machine Chest Press",
+      "zhTW": "槓桿機推胸",
       "en": "Leverage Machine Chest Press"
     },
     "cue": {
-      "zhTW": "Be sure to adjust seat height so that the handles are towards the bottom of your pectorals.",
+      "zhTW": "請務必調整座椅高度，使手柄朝向胸肌底部。",
       "en": "Be sure to adjust seat height so that the handles are towards the bottom of your pectorals."
     },
     "defaultUnit": "rounds",
@@ -1373,6 +1422,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Leverage Machine Chest Press",
+      "槓桿機推胸",
       "chest",
       "bodyweight",
       "Press de pecho con máquina"
@@ -1386,11 +1436,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Low Pulley Cable Fly",
+      "zhTW": "低滑輪電纜門襟",
       "en": "Low Pulley Cable Fly"
     },
     "cue": {
-      "zhTW": "Adjust the cable machine: Set the pulley to the lowest setting possible.",
+      "zhTW": "調整纜機：將滑輪設定為盡可能的最低設定。",
       "en": "Adjust the cable machine: Set the pulley to the lowest setting possible."
     },
     "defaultUnit": "rounds",
@@ -1398,6 +1448,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Low Pulley Cable Fly",
+      "低滑輪電纜門襟",
       "chest",
       "cable",
       "Aperturas en polea baja",
@@ -1413,11 +1464,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Low-Cable Cross-Over - NB",
+      "zhTW": "低電纜交叉 - NB",
       "en": "Low-Cable Cross-Over - NB"
     },
     "cue": {
-      "zhTW": "The low-cable cross-over is an isolation movement that uses a cable stack to target the upper portion of the pectoral muscles.",
+      "zhTW": "低纜交叉是一種孤立動作，使用纜繩疊來瞄準胸肌的上部。",
       "en": "The low-cable cross-over is an isolation movement that uses a cable stack to target the upper portion of the pectoral muscles."
     },
     "defaultUnit": "rounds",
@@ -1425,6 +1476,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Low-Cable Cross-Over - NB",
+      "低電纜交叉 - NB",
       "chest",
       "cable",
       "Croisement à la poulie basse - NB",
@@ -1440,11 +1492,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Machine chest fly",
+      "zhTW": "機胸飛",
       "en": "Machine chest fly"
     },
     "cue": {
-      "zhTW": "seated machine, straight back, slow exercise",
+      "zhTW": "坐式機，挺直背部，緩慢運動",
       "en": "seated machine, straight back, slow exercise"
     },
     "defaultUnit": "rounds",
@@ -1452,6 +1504,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Machine chest fly",
+      "機胸飛",
       "chest",
       "bodyweight",
       "Aperturas en Máquina para Pecho",
@@ -1466,11 +1519,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Mountain climbers",
+      "zhTW": "登山愛好者",
       "en": "Mountain climbers"
     },
     "cue": {
-      "zhTW": "Starting position: Start in the upright push-up position, aka.",
+      "zhTW": "起始位置：從直立俯臥撐位置開始，又稱。",
       "en": "Starting position: Start in the upright push-up position, aka."
     },
     "defaultUnit": "rounds",
@@ -1478,6 +1531,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Mountain climbers",
+      "登山愛好者",
       "chest",
       "bodyweight",
       "Alpinista",
@@ -1505,11 +1559,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "No Leg Drive Dumbbell Chest Press",
+      "zhTW": "無腿驅動啞鈴推胸",
       "en": "No Leg Drive Dumbbell Chest Press"
     },
     "cue": {
-      "zhTW": "Set up for a normal Dumbbell chest press but lift your leg ups straight or put them on another bench to remove the leg drive.",
+      "zhTW": "準備正常的啞鈴胸部推舉，但將腿伸直或將其放在另一張長凳上以消除腿部驅動力。",
       "en": "Set up for a normal Dumbbell chest press but lift your leg ups straight or put them on another bench to remove the leg drive."
     },
     "defaultUnit": "rounds",
@@ -1517,6 +1571,7 @@ export const records = [
     "equipment": "dumbbell",
     "searchTerms": [
       "No Leg Drive Dumbbell Chest Press",
+      "無腿驅動啞鈴推胸",
       "chest",
       "dumbbell",
       "Développé couché aux haltères sans impulsion des jambes",
@@ -1532,11 +1587,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "No push-up burpees",
+      "zhTW": "禁止伏地挺身跳",
       "en": "No push-up burpees"
     },
     "cue": {
-      "zhTW": "Starting position: Stand straight, feet hip-width apart.",
+      "zhTW": "起始位置：站直，雙腳分開與臀部同寬。",
       "en": "Starting position: Stand straight, feet hip-width apart."
     },
     "defaultUnit": "rounds",
@@ -1544,6 +1599,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "No push-up burpees",
+      "禁止伏地挺身跳",
       "chest",
       "bodyweight",
       "Angličáky bez kliku",
@@ -1569,11 +1625,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Omni Cable Cross-over",
+      "zhTW": "全向電纜交叉",
       "en": "Omni Cable Cross-over"
     },
     "cue": {
-      "zhTW": "Adjust the weights based on the motion.",
+      "zhTW": "根據運動調整權重。",
       "en": "Adjust the weights based on the motion."
     },
     "defaultUnit": "rounds",
@@ -1581,6 +1637,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Omni Cable Cross-over",
+      "全向電纜交叉",
       "chest",
       "cable",
       "Croisé de poulies omni",
@@ -1596,11 +1653,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Pause Bench",
+      "zhTW": "暫停凳",
       "en": "Pause Bench"
     },
     "cue": {
-      "zhTW": "Lower the bar to your chest and pause (but do not rest) there for 2 seconds.",
+      "zhTW": "將槓鈴降到胸部並暫停（但不要休息）2 秒。",
       "en": "Lower the bar to your chest and pause (but do not rest) there for 2 seconds."
     },
     "defaultUnit": "rounds",
@@ -1608,6 +1665,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Pause Bench",
+      "暫停凳",
       "chest",
       "barbell",
       "Développé couché avec pause",
@@ -1622,11 +1680,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Pec Deck",
+      "zhTW": "佩克甲板",
       "en": "Pec Deck"
     },
     "cue": {
-      "zhTW": "Pectoral issolation exercise - full range of motion is best with full contraction and slow negative",
+      "zhTW": "胸肌孤立練習－全幅度運動最好是充分收縮和慢負",
       "en": "Pectoral issolation exercise - full range of motion is best with full contraction and slow negative"
     },
     "defaultUnit": "rounds",
@@ -1634,6 +1692,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Pec Deck",
+      "佩克甲板",
       "chest",
       "bodyweight"
     ],
@@ -1646,11 +1705,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Pin Bench Press BB",
+      "zhTW": "平板臥推 BB",
       "en": "Pin Bench Press BB"
     },
     "cue": {
-      "zhTW": "* Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 1s while holding tension * Move bar up with maximum force",
+      "zhTW": "* 將安全銷設定為大約黏著點的高度 * 降低桿，在保持張力的同時將桿放在銷上 1 秒 * 用最大的力向上移動桿",
       "en": "* Set security pins to about the height of your sticking point * Lower the bar, rest on the pins for 1s while holding tension * Move bar up with maximum force"
     },
     "defaultUnit": "rounds",
@@ -1658,6 +1717,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Pin Bench Press BB",
+      "平板臥推 BB",
       "chest",
       "barbell",
       "Développé couché aux barres d'arrêt (barre)",
@@ -1673,11 +1733,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Power Clean",
+      "zhTW": "強力清潔",
       "en": "Power Clean"
     },
     "cue": {
-      "zhTW": "Olympic weight lifting",
+      "zhTW": "奧林匹克舉重",
       "en": "Olympic weight lifting"
     },
     "defaultUnit": "rounds",
@@ -1685,6 +1745,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Power Clean",
+      "強力清潔",
       "chest",
       "barbell",
       "Umsetzen"
@@ -1698,11 +1759,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Push-Up",
+      "zhTW": "俯臥撐",
       "en": "Push-Up"
     },
     "cue": {
-      "zhTW": "The push-up is a fundamental bodyweight exercise that targets the chest, arms, and shoulders while engaging the core for stability.",
+      "zhTW": "俯臥撐是一項基本的自重練習，針對胸部、手臂和肩膀，同時鍛鍊核心以保持穩定性。",
       "en": "The push-up is a fundamental bodyweight exercise that targets the chest, arms, and shoulders while engaging the core for stability."
     },
     "defaultUnit": "rounds",
@@ -1710,6 +1771,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Push-Up",
+      "俯臥撐",
       "chest",
       "bodyweight",
       "Liegestütz",
@@ -1726,11 +1788,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Push-Ups | Decline",
+      "zhTW": "俯臥撐 |拒絕",
       "en": "Push-Ups | Decline"
     },
     "cue": {
-      "zhTW": "Decline push-ups are another modified version of the traditional push-up that target the upper body muscles in a different way.",
+      "zhTW": "下斜俯臥撐是傳統俯臥撐的另一種改良版本，以不同的方式針對上身肌肉。",
       "en": "Decline push-ups are another modified version of the traditional push-up that target the upper body muscles in a different way."
     },
     "defaultUnit": "rounds",
@@ -1738,6 +1800,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Push-Ups | Decline",
+      "俯臥撐 |拒絕",
       "chest",
       "machine",
       "Flexiones | declinadas (decline)",
@@ -1753,11 +1816,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Push-Ups | Incline",
+      "zhTW": "俯臥撐 |傾斜",
       "en": "Push-Ups | Incline"
     },
     "cue": {
-      "zhTW": "Inclined push-ups primarily target the chest muscles (pectoralis major and minor), but also work the triceps, shoulders, and core to a lesser extent.",
+      "zhTW": "傾斜俯臥撐主要針對胸部肌肉（胸大肌和胸小肌），但也會在一定程度上鍛鍊三頭肌、肩膀和核心肌群。",
       "en": "Inclined push-ups primarily target the chest muscles (pectoralis major and minor), but also work the triceps, shoulders, and core to a lesser extent."
     },
     "defaultUnit": "rounds",
@@ -1765,6 +1828,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Push-Ups | Incline",
+      "俯臥撐 |傾斜",
       "chest",
       "machine",
       "Distensione Panca Inclinata Bilanciere",
@@ -1781,11 +1845,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Push-Ups | Parallettes",
+      "zhTW": "俯臥撐 |平行線",
       "en": "Push-Ups | Parallettes"
     },
     "cue": {
-      "zhTW": "Parallettes push-ups are a variation of the traditional push-up that are performed with the hands on parallel bars, known as parallettes.",
+      "zhTW": "平行俯臥撐是傳統俯臥撐的變體，將雙手放在雙槓上進行，稱為平行俯臥撐。",
       "en": "Parallettes push-ups are a variation of the traditional push-up that are performed with the hands on parallel bars, known as parallettes."
     },
     "defaultUnit": "rounds",
@@ -1793,6 +1857,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Push-Ups | Parallettes",
+      "俯臥撐 |平行線",
       "chest",
       "bodyweight",
       "Flexiones | parallettes",
@@ -1808,11 +1873,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Reverse Grip Bench Press",
+      "zhTW": "反握臥推",
       "en": "Reverse Grip Bench Press"
     },
     "cue": {
-      "zhTW": "Upper chest focuses exercise that also works triceps",
+      "zhTW": "上胸重點鍛煉，也能鍛鍊肱三頭肌",
       "en": "Upper chest focuses exercise that also works triceps"
     },
     "defaultUnit": "rounds",
@@ -1820,6 +1885,7 @@ export const records = [
     "equipment": "barbell",
     "searchTerms": [
       "Reverse Grip Bench Press",
+      "反握臥推",
       "chest",
       "barbell"
     ],
@@ -1832,11 +1898,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Ring Support Hold",
+      "zhTW": "環支撐",
       "en": "Ring Support Hold"
     },
     "cue": {
-      "zhTW": "Hold yourself in a support position on gymnastic rings with arms straight at sides.",
+      "zhTW": "將自己固定在體操環上，雙臂伸直放在兩側。",
       "en": "Hold yourself in a support position on gymnastic rings with arms straight at sides."
     },
     "defaultUnit": "rounds",
@@ -1844,6 +1910,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Ring Support Hold",
+      "環支撐",
       "chest",
       "bodyweight",
       "Maintien en appui aux anneaux",
@@ -1859,11 +1926,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Seated Bench Press",
+      "zhTW": "坐式臥推",
       "en": "Seated Bench Press"
     },
     "cue": {
-      "zhTW": "Set up the chest press machine so that the grips are aligned with your lower chest when you sit down.",
+      "zhTW": "設定胸部推舉機，讓您坐下時把手與下胸部對齊。",
       "en": "Set up the chest press machine so that the grips are aligned with your lower chest when you sit down."
     },
     "defaultUnit": "rounds",
@@ -1871,6 +1938,7 @@ export const records = [
     "equipment": "machine",
     "searchTerms": [
       "Seated Bench Press",
+      "坐式臥推",
       "chest",
       "machine",
       "Brustpresse im Sitzen",
@@ -1886,11 +1954,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Seated Cable chest fly",
+      "zhTW": "坐式繩索胸飛鳥",
       "en": "Seated Cable chest fly"
     },
     "cue": {
-      "zhTW": "1.",
+      "zhTW": "保持穩定並控制動作節奏。",
       "en": "1."
     },
     "defaultUnit": "rounds",
@@ -1898,6 +1966,7 @@ export const records = [
     "equipment": "cable",
     "searchTerms": [
       "Seated Cable chest fly",
+      "坐式繩索胸飛鳥",
       "chest",
       "cable",
       "Aperturas de pecho en polea sentado",
@@ -1913,11 +1982,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Side to Side Push Ups",
+      "zhTW": "左右俯臥撐",
       "en": "Side to Side Push Ups"
     },
     "cue": {
-      "zhTW": "-start in push up position -lean the body weight to the right side, and complete a push up with the chest over the right hand -come back to the centered position -on rep 2, lean to",
+      "zhTW": "-從俯臥撐位置開始 -將體重傾斜到右側，並用右手完成俯臥撐 -回到中間位置 -第 2 次，傾斜到",
       "en": "-start in push up position -lean the body weight to the right side, and complete a push up with the chest over the right hand -come back to the centered position -on rep 2, lean to"
     },
     "defaultUnit": "rounds",
@@ -1925,6 +1994,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Side to Side Push Ups",
+      "左右俯臥撐",
       "chest",
       "bodyweight",
       "Flexiones de lado a lado",
@@ -1941,11 +2011,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Smith Machine Slight Incline Press",
+      "zhTW": "史密斯機微斜推舉",
       "en": "Smith Machine Slight Incline Press"
     },
     "cue": {
-      "zhTW": "### * **Execution** * **Start position:** * Unrack the bar and hold it above your upper chest with arms fully extended.",
+      "zhTW": "### * **執行** * **起始位置：** * 鬆開槓鈴並將其保持在上胸部上方，雙臂完全伸展。",
       "en": "### * **Execution** * **Start position:** * Unrack the bar and hold it above your upper chest with arms fully extended."
     },
     "defaultUnit": "rounds",
@@ -1953,6 +2023,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Smith Machine Slight Incline Press",
+      "史密斯機微斜推舉",
       "chest",
       "bodyweight",
       "Développé incliné à la Smith machine",
@@ -1968,11 +2039,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Supino inclinado",
+      "zhTW": "蘇皮諾傾斜",
       "en": "Supino inclinado"
     },
     "cue": {
-      "zhTW": "Inclinado 90 graus e movimentos leves e precisos",
+      "zhTW": "傾斜度 90 度，運動水平和精度",
       "en": "Inclinado 90 graus e movimentos leves e precisos"
     },
     "defaultUnit": "rounds",
@@ -1980,6 +2051,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Supino inclinado",
+      "蘇皮諾傾斜",
       "chest",
       "bodyweight"
     ],
@@ -1992,11 +2064,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Upper External Oblique",
+      "zhTW": "上外斜肌",
       "en": "Upper External Oblique"
     },
     "cue": {
-      "zhTW": "Exercise for upper external oblique muscles",
+      "zhTW": "上外斜肌鍛煉",
       "en": "Exercise for upper external oblique muscles"
     },
     "defaultUnit": "rounds",
@@ -2004,6 +2076,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Upper External Oblique",
+      "上外斜肌",
       "chest",
       "bodyweight"
     ],
@@ -2016,11 +2089,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Wall Push-ups (Vasco L1)",
+      "zhTW": "牆壁俯臥撐（Vasco L1）",
       "en": "Wall Push-ups (Vasco L1)"
     },
     "cue": {
-      "zhTW": "Vasco custom beginner wall push-up for zero-equipment home training.",
+      "zhTW": "Vasco 客製化初學者牆壁俯臥撐，適合零器械家庭訓練。",
       "en": "Vasco custom beginner wall push-up for zero-equipment home training."
     },
     "defaultUnit": "rounds",
@@ -2028,6 +2101,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wall Push-ups (Vasco L1)",
+      "牆壁俯臥撐（Vasco L1）",
       "chest",
       "bodyweight"
     ],
@@ -2040,11 +2114,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Weighted push-ups",
+      "zhTW": "負重俯臥撐",
       "en": "Weighted push-ups"
     },
     "cue": {
-      "zhTW": "- **Setup:** Begin in a standard plank position with a weight plate balanced securely on your upper back.",
+      "zhTW": "- **設定：** 從標準平板支撐位置開始，將配重板牢固地平衡在上背部。",
       "en": "- **Setup:** Begin in a standard plank position with a weight plate balanced securely on your upper back."
     },
     "defaultUnit": "rounds",
@@ -2052,6 +2126,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Weighted push-ups",
+      "負重俯臥撐",
       "chest",
       "bodyweight",
       "Flexiones con peso",
@@ -2067,11 +2142,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "Wide Push-Up",
+      "zhTW": "寬伏地挺身",
       "en": "Wide Push-Up"
     },
     "cue": {
-      "zhTW": "​A push-up variation with a wider hand placement to increase the emphasis on the outer chest muscles and shoulders.",
+      "zhTW": "俯臥撐變體，手部放置較寬，以增加對外側胸部肌肉和肩膀的重視。",
       "en": "​A push-up variation with a wider hand placement to increase the emphasis on the outer chest muscles and shoulders."
     },
     "defaultUnit": "rounds",
@@ -2079,6 +2154,7 @@ export const records = [
     "equipment": "bodyweight",
     "searchTerms": [
       "Wide Push-Up",
+      "寬伏地挺身",
       "chest",
       "bodyweight",
       "Breiter Liegestütz",

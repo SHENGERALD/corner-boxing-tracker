@@ -147,7 +147,7 @@ function getSearchTerms(exercise, label, category, equipment) {
   ].map(cleanText).filter(Boolean))];
 }
 
-export function normalizeExercise(exercise, { report = { missingMedia: [] } } = {}) {
+export function normalizeExercise(exercise, { report = { missingMedia: [] }, localized } = {}) {
   const translation = firstTranslation(exercise);
   const englishName = cleanText(translation?.name ?? exercise?.name);
   if (!englishName) throw new Error("Exercise is missing an English name");
@@ -158,7 +158,8 @@ export function normalizeExercise(exercise, { report = { missingMedia: [] } } = 
   const equipment = normalizeEquipment(exercise);
   const imageUrl = selectImage(exercise);
   const id = toStableId(exercise);
-  const label = { zhTW: englishName, en: englishName };
+  const englishCue = getCue(translation, englishName);
+  const label = { zhTW: cleanText(localized?.name) || englishName, en: englishName };
   if (!imageUrl) report.missingMedia.push({ sourceId: exercise.id, name: englishName });
 
   const isTimed = category === "cardio" || category === "mobility";
@@ -168,7 +169,7 @@ export function normalizeExercise(exercise, { report = { missingMedia: [] } } = 
     domain: "strength",
     category,
     name: label,
-    cue: { zhTW: getCue(translation, englishName), en: getCue(translation, englishName) },
+    cue: { zhTW: cleanText(localized?.cue) || englishCue, en: englishCue },
     defaultUnit: isTimed ? "minutes" : "rounds",
     defaultQuantity: category === "cardio" ? 20 : category === "mobility" ? 8 : 3,
     equipment,
@@ -179,7 +180,7 @@ export function normalizeExercise(exercise, { report = { missingMedia: [] } } = 
   return result;
 }
 
-export function normalizeExercises(exercises, { existing = [], report = {} } = {}) {
+export function normalizeExercises(exercises, { existing = [], report = {}, translations = {} } = {}) {
   const output = [];
   const seen = [...existing];
   const nextReport = {
@@ -191,7 +192,10 @@ export function normalizeExercises(exercises, { existing = [], report = {} } = {
   for (const exercise of exercises) {
     try {
       const missingMediaStart = nextReport.missingMedia.length;
-      const candidate = normalizeExercise(exercise, { report: nextReport });
+      const candidate = normalizeExercise(exercise, {
+        report: nextReport,
+        localized: translations[String(exercise?.id ?? "")],
+      });
       if (isDuplicateMovement(seen, candidate)) {
         nextReport.missingMedia.splice(missingMediaStart);
         nextReport.duplicates.push({ sourceId: exercise.id, name: candidate.name.en });

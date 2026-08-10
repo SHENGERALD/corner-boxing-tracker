@@ -9,7 +9,8 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run src",
     "test:catalog": "node --test scripts/wger-normalize.test.mjs scripts/validate-strength-media.test.mjs",
-    "import:wger": "node scripts/import-wger.mjs"
+    "import:wger": "node scripts/import-wger.mjs",
+    "translate:wger": "node scripts/translate-wger.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.95.3",

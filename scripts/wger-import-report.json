@@ -1,19 +1,20 @@
 {
   "source": "https://wger.de/api/v2/exerciseinfo/",
   "sourceLicense": "wger initial exercise data: CC BY-SA 3.0",
-  "fetchedCount": 860,
-  "importedCount": 828,
+  "fetchedCount": 862,
+  "importedCount": 831,
   "skippedDuplicateCount": 18,
+  "localizedCount": 831,
   "categoryCounts": {
     "chest": 77,
     "back": 145,
     "legs": 157,
     "shoulders": 98,
     "arms": 130,
-    "core": 96,
+    "core": 98,
     "calves": 11,
     "mobility": 69,
-    "cardio": 45
+    "cardio": 46
   },
   "missingMedia": [
     {
@@ -349,6 +350,10 @@
       "name": "Wall Push-ups (Vasco L1)"
     },
     {
+      "sourceId": 2509,
+      "name": "Side Plank (Core L1)"
+    },
+    {
       "sourceId": 310,
       "name": "Incline Dumbbell Row"
     },
@@ -415,6 +420,10 @@
     {
       "sourceId": 2497,
       "name": "DB Floor Press (5kg Single Arm)"
+    },
+    {
+      "sourceId": 2510,
+      "name": "Hollow Body Hold (Core L1)"
     },
     {
       "sourceId": 974,
@@ -1965,6 +1974,10 @@
       "name": "Cable Rear-Delt Fly (single arm)"
     },
     {
+      "sourceId": 2505,
+      "name": "Dead Bug (Core L1)"
+    },
+    {
       "sourceId": 82,
       "name": "Bent-over Lateral Raises"
     },
@@ -2323,11 +2336,11 @@
   ],
   "invalid": [
     {
-      "sourceId": 2509,
+      "sourceId": 2520,
       "reason": "Exercise is missing an English name"
     },
     {
-      "sourceId": 2510,
+      "sourceId": 2521,
       "reason": "Exercise is missing an English name"
     },
     {
@@ -2360,10 +2373,6 @@
     },
     {
       "sourceId": 2517,
-      "reason": "Exercise is missing an English name"
-    },
-    {
-      "sourceId": 2505,
       "reason": "Exercise is missing an English name"
     },
     {
