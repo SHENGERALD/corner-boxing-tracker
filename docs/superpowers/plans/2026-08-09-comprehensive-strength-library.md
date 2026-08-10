@@ -4,7 +4,7 @@
 
 **Goal:** Import a comprehensive bilingual wger exercise catalog into Corner as reviewed static category data, load the full catalog when the Strength library opens, and keep images consistent and mobile-friendly.
 
-**Architecture:** Keep the existing built-in Corner drill IDs and boxing library in the initial bundle. Add a developer-only Node import pipeline that normalizes wger metadata into generated category modules, emits a review report, and records image provenance. A lazy strength-catalog loader imports every category module in parallel only when the library switches to Strength; visible images load lazily with a local fallback.
+**Architecture:** Keep the existing built-in Corner drill IDs and current curated boxing/strength library in the initial bundle because Today, Schedule, and History resolve those IDs synchronously. Add a developer-only Node import pipeline that normalizes wger metadata into generated category modules, emits a review report, and records image provenance. A lazy strength-catalog loader imports only the new category modules in parallel when the library switches to Strength and merges them with the baseline library; visible images load lazily with a local fallback.
 
 **Tech Stack:** React 19, TypeScript, Vite 6, Vitest, Testing Library, Node 20+ `fetch`, WebP static assets, wger REST API and CC BY-SA attribution.
 
@@ -13,7 +13,7 @@
 - Preserve existing drill IDs used by schedules, favorites, records, and custom training items.
 - Strength catalog data is static after import; the browser must not call wger at runtime.
 - The Strength library must show the complete loaded catalog after entering Strength, not one category at a time.
-- Use category-split generated modules and load all of them concurrently only inside the Strength library.
+- Keep the current curated library in the initial bundle; use category-split generated modules for new imported data and load all of those modules concurrently only inside the Strength library.
 - Include resistance, bodyweight, functional, mobility, stretching, and rehabilitation-style exercises; expose `mobility` as a dedicated category and keep `cardio` separate.
 - Every catalog card must have an image; use wger media when usable and a local Corner illustration when no usable wger image exists.
 - Keep wger source and CC BY-SA attribution visible in the Strength library.
@@ -179,7 +179,7 @@ Assert that `loadStrengthLibrary()` resolves all generated category records, inc
 
 - [ ] **Step 2: Implement concurrent category loading**
 
-Use explicit dynamic imports for every generated category module and `Promise.all`. Deduplicate by ID with an assertion that throws if two records claim the same ID. Keep boxing drills synchronously available and remove the unconditional top-level import of the full strength catalog from `src/domain/drills.ts`.
+Use explicit dynamic imports for every generated category module and `Promise.all`. Deduplicate by ID with an assertion that throws if two records claim the same ID. Keep the existing boxing and curated strength drills synchronously available through `drillLibrary`; the loader returns the merged baseline-plus-imported catalog for the Strength library without changing synchronous Today, Schedule, or History lookups.
 
 - [ ] **Step 3: Run focused loader tests**
 
