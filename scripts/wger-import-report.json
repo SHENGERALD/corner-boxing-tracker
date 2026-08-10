@@ -1,0 +1,2347 @@
+{
+  "source": "https://wger.de/api/v2/exerciseinfo/",
+  "sourceLicense": "wger initial exercise data: CC BY-SA 3.0",
+  "fetchedCount": 847,
+  "importedCount": 826,
+  "skippedDuplicateCount": 18,
+  "categoryCounts": {
+    "chest": 77,
+    "back": 145,
+    "legs": 157,
+    "shoulders": 98,
+    "arms": 130,
+    "core": 94,
+    "calves": 11,
+    "mobility": 69,
+    "cardio": 45
+  },
+  "missingMedia": [
+    {
+      "sourceId": 1964,
+      "name": "Wide Push-Up"
+    },
+    {
+      "sourceId": 1966,
+      "name": "1/2 Kneeling Thoracic Rotation"
+    },
+    {
+      "sourceId": 1967,
+      "name": "lento avanti seduto"
+    },
+    {
+      "sourceId": 1970,
+      "name": "Kettlebell sumo high pull"
+    },
+    {
+      "sourceId": 2447,
+      "name": "Hip Airplane"
+    },
+    {
+      "sourceId": 2454,
+      "name": "YTW Raises"
+    },
+    {
+      "sourceId": 980,
+      "name": "commando pull-ups"
+    },
+    {
+      "sourceId": 112,
+      "name": "Body-Ups"
+    },
+    {
+      "sourceId": 604,
+      "name": "Speed Deadlift"
+    },
+    {
+      "sourceId": 821,
+      "name": "Pullup on fingerboard"
+    },
+    {
+      "sourceId": 2478,
+      "name": "Glute-Ham Raise"
+    },
+    {
+      "sourceId": 2480,
+      "name": "Easy Continuous Swim (Freestyle)"
+    },
+    {
+      "sourceId": 923,
+      "name": "Lying Dumbbell Row SS Seated Shrug"
+    },
+    {
+      "sourceId": 993,
+      "name": "Jump rope: basic jumps"
+    },
+    {
+      "sourceId": 996,
+      "name": "Mountain climbers"
+    },
+    {
+      "sourceId": 997,
+      "name": "4-count burpees"
+    },
+    {
+      "sourceId": 985,
+      "name": "Push-up rotations"
+    },
+    {
+      "sourceId": 1972,
+      "name": "Single-Arm Lat Pulldown"
+    },
+    {
+      "sourceId": 2488,
+      "name": "Posterior Pelvic Tilt"
+    },
+    {
+      "sourceId": 820,
+      "name": "Fingerboard 20 mm edge"
+    },
+    {
+      "sourceId": 2489,
+      "name": "Low row"
+    },
+    {
+      "sourceId": 2490,
+      "name": "Pulley (low, with triangle)"
+    },
+    {
+      "sourceId": 2491,
+      "name": "Abductors"
+    },
+    {
+      "sourceId": 908,
+      "name": "Zone 2 Running"
+    },
+    {
+      "sourceId": 2492,
+      "name": "Adductors"
+    },
+    {
+      "sourceId": 2493,
+      "name": "Adductor Side Plank"
+    },
+    {
+      "sourceId": 961,
+      "name": "Swimming 50m sprints"
+    },
+    {
+      "sourceId": 57,
+      "name": "Bear Walk 2"
+    },
+    {
+      "sourceId": 962,
+      "name": "Elliptical"
+    },
+    {
+      "sourceId": 2448,
+      "name": "Reverse Clamshell"
+    },
+    {
+      "sourceId": 178,
+      "name": "Deadbug"
+    },
+    {
+      "sourceId": 292,
+      "name": "Hip Raise, Lying"
+    },
+    {
+      "sourceId": 802,
+      "name": "Barbell Lunges Walking"
+    },
+    {
+      "sourceId": 2481,
+      "name": "Kick with Board"
+    },
+    {
+      "sourceId": 1630,
+      "name": "Blaze"
+    },
+    {
+      "sourceId": 208,
+      "name": "Dumbbells on Scott Machine"
+    },
+    {
+      "sourceId": 998,
+      "name": "No push-up burpees"
+    },
+    {
+      "sourceId": 989,
+      "name": "Bulgarian split squats right"
+    },
+    {
+      "sourceId": 991,
+      "name": "Split squats left"
+    },
+    {
+      "sourceId": 992,
+      "name": "Split squats right"
+    },
+    {
+      "sourceId": 1001,
+      "name": "High plank"
+    },
+    {
+      "sourceId": 1006,
+      "name": "Chin tuck"
+    },
+    {
+      "sourceId": 1010,
+      "name": "Back neck stretch"
+    },
+    {
+      "sourceId": 222,
+      "name": "Facepull"
+    },
+    {
+      "sourceId": 986,
+      "name": "Side split squats left"
+    },
+    {
+      "sourceId": 987,
+      "name": "Side split squats right"
+    },
+    {
+      "sourceId": 994,
+      "name": "Forward arm circles"
+    },
+    {
+      "sourceId": 995,
+      "name": "Backward arm circles"
+    },
+    {
+      "sourceId": 1004,
+      "name": "Forward shoulder rotation"
+    },
+    {
+      "sourceId": 1005,
+      "name": "Backward shoulder rotation"
+    },
+    {
+      "sourceId": 1008,
+      "name": "Left neck stretch"
+    },
+    {
+      "sourceId": 1009,
+      "name": "Right neck stretch"
+    },
+    {
+      "sourceId": 1013,
+      "name": "Left levator scapulae stretch"
+    },
+    {
+      "sourceId": 1014,
+      "name": "Right levator scapulae stretch"
+    },
+    {
+      "sourceId": 145,
+      "name": "Cable Woodchoppers"
+    },
+    {
+      "sourceId": 284,
+      "name": "Hercules Pillars"
+    },
+    {
+      "sourceId": 914,
+      "name": "Reverse EZ Bar Cable Curls"
+    },
+    {
+      "sourceId": 1969,
+      "name": "Single-arm cable pushdown"
+    },
+    {
+      "sourceId": 910,
+      "name": "Nordic Curl"
+    },
+    {
+      "sourceId": 913,
+      "name": "Reverse Preacher Curl (Close Grip)"
+    },
+    {
+      "sourceId": 132,
+      "name": "Burpees"
+    },
+    {
+      "sourceId": 182,
+      "name": "Deadhang"
+    },
+    {
+      "sourceId": 177,
+      "name": "Cycling"
+    },
+    {
+      "sourceId": 294,
+      "name": "Hip Thrust"
+    },
+    {
+      "sourceId": 289,
+      "name": "High Pull"
+    },
+    {
+      "sourceId": 2449,
+      "name": "Clamshell to Reverse Clamshell"
+    },
+    {
+      "sourceId": 2482,
+      "name": "Bobbing Exhale Drill"
+    },
+    {
+      "sourceId": 423,
+      "name": "Muscle up"
+    },
+    {
+      "sourceId": 1019,
+      "name": "Side plank right"
+    },
+    {
+      "sourceId": 495,
+      "name": "Reverse Curl"
+    },
+    {
+      "sourceId": 505,
+      "name": "Roman Chair Crunch"
+    },
+    {
+      "sourceId": 1020,
+      "name": "Pistol squats right"
+    },
+    {
+      "sourceId": 1021,
+      "name": "Calf raises, right leg"
+    },
+    {
+      "sourceId": 382,
+      "name": "L Hold"
+    },
+    {
+      "sourceId": 395,
+      "name": "Long-Pulley, Narrow"
+    },
+    {
+      "sourceId": 439,
+      "name": "Overhand Cable Curl"
+    },
+    {
+      "sourceId": 917,
+      "name": "Straight Bar Cable Front Raise"
+    },
+    {
+      "sourceId": 1015,
+      "name": "Clockwise neck circles"
+    },
+    {
+      "sourceId": 1016,
+      "name": "Counterclockwise neck circles"
+    },
+    {
+      "sourceId": 1017,
+      "name": "Neck half circles"
+    },
+    {
+      "sourceId": 2496,
+      "name": "Wall Push-ups (Vasco L1)"
+    },
+    {
+      "sourceId": 310,
+      "name": "Incline Dumbbell Row"
+    },
+    {
+      "sourceId": 314,
+      "name": "Isometric Wipers"
+    },
+    {
+      "sourceId": 346,
+      "name": "Landmine press"
+    },
+    {
+      "sourceId": 319,
+      "name": "Jogging"
+    },
+    {
+      "sourceId": 406,
+      "name": "Lying Rotator Cuff Exercise"
+    },
+    {
+      "sourceId": 468,
+      "name": "Prone Scapular Retraction - Arms at Side"
+    },
+    {
+      "sourceId": 918,
+      "name": "Seated Dumbbell Side Lateral"
+    },
+    {
+      "sourceId": 919,
+      "name": "T-Bar row"
+    },
+    {
+      "sourceId": 516,
+      "name": "Front Wood Chop"
+    },
+    {
+      "sourceId": 1029,
+      "name": "Quadruped thoracic rotation right"
+    },
+    {
+      "sourceId": 2483,
+      "name": "Wall-Hold Rotation"
+    },
+    {
+      "sourceId": 675,
+      "name": "Turkish Get-Up"
+    },
+    {
+      "sourceId": 722,
+      "name": "Weighted Step-ups"
+    },
+    {
+      "sourceId": 500,
+      "name": "Reverse Plank"
+    },
+    {
+      "sourceId": 527,
+      "name": "Run"
+    },
+    {
+      "sourceId": 672,
+      "name": "Trunk Rotation With Cable"
+    },
+    {
+      "sourceId": 922,
+      "name": "Seated Cable Mid Trap Shrug"
+    },
+    {
+      "sourceId": 2497,
+      "name": "DB Floor Press (5kg Single Arm)"
+    },
+    {
+      "sourceId": 974,
+      "name": "Curl with kettlebell two hands"
+    },
+    {
+      "sourceId": 1713,
+      "name": "Doorway Pectoral Stretch"
+    },
+    {
+      "sourceId": 577,
+      "name": "Side Dumbbell Trunk Flexion"
+    },
+    {
+      "sourceId": 578,
+      "name": "Side-lying External Rotation"
+    },
+    {
+      "sourceId": 595,
+      "name": "Skipping - Standard"
+    },
+    {
+      "sourceId": 556,
+      "name": "Side Bends on Machine"
+    },
+    {
+      "sourceId": 624,
+      "name": "Stationary Bike"
+    },
+    {
+      "sourceId": 655,
+      "name": "Tricep Dumbbell Kickback"
+    },
+    {
+      "sourceId": 636,
+      "name": "Superman"
+    },
+    {
+      "sourceId": 661,
+      "name": "Triceps on Machine"
+    },
+    {
+      "sourceId": 623,
+      "name": "Standing Rope Forearm"
+    },
+    {
+      "sourceId": 683,
+      "name": "Power Clean"
+    },
+    {
+      "sourceId": 688,
+      "name": "Upper External Oblique"
+    },
+    {
+      "sourceId": 716,
+      "name": "Wall Slides"
+    },
+    {
+      "sourceId": 687,
+      "name": "Overhead Press"
+    },
+    {
+      "sourceId": 1027,
+      "name": "Elevated prayer stretch"
+    },
+    {
+      "sourceId": 1028,
+      "name": "Quadruped thoracic rotation left"
+    },
+    {
+      "sourceId": 1081,
+      "name": "Shoulder dislocates"
+    },
+    {
+      "sourceId": 1082,
+      "name": "Bent over row to external rotation"
+    },
+    {
+      "sourceId": 1083,
+      "name": "YWTs"
+    },
+    {
+      "sourceId": 1090,
+      "name": "Vpushup"
+    },
+    {
+      "sourceId": 1104,
+      "name": "Walking"
+    },
+    {
+      "sourceId": 1125,
+      "name": "Wide-grip supinated lat pulldown"
+    },
+    {
+      "sourceId": 2484,
+      "name": "Side-Kick Breathing (Kickboard)"
+    },
+    {
+      "sourceId": 1101,
+      "name": "Horizontal traction isometry"
+    },
+    {
+      "sourceId": 9,
+      "name": "2 Handed Kettlebell Swing"
+    },
+    {
+      "sourceId": 1011,
+      "name": "Front neck stretch"
+    },
+    {
+      "sourceId": 1204,
+      "name": "Cycling cardio session"
+    },
+    {
+      "sourceId": 2498,
+      "name": "Pike Push-ups (Vasco L1)"
+    },
+    {
+      "sourceId": 1208,
+      "name": "Prisoner Squat"
+    },
+    {
+      "sourceId": 911,
+      "name": "Incline Skull Crush"
+    },
+    {
+      "sourceId": 1093,
+      "name": "Rowing Machine"
+    },
+    {
+      "sourceId": 1094,
+      "name": "Seated Bench Press"
+    },
+    {
+      "sourceId": 1096,
+      "name": "Abduction while standing"
+    },
+    {
+      "sourceId": 1099,
+      "name": "Dynamic side hold"
+    },
+    {
+      "sourceId": 1102,
+      "name": "Alternate back lunges"
+    },
+    {
+      "sourceId": 1103,
+      "name": "walking bridge"
+    },
+    {
+      "sourceId": 1111,
+      "name": "Push-Ups | Incline"
+    },
+    {
+      "sourceId": 1113,
+      "name": "Push-Ups | Parallettes"
+    },
+    {
+      "sourceId": 1114,
+      "name": "Rest (for timed workouts)"
+    },
+    {
+      "sourceId": 1115,
+      "name": "3D lunge warmup"
+    },
+    {
+      "sourceId": 1116,
+      "name": "Dumbbell farmer's carry"
+    },
+    {
+      "sourceId": 1132,
+      "name": "Machine glute extension"
+    },
+    {
+      "sourceId": 1195,
+      "name": "Side Slides + Squats"
+    },
+    {
+      "sourceId": 1196,
+      "name": "Wall Drills"
+    },
+    {
+      "sourceId": 1200,
+      "name": "Tibialis raises"
+    },
+    {
+      "sourceId": 1201,
+      "name": "Dragon squat"
+    },
+    {
+      "sourceId": 1202,
+      "name": "Side Lying Hip Abduction"
+    },
+    {
+      "sourceId": 1203,
+      "name": "Calf raises, left leg"
+    },
+    {
+      "sourceId": 1205,
+      "name": "Wrist curl, dumbbells"
+    },
+    {
+      "sourceId": 1207,
+      "name": "Scorpion Kick"
+    },
+    {
+      "sourceId": 1210,
+      "name": "Skydiver with arms in T-position"
+    },
+    {
+      "sourceId": 260,
+      "name": "Full Sit Outs"
+    },
+    {
+      "sourceId": 1215,
+      "name": "Reverse Snow Angel"
+    },
+    {
+      "sourceId": 1241,
+      "name": "Exercise Band Dorsiflexion"
+    },
+    {
+      "sourceId": 1242,
+      "name": "Exercise Band Plantarflexion"
+    },
+    {
+      "sourceId": 1218,
+      "name": "knee push-ups"
+    },
+    {
+      "sourceId": 1219,
+      "name": "Australian pull-ups"
+    },
+    {
+      "sourceId": 1714,
+      "name": "Shoulder Dumbbell Pendular Exercise"
+    },
+    {
+      "sourceId": 2485,
+      "name": "Stroke-and-Roll Drill"
+    },
+    {
+      "sourceId": 1234,
+      "name": "Dumbbell Single-leg Hip Thrust"
+    },
+    {
+      "sourceId": 1715,
+      "name": "Shoulder External Rotation with Dumbbell"
+    },
+    {
+      "sourceId": 1224,
+      "name": "Dumbbell drag curls"
+    },
+    {
+      "sourceId": 1716,
+      "name": "Incline Shoulder Press Up"
+    },
+    {
+      "sourceId": 1209,
+      "name": "Shoulder width three-point push-up"
+    },
+    {
+      "sourceId": 1228,
+      "name": "Dumbbell close grip bench press"
+    },
+    {
+      "sourceId": 599,
+      "name": "Snatch"
+    },
+    {
+      "sourceId": 1216,
+      "name": "Recruitment Pulls"
+    },
+    {
+      "sourceId": 142,
+      "name": "Cable External Rotation"
+    },
+    {
+      "sourceId": 1270,
+      "name": "Low Pulley Cable Fly"
+    },
+    {
+      "sourceId": 1656,
+      "name": "Cable Chest Press - Decline"
+    },
+    {
+      "sourceId": 1717,
+      "name": "Neck extension"
+    },
+    {
+      "sourceId": 1718,
+      "name": "Remo alto polea alta"
+    },
+    {
+      "sourceId": 1238,
+      "name": "Frog stand"
+    },
+    {
+      "sourceId": 1092,
+      "name": "Bag training"
+    },
+    {
+      "sourceId": 1240,
+      "name": "Standing Soleus Stretch"
+    },
+    {
+      "sourceId": 2499,
+      "name": "Incline Push-ups (Vasco L2)"
+    },
+    {
+      "sourceId": 1244,
+      "name": "Yoga exercise: Cow-cat"
+    },
+    {
+      "sourceId": 1245,
+      "name": "Front Lever"
+    },
+    {
+      "sourceId": 1246,
+      "name": "TRX roll out"
+    },
+    {
+      "sourceId": 1248,
+      "name": "Ice cream maker"
+    },
+    {
+      "sourceId": 1252,
+      "name": "Front lever pull-up"
+    },
+    {
+      "sourceId": 1214,
+      "name": "Front lever tuck"
+    },
+    {
+      "sourceId": 1259,
+      "name": "TRX Obliques"
+    },
+    {
+      "sourceId": 1260,
+      "name": "TRX hammer curl"
+    },
+    {
+      "sourceId": 1261,
+      "name": "TRX gorilla biceps curl"
+    },
+    {
+      "sourceId": 1262,
+      "name": "Trx Single Arm Bicep Curl"
+    },
+    {
+      "sourceId": 1263,
+      "name": "Back bridge"
+    },
+    {
+      "sourceId": 1266,
+      "name": "TRX Tricep Extension"
+    },
+    {
+      "sourceId": 1269,
+      "name": "TRX dips"
+    },
+    {
+      "sourceId": 1273,
+      "name": "Pullover"
+    },
+    {
+      "sourceId": 1280,
+      "name": "Biceps Close Grip Pull Down"
+    },
+    {
+      "sourceId": 1282,
+      "name": "Isometria trazioni impugnatura inversa"
+    },
+    {
+      "sourceId": 1284,
+      "name": "Pseudo Planche Push-up"
+    },
+    {
+      "sourceId": 1286,
+      "name": "Dynamic Planche"
+    },
+    {
+      "sourceId": 1287,
+      "name": "Reach ups"
+    },
+    {
+      "sourceId": 1288,
+      "name": "Dynamic side plank"
+    },
+    {
+      "sourceId": 1289,
+      "name": "Seated Dumbbell Curls"
+    },
+    {
+      "sourceId": 1292,
+      "name": "Reverse-grip pull-ups"
+    },
+    {
+      "sourceId": 1293,
+      "name": "One armed push-ups"
+    },
+    {
+      "sourceId": 1662,
+      "name": "Cable Tri Extension - Internal Rotation"
+    },
+    {
+      "sourceId": 1657,
+      "name": "Preacher Curl - Internally Rotated"
+    },
+    {
+      "sourceId": 1302,
+      "name": "JM Press"
+    },
+    {
+      "sourceId": 1303,
+      "name": "Helms Row"
+    },
+    {
+      "sourceId": 1304,
+      "name": "Meadows Row"
+    },
+    {
+      "sourceId": 1307,
+      "name": "Front Plank"
+    },
+    {
+      "sourceId": 1668,
+      "name": "One Arm Overhead Cable Tricep Extension"
+    },
+    {
+      "sourceId": 2486,
+      "name": "Recovery Bobbing"
+    },
+    {
+      "sourceId": 1666,
+      "name": "Curl - With Shoulder Elevated"
+    },
+    {
+      "sourceId": 1294,
+      "name": "Single-leg hamstring curl"
+    },
+    {
+      "sourceId": 1314,
+      "name": "Jumping Jack HD"
+    },
+    {
+      "sourceId": 1380,
+      "name": "Band pull-aparts"
+    },
+    {
+      "sourceId": 1388,
+      "name": "Single Leg RDL"
+    },
+    {
+      "sourceId": 1318,
+      "name": "High Knee Skips HD"
+    },
+    {
+      "sourceId": 1320,
+      "name": "Bench Dips On Floor HD"
+    },
+    {
+      "sourceId": 1366,
+      "name": "Dumbbell Split Squat"
+    },
+    {
+      "sourceId": 1370,
+      "name": "Dumbbell Deadlift"
+    },
+    {
+      "sourceId": 1324,
+      "name": "Bodyweight lunge HD"
+    },
+    {
+      "sourceId": 1670,
+      "name": "Leg Swings (Front–Back)"
+    },
+    {
+      "sourceId": 1672,
+      "name": "Seated Hip Abduction"
+    },
+    {
+      "sourceId": 1659,
+      "name": "Lat Pulldown - Cross Body Single Arm"
+    },
+    {
+      "sourceId": 1660,
+      "name": "Cable Chest Press - Incline"
+    },
+    {
+      "sourceId": 1661,
+      "name": "Cable Triceps Press"
+    },
+    {
+      "sourceId": 1679,
+      "name": "Wall Angels"
+    },
+    {
+      "sourceId": 1680,
+      "name": "seated figure four"
+    },
+    {
+      "sourceId": 1360,
+      "name": "Double Kettlebell Clean and Press"
+    },
+    {
+      "sourceId": 1361,
+      "name": "Double Kettlebell Front Squat"
+    },
+    {
+      "sourceId": 1373,
+      "name": "box jumps"
+    },
+    {
+      "sourceId": 1374,
+      "name": "Rotary Torso Machine"
+    },
+    {
+      "sourceId": 1376,
+      "name": "Recumbent Bike"
+    },
+    {
+      "sourceId": 1381,
+      "name": "Upper Back"
+    },
+    {
+      "sourceId": 1312,
+      "name": "Bodyweight Squat HD"
+    },
+    {
+      "sourceId": 1384,
+      "name": "Pullover Machine"
+    },
+    {
+      "sourceId": 1683,
+      "name": "Zottman curl"
+    },
+    {
+      "sourceId": 650,
+      "name": "Thruster"
+    },
+    {
+      "sourceId": 1390,
+      "name": "Toe Touch"
+    },
+    {
+      "sourceId": 1684,
+      "name": "Dumbbell Thruster"
+    },
+    {
+      "sourceId": 1686,
+      "name": "Glute Bridge Single-Arm Press"
+    },
+    {
+      "sourceId": 1687,
+      "name": "Bear crawl pull through"
+    },
+    {
+      "sourceId": 1372,
+      "name": "Triceps Dips (Assisted)"
+    },
+    {
+      "sourceId": 1391,
+      "name": "Elephant Walks"
+    },
+    {
+      "sourceId": 1393,
+      "name": "Single Leg Hamstring Stretch"
+    },
+    {
+      "sourceId": 1394,
+      "name": "Sit & Reach"
+    },
+    {
+      "sourceId": 1395,
+      "name": "Crossbody Leg Swings"
+    },
+    {
+      "sourceId": 1396,
+      "name": "Standing Pancake"
+    },
+    {
+      "sourceId": 1398,
+      "name": "Hamstring Chokes"
+    },
+    {
+      "sourceId": 1399,
+      "name": "Roll Down"
+    },
+    {
+      "sourceId": 1400,
+      "name": "Crossbody Hamstring Stretch"
+    },
+    {
+      "sourceId": 1658,
+      "name": "Preacher Curl - Externally Rotated"
+    },
+    {
+      "sourceId": 1406,
+      "name": "Plank-to-Elbow Extension"
+    },
+    {
+      "sourceId": 2487,
+      "name": "Cool-Down Swim"
+    },
+    {
+      "sourceId": 1489,
+      "name": "Plank Jacks"
+    },
+    {
+      "sourceId": 1407,
+      "name": "Cossack squat"
+    },
+    {
+      "sourceId": 1408,
+      "name": "Wall-sit"
+    },
+    {
+      "sourceId": 1409,
+      "name": "Dragon-flag"
+    },
+    {
+      "sourceId": 1410,
+      "name": "Plank with Alternating Leg Lift"
+    },
+    {
+      "sourceId": 1411,
+      "name": "Heel Touches"
+    },
+    {
+      "sourceId": 1412,
+      "name": "bicycle crunches"
+    },
+    {
+      "sourceId": 1457,
+      "name": "Cable Press Around"
+    },
+    {
+      "sourceId": 1414,
+      "name": "Hack Squats"
+    },
+    {
+      "sourceId": 1415,
+      "name": "Dumbbell Crunches"
+    },
+    {
+      "sourceId": 1458,
+      "name": "Cross-Body Cable Y-Raise"
+    },
+    {
+      "sourceId": 1469,
+      "name": "Bent over Cable Flye"
+    },
+    {
+      "sourceId": 1470,
+      "name": "1-Arm Half-Kneeling Lat Pulldown"
+    },
+    {
+      "sourceId": 1472,
+      "name": "Cable Shrug-In"
+    },
+    {
+      "sourceId": 1473,
+      "name": "Reverse Cable Flye"
+    },
+    {
+      "sourceId": 1481,
+      "name": "Drag Pushdown"
+    },
+    {
+      "sourceId": 1484,
+      "name": "Omni Cable Cross-over"
+    },
+    {
+      "sourceId": 1485,
+      "name": "Rocking Triceps Pushdown"
+    },
+    {
+      "sourceId": 1424,
+      "name": "Biceps Curl Machine"
+    },
+    {
+      "sourceId": 1425,
+      "name": "Toe Taps"
+    },
+    {
+      "sourceId": 1426,
+      "name": "Standing Side Crunches"
+    },
+    {
+      "sourceId": 1486,
+      "name": "Alternating High Cable Row"
+    },
+    {
+      "sourceId": 2501,
+      "name": "Table Bodyweight Rows (Vasco L1)"
+    },
+    {
+      "sourceId": 1429,
+      "name": "Dumbbell Shoulder Rotations"
+    },
+    {
+      "sourceId": 1430,
+      "name": "Plate Pinch Hold"
+    },
+    {
+      "sourceId": 1433,
+      "name": "Reverse Wood Chops"
+    },
+    {
+      "sourceId": 1434,
+      "name": "Lat Pull DB"
+    },
+    {
+      "sourceId": 1435,
+      "name": "Scapula Pulls"
+    },
+    {
+      "sourceId": 1436,
+      "name": "Pin Bench Press BB"
+    },
+    {
+      "sourceId": 1437,
+      "name": "Pin Squat"
+    },
+    {
+      "sourceId": 1438,
+      "name": "Clean"
+    },
+    {
+      "sourceId": 1439,
+      "name": "Pin OHP"
+    },
+    {
+      "sourceId": 1440,
+      "name": "Push OHP"
+    },
+    {
+      "sourceId": 1441,
+      "name": "Incline OHP DB"
+    },
+    {
+      "sourceId": 1442,
+      "name": "Kreis Press DB"
+    },
+    {
+      "sourceId": 1443,
+      "name": "Shoulder Raise Side and Front DB"
+    },
+    {
+      "sourceId": 1445,
+      "name": "Jerk OL"
+    },
+    {
+      "sourceId": 1446,
+      "name": "Clean and Jerk OL"
+    },
+    {
+      "sourceId": 1447,
+      "name": "Snatch OL"
+    },
+    {
+      "sourceId": 1449,
+      "name": "ClimbMill"
+    },
+    {
+      "sourceId": 1450,
+      "name": "Cobra Stretch"
+    },
+    {
+      "sourceId": 1451,
+      "name": "Torso rotation stretch"
+    },
+    {
+      "sourceId": 1455,
+      "name": "Towel Superman"
+    },
+    {
+      "sourceId": 1461,
+      "name": "No Leg Drive Dumbbell Chest Press"
+    },
+    {
+      "sourceId": 1462,
+      "name": "punches"
+    },
+    {
+      "sourceId": 1463,
+      "name": "Dumbbell Underhand Dead Row"
+    },
+    {
+      "sourceId": 1464,
+      "name": "Pause Hack Squats"
+    },
+    {
+      "sourceId": 1465,
+      "name": "Spider Curl"
+    },
+    {
+      "sourceId": 1466,
+      "name": "Calf Raise using Hack Squat Machine"
+    },
+    {
+      "sourceId": 1467,
+      "name": "Incline Close Grip Barbell Bench Press"
+    },
+    {
+      "sourceId": 1468,
+      "name": "Floor Skull Crusher"
+    },
+    {
+      "sourceId": 1471,
+      "name": "Kroc Row"
+    },
+    {
+      "sourceId": 1474,
+      "name": "W-Raise"
+    },
+    {
+      "sourceId": 1475,
+      "name": "Black Widow Knee Slides"
+    },
+    {
+      "sourceId": 1476,
+      "name": "Butterfly Sit Up"
+    },
+    {
+      "sourceId": 1477,
+      "name": "Seated Corkscrew"
+    },
+    {
+      "sourceId": 1478,
+      "name": "Levitation Crunch"
+    },
+    {
+      "sourceId": 1480,
+      "name": "Lying Triceps Extensions"
+    },
+    {
+      "sourceId": 1482,
+      "name": "Dumbbell Cheat Curl"
+    },
+    {
+      "sourceId": 1483,
+      "name": "Bizeps Curls Trifecta"
+    },
+    {
+      "sourceId": 1487,
+      "name": "Hyper Y W Combo"
+    },
+    {
+      "sourceId": 1490,
+      "name": "Lying Triceps Kickback"
+    },
+    {
+      "sourceId": 1700,
+      "name": "Barbell Romanian Deadlift (RDL)"
+    },
+    {
+      "sourceId": 1496,
+      "name": "DB Upper Chest Variation"
+    },
+    {
+      "sourceId": 1497,
+      "name": "DB Underhand bench press"
+    },
+    {
+      "sourceId": 1498,
+      "name": "Elbows Tucked DB Bench Press"
+    },
+    {
+      "sourceId": 1514,
+      "name": "Lateral Walk"
+    },
+    {
+      "sourceId": 1501,
+      "name": "Alternative DB Gorilla rows"
+    },
+    {
+      "sourceId": 1502,
+      "name": "DB Cross Body Hammer Curls"
+    },
+    {
+      "sourceId": 1503,
+      "name": "Dumbbell Frog Press"
+    },
+    {
+      "sourceId": 1504,
+      "name": "Dumbbell Bradford press"
+    },
+    {
+      "sourceId": 1529,
+      "name": "Toes to bar"
+    },
+    {
+      "sourceId": 1508,
+      "name": "High-Incline Smith Machine Press"
+    },
+    {
+      "sourceId": 1511,
+      "name": "Kong Curl"
+    },
+    {
+      "sourceId": 1512,
+      "name": "Drop Curl"
+    },
+    {
+      "sourceId": 1515,
+      "name": "Leg Press Toe Press"
+    },
+    {
+      "sourceId": 1516,
+      "name": "Handstand"
+    },
+    {
+      "sourceId": 1693,
+      "name": "Incline Static Hold"
+    },
+    {
+      "sourceId": 1694,
+      "name": "Flat Machine Press"
+    },
+    {
+      "sourceId": 1523,
+      "name": "Sled Push"
+    },
+    {
+      "sourceId": 1524,
+      "name": "Battle Ropes"
+    },
+    {
+      "sourceId": 1525,
+      "name": "Ball Slams"
+    },
+    {
+      "sourceId": 1526,
+      "name": "Ski Machine"
+    },
+    {
+      "sourceId": 1527,
+      "name": "Pendulum Squat"
+    },
+    {
+      "sourceId": 1528,
+      "name": "Glute Drive"
+    },
+    {
+      "sourceId": 1530,
+      "name": "Lying Dumbbell Curls"
+    },
+    {
+      "sourceId": 1695,
+      "name": "Pull-Ups (Wide Grip)"
+    },
+    {
+      "sourceId": 1698,
+      "name": "Barbell Row (Overhand)"
+    },
+    {
+      "sourceId": 1699,
+      "name": "Barbell Row (Underhand)"
+    },
+    {
+      "sourceId": 1536,
+      "name": "Delt Stretch"
+    },
+    {
+      "sourceId": 1537,
+      "name": "Pull-up Isometric Hold"
+    },
+    {
+      "sourceId": 1701,
+      "name": "One-Arm Heavy Row"
+    },
+    {
+      "sourceId": 1703,
+      "name": "Patadas traseras"
+    },
+    {
+      "sourceId": 1704,
+      "name": "Tuck L-sit"
+    },
+    {
+      "sourceId": 1577,
+      "name": "Bretzel stretch"
+    },
+    {
+      "sourceId": 1545,
+      "name": "Archer Pull Up"
+    },
+    {
+      "sourceId": 1546,
+      "name": "Larsen Press"
+    },
+    {
+      "sourceId": 1548,
+      "name": "Stair Master"
+    },
+    {
+      "sourceId": 1492,
+      "name": "High Row"
+    },
+    {
+      "sourceId": 1707,
+      "name": "Elevación lateral polea"
+    },
+    {
+      "sourceId": 1493,
+      "name": "Bayesian Curl"
+    },
+    {
+      "sourceId": 1509,
+      "name": "Cable Tricep Kickback"
+    },
+    {
+      "sourceId": 1710,
+      "name": "Butchers Block Stretch"
+    },
+    {
+      "sourceId": 1711,
+      "name": "Sleeper Stretch"
+    },
+    {
+      "sourceId": 1510,
+      "name": "Neutral Grip Lat Pulldown"
+    },
+    {
+      "sourceId": 1513,
+      "name": "Overhead Cable Tricep Extension"
+    },
+    {
+      "sourceId": 1531,
+      "name": "Cable Curls"
+    },
+    {
+      "sourceId": 1689,
+      "name": "Cable Fly Middle Chest"
+    },
+    {
+      "sourceId": 1690,
+      "name": "Cable Fly Upper Chest"
+    },
+    {
+      "sourceId": 1691,
+      "name": "Cable Fly Lower Chest"
+    },
+    {
+      "sourceId": 1702,
+      "name": "Jalón al pecho con agarre ancho"
+    },
+    {
+      "sourceId": 2502,
+      "name": "DB Single-Arm Row (5kg)"
+    },
+    {
+      "sourceId": 1574,
+      "name": "Schwimmen"
+    },
+    {
+      "sourceId": 1575,
+      "name": "Standing Dowel Shoulder press"
+    },
+    {
+      "sourceId": 1576,
+      "name": "Snap Down"
+    },
+    {
+      "sourceId": 1578,
+      "name": "Hip hinge"
+    },
+    {
+      "sourceId": 1579,
+      "name": "Bronco"
+    },
+    {
+      "sourceId": 1580,
+      "name": "Perpendicular Unilateral Landmine Row"
+    },
+    {
+      "sourceId": 1583,
+      "name": "Supine press"
+    },
+    {
+      "sourceId": 1584,
+      "name": "March or jog in place"
+    },
+    {
+      "sourceId": 1589,
+      "name": "Leg and hip stretch"
+    },
+    {
+      "sourceId": 1590,
+      "name": "Arm and neck stretch"
+    },
+    {
+      "sourceId": 1591,
+      "name": "Deep breathing (standing or seated)"
+    },
+    {
+      "sourceId": 1592,
+      "name": "Guided or free meditation"
+    },
+    {
+      "sourceId": 1696,
+      "name": "Pull-Ups (Neutral Grip)"
+    },
+    {
+      "sourceId": 1712,
+      "name": "Horizontal Shoulder Flexion Stretch"
+    },
+    {
+      "sourceId": 1719,
+      "name": "Jalon caballero unialteral"
+    },
+    {
+      "sourceId": 1709,
+      "name": "Reverse Fly Standing"
+    },
+    {
+      "sourceId": 1724,
+      "name": "Standing Adduction (Cable)"
+    },
+    {
+      "sourceId": 1602,
+      "name": "Dumbbell Scaption"
+    },
+    {
+      "sourceId": 1603,
+      "name": "Leg curl with elastic"
+    },
+    {
+      "sourceId": 1605,
+      "name": "Copenhagen Adduction Exercise"
+    },
+    {
+      "sourceId": 1606,
+      "name": "Arm Raises (T/Y/I)"
+    },
+    {
+      "sourceId": 1607,
+      "name": "Typewriter Pull-ups"
+    },
+    {
+      "sourceId": 1608,
+      "name": "Bodyweight Biceps Curl"
+    },
+    {
+      "sourceId": 1723,
+      "name": "Glute Kickback (Machine)"
+    },
+    {
+      "sourceId": 1938,
+      "name": "Cat-Cow"
+    },
+    {
+      "sourceId": 1952,
+      "name": "SMR Glutes (lax ball)"
+    },
+    {
+      "sourceId": 1742,
+      "name": "Back Lever"
+    },
+    {
+      "sourceId": 1727,
+      "name": "Side Straight-Arm Pulldown (Cable)"
+    },
+    {
+      "sourceId": 1743,
+      "name": "Windshield Wipers"
+    },
+    {
+      "sourceId": 1737,
+      "name": "Assisted chin-ups"
+    },
+    {
+      "sourceId": 1739,
+      "name": "Shrimp Squad"
+    },
+    {
+      "sourceId": 1754,
+      "name": "45° lateral raises"
+    },
+    {
+      "sourceId": 1741,
+      "name": "L-Sit Pull-ups"
+    },
+    {
+      "sourceId": 1766,
+      "name": "Plank Reach"
+    },
+    {
+      "sourceId": 1774,
+      "name": "Chair dips"
+    },
+    {
+      "sourceId": 1728,
+      "name": "Shoulder Internal Rotation (Cable)"
+    },
+    {
+      "sourceId": 1729,
+      "name": "Shoulder External Rotation (Cable)"
+    },
+    {
+      "sourceId": 1730,
+      "name": "Side Lateral Raise (Cable)"
+    },
+    {
+      "sourceId": 1731,
+      "name": "Front Raise (Cable)"
+    },
+    {
+      "sourceId": 1751,
+      "name": "Cable pull through"
+    },
+    {
+      "sourceId": 1752,
+      "name": "Side lateral raise - Front (Cable)"
+    },
+    {
+      "sourceId": 1753,
+      "name": "Side lateral raise - Back (Cable)"
+    },
+    {
+      "sourceId": 1772,
+      "name": "Reverse crunch"
+    },
+    {
+      "sourceId": 1773,
+      "name": "Legend Incline Bench Press"
+    },
+    {
+      "sourceId": 1755,
+      "name": "Shoulder Y-pull cable"
+    },
+    {
+      "sourceId": 1771,
+      "name": "Wrist curl, cable"
+    },
+    {
+      "sourceId": 2503,
+      "name": "Face Pulls (Bodyweight Doorframe/Towel)"
+    },
+    {
+      "sourceId": 1740,
+      "name": "Single Leg Glute Bridge"
+    },
+    {
+      "sourceId": 1775,
+      "name": "Pec deck rear delt fly"
+    },
+    {
+      "sourceId": 1777,
+      "name": "Deficit Push ups"
+    },
+    {
+      "sourceId": 1843,
+      "name": "Butterfly Stretch"
+    },
+    {
+      "sourceId": 1844,
+      "name": "Frog Stretch"
+    },
+    {
+      "sourceId": 1779,
+      "name": "Landmine Rotation"
+    },
+    {
+      "sourceId": 1833,
+      "name": "Floor Glider Hamstring Curls"
+    },
+    {
+      "sourceId": 1827,
+      "name": "Double-Leg Abdominal Press"
+    },
+    {
+      "sourceId": 1776,
+      "name": "Suitcase Carry"
+    },
+    {
+      "sourceId": 1778,
+      "name": "Supino inclinado"
+    },
+    {
+      "sourceId": 1795,
+      "name": "unilateral cross body cable pull down"
+    },
+    {
+      "sourceId": 1832,
+      "name": "Ring Support Hold"
+    },
+    {
+      "sourceId": 1807,
+      "name": "Behind the Back Cable Lateral Raise"
+    },
+    {
+      "sourceId": 1882,
+      "name": "High-Cable Lateral Raise"
+    },
+    {
+      "sourceId": 2504,
+      "name": "DB Hammer Curls (5kg)"
+    },
+    {
+      "sourceId": 1803,
+      "name": "Trap Bar Squat"
+    },
+    {
+      "sourceId": 1808,
+      "name": "Parallel Bar Hold"
+    },
+    {
+      "sourceId": 1809,
+      "name": "Reverse Hyperextension"
+    },
+    {
+      "sourceId": 1810,
+      "name": "Sphinx"
+    },
+    {
+      "sourceId": 1822,
+      "name": "Open Book"
+    },
+    {
+      "sourceId": 1824,
+      "name": "Dumbell Tate Press"
+    },
+    {
+      "sourceId": 1825,
+      "name": "Chest-Supported Rear Delt Raise"
+    },
+    {
+      "sourceId": 1826,
+      "name": "Band pull-apart with external rotation"
+    },
+    {
+      "sourceId": 1828,
+      "name": "Abdominal Draw-In"
+    },
+    {
+      "sourceId": 1829,
+      "name": "Landmine Squat to Press"
+    },
+    {
+      "sourceId": 1834,
+      "name": "Trap-3 Raise"
+    },
+    {
+      "sourceId": 1838,
+      "name": "Banded Shoulder Drills"
+    },
+    {
+      "sourceId": 1839,
+      "name": "Solo Hip Flexor Stretch"
+    },
+    {
+      "sourceId": 1840,
+      "name": "Bent-Leg Hamstring Stretch"
+    },
+    {
+      "sourceId": 1841,
+      "name": "Seated Shoulder Extension Stretch"
+    },
+    {
+      "sourceId": 1846,
+      "name": "Horse Stance (Side Splits)"
+    },
+    {
+      "sourceId": 1877,
+      "name": "Banded Scapular Retraction"
+    },
+    {
+      "sourceId": 1879,
+      "name": "Incline DB Y-Raise"
+    },
+    {
+      "sourceId": 1881,
+      "name": "DB Wrist Extension"
+    },
+    {
+      "sourceId": 1823,
+      "name": "Clamshell"
+    },
+    {
+      "sourceId": 1842,
+      "name": "Banded Clamshell"
+    },
+    {
+      "sourceId": 1397,
+      "name": "Standing Pancake Good Morning"
+    },
+    {
+      "sourceId": 1845,
+      "name": "Seated Pancake Good Morning"
+    },
+    {
+      "sourceId": 1884,
+      "name": "Shinbox IR Stretch"
+    },
+    {
+      "sourceId": 1885,
+      "name": "YTWL Exercise"
+    },
+    {
+      "sourceId": 1886,
+      "name": "Supine Hip Abduction"
+    },
+    {
+      "sourceId": 1939,
+      "name": "Neck CARs"
+    },
+    {
+      "sourceId": 1948,
+      "name": "1 Leg Box Squat"
+    },
+    {
+      "sourceId": 1949,
+      "name": "Limber 11"
+    },
+    {
+      "sourceId": 1950,
+      "name": "Foam Roll IT Band"
+    },
+    {
+      "sourceId": 1953,
+      "name": "Bent-knee Iron Cross"
+    },
+    {
+      "sourceId": 1956,
+      "name": "Fire Hydrant Circles"
+    },
+    {
+      "sourceId": 1904,
+      "name": "Pec Deck"
+    },
+    {
+      "sourceId": 1906,
+      "name": "Hip Bridge"
+    },
+    {
+      "sourceId": 1907,
+      "name": "Unilateral Lunges"
+    },
+    {
+      "sourceId": 1908,
+      "name": "Butterfly Superman"
+    },
+    {
+      "sourceId": 1909,
+      "name": "Leg Wheel"
+    },
+    {
+      "sourceId": 1910,
+      "name": "Kneeling Superman"
+    },
+    {
+      "sourceId": 1911,
+      "name": "Cat Plank"
+    },
+    {
+      "sourceId": 1912,
+      "name": "Core Rotation"
+    },
+    {
+      "sourceId": 1913,
+      "name": "Unilateral Hip Thrust"
+    },
+    {
+      "sourceId": 1914,
+      "name": "Isometria alle parallele"
+    },
+    {
+      "sourceId": 1959,
+      "name": "Seated Piriformis Stretch"
+    },
+    {
+      "sourceId": 1925,
+      "name": "Barbell Silverback Shrug"
+    },
+    {
+      "sourceId": 723,
+      "name": "Wide-grip Pulldown"
+    },
+    {
+      "sourceId": 1927,
+      "name": "Inverted Lat Pull Down"
+    },
+    {
+      "sourceId": 1929,
+      "name": "Assisted Pull-Up"
+    },
+    {
+      "sourceId": 1931,
+      "name": "Dumbbell Curl"
+    },
+    {
+      "sourceId": 1905,
+      "name": "Pullback"
+    },
+    {
+      "sourceId": 1933,
+      "name": "Abdominal Crunch"
+    },
+    {
+      "sourceId": 1915,
+      "name": "Quadruped Hip Abduction"
+    },
+    {
+      "sourceId": 1935,
+      "name": "Belt Squat"
+    },
+    {
+      "sourceId": 20,
+      "name": "Arnold Shoulder Press"
+    },
+    {
+      "sourceId": 46,
+      "name": "Barbell Lunges Standing"
+    },
+    {
+      "sourceId": 43,
+      "name": "Barbell Hack Squats"
+    },
+    {
+      "sourceId": 48,
+      "name": "Barbell Reverse Wrist Curl"
+    },
+    {
+      "sourceId": 801,
+      "name": "Dumbbell Push-Up"
+    },
+    {
+      "sourceId": 1918,
+      "name": "Legend Chest Press"
+    },
+    {
+      "sourceId": 1919,
+      "name": "Extreme Pec Stretch"
+    },
+    {
+      "sourceId": 1920,
+      "name": "Extreme Shoulder Stretch"
+    },
+    {
+      "sourceId": 1921,
+      "name": "Extreme Lat Stretch"
+    },
+    {
+      "sourceId": 1924,
+      "name": "3008 Abdominal Crunch"
+    },
+    {
+      "sourceId": 1928,
+      "name": "Seated V-Grip Row"
+    },
+    {
+      "sourceId": 1936,
+      "name": "Cable Rear-Delt Fly (single arm)"
+    },
+    {
+      "sourceId": 82,
+      "name": "Bent-over Lateral Raises"
+    },
+    {
+      "sourceId": 186,
+      "name": "Decline Bench Press Dumbbell"
+    },
+    {
+      "sourceId": 56,
+      "name": "Abdominal Stabilization"
+    },
+    {
+      "sourceId": 239,
+      "name": "Fly With Dumbbells, Decline Bench"
+    },
+    {
+      "sourceId": 165,
+      "name": "Ball crunches"
+    },
+    {
+      "sourceId": 265,
+      "name": "Glute Bridge"
+    },
+    {
+      "sourceId": 124,
+      "name": "Braced Squat"
+    },
+    {
+      "sourceId": 148,
+      "name": "Calf Raises on Hackenschmitt Machine"
+    },
+    {
+      "sourceId": 137,
+      "name": "Butterfly Narrow Grip"
+    },
+    {
+      "sourceId": 172,
+      "name": "Crunches on Machine"
+    },
+    {
+      "sourceId": 139,
+      "name": "Butterfly Reverse"
+    },
+    {
+      "sourceId": 174,
+      "name": "Crunches With Legs Up"
+    },
+    {
+      "sourceId": 189,
+      "name": "Deficit Deadlift"
+    },
+    {
+      "sourceId": 235,
+      "name": "Flutter Kicks"
+    },
+    {
+      "sourceId": 193,
+      "name": "Diagonal Shoulder Press"
+    },
+    {
+      "sourceId": 205,
+      "name": "Dumbbell Lunges Standing"
+    },
+    {
+      "sourceId": 204,
+      "name": "Dumbbell Incline Curl"
+    },
+    {
+      "sourceId": 211,
+      "name": "Dumbbell Triceps Extension"
+    },
+    {
+      "sourceId": 254,
+      "name": "Front Raises with Plates"
+    },
+    {
+      "sourceId": 283,
+      "name": "Hanging Leg Raises"
+    },
+    {
+      "sourceId": 291,
+      "name": "Hindu Squats"
+    },
+    {
+      "sourceId": 245,
+      "name": "Skullcrusher Dumbbells"
+    },
+    {
+      "sourceId": 259,
+      "name": "Front Pull narrow"
+    },
+    {
+      "sourceId": 258,
+      "name": "Front pull wide"
+    },
+    {
+      "sourceId": 354,
+      "name": "Lat Pull Down (Leaning Back)"
+    },
+    {
+      "sourceId": 355,
+      "name": "Lat Pull Down (Straight Back)"
+    },
+    {
+      "sourceId": 351,
+      "name": "Lateral-to-Front Raises"
+    },
+    {
+      "sourceId": 341,
+      "name": "Squats on Multipress"
+    },
+    {
+      "sourceId": 308,
+      "name": "Incline Dumbbell Fly"
+    },
+    {
+      "sourceId": 803,
+      "name": "One Arm Triceps Extensions on Cable"
+    },
+    {
+      "sourceId": 331,
+      "name": "Kettlebell Swings"
+    },
+    {
+      "sourceId": 380,
+      "name": "Leverage Machine Iso Row"
+    },
+    {
+      "sourceId": 386,
+      "name": "Diamond push ups"
+    },
+    {
+      "sourceId": 378,
+      "name": "Leg Raises, Standing"
+    },
+    {
+      "sourceId": 379,
+      "name": "Leverage Machine Chest Press"
+    },
+    {
+      "sourceId": 376,
+      "name": "Leg Raise"
+    },
+    {
+      "sourceId": 397,
+      "name": "Low Box Squat - Wide Stance"
+    },
+    {
+      "sourceId": 374,
+      "name": "Leg Presses (wide)"
+    },
+    {
+      "sourceId": 448,
+      "name": "Pendelay Rows"
+    },
+    {
+      "sourceId": 445,
+      "name": "Pause Bench"
+    },
+    {
+      "sourceId": 477,
+      "name": "Pull Ups on Machine"
+    },
+    {
+      "sourceId": 545,
+      "name": "Scissors"
+    },
+    {
+      "sourceId": 493,
+      "name": "Reverse Bar Curl"
+    },
+    {
+      "sourceId": 490,
+      "name": "Renegade Row"
+    },
+    {
+      "sourceId": 549,
+      "name": "Seated Triceps Press"
+    },
+    {
+      "sourceId": 508,
+      "name": "Row"
+    },
+    {
+      "sourceId": 510,
+      "name": "Rowing, Lying on Bench"
+    },
+    {
+      "sourceId": 501,
+      "name": "Ring Dips"
+    },
+    {
+      "sourceId": 498,
+      "name": "Reverse Grip Bench Press"
+    },
+    {
+      "sourceId": 607,
+      "name": "Splinter Sit-ups"
+    },
+    {
+      "sourceId": 569,
+      "name": "Shoulder Press, on Multi Press"
+    },
+    {
+      "sourceId": 591,
+      "name": "Sit-ups"
+    },
+    {
+      "sourceId": 584,
+      "name": "Single-arm Preacher Curl"
+    },
+    {
+      "sourceId": 590,
+      "name": "Sitting Calf Raises"
+    },
+    {
+      "sourceId": 583,
+      "name": "Side to Side Push Ups"
+    },
+    {
+      "sourceId": 598,
+      "name": "Smith Machine Close-grip Bench Press"
+    },
+    {
+      "sourceId": 575,
+      "name": "Shrugs on Multipress"
+    },
+    {
+      "sourceId": 580,
+      "name": "Side Plank"
+    },
+    {
+      "sourceId": 632,
+      "name": "Sumo Squats"
+    },
+    {
+      "sourceId": 616,
+      "name": "Squat Thrust"
+    },
+    {
+      "sourceId": 627,
+      "name": "Stiff-legged Deadlifts"
+    },
+    {
+      "sourceId": 614,
+      "name": "Squat Jumps"
+    },
+    {
+      "sourceId": 615,
+      "name": "Squats"
+    },
+    {
+      "sourceId": 711,
+      "name": "Wall Handstand"
+    },
+    {
+      "sourceId": 684,
+      "name": "Underhand Lat Pull Down"
+    },
+    {
+      "sourceId": 621,
+      "name": "Standing Bicep Curl"
+    },
+    {
+      "sourceId": 507,
+      "name": "Romanian Deadlift"
+    },
+    {
+      "sourceId": 312,
+      "name": "Incline Plank With Alternate Floor Touch"
+    },
+    {
+      "sourceId": 529,
+      "name": "Run - Interval Training"
+    },
+    {
+      "sourceId": 562,
+      "name": "Shotgun Row"
+    },
+    {
+      "sourceId": 628,
+      "name": "Straight-arm Pull Down (bar Attachment)"
+    },
+    {
+      "sourceId": 629,
+      "name": "Straight-arm Pull Down (rope Attachment)"
+    },
+    {
+      "sourceId": 660,
+      "name": "Triceps Extensions on Cable With Bar"
+    },
+    {
+      "sourceId": 695,
+      "name": "V-Bar Pulldown"
+    },
+    {
+      "sourceId": 702,
+      "name": "Calf raises, one legged"
+    },
+    {
+      "sourceId": 713,
+      "name": "Wall Pushup"
+    },
+    {
+      "sourceId": 1940,
+      "name": "Diaphragmatic Breathing"
+    },
+    {
+      "sourceId": 202,
+      "name": "Dumbbell Concentration Curl"
+    },
+    {
+      "sourceId": 530,
+      "name": "Run - Treadmill"
+    },
+    {
+      "sourceId": 718,
+      "name": "Wall Squat"
+    },
+    {
+      "sourceId": 1847,
+      "name": "Straddle L-Sit"
+    },
+    {
+      "sourceId": 1852,
+      "name": "L-sit"
+    },
+    {
+      "sourceId": 1853,
+      "name": "L-Sit (Foot Supported)"
+    },
+    {
+      "sourceId": 1954,
+      "name": "Roll-overs into V-sits"
+    },
+    {
+      "sourceId": 441,
+      "name": "Overhead Squat"
+    },
+    {
+      "sourceId": 674,
+      "name": "Rowing with TRX band"
+    },
+    {
+      "sourceId": 1960,
+      "name": "Rear-foot-elevated Hip Flexor Stretch"
+    },
+    {
+      "sourceId": 173,
+      "name": "Crunches With Cable"
+    },
+    {
+      "sourceId": 1688,
+      "name": "Kickstand RDL"
+    },
+    {
+      "sourceId": 71,
+      "name": "Single Leg Extension"
+    }
+  ],
+  "invalid": [
+    {
+      "sourceId": 2500,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2505,
+      "reason": "Exercise is missing an English name"
+    },
+    {
+      "sourceId": 2506,
+      "reason": "Exercise is missing an English name"
+    }
+  ],
+  "collisions": []
+}
