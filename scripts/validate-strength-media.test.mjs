@@ -13,6 +13,11 @@ test("every generated strength drill has valid external or local media", async (
   assert.deepEqual(result.missing, []);
   assert.deepEqual(result.invalid, []);
   assert.deepEqual(result.reviewedInvalid, []);
+  assert.deepEqual(result.cableMissingFamily, []);
+  assert.deepEqual(result.cableGenericFallback, []);
+  assert.deepEqual(result.forbiddenLocalization, []);
+  assert.deepEqual(result.unknownReviewedIds, []);
+  assert.deepEqual(result.duplicateIds, []);
 });
 
 test("every generated strength drill has a Chinese title and cue", async () => {

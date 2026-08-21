@@ -62,11 +62,17 @@ function findSourceIdCollisions(exercises) {
   return collisions;
 }
 
-async function writeGeneratedCatalog(recordsByCategory, counts, reviewedOverrides) {
-  await fs.rm(outputDir, { recursive: true, force: true });
-  await fs.mkdir(outputDir, { recursive: true });
+export async function writeGeneratedCatalog({
+  recordsByCategory,
+  counts,
+  reviewedOverrides,
+  outputDir: targetOutputDir = outputDir,
+  categoryOrder: targetCategoryOrder = categoryOrder,
+}) {
+  await fs.rm(targetOutputDir, { recursive: true, force: true });
+  await fs.mkdir(targetOutputDir, { recursive: true });
 
-  for (const category of categoryOrder) {
+  for (const category of targetCategoryOrder) {
     const records = (recordsByCategory[category] ?? []).map((record) => {
       const override = reviewedOverrides[record.id] ?? {};
       const reviewed = { ...record, ...override };
@@ -79,15 +85,15 @@ async function writeGeneratedCatalog(recordsByCategory, counts, reviewedOverride
           };
     });
     const source = "export const records = " + JSON.stringify(records, null, 2) + ";\n";
-    await fs.writeFile(path.join(outputDir, category + ".ts"), source);
+    await fs.writeFile(path.join(targetOutputDir, category + ".ts"), source);
   }
 
   const manifest = [
-    "export const generatedStrengthCategories = " + JSON.stringify(categoryOrder) + " as const;",
+    "export const generatedStrengthCategories = " + JSON.stringify(targetCategoryOrder) + " as const;",
     "export const generatedStrengthCounts = " + JSON.stringify(counts, null, 2) + " as const;",
     "",
   ].join("\n");
-  await fs.writeFile(path.join(outputDir, "manifest.ts"), manifest);
+  await fs.writeFile(path.join(targetOutputDir, "manifest.ts"), manifest);
 }
 
 async function main() {
@@ -117,7 +123,7 @@ async function main() {
   }
   const counts = Object.fromEntries(categoryOrder.map((category) => [category, recordsByCategory[category].length]));
 
-  await writeGeneratedCatalog(recordsByCategory, counts, reviewedOverrides);
+  await writeGeneratedCatalog({ recordsByCategory, counts, reviewedOverrides });
   const outputReport = {
     source: apiUrl,
     sourceLicense: "wger initial exercise data: CC BY-SA 3.0",
@@ -146,7 +152,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error.stack || error.message);
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error.stack || error.message);
+    process.exitCode = 1;
+  });
+}
