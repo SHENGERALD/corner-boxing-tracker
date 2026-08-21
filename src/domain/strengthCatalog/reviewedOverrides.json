@@ -70,48 +70,436 @@
     "imageUrl": "/assets/strength/reviewed/wger-1374.png",
     "imageSource": "Corner generated"
   },
-  "wger-1493": { "name": { "zhTW": "貝氏滑輪彎舉" } },
-  "wger-95": { "name": { "zhTW": "滑輪二頭肌彎舉" } },
-  "wger-1109": { "name": { "zhTW": "滑輪集中彎舉" } },
-  "wger-1531": { "name": { "zhTW": "滑輪彎舉" } },
-  "wger-1662": { "name": { "zhTW": "滑輪三頭肌伸展（內旋）" } },
-  "wger-1509": { "name": { "zhTW": "滑輪三頭肌後踢" } },
-  "wger-1661": { "name": { "zhTW": "滑輪三頭肌推壓" } },
-  "wger-275": { "name": { "zhTW": "滑輪槌式彎舉" } },
-  "wger-1490": { "name": { "zhTW": "斜板俯臥三頭肌後踢" } },
-  "wger-1668": { "name": { "zhTW": "單臂過頭滑輪三頭肌伸展" } },
-  "wger-914": { "name": { "zhTW": "反握 EZ 槓滑輪彎舉" } },
-  "wger-912": { "name": { "zhTW": "直槓滑輪彎舉" } },
-  "wger-1900": { "name": { "zhTW": "繩索三頭肌下壓" } },
-  "wger-659": { "name": { "zhTW": "滑輪三頭肌伸展" } },
-  "wger-1458": { "name": { "zhTW": "交叉滑輪 Y 字上舉" } },
-  "wger-1492": { "name": { "zhTW": "高位滑輪划船" } },
-  "wger-1186": { "name": { "zhTW": "單臂俯身滑輪划船" } },
-  "wger-1905": { "name": { "zhTW": "滑輪後拉" } },
-  "wger-1473": { "name": { "zhTW": "反向滑輪飛鳥" } },
-  "wger-922": { "name": { "zhTW": "坐姿滑輪中斜方肌聳肩" } },
-  "wger-1621": { "name": { "zhTW": "單臂滑輪划船" } },
-  "wger-1469": { "name": { "zhTW": "俯身滑輪飛鳥" } },
-  "wger-1656": { "name": { "zhTW": "下斜滑輪胸推" } },
-  "wger-323": { "name": { "zhTW": "滑輪交叉夾胸" } },
-  "wger-1691": { "name": { "zhTW": "下胸滑輪飛鳥" } },
-  "wger-1689": { "name": { "zhTW": "中胸滑輪飛鳥" } },
-  "wger-1457": { "name": { "zhTW": "滑輪環繞推胸" } },
-  "wger-1270": { "name": { "zhTW": "低位滑輪飛鳥" } },
-  "wger-1296": { "name": { "zhTW": "低位滑輪交叉夾胸" } },
-  "wger-1484": { "name": { "zhTW": "全方向滑輪交叉夾胸" } },
-  "wger-1112": { "name": { "zhTW": "下斜俯臥撐" } },
-  "wger-145": { "name": { "zhTW": "滑輪伐木式轉體" } },
-  "wger-173": { "name": { "zhTW": "跪姿滑輪捲腹" } },
-  "wger-439": { "name": { "zhTW": "正握滑輪彎舉" } },
-  "wger-672": { "name": { "zhTW": "坐姿滑輪軀幹旋轉" } },
-  "wger-1131": { "name": { "zhTW": "滑輪臀部後伸" } },
-  "wger-1751": { "name": { "zhTW": "滑輪拉臀" } },
-  "wger-990": { "name": { "zhTW": "跪姿後踢" } },
-  "wger-142": { "name": { "zhTW": "滑輪肩外旋" } },
-  "wger-1472": { "name": { "zhTW": "滑輪內收聳肩" } },
-  "wger-349": { "name": { "zhTW": "單臂滑輪橫向划船" } },
-  "wger-1755": { "name": { "zhTW": "滑輪 Y 字上拉" } },
-  "wger-917": { "name": { "zhTW": "直槓滑輪前平舉" } },
-  "wger-1795": { "name": { "zhTW": "單臂交叉滑輪下拉" } }
+  "wger-1493": {
+    "name": {
+      "zhTW": "貝氏滑輪彎舉"
+    },
+    "mediaFamilyId": "cable-curl-bayesian"
+  },
+  "wger-95": {
+    "name": {
+      "zhTW": "滑輪二頭肌彎舉"
+    },
+    "mediaFamilyId": "cable-curl"
+  },
+  "wger-1109": {
+    "name": {
+      "zhTW": "滑輪集中彎舉"
+    },
+    "mediaFamilyId": "cable-curl-single-arm"
+  },
+  "wger-1531": {
+    "name": {
+      "zhTW": "滑輪彎舉"
+    },
+    "mediaFamilyId": "cable-curl"
+  },
+  "wger-1662": {
+    "name": {
+      "zhTW": "滑輪三頭肌伸展（內旋）"
+    },
+    "mediaFamilyId": "cable-triceps-cross-extension"
+  },
+  "wger-1509": {
+    "name": {
+      "zhTW": "滑輪三頭肌後踢"
+    },
+    "mediaFamilyId": "cable-triceps-kickback"
+  },
+  "wger-1661": {
+    "name": {
+      "zhTW": "滑輪三頭肌推壓"
+    },
+    "mediaFamilyId": "cable-pushdown-bar"
+  },
+  "wger-275": {
+    "name": {
+      "zhTW": "滑輪槌式彎舉"
+    },
+    "mediaFamilyId": "cable-curl-hammer"
+  },
+  "wger-1490": {
+    "name": {
+      "zhTW": "斜板俯臥三頭肌後踢"
+    }
+  },
+  "wger-1668": {
+    "name": {
+      "zhTW": "單臂過頭滑輪三頭肌伸展"
+    },
+    "mediaFamilyId": "cable-triceps-overhead"
+  },
+  "wger-914": {
+    "name": {
+      "zhTW": "反握 EZ 槓滑輪彎舉"
+    },
+    "mediaFamilyId": "cable-curl-bar"
+  },
+  "wger-912": {
+    "name": {
+      "zhTW": "直槓滑輪彎舉"
+    },
+    "mediaFamilyId": "cable-curl-bar"
+  },
+  "wger-1900": {
+    "name": {
+      "zhTW": "繩索三頭肌下壓"
+    },
+    "mediaFamilyId": "cable-pushdown-rope"
+  },
+  "wger-659": {
+    "name": {
+      "zhTW": "滑輪三頭肌伸展"
+    },
+    "mediaFamilyId": "cable-pushdown-bar"
+  },
+  "wger-1458": {
+    "name": {
+      "zhTW": "交叉滑輪 Y 字上舉"
+    },
+    "mediaFamilyId": "cable-y-raise"
+  },
+  "wger-1492": {
+    "name": {
+      "zhTW": "高位滑輪划船"
+    },
+    "mediaFamilyId": "cable-row-high"
+  },
+  "wger-1186": {
+    "name": {
+      "zhTW": "單臂俯身滑輪划船"
+    },
+    "mediaFamilyId": "cable-row-single-arm"
+  },
+  "wger-1905": {
+    "name": {
+      "zhTW": "滑輪後拉"
+    },
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-1473": {
+    "name": {
+      "zhTW": "反向滑輪飛鳥"
+    },
+    "mediaFamilyId": "cable-rear-delt-fly"
+  },
+  "wger-922": {
+    "name": {
+      "zhTW": "坐姿滑輪中斜方肌聳肩"
+    },
+    "mediaFamilyId": "cable-shrug"
+  },
+  "wger-1621": {
+    "name": {
+      "zhTW": "單臂滑輪划船"
+    },
+    "mediaFamilyId": "cable-row-single-arm"
+  },
+  "wger-1469": {
+    "name": {
+      "zhTW": "俯身滑輪飛鳥"
+    },
+    "mediaFamilyId": "cable-rear-delt-fly"
+  },
+  "wger-1656": {
+    "name": {
+      "zhTW": "下斜滑輪胸推"
+    },
+    "mediaFamilyId": "cable-chest-press"
+  },
+  "wger-323": {
+    "name": {
+      "zhTW": "滑輪交叉夾胸"
+    },
+    "mediaFamilyId": "cable-chest-crossover"
+  },
+  "wger-1691": {
+    "name": {
+      "zhTW": "下胸滑輪飛鳥"
+    },
+    "mediaFamilyId": "cable-chest-fly-low"
+  },
+  "wger-1689": {
+    "name": {
+      "zhTW": "中胸滑輪飛鳥"
+    },
+    "mediaFamilyId": "cable-chest-fly-mid"
+  },
+  "wger-1457": {
+    "name": {
+      "zhTW": "滑輪環繞推胸"
+    },
+    "mediaFamilyId": "cable-chest-press"
+  },
+  "wger-1270": {
+    "name": {
+      "zhTW": "低位滑輪飛鳥"
+    },
+    "mediaFamilyId": "cable-chest-fly-low"
+  },
+  "wger-1296": {
+    "name": {
+      "zhTW": "低位滑輪交叉夾胸"
+    },
+    "mediaFamilyId": "cable-chest-fly-low"
+  },
+  "wger-1484": {
+    "name": {
+      "zhTW": "全方向滑輪交叉夾胸"
+    },
+    "mediaFamilyId": "cable-chest-crossover"
+  },
+  "wger-1112": {
+    "name": {
+      "zhTW": "下斜俯臥撐"
+    }
+  },
+  "wger-145": {
+    "name": {
+      "zhTW": "滑輪伐木式轉體"
+    },
+    "mediaFamilyId": "cable-core-rotation"
+  },
+  "wger-173": {
+    "name": {
+      "zhTW": "跪姿滑輪捲腹"
+    },
+    "mediaFamilyId": "cable-crunch"
+  },
+  "wger-439": {
+    "name": {
+      "zhTW": "正握滑輪彎舉"
+    },
+    "mediaFamilyId": "cable-curl-bar"
+  },
+  "wger-672": {
+    "name": {
+      "zhTW": "坐姿滑輪軀幹旋轉"
+    },
+    "mediaFamilyId": "cable-core-rotation"
+  },
+  "wger-1131": {
+    "name": {
+      "zhTW": "滑輪臀部後伸"
+    },
+    "mediaFamilyId": "cable-glute-extension"
+  },
+  "wger-1751": {
+    "name": {
+      "zhTW": "滑輪拉臀"
+    },
+    "mediaFamilyId": "cable-pull-through"
+  },
+  "wger-990": {
+    "name": {
+      "zhTW": "跪姿後踢"
+    }
+  },
+  "wger-142": {
+    "name": {
+      "zhTW": "滑輪肩外旋"
+    },
+    "mediaFamilyId": "cable-shoulder-rotation"
+  },
+  "wger-1472": {
+    "name": {
+      "zhTW": "滑輪內收聳肩"
+    },
+    "mediaFamilyId": "cable-shrug"
+  },
+  "wger-349": {
+    "name": {
+      "zhTW": "單臂滑輪橫向划船"
+    },
+    "mediaFamilyId": "cable-row-single-arm"
+  },
+  "wger-1755": {
+    "name": {
+      "zhTW": "滑輪 Y 字上拉"
+    },
+    "mediaFamilyId": "cable-y-raise"
+  },
+  "wger-917": {
+    "name": {
+      "zhTW": "直槓滑輪前平舉"
+    },
+    "mediaFamilyId": "cable-front-raise"
+  },
+  "wger-1795": {
+    "name": {
+      "zhTW": "單臂交叉滑輪下拉"
+    },
+    "mediaFamilyId": "cable-pulldown-single-arm"
+  },
+  "wger-1481": {
+    "mediaFamilyId": "cable-pushdown-bar"
+  },
+  "wger-284": {
+    "mediaFamilyId": "cable-chest-fly-mid"
+  },
+  "wger-1298": {
+    "mediaFamilyId": "cable-triceps-cross-extension"
+  },
+  "wger-1971": {
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-1717": {
+    "mediaFamilyId": "cable-neck-extension"
+  },
+  "wger-803": {
+    "mediaFamilyId": "cable-pushdown-single-arm"
+  },
+  "wger-1513": {
+    "mediaFamilyId": "cable-triceps-overhead"
+  },
+  "wger-1485": {
+    "mediaFamilyId": "cable-pushdown-bar"
+  },
+  "wger-1969": {
+    "mediaFamilyId": "cable-pushdown-single-arm"
+  },
+  "wger-805": {
+    "mediaFamilyId": "cable-pushdown-bar"
+  },
+  "wger-660": {
+    "mediaFamilyId": "cable-pushdown-bar"
+  },
+  "wger-1771": {
+    "mediaFamilyId": "cable-wrist-curl"
+  },
+  "wger-1470": {
+    "mediaFamilyId": "cable-pulldown-single-arm"
+  },
+  "wger-1486": {
+    "mediaFamilyId": "cable-row-high"
+  },
+  "wger-1127": {
+    "mediaFamilyId": "cable-pulldown-neutral"
+  },
+  "wger-1137": {
+    "mediaFamilyId": "cable-y-raise"
+  },
+  "wger-1138": {
+    "mediaFamilyId": "cable-pulldown-neutral"
+  },
+  "wger-1702": {
+    "mediaFamilyId": "cable-pulldown-wide"
+  },
+  "wger-1659": {
+    "mediaFamilyId": "cable-pulldown-single-arm"
+  },
+  "wger-394": {
+    "mediaFamilyId": "cable-row-seated"
+  },
+  "wger-395": {
+    "mediaFamilyId": "cable-row-seated"
+  },
+  "wger-1635": {
+    "mediaFamilyId": "cable-pulldown-neutral"
+  },
+  "wger-1510": {
+    "mediaFamilyId": "cable-pulldown-neutral"
+  },
+  "wger-1136": {
+    "mediaFamilyId": "cable-pulldown-neutral"
+  },
+  "wger-1718": {
+    "mediaFamilyId": "cable-row-high"
+  },
+  "wger-1634": {
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-1928": {
+    "mediaFamilyId": "cable-row-seated"
+  },
+  "wger-562": {
+    "mediaFamilyId": "cable-row-single-arm"
+  },
+  "wger-1730": {
+    "mediaFamilyId": "cable-lateral-raise"
+  },
+  "wger-1727": {
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-1637": {
+    "mediaFamilyId": "cable-row-single-arm"
+  },
+  "wger-1972": {
+    "mediaFamilyId": "cable-pulldown-single-arm"
+  },
+  "wger-628": {
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-629": {
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-1726": {
+    "mediaFamilyId": "cable-straight-arm-pulldown"
+  },
+  "wger-695": {
+    "mediaFamilyId": "cable-pulldown-neutral"
+  },
+  "wger-723": {
+    "mediaFamilyId": "cable-pulldown-wide"
+  },
+  "wger-1125": {
+    "mediaFamilyId": "cable-pulldown-wide"
+  },
+  "wger-1660": {
+    "mediaFamilyId": "cable-chest-press"
+  },
+  "wger-1690": {
+    "mediaFamilyId": "cable-chest-fly-high"
+  },
+  "wger-237": {
+    "mediaFamilyId": "cable-chest-fly-mid"
+  },
+  "wger-1922": {
+    "mediaFamilyId": "cable-chest-fly-mid"
+  },
+  "wger-2495": {
+    "mediaFamilyId": "cable-leg-curl"
+  },
+  "wger-1724": {
+    "mediaFamilyId": "cable-hip-adduction"
+  },
+  "wger-1807": {
+    "mediaFamilyId": "cable-lateral-raise"
+  },
+  "wger-1745": {
+    "mediaFamilyId": "cable-front-raise"
+  },
+  "wger-1378": {
+    "mediaFamilyId": "cable-lateral-raise"
+  },
+  "wger-822": {
+    "mediaFamilyId": "cable-rear-delt-fly"
+  },
+  "wger-1936": {
+    "mediaFamilyId": "cable-rear-delt-fly"
+  },
+  "wger-222": {
+    "mediaFamilyId": "cable-face-pull"
+  },
+  "wger-1731": {
+    "mediaFamilyId": "cable-front-raise"
+  },
+  "wger-1882": {
+    "mediaFamilyId": "cable-lateral-raise"
+  },
+  "wger-1709": {
+    "mediaFamilyId": "cable-rear-delt-fly"
+  },
+  "wger-1729": {
+    "mediaFamilyId": "cable-shoulder-rotation"
+  },
+  "wger-1728": {
+    "mediaFamilyId": "cable-triceps-cross-extension"
+  },
+  "wger-1753": {
+    "mediaFamilyId": "cable-lateral-raise"
+  },
+  "wger-1752": {
+    "mediaFamilyId": "cable-lateral-raise"
+  }
 }

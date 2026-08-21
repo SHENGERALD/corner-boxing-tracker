@@ -6,5 +6,195 @@
       "en": "Plate-loaded chest press"
     },
     "imageUrl": "/assets/strength/reviewed/wger-379.png"
+  },
+  {
+    "id": "cable-curl-bayesian",
+    "label": { "zhTW": "貝氏滑輪彎舉", "en": "Bayesian cable curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/curl-bayesian.webp"
+  },
+  {
+    "id": "cable-curl",
+    "label": { "zhTW": "滑輪彎舉", "en": "Cable curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/curl.webp"
+  },
+  {
+    "id": "cable-curl-single-arm",
+    "label": { "zhTW": "單臂滑輪彎舉", "en": "Single-arm cable curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/curl-single-arm.webp"
+  },
+  {
+    "id": "cable-curl-bar",
+    "label": { "zhTW": "直槓滑輪彎舉", "en": "Cable bar curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/curl-bar.webp"
+  },
+  {
+    "id": "cable-curl-hammer",
+    "label": { "zhTW": "滑輪槌式彎舉", "en": "Cable hammer curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/curl-hammer.webp"
+  },
+  {
+    "id": "cable-wrist-curl",
+    "label": { "zhTW": "滑輪手腕彎舉", "en": "Cable wrist curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/wrist-curl.webp"
+  },
+  {
+    "id": "cable-pushdown-bar",
+    "label": { "zhTW": "直槓三頭肌下壓", "en": "Bar triceps pushdown" },
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp"
+  },
+  {
+    "id": "cable-pushdown-rope",
+    "label": { "zhTW": "繩索三頭肌下壓", "en": "Rope triceps pushdown" },
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-rope.webp"
+  },
+  {
+    "id": "cable-pushdown-single-arm",
+    "label": { "zhTW": "單臂三頭肌下壓", "en": "Single-arm triceps pushdown" },
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-single-arm.webp"
+  },
+  {
+    "id": "cable-triceps-overhead",
+    "label": { "zhTW": "過頭滑輪三頭肌伸展", "en": "Overhead cable triceps extension" },
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-overhead.webp"
+  },
+  {
+    "id": "cable-triceps-kickback",
+    "label": { "zhTW": "滑輪三頭肌後踢", "en": "Cable triceps kickback" },
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-kickback.webp"
+  },
+  {
+    "id": "cable-triceps-cross-extension",
+    "label": { "zhTW": "交叉滑輪三頭肌伸展", "en": "Cross-cable triceps extension" },
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-cross-extension.webp"
+  },
+  {
+    "id": "cable-neck-extension",
+    "label": { "zhTW": "滑輪頸部伸展", "en": "Cable neck extension" },
+    "imageUrl": "/assets/strength/reviewed/cable/neck-extension.webp"
+  },
+  {
+    "id": "cable-pulldown-wide",
+    "label": { "zhTW": "寬握滑輪下拉", "en": "Wide-grip cable pulldown" },
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-wide.webp"
+  },
+  {
+    "id": "cable-pulldown-neutral",
+    "label": { "zhTW": "中立握滑輪下拉", "en": "Neutral-grip cable pulldown" },
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp"
+  },
+  {
+    "id": "cable-pulldown-single-arm",
+    "label": { "zhTW": "單臂滑輪下拉", "en": "Single-arm cable pulldown" },
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-single-arm.webp"
+  },
+  {
+    "id": "cable-straight-arm-pulldown",
+    "label": { "zhTW": "直臂滑輪下拉", "en": "Straight-arm cable pulldown" },
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp"
+  },
+  {
+    "id": "cable-row-seated",
+    "label": { "zhTW": "坐姿滑輪划船", "en": "Seated cable row" },
+    "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp"
+  },
+  {
+    "id": "cable-row-single-arm",
+    "label": { "zhTW": "單臂滑輪划船", "en": "Single-arm cable row" },
+    "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp"
+  },
+  {
+    "id": "cable-row-high",
+    "label": { "zhTW": "高位滑輪划船", "en": "High cable row" },
+    "imageUrl": "/assets/strength/reviewed/cable/row-high.webp"
+  },
+  {
+    "id": "cable-rear-delt-fly",
+    "label": { "zhTW": "滑輪後三角肌飛鳥", "en": "Cable rear-delt fly" },
+    "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp"
+  },
+  {
+    "id": "cable-chest-fly-high",
+    "label": { "zhTW": "高位滑輪飛鳥", "en": "High cable chest fly" },
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-high.webp"
+  },
+  {
+    "id": "cable-chest-fly-mid",
+    "label": { "zhTW": "中位滑輪飛鳥", "en": "Mid cable chest fly" },
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-mid.webp"
+  },
+  {
+    "id": "cable-chest-fly-low",
+    "label": { "zhTW": "低位滑輪飛鳥", "en": "Low cable chest fly" },
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-low.webp"
+  },
+  {
+    "id": "cable-chest-crossover",
+    "label": { "zhTW": "滑輪交叉夾胸", "en": "Cable crossover" },
+    "imageUrl": "/assets/strength/reviewed/cable/chest-crossover.webp"
+  },
+  {
+    "id": "cable-chest-press",
+    "label": { "zhTW": "滑輪胸推", "en": "Cable chest press" },
+    "imageUrl": "/assets/strength/reviewed/cable/chest-press.webp"
+  },
+  {
+    "id": "cable-face-pull",
+    "label": { "zhTW": "滑輪面拉", "en": "Cable face pull" },
+    "imageUrl": "/assets/strength/reviewed/cable/face-pull.webp"
+  },
+  {
+    "id": "cable-lateral-raise",
+    "label": { "zhTW": "滑輪側平舉", "en": "Cable lateral raise" },
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp"
+  },
+  {
+    "id": "cable-front-raise",
+    "label": { "zhTW": "滑輪前平舉", "en": "Cable front raise" },
+    "imageUrl": "/assets/strength/reviewed/cable/front-raise.webp"
+  },
+  {
+    "id": "cable-y-raise",
+    "label": { "zhTW": "滑輪 Y 字上舉", "en": "Cable Y raise" },
+    "imageUrl": "/assets/strength/reviewed/cable/y-raise.webp"
+  },
+  {
+    "id": "cable-shoulder-rotation",
+    "label": { "zhTW": "滑輪肩旋轉", "en": "Cable shoulder rotation" },
+    "imageUrl": "/assets/strength/reviewed/cable/shoulder-rotation.webp"
+  },
+  {
+    "id": "cable-shrug",
+    "label": { "zhTW": "滑輪聳肩", "en": "Cable shrug" },
+    "imageUrl": "/assets/strength/reviewed/cable/shrug.webp"
+  },
+  {
+    "id": "cable-core-rotation",
+    "label": { "zhTW": "滑輪核心旋轉", "en": "Cable core rotation" },
+    "imageUrl": "/assets/strength/reviewed/cable/core-rotation.webp"
+  },
+  {
+    "id": "cable-crunch",
+    "label": { "zhTW": "滑輪捲腹", "en": "Cable crunch" },
+    "imageUrl": "/assets/strength/reviewed/cable/crunch.webp"
+  },
+  {
+    "id": "cable-glute-extension",
+    "label": { "zhTW": "滑輪臀部後伸", "en": "Cable glute extension" },
+    "imageUrl": "/assets/strength/reviewed/cable/glute-extension.webp"
+  },
+  {
+    "id": "cable-pull-through",
+    "label": { "zhTW": "滑輪拉臀", "en": "Cable pull-through" },
+    "imageUrl": "/assets/strength/reviewed/cable/pull-through.webp"
+  },
+  {
+    "id": "cable-hip-adduction",
+    "label": { "zhTW": "站姿滑輪髖內收", "en": "Standing cable hip adduction" },
+    "imageUrl": "/assets/strength/reviewed/cable/hip-adduction.webp"
+  },
+  {
+    "id": "cable-leg-curl",
+    "label": { "zhTW": "滑輪腿彎舉", "en": "Cable leg curl" },
+    "imageUrl": "/assets/strength/reviewed/cable/leg-curl.webp"
   }
 ]
