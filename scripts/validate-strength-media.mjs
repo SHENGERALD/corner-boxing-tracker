@@ -51,6 +51,7 @@ export async function validateCatalogMedia({ root }) {
   const reviewedOverrides = await readReviewedOverrides(root);
   const reviewedInvalid = [];
   for (const [id, override] of Object.entries(reviewedOverrides)) {
+    if (!override.imageUrl) continue;
     if (!(await isLocalImage(root, override.imageUrl))) {
       reviewedInvalid.push({ id, imageUrl: override.imageUrl });
     }

@@ -102,7 +102,12 @@ async function main() {
   const report = { missingMedia: [], duplicates: [], invalid: [], collisions };
   const translations = await loadTranslations();
   const reviewedOverrides = await loadJsonFile(reviewedOverridesPath);
-  const normalized = normalizeExercises(exercises, { existing, report, translations });
+  const normalized = normalizeExercises(exercises, {
+    existing,
+    report,
+    translations,
+    reviewedOverrides,
+  });
   const recordsByCategory = Object.fromEntries(categoryOrder.map((category) => [category, []]));
   for (const record of normalized.records) {
     if (recordsByCategory[record.category]) recordsByCategory[record.category].push(record);

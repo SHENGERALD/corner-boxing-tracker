@@ -359,11 +359,11 @@ export const records = [
     "domain": "strength",
     "category": "core",
     "name": {
-      "zhTW": "電纜伐木機",
+      "zhTW": "滑輪伐木式轉體",
       "en": "Cable Woodchoppers"
     },
     "cue": {
-      "zhTW": "將電纜滑輪設定為略低於胸部高度。",
+      "zhTW": "將滑輪滑輪設定為略低於胸部高度。",
       "en": "Set cable pulley slightly lower than chest height."
     },
     "defaultUnit": "rounds",
@@ -490,7 +490,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Crunches on Machine",
       "在機器上仰臥起坐",
@@ -502,7 +502,7 @@ export const records = [
       "Crunchs à la machine"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/core.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-172.png"
   },
   {
     "id": "wger-173",
@@ -510,11 +510,11 @@ export const records = [
     "domain": "strength",
     "category": "core",
     "name": {
-      "zhTW": "繩索仰臥起坐",
+      "zhTW": "跪姿滑輪捲腹",
       "en": "Crunches With Cable"
     },
     "cue": {
-      "zhTW": "將電纜放在手上，並將其放在太陽穴旁。",
+      "zhTW": "將滑輪放在手上，並將其放在太陽穴旁。",
       "en": "Take the cable on your hands and hold it next to your temples."
     },
     "defaultUnit": "rounds",
@@ -1551,7 +1551,7 @@ export const records = [
     "domain": "strength",
     "category": "core",
     "name": {
-      "zhTW": "上手電纜彎舉",
+      "zhTW": "正握滑輪彎舉",
       "en": "Overhand Cable Curl"
     },
     "cue": {
@@ -1853,7 +1853,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Rotary Torso Machine",
       "旋轉軀幹機",
@@ -1862,7 +1862,7 @@ export const records = [
       "Bauch-Twist Gerät"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/core.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1374.png"
   },
   {
     "id": "wger-545",
@@ -2435,11 +2435,11 @@ export const records = [
     "domain": "strength",
     "category": "core",
     "name": {
-      "zhTW": "軀幹旋轉（有電纜）",
+      "zhTW": "坐姿滑輪軀幹旋轉",
       "en": "Trunk Rotation With Cable"
     },
     "cue": {
-      "zhTW": "坐姿軀幹旋轉，附電纜",
+      "zhTW": "坐姿軀幹旋轉，附滑輪",
       "en": "Seated trunk rotation with cable"
     },
     "defaultUnit": "rounds",

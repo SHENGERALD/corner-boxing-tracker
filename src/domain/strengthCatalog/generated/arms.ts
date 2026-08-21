@@ -298,7 +298,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "貝葉斯旋度",
+      "zhTW": "貝氏滑輪彎舉",
       "en": "Bayesian Curl"
     },
     "cue": {
@@ -419,7 +419,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Biceps Curl Machine",
       "二頭肌彎舉機",
@@ -430,7 +430,7 @@ export const records = [
       "Machine à curl biceps"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/arms.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1424.png"
   },
   {
     "id": "wger-95",
@@ -438,11 +438,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "二頭肌彎舉繩索",
+      "zhTW": "滑輪二頭肌彎舉",
       "en": "Biceps Curl With Cable"
     },
     "cue": {
-      "zhTW": "站在距離電纜約 30 - 40 公分的位置，雙腳牢牢踩在地板上。",
+      "zhTW": "站在距離滑輪約 30 - 40 公分的位置，雙腳牢牢踩在地板上。",
       "en": "Stand around 30 - 40cm away from the cable, the feet are firmly on the floor."
     },
     "defaultUnit": "rounds",
@@ -665,7 +665,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "電纜集中捲曲",
+      "zhTW": "滑輪集中彎舉",
       "en": "Cable Concentration Curl"
     },
     "cue": {
@@ -693,7 +693,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "電纜彎舉",
+      "zhTW": "滑輪彎舉",
       "en": "Cable Curls"
     },
     "cue": {
@@ -718,7 +718,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "電纜三延長線 - 內部旋轉",
+      "zhTW": "滑輪三頭肌伸展（內旋）",
       "en": "Cable Tri Extension - Internal Rotation"
     },
     "cue": {
@@ -746,7 +746,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "電纜三頭肌回扣",
+      "zhTW": "滑輪三頭肌後踢",
       "en": "Cable Tricep Kickback"
     },
     "cue": {
@@ -774,7 +774,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "電纜三頭肌推舉",
+      "zhTW": "滑輪三頭肌推壓",
       "en": "Cable Triceps Press"
     },
     "cue": {
@@ -1696,11 +1696,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "電纜上的 Hammercurls",
+      "zhTW": "滑輪槌式彎舉",
       "en": "Hammercurls on Cable"
     },
     "cue": {
-      "zhTW": "雙手拿一條電纜（手掌平行，互相指向），身體伸直。",
+      "zhTW": "雙手拿一條滑輪（手掌平行，互相指向），身體伸直。",
       "en": "Take a cable in your hands (palms parallel, point to each other), the body is straight."
     },
     "defaultUnit": "rounds",
@@ -1754,7 +1754,7 @@ export const records = [
       "en": "Hercules Pillars"
     },
     "cue": {
-      "zhTW": "抓住中間的兩條電纜，這樣它們就有張力並保持住",
+      "zhTW": "抓住中間的兩條滑輪，這樣它們就有張力並保持住",
       "en": "Grab two cables stand in the middle so both have tension and hold"
     },
     "defaultUnit": "rounds",
@@ -2013,7 +2013,7 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "臥式三頭肌回扣",
+      "zhTW": "斜板俯臥三頭肌後踢",
       "en": "Lying Triceps Kickback"
     },
     "cue": {
@@ -2123,11 +2123,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "單臂過頭電纜三頭肌伸展",
+      "zhTW": "單臂過頭滑輪三頭肌伸展",
       "en": "One Arm Overhead Cable Tricep Extension"
     },
     "cue": {
-      "zhTW": "將滑輪設置在電纜機底部並抓住它，無需使用任何附件。",
+      "zhTW": "將滑輪設置在滑輪機底部並抓住它，無需使用任何附件。",
       "en": "Set the pulley at the bottom of the cable machine and grab onto it without using any attachments."
     },
     "defaultUnit": "rounds",
@@ -2640,11 +2640,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "反向 EZ 槓鈴彎舉",
+      "zhTW": "反握 EZ 槓滑輪彎舉",
       "en": "Reverse EZ Bar Cable Curls"
     },
     "cue": {
-      "zhTW": "站在電纜塔前使用 SZ Bar",
+      "zhTW": "站在滑輪塔前使用 SZ Bar",
       "en": "Standing in front of cable tower using a SZ Bar"
     },
     "defaultUnit": "rounds",
@@ -3138,11 +3138,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "直槓電纜彎舉",
+      "zhTW": "直槓滑輪彎舉",
       "en": "Straight Bar Cable Curls"
     },
     "cue": {
-      "zhTW": "使用直桿直立在電纜塔前",
+      "zhTW": "使用直桿直立在滑輪塔前",
       "en": "Standing upright in front of Cable Tower using a straight bar"
     },
     "defaultUnit": "rounds",
@@ -3221,11 +3221,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "三頭肌繩索下壓",
+      "zhTW": "繩索三頭肌下壓",
       "en": "Tricep Rope Pushdowns"
     },
     "cue": {
-      "zhTW": "- **設定：** 面向電纜站立，雙腳分開與肩同寬，稍微向前傾斜。",
+      "zhTW": "- **設定：** 面向滑輪站立，雙腳分開與肩同寬，稍微向前傾斜。",
       "en": "- **Setup:** Stand facing the cable, feet shoulder-width apart, with a slight forward lean."
     },
     "defaultUnit": "rounds",
@@ -3274,11 +3274,11 @@ export const records = [
     "domain": "strength",
     "category": "arms",
     "name": {
-      "zhTW": "繩索三頭肌伸展",
+      "zhTW": "滑輪三頭肌伸展",
       "en": "Triceps Extensions on Cable"
     },
     "cue": {
-      "zhTW": "抓住電纜，雙腳與肩同寬站立，保持背部挺直並稍微向前傾斜。",
+      "zhTW": "抓住滑輪，雙腳與肩同寬站立，保持背部挺直並稍微向前傾斜。",
       "en": "Grab the cable, stand with your feet shoulder wide, keep your back straight and lean forward a little."
     },
     "defaultUnit": "rounds",
@@ -3340,7 +3340,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Triceps on Machine",
       "機器上的三頭肌",
@@ -3352,7 +3352,7 @@ export const records = [
       "Tríceps na máquina"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/arms.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-661.png"
   },
   {
     "id": "wger-1336",

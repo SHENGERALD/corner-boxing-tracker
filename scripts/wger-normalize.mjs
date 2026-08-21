@@ -153,7 +153,11 @@ function getSearchTerms(exercise, label, category, equipment) {
   ].map(cleanText).filter(Boolean))];
 }
 
-export function normalizeExercise(exercise, { report = { missingMedia: [] }, localized } = {}) {
+export function normalizeExercise(exercise, {
+  report = { missingMedia: [] },
+  localized,
+  reviewedOverrides = {},
+} = {}) {
   const translation = firstTranslation(exercise);
   const englishName = cleanText(translation?.name ?? exercise?.name);
   if (!englishName) throw new Error("Exercise is missing an English name");
@@ -183,10 +187,15 @@ export function normalizeExercise(exercise, { report = { missingMedia: [] }, loc
     imageSource: imageUrl ? "wger" : "Corner generated",
   };
   if (imageUrl) result.imageUrl = imageUrl;
-  return result;
+  return reviewLocalizedRecord(result, reviewedOverrides);
 }
 
-export function normalizeExercises(exercises, { existing = [], report = {}, translations = {} } = {}) {
+export function normalizeExercises(exercises, {
+  existing = [],
+  report = {},
+  translations = {},
+  reviewedOverrides = {},
+} = {}) {
   const output = [];
   const seen = [...existing];
   const nextReport = {
@@ -201,6 +210,7 @@ export function normalizeExercises(exercises, { existing = [], report = {}, tran
       const candidate = normalizeExercise(exercise, {
         report: nextReport,
         localized: translations[String(exercise?.id ?? "")],
+        reviewedOverrides,
       });
       if (isDuplicateMovement(seen, candidate)) {
         nextReport.missingMedia.splice(missingMediaStart);
@@ -216,3 +226,4 @@ export function normalizeExercises(exercises, { existing = [], report = {}, tran
 
   return { records: output, report: nextReport };
 }
+import { reviewLocalizedRecord } from "./strength-localization.mjs";

@@ -93,3 +93,48 @@ test("applies cached Traditional Chinese labels while preserving English search 
   assert.equal(result.cue.zhTW, "控制槓鈴下放。");
   assert.ok(result.searchTerms.includes("Barbell Bench Press"));
 });
+
+test("normalizes cached cable copy with Taiwan terms", () => {
+  const exercise = {
+    id: 1270,
+    category: { name: "Chest" },
+    equipment: [{ name: "Cable" }],
+    translations: [{ language: 2, name: "Low Pulley Cable Fly", description_source: "Bring the handles together with control." }],
+    images: [],
+  };
+
+  const result = normalizeExercises([exercise], {
+    translations: {
+      1270: { name: "低滑輪電纜飛翼", cue: "控制電纜並將手柄向中間靠攏。" },
+    },
+  }).records[0];
+
+  assert.equal(result.name.zhTW, "低位滑輪飛鳥");
+  assert.equal(result.cue.zhTW, "控制滑輪並將手柄向中間靠攏。");
+});
+
+test("applies reviewed overrides after cached localization", () => {
+  const exercise = {
+    id: 42,
+    category: { name: "Arms" },
+    equipment: [{ name: "Cable" }],
+    translations: [{ language: 2, name: "Cable Bayesian Curl", description_source: "Curl with control." }],
+    images: [],
+  };
+
+  const result = normalizeExercises([exercise], {
+    translations: {
+      42: { name: "滑輪彎舉", cue: "控制動作。" },
+    },
+    reviewedOverrides: {
+      "wger-42": {
+        name: { zhTW: "貝氏滑輪彎舉" },
+        cue: { zhTW: "背對滑輪站立，讓上臂維持在身體後方。" },
+      },
+    },
+  }).records[0];
+
+  assert.equal(result.name.zhTW, "貝氏滑輪彎舉");
+  assert.equal(result.cue.zhTW, "背對滑輪站立，讓上臂維持在身體後方。");
+  assert.equal(result.name.en, "Cable Bayesian Curl");
+});

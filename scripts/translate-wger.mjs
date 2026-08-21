@@ -1,10 +1,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { hasCompleteReviewedCopy } from "./strength-localization.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const generatedDir = path.join(root, "src/domain/strengthCatalog/generated");
 const cachePath = path.join(root, "scripts/wger-zh-TW-cache.json");
+const reviewedOverridesPath = path.join(root, "src/domain/strengthCatalog/reviewedOverrides.json");
 const translateUrl = process.env.TRANSLATE_API_URL ?? "https://translate.googleapis.com/translate_a/single";
 const categoryOrder = ["chest", "back", "legs", "shoulders", "arms", "core", "calves", "mobility", "cardio"];
 const categoryLabels = {
@@ -92,7 +94,9 @@ async function writeCache(cache) {
 async function main() {
   const records = await readGeneratedRecords();
   const cache = await readCache();
+  const reviewedOverrides = JSON.parse(await fs.readFile(reviewedOverridesPath, "utf8"));
   const pending = records.filter((record) => {
+    if (hasCompleteReviewedCopy(reviewedOverrides[record.id])) return false;
     const localized = cache[String(record.sourceId)];
     return !hasChinese(localized?.name) || !hasChinese(localized?.cue);
   });

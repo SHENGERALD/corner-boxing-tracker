@@ -309,7 +309,7 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "電纜外旋",
+      "zhTW": "滑輪肩外旋",
       "en": "Cable External Rotation"
     },
     "cue": {
@@ -450,7 +450,7 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "電纜聳入",
+      "zhTW": "滑輪內收聳肩",
       "en": "Cable Shrug-In"
     },
     "cue": {
@@ -1267,11 +1267,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "繩索橫向划船，單臂",
+      "zhTW": "單臂滑輪橫向划船",
       "en": "Lateral Rows on Cable, One Armed"
     },
     "cue": {
-      "zhTW": "將電纜設置在腰部高度，首先將手臂放在腹部上，然後將手移至另一側，每次一隻手臂。",
+      "zhTW": "將滑輪設置在腰部高度，首先將手臂放在腹部上，然後將手移至另一側，每次一隻手臂。",
       "en": "Set cable at waist height, start with arm across your belly and move han over and out too other side, one arm at the time."
     },
     "defaultUnit": "rounds",
@@ -1361,7 +1361,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Machine Lateral Raise",
       "機器側平舉",
@@ -1372,8 +1372,8 @@ export const records = [
       "Seitheben an der Maschine",
       "Élévation latérale à la machine"
     ],
-    "imageSource": "wger",
-    "imageUrl": "https://wger.de/media/exercise-images/1654/aa724a58-b3b5-4522-b278-1155416236a5.jpg"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/reviewed/wger-1654.png"
   },
   {
     "id": "wger-1744",
@@ -1974,7 +1974,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Shoulder Press, on Machine",
       "肩部推舉，機器上",
@@ -1983,8 +1983,8 @@ export const records = [
       "Press de hombro con maquina",
       "Schultermaschine"
     ],
-    "imageSource": "wger",
-    "imageUrl": "https://wger.de/media/exercise-images/53/Shoulder-press-machine-2.png"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/reviewed/wger-543.png"
   },
   {
     "id": "wger-569",
@@ -2113,11 +2113,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "肩Y型拉索",
+      "zhTW": "滑輪 Y 字上拉",
       "en": "Shoulder Y-pull cable"
     },
     "cue": {
-      "zhTW": "在電纜架上交叉電纜並將肘部拉到靠近身體的天花板上。",
+      "zhTW": "在滑輪架上交叉滑輪並將肘部拉到靠近身體的天花板上。",
       "en": "on a cable rack cross the cables and pull elbows to ceiling close to the body."
     },
     "defaultUnit": "rounds",
@@ -2439,11 +2439,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "直桿繩索前平舉",
+      "zhTW": "直槓滑輪前平舉",
       "en": "Straight Bar Cable Front Raise"
     },
     "cue": {
-      "zhTW": "返回電纜塔、腿間電纜、SZ Bar",
+      "zhTW": "返回滑輪塔、腿間滑輪、SZ Bar",
       "en": "Back to cable tower, cable between legs, SZ Bar"
     },
     "defaultUnit": "rounds",
@@ -2518,11 +2518,11 @@ export const records = [
     "domain": "strength",
     "category": "shoulders",
     "name": {
-      "zhTW": "單邊斜背拉繩下拉",
+      "zhTW": "單臂交叉滑輪下拉",
       "en": "unilateral cross body cable pull down"
     },
     "cue": {
-      "zhTW": "將電纜放在電纜架上，然後用直臂將電纜從高到低拉過您。",
+      "zhTW": "將滑輪放在滑輪架上，然後用直臂將滑輪從高到低拉過您。",
       "en": "on a cable rack place cable high, and with a straight arm pull that cable across you from high to low."
     },
     "defaultUnit": "rounds",

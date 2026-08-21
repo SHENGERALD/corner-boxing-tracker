@@ -703,7 +703,7 @@ export const records = [
     "domain": "strength",
     "category": "legs",
     "name": {
-      "zhTW": "電纜臀延伸",
+      "zhTW": "滑輪臀部後伸",
       "en": "Cable glute extension"
     },
     "cue": {
@@ -731,7 +731,7 @@ export const records = [
     "domain": "strength",
     "category": "legs",
     "name": {
-      "zhTW": "電纜穿過",
+      "zhTW": "滑輪拉臀",
       "en": "Cable pull through"
     },
     "cue": {
@@ -1608,7 +1608,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Glute Kickback (Machine)",
       "臀肌反沖（機器）",
@@ -1616,7 +1616,7 @@ export const records = [
       "bodyweight"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/legs.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1723.png"
   },
   {
     "id": "wger-2478",
@@ -1685,7 +1685,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "hammer",
     "searchTerms": [
       "Hack Squats",
       "哈克深蹲",
@@ -1696,7 +1696,7 @@ export const records = [
       "Sentadillas Hack"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/legs.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1414.png"
   },
   {
     "id": "wger-1387",
@@ -2102,7 +2102,7 @@ export const records = [
     "domain": "strength",
     "category": "legs",
     "name": {
-      "zhTW": "跪回扣",
+      "zhTW": "跪姿後踢",
       "en": "Kneeling kickbacks"
     },
     "cue": {
@@ -2767,7 +2767,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "hammer",
     "searchTerms": [
       "Pendulum Squat",
       "擺式深蹲",
@@ -2776,7 +2776,7 @@ export const records = [
       "Pendelkniebeube"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/legs.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1527.png"
   },
   {
     "id": "wger-1437",

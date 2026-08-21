@@ -835,7 +835,7 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "斜背電纜 Y 型提升",
+      "zhTW": "交叉滑輪 Y 字上舉",
       "en": "Cross-Body Cable Y-Raise"
     },
     "cue": {
@@ -1278,7 +1278,7 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "高排",
+      "zhTW": "高位滑輪划船",
       "en": "High Row"
     },
     "cue": {
@@ -1949,7 +1949,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "hammer",
     "searchTerms": [
       "Leverage Machine Iso Row",
       "槓桿機 Iso Row",
@@ -1957,7 +1957,7 @@ export const records = [
       "bodyweight"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/back.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-380.png"
   },
   {
     "id": "wger-394",
@@ -2261,11 +2261,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "單臂屈臂划船",
+      "zhTW": "單臂俯身滑輪划船",
       "en": "One Arm Bent Row"
     },
     "cue": {
-      "zhTW": "一隻手臂彎曲，用機器排在電纜上",
+      "zhTW": "一隻手臂彎曲，用機器排在滑輪上",
       "en": "One arm bent over row on cable with a machine"
     },
     "defaultUnit": "rounds",
@@ -2542,11 +2542,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "回調",
+      "zhTW": "滑輪後拉",
       "en": "Pullback"
     },
     "cue": {
-      "zhTW": "設定籠內電纜的重量和抓力。",
+      "zhTW": "設定籠內滑輪的重量和抓力。",
       "en": "Set weight and grip for the cables in the cage."
     },
     "defaultUnit": "rounds",
@@ -2628,7 +2628,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "machine",
     "searchTerms": [
       "Pullover Machine",
       "套頭機",
@@ -2636,7 +2636,7 @@ export const records = [
       "bodyweight"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/back.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1384.png"
   },
   {
     "id": "wger-957",
@@ -2805,11 +2805,11 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "反向電纜飛翼",
+      "zhTW": "反向滑輪飛鳥",
       "en": "Reverse Cable Flye"
     },
     "cue": {
-      "zhTW": "將 D 型手柄連接到上部位置的兩個電纜滑輪。",
+      "zhTW": "將 D 型手柄連接到上部位置的兩個滑輪滑輪。",
       "en": "Attach D-Handles to two cable pulleys in the upper position."
     },
     "defaultUnit": "rounds",
@@ -3129,7 +3129,7 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "坐式電纜中部陷阱聳肩",
+      "zhTW": "坐姿滑輪中斜方肌聳肩",
       "en": "Seated Cable Mid Trap Shrug"
     },
     "cue": {
@@ -3784,7 +3784,7 @@ export const records = [
     "domain": "strength",
     "category": "back",
     "name": {
-      "zhTW": "單邊電纜排",
+      "zhTW": "單臂滑輪划船",
       "en": "Unilateral Cable row"
     },
     "cue": {

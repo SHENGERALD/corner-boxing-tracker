@@ -129,7 +129,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "彎腰電纜飛繩",
+      "zhTW": "俯身滑輪飛鳥",
       "en": "Bent over Cable Flye"
     },
     "cue": {
@@ -242,7 +242,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "繩索胸部推舉 - 拒絕",
+      "zhTW": "下斜滑輪胸推",
       "en": "Cable Chest Press - Decline"
     },
     "cue": {
@@ -298,11 +298,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "電纜交叉",
+      "zhTW": "滑輪交叉夾胸",
       "en": "Cable Cross-over"
     },
     "cue": {
-      "zhTW": "從大約肩膀高的電纜開始，每隻手各一條。",
+      "zhTW": "從大約肩膀高的滑輪開始，每隻手各一條。",
       "en": "Begin with cables at about shoulder height, one in each hand."
     },
     "defaultUnit": "rounds",
@@ -327,7 +327,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "電纜門襟下胸",
+      "zhTW": "下胸滑輪飛鳥",
       "en": "Cable Fly Lower Chest"
     },
     "cue": {
@@ -355,7 +355,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "中胸電纜門襟",
+      "zhTW": "中胸滑輪飛鳥",
       "en": "Cable Fly Middle Chest"
     },
     "cue": {
@@ -411,11 +411,11 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "電纜壓繞",
+      "zhTW": "滑輪環繞推胸",
       "en": "Cable Press Around"
     },
     "cue": {
-      "zhTW": "將電纜滑輪設置在胸部高度並安裝 D 型手柄。",
+      "zhTW": "將滑輪滑輪設置在胸部高度並安裝 D 型手柄。",
       "en": "Set the cable pulley at chest height and attach a D-handle bar."
     },
     "defaultUnit": "rounds",
@@ -898,7 +898,7 @@ export const records = [
       "Press de pecho en máquina (plano)"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/chest.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-1694.png"
   },
   {
     "id": "wger-237",
@@ -999,7 +999,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "hammer",
     "searchTerms": [
       "Hammerstrength Decline Chest Press",
       "Hammerstrength 下斜胸部推舉",
@@ -1010,8 +1010,8 @@ export const records = [
       "Hammerstrength Decline Press",
       "Press de pecho declinado en Hammer Strength"
     ],
-    "imageSource": "wger",
-    "imageUrl": "https://wger.de/media/exercise-images/1831/2d9d509f-707b-4132-961e-91a2459ca198.jpg"
+    "imageSource": "Corner generated",
+    "imageUrl": "/assets/strength/reviewed/wger-1831.png"
   },
   {
     "id": "wger-1001",
@@ -1419,7 +1419,7 @@ export const records = [
     },
     "defaultUnit": "rounds",
     "defaultQuantity": 3,
-    "equipment": "bodyweight",
+    "equipment": "hammer",
     "searchTerms": [
       "Leverage Machine Chest Press",
       "槓桿機推胸",
@@ -1428,7 +1428,8 @@ export const records = [
       "Press de pecho con máquina"
     ],
     "imageSource": "Corner generated",
-    "imageUrl": "/assets/strength/generated/chest.webp"
+    "imageUrl": "/assets/strength/reviewed/wger-379.png",
+    "mediaFamilyId": "plate-loaded-chest-press"
   },
   {
     "id": "wger-1270",
@@ -1436,7 +1437,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "低滑輪電纜門襟",
+      "zhTW": "低位滑輪飛鳥",
       "en": "Low Pulley Cable Fly"
     },
     "cue": {
@@ -1464,7 +1465,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "低電纜交叉 - NB",
+      "zhTW": "低位滑輪交叉夾胸",
       "en": "Low-Cable Cross-Over - NB"
     },
     "cue": {
@@ -1625,7 +1626,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "全向電纜交叉",
+      "zhTW": "全方向滑輪交叉夾胸",
       "en": "Omni Cable Cross-over"
     },
     "cue": {
@@ -1788,7 +1789,7 @@ export const records = [
     "domain": "strength",
     "category": "chest",
     "name": {
-      "zhTW": "俯臥撐 |拒絕",
+      "zhTW": "下斜俯臥撐",
       "en": "Push-Ups | Decline"
     },
     "cue": {
