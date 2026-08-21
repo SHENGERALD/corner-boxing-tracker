@@ -1,4 +1,5 @@
 import type { Language, LocalizedLabel } from "./types";
+import type { EquipmentType } from "./drills";
 
 const translations = {
   "nav.today": { zhTW: "今天", en: "Today" },
@@ -63,4 +64,22 @@ export function formatPlanLabel(
   language: Language
 ): string {
   return language === "zh-TW" ? label.zhTW : label.en;
+}
+
+const equipmentLabels: Record<EquipmentType | "all", LocalizedLabel> = {
+  all: { zhTW: "全部器材", en: "All equipment" },
+  barbell: { zhTW: "槓鈴", en: "Barbell" },
+  dumbbell: { zhTW: "啞鈴", en: "Dumbbell" },
+  kettlebell: { zhTW: "壺鈴", en: "Kettlebell" },
+  cable: { zhTW: "滑輪", en: "Cable" },
+  hammer: { zhTW: "悍馬", en: "Hammer" },
+  machine: { zhTW: "器材", en: "Machine" },
+  bodyweight: { zhTW: "自重", en: "Bodyweight" },
+};
+
+export function getEquipmentLabel(
+  equipment: EquipmentType | "all",
+  language: Language
+): string {
+  return formatPlanLabel(equipmentLabels[equipment], language);
 }

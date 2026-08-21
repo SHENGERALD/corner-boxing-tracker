@@ -46,7 +46,7 @@ function CornerMark({ className = "" }: { className?: string }) {
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { mergeForRevisionedSave, mergeStateWithCloud, resolveInitialState } from "./domain/cloud";
 import { getWeekDates, getWeekday, toDateKey } from "./domain/dates";
-import { formatPlanLabel, t } from "./domain/i18n";
+import { formatPlanLabel, getEquipmentLabel, t } from "./domain/i18n";
 import { cloneWeeklyPlan, createBlankWeeklyPlan, getPlanForWeekday } from "./domain/plan";
 import { getRecordCompletion, getWeeklySummary, isTrainingItemComplete } from "./domain/progress";
 import {
@@ -1571,14 +1571,14 @@ function DrillLibraryView({
         ["cardio", language === "zh-TW" ? "有氧" : "Cardio"],
       ];
   const equipmentOptions: Array<[EquipmentType | "all", string]> = [
-    ["all", language === "zh-TW" ? "全部器材" : "All equipment"],
-    ["barbell", language === "zh-TW" ? "槓鈴" : "Barbell"],
-    ["dumbbell", language === "zh-TW" ? "啞鈴" : "Dumbbell"],
-    ["kettlebell", language === "zh-TW" ? "壺鈴" : "Kettlebell"],
-    ["cable", language === "zh-TW" ? "繩索" : "Cable"],
-    ["hammer", language === "zh-TW" ? "悍馬" : "Hammer"],
-    ["machine", language === "zh-TW" ? "器材" : "Machine"],
-    ["bodyweight", language === "zh-TW" ? "自重" : "Bodyweight"],
+    ["all", getEquipmentLabel("all", language)],
+    ["barbell", getEquipmentLabel("barbell", language)],
+    ["dumbbell", getEquipmentLabel("dumbbell", language)],
+    ["kettlebell", getEquipmentLabel("kettlebell", language)],
+    ["cable", getEquipmentLabel("cable", language)],
+    ["hammer", getEquipmentLabel("hammer", language)],
+    ["machine", getEquipmentLabel("machine", language)],
+    ["bodyweight", getEquipmentLabel("bodyweight", language)],
   ];
   const changeDomain = (nextDomain: TrainingDomain) => { setDomain(nextDomain); setCategory("all"); setEquipment("all"); };
   const changeCategory = (nextCategory: Drill["category"] | "all") => { setCategory(nextCategory); if (nextCategory === "cardio" || nextCategory === "mobility") setEquipment("all"); };
