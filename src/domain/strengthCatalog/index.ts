@@ -1,5 +1,18 @@
 import { drillLibrary, type Drill } from "../drills";
+import type { LocalizedLabel } from "../types";
+import mediaFamilyData from "./mediaFamilies.json";
 import reviewedOverrides from "./reviewedOverrides.json";
+
+export interface StrengthMediaFamily {
+  id: string;
+  label: LocalizedLabel;
+  imageUrl: string;
+}
+
+export const strengthMediaFamilies = mediaFamilyData as StrengthMediaFamily[];
+export const strengthMediaFamilyById = new Map(
+  strengthMediaFamilies.map((family) => [family.id, family])
+);
 
 export const strengthCategoryIds = [
   "chest",
