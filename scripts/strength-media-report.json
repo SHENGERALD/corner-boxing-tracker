@@ -1,0 +1,350 @@
+{
+  "reviewedFamilyCount": 38,
+  "allFilesExist": true,
+  "allSquare": true,
+  "allWebP": true,
+  "families": [
+    {
+      "familyId": "cable-curl-bayesian",
+      "imageUrl": "/assets/strength/reviewed/cable/curl-bayesian.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 100254
+    },
+    {
+      "familyId": "cable-curl",
+      "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 109508
+    },
+    {
+      "familyId": "cable-curl-single-arm",
+      "imageUrl": "/assets/strength/reviewed/cable/curl-single-arm.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 112580
+    },
+    {
+      "familyId": "cable-curl-bar",
+      "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 109508
+    },
+    {
+      "familyId": "cable-curl-hammer",
+      "imageUrl": "/assets/strength/reviewed/cable/curl-hammer.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 98314
+    },
+    {
+      "familyId": "cable-wrist-curl",
+      "imageUrl": "/assets/strength/reviewed/cable/wrist-curl.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 115686
+    },
+    {
+      "familyId": "cable-pushdown-bar",
+      "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 94314
+    },
+    {
+      "familyId": "cable-pushdown-rope",
+      "imageUrl": "/assets/strength/reviewed/cable/pushdown-rope.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 92280
+    },
+    {
+      "familyId": "cable-pushdown-single-arm",
+      "imageUrl": "/assets/strength/reviewed/cable/pushdown-single-arm.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 94496
+    },
+    {
+      "familyId": "cable-triceps-overhead",
+      "imageUrl": "/assets/strength/reviewed/cable/triceps-overhead.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 97506
+    },
+    {
+      "familyId": "cable-triceps-kickback",
+      "imageUrl": "/assets/strength/reviewed/cable/triceps-kickback.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 93960
+    },
+    {
+      "familyId": "cable-triceps-cross-extension",
+      "imageUrl": "/assets/strength/reviewed/cable/triceps-cross-extension.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 81450
+    },
+    {
+      "familyId": "cable-neck-extension",
+      "imageUrl": "/assets/strength/reviewed/cable/neck-extension.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 105856
+    },
+    {
+      "familyId": "cable-pulldown-wide",
+      "imageUrl": "/assets/strength/reviewed/cable/pulldown-wide.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 117506
+    },
+    {
+      "familyId": "cable-pulldown-neutral",
+      "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 107252
+    },
+    {
+      "familyId": "cable-pulldown-single-arm",
+      "imageUrl": "/assets/strength/reviewed/cable/pulldown-single-arm.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 104090
+    },
+    {
+      "familyId": "cable-straight-arm-pulldown",
+      "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 96914
+    },
+    {
+      "familyId": "cable-row-seated",
+      "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 109554
+    },
+    {
+      "familyId": "cable-row-single-arm",
+      "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 101502
+    },
+    {
+      "familyId": "cable-row-high",
+      "imageUrl": "/assets/strength/reviewed/cable/row-high.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 104174
+    },
+    {
+      "familyId": "cable-rear-delt-fly",
+      "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 113232
+    },
+    {
+      "familyId": "cable-chest-fly-high",
+      "imageUrl": "/assets/strength/reviewed/cable/chest-fly-high.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 125350
+    },
+    {
+      "familyId": "cable-chest-fly-mid",
+      "imageUrl": "/assets/strength/reviewed/cable/chest-fly-mid.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 107428
+    },
+    {
+      "familyId": "cable-chest-fly-low",
+      "imageUrl": "/assets/strength/reviewed/cable/chest-fly-low.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 127524
+    },
+    {
+      "familyId": "cable-chest-crossover",
+      "imageUrl": "/assets/strength/reviewed/cable/chest-crossover.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 127222
+    },
+    {
+      "familyId": "cable-chest-press",
+      "imageUrl": "/assets/strength/reviewed/cable/chest-press.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 133702
+    },
+    {
+      "familyId": "cable-face-pull",
+      "imageUrl": "/assets/strength/reviewed/cable/face-pull.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 101988
+    },
+    {
+      "familyId": "cable-lateral-raise",
+      "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 92298
+    },
+    {
+      "familyId": "cable-front-raise",
+      "imageUrl": "/assets/strength/reviewed/cable/front-raise.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 141210
+    },
+    {
+      "familyId": "cable-y-raise",
+      "imageUrl": "/assets/strength/reviewed/cable/y-raise.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 115868
+    },
+    {
+      "familyId": "cable-shoulder-rotation",
+      "imageUrl": "/assets/strength/reviewed/cable/shoulder-rotation.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 99834
+    },
+    {
+      "familyId": "cable-shrug",
+      "imageUrl": "/assets/strength/reviewed/cable/shrug.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 138128
+    },
+    {
+      "familyId": "cable-core-rotation",
+      "imageUrl": "/assets/strength/reviewed/cable/core-rotation.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 100940
+    },
+    {
+      "familyId": "cable-crunch",
+      "imageUrl": "/assets/strength/reviewed/cable/crunch.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 103966
+    },
+    {
+      "familyId": "cable-glute-extension",
+      "imageUrl": "/assets/strength/reviewed/cable/glute-extension.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 96544
+    },
+    {
+      "familyId": "cable-pull-through",
+      "imageUrl": "/assets/strength/reviewed/cable/pull-through.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 133126
+    },
+    {
+      "familyId": "cable-hip-adduction",
+      "imageUrl": "/assets/strength/reviewed/cable/hip-adduction.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 95798
+    },
+    {
+      "familyId": "cable-leg-curl",
+      "imageUrl": "/assets/strength/reviewed/cable/leg-curl.webp",
+      "format": "WEBP",
+      "width": 1254,
+      "height": 1254,
+      "square": true,
+      "bytes": 128474
+    }
+  ]
+}

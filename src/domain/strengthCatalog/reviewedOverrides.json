@@ -74,49 +74,65 @@
     "name": {
       "zhTW": "貝氏滑輪彎舉"
     },
-    "mediaFamilyId": "cable-curl-bayesian"
+    "mediaFamilyId": "cable-curl-bayesian",
+    "imageUrl": "/assets/strength/reviewed/cable/curl-bayesian.webp",
+    "imageSource": "Corner generated"
   },
   "wger-95": {
     "name": {
       "zhTW": "滑輪二頭肌彎舉"
     },
-    "mediaFamilyId": "cable-curl"
+    "mediaFamilyId": "cable-curl",
+    "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1109": {
     "name": {
       "zhTW": "滑輪集中彎舉"
     },
-    "mediaFamilyId": "cable-curl-single-arm"
+    "mediaFamilyId": "cable-curl-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/curl-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1531": {
     "name": {
       "zhTW": "滑輪彎舉"
     },
-    "mediaFamilyId": "cable-curl"
+    "mediaFamilyId": "cable-curl",
+    "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1662": {
     "name": {
       "zhTW": "滑輪三頭肌伸展（內旋）"
     },
-    "mediaFamilyId": "cable-triceps-cross-extension"
+    "mediaFamilyId": "cable-triceps-cross-extension",
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-cross-extension.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1509": {
     "name": {
       "zhTW": "滑輪三頭肌後踢"
     },
-    "mediaFamilyId": "cable-triceps-kickback"
+    "mediaFamilyId": "cable-triceps-kickback",
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-kickback.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1661": {
     "name": {
       "zhTW": "滑輪三頭肌推壓"
     },
-    "mediaFamilyId": "cable-pushdown-bar"
+    "mediaFamilyId": "cable-pushdown-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+    "imageSource": "Corner generated"
   },
   "wger-275": {
     "name": {
       "zhTW": "滑輪槌式彎舉"
     },
-    "mediaFamilyId": "cable-curl-hammer"
+    "mediaFamilyId": "cable-curl-hammer",
+    "imageUrl": "/assets/strength/reviewed/cable/curl-hammer.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1490": {
     "name": {
@@ -127,127 +143,169 @@
     "name": {
       "zhTW": "單臂過頭滑輪三頭肌伸展"
     },
-    "mediaFamilyId": "cable-triceps-overhead"
+    "mediaFamilyId": "cable-triceps-overhead",
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-overhead.webp",
+    "imageSource": "Corner generated"
   },
   "wger-914": {
     "name": {
       "zhTW": "反握 EZ 槓滑輪彎舉"
     },
-    "mediaFamilyId": "cable-curl-bar"
+    "mediaFamilyId": "cable-curl-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-912": {
     "name": {
       "zhTW": "直槓滑輪彎舉"
     },
-    "mediaFamilyId": "cable-curl-bar"
+    "mediaFamilyId": "cable-curl-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1900": {
     "name": {
       "zhTW": "繩索三頭肌下壓"
     },
-    "mediaFamilyId": "cable-pushdown-rope"
+    "mediaFamilyId": "cable-pushdown-rope",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-rope.webp",
+    "imageSource": "Corner generated"
   },
   "wger-659": {
     "name": {
       "zhTW": "滑輪三頭肌伸展"
     },
-    "mediaFamilyId": "cable-pushdown-bar"
+    "mediaFamilyId": "cable-pushdown-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1458": {
     "name": {
       "zhTW": "交叉滑輪 Y 字上舉"
     },
-    "mediaFamilyId": "cable-y-raise"
+    "mediaFamilyId": "cable-y-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/y-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1492": {
     "name": {
       "zhTW": "高位滑輪划船"
     },
-    "mediaFamilyId": "cable-row-high"
+    "mediaFamilyId": "cable-row-high",
+    "imageUrl": "/assets/strength/reviewed/cable/row-high.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1186": {
     "name": {
       "zhTW": "單臂俯身滑輪划船"
     },
-    "mediaFamilyId": "cable-row-single-arm"
+    "mediaFamilyId": "cable-row-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1905": {
     "name": {
       "zhTW": "滑輪後拉"
     },
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1473": {
     "name": {
       "zhTW": "反向滑輪飛鳥"
     },
-    "mediaFamilyId": "cable-rear-delt-fly"
+    "mediaFamilyId": "cable-rear-delt-fly",
+    "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp",
+    "imageSource": "Corner generated"
   },
   "wger-922": {
     "name": {
       "zhTW": "坐姿滑輪中斜方肌聳肩"
     },
-    "mediaFamilyId": "cable-shrug"
+    "mediaFamilyId": "cable-shrug",
+    "imageUrl": "/assets/strength/reviewed/cable/shrug.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1621": {
     "name": {
       "zhTW": "單臂滑輪划船"
     },
-    "mediaFamilyId": "cable-row-single-arm"
+    "mediaFamilyId": "cable-row-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1469": {
     "name": {
       "zhTW": "俯身滑輪飛鳥"
     },
-    "mediaFamilyId": "cable-rear-delt-fly"
+    "mediaFamilyId": "cable-rear-delt-fly",
+    "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1656": {
     "name": {
       "zhTW": "下斜滑輪胸推"
     },
-    "mediaFamilyId": "cable-chest-press"
+    "mediaFamilyId": "cable-chest-press",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-press.webp",
+    "imageSource": "Corner generated"
   },
   "wger-323": {
     "name": {
       "zhTW": "滑輪交叉夾胸"
     },
-    "mediaFamilyId": "cable-chest-crossover"
+    "mediaFamilyId": "cable-chest-crossover",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-crossover.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1691": {
     "name": {
       "zhTW": "下胸滑輪飛鳥"
     },
-    "mediaFamilyId": "cable-chest-fly-low"
+    "mediaFamilyId": "cable-chest-fly-low",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-low.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1689": {
     "name": {
       "zhTW": "中胸滑輪飛鳥"
     },
-    "mediaFamilyId": "cable-chest-fly-mid"
+    "mediaFamilyId": "cable-chest-fly-mid",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-mid.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1457": {
     "name": {
       "zhTW": "滑輪環繞推胸"
     },
-    "mediaFamilyId": "cable-chest-press"
+    "mediaFamilyId": "cable-chest-press",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-press.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1270": {
     "name": {
       "zhTW": "低位滑輪飛鳥"
     },
-    "mediaFamilyId": "cable-chest-fly-low"
+    "mediaFamilyId": "cable-chest-fly-low",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-low.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1296": {
     "name": {
       "zhTW": "低位滑輪交叉夾胸"
     },
-    "mediaFamilyId": "cable-chest-fly-low"
+    "mediaFamilyId": "cable-chest-fly-low",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-low.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1484": {
     "name": {
       "zhTW": "全方向滑輪交叉夾胸"
     },
-    "mediaFamilyId": "cable-chest-crossover"
+    "mediaFamilyId": "cable-chest-crossover",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-crossover.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1112": {
     "name": {
@@ -258,37 +316,49 @@
     "name": {
       "zhTW": "滑輪伐木式轉體"
     },
-    "mediaFamilyId": "cable-core-rotation"
+    "mediaFamilyId": "cable-core-rotation",
+    "imageUrl": "/assets/strength/reviewed/cable/core-rotation.webp",
+    "imageSource": "Corner generated"
   },
   "wger-173": {
     "name": {
       "zhTW": "跪姿滑輪捲腹"
     },
-    "mediaFamilyId": "cable-crunch"
+    "mediaFamilyId": "cable-crunch",
+    "imageUrl": "/assets/strength/reviewed/cable/crunch.webp",
+    "imageSource": "Corner generated"
   },
   "wger-439": {
     "name": {
       "zhTW": "正握滑輪彎舉"
     },
-    "mediaFamilyId": "cable-curl-bar"
+    "mediaFamilyId": "cable-curl-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-672": {
     "name": {
       "zhTW": "坐姿滑輪軀幹旋轉"
     },
-    "mediaFamilyId": "cable-core-rotation"
+    "mediaFamilyId": "cable-core-rotation",
+    "imageUrl": "/assets/strength/reviewed/cable/core-rotation.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1131": {
     "name": {
       "zhTW": "滑輪臀部後伸"
     },
-    "mediaFamilyId": "cable-glute-extension"
+    "mediaFamilyId": "cable-glute-extension",
+    "imageUrl": "/assets/strength/reviewed/cable/glute-extension.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1751": {
     "name": {
       "zhTW": "滑輪拉臀"
     },
-    "mediaFamilyId": "cable-pull-through"
+    "mediaFamilyId": "cable-pull-through",
+    "imageUrl": "/assets/strength/reviewed/cable/pull-through.webp",
+    "imageSource": "Corner generated"
   },
   "wger-990": {
     "name": {
@@ -299,207 +369,333 @@
     "name": {
       "zhTW": "滑輪肩外旋"
     },
-    "mediaFamilyId": "cable-shoulder-rotation"
+    "mediaFamilyId": "cable-shoulder-rotation",
+    "imageUrl": "/assets/strength/reviewed/cable/shoulder-rotation.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1472": {
     "name": {
       "zhTW": "滑輪內收聳肩"
     },
-    "mediaFamilyId": "cable-shrug"
+    "mediaFamilyId": "cable-shrug",
+    "imageUrl": "/assets/strength/reviewed/cable/shrug.webp",
+    "imageSource": "Corner generated"
   },
   "wger-349": {
     "name": {
       "zhTW": "單臂滑輪橫向划船"
     },
-    "mediaFamilyId": "cable-row-single-arm"
+    "mediaFamilyId": "cable-row-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1755": {
     "name": {
       "zhTW": "滑輪 Y 字上拉"
     },
-    "mediaFamilyId": "cable-y-raise"
+    "mediaFamilyId": "cable-y-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/y-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-917": {
     "name": {
       "zhTW": "直槓滑輪前平舉"
     },
-    "mediaFamilyId": "cable-front-raise"
+    "mediaFamilyId": "cable-front-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/front-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1795": {
     "name": {
       "zhTW": "單臂交叉滑輪下拉"
     },
-    "mediaFamilyId": "cable-pulldown-single-arm"
+    "mediaFamilyId": "cable-pulldown-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1481": {
-    "mediaFamilyId": "cable-pushdown-bar"
+    "mediaFamilyId": "cable-pushdown-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+    "imageSource": "Corner generated"
   },
   "wger-284": {
-    "mediaFamilyId": "cable-chest-fly-mid"
+    "mediaFamilyId": "cable-chest-fly-mid",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-mid.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1298": {
-    "mediaFamilyId": "cable-triceps-cross-extension"
+    "mediaFamilyId": "cable-triceps-cross-extension",
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-cross-extension.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1971": {
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1717": {
-    "mediaFamilyId": "cable-neck-extension"
+    "mediaFamilyId": "cable-neck-extension",
+    "imageUrl": "/assets/strength/reviewed/cable/neck-extension.webp",
+    "imageSource": "Corner generated"
   },
   "wger-803": {
-    "mediaFamilyId": "cable-pushdown-single-arm"
+    "mediaFamilyId": "cable-pushdown-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1513": {
-    "mediaFamilyId": "cable-triceps-overhead"
+    "mediaFamilyId": "cable-triceps-overhead",
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-overhead.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1485": {
-    "mediaFamilyId": "cable-pushdown-bar"
+    "mediaFamilyId": "cable-pushdown-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1969": {
-    "mediaFamilyId": "cable-pushdown-single-arm"
+    "mediaFamilyId": "cable-pushdown-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-805": {
-    "mediaFamilyId": "cable-pushdown-bar"
+    "mediaFamilyId": "cable-pushdown-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+    "imageSource": "Corner generated"
   },
   "wger-660": {
-    "mediaFamilyId": "cable-pushdown-bar"
+    "mediaFamilyId": "cable-pushdown-bar",
+    "imageUrl": "/assets/strength/reviewed/cable/pushdown-bar.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1771": {
-    "mediaFamilyId": "cable-wrist-curl"
+    "mediaFamilyId": "cable-wrist-curl",
+    "imageUrl": "/assets/strength/reviewed/cable/wrist-curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1470": {
-    "mediaFamilyId": "cable-pulldown-single-arm"
+    "mediaFamilyId": "cable-pulldown-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1486": {
-    "mediaFamilyId": "cable-row-high"
+    "mediaFamilyId": "cable-row-high",
+    "imageUrl": "/assets/strength/reviewed/cable/row-high.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1127": {
-    "mediaFamilyId": "cable-pulldown-neutral"
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1137": {
-    "mediaFamilyId": "cable-y-raise"
+    "mediaFamilyId": "cable-y-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/y-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1138": {
-    "mediaFamilyId": "cable-pulldown-neutral"
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1702": {
-    "mediaFamilyId": "cable-pulldown-wide"
+    "mediaFamilyId": "cable-pulldown-wide",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-wide.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1659": {
-    "mediaFamilyId": "cable-pulldown-single-arm"
+    "mediaFamilyId": "cable-pulldown-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-394": {
-    "mediaFamilyId": "cable-row-seated"
+    "mediaFamilyId": "cable-row-seated",
+    "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp",
+    "imageSource": "Corner generated"
   },
   "wger-395": {
-    "mediaFamilyId": "cable-row-seated"
+    "mediaFamilyId": "cable-row-seated",
+    "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1635": {
-    "mediaFamilyId": "cable-pulldown-neutral"
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1510": {
-    "mediaFamilyId": "cable-pulldown-neutral"
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1136": {
-    "mediaFamilyId": "cable-pulldown-neutral"
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1718": {
-    "mediaFamilyId": "cable-row-high"
+    "mediaFamilyId": "cable-row-high",
+    "imageUrl": "/assets/strength/reviewed/cable/row-high.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1634": {
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1928": {
-    "mediaFamilyId": "cable-row-seated"
+    "mediaFamilyId": "cable-row-seated",
+    "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp",
+    "imageSource": "Corner generated"
   },
   "wger-562": {
-    "mediaFamilyId": "cable-row-single-arm"
+    "mediaFamilyId": "cable-row-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1730": {
-    "mediaFamilyId": "cable-lateral-raise"
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1727": {
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1637": {
-    "mediaFamilyId": "cable-row-single-arm"
+    "mediaFamilyId": "cable-row-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/row-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1972": {
-    "mediaFamilyId": "cable-pulldown-single-arm"
+    "mediaFamilyId": "cable-pulldown-single-arm",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-single-arm.webp",
+    "imageSource": "Corner generated"
   },
   "wger-628": {
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-629": {
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1726": {
-    "mediaFamilyId": "cable-straight-arm-pulldown"
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/cable/straight-arm-pulldown.webp",
+    "imageSource": "Corner generated"
   },
   "wger-695": {
-    "mediaFamilyId": "cable-pulldown-neutral"
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageSource": "Corner generated"
   },
   "wger-723": {
-    "mediaFamilyId": "cable-pulldown-wide"
+    "mediaFamilyId": "cable-pulldown-wide",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-wide.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1125": {
-    "mediaFamilyId": "cable-pulldown-wide"
+    "mediaFamilyId": "cable-pulldown-wide",
+    "imageUrl": "/assets/strength/reviewed/cable/pulldown-wide.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1660": {
-    "mediaFamilyId": "cable-chest-press"
+    "mediaFamilyId": "cable-chest-press",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-press.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1690": {
-    "mediaFamilyId": "cable-chest-fly-high"
+    "mediaFamilyId": "cable-chest-fly-high",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-high.webp",
+    "imageSource": "Corner generated"
   },
   "wger-237": {
-    "mediaFamilyId": "cable-chest-fly-mid"
+    "mediaFamilyId": "cable-chest-fly-mid",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-mid.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1922": {
-    "mediaFamilyId": "cable-chest-fly-mid"
+    "mediaFamilyId": "cable-chest-fly-mid",
+    "imageUrl": "/assets/strength/reviewed/cable/chest-fly-mid.webp",
+    "imageSource": "Corner generated"
   },
   "wger-2495": {
-    "mediaFamilyId": "cable-leg-curl"
+    "mediaFamilyId": "cable-leg-curl",
+    "imageUrl": "/assets/strength/reviewed/cable/leg-curl.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1724": {
-    "mediaFamilyId": "cable-hip-adduction"
+    "mediaFamilyId": "cable-hip-adduction",
+    "imageUrl": "/assets/strength/reviewed/cable/hip-adduction.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1807": {
-    "mediaFamilyId": "cable-lateral-raise"
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1745": {
-    "mediaFamilyId": "cable-front-raise"
+    "mediaFamilyId": "cable-front-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/front-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1378": {
-    "mediaFamilyId": "cable-lateral-raise"
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-822": {
-    "mediaFamilyId": "cable-rear-delt-fly"
+    "mediaFamilyId": "cable-rear-delt-fly",
+    "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1936": {
-    "mediaFamilyId": "cable-rear-delt-fly"
+    "mediaFamilyId": "cable-rear-delt-fly",
+    "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp",
+    "imageSource": "Corner generated"
   },
   "wger-222": {
-    "mediaFamilyId": "cable-face-pull"
+    "mediaFamilyId": "cable-face-pull",
+    "imageUrl": "/assets/strength/reviewed/cable/face-pull.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1731": {
-    "mediaFamilyId": "cable-front-raise"
+    "mediaFamilyId": "cable-front-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/front-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1882": {
-    "mediaFamilyId": "cable-lateral-raise"
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1709": {
-    "mediaFamilyId": "cable-rear-delt-fly"
+    "mediaFamilyId": "cable-rear-delt-fly",
+    "imageUrl": "/assets/strength/reviewed/cable/rear-delt-fly.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1729": {
-    "mediaFamilyId": "cable-shoulder-rotation"
+    "mediaFamilyId": "cable-shoulder-rotation",
+    "imageUrl": "/assets/strength/reviewed/cable/shoulder-rotation.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1728": {
-    "mediaFamilyId": "cable-triceps-cross-extension"
+    "mediaFamilyId": "cable-triceps-cross-extension",
+    "imageUrl": "/assets/strength/reviewed/cable/triceps-cross-extension.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1753": {
-    "mediaFamilyId": "cable-lateral-raise"
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1752": {
-    "mediaFamilyId": "cable-lateral-raise"
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
   }
 }
