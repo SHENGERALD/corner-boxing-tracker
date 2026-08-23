@@ -131,6 +131,24 @@ describe("drill library", () => {
     expect(reviewed.get("wger-1508")).toEqual(expect.objectContaining({ equipment: "machine", imageUrl: expect.stringContaining("machine-smith-high-incline-press.webp") }));
     expect(reviewed.get("wger-925")).toEqual(expect.objectContaining({ equipment: "machine", name: expect.objectContaining({ zhTW: "低角度上斜史密斯胸推" }) }));
     expect(reviewed.get("wger-1593")).toEqual(expect.objectContaining({ equipment: "machine", name: expect.objectContaining({ zhTW: "史密斯機分腿蹲" }) }));
+    expect(reviewed.get("wger-258")).toEqual(expect.objectContaining({ equipment: "cable", mediaFamilyId: "cable-pulldown-wide", name: expect.objectContaining({ zhTW: "寬握滑輪下拉" }) }));
+    expect(reviewed.get("wger-259")).toEqual(expect.objectContaining({ equipment: "cable", mediaFamilyId: "cable-pulldown-neutral", name: expect.objectContaining({ zhTW: "窄握滑輪下拉" }) }));
+    expect(reviewed.get("wger-510")).toEqual(expect.objectContaining({ equipment: "dumbbell", name: expect.objectContaining({ zhTW: "胸部支撐啞鈴划船" }) }));
+    expect(reviewed.get("wger-604")).toEqual(expect.objectContaining({ equipment: "barbell", name: expect.objectContaining({ zhTW: "速度硬舉" }) }));
+    expect(reviewed.get("wger-1967")).toEqual(expect.objectContaining({ category: "shoulders", name: expect.objectContaining({ zhTW: "坐姿啞鈴肩推" }) }));
+    expect(reviewed.get("wger-1137")).toEqual(expect.objectContaining({ equipment: "cable", name: expect.objectContaining({ zhTW: "高位滑輪直臂下壓" }), imageUrl: expect.stringContaining("generated/back/wger-1137.webp") }));
+    expect(reviewed.get("wger-1138")).toEqual(expect.objectContaining({ equipment: "cable", name: expect.objectContaining({ zhTW: "俯臥上斜凳滑輪下拉" }), imageUrl: expect.stringContaining("generated/back/wger-1138.webp") }));
+    expect(reviewed.get("wger-1728")).toEqual(expect.objectContaining({ equipment: "cable", name: expect.objectContaining({ zhTW: "單臂滑輪肩內旋" }), imageUrl: expect.stringContaining("generated/shoulders/wger-1728.webp") }));
+    expect(reviewed.get("wger-194")).toEqual(expect.objectContaining({ equipment: "bodyweight", name: expect.objectContaining({ zhTW: "雙槓撐體" }), imageUrl: expect.stringContaining("generated/chest/wger-194.webp") }));
+    expect(reviewed.get("wger-570")).toEqual(expect.objectContaining({ equipment: "dumbbell", name: expect.objectContaining({ zhTW: "啞鈴聳肩" }), imageUrl: expect.stringContaining("generated/shoulders/wger-570.webp") }));
+    expect(reviewed.get("wger-1573")).toEqual(expect.objectContaining({ name: expect.objectContaining({ zhTW: "跪姿健腹輪" }), imageUrl: expect.stringContaining("generated/core/wger-1573.webp") }));
+    expect(reviewed.get("wger-1363")).toEqual(expect.objectContaining({ name: expect.objectContaining({ zhTW: "上背泡棉滾筒放鬆" }), imageUrl: expect.stringContaining("generated/back/wger-1363.webp") }));
+    expect(reviewed.get("wger-1915")).toEqual(expect.objectContaining({ category: "legs", imageUrl: expect.stringContaining("generated/legs/wger-1915.webp") }));
+    expect(reviewed.get("wger-1833")).toEqual(expect.objectContaining({ category: "legs" }));
+    expect(reviewed.get("wger-1580")).toEqual(expect.objectContaining({ category: "back" }));
+    expect(reviewed.get("wger-1372")).toEqual(expect.objectContaining({ equipment: "machine" }));
+    expect(reviewed.get("wger-1929")).toEqual(expect.objectContaining({ equipment: "machine" }));
+    expect(reviewed.get("wger-623")).toEqual(expect.objectContaining({ equipment: "cable" }));
 
     for (const id of ["wger-1480", "wger-493", "wger-495", "wger-1698", "wger-1699", "wger-445", "wger-615", "wger-1925"]) {
       expect(reviewed.get(id)?.imageUrl).not.toContain("/assets/strength/generated/");

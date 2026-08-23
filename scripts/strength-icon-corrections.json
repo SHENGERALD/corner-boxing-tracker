@@ -1,0 +1,44 @@
+{
+  "sheets": [
+    {
+      "path": "/Users/gerald/.codex/generated_images/019fb52e-9570-7a22-8f21-5c4bedec9dba/exec-bd04fc2e-f9ff-4977-a370-0bf5b233a842.png",
+      "items": [
+        { "panel": 3, "id": "wger-112", "category": "arms" },
+        { "panel": 4, "id": "wger-354", "category": "back" },
+        { "panel": 5, "id": "wger-1207", "category": "back" },
+        { "panel": 6, "id": "wger-1915", "category": "legs" },
+        { "panel": 7, "id": "wger-1238", "category": "core" },
+        { "panel": 8, "id": "wger-1474", "category": "core" },
+        { "panel": 9, "id": "wger-43", "category": "legs" }
+      ]
+    },
+    {
+      "path": "/Users/gerald/.codex/generated_images/019fb52e-9570-7a22-8f21-5c4bedec9dba/exec-b74eacf4-0e1b-4fab-8ede-e33ded42fe7b.png",
+      "items": [
+        { "panel": 1, "id": "wger-378", "category": "core" },
+        { "panel": 2, "id": "wger-1501", "category": "back" },
+        { "panel": 3, "id": "wger-1082", "category": "back" },
+        { "panel": 4, "id": "wger-516", "category": "back" },
+        { "panel": 5, "id": "wger-1719", "category": "back" },
+        { "panel": 6, "id": "wger-1434", "category": "back" },
+        { "panel": 7, "id": "wger-1372", "category": "arms" },
+        { "panel": 8, "id": "wger-1929", "category": "back" },
+        { "panel": 9, "id": "wger-623", "category": "arms" }
+      ]
+    },
+    {
+    "path": "/Users/gerald/.codex/generated_images/019fb52e-9570-7a22-8f21-5c4bedec9dba/exec-67e9f88b-d92a-4e45-8adb-05cfcb8acdd6.png",
+    "items": [
+      { "panel": 1, "id": "wger-1824", "category": "arms" },
+      { "panel": 2, "id": "wger-1483", "category": "arms" },
+      { "panel": 3, "id": "wger-1728", "category": "shoulders" },
+      { "panel": 4, "id": "wger-1137", "category": "back", "inset": [0, 0, 28, 28] },
+      { "panel": 5, "id": "wger-1138", "category": "back" },
+      { "panel": 6, "id": "wger-194", "category": "chest" },
+      { "panel": 7, "id": "wger-570", "category": "shoulders", "inset": [0, 0, 42, 0] },
+      { "panel": 8, "id": "wger-1573", "category": "core", "inset": [0, 0, 36, 0] },
+      { "panel": 9, "id": "wger-1363", "category": "back" }
+    ]
+    }
+  ]
+}

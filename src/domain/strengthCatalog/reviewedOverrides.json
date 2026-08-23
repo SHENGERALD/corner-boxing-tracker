@@ -153,7 +153,9 @@
   "wger-1490": {
     "name": {
       "zhTW": "斜板俯臥三頭肌後踢"
-    }
+    },
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1490.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1668": {
     "name": {
@@ -511,13 +513,15 @@
     "imageSource": "Corner generated"
   },
   "wger-1137": {
-    "mediaFamilyId": "cable-y-raise",
-    "imageUrl": "/assets/strength/reviewed/cable/y-raise.webp",
+    "name": { "zhTW": "高位滑輪直臂下壓" },
+    "mediaFamilyId": "cable-straight-arm-pulldown",
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1137.webp",
     "imageSource": "Corner generated"
   },
   "wger-1138": {
+    "name": { "zhTW": "俯臥上斜凳滑輪下拉" },
     "mediaFamilyId": "cable-pulldown-neutral",
-    "imageUrl": "/assets/strength/reviewed/cable/pulldown-neutral.webp",
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1138.webp",
     "imageSource": "Corner generated"
   },
   "wger-1702": {
@@ -706,8 +710,9 @@
     "imageSource": "Corner generated"
   },
   "wger-1728": {
-    "mediaFamilyId": "cable-triceps-cross-extension",
-    "imageUrl": "/assets/strength/reviewed/cable/triceps-cross-extension.webp",
+    "name": { "zhTW": "單臂滑輪肩內旋" },
+    "mediaFamilyId": "cable-shoulder-rotation",
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1728.webp",
     "imageSource": "Corner generated"
   },
   "wger-1753": {
@@ -730,7 +735,9 @@
       "en": "Lie chest-down on an incline bench, keep the upper arms still, and curl with control."
     },
     "equipment": "dumbbell",
-    "category": "arms"
+    "category": "arms",
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1465.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1707": {
     "name": {
@@ -757,7 +764,9 @@
       "en": "Keep the elbows straight on an elevated surface and move only through protraction and retraction of the shoulder blades."
     },
     "equipment": "bodyweight",
-    "category": "shoulders"
+    "category": "shoulders",
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1716.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1111": {
     "name": {
@@ -768,7 +777,9 @@
       "zhTW": "雙手撐在穩固高台，身體保持一直線，胸口靠近高台後推回。",
       "en": "Keep a straight body line, lower the chest toward a stable elevated surface, then press away."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1111.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1094": {
     "name": {
@@ -792,7 +803,9 @@
       "zhTW": "雙臂伸直支撐身體，膝蓋收向胸口並維持軀幹穩定。",
       "en": "Support on straight arms, draw the knees toward the chest, and hold the trunk steady."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1704.webp",
+    "imageSource": "Corner generated"
   },
   "wger-2493": {
     "name": {
@@ -803,7 +816,9 @@
       "zhTW": "側身以前臂支撐，上側腿放在椅面，抬起骨盆並維持身體一直線。",
       "en": "Support the top leg on a bench, lift the hips, and maintain a straight side-plank position."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-2493.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1605": {
     "name": {
@@ -814,7 +829,9 @@
       "zhTW": "上側腿放在椅面，以前臂撐起身體，維持骨盆與軀幹穩定。",
       "en": "Place the top leg on a bench and hold a stable side plank with the hips lifted."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1605.webp",
+    "imageSource": "Corner generated"
   },
   "wger-2478": {
     "name": {
@@ -838,7 +855,9 @@
       "zhTW": "俯臥在長椅上固定上半身，以臀肌帶動雙腿抬至身體延長線。",
       "en": "Brace the upper body on a bench and lift the legs with the glutes to body level."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1809.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1680": {
     "name": {
@@ -850,7 +869,9 @@
       "en": "Cross one ankle over the opposite thigh and hinge forward gently from the hips."
     },
     "equipment": "bodyweight",
-    "category": "mobility"
+    "category": "mobility",
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1680.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1710": {
     "name": {
@@ -861,7 +882,9 @@
       "zhTW": "雙肘放在椅面，臀部向後移並讓胸口下沉，伸展背闊肌與肩部。",
       "en": "Rest the elbows on a bench, sit the hips back, and lower the chest to stretch the lats and shoulders."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1710.webp",
+    "imageSource": "Corner generated"
   },
   "wger-1027": {
     "name": {
@@ -872,7 +895,9 @@
       "zhTW": "跪在長椅前，雙肘放在椅面並讓胸口向下沉，保持腰椎穩定。",
       "en": "Kneel before a bench, place the elbows on it, and sink the chest while keeping the low back controlled."
     },
-    "equipment": "bodyweight"
+    "equipment": "bodyweight",
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1027.webp",
+    "imageSource": "Corner generated"
   },
   "wger-193": {
     "name": {
@@ -1119,5 +1144,1923 @@
       "en": "Smith Machine Split Squat"
     },
     "equipment": "machine"
+  },
+  "wger-1606": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1606.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1219": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1219.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-995": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-995.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-48": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-48.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1320": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1320.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1280": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1280.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1483": {
+    "name": { "zhTW": "啞鈴二頭彎舉三連組" },
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1483.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-112": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-112.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1608": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1608.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1666": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1666.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-974": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-974.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1502": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1502.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2504": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-2504.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1881": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1881.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-182": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-182.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1360": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1360.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1512": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1512.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1482": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1482.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1228": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1228.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-202": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-202.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1224": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1224.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-204": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-204.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-211": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-211.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1463": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1463.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-208": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-208.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1824": {
+    "name": { "zhTW": "啞鈴泰特推舉" },
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1824.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1498": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1498.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-820": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-820.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1468": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1468.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-994": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-994.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1686": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1686.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1467": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1467.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1302": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1302.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1218": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1218.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1511": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1511.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1741": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1741.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1530": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1530.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1808": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1808.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1703": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1703.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1430": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1430.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1658": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1658.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1657": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1657.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-821": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-821.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1462": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1462.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-985": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-985.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1216": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1216.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1114": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1114.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-913": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-913.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-501": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-501.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1289": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1289.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-549": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-549.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1209": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1209.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-584": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-584.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-245": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-245.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-621": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-621.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-623": {
+    "equipment": "cable",
+    "mediaFamilyId": "cable-wrist-curl",
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-623.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-655": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-655.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1372": {
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1372.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1269": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1269.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1261": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1261.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1260": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1260.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1262": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1262.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1266": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1266.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-713": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-713.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1205": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1205.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1683": {
+    "imageUrl": "/assets/strength/reviewed/generated/arms/wger-1683.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1501": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1501.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1545": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1545.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1737": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1737.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1929": {
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1929.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1263": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1263.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1742": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1742.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1005": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1005.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1380": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1380.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1877": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1877.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1700": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1700.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1082": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1082.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1908": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1908.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1006": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1006.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1015": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1015.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-980": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-980.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1016": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1016.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2502": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-2502.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-189": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-189.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2503": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-2503.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1004": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1004.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1214": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1214.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-259": {
+    "name": {"zhTW": "窄握滑輪下拉", "en": "Front Pull narrow"},
+    "cue": {"zhTW": "坐在滑輪下拉機，雙手窄握把手，將把手拉向上胸。", "en": "Sit at the pulldown machine, use a close grip, and pull the handle toward the upper chest."},
+    "equipment": "cable",
+    "mediaFamilyId": "cable-pulldown-neutral",
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-259.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-258": {
+    "name": {"zhTW": "寬握滑輪下拉", "en": "Front pull wide"},
+    "cue": {"zhTW": "坐在滑輪下拉機，雙手寬握橫桿，將橫桿拉向上胸。", "en": "Sit at the pulldown machine, use a wide grip, and pull the bar toward the upper chest."},
+    "equipment": "cable",
+    "mediaFamilyId": "cable-pulldown-wide",
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-258.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-516": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-516.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1303": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1303.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-292": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-292.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1101": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1101.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1487": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1487.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-310": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-310.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1927": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1927.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1282": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1282.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1719": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1719.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1970": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1970.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1910": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1910.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1434": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1434.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-354": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-354.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-355": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-355.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1514": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1514.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1967": {
+    "category": "shoulders",
+    "name": {"zhTW": "坐姿啞鈴肩推", "en": "Seated Dumbbell Shoulder Press"},
+    "cue": {"zhTW": "坐姿將啞鈴從肩膀推至頭頂。", "en": "From a seated position, press dumbbells from the shoulders overhead."},
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1967.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2489": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-2489.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-923": {
+    "name": {"zhTW": "俯臥啞鈴划船與坐姿聳肩", "en": "Lying Dumbbell Row SS Seated Shrug"},
+    "cue": {"zhTW": "以超級組方式完成俯臥啞鈴划船與坐姿啞鈴聳肩。", "en": "Perform a superset of lying dumbbell rows and seated dumbbell shrugs."},
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-923.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1304": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1304.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-423": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-423.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1017": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1017.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1701": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1701.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1822": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1822.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-448": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-448.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-468": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-468.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-477": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-477.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1537": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1537.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1696": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1696.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1695": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1695.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1273": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1273.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-490": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-490.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1215": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1215.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1433": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1433.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1399": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1399.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-508": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-508.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-674": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-674.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-510": {
+    "equipment": "dumbbell",
+    "name": {"zhTW": "胸部支撐啞鈴划船", "en": "Chest-Supported Dumbbell Row"},
+    "cue": {"zhTW": "俯臥在長凳上，將啞鈴向肋骨方向划起。", "en": "Lie face down on a bench and row dumbbells toward the ribs."},
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-510.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1435": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1435.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1207": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1207.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1394": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1394.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1210": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1210.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1447": {
+    "name": {"zhTW": "槓鈴抓舉", "en": "Barbell Snatch"},
+    "cue": {"zhTW": "以寬握將槓鈴從地面拉至頭頂鎖定。", "en": "Use a wide grip to pull the barbell from the floor to an overhead lockout."},
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1447.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-636": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-636.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1583": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1583.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2501": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-2501.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1455": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1455.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1834": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1834.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1607": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1607.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-684": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-684.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1381": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1381.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-716": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-716.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1244": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1244.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1083": {
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1083.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-148": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-148.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1203": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-1203.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-702": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-702.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1021": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-1021.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1603": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-1603.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1915": {
+    "category": "legs",
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1915.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-590": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-590.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1200": {
+    "imageUrl": "/assets/strength/reviewed/generated/calves/wger-1200.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1092": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1092.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1525": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1525.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1524": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1524.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1630": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1630.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2482": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2482.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1373": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1373.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1579": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1579.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1449": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1449.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-177": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-177.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1204": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1204.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1940": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1940.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2480": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2480.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-962": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-962.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1592": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1592.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1318": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1318.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2510": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2510.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-319": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-319.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-993": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-993.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1314": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1314.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2481": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2481.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1584": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1584.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2486": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2486.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1376": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1376.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1093": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1093.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-527": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-527.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-529": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-529.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-530": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-530.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1574": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1574.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2484": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2484.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1526": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1526.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-595": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-595.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1523": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1523.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1548": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1548.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-624": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-624.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2485": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2485.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-961": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-961.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1104": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-1104.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2483": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-2483.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-908": {
+    "imageUrl": "/assets/strength/reviewed/generated/cardio/wger-908.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-997": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-997.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-57": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-57.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-132": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-132.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-137": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-137.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2497": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-2497.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1497": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1497.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1496": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1496.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-186": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-186.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1591": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1591.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1777": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1777.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-386": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-386.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-801": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-801.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-239": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-239.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1001": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1001.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-308": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-308.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2499": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-2499.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1693": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1693.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-314": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-314.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1546": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1546.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1918": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1918.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1773": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1773.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-996": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-996.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1461": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1461.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-998": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-998.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1904": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1904.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1436": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1436.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-683": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-683.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1113": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1113.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-498": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-498.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1832": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1832.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-583": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-583.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1778": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1778.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-688": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-688.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2496": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-2496.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1964": {
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-1964.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-9": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-9.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1924": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1924.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1933": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1933.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1828": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1828.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-56": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-56.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-165": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-165.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1687": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1687.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1412": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1412.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2508": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-2508.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1475": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1475.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1476": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1476.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1823": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1823.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1912": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1912.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-174": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-174.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2505": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-2505.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-178": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-178.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1827": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1827.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1409": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1409.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1415": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1415.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1286": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1286.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1099": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1099.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1288": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1288.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-235": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-235.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2507": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-2507.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1238": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1238.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1245": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1245.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1252": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1252.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1307": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1307.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-260": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-260.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-283": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-283.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1411": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1411.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1248": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1248.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-312": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-312.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-382": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-382.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1852": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1852.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1853": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1853.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1779": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1779.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-378": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-378.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1909": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1909.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1478": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1478.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1293": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1293.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1489": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1489.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1766": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1766.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1406": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1406.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2488": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-2488.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1287": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1287.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1772": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1772.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-500": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-500.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1292": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1292.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-505": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-505.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-545": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-545.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1477": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1477.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-556": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-556.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-577": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-577.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-580": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-580.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2509": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-2509.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1019": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1019.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-591": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-591.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1810": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1810.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-607": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-607.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1426": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1426.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1847": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1847.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1776": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1776.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1425": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1425.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1529": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1529.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1259": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1259.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1246": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1246.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-675": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-675.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1090": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1090.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1474": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1474.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1103": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1103.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1743": {
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1743.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1948": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1948.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1096": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1096.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2491": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-2491.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2492": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-2492.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1102": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1102.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1842": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1842.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-43": {
+    "equipment": "barbell",
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-43.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-46": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-46.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-802": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-802.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1935": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1935.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1953": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1953.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1324": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1324.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1312": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1312.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-124": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-124.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-989": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-989.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1466": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1466.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1911": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1911.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2449": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-2449.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1438": {
+    "name": {"zhTW": "槓鈴翻舉", "en": "Barbell Clean"},
+    "cue": {"zhTW": "從地面將槓鈴拉起，接到肩前架位。", "en": "Pull the barbell from the floor and catch it in the front rack position."},
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1438.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1395": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1395.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1361": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1361.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1201": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1201.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1370": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1370.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1116": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1116.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1503": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1503.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-205": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-205.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1234": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1234.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1366": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1366.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1684": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1684.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1241": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1241.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1242": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1242.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1956": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1956.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-265": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-265.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1528": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1528.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-291": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-291.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1906": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1906.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1578": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1578.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-294": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-294.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1846": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1846.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-331": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-331.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1688": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1688.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1829": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1829.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1515": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1515.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-374": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-374.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-376": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-376.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1670": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1670.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1949": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1949.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-397": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-397.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1132": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1132.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-910": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-910.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1464": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1464.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1437": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1437.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1020": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1020.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1410": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1410.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1208": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1208.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2448": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-2448.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1954": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1954.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1672": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1672.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1845": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1845.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1739": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1739.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1202": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1202.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1195": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1195.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-986": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-986.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-987": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-987.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-71": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-71.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1740": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1740.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1388": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1388.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1294": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1294.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1952": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1952.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1576": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1576.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-604": {
+    "equipment": "barbell",
+    "name": {"zhTW": "速度硬舉", "en": "Barbell Speed Deadlift"},
+    "cue": {"zhTW": "以快速而穩定的節奏完成槓鈴硬舉。", "en": "Perform a fast, controlled barbell deadlift."},
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-604.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-991": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-991.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-992": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-992.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-614": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-614.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-616": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-616.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-341": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-341.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1396": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1396.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1397": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1397.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-627": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-627.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1886": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1886.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-650": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-650.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1390": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1390.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1803": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1803.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1913": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1913.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1907": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1907.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1196": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1196.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-718": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-718.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1408": {
+    "imageUrl": "/assets/strength/reviewed/generated/legs/wger-1408.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1966": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1966.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1115": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1115.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1590": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1590.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1010": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1010.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1840": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1840.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1577": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1577.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1843": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1843.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1938": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1938.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1450": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1450.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2487": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-2487.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1407": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1407.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1400": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1400.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1536": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1536.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1713": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1713.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1391": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1391.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1921": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1921.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1919": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1919.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1920": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1920.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1950": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1950.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1844": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1844.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1011": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1011.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1398": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1398.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2447": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-2447.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1712": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1712.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1013": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1013.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1008": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1008.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1589": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1589.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1028": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1028.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1029": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1029.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1960": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1960.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1014": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1014.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1009": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1009.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1959": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1959.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1841": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1841.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1884": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1884.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1393": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1393.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1711": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1711.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1839": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1839.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1240": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1240.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1451": {
+    "imageUrl": "/assets/strength/reviewed/generated/mobility/wger-1451.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1754": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1754.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-20": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-20.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1826": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1826.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1838": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1838.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-82": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-82.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-139": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-139.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1774": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1774.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1825": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1825.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1446": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1446.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1504": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1504.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1602": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1602.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1429": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1429.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1833": {
+    "category": "legs",
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1833.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1516": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1516.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1879": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1879.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1441": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1441.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1914": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1914.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1445": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1445.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1442": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1442.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-346": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-346.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-351": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-351.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-406": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-406.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1939": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1939.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1775": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1775.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1580": {
+    "category": "back",
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1580.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2498": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-2498.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1439": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1439.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1284": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1284.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1440": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1440.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-918": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-918.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1081": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1081.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1714": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1714.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1715": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1715.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1443": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1443.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-575": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-575.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-578": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-578.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-599": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-599.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1575": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1575.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1679": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1679.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-711": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-711.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2454": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-2454.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1885": {
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-1885.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-194": {
+    "name": { "zhTW": "雙槓撐體" },
+    "imageUrl": "/assets/strength/reviewed/generated/chest/wger-194.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-570": {
+    "equipment": "dumbbell",
+    "name": { "zhTW": "啞鈴聳肩" },
+    "imageUrl": "/assets/strength/reviewed/generated/shoulders/wger-570.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1573": {
+    "name": { "zhTW": "跪姿健腹輪" },
+    "imageUrl": "/assets/strength/reviewed/generated/core/wger-1573.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1363": {
+    "name": { "zhTW": "上背泡棉滾筒放鬆" },
+    "imageUrl": "/assets/strength/reviewed/generated/back/wger-1363.webp",
+    "imageSource": "Corner generated"
   }
 }

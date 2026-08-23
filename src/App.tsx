@@ -1954,8 +1954,8 @@ interface ChartPoint {
   value: number;
 }
 
-function getStatsDates() {
-  const today = new Date();
+function getStatsDates(referenceDate: Date) {
+  const today = new Date(referenceDate);
   today.setHours(12, 0, 0, 0);
   const mondayOffset = (today.getDay() + 6) % 7;
   const end = new Date(today);
@@ -2097,8 +2097,8 @@ function getRecordBoxingLoad(plan: DayPlan, record: TrainingRecord) {
   return load;
 }
 
-function getWeeklyLoad(records: AppState["records"], weeklyPlan: DayPlan[]): WeeklyLoadPoint[] {
-  const today = new Date();
+function getWeeklyLoad(records: AppState["records"], weeklyPlan: DayPlan[], referenceDate: Date): WeeklyLoadPoint[] {
+  const today = new Date(referenceDate);
   today.setHours(12, 0, 0, 0);
   const currentMonday = new Date(today);
   currentMonday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
@@ -2144,8 +2144,8 @@ function getLoadPoint(records: AppState["records"], weeklyPlan: DayPlan[], dates
   };
 }
 
-function getMonthlyLoad(records: AppState["records"], weeklyPlan: DayPlan[]) {
-  const today = new Date();
+function getMonthlyLoad(records: AppState["records"], weeklyPlan: DayPlan[], referenceDate: Date) {
+  const today = new Date(referenceDate);
   today.setHours(12, 0, 0, 0);
   return Array.from({ length: 6 }, (_, index) => {
     const monthDate = new Date(today.getFullYear(), today.getMonth() - (5 - index), 1, 12);
@@ -2155,8 +2155,8 @@ function getMonthlyLoad(records: AppState["records"], weeklyPlan: DayPlan[]) {
   });
 }
 
-function getYearlyLoad(records: AppState["records"], weeklyPlan: DayPlan[]) {
-  const today = new Date();
+function getYearlyLoad(records: AppState["records"], weeklyPlan: DayPlan[], referenceDate: Date) {
+  const today = new Date(referenceDate);
   today.setHours(12, 0, 0, 0);
   return Array.from({ length: 5 }, (_, index) => {
     const year = today.getFullYear() - (4 - index);
@@ -2205,23 +2205,24 @@ function WeeklyLoadChart({ points, language }: { points: WeeklyLoadPoint[]; lang
   </div>;
 }
 
-function StatsView({ language, records, weeklyPlan, customDrills, openDate }: {
+function StatsView({ language, records, weeklyPlan, customDrills, openDate, referenceDate }: {
   language: Language;
   records: AppState["records"];
   weeklyPlan: DayPlan[];
   customDrills: Drill[];
   openDate: (date: Date) => void;
+  referenceDate: Date;
 }) {
   const availableDrills = Array.from(new Map([...drillLibrary, ...customDrills].map((drill) => [drill.id, drill])).values());
   const [selectedDrillId, setSelectedDrillId] = useState("back-squat");
   const [progressMetric, setProgressMetric] = useState<ProgressMetric>("maxWeight");
   const [loadPeriod, setLoadPeriod] = useState<"week" | "month" | "year">("week");
-  const dates = getStatsDates();
+  const dates = getStatsDates(referenceDate);
   const selectedDrill = availableDrills.find((drill) => drill.id === selectedDrillId) ?? availableDrills[0];
   const progressPoints = selectedDrill ? getProgressPoints(records, selectedDrill.id, progressMetric) : [];
   const rpePoints = getRpePoints(records);
   const highRpeCount = rpePoints.slice(-3).filter((point) => point.value >= 8).length;
-  const loadPoints = loadPeriod === "week" ? getWeeklyLoad(records, weeklyPlan) : loadPeriod === "month" ? getMonthlyLoad(records, weeklyPlan) : getYearlyLoad(records, weeklyPlan);
+  const loadPoints = loadPeriod === "week" ? getWeeklyLoad(records, weeklyPlan, referenceDate) : loadPeriod === "month" ? getMonthlyLoad(records, weeklyPlan, referenceDate) : getYearlyLoad(records, weeklyPlan, referenceDate);
   const currentWeek = loadPoints[loadPoints.length - 1];
   const previousWeek = loadPoints[loadPoints.length - 2];
   const volumeDelta = currentWeek.volumeKg - previousWeek.volumeKg;
@@ -2341,7 +2342,7 @@ function HistoryCalendarView({
         </div>
       </section>
 
-      {mode === "stats" ? <StatsView language={language} records={records} weeklyPlan={weeklyPlan} customDrills={customDrills} openDate={openDate} /> : <><section className="calendar-panel" aria-label={t(language, "history.title")}>
+      {mode === "stats" ? <StatsView language={language} records={records} weeklyPlan={weeklyPlan} customDrills={customDrills} openDate={openDate} referenceDate={selectedDate} /> : <><section className="calendar-panel" aria-label={t(language, "history.title")}>
         <div className="calendar-caption">
           <div>
             <p className="eyebrow">HISTORY</p>
