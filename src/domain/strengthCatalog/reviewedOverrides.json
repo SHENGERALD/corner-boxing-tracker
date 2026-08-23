@@ -22,8 +22,16 @@
   },
   "wger-1384": {
     "equipment": "machine",
-    "imageUrl": "/assets/strength/reviewed/wger-1384.png",
-    "imageSource": "Corner generated"
+    "imageUrl": "/assets/strength/reviewed/machine-pullover.webp",
+    "imageSource": "Corner generated",
+    "name": {
+      "zhTW": "坐姿機械上拉",
+      "en": "Pullover Machine"
+    },
+    "cue": {
+      "zhTW": "手肘貼住墊臂，以背闊肌帶動機械臂由頭頂向下拉至軀幹前。",
+      "en": "Keep the elbows on the pads and drive the lever down from overhead using the lats."
+    }
   },
   "wger-1414": {
     "equipment": "hammer",
@@ -67,8 +75,16 @@
   },
   "wger-1374": {
     "equipment": "machine",
-    "imageUrl": "/assets/strength/reviewed/wger-1374.png",
-    "imageSource": "Corner generated"
+    "imageUrl": "/assets/strength/reviewed/machine-rotary-torso.webp",
+    "imageSource": "Corner generated",
+    "name": {
+      "zhTW": "軀幹旋轉機",
+      "en": "Rotary Torso Machine"
+    },
+    "cue": {
+      "zhTW": "固定骨盆與雙腿，以軀幹旋轉帶動機械，控制去程與回程。",
+      "en": "Keep the hips and legs fixed, rotate through the trunk, and control both directions."
+    }
   },
   "wger-1493": {
     "name": {
@@ -309,8 +325,14 @@
   },
   "wger-1112": {
     "name": {
-      "zhTW": "下斜俯臥撐"
-    }
+      "zhTW": "下斜伏地挺身",
+      "en": "Decline Push-up"
+    },
+    "cue": {
+      "zhTW": "雙腳墊高，身體保持一直線，胸口下降後推回起始位置。",
+      "en": "Elevate the feet, keep a straight body line, lower the chest, and press back up."
+    },
+    "equipment": "bodyweight"
   },
   "wger-145": {
     "name": {
@@ -697,5 +719,405 @@
     "mediaFamilyId": "cable-lateral-raise",
     "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
     "imageSource": "Corner generated"
+  },
+  "wger-1465": {
+    "name": {
+      "zhTW": "啞鈴蜘蛛彎舉",
+      "en": "Dumbbell Spider Curl"
+    },
+    "cue": {
+      "zhTW": "俯臥於約 45 度上斜椅，讓手臂自然下垂並固定上臂完成彎舉。",
+      "en": "Lie chest-down on an incline bench, keep the upper arms still, and curl with control."
+    },
+    "equipment": "dumbbell",
+    "category": "arms"
+  },
+  "wger-1707": {
+    "name": {
+      "zhTW": "單臂滑輪側平舉",
+      "en": "Single-arm Cable Lateral Raise"
+    },
+    "cue": {
+      "zhTW": "滑輪設在低位，手肘微彎，將手臂側抬至肩高後控制回放。",
+      "en": "Set the pulley low, keep a soft elbow, raise to shoulder height, and lower under control."
+    },
+    "equipment": "cable",
+    "category": "shoulders",
+    "mediaFamilyId": "cable-lateral-raise",
+    "imageUrl": "/assets/strength/reviewed/cable/lateral-raise.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1716": {
+    "name": {
+      "zhTW": "上斜肩胛伏地挺身",
+      "en": "Incline Scapular Push-up"
+    },
+    "cue": {
+      "zhTW": "雙手撐在上斜椅，手肘保持伸直，讓肩胛骨前伸與後收。",
+      "en": "Keep the elbows straight on an elevated surface and move only through protraction and retraction of the shoulder blades."
+    },
+    "equipment": "bodyweight",
+    "category": "shoulders"
+  },
+  "wger-1111": {
+    "name": {
+      "zhTW": "上斜伏地挺身",
+      "en": "Incline Push-up"
+    },
+    "cue": {
+      "zhTW": "雙手撐在穩固高台，身體保持一直線，胸口靠近高台後推回。",
+      "en": "Keep a straight body line, lower the chest toward a stable elevated surface, then press away."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-1094": {
+    "name": {
+      "zhTW": "坐姿胸推機",
+      "en": "Seated Chest Press Machine"
+    },
+    "cue": {
+      "zhTW": "調整座椅使握把對齊胸部，肩胛穩定後向前推並控制回放。",
+      "en": "Align the handles with the chest, keep the shoulder blades stable, and control the press and return."
+    },
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/wger-1694.png",
+    "imageSource": "Corner generated"
+  },
+  "wger-1704": {
+    "name": {
+      "zhTW": "屈膝 L 坐",
+      "en": "Tuck L-sit"
+    },
+    "cue": {
+      "zhTW": "雙臂伸直支撐身體，膝蓋收向胸口並維持軀幹穩定。",
+      "en": "Support on straight arms, draw the knees toward the chest, and hold the trunk steady."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-2493": {
+    "name": {
+      "zhTW": "內收肌側棒式",
+      "en": "Adductor Side Plank"
+    },
+    "cue": {
+      "zhTW": "側身以前臂支撐，上側腿放在椅面，抬起骨盆並維持身體一直線。",
+      "en": "Support the top leg on a bench, lift the hips, and maintain a straight side-plank position."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-1605": {
+    "name": {
+      "zhTW": "哥本哈根側棒式",
+      "en": "Copenhagen Side Plank"
+    },
+    "cue": {
+      "zhTW": "上側腿放在椅面，以前臂撐起身體，維持骨盆與軀幹穩定。",
+      "en": "Place the top leg on a bench and hold a stable side plank with the hips lifted."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-2478": {
+    "name": {
+      "zhTW": "臀腿抬舉",
+      "en": "Glute-Ham Raise"
+    },
+    "cue": {
+      "zhTW": "固定腳踝並保持髖部伸直，以腿後側控制身體下降與抬起。",
+      "en": "Anchor the ankles, keep the hips extended, and use the hamstrings to control the body."
+    },
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/machine-glute-ham-raise.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1809": {
+    "name": {
+      "zhTW": "反向挺身",
+      "en": "Reverse Hyperextension"
+    },
+    "cue": {
+      "zhTW": "俯臥在長椅上固定上半身，以臀肌帶動雙腿抬至身體延長線。",
+      "en": "Brace the upper body on a bench and lift the legs with the glutes to body level."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-1680": {
+    "name": {
+      "zhTW": "坐姿四字臀肌伸展",
+      "en": "Seated Figure-four Stretch"
+    },
+    "cue": {
+      "zhTW": "將一側腳踝放在對側大腿上，保持背部延伸並由髖部微微前傾。",
+      "en": "Cross one ankle over the opposite thigh and hinge forward gently from the hips."
+    },
+    "equipment": "bodyweight",
+    "category": "mobility"
+  },
+  "wger-1710": {
+    "name": {
+      "zhTW": "屠夫式背闊肌伸展",
+      "en": "Butcher's Block Stretch"
+    },
+    "cue": {
+      "zhTW": "雙肘放在椅面，臀部向後移並讓胸口下沉，伸展背闊肌與肩部。",
+      "en": "Rest the elbows on a bench, sit the hips back, and lower the chest to stretch the lats and shoulders."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-1027": {
+    "name": {
+      "zhTW": "高位祈禱式伸展",
+      "en": "Elevated Prayer Stretch"
+    },
+    "cue": {
+      "zhTW": "跪在長椅前，雙肘放在椅面並讓胸口向下沉，保持腰椎穩定。",
+      "en": "Kneel before a bench, place the elbows on it, and sink the chest while keeping the low back controlled."
+    },
+    "equipment": "bodyweight"
+  },
+  "wger-193": {
+    "name": {
+      "zhTW": "對角式肩推機",
+      "en": "Diagonal Shoulder Press Machine"
+    },
+    "cue": {
+      "zhTW": "調整座椅與靠背，沿機械軌跡斜上推舉並控制回放。",
+      "en": "Set the seat and back pad, press upward along the machine path, and return under control."
+    },
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/wger-543.png",
+    "imageSource": "Corner generated"
+  },
+  "wger-911": {
+    "name": {
+      "zhTW": "上斜啞鈴仰臥臂屈伸",
+      "en": "Incline Dumbbell Skull Crusher"
+    },
+    "cue": {
+      "zhTW": "仰躺在上斜椅，固定上臂，以手肘屈伸控制啞鈴下降與推回。",
+      "en": "Lie on an incline bench, keep the upper arms still, and control the dumbbells through elbow flexion and extension."
+    },
+    "equipment": "dumbbell",
+    "imageUrl": "/assets/strength/reviewed/dumbbell-incline-skull-crusher.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1471": {
+    "name": {
+      "zhTW": "Kroc 啞鈴划船",
+      "en": "Kroc Row"
+    },
+    "cue": {
+      "zhTW": "單手支撐並使用較重啞鈴，軀幹維持穩定，將啞鈴拉向髖部。",
+      "en": "Brace with one arm, keep the trunk controlled, and row a heavy dumbbell toward the hip."
+    },
+    "equipment": "dumbbell",
+    "imageUrl": "/assets/strength/reviewed/dumbbell-kroc-row.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-2490": {
+    "name": {
+      "zhTW": "坐姿窄握滑輪划船",
+      "en": "Seated Close-grip Cable Row"
+    },
+    "cue": {
+      "zhTW": "使用三角握把，挺胸保持軀幹穩定，將握把拉向腹部後控制回放。",
+      "en": "Use a triangle handle, keep the torso stable, pull toward the abdomen, and return under control."
+    },
+    "equipment": "cable",
+    "mediaFamilyId": "cable-row-seated",
+    "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1120": {
+    "name": {
+      "zhTW": "坐姿反握窄握滑輪划船",
+      "en": "Seated Supinated Close-grip Cable Row"
+    },
+    "cue": {
+      "zhTW": "採反握窄握，挺胸並將握把拉向下腹，避免軀幹過度後仰。",
+      "en": "Use a close supinated grip, row toward the lower abdomen, and avoid excessive torso lean."
+    },
+    "equipment": "cable",
+    "mediaFamilyId": "cable-row-seated",
+    "imageUrl": "/assets/strength/reviewed/cable/row-seated.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1653": {
+    "name": {
+      "zhTW": "啞鈴側向深蹲",
+      "en": "Dumbbell Side Squat"
+    },
+    "cue": {
+      "zhTW": "單手持啞鈴向側邊跨步，髖部向後下沉，再由支撐腳推回。",
+      "en": "Hold a dumbbell, step laterally, sit the hips back, and drive through the working leg to return."
+    },
+    "equipment": "dumbbell"
+  },
+  "wger-254": {
+    "name": {
+      "zhTW": "槓片前平舉",
+      "en": "Plate Front Raise"
+    },
+    "cue": {
+      "zhTW": "雙手握住槓片，手肘微彎，抬至肩高後控制下降。",
+      "en": "Hold one weight plate with both hands, keep a soft elbow, raise to shoulder height, and lower under control."
+    },
+    "equipment": "barbell",
+    "imageUrl": "/assets/strength/reviewed/plate-front-raise.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-478": {
+    "name": {
+      "zhTW": "啞鈴借力推舉",
+      "en": "Dumbbell Push Press"
+    },
+    "cue": {
+      "zhTW": "啞鈴置於肩上，微屈膝髖後快速伸展下肢，借力將啞鈴推至頭頂。",
+      "en": "Dip through the knees and hips, then drive the dumbbells overhead with coordinated leg power."
+    },
+    "equipment": "dumbbell"
+  },
+  "wger-1641": {
+    "name": {
+      "zhTW": "壺鈴單腿硬舉",
+      "en": "Kettlebell Single-leg Deadlift"
+    },
+    "equipment": "kettlebell"
+  },
+  "wger-441": {
+    "name": {
+      "zhTW": "槓鈴過頭深蹲",
+      "en": "Barbell Overhead Squat"
+    },
+    "equipment": "barbell",
+    "imageUrl": "/assets/strength/reviewed/barbell-overhead-squat.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1604": {
+    "name": {
+      "zhTW": "壺鈴滑步側弓箭步",
+      "en": "Kettlebell Sliding Lateral Lunge"
+    },
+    "equipment": "kettlebell"
+  },
+  "wger-1747": {
+    "name": {
+      "zhTW": "史密斯機深蹲",
+      "en": "Smith Machine Squat"
+    },
+    "equipment": "machine"
+  },
+  "wger-632": {
+    "name": {
+      "zhTW": "槓鈴相撲深蹲",
+      "en": "Barbell Sumo Squat"
+    },
+    "equipment": "barbell",
+    "imageUrl": "/assets/strength/reviewed/barbell-sumo-squat.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-722": {
+    "name": {
+      "zhTW": "槓鈴負重登階",
+      "en": "Barbell Weighted Step-up"
+    },
+    "equipment": "barbell",
+    "imageUrl": "/assets/strength/reviewed/barbell-weighted-step-up.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1638": {
+    "name": {
+      "zhTW": "槓鈴上膊推舉",
+      "en": "Barbell Clean and Press"
+    },
+    "equipment": "barbell"
+  },
+  "wger-915": {
+    "name": {
+      "zhTW": "槓片轉方向盤",
+      "en": "Plate Bus Driver"
+    },
+    "equipment": "barbell"
+  },
+  "wger-289": {
+    "name": {
+      "zhTW": "槓鈴高拉",
+      "en": "Barbell High Pull"
+    },
+    "equipment": "barbell",
+    "imageUrl": "/assets/strength/reviewed/barbell-high-pull.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-569": {
+    "name": {
+      "zhTW": "史密斯機肩推",
+      "en": "Smith Machine Shoulder Press"
+    },
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/machine-smith-shoulder-press.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1480": {
+    "imageUrl": "/assets/strength/reviewed/barbell-lying-triceps-extension.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-493": {
+    "imageUrl": "/assets/strength/reviewed/barbell-reverse-curl.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-495": {
+    "imageUrl": "/assets/strength/reviewed/barbell-reverse-curl.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1698": {
+    "imageUrl": "/assets/strength/reviewed/wger-barbell-row-overhand.webp",
+    "imageSource": "wger"
+  },
+  "wger-1699": {
+    "imageUrl": "/assets/strength/reviewed/wger-barbell-row-underhand.webp",
+    "imageSource": "wger"
+  },
+  "wger-445": {
+    "imageUrl": "/assets/strength/reviewed/wger-barbell-bench-press.webp",
+    "imageSource": "wger"
+  },
+  "wger-615": {
+    "imageUrl": "/assets/strength/reviewed/wger-barbell-squat.webp",
+    "imageSource": "wger"
+  },
+  "wger-1925": {
+    "imageUrl": "/assets/strength/reviewed/wger-barbell-shrug.webp",
+    "imageSource": "wger"
+  },
+  "wger-598": {
+    "name": {
+      "zhTW": "史密斯機窄握臥推",
+      "en": "Smith Machine Close-grip Bench Press"
+    },
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/machine-smith-close-grip-bench-press.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-1508": {
+    "name": {
+      "zhTW": "高角度上斜史密斯胸推",
+      "en": "High-Incline Smith Machine Press"
+    },
+    "equipment": "machine",
+    "imageUrl": "/assets/strength/reviewed/machine-smith-high-incline-press.webp",
+    "imageSource": "Corner generated"
+  },
+  "wger-925": {
+    "name": {
+      "zhTW": "低角度上斜史密斯胸推",
+      "en": "Smith Machine Slight Incline Press"
+    },
+    "equipment": "machine"
+  },
+  "wger-1593": {
+    "name": {
+      "zhTW": "史密斯機分腿蹲",
+      "en": "Smith Machine Split Squat"
+    },
+    "equipment": "machine"
   }
 }

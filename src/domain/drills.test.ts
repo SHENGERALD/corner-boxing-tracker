@@ -92,10 +92,49 @@ describe("drill library", () => {
       equipment: "machine",
       imageSource: "Corner generated",
     }));
+    expect(reviewed.get("wger-1384")).toEqual(expect.objectContaining({
+      name: expect.objectContaining({ zhTW: "坐姿機械上拉" }),
+      imageUrl: expect.stringContaining("machine-pullover.webp"),
+    }));
+    expect(reviewed.get("wger-1374")).toEqual(expect.objectContaining({
+      name: expect.objectContaining({ zhTW: "軀幹旋轉機" }),
+      imageUrl: expect.stringContaining("machine-rotary-torso.webp"),
+    }));
+    expect(reviewed.get("wger-2478")).toEqual(expect.objectContaining({
+      name: expect.objectContaining({ zhTW: "臀腿抬舉" }),
+      imageUrl: expect.stringContaining("machine-glute-ham-raise.webp"),
+    }));
 
     for (const id of ["wger-379", "wger-380", "wger-1414", "wger-1424", "wger-543"]) {
       expect(reviewed.get(id)?.imageUrl).toContain("assets/strength/reviewed/");
       expect(reviewed.get(id)?.imageUrl).toMatch(new RegExp("^" + import.meta.env.BASE_URL));
+    }
+  });
+
+  it("corrects high-confidence equipment mismatches and their reviewed media", async () => {
+    const reviewed = new Map((await loadStrengthLibrary()).map((drill) => [drill.id, drill]));
+
+    expect(reviewed.get("wger-911")).toEqual(expect.objectContaining({ equipment: "dumbbell", imageUrl: expect.stringContaining("dumbbell-incline-skull-crusher.webp") }));
+    expect(reviewed.get("wger-1471")).toEqual(expect.objectContaining({ equipment: "dumbbell", imageUrl: expect.stringContaining("dumbbell-kroc-row.webp") }));
+    expect(reviewed.get("wger-2490")).toEqual(expect.objectContaining({ equipment: "cable", mediaFamilyId: "cable-row-seated" }));
+    expect(reviewed.get("wger-1120")).toEqual(expect.objectContaining({ equipment: "cable", mediaFamilyId: "cable-row-seated" }));
+    expect(reviewed.get("wger-1112")).toEqual(expect.objectContaining({ equipment: "bodyweight" }));
+    expect(reviewed.get("wger-1653")).toEqual(expect.objectContaining({ equipment: "dumbbell" }));
+    expect(reviewed.get("wger-254")).toEqual(expect.objectContaining({ equipment: "barbell", imageUrl: expect.stringContaining("plate-front-raise.webp") }));
+    expect(reviewed.get("wger-478")).toEqual(expect.objectContaining({ equipment: "dumbbell" }));
+    expect(reviewed.get("wger-441")).toEqual(expect.objectContaining({ equipment: "barbell", imageUrl: expect.stringContaining("barbell-overhead-squat.webp") }));
+    expect(reviewed.get("wger-632")).toEqual(expect.objectContaining({ equipment: "barbell", imageUrl: expect.stringContaining("barbell-sumo-squat.webp") }));
+    expect(reviewed.get("wger-722")).toEqual(expect.objectContaining({ equipment: "barbell", imageUrl: expect.stringContaining("barbell-weighted-step-up.webp") }));
+    expect(reviewed.get("wger-289")).toEqual(expect.objectContaining({ equipment: "barbell", imageUrl: expect.stringContaining("barbell-high-pull.webp") }));
+    expect(reviewed.get("wger-569")).toEqual(expect.objectContaining({ equipment: "machine", imageUrl: expect.stringContaining("machine-smith-shoulder-press.webp") }));
+    expect(reviewed.get("wger-598")).toEqual(expect.objectContaining({ equipment: "machine", imageUrl: expect.stringContaining("machine-smith-close-grip-bench-press.webp") }));
+    expect(reviewed.get("wger-1508")).toEqual(expect.objectContaining({ equipment: "machine", imageUrl: expect.stringContaining("machine-smith-high-incline-press.webp") }));
+    expect(reviewed.get("wger-925")).toEqual(expect.objectContaining({ equipment: "machine", name: expect.objectContaining({ zhTW: "低角度上斜史密斯胸推" }) }));
+    expect(reviewed.get("wger-1593")).toEqual(expect.objectContaining({ equipment: "machine", name: expect.objectContaining({ zhTW: "史密斯機分腿蹲" }) }));
+
+    for (const id of ["wger-1480", "wger-493", "wger-495", "wger-1698", "wger-1699", "wger-445", "wger-615", "wger-1925"]) {
+      expect(reviewed.get(id)?.imageUrl).not.toContain("/assets/strength/generated/");
+      expect(reviewed.get(id)?.imageUrl).toContain("/assets/strength/reviewed/");
     }
   });
 
