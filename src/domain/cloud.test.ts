@@ -1,10 +1,22 @@
 import { describe, expect, it } from "vitest";
-import { mergeForRevisionedSave, resolveInitialState } from "./cloud";
+import { mergeForRevisionedSave, resolveInitialState, mergeStateWithCloud } from "./cloud";
 import { createEmptyState } from "./storage";
 
 const stateWithLanguage = (language: "zh-TW" | "en") => ({ ...createEmptyState(), language });
 
 describe("cloud state resolution", () => {
+  it("keeps custom drill deletions in both sync directions and allows newer edits", () => {
+    const older = createEmptyState();
+    const deleted = createEmptyState();
+    const drill = { id: "custom-test", domain: "boxing" as const, category: "offense" as const, name: { zhTW: "拳法", en: "Drill" }, cue: { zhTW: "提示", en: "Cue" }, defaultUnit: "rounds" as const, defaultQuantity: 3 };
+    older.customDrills = [drill];
+    older.customDrillUpdatedAt = { [drill.id]: "2026-09-01T10:00:00Z" };
+    deleted.customDrillUpdatedAt = { [drill.id]: "2026-09-02T10:00:00Z" };
+    expect(mergeStateWithCloud(older, deleted).state.customDrills).toEqual([]);
+    expect(mergeStateWithCloud(deleted, older).state.customDrills).toEqual([]);
+    older.customDrillUpdatedAt[drill.id] = "2026-09-03T10:00:00Z";
+    expect(mergeStateWithCloud(older, deleted).state.customDrills).toEqual([drill]);
+  });
   it("keeps a newer local language preference and schedules it for upload", () => {
     const local = stateWithLanguage("en");
     const cloud = stateWithLanguage("zh-TW");

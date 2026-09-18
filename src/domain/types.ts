@@ -70,6 +70,7 @@ export interface TrainingTarget {
 }
 
 export interface CustomTrainingItem {
+  drillSnapshot?: import("./drills").Drill;
   id: string;
   drillId: string;
   quantity: number;

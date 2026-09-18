@@ -63,17 +63,16 @@ function mergeCustomDrills(localState: AppState, cloudState: AppState) {
   const merged = new Map(cloudDrills);
   const mergedUpdatedAt = { ...(cloudState.customDrillUpdatedAt ?? {}) };
   let localWon = false;
-  const ids = new Set([...localDrills.keys(), ...cloudDrills.keys()]);
+  const ids = new Set([...localDrills.keys(), ...cloudDrills.keys(), ...Object.keys(localState.customDrillUpdatedAt ?? {}), ...Object.keys(cloudState.customDrillUpdatedAt ?? {})]);
   for (const id of ids) {
     const localDrill = localDrills.get(id);
     const cloudDrill = cloudDrills.get(id);
     const localAt = localState.customDrillUpdatedAt?.[id];
     const cloudAt = cloudState.customDrillUpdatedAt?.[id];
-    if (localDrill && !cloudDrill) {
-      merged.set(id, localDrill);
-      localWon = true;
-    } else if (localDrill && localAt && isAfter(localAt, cloudAt)) {
-      merged.set(id, localDrill);
+    // A missing drill with a timestamp is a deletion, not an empty library.
+    if ((localAt && isAfter(localAt, cloudAt)) || (!localAt && !cloudAt && localDrill && !cloudDrill)) {
+      if (localDrill) merged.set(id, localDrill);
+      else merged.delete(id);
       localWon = true;
     }
     if (localAt && (!cloudAt || isAfter(localAt, cloudAt))) mergedUpdatedAt[id] = localAt;

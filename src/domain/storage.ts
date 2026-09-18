@@ -122,6 +122,7 @@ function isCustomTrainingItem(value: unknown): value is CustomTrainingItem {
   return (
     typeof item.id === "string" &&
     typeof item.drillId === "string" &&
+    (item.drillSnapshot === undefined || isCustomDrill(item.drillSnapshot)) &&
     typeof item.quantity === "number" && item.quantity > 0 &&
     (item.unit === "rounds" || item.unit === "minutes") &&
     typeof item.completed === "boolean" &&

@@ -455,6 +455,57 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("heading", { name: "雙刺拳接側移" })).toBeInTheDocument();
   });
 
+  it("adds, edits and deletes a custom library drill without losing its training record", async () => {
+    const user = userEvent.setup();
+    const first = render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.click(screen.getByRole("button", { name: "新增動作" }));
+    await user.type(screen.getByLabelText("動作名稱"), "測試自訂拳法");
+    await user.click(screen.getByRole("button", { name: "儲存動作" }));
+    await user.click(screen.getByRole("button", { name: "加入 測試自訂拳法" }));
+    await user.click(screen.getByRole("button", { name: "加入訓練" }));
+    expect(screen.getByText("測試自訂拳法")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.click(screen.getByRole("button", { name: "編輯 測試自訂拳法" }));
+    await user.clear(screen.getByLabelText("動作名稱"));
+    await user.type(screen.getByLabelText("動作名稱"), "新版拳法");
+    await user.click(screen.getByRole("button", { name: "儲存動作" }));
+    await user.click(screen.getByRole("button", { name: "今天" }));
+    expect(screen.getByText("新版拳法")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    const confirm = vi.spyOn(window, "confirm").mockReturnValue(true);
+    await user.click(screen.getByRole("button", { name: "刪除 新版拳法" }));
+    expect(screen.queryByRole("heading", { name: "新版拳法" })).not.toBeInTheDocument();
+    confirm.mockRestore();
+    first.unmount();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+    expect(screen.getByText("測試自訂拳法")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    expect(screen.queryByRole("heading", { name: "新版拳法" })).not.toBeInTheDocument();
+  });
+
+  it("edits a built-in drill without duplicating it and persists the edit", async () => {
+    const user = userEvent.setup();
+    const first = render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    await user.click(screen.getByRole("button", { name: "編輯 刺拳" }));
+    expect(screen.getByLabelText("英文提示（選填）")).toHaveValue("Straight out, straight back");
+    await user.clear(screen.getByLabelText("動作名稱"));
+    await user.type(screen.getByLabelText("動作名稱"), "我的刺拳");
+    await user.click(screen.getByRole("button", { name: "儲存動作" }));
+    expect(screen.queryByRole("heading", { name: "刺拳" })).not.toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { name: "我的刺拳" })).toHaveLength(1);
+    expect(screen.queryByRole("button", { name: "刪除 我的刺拳" })).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "加入 我的刺拳" }));
+    await user.click(screen.getByRole("button", { name: "加入訓練" }));
+    expect(screen.getByText("我的刺拳")).toBeInTheDocument();
+    first.unmount();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+    expect(screen.getByText("我的刺拳")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "動作庫" }));
+    expect(screen.getAllByRole("heading", { name: "我的刺拳" })).toHaveLength(1);
+  });
+
   it("removes a planned drill from today's training progress", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);

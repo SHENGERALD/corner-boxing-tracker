@@ -5,6 +5,14 @@ export type TrainingDomain = "boxing" | "strength";
 export type DrillCategory = "fundamentals" | "footwork" | "offense" | "defense" | "equipment" | "conditioning" | "chest" | "back" | "legs" | "shoulders" | "arms" | "core" | "calves" | "mobility" | "cardio";
 export type EquipmentType = "barbell" | "dumbbell" | "kettlebell" | "cable" | "hammer" | "machine" | "bodyweight";
 export interface Drill { id: string; domain: TrainingDomain; category: DrillCategory; name: LocalizedLabel; cue: LocalizedLabel; defaultUnit: TrainingUnit; defaultQuantity: number; imageUrl?: string; imagePosition?: string; imageSource?: string; mediaFamilyId?: string; equipment?: EquipmentType; searchTerms?: string[]; }
+export function mergeDrillLibrary(base: Drill[], personal: Drill[]): Drill[] {
+  const merged = new Map(base.map((drill) => [drill.id, drill]));
+  for (const drill of personal) {
+    const original = merged.get(drill.id);
+    merged.set(drill.id, { ...original, ...drill, imageUrl: drill.imageUrl ?? original?.imageUrl });
+  }
+  return [...merged.values()];
+}
 const d = (id: string, category: DrillCategory, zhTW: string, en: string, cueZh: string, cueEn: string, defaultUnit: TrainingUnit = "rounds", defaultQuantity = 3, domain: TrainingDomain = "boxing"): Drill => ({ id, domain, category, name: { zhTW, en }, cue: { zhTW: cueZh, en: cueEn }, defaultUnit, defaultQuantity });
 const s = (id: string, category: DrillCategory, zhTW: string, en: string, cueZh: string, cueEn: string, imageUrl: string, defaultUnit: TrainingUnit = "rounds", defaultQuantity = 3): Drill => ({ ...d(id, category, zhTW, en, cueZh, cueEn, defaultUnit, defaultQuantity, "strength"), imageUrl, imageSource: "wger" });
 export const drillCategories: DrillCategory[] = ["fundamentals", "footwork", "offense", "defense", "equipment", "conditioning", "chest", "back", "legs", "shoulders", "arms", "core", "calves", "mobility", "cardio"];

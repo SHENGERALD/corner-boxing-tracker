@@ -19,6 +19,7 @@ import {
   Home,
   Minus,
   Plus,
+  Pencil,
   RotateCcw,
   Search,
   Trash2,
@@ -64,7 +65,7 @@ import {
 } from "./domain/storage";
 import { getAuthRedirectUrl, isSupabaseConfigured, supabase } from "./domain/supabase";
 import type { CustomTrainingItem, DayPlan, Language, PlanItem, TrainingRecord, TrainingSet, TrainingTarget, TrainingType, Weekday } from "./domain/types";
-import { drillLibrary, filterDrills, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
+import { drillLibrary, filterDrills, mergeDrillLibrary, type Drill, type DrillCategory, type EquipmentType, type TrainingDomain } from "./domain/drills";
 import { loadStrengthLibrary } from "./domain/strengthCatalog";
 import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 import { NumericDraftInput } from "./components/NumericDraftInput";
@@ -184,6 +185,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   const [timerSoundEnabled, setTimerSoundEnabled] = useState(true);
   const [timerVoiceEnabled, setTimerVoiceEnabled] = useState(true);
   const [creatingLibraryDrill, setCreatingLibraryDrill] = useState(false);
+  const [editingLibraryDrill, setEditingLibraryDrill] = useState<Drill | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [authReady, setAuthReady] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
@@ -491,7 +493,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       [selectedKey]: {
         ...(current.records[selectedKey] ?? initialRecord()),
         planSnapshot: current.records[selectedKey]?.planSnapshot ?? structuredClone(getPlanForWeekday(getWeekday(selectedDate), current.weeklyPlan)),
-        customItems: [...(current.records[selectedKey]?.customItems ?? []), item],
+        customItems: [...(current.records[selectedKey]?.customItems ?? []), { ...item, drillSnapshot: drillToAdd ? { ...drillToAdd, imageUrl: drillToAdd.imageUrl?.startsWith("/") ? drillToAdd.imageUrl : undefined } : undefined }],
         updatedAt: new Date().toISOString(),
       },
     },
@@ -500,7 +502,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
 
   const addLibraryDrill = (drill: Drill) => setState((current) => ({
     ...current,
-    customDrills: [...(current.customDrills ?? []), drill],
+    customDrills: [...(current.customDrills ?? []).filter((item) => item.id !== drill.id), drill],
     customDrillUpdatedAt: { ...(current.customDrillUpdatedAt ?? {}), [drill.id]: new Date().toISOString() },
   }));
 
@@ -571,6 +573,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
         {view === "today" && (
           <TodayView
             date={selectedDate}
+            customDrills={state.customDrills ?? []}
             language={language}
             plan={plan}
             record={record}
@@ -613,6 +616,23 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
             onFavorite={toggleFavorite}
             onAdd={setDrillToAdd}
             onCreate={() => setCreatingLibraryDrill(true)}
+            onEdit={setEditingLibraryDrill}
+            onDelete={(drill) => {
+              if (!window.confirm(language === "zh-TW" ? `刪除「${drill.name.zhTW}」？已加入的訓練紀錄會保留。` : `Delete ${drill.name.en}? Existing training records will be kept.`)) return;
+              setState((current) => {
+                const timestamp = new Date().toISOString();
+                return { ...current,
+                  customDrills: (current.customDrills ?? []).filter((item) => item.id !== drill.id),
+                  customDrillUpdatedAt: { ...current.customDrillUpdatedAt, [drill.id]: timestamp },
+                  favoriteDrillIds: current.favoriteDrillIds.filter((id) => id !== drill.id),
+                  favoriteDrillUpdatedAt: { ...current.favoriteDrillUpdatedAt, [drill.id]: timestamp },
+                  records: Object.fromEntries(Object.entries(current.records).map(([key, record]) => [key,
+                    record.customItems?.some((item) => item.drillId === drill.id && !item.drillSnapshot)
+                      ? { ...record, updatedAt: timestamp, customItems: record.customItems.map((item) => item.drillId === drill.id ? { ...item, drillSnapshot: item.drillSnapshot ?? drill } : item) }
+                      : record])),
+                };
+              });
+            }}
           />
         )}
         {view === "backup" && (
@@ -629,6 +649,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       {timerOpen && <BoxingTimerPanel language={language} timer={timer} now={timerNow} soundEnabled={timerSoundEnabled} voiceEnabled={timerVoiceEnabled} onSoundChange={setTimerSoundEnabled} onVoiceChange={setTimerVoiceEnabled} onClose={() => setTimerOpen(false)} onStart={startBoxingTimer} onPause={pauseBoxingTimer} onResume={resumeBoxingTimer} onSkip={skipBoxingTimerPhase} onReset={resetBoxingTimer} />}
       {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
       {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
+      {editingLibraryDrill && <CreateLibraryDrillPanel initialDrill={editingLibraryDrill} language={language} onClose={() => setEditingLibraryDrill(null)} onConfirm={(drill) => { addLibraryDrill(drill); setEditingLibraryDrill(null); }} />}
       {authOpen && (
         <AuthPanel
           language={language}
@@ -968,6 +989,7 @@ function AuthPanel({
 }
 
 interface TodayViewProps {
+  customDrills: Drill[];
   date: Date;
   language: Language;
   plan: ReturnType<typeof getPlanForWeekday>;
@@ -994,7 +1016,7 @@ function getPlanDrill(itemId: string) {
   return drillLibrary.find((drill) => drill.id === drillId);
 }
 
-function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder }: TodayViewProps) {
+function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder, customDrills }: TodayViewProps) {
   const completion = getRecordCompletion(plan, record);
   const percentage = completion.total
     ? Math.round((completion.completed / completion.total) * 100)
@@ -1035,7 +1057,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
       };
     }),
     ...(record.customItems ?? []).flatMap((item) => {
-      const drill = drillLibrary.find((candidate) => candidate.id === item.drillId);
+      const drill = mergeDrillLibrary(item.drillSnapshot ? [item.drillSnapshot, ...drillLibrary] : drillLibrary, customDrills).find((candidate) => candidate.id === item.drillId);
       if (!drill) return [];
       return [{
         id: item.id,
@@ -1509,6 +1531,8 @@ function DrillLibraryView({
   onFavorite,
   onAdd,
   onCreate,
+  onEdit,
+  onDelete,
 }: {
   language: Language;
   favorites: string[];
@@ -1516,6 +1540,8 @@ function DrillLibraryView({
   onFavorite: (id: string) => void;
   onAdd: (drill: Drill) => void;
   onCreate: () => void;
+  onEdit: (drill: Drill) => void;
+  onDelete: (drill: Drill) => void;
 }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<Drill["category"] | "all">("all");
@@ -1547,7 +1573,7 @@ function DrillLibraryView({
   }, [domain, strengthRetryToken]);
 
   const sourceDrills = domain === "strength" ? strengthDrills ?? drillLibrary : drillLibrary;
-  const drills = filterDrills([...customDrills, ...sourceDrills], { query, domain, category, equipment, favoriteIds: favorites, favoritesOnly: onlyFavorites });
+  const drills = filterDrills(mergeDrillLibrary(sourceDrills, customDrills), { query, domain, category, equipment, favoriteIds: favorites, favoritesOnly: onlyFavorites });
   const categories: Array<[Drill["category"] | "all", string]> = domain === "boxing"
     ? [
         ["all", language === "zh-TW" ? "全部" : "All"],
@@ -1668,6 +1694,10 @@ function DrillLibraryView({
                   <h2>{title}</h2>
                   <p>{formatPlanLabel(drill.cue, language)}</p>
                   <small>{drill.defaultQuantity} {unit}</small>
+                  <div className="custom-drill-actions">
+                    <button type="button" onClick={() => onEdit(drill)} title={language === "zh-TW" ? "編輯動作" : "Edit drill"} aria-label={`${language === "zh-TW" ? "編輯" : "Edit"} ${title}`}><Pencil size={18} /></button>
+                    {drill.id.startsWith("custom-") && <button className="delete-drill-button" type="button" onClick={() => onDelete(drill)} title={language === "zh-TW" ? "刪除動作" : "Delete drill"} aria-label={`${language === "zh-TW" ? "刪除" : "Delete"} ${title}`}><Trash2 size={18} /></button>}
+                  </div>
                   <button className="add-drill" onClick={() => onAdd(drill)} aria-label={`${language === "zh-TW" ? "加入" : "Add"} ${title}`}>
                     <Plus size={16} />{language === "zh-TW" ? "加入" : "Add"}
                   </button>
@@ -1680,14 +1710,15 @@ function DrillLibraryView({
     </div>
   );
 }
-function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: Language; onClose: () => void; onConfirm: (drill: Drill) => void }) {
-  const [name, setName] = useState("");
-  const [englishName, setEnglishName] = useState("");
-  const [cue, setCue] = useState("");
-  const [domain, setDomain] = useState<TrainingDomain>("boxing");
-  const [category, setCategory] = useState<DrillCategory>("fundamentals");
-  const [unit, setUnit] = useState<"rounds" | "minutes">("rounds");
-  const [quantity, setQuantity] = useState(3);
+function CreateLibraryDrillPanel({ language, onClose, onConfirm, initialDrill }: { language: Language; onClose: () => void; onConfirm: (drill: Drill) => void; initialDrill?: Drill }) {
+  const [name, setName] = useState(initialDrill?.name.zhTW ?? "");
+  const [englishName, setEnglishName] = useState(initialDrill?.name.en ?? "");
+  const [cue, setCue] = useState(initialDrill?.cue.zhTW ?? "");
+  const [englishCue, setEnglishCue] = useState(initialDrill?.cue.en ?? "");
+  const [domain, setDomain] = useState<TrainingDomain>(initialDrill?.domain ?? "boxing");
+  const [category, setCategory] = useState<DrillCategory>(initialDrill?.category ?? "fundamentals");
+  const [unit, setUnit] = useState<"rounds" | "minutes">(initialDrill?.defaultUnit ?? "rounds");
+  const [quantity, setQuantity] = useState(initialDrill?.defaultQuantity ?? 3);
   const categories: Array<[DrillCategory, string]> = domain === "boxing"
     ? [["fundamentals", language === "zh-TW" ? "基礎" : "Basics"], ["footwork", language === "zh-TW" ? "步法" : "Footwork"], ["offense", language === "zh-TW" ? "進攻" : "Offense"], ["defense", language === "zh-TW" ? "防守" : "Defense"], ["equipment", language === "zh-TW" ? "器材" : "Equipment"], ["conditioning", language === "zh-TW" ? "體能" : "Conditioning"]]
     : [["chest", language === "zh-TW" ? "胸" : "Chest"], ["back", language === "zh-TW" ? "背" : "Back"], ["legs", language === "zh-TW" ? "腿" : "Legs"], ["shoulders", language === "zh-TW" ? "肩" : "Shoulders"], ["arms", language === "zh-TW" ? "手臂" : "Arms"], ["core", language === "zh-TW" ? "核心" : "Core"], ["calves", language === "zh-TW" ? "小腿" : "Calves"], ["mobility", language === "zh-TW" ? "活動度／伸展" : "Mobility / Stretching"], ["cardio", language === "zh-TW" ? "有氧" : "Cardio"]];
@@ -1695,23 +1726,26 @@ function CreateLibraryDrillPanel({ language, onClose, onConfirm }: { language: L
   const save = () => {
     const trimmedName = name.trim();
     if (!trimmedName) return;
-    const positiveQuantity = Math.max(1, quantity ?? 1);
+    const positiveQuantity = Math.min(1000, Math.max(1, quantity ?? 1));
     onConfirm({
-      id: `custom-${Date.now()}`,
+      ...initialDrill,
+      imageUrl: initialDrill?.imageUrl?.startsWith("/") ? initialDrill.imageUrl : undefined,
+      id: initialDrill?.id ?? `custom-${crypto.randomUUID()}`,
       domain,
       category,
       name: { zhTW: trimmedName, en: englishName.trim() || trimmedName },
-      cue: { zhTW: cue.trim() || (language === "zh-TW" ? "自訂訓練動作" : "Custom training drill"), en: cue.trim() || "Custom training drill" },
+      cue: { zhTW: cue.trim() || "自訂訓練動作", en: englishCue.trim() || cue.trim() || "Custom training drill" },
       defaultUnit: unit,
       defaultQuantity: positiveQuantity,
     });
   };
 
-  return <div className="dialog-backdrop" role="presentation"><section className="add-dialog create-drill-dialog" role="dialog" aria-modal="true" aria-label={language === "zh-TW" ? "新增自訂動作" : "Create custom drill"}>
+  return <div className="dialog-backdrop" role="presentation"><section className="add-dialog create-drill-dialog" role="dialog" aria-modal="true" aria-label={initialDrill ? (language === "zh-TW" ? "編輯動作" : "Edit drill") : (language === "zh-TW" ? "新增自訂動作" : "Create custom drill")}>
     <p className="eyebrow">CUSTOM DRILL</p>
-    <h2>{language === "zh-TW" ? "新增到動作庫" : "Add to your library"}</h2>
+    <h2>{initialDrill ? (language === "zh-TW" ? "編輯動作" : "Edit drill") : (language === "zh-TW" ? "新增到動作庫" : "Add to your library")}</h2>
     <label>{language === "zh-TW" ? "動作名稱" : "Drill name"}<input autoFocus value={name} onChange={(event) => setName(event.target.value)} placeholder={language === "zh-TW" ? "例如：閃躲接右直拳" : "e.g. Slip to cross"} /></label>
     <label>{language === "zh-TW" ? "英文名稱（選填）" : "English name (optional)"}<input value={englishName} onChange={(event) => setEnglishName(event.target.value)} /></label>
+    <label>{language === "zh-TW" ? "英文提示（選填）" : "English cue (optional)"}<input value={englishCue} onChange={(event) => setEnglishCue(event.target.value)} /></label>
     <label>{language === "zh-TW" ? "提示（選填）" : "Cue (optional)"}<input value={cue} onChange={(event) => setCue(event.target.value)} placeholder={language === "zh-TW" ? "例如：下潛後立刻回到護手" : "e.g. Return to guard after the slip"} /></label>
     <label>{language === "zh-TW" ? "訓練類型" : "Training type"}<select value={domain} onChange={(event) => changeDomain(event.target.value as TrainingDomain)}><option value="boxing">{language === "zh-TW" ? "拳擊" : "Boxing"}</option><option value="strength">{language === "zh-TW" ? "重訓" : "Strength"}</option></select></label>
     <label>{language === "zh-TW" ? "分類" : "Category"}<select value={category} onChange={(event) => setCategory(event.target.value as DrillCategory)}>{categories.map(([id, label]) => <option value={id} key={id}>{label}</option>)}</select></label>
@@ -1775,7 +1809,7 @@ function ScheduleView({
   const [domain, setDomain] = useState<TrainingDomain>("boxing");
   const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
   const day = getPlanForWeekday(selectedDay, weeklyPlan);
-  const availableDrills = filterDrills([...customDrills, ...drillLibrary], {
+  const availableDrills = filterDrills(mergeDrillLibrary(drillLibrary, customDrills), {
     query,
     domain,
     category: "all",
@@ -1937,9 +1971,9 @@ function hasRecordContent(record?: TrainingRecord) {
   );
 }
 
-function recordPreviewTags(plan: ReturnType<typeof getPlanForWeekday>, record: TrainingRecord | undefined, language: Language) {
+function recordPreviewTags(plan: ReturnType<typeof getPlanForWeekday>, record: TrainingRecord | undefined, language: Language, customDrills: Drill[]) {
   const customTags = (record?.customItems ?? [])
-    .map((item) => drillLibrary.find((drill) => drill.id === item.drillId))
+    .map((item) => item.drillSnapshot ?? customDrills.find((drill) => drill.id === item.drillId) ?? drillLibrary.find((drill) => drill.id === item.drillId))
     .filter((drill): drill is Drill => Boolean(drill))
     .map((drill) => formatPlanLabel(drill.name, language));
   if (customTags.length) return customTags.slice(0, 3);
@@ -2376,7 +2410,7 @@ function HistoryCalendarView({
                 {logged && (
                   <span className="day-log">
                     <strong>{metric}</strong>
-                    {recordPreviewTags(dayPlan, savedRecord, language).map((tag) => <small key={tag}>{tag}</small>)}
+                    {recordPreviewTags(dayPlan, savedRecord, language, customDrills).map((tag) => <small key={tag}>{tag}</small>)}
                   </span>
                 )}
               </button>
