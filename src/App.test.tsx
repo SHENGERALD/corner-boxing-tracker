@@ -303,6 +303,18 @@ describe("Boxing Tracker", () => {
     expect(screen.getByRole("checkbox", { name: /跳繩/ })).toBeInTheDocument();
   });
 
+  it("returns to the current date when Today is tapped after viewing history", async () => {
+    const user = userEvent.setup();
+    render(<App initialDate={new Date(2026, 6, 30, 12)} />);
+
+    await user.click(screen.getByRole("button", { name: "歷史" }));
+    await user.click(screen.getByRole("button", { name: /7月 27日/ }));
+    expect(document.querySelector(".today-hero .eyebrow")).toHaveTextContent("7月27日");
+
+    await user.click(screen.getByRole("button", { name: "今天" }));
+    expect(document.querySelector(".today-hero .eyebrow")).toHaveTextContent("7月30日");
+  });
+
   it("switches history to the statistics dashboard", async () => {
     const user = userEvent.setup();
     render(<App initialDate={new Date(2026, 6, 30, 12)} />);

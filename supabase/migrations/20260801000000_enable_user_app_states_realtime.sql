@@ -10,4 +10,4 @@ begin
     alter publication supabase_realtime add table public.user_app_states;
   end if;
 end
-$$;\n
+$$;

@@ -4,8 +4,13 @@
 
 1. Open the project SQL Editor.
 2. Create a new query.
-3. Paste and run `supabase/migrations/20260730220000_create_user_app_states.sql`.
+3. Paste and run these migrations in order:
+   - `supabase/migrations/20260730220000_create_user_app_states.sql`
+   - `supabase/migrations/20260801000000_enable_user_app_states_realtime.sql`
+   - `supabase/migrations/20260801010000_add_revision_safe_save.sql`
 4. Confirm `public.user_app_states` appears in Table Editor with RLS enabled.
+
+The Realtime migration adds `user_app_states` to the `supabase_realtime` publication. The revision-safe save migration creates the `save_user_app_state` RPC used by the app. If either migration is missing in an existing project, cross-device updates or uploads will not work reliably. Run the missing SQL in the project SQL Editor before testing sync again.
 
 The migration revokes anonymous access and creates separate SELECT, INSERT, UPDATE, and DELETE policies for authenticated users. Every policy requires `auth.uid() = user_id`.
 

@@ -69,6 +69,7 @@ import { drillLibrary, filterDrills, mergeDrillLibrary, type Drill, type DrillCa
 import { loadStrengthLibrary } from "./domain/strengthCatalog";
 import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 import { NumericDraftInput } from "./components/NumericDraftInput";
+import { AdventureEntry, AdventurePreview } from "./components/AdventurePreview";
 import { formatTrainingTarget, parseTrainingTarget } from "./domain/targets";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
@@ -171,15 +172,17 @@ export default function App(props: AppProps) {
   </>;
 }
 
-function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
+function BoxingTrackerApp({ initialDate }: AppProps) {
+  const currentDate = () => new Date(initialDate ?? Date.now());
   const [view, setView] = useState<View>("today");
-  const [selectedDate, setSelectedDate] = useState(() => new Date(initialDate));
-  const [displayMonth, setDisplayMonth] = useState(() => new Date(initialDate));
+  const [selectedDate, setSelectedDate] = useState(currentDate);
+  const [displayMonth, setDisplayMonth] = useState(currentDate);
   const [historyMode, setHistoryMode] = useState<HistoryMode>("history");
   const [state, setState] = useState<AppState>(() => loadState());
   const [drillToAdd, setDrillToAdd] = useState<Drill | null>(null);
   const [timer, setTimer] = useState<BoxingTimerState | null>(() => loadTimer());
   const [timerOpen, setTimerOpen] = useState(false);
+  const [adventureOpen, setAdventureOpen] = useState(false);
   const [timerNow, setTimerNow] = useState(() => Date.now());
   const timerCueKeysRef = useRef(new Set<string>());
   const [timerSoundEnabled, setTimerSoundEnabled] = useState(true);
@@ -191,6 +194,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   const [authOpen, setAuthOpen] = useState(false);
   const [cloudReady, setCloudReady] = useState(false);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>("local");
+  const [syncRetry, setSyncRetry] = useState(0);
   const stateRef = useRef(state);
   const cloudRevisionRef = useRef<number | null>(null);
   const suppressNextGuestSaveRef = useRef(false);
@@ -342,27 +346,73 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   useEffect(() => {
     const client = supabase;
     if (!cloudReady || !userId || !client) return;
+    let active = true;
+    let refreshPending = false;
+    const mergeIncoming = (incoming: AppState, revision?: number) => {
+      cloudRevisionRef.current = revision ?? cloudRevisionRef.current;
+      setState((current) => {
+        const merged = mergeStateWithCloud(current, incoming).state;
+        return JSON.stringify(merged) === JSON.stringify(current) ? current : merged;
+      });
+    };
+    const refreshFromCloud = () => {
+      if (refreshPending) return;
+      refreshPending = true;
+      void (async () => {
+        try {
+          const { data, error } = await client.from("user_app_states")
+            .select("state, revision")
+            .eq("user_id", userId)
+            .maybeSingle();
+          if (!active) return;
+          if (error) { setSyncStatus("error"); return; }
+          const incoming = data ? decodeState(data.state) : null;
+          if (!incoming) return;
+          const localWon = mergeStateWithCloud(stateRef.current, incoming).localWon;
+          mergeIncoming(incoming, data?.revision);
+          if (localWon) {
+            setSyncStatus("syncing");
+            setSyncRetry((current) => current + 1);
+          } else {
+            setSyncStatus("synced");
+          }
+        } catch {
+          if (active) setSyncStatus("error");
+        } finally {
+          refreshPending = false;
+        }
+      })();
+    };
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") refreshFromCloud();
+    };
     const channel = client
       .channel("user-app-state-" + userId)
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "user_app_states", filter: "user_id=eq." + userId },
         (payload) => {
+          if (!active) return;
           const incomingRow = payload.new as { state?: unknown; revision?: number };
           const incoming = decodeState(incomingRow.state);
           if (!incoming) return;
-          cloudRevisionRef.current = incomingRow.revision ?? cloudRevisionRef.current;
-          setState((current) => {
-            const merged = mergeStateWithCloud(current, incoming).state;
-            return JSON.stringify(merged) === JSON.stringify(current) ? current : merged;
-          });
+          mergeIncoming(incoming, incomingRow.revision);
           setSyncStatus("synced");
         },
       )
       .subscribe((status) => {
+        if (!active) return;
+        if (status === "SUBSCRIBED") refreshFromCloud();
         if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") setSyncStatus("error");
       });
-    return () => { void client.removeChannel(channel); };
+    window.addEventListener("focus", refreshFromCloud);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      active = false;
+      window.removeEventListener("focus", refreshFromCloud);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      void client.removeChannel(channel);
+    };
   }, [cloudReady, userId]);
   useEffect(() => {
     const client = supabase;
@@ -406,7 +456,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       })();
     }, 700);
     return () => window.clearTimeout(timer);
-  }, [cloudReady, state, userId]);
+  }, [cloudReady, state, syncRetry, userId]);
 
   const startBoxingTimer = (settings: BoxingTimerSettings) => {
     timerCueKeysRef.current.clear();
@@ -473,6 +523,13 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   };
 
   const openDate = (date: Date) => {
+    setSelectedDate(date);
+    setDisplayMonth(date);
+    setView("today");
+  };
+
+  const openToday = () => {
+    const date = currentDate();
     setSelectedDate(date);
     setDisplayMonth(date);
     setView("today");
@@ -549,7 +606,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <button className="brand" onClick={() => setView("today")} aria-label="Corner home">
+        <button className="brand" onClick={openToday} aria-label="Corner home">
           <CornerMark className="brand-mark" />
           <span>
             <strong>CORNER</strong>
@@ -572,6 +629,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
       <main>
         {view === "today" && (
           <TodayView
+            openAdventure={() => setAdventureOpen(true)}
             date={selectedDate}
             customDrills={state.customDrills ?? []}
             language={language}
@@ -646,6 +704,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
           />
         )}
       </main>
+      {adventureOpen && <AdventurePreview language={language} onClose={() => setAdventureOpen(false)} />}
       {timerOpen && <BoxingTimerPanel language={language} timer={timer} now={timerNow} soundEnabled={timerSoundEnabled} voiceEnabled={timerVoiceEnabled} onSoundChange={setTimerSoundEnabled} onVoiceChange={setTimerVoiceEnabled} onClose={() => setTimerOpen(false)} onStart={startBoxingTimer} onPause={pauseBoxingTimer} onResume={resumeBoxingTimer} onSkip={skipBoxingTimerPhase} onReset={resetBoxingTimer} />}
       {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
       {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
@@ -676,7 +735,7 @@ function BoxingTrackerApp({ initialDate = new Date() }: AppProps) {
           <button
             key={id}
             className={view === id ? "active" : ""}
-            onClick={() => setView(id)}
+            onClick={() => id === "today" ? openToday() : setView(id)}
             aria-current={view === id ? "page" : undefined}
           >
             <Icon size={20} strokeWidth={1.8} />
@@ -989,6 +1048,7 @@ function AuthPanel({
 }
 
 interface TodayViewProps {
+  openAdventure: () => void;
   customDrills: Drill[];
   date: Date;
   language: Language;
@@ -1016,7 +1076,7 @@ function getPlanDrill(itemId: string) {
   return drillLibrary.find((drill) => drill.id === drillId);
 }
 
-function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder, customDrills }: TodayViewProps) {
+function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder, customDrills, openAdventure }: TodayViewProps) {
   const completion = getRecordCompletion(plan, record);
   const percentage = completion.total
     ? Math.round((completion.completed / completion.total) * 100)
@@ -1208,6 +1268,8 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
           <strong>{formatPlanLabel(plan.focus, language)}</strong>
         </div>
       </section>
+
+      <AdventureEntry language={language} onOpen={openAdventure} />
 
       {completion.total === 0 ? (
         <section className="rest-card">

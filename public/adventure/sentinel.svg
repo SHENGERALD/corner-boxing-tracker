@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 400" fill="none">
+  <defs><linearGradient id="armor" x2="1" y2="1"><stop stop-color="#84928b"/><stop offset=".45" stop-color="#3c565d"/><stop offset="1" stop-color="#192933"/></linearGradient><linearGradient id="cape" x2="1" y2="1"><stop stop-color="#356263"/><stop offset="1" stop-color="#0b232d"/></linearGradient></defs>
+  <ellipse cx="177" cy="369" rx="103" ry="17" fill="#071119" opacity=".6"/>
+  <path d="m125 110-31 33-25 172 34-17 17 39 33-24 23 33 35-33 41 10-13-167-33-44" fill="url(#cape)" stroke="#466963" stroke-width="2"/>
+  <path d="m129 269-9 75-16 18 1 12h54l6-102m26-3 8 72-4 32h54l-2-13-18-16-3-82" fill="url(#armor)" stroke="#82978e" stroke-width="2"/>
+  <path d="m129 288 29 2-4 32-28 8m73-42 25-2 6 45-27-7" stroke="#c5b98b" stroke-width="3"/>
+  <path d="m117 136 18-24h68l30 27-11 75 10 58-55 26-59-24 17-60z" fill="url(#armor)" stroke="#92a397" stroke-width="2"/>
+  <path d="m133 145 40 16 41-16-12 56-28 21-32-21z" fill="#233e48" stroke="#b6b78e" stroke-width="3"/>
+  <path d="m173 164 12 23-12 22-12-22z" fill="#e4be75"/>
+  <path d="m130 233 45 11 46-12m-94 15 48 12 49-11" stroke="#9faa92" stroke-width="3"/>
+  <path d="m133 116-38 3-20 33 39 25 30-32m62-29 37 3 21 33-40 25-29-32" fill="url(#armor)" stroke="#9da68f" stroke-width="2"/>
+  <path d="m95 126-8-29 27 24m124 5 10-29-28 24" fill="#b2b594"/>
+  <path d="m80 164-9 49 18 31 25-8-15-29 13-33m121 0 14 46-8 28-22-9 6-25-10-30" fill="url(#armor)" stroke="#78958c" stroke-width="3"/>
+  <path d="m145 108-15-40 17-33 33-11 31 23 4 31-16 33-25 15z" fill="url(#armor)" stroke="#9dab95" stroke-width="2"/>
+  <path d="m137 63 37 8 34-10-10 30-23 20-27-21z" fill="#102631"/>
+  <path d="m145 75 21 5m18 0 17-6" stroke="#ffd59a" stroke-width="5"/>
+  <path d="m177 39-3 30v32m-32-54-22-20 11 35m72-13 24-20-11 34" stroke="#bdc5aa" stroke-width="4"/>
+  <path d="m77 238 4 103 9 20 10-21-5-102" fill="#c0cbbb" stroke="#526f70" stroke-width="2"/>
+  <path d="m67 239 44-3m-24-28 2 28" stroke="#d4b778" stroke-width="7"/>
+  <path d="m237 209 47-19 29 19-9 69-32 31-37-36z" fill="#243b44" stroke="#a2b092" stroke-width="4"/>
+  <path d="m244 217 35-14 23 14-8 53-22 25-27-27z" fill="url(#armor)"/>
+  <path d="m274 220 12 25-12 30-12-30z" fill="#d7b775"/>
+</svg>
