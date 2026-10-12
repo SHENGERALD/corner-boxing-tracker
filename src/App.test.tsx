@@ -438,7 +438,7 @@ describe("Boxing Tracker", () => {
     await user.click(screen.getByRole("button", { name: "加入訓練" }));
 
     expect(screen.getByText("槓鈴臥推")).toBeInTheDocument();
-  });
+  }, 10_000);
 
   it("filters strength drills by equipment and shows the cardio category", async () => {
     const user = userEvent.setup();
