@@ -1,12 +1,21 @@
-import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import App from "../App";
 import { AdventurePreview } from "./AdventurePreview";
+import { fetchLeaderboard } from "../domain/leaderboardApi";
 import { ADVENTURE_KEY, attackAdventure, createAdventureState, saveAdventure } from "../domain/adventure";
 
+vi.mock("../domain/leaderboardApi", () => ({
+  fetchLeaderboard: vi.fn().mockResolvedValue({ profile: null, rows: [] }),
+  saveLeaderboardProfile: vi.fn(),
+}));
+
 describe("adventure preview", () => {
-  beforeEach(() => { localStorage.clear(); window.history.replaceState({}, "", "/"); });
+  beforeEach(() => {
+    localStorage.clear(); window.history.replaceState({}, "", "/");
+    vi.mocked(fetchLeaderboard).mockResolvedValue({ profile: null, rows: [] });
+  });
   afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
   it("opens from Today, attacks, persists, resets, and leaves all formal storage byte-identical", async () => {
@@ -16,6 +25,11 @@ describe("adventure preview", () => {
     const formal = snapshot();
     await user.click(screen.getByRole("button", { name: "開啟冒險" }));
     expect(screen.getByRole("dialog", { name: "暗黑冒險預覽" })).toBeInTheDocument();
+    await user.click(screen.getByRole("tab", { name: "排行榜" }));
+    expect(screen.queryByRole("button", { name: "模擬完成訓練" })).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "訓練排行榜" })).toBeInTheDocument();
+    expect(screen.getByText("登入後可查看排行榜")).toBeInTheDocument();
+    await user.click(screen.getByRole("tab", { name: "冒險" }));
     await user.click(screen.getByRole("button", { name: "模擬完成訓練" }));
     expect(screen.getByTestId("enemy-health")).toHaveTextContent("45 / 90");
     expect(snapshot()).toEqual(formal);
@@ -60,6 +74,21 @@ describe("adventure preview", () => {
     await user.click(screen.getByRole("button", { name: "Simulate completed workout" }));
     expect(screen.getByRole("status")).toHaveTextContent("+40 XP");
     expect(screen.getByRole("status")).toHaveTextContent("Floor 2");
+  });
+
+  it("allows keyboard access to ranking settings when Save is disabled", async () => {
+    const user = userEvent.setup();
+    render(<AdventurePreview language="en" userId="user-1" onClose={() => {}} />);
+    await user.click(screen.getByRole("tab", { name: "Leaderboard" }));
+    const refresh = screen.getByRole("button", { name: "Refresh leaderboard" });
+    await waitFor(() => expect(refresh).toBeEnabled());
+    refresh.focus();
+    await user.tab();
+    expect(screen.getByRole("textbox", { name: "Public nickname" })).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("checkbox")).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("button", { name: "Close adventure" })).toHaveFocus();
   });
 
   it("finishes the tower, disables attacks, and can restart", async () => {

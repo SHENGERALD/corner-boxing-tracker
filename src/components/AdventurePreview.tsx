@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { ArrowUpRight, Check, Crown, Mountain, RotateCcw, Shield, Swords, Trophy, X } from "lucide-react";
 import { adventureFloors, attackAdventure, createAdventureState, loadAdventure, saveAdventure, type AdventureState } from "../domain/adventure";
 import type { Language } from "../domain/types";
+import { Leaderboard } from "./Leaderboard";
 import "./adventure.css";
 
 const asset = (name: string) => `${import.meta.env.BASE_URL}adventure/${name}.svg`;
@@ -24,7 +25,8 @@ export function AdventureEntry({ language, onOpen }: { language: Language; onOpe
 
 interface Feedback { before: AdventureState; after: AdventureState }
 
-export function AdventurePreview({ language, onClose }: { language: Language; onClose: () => void }) {
+export function AdventurePreview({ language, userId, syncStatus, syncVersion, onClose }: { language: Language; userId?: string; syncStatus?: "local" | "syncing" | "synced" | "error"; syncVersion?: number; onClose: () => void }) {
+  const [tab, setTab] = useState<"adventure" | "ranking">("adventure");
   const [state, setState] = useState(loadAdventure);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [saveFailed, setSaveFailed] = useState(false);
@@ -47,9 +49,11 @@ export function AdventurePreview({ language, onClose }: { language: Language; on
     const keydown = (event: KeyboardEvent) => {
       if (event.key === "Escape") { event.preventDefault(); onCloseRef.current(); }
       if (event.key !== "Tab") return;
-      const buttons = Array.from(panelRef.current?.querySelectorAll<HTMLButtonElement>("button:not(:disabled)") ?? []);
-      const first = buttons[0];
-      const last = buttons[buttons.length - 1];
+      const controls = Array.from(panelRef.current?.querySelectorAll<HTMLElement>(
+        'button:not(:disabled), input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), a[href], summary, [tabindex="0"]'
+      ) ?? []).filter(node => !node.closest('[hidden], [inert]'));
+      const first = controls[0];
+      const last = controls[controls.length - 1];
       if (event.shiftKey && (document.activeElement === first || !panelRef.current?.contains(document.activeElement))) {
         event.preventDefault(); last?.focus();
       } else if (!event.shiftKey && (document.activeElement === last || !panelRef.current?.contains(document.activeElement))) {
@@ -100,7 +104,16 @@ export function AdventurePreview({ language, onClose }: { language: Language; on
         <div><p>{zh ? "CORNER / 暗黑高塔" : "CORNER / THE DARK TOWER"}</p><h2 id="adventure-title">{zh ? "暗黑冒險預覽" : "Dark adventure preview"}</h2></div>
         <button ref={closeRef} onClick={onClose} aria-label={zh ? "關閉冒險" : "Close adventure"} title={zh ? "關閉冒險" : "Close adventure"}><X size={22} /></button>
       </header>
-
+      <div className="adventure-tabs" role="tablist" aria-label={zh ? "冒險與排行" : "Adventure and ranking"}>
+        {(["adventure", "ranking"] as const).map(value => <button key={value} id={`tab-${value}`} role="tab" aria-selected={tab === value} aria-controls={`panel-${value}`} tabIndex={tab === value ? 0 : -1} onClick={() => setTab(value)} onKeyDown={event => {
+          if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === "Home" ? "adventure" : event.key === "End" ? "ranking" : tab === "adventure" ? "ranking" : "adventure";
+          setTab(next);
+          document.getElementById(`tab-${next}`)?.focus();
+        }}>{value === "adventure" ? <Swords size={18} /> : <Trophy size={18} />}{value === "adventure" ? (zh ? "冒險" : "Adventure") : (zh ? "排行榜" : "Leaderboard")}</button>)}
+      </div>
+      <div role="tabpanel" id="panel-adventure" aria-labelledby="tab-adventure" hidden={tab !== "adventure"}>
       <div className="adventure-hud">
         <div className="adventure-player"><Shield size={24} /><div><small>{zh ? "挑戰者" : "CHALLENGER"}</small><strong>{zh ? "等級" : "LV"} {state.level}</strong></div></div>
         <div className="adventure-xp"><div><span>{zh ? "經驗值" : "EXPERIENCE"}</span><strong>{state.experience} / {state.experienceToNext} XP</strong></div><progress aria-label={zh ? "經驗值" : "Experience"} value={state.experience} max={state.experienceToNext} /></div>
@@ -128,6 +141,10 @@ export function AdventurePreview({ language, onClose }: { language: Language; on
         <div className="adventure-footer-row"><span>{zh ? "本機預覽 · 不影響訓練紀錄" : "Local preview · Training records untouched"}</span><button onClick={reset}><RotateCcw size={15} />{zh ? "重設預覽" : "Reset preview"}</button></div>
         {saveFailed && <p className="adventure-save-error" role="alert">{zh ? "無法儲存進度，關閉後可能遺失。" : "Progress could not be saved and may be lost on close."}</p>}
       </footer>
+      </div>
+      <div role="tabpanel" id="panel-ranking" aria-labelledby="tab-ranking" hidden={tab !== "ranking"}>
+        <Leaderboard key={userId ?? "guest"} language={language} userId={userId} syncStatus={syncStatus} syncVersion={syncVersion} />
+      </div>
     </section>
   </div>, document.body);
 }

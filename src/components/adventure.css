@@ -65,6 +65,43 @@
 .adventure-route li { display: grid; place-items: center; height: 29px; font-size: 11px; color: #a6b5b4; border-bottom: 2px solid #3c4848; }
 .adventure-route li[aria-current] { color: #f2ca83; border-color: #f2ca83; background: #303027; }
 .adventure-route li.cleared { color: #a5d9c6; border-color: #a5d9c6; }
+.adventure-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; margin: 0 14px 14px; flex-shrink: 0; }
+.adventure-tabs button { display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-bottom: 2px solid transparent; border-radius: 4px; background: transparent; color: #bac9c3; }
+.adventure-tabs button[aria-selected="true"] { background: #283631; color: #f5b667; border-bottom-color: #f5b667; }
+.adventure-panel [role="tabpanel"] { min-width: 0; flex-shrink: 0; }
+.adventure-panel [hidden] { display: none; }
+.adventure-leaderboard { margin-top: 0; padding: 18px 22px 22px; border-top: 1px solid #394648; background: #111b1d; }
+.adventure-leaderboard-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.adventure-leaderboard-heading small { color: #83bbad; font-size: 10px; font-weight: 700; }
+.adventure-leaderboard-heading h3 { display: flex; align-items: center; gap: 8px; margin: 4px 0 0; color: #edf1eb; font-size: 17px; }
+.adventure-leaderboard-heading h3 svg { color: #f5b667; }
+.adventure-leaderboard-heading button { display: grid; place-items: center; width: 44px; color: #b6d1cb; background: transparent; border: 1px solid #455253; border-radius: 4px; }
+.adventure-leaderboard-heading button:disabled { opacity: .5; cursor: default; }
+.adventure-leaderboard-period { padding-top: 12px; color: #b0c1bc; font-size: 11px; }
+.adventure-leaderboard-empty, .adventure-leaderboard-error { margin: 14px 0 4px; font-size: 13px; line-height: 1.5; color: #cbd6d0; }
+.adventure-leaderboard-error { color: #ffb1aa; }
+.adventure-rank-sync-warning { margin: 8px 0 0; color: #ffbd8e; font-size: 11px; line-height: 1.5; }
+.adventure-leaderboard-list { list-style: none; margin: 14px 0 0; padding: 0; }
+.adventure-leaderboard-list li { display: grid; grid-template-columns: 34px minmax(0, 1fr) 45px 72px; align-items: center; gap: 8px; min-height: 44px; border-top: 1px solid #334043; color: #e7ece7; }
+.adventure-leaderboard-list li.is-me { color: #d6f8e9; background: #17332f; }
+.adventure-rank-number, .adventure-rank-points { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric: tabular-nums; }
+.adventure-rank-number { padding-left: 5px; color: #f3b879; font-size: 15px; }
+.adventure-leaderboard-list strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.adventure-leaderboard-list em { margin-left: 6px; color: #8fe0bb; font-size: 10px; font-style: normal; }
+.adventure-rank-days { color: #aebcb7; font-size: 11px; text-align: right; white-space: nowrap; }
+.adventure-rank-points { color: #ffd08f; text-align: right; font-size: 14px; font-weight: 700; white-space: nowrap; }
+.adventure-rank-points small { color: #9aada6; font-size: 9px; }
+.adventure-rank-rules { margin-top: 12px; color: #b9cac2; font-size: 11px; }
+.adventure-rank-rules summary { width: fit-content; min-height: 28px; cursor: pointer; }
+.adventure-rank-rules p { margin: 2px 0 0; line-height: 1.5; }
+.adventure-leaderboard-settings { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px 12px; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid #394648; }
+.adventure-leaderboard-settings > label:first-child { grid-column: 1 / -1; color: #d4e1d9; font-size: 12px; }
+.adventure-leaderboard-settings > input { grid-column: 1 / -1; width: 100%; min-width: 0; height: 44px; padding: 0 11px; color: #f0f3ef; background: #1d292b; border: 1px solid #516365; border-radius: 4px; font: inherit; font-size: 14px; }
+.adventure-leaderboard-settings > input:focus-visible { outline: 2px solid #8fdcc0; outline-offset: 2px; }
+.adventure-rank-consent { display: flex; align-items: center; gap: 8px; min-width: 0; color: #d6e2dc; font-size: 12px; cursor: pointer; }
+.adventure-rank-consent input { width: 18px; height: 18px; flex-shrink: 0; accent-color: #55b995; }
+.adventure-rank-save { min-height: 44px; padding: 0 12px; color: #152321; background: #8ed6b6; border: 0; border-radius: 4px; font-size: 12px !important; font-weight: 700 !important; white-space: nowrap; }
+.adventure-rank-save:disabled { opacity: .45; cursor: default; }
 .adventure-feedback { min-height: 63px; padding: 13px 22px 8px; font-size: 12px; line-height: 1.5; color: #cbdbd2; }
 .adventure-actions { padding: 0 22px max(12px, env(safe-area-inset-bottom)); }
 .adventure-attack { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid #e2b46e; border-radius: 4px; background: #e8b974; color: #1e211e; padding: 13px 14px; font-weight: 700 !important; }
@@ -102,6 +139,10 @@
   .adventure-attack span { font-size: 12px; }
   .adventure-footer-row { gap: 7px; }
   .adventure-entry-copy strong { font-size: 16px; }
+  .adventure-leaderboard { padding-left: 14px; padding-right: 14px; }
+  .adventure-leaderboard-list li { grid-template-columns: 28px minmax(0, 1fr) 36px 58px; gap: 5px; }
+  .adventure-rank-points { font-size: 12px; }
+  .adventure-rank-save { padding: 0 8px; font-size: 11px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .adventure-panel *, .adventure-panel *::before, .adventure-panel *::after { animation: none !important; transition: none !important; }

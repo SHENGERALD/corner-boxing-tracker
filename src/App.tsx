@@ -194,6 +194,7 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
   const [authOpen, setAuthOpen] = useState(false);
   const [cloudReady, setCloudReady] = useState(false);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>("local");
+  const [syncVersion, setSyncVersion] = useState(0);
   const [syncRetry, setSyncRetry] = useState(0);
   const stateRef = useRef(state);
   const cloudRevisionRef = useRef<number | null>(null);
@@ -338,6 +339,7 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
       setState(resolution.state);
       setCloudReady(true);
       setSyncStatus("synced");
+      setSyncVersion(value => value + 1);
     })();
     return () => { active = false; };
   }, [authReady, userId]);
@@ -375,6 +377,7 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
             setSyncRetry((current) => current + 1);
           } else {
             setSyncStatus("synced");
+            setSyncVersion(value => value + 1);
           }
         } catch {
           if (active) setSyncStatus("error");
@@ -398,6 +401,7 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
           if (!incoming) return;
           mergeIncoming(incoming, incomingRow.revision);
           setSyncStatus("synced");
+          setSyncVersion(value => value + 1);
         },
       )
       .subscribe((status) => {
@@ -453,6 +457,7 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
         stateRef.current = latestState;
         if (JSON.stringify(latestState) !== JSON.stringify(previousState)) setState(latestState);
         setSyncStatus("synced");
+        setSyncVersion(value => value + 1);
       })();
     }, 700);
     return () => window.clearTimeout(timer);
@@ -704,7 +709,7 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
           />
         )}
       </main>
-      {adventureOpen && <AdventurePreview language={language} onClose={() => setAdventureOpen(false)} />}
+      {adventureOpen && <AdventurePreview language={language} userId={userId} syncStatus={syncStatus} syncVersion={syncVersion} onClose={() => setAdventureOpen(false)} />}
       {timerOpen && <BoxingTimerPanel language={language} timer={timer} now={timerNow} soundEnabled={timerSoundEnabled} voiceEnabled={timerVoiceEnabled} onSoundChange={setTimerSoundEnabled} onVoiceChange={setTimerVoiceEnabled} onClose={() => setTimerOpen(false)} onStart={startBoxingTimer} onPause={pauseBoxingTimer} onResume={resumeBoxingTimer} onSkip={skipBoxingTimerPhase} onReset={resetBoxingTimer} />}
       {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
       {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
