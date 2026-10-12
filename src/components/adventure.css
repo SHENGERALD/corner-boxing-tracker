@@ -1,5 +1,5 @@
 .adventure-entry {
-  display: flex; align-items: center; gap: 16px; width: 100%; min-height: 108px;
+  display: flex; align-items: center; gap: 16px; width: 100%; min-height: 108px; margin: 0 0 32px;
   padding: 16px 20px; text-align: left; color: #f2f4ed; background: #171d20;
   border: 1px solid #465354; border-radius: 8px; overflow: hidden; cursor: pointer;
 }
