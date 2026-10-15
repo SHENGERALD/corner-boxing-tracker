@@ -2,7 +2,8 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-li
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import App from "../App";
-import { AdventurePreview } from "./AdventurePreview";
+import { AdventureEntry, AdventurePreview } from "./AdventurePreview";
+import { useState } from "react";
 import { fetchLeaderboard } from "../domain/leaderboardApi";
 import { ADVENTURE_KEY, attackAdventure, createAdventureState, saveAdventure } from "../domain/adventure";
 
@@ -11,6 +12,11 @@ vi.mock("../domain/leaderboardApi", () => ({
   saveLeaderboardProfile: vi.fn(),
 }));
 
+function LegacyAdventureHarness() {
+  const [open, setOpen] = useState(false);
+  return <><AdventureEntry language="zh-TW" onOpen={() => setOpen(true)} />{open && <AdventurePreview language="zh-TW" onClose={() => setOpen(false)} />}</>;
+}
+
 describe("adventure preview", () => {
   beforeEach(() => {
     localStorage.clear(); window.history.replaceState({}, "", "/");
@@ -18,9 +24,18 @@ describe("adventure preview", () => {
   });
   afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
-  it("opens from Today, attacks, persists, resets, and leaves all formal storage byte-identical", async () => {
+  it("shows only the base entrance on Today and preserves saved adventure data", () => {
+    saveAdventure(createAdventureState());
+    const saved = localStorage.getItem(ADVENTURE_KEY);
+    render(<App initialDate={new Date(2026, 8, 18, 12)} />);
+    expect(screen.queryByRole("button", { name: "開啟冒險" })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "訓練基地" })).toHaveAttribute("href", `${import.meta.env.BASE_URL}?game=base`);
+    expect(localStorage.getItem(ADVENTURE_KEY)).toBe(saved);
+  });
+
+  it("retains the isolated legacy preview and leaves formal storage byte-identical", async () => {
     const user = userEvent.setup();
-    const first = render(<App initialDate={new Date(2026, 8, 18, 12)} />);
+    const first = render(<LegacyAdventureHarness />);
     const snapshot = () => Object.fromEntries(Object.keys(localStorage).filter(key => key !== ADVENTURE_KEY).map(key => [key, localStorage.getItem(key)]));
     const formal = snapshot();
     await user.click(screen.getByRole("button", { name: "開啟冒險" }));
@@ -34,7 +49,7 @@ describe("adventure preview", () => {
     expect(screen.getByTestId("enemy-health")).toHaveTextContent("45 / 90");
     expect(snapshot()).toEqual(formal);
     first.unmount();
-    render(<App initialDate={new Date(2026, 8, 18, 12)} />);
+    render(<LegacyAdventureHarness />);
     await user.click(screen.getByRole("button", { name: "開啟冒險" }));
     expect(screen.getByTestId("enemy-health")).toHaveTextContent("45 / 90");
     await user.click(screen.getByRole("button", { name: "重設預覽" }));
@@ -45,7 +60,7 @@ describe("adventure preview", () => {
 
   it("traps focus, restores focus and scroll lock, closes on Escape and backdrop", async () => {
     const user = userEvent.setup();
-    render(<App />);
+    render(<LegacyAdventureHarness />);
     const entry = screen.getByRole("button", { name: "開啟冒險" });
     await user.click(entry);
     const close = screen.getByRole("button", { name: "關閉冒險" });

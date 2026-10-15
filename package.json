@@ -9,6 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run src",
     "test:leaderboard-db": "node --test scripts/leaderboard-db.test.mjs",
+    "test:base-db": "node --test scripts/base-db.test.mjs",
     "test:catalog": "node --test scripts/wger-normalize.test.mjs scripts/validate-strength-media.test.mjs",
     "import:wger": "node scripts/import-wger.mjs",
     "translate:wger": "node scripts/translate-wger.mjs"

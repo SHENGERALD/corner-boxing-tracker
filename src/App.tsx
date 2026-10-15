@@ -1,6 +1,7 @@
 import {
   Archive,
   Activity,
+  ArrowUpRight,
   CalendarDays,
   CalendarRange,
   Check,
@@ -22,6 +23,7 @@ import {
   Pencil,
   RotateCcw,
   Search,
+  Castle,
   Trash2,
   TrendingUp,
   Timer as TimerIcon,
@@ -69,7 +71,8 @@ import { drillLibrary, filterDrills, mergeDrillLibrary, type Drill, type DrillCa
 import { loadStrengthLibrary } from "./domain/strengthCatalog";
 import { advanceTimer, getRemainingSeconds, getTimerCues, loadTimer, pauseTimer, resumeTimer, saveTimer, skipTimerPhase, startTimer, type BoxingTimerSettings, type BoxingTimerState } from "./domain/timer";
 import { NumericDraftInput } from "./components/NumericDraftInput";
-import { AdventureEntry, AdventurePreview } from "./components/AdventurePreview";
+import { BasePreview } from "./components/BasePreview";
+import { BaseGame } from "./components/BaseGame";
 import { formatTrainingTarget, parseTrainingTarget } from "./domain/targets";
 
 type View = "today" | "schedule" | "history" | "library" | "backup";
@@ -166,6 +169,8 @@ export default function App(props: AppProps) {
   }, [showSplash]);
 
   if (isPreview) return <QuickLogPreview />;
+  if (new URLSearchParams(window.location.search).get("preview") === "base") return <BasePreview />;
+  if (new URLSearchParams(window.location.search).get("game") === "base") return <BaseGame />;
   return <>
     <BoxingTrackerApp {...props} />
     {showSplash && <LaunchSplash />}
@@ -182,7 +187,6 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
   const [drillToAdd, setDrillToAdd] = useState<Drill | null>(null);
   const [timer, setTimer] = useState<BoxingTimerState | null>(() => loadTimer());
   const [timerOpen, setTimerOpen] = useState(false);
-  const [adventureOpen, setAdventureOpen] = useState(false);
   const [timerNow, setTimerNow] = useState(() => Date.now());
   const timerCueKeysRef = useRef(new Set<string>());
   const [timerSoundEnabled, setTimerSoundEnabled] = useState(true);
@@ -634,7 +638,6 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
       <main>
         {view === "today" && (
           <TodayView
-            openAdventure={() => setAdventureOpen(true)}
             date={selectedDate}
             customDrills={state.customDrills ?? []}
             language={language}
@@ -709,7 +712,6 @@ function BoxingTrackerApp({ initialDate }: AppProps) {
           />
         )}
       </main>
-      {adventureOpen && <AdventurePreview language={language} userId={userId} syncStatus={syncStatus} syncVersion={syncVersion} onClose={() => setAdventureOpen(false)} />}
       {timerOpen && <BoxingTimerPanel language={language} timer={timer} now={timerNow} soundEnabled={timerSoundEnabled} voiceEnabled={timerVoiceEnabled} onSoundChange={setTimerSoundEnabled} onVoiceChange={setTimerVoiceEnabled} onClose={() => setTimerOpen(false)} onStart={startBoxingTimer} onPause={pauseBoxingTimer} onResume={resumeBoxingTimer} onSkip={skipBoxingTimerPhase} onReset={resetBoxingTimer} />}
       {drillToAdd && <AddDrillPanel drill={drillToAdd} language={language} onClose={() => setDrillToAdd(null)} onConfirm={(item) => { addCustomDrill(item); setDrillToAdd(null); setView("today"); }} />}
       {creatingLibraryDrill && <CreateLibraryDrillPanel language={language} onClose={() => setCreatingLibraryDrill(false)} onConfirm={(drill) => { addLibraryDrill(drill); setCreatingLibraryDrill(false); setView("library"); }} />}
@@ -1053,7 +1055,6 @@ function AuthPanel({
 }
 
 interface TodayViewProps {
-  openAdventure: () => void;
   customDrills: Drill[];
   date: Date;
   language: Language;
@@ -1081,7 +1082,7 @@ function getPlanDrill(itemId: string) {
   return drillLibrary.find((drill) => drill.id === drillId);
 }
 
-function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder, customDrills, openAdventure }: TodayViewProps) {
+function TodayView({ date, language, plan, record, updateRecord, addDrill, clearRecord, onReorder, customDrills }: TodayViewProps) {
   const completion = getRecordCompletion(plan, record);
   const percentage = completion.total
     ? Math.round((completion.completed / completion.total) * 100)
@@ -1274,7 +1275,7 @@ function TodayView({ date, language, plan, record, updateRecord, addDrill, clear
         </div>
       </section>
 
-      <AdventureEntry language={language} onOpen={openAdventure} />
+      <a className="base-game-entry" href={`${import.meta.env.BASE_URL}?game=base`}><Castle size={28} aria-hidden="true"/><span>{language === "zh-TW" ? "訓練基地" : "Training base"}</span><ArrowUpRight size={18} aria-hidden="true"/></a>
 
       {completion.total === 0 ? (
         <section className="rest-card">

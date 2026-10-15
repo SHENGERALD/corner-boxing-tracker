@@ -63,3 +63,59 @@ RLS and authenticated RPC access were confirmed. Anonymous REST requests now
 return HTTP 401 / SQLSTATE 42501 for both the RPC and profiles table, rather than
 missing-schema errors. This verifies deployment and database behavior, not two
 real browser sign-ins or a new GitHub Pages frontend release.
+
+## Training base (prepared 2026-10-15)
+
+Apply `supabase/migrations/20261015000000_training_base.sql` only after the weekly
+leaderboard migration. This new migration is not covered by the October 11
+deployment verification above. It adds five RLS-protected tables and three
+authenticated RPCs. Resources, upgrades, rewards, and raid results are written
+only by the server. The client cannot update player resource columns directly.
+
+The formal entry is `?game=base`, linked from Today. `?preview=base` remains a
+separate local demo; its resources never migrate to a real player. Sign in on
+the training page first. Normal Vite development requires public Supabase
+configuration in an untracked `.env.local` to exercise real sign-in.
+
+Game rules: initial supply 400, energy 3; the current UTC day's synced completed
+training grants 150 supply and 2 energy, capped at 6, once per date. Each raid
+costs 1 energy, with one raid per target per UTC day. Squads contain up to six
+units, at most four of each type. Defense must be within half to double the
+submitted squad's server-computed power. Victory grants 15 trophies and supply;
+loss grants 20 supply. Defender assets and training records are not reduced.
+Only opted-in bases are publicly listed or attackable. Friend lists require an
+invitation accepted by the recipient. Training-week points remain independent.
+
+Commands include an account-scoped UUID receipt; retry the same ID after an
+uncertain network failure. The client keeps an unresolved command in that
+account's sessionStorage and blocks new spending until it is resolved. A replay
+returns the original battle result with the current dashboard, avoiding stale
+resource restoration. Production receipt retention/rate limits will need an
+operational policy before scaling beyond a small initial release.
+
+Run `npm run test:base-db` for isolated PostgreSQL checks. Parallel duplicate
+submissions in this local PGlite test are serialized by its single connection;
+this is not a multi-connection production load test. After deploying, verify
+two real signed-in users for friend acceptance, opt-out, attacks, and network
+retry. No real-account E2E is implied by local database or UI tests.
+
+`supabase/tests/training_base_smoke.sql` is the rollback-only SQL Editor smoke
+test to run after deployment. A successful final `fixtures_removed = true`
+confirms its temporary identities were removed; it is not real Auth browser E2E.
+
+### Production verification (2026-10-15)
+
+Applied the training-base migration to CORNER project `ogiehayfeomqeygqsdgx`
+through SQL Editor in one transaction. The deployed function bodies match the
+local migration after whitespace normalization. Verified all five tables have
+RLS enabled, authenticated users cannot directly insert/update/delete game
+tables, and only authenticated callers can execute the three game RPCs.
+
+The rollback-only two-identity smoke test passed in production: one daily
+training reward despite repeat claims, one energy debit for a replayed raid,
+server-calculated trophy awards, private player isolation, recipient acceptance
+of friendships, unchanged defender resources, and opt-out removal from matches.
+Final queries confirmed temporary Auth users and bases were absent. Anonymous
+REST calls to all three game RPCs returned HTTP 401 / SQLSTATE 42501 rather than
+missing-schema errors. Frontend publication and two real Auth browser sessions
+remain separate release checks; they were not performed by this deployment.
